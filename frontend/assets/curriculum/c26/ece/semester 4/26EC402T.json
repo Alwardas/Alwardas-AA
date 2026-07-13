@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "TRANSMISSION LINES AND WAVE PROPAGATION",
-            "totalPeriods": 24,
+            "title": "Transmission lines and Wave Propagation",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec402t-1.1",
@@ -146,44 +146,16 @@
                 {
                     "id": "26ec402t-1.20",
                     "sno": "1.20",
-                    "topic": "Deep dive into TRANSMISSION LINES AND WAVE PROPAGATION",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-1.21",
-                    "sno": "1.21",
-                    "topic": "Deep dive into List different types of transmission lines",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-1.22",
-                    "sno": "1.22",
-                    "topic": "Deep dive into Draw the electrical equivalent of transmission line",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-1.23",
-                    "sno": "1.23",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26ec402t-1.24",
-                    "sno": "1.24",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "ANTENNAS",
-            "totalPeriods": 22,
+            "title": "Antennas",
+            "totalPeriods": 18,
             "topics": [
                 {
                     "id": "26ec402t-2.1",
@@ -300,41 +272,195 @@
                 {
                     "id": "26ec402t-2.17",
                     "sno": "2.17",
-                    "topic": "Deep dive into Explain radiation mechanism of an antenna from transmission line theory",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-2.18",
-                    "sno": "2.18",
-                    "topic": "Deep dive into State the following parameters of antenna i. Radiation pattern ii. Front-to -back ratio iii. Directive gain iv. Directivity v. Power gain vi. Beamwidth vii. Bandwidth viii. Antenna resistance: Radiation and Loss Resistance ix. Antenna efficiency x. Antenna aperture (Effective area) xi. Antenna polarization",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-2.19",
-                    "sno": "2.19",
-                    "topic": "Deep dive into Explain Isotropic radiator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-2.20",
-                    "sno": "2.20",
-                    "topic": "Deep dive into Classify antennas based on i) Radiation pattern ii) Frequency range",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-2.21",
-                    "sno": "2.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec402t-2.22",
-                    "sno": "2.22",
+                    "id": "26ec402t-2.18",
+                    "sno": "2.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Microwave Components and Devices",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "26ec402t-3.1",
+                    "sno": "3.1",
+                    "topic": "Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.2",
+                    "sno": "3.2",
+                    "topic": "Deep dive into Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.3",
+                    "sno": "3.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.4",
+                    "sno": "3.4",
+                    "topic": "Practical applications of Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.5",
+                    "sno": "3.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.6",
+                    "sno": "3.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.7",
+                    "sno": "3.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.8",
+                    "sno": "3.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.9",
+                    "sno": "3.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.10",
+                    "sno": "3.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.11",
+                    "sno": "3.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.12",
+                    "sno": "3.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.13",
+                    "sno": "3.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.14",
+                    "sno": "3.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.15",
+                    "sno": "3.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.16",
+                    "sno": "3.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.17",
+                    "sno": "3.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.18",
+                    "sno": "3.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.19",
+                    "sno": "3.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.20",
+                    "sno": "3.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.21",
+                    "sno": "3.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.22",
+                    "sno": "3.22",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.23",
+                    "sno": "3.23",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec402t-3.24",
+                    "sno": "3.24",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec402t-3.25",
+                    "sno": "3.25",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -343,8 +469,8 @@
         },
         {
             "unitNo": 4,
-            "title": "RADARS",
-            "totalPeriods": 22,
+            "title": "RADARs",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ec402t-4.1",
@@ -447,65 +573,16 @@
                 {
                     "id": "26ec402t-4.15",
                     "sno": "4.15",
-                    "topic": "Deep dive into RADARS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-4.16",
-                    "sno": "4.16",
-                    "topic": "Deep dive into State the basic working principle of a RADAR",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-4.17",
-                    "sno": "4.17",
-                    "topic": "Deep dive into Derive the free space RADAR range equation",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-4.18",
-                    "sno": "4.18",
-                    "topic": "Deep dive into Explain the factors affecting range of a RADAR",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-4.19",
-                    "sno": "4.19",
-                    "topic": "Deep dive into Classify RADARs",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-4.20",
-                    "sno": "4.20",
-                    "topic": "Deep dive into Draw the block diagram of a pulse RADAR and explain the function of each block",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-4.21",
-                    "sno": "4.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26ec402t-4.22",
-                    "sno": "4.22",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "SATELLITE COMMUNICATION SYSTEM",
-            "totalPeriods": 22,
+            "title": "Satellite Communication System",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26ec402t-5.1",
@@ -587,79 +664,9 @@
                 {
                     "id": "26ec402t-5.12",
                     "sno": "5.12",
-                    "topic": "List different frequency bands used for satellite communication systems",
+                    "topic": "List different frequency bands used for satellite communication systems; Explain the application of satellite in GPS (Global Position System) with suitable diagram",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec402t-5.13",
-                    "sno": "5.13",
-                    "topic": "Explain the application of satellite in GPS (Global Position System) with suitable diagram",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-5.14",
-                    "sno": "5.14",
-                    "topic": "Deep dive into SATELLITE COMMUNICATION SYSTEM",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-5.15",
-                    "sno": "5.15",
-                    "topic": "Deep dive into State the need for satellite communication",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-5.16",
-                    "sno": "5.16",
-                    "topic": "Deep dive into List the advantages of satellite communication system over terrestrial communication system",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-5.17",
-                    "sno": "5.17",
-                    "topic": "Deep dive into Explain uplink and down link frequencies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-5.18",
-                    "sno": "5.18",
-                    "topic": "Deep dive into List various types of satellites (LEOs, MEOs and GEOs)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-5.19",
-                    "sno": "5.19",
-                    "topic": "Deep dive into List the advantages of Geosynchronous satellites",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-5.20",
-                    "sno": "5.20",
-                    "topic": "Deep dive into Draw and explain block diagram of a Satellite on board",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec402t-5.21",
-                    "sno": "5.21",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec402t-5.22",
-                    "sno": "5.22",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         }

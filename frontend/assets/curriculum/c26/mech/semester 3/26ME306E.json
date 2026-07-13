@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "INTRODUCTION TO ADVANCED MATERIALS",
-            "totalPeriods": 9,
+            "title": "Introduction to Advanced Materials",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26me306e-1.1",
@@ -48,37 +48,16 @@
                 {
                     "id": "26me306e-1.6",
                     "sno": "1.6",
-                    "topic": "Explain the Electrical Properties of advanced materials",
+                    "topic": "Explain the Electrical Properties of advanced materials; Explain the Magnetic Properties of advanced materials; INTRODUCTION TO ADVANCED MATERIALS Definition and classification of advanced materials -Need...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26me306e-1.7",
-                    "sno": "1.7",
-                    "topic": "Explain the Magnetic Properties of advanced materials; INTRODUCTION TO ADVANCED MATERIALS Definition and classification of advanced materials -Need...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me306e-1.8",
-                    "sno": "1.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me306e-1.9",
-                    "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "COMPOSITE MATERIALS",
-            "totalPeriods": 9,
+            "title": "Composite Materials",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me306e-2.1",
@@ -132,13 +111,20 @@
                 {
                     "id": "26me306e-2.8",
                     "sno": "2.8",
+                    "topic": "Deep dive into COMPOSITE MATERIALS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-2.9",
+                    "sno": "2.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me306e-2.9",
-                    "sno": "2.9",
+                    "id": "26me306e-2.10",
+                    "sno": "2.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -147,8 +133,8 @@
         },
         {
             "unitNo": 3,
-            "title": "SMART MATERIALS",
-            "totalPeriods": 9,
+            "title": "Smart Materials",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me306e-3.1",
@@ -202,13 +188,20 @@
                 {
                     "id": "26me306e-3.8",
                     "sno": "3.8",
+                    "topic": "Deep dive into SMART MATERIALS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-3.9",
+                    "sno": "3.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me306e-3.9",
-                    "sno": "3.9",
+                    "id": "26me306e-3.10",
+                    "sno": "3.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -217,8 +210,8 @@
         },
         {
             "unitNo": 4,
-            "title": "ADVANCED MATERIAL TESTING & CHARACTERIZATION",
-            "totalPeriods": 9,
+            "title": "Advanced Material Testing and Characterization",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me306e-4.1",
@@ -272,13 +265,20 @@
                 {
                     "id": "26me306e-4.8",
                     "sno": "4.8",
+                    "topic": "Deep dive into Differentiate destructive and non-destructive testing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me306e-4.9",
+                    "sno": "4.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me306e-4.9",
-                    "sno": "4.9",
+                    "id": "26me306e-4.10",
+                    "sno": "4.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -287,7 +287,7 @@
         },
         {
             "unitNo": 5,
-            "title": "NANO MATERIALS",
+            "title": "Nano Materials",
             "totalPeriods": 9,
             "topics": [
                 {
@@ -314,7 +314,7 @@
                 {
                     "id": "26me306e-5.4",
                     "sno": "5.4",
-                    "topic": "NANO MATERIALS Basics of nanotechnology -Properties of nanomaterials -Synthesis techniques: Chemical vapor deposition (CVD), Ball milling-Applications in coatings, lubricants and electronics. REFERENCE BOOKS 1. Materials Science and Engineering \u2013 William D. Callister 2. Engineering Materials \u2013 R.K. Rajput 3. Composite Materials \u2013 Krishan K. Chawla 4. Introduction to Nanotechnology \u2013 Charles P. Poole Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.3 Unit Test \u2013 II From 3.4 to 5.3",
+                    "topic": "NANO MATERIALS Basics of nanotechnology -Properties of nanomaterials -Synthesis techniques: Chemical vapor deposition (CVD), Ball milling-Applications in coatings, lubricants and electronics. REFERENCE BOOKS 1. Materials Science and Engineering – William D. Callister 2. Engineering Materials – R.K. Rajput 3. Composite Materials – Krishan K. Chawla 4. Introduction to Nanotechnology – Charles P. Poole Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test – I From 1.1 to 3.3 Unit Test – II From 3.4 to 5.3",
                     "period": 1,
                     "type": "theory"
                 },

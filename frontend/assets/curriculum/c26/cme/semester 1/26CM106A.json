@@ -3,12 +3,12 @@
     "subjectName": "CODING FUNDAMENTALS",
     "regulation": "C26",
     "semester": 1,
-    "totalPeriods": 60,
+    "totalPeriods": 25,
     "units": [
         {
             "unitNo": 1,
-            "title": "Fundamentals of Digital Computer",
-            "totalPeriods": 12,
+            "title": "Fundamentals of Computers",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26cm106a-1.1",
@@ -69,27 +69,13 @@
                 {
                     "id": "26cm106a-1.9",
                     "sno": "1.9",
-                    "topic": "Practical applications of Fundamentals of Digital Computer",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-1.10",
-                    "sno": "1.10",
-                    "topic": "Practical applications of Fundamentals of Digital Computer Computer, Hardware, Software, Firmware, High Level Language, Low Level Language - Block diagram of a digital computer, Clock speed and word length, Functional blocks of a CPU: ALU and Control unit, classification of computer memory, generations & classification of computers, binary number system",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-1.11",
-                    "sno": "1.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm106a-1.12",
-                    "sno": "1.12",
+                    "id": "26cm106a-1.10",
+                    "sno": "1.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -98,8 +84,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Implement Programming Methodology.",
-            "totalPeriods": 12,
+            "title": "Programming Methodology",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26cm106a-2.1",
@@ -111,7 +97,7 @@
                 {
                     "id": "26cm106a-2.2",
                     "sno": "2.2",
-                    "topic": "Programming Methodology. Steps involved in problem solving \u2013 Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
+                    "topic": "Programming Methodology. Steps involved in problem solving – Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -125,7 +111,7 @@
                 {
                     "id": "26cm106a-2.4",
                     "sno": "2.4",
-                    "topic": "Deep dive into Programming Methodology. Steps involved in problem solving \u2013 Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
+                    "topic": "Deep dive into Programming Methodology. Steps involved in problem solving – Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -139,7 +125,7 @@
                 {
                     "id": "26cm106a-2.6",
                     "sno": "2.6",
-                    "topic": "Problem solving & practice on Programming Methodology. Steps involved in problem solving \u2013 Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
+                    "topic": "Problem solving & practice on Programming Methodology. Steps involved in problem solving – Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -153,307 +139,55 @@
                 {
                     "id": "26cm106a-2.8",
                     "sno": "2.8",
-                    "topic": "Practical applications of Programming Methodology. Steps involved in problem solving \u2013 Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
+                    "topic": "Practical applications of Programming Methodology. Steps involved in problem solving – Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm106a-2.9",
                     "sno": "2.9",
-                    "topic": "Practical applications of Implement Programming Methodology",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm106a-2.10",
                     "sno": "2.10",
-                    "topic": "Practical applications of Programming Methodology. Steps involved in problem solving \u2013 Define an algorithm , Program - Characteristics of algorithm - Differentiate between program and algorithm- Steps involved in algorithm development - Differentiate algorithm and flowchart - Algorithms for simple problems - Symbols used in flowcharts -Flowcharts for simple problems",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm106a-2.11",
                     "sno": "2.11",
-                    "topic": "Revision",
+                    "topic": "Additional practice sessions",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory"
                 },
                 {
                     "id": "26cm106a-2.12",
                     "sno": "2.12",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 3,
-            "title": "Introduction to coding",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "id": "26cm106a-3.1",
-                    "sno": "3.1",
-                    "topic": "Introduction to coding",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm106a-3.2",
-                    "sno": "3.2",
-                    "topic": "List Examples of sequential execution, selection and iteration",
+                    "id": "26cm106a-2.13",
+                    "sno": "2.13",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm106a-3.3",
-                    "sno": "3.3",
-                    "topic": "Define bug",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-3.4",
-                    "sno": "3.4",
-                    "topic": "Introduction to coding Need for coding \u2013 correlate coding with real life examples - pseudo code \u2013 process of writing pseudo code \u2013 Define Variables - naming of variables-Different data types in variables- operations on variables \u2013Different types of logical operators and their functions i.e AND , OR and NOT \u2013 combining logical AND , OR and NOT operators - different types of relational operators -Different types of control statements if, if-else - Nested control statements - loops in coding-increment loops- decrement loops \u2013 entry criteria-exit criteria-break statement-continue statement-sequential execution, selection and iteration-Define bug",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-3.5",
-                    "sno": "3.5",
-                    "topic": "Deep dive into Introduction to coding",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-3.6",
-                    "sno": "3.6",
-                    "topic": "Deep dive into List Examples of sequential execution, selection and iteration",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-3.7",
-                    "sno": "3.7",
-                    "topic": "Deep dive into Define bug",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-3.8",
-                    "sno": "3.8",
-                    "topic": "Deep dive into Introduction to coding Need for coding \u2013 correlate coding with real life examples - pseudo code \u2013 process of writing pseudo code \u2013 Define Variables - naming of variables-Different data types in variables- operations on variables \u2013Different types of logical operators and their functions i.e AND , OR and NOT \u2013 combining logical AND , OR and NOT operators - different types of relational operators -Different types of control statements if, if-else - Nested control statements - loops in coding-increment loops- decrement loops \u2013 entry criteria-exit criteria-break statement-continue statement-sequential execution, selection and iteration-Define bug",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-3.9",
-                    "sno": "3.9",
-                    "topic": "Problem solving & practice on Introduction to coding",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-3.10",
-                    "sno": "3.10",
-                    "topic": "Problem solving & practice on List Examples of sequential execution, selection and iteration",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-3.11",
-                    "sno": "3.11",
+                    "id": "26cm106a-2.14",
+                    "sno": "2.14",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm106a-3.12",
-                    "sno": "3.12",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Fun with functions",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "id": "26cm106a-4.1",
-                    "sno": "4.1",
-                    "topic": "Fun with functions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.2",
-                    "sno": "4.2",
-                    "topic": "Define functions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.3",
-                    "sno": "4.3",
-                    "topic": "Examples of functions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.4",
-                    "sno": "4.4",
-                    "topic": "List Advantages using functions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.5",
-                    "sno": "4.5",
-                    "topic": "State different function parameters",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.6",
-                    "sno": "4.6",
-                    "topic": "State about returning a value in a function",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.7",
-                    "sno": "4.7",
-                    "topic": "Define an event",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.8",
-                    "sno": "4.8",
-                    "topic": "List different event handlers",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.9",
-                    "sno": "4.9",
-                    "topic": "Fun with functions Functions-examples-user defined and built-in functions- Different function parameters-returning a value in a function - Events- Event Handlers",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.10",
-                    "sno": "4.10",
-                    "topic": "Deep dive into Fun with functions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-4.11",
-                    "sno": "4.11",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26cm106a-4.12",
-                    "sno": "4.12",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Understanding arrays and collections",
-            "totalPeriods": 12,
-            "topics": [
-                {
-                    "id": "26cm106a-5.1",
-                    "sno": "5.1",
-                    "topic": "Understanding arrays and collections",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.2",
-                    "sno": "5.2",
-                    "topic": "List various types of arrays with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.3",
-                    "sno": "5.3",
-                    "topic": "Explain the process of iterating over collections",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.4",
-                    "sno": "5.4",
-                    "topic": "Understanding arrays and collections Collections-Arrays \u2013 examples for arrays and collections-Process of iterating over collections- Modifying collections. REFERENCE BOOKS 1. Information Technology - Curtin. 2. Computer Science Theory & Application - E. Balaguruswamy, B. Sushila 3. Introduction to Computers (Special Indian Edition) - Peter Norton 4. How to solve it by computer-R.G.Dromey-Pearson Education 5.introduction to coding-class VI,VII,VIII,IX,X by cbse academic https://cbseacademic.nic.in/web_material/codeingDS/classVI_Coding_Student_Handbook.pdf",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.5",
-                    "sno": "5.5",
-                    "topic": "Deep dive into Understanding arrays and collections",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.6",
-                    "sno": "5.6",
-                    "topic": "Deep dive into List various types of arrays with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.7",
-                    "sno": "5.7",
-                    "topic": "Deep dive into Explain the process of iterating over collections",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.8",
-                    "sno": "5.8",
-                    "topic": "Deep dive into Understanding arrays and collections Collections-Arrays \u2013 examples for arrays and collections-Process of iterating over collections- Modifying collections. REFERENCE BOOKS 1. Information Technology - Curtin. 2. Computer Science Theory & Application - E. Balaguruswamy, B. Sushila 3. Introduction to Computers (Special Indian Edition) - Peter Norton 4. How to solve it by computer-R.G.Dromey-Pearson Education 5.introduction to coding-class VI,VII,VIII,IX,X by cbse academic https://cbseacademic.nic.in/web_material/codeingDS/classVI_Coding_Student_Handbook.pdf",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.9",
-                    "sno": "5.9",
-                    "topic": "Problem solving & practice on Understanding arrays and collections",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.10",
-                    "sno": "5.10",
-                    "topic": "Problem solving & practice on List various types of arrays with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm106a-5.11",
-                    "sno": "5.11",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26cm106a-5.12",
-                    "sno": "5.12",
+                    "id": "26cm106a-2.15",
+                    "sno": "2.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "Basic Concepts of Automation",
-            "totalPeriods": 12,
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ee404e-1.1",
@@ -79,27 +79,13 @@
                     "topic": "Explain the architecture of an IoT system; List and describe components of an IoT system (sensors, microcontrollers, actuators); State the advantag...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ee404e-1.11",
-                    "sno": "1.11",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee404e-1.12",
-                    "sno": "1.12",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
             "title": "Sensors and Actuators",
-            "totalPeriods": 11,
+            "totalPeriods": 14,
             "topics": [
                 {
                     "id": "26ee404e-2.1",
@@ -160,20 +146,41 @@
                 {
                     "id": "26ee404e-2.9",
                     "sno": "2.9",
-                    "topic": "Compare microcontrollers: Arduino, NodeMCU, ESP32; Illustrate sensor\u2013controller interfacing with a legible block diagram; Discuss the role of embed...",
+                    "topic": "Compare microcontrollers: Arduino, NodeMCU, ESP32; Illustrate sensor–controller interfacing with a legible block diagram; Discuss the role of embed...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee404e-2.10",
                     "sno": "2.10",
+                    "topic": "Deep dive into Sensors and Actuators; Define Sensor and Actuators",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee404e-2.11",
+                    "sno": "2.11",
+                    "topic": "Deep dive into List various types of sensors and actuators; Classify sensors and actuators; Explain the operating principles of temperature, pressure, proximity a...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee404e-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into Explain the following characteristics of sensors. 1. Accuracy 2. Precision 3. Sensitivity 4. Resolution 5. Linearity and range; Explain the functio...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee404e-2.13",
+                    "sno": "2.13",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee404e-2.11",
-                    "sno": "2.11",
+                    "id": "26ee404e-2.14",
+                    "sno": "2.14",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -183,7 +190,7 @@
         {
             "unitNo": 3,
             "title": "PLC",
-            "totalPeriods": 11,
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ee404e-3.1",
@@ -251,13 +258,41 @@
                 {
                     "id": "26ee404e-3.10",
                     "sno": "3.10",
+                    "topic": "Deep dive into Define Programmable Logic Controller (PLC) and state the advantages of PLC; Explain the different parts of PLC by drawing the Block diagram and sta...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee404e-3.11",
+                    "sno": "3.11",
+                    "topic": "Deep dive into State the applications of PLC; Explain Ladder diagram; Explain contacts and coils used in PLC",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee404e-3.12",
+                    "sno": "3.12",
+                    "topic": "Deep dive into Draw ladder diagrams for (i) AND gate (ii) OR gate (iii) NOT gate (iv) NAND gate (iv) NOR gate (iv) X-OR gate; Explain the following Timers and cou...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee404e-3.13",
+                    "sno": "3.13",
+                    "topic": "Deep dive into Explain PLC Instruction set; Explain ladder diagrams for following (i) DOL starter and STAR-DELTA starter (ii) Stair case lighting (iii) Water leve...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee404e-3.14",
+                    "sno": "3.14",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee404e-3.11",
-                    "sno": "3.11",
+                    "id": "26ee404e-3.15",
+                    "sno": "3.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -267,7 +302,7 @@
         {
             "unitNo": 4,
             "title": "SCADA",
-            "totalPeriods": 11,
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ee404e-4.1",
@@ -279,7 +314,7 @@
                 {
                     "id": "26ee404e-4.2",
                     "sno": "4.2",
-                    "topic": "State the advantages of supervisory control; List the software\u2019s used for SCADA and explain them",
+                    "topic": "State the advantages of supervisory control; List the software’s used for SCADA and explain them",
                     "period": 1,
                     "type": "theory"
                 },
@@ -307,44 +342,9 @@
                 {
                     "id": "26ee404e-4.6",
                     "sno": "4.6",
-                    "topic": "List the advantages of electric braking over conventional friction braking systems in Electric Vehicles; List the different methods of electric bra...",
+                    "topic": "List the advantages of electric braking over conventional friction braking systems in Electric Vehicles; List the different methods of electric bra...; Explain the Plugging, Rheostatic and Regenerative braking methods for DC Shunt motors with braking current and torque equations; Solve basic proble...; Describe the role of IoT in smart grid development; Discuss energy management systems using IoT; Explain the use of IoT in electrical fault detection and predictive maintenance; Explain the home automation using IoT; List advantages of IoT inte...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ee404e-4.7",
-                    "sno": "4.7",
-                    "topic": "Explain the Plugging, Rheostatic and Regenerative braking methods for DC Shunt motors with braking current and torque equations; Solve basic proble...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee404e-4.8",
-                    "sno": "4.8",
-                    "topic": "Describe the role of IoT in smart grid development; Discuss energy management systems using IoT",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee404e-4.9",
-                    "sno": "4.9",
-                    "topic": "Explain the use of IoT in electrical fault detection and predictive maintenance; Explain the home automation using IoT; List advantages of IoT inte...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee404e-4.10",
-                    "sno": "4.10",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee404e-4.11",
-                    "sno": "4.11",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         }

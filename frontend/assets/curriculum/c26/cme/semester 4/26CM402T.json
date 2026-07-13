@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Object oriented programming concepts and Basics of java and over loading",
-            "totalPeriods": 24,
+            "title": "Object Oriented Programming concepts and Basics of java, Overloading",
+            "totalPeriods": 17,
             "topics": [
                 {
                     "id": "26cm402t-1.1",
@@ -69,7 +69,7 @@
                 {
                     "id": "26cm402t-1.9",
                     "sno": "1.9",
-                    "topic": "Apply one-dimensional and two\u2013dimensional arrays give example programs",
+                    "topic": "Apply one-dimensional and two–dimensional arrays give example programs",
                     "period": 1,
                     "type": "theory"
                 },
@@ -118,7 +118,7 @@
                 {
                     "id": "26cm402t-1.16",
                     "sno": "1.16",
-                    "topic": "Describe usage of \u2018this\u2019 pointer with example",
+                    "topic": "Describe usage of ‘this’ pointer with example",
                     "period": 1,
                     "type": "theory"
                 },
@@ -128,62 +128,13 @@
                     "topic": "Usage of command-line arguments",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26cm402t-1.18",
-                    "sno": "1.18",
-                    "topic": "Deep dive into Object oriented programming concepts and Basics of java and over loading",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-1.19",
-                    "sno": "1.19",
-                    "topic": "Deep dive into Know about object-oriented programming",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-1.20",
-                    "sno": "1.20",
-                    "topic": "Deep dive into Compare procedure-oriented programming and object-oriented programming",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-1.21",
-                    "sno": "1.21",
-                    "topic": "Deep dive into List and explain features of object-oriented programming",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-1.22",
-                    "sno": "1.22",
-                    "topic": "Deep dive into Importance of Java in Internet programming",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-1.23",
-                    "sno": "1.23",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26cm402t-1.24",
-                    "sno": "1.24",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Concepts of inheritance, overriding, Interfaces, Packages and I/O Streams",
-            "totalPeriods": 22,
+            "title": "Concepts of Inheritance, Overriding, Interfaces, Packages and I/O streams.",
+            "totalPeriods": 17,
             "topics": [
                 {
                     "id": "26cm402t-2.1",
@@ -300,51 +251,16 @@
                 {
                     "id": "26cm402t-2.17",
                     "sno": "2.17",
-                    "topic": "Explain sample programs on above streams",
+                    "topic": "Explain sample programs on above streams; List",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26cm402t-2.18",
-                    "sno": "2.18",
-                    "topic": "List",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-2.19",
-                    "sno": "2.19",
-                    "topic": "Deep dive into Concepts of inheritance, overriding, Interfaces, Packages and I/O Streams",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-2.20",
-                    "sno": "2.20",
-                    "topic": "Deep dive into Explain about string class with methods",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-2.21",
-                    "sno": "2.21",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26cm402t-2.22",
-                    "sno": "2.22",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "Collection classes and Exception Handling.",
-            "totalPeriods": 22,
+            "title": "Collection Classes and Exception Handling",
+            "totalPeriods": 16,
             "topics": [
                 {
                     "id": "26cm402t-3.1",
@@ -447,55 +363,146 @@
                 {
                     "id": "26cm402t-3.15",
                     "sno": "3.15",
-                    "topic": "Deep dive into Explain concept of multi-catch statements with example",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-3.16",
-                    "sno": "3.16",
-                    "topic": "Deep dive into Unit test-2 From 3.5 to 5.10",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-3.17",
-                    "sno": "3.17",
-                    "topic": "Problem solving & practice on Collection classes and Exception Handling",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-3.18",
-                    "sno": "3.18",
-                    "topic": "Problem solving & practice on What is collection frame work and Hierarchy of collection frame work",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-3.19",
-                    "sno": "3.19",
-                    "topic": "Problem solving & practice on List Collection Interfaces and explain the following with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-3.20",
-                    "sno": "3.20",
-                    "topic": "Problem solving & practice on How to access a Collection via an Iterator?",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm402t-3.21",
-                    "sno": "3.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm402t-3.22",
-                    "sno": "3.22",
+                    "id": "26cm402t-3.16",
+                    "sno": "3.16",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Multi- threaded Programming. Fundamentals of AWT",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "26cm402t-4.1",
+                    "sno": "4.1",
+                    "topic": "Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.5",
+                    "sno": "4.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.6",
+                    "sno": "4.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.7",
+                    "sno": "4.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.8",
+                    "sno": "4.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.9",
+                    "sno": "4.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.10",
+                    "sno": "4.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.11",
+                    "sno": "4.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.12",
+                    "sno": "4.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.13",
+                    "sno": "4.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.14",
+                    "sno": "4.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.15",
+                    "sno": "4.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.16",
+                    "sno": "4.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm402t-4.17",
+                    "sno": "4.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm402t-4.18",
+                    "sno": "4.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -504,7 +511,7 @@
         },
         {
             "unitNo": 5,
-            "title": "Event Handling and Swings.",
+            "title": "Event Handling and Swings",
             "totalPeriods": 22,
             "topics": [
                 {

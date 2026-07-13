@@ -3,12 +3,12 @@
     "subjectName": "Industrial Automation",
     "regulation": "C26",
     "semester": 5,
-    "totalPeriods": 90,
+    "totalPeriods": 75,
     "units": [
         {
             "unitNo": 1,
-            "title": "INTRODUCTION TO INDUSTIAL AUTOMATION",
-            "totalPeriods": 18,
+            "title": "Introduction to Industrial Automation",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26me503t-1.1",
@@ -111,37 +111,16 @@
                 {
                     "id": "26me503t-1.15",
                     "sno": "1.15",
-                    "topic": "Explain IIoT Key Technologies",
+                    "topic": "Explain IIoT Key Technologies; Advantages and Applications of IIoT; INTRODUCTION TO INDUSTRIAL AUTOMATION Industry – Automation – Reasons for implementation of Automated Systems ...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26me503t-1.16",
-                    "sno": "1.16",
-                    "topic": "Advantages and Applications of IIoT; INTRODUCTION TO INDUSTRIAL AUTOMATION Industry \u2013 Automation \u2013 Reasons for implementation of Automated Systems ...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-1.17",
-                    "sno": "1.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me503t-1.18",
-                    "sno": "1.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "COMPUTER INTEGRATED MANUFACTURING SYSTEMS",
-            "totalPeriods": 18,
+            "title": "Computer Integrated Manufacturing Systems",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26me503t-2.1",
@@ -251,20 +230,34 @@
                 {
                     "id": "26me503t-2.16",
                     "sno": "2.16",
-                    "topic": "Explain Automatic storage and retrieval systems (AS/RS); COMPUTER INTEGRATED MANUFACTURING SYSTEMS Computer Aided Design: Definition of CAD \u2013 CAD A...",
+                    "topic": "Explain Automatic storage and retrieval systems (AS/RS); COMPUTER INTEGRATED MANUFACTURING SYSTEMS Computer Aided Design: Definition of CAD – CAD A...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me503t-2.17",
                     "sno": "2.17",
+                    "topic": "Deep dive into COMPUTER INTEGRATED MANUFACTURING SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-2.18",
+                    "sno": "2.18",
+                    "topic": "Deep dive into Define Computer Aided Design and Computer Aided Manufacturing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-2.19",
+                    "sno": "2.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me503t-2.18",
-                    "sno": "2.18",
+                    "id": "26me503t-2.20",
+                    "sno": "2.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +266,8 @@
         },
         {
             "unitNo": 3,
-            "title": "CNC PROGRAMMING",
-            "totalPeriods": 18,
+            "title": "CNC Programming",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26me503t-3.1",
@@ -384,20 +377,34 @@
                 {
                     "id": "26me503t-3.16",
                     "sno": "3.16",
-                    "topic": "CNC PART PROGRAMMING NC Part Programming \u2013 Definition and Meaning - Types of Part Programming. Manual Part Programming : Introduction, Definition, ...",
+                    "topic": "CNC PART PROGRAMMING NC Part Programming – Definition and Meaning - Types of Part Programming. Manual Part Programming : Introduction, Definition, ...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me503t-3.17",
                     "sno": "3.17",
+                    "topic": "Deep dive into CNC PROGRAMMING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Define Part Programming and List types of Part Programming",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me503t-3.19",
+                    "sno": "3.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me503t-3.18",
-                    "sno": "3.18",
+                    "id": "26me503t-3.20",
+                    "sno": "3.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +413,8 @@
         },
         {
             "unitNo": 4,
-            "title": "INDUSTRIAL ROBOTICS& FLUID POWER SYSTEMS",
-            "totalPeriods": 18,
+            "title": "Industrial Robotics& Pneumatic power systems",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26me503t-4.1",
@@ -510,7 +517,7 @@
                 {
                     "id": "26me503t-4.15",
                     "sno": "4.15",
-                    "topic": "INDUSTRIAL ROBOTICS& FLUID POWER SYSTEMS Industrial Robotics: Definition of Robotics and Robot \u2013 Necessity of Robots in Industries - Characteristics - Classification of Robots: Based on Physical configuration, Type of Power Source, Control Systems and Type of Application - Work envelope, Work Volume and Pay Load Capacity \u2013 Brief Layout of an industrial robot - Description of Robot Components: Manipulator, End effector, Driving system, Controllers, Sensors and Grippers \u2013 Degrees of freedom: Pitch, Yaw, Roll \u2013 Robot programming methods and Languages - Advantages , Disadvantages and Industrial applications of Robots. Fluid Power Systems: Necessity of Fluid power systems in the design and construction of Industrial robots Definition and concept of Fluid Power \u2013 advantages of Pneumatic power - Basic components of Pneumatic Power System -Principle and working of Filter, Regulator and Lubricator \u2013 working principle of Direction Control Valves (DCV), Flow control Valves (FCV) and Pressure Control Valves (PCV) \u2013 Types of Actuators used in Pneumatic power systems \u2013 Pneumatic Circuit for control of Single and double acting cylinders",
+                    "topic": "INDUSTRIAL ROBOTICS& FLUID POWER SYSTEMS Industrial Robotics: Definition of Robotics and Robot – Necessity of Robots in Industries - Characteristics - Classification of Robots: Based on Physical configuration, Type of Power Source, Control Systems and Type of Application - Work envelope, Work Volume and Pay Load Capacity – Brief Layout of an industrial robot - Description of Robot Components: Manipulator, End effector, Driving system, Controllers, Sensors and Grippers – Degrees of freedom: Pitch, Yaw, Roll – Robot programming methods and Languages - Advantages , Disadvantages and Industrial applications of Robots. Fluid Power Systems: Necessity of Fluid power systems in the design and construction of Industrial robots Definition and concept of Fluid Power – advantages of Pneumatic power - Basic components of Pneumatic Power System -Principle and working of Filter, Regulator and Lubricator – working principle of Direction Control Valves (DCV), Flow control Valves (FCV) and Pressure Control Valves (PCV) – Types of Actuators used in Pneumatic power systems – Pneumatic Circuit for control of Single and double acting cylinders",
                     "period": 1,
                     "type": "theory"
                 },
@@ -524,146 +531,27 @@
                 {
                     "id": "26me503t-4.17",
                     "sno": "4.17",
-                    "topic": "Revision",
+                    "topic": "Deep dive into Explain the Necessity of Robots in Industries",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory"
                 },
                 {
                     "id": "26me503t-4.18",
                     "sno": "4.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "3D PRINTING (or) ADDITIVE MANUFACTURING",
-            "totalPeriods": 18,
-            "topics": [
-                {
-                    "id": "26me503t-5.1",
-                    "sno": "5.1",
-                    "topic": "Explain the concept, principal and need of Additive Manufacturing",
+                    "topic": "Deep dive into Explain the classification of Robots",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26me503t-5.2",
-                    "sno": "5.2",
-                    "topic": "Define Rapid Prototyping and 3D Printing",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.3",
-                    "sno": "5.3",
-                    "topic": "Compare Additive manufacturing with CNC Machining",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.4",
-                    "sno": "5.4",
-                    "topic": "Explanation of Steps in the 3D Printing Process with a Flow chart",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.5",
-                    "sno": "5.5",
-                    "topic": "List seven types of 3D Printing Technologies or Processes with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.6",
-                    "sno": "5.6",
-                    "topic": "Write Advantages, Limitations and Applications of 3D Printing",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.7",
-                    "sno": "5.7",
-                    "topic": "Explain SLA 3D Printing Process",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.8",
-                    "sno": "5.8",
-                    "topic": "Explain FDM 3D Printing Process",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.9",
-                    "sno": "5.9",
-                    "topic": "Explain Selective Laser Sintering (SLS) Process",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.10",
-                    "sno": "5.10",
-                    "topic": "Deep dive into Explain the concept, principal and need of Additive Manufacturing",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.11",
-                    "sno": "5.11",
-                    "topic": "Deep dive into Define Rapid Prototyping and 3D Printing",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.12",
-                    "sno": "5.12",
-                    "topic": "Deep dive into Compare Additive manufacturing with CNC Machining",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.13",
-                    "sno": "5.13",
-                    "topic": "Deep dive into Explanation of Steps in the 3D Printing Process with a Flow chart",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.14",
-                    "sno": "5.14",
-                    "topic": "Deep dive into List seven types of 3D Printing Technologies or Processes with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.15",
-                    "sno": "5.15",
-                    "topic": "Deep dive into Write Advantages, Limitations and Applications of 3D Printing",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.16",
-                    "sno": "5.16",
-                    "topic": "Deep dive into Explain SLA 3D Printing Process",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me503t-5.17",
-                    "sno": "5.17",
+                    "id": "26me503t-4.19",
+                    "sno": "4.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me503t-5.18",
-                    "sno": "5.18",
+                    "id": "26me503t-4.20",
+                    "sno": "4.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

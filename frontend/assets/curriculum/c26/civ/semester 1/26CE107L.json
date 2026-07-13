@@ -8,494 +8,186 @@
         {
             "unitNo": 1,
             "title": "Computer hardware and Software Basics",
-            "totalPeriods": 61,
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26ce107l-1.1",
                     "sno": "1.1",
-                    "topic": "Introduction to Unit 1 concepts",
+                    "topic": "To get familiarized with Computer system and hardware connections",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-1.2",
                     "sno": "1.2",
-                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "topic": "Start and Shut down Computer correctly",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-1.3",
                     "sno": "1.3",
-                    "topic": "Practical application and standard setups for Unit 1",
+                    "topic": "Explore Windows Desktop",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.4",
-                    "sno": "1.4",
-                    "topic": "Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.5",
-                    "sno": "1.5",
-                    "topic": "Deep dive into Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.6",
-                    "sno": "1.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.7",
-                    "sno": "1.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.8",
-                    "sno": "1.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.9",
-                    "sno": "1.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.10",
-                    "sno": "1.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.11",
-                    "sno": "1.11",
-                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.12",
-                    "sno": "1.12",
-                    "topic": "Problem solving & practice on Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.13",
-                    "sno": "1.13",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.14",
-                    "sno": "1.14",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.15",
-                    "sno": "1.15",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.16",
-                    "sno": "1.16",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.17",
-                    "sno": "1.17",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.18",
-                    "sno": "1.18",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.19",
-                    "sno": "1.19",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.20",
-                    "sno": "1.20",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.21",
-                    "sno": "1.21",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.22",
-                    "sno": "1.22",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.23",
-                    "sno": "1.23",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.24",
-                    "sno": "1.24",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.25",
-                    "sno": "1.25",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.26",
-                    "sno": "1.26",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.27",
-                    "sno": "1.27",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.28",
-                    "sno": "1.28",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.29",
-                    "sno": "1.29",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.30",
-                    "sno": "1.30",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.31",
-                    "sno": "1.31",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.32",
-                    "sno": "1.32",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.33",
-                    "sno": "1.33",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.34",
-                    "sno": "1.34",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.35",
-                    "sno": "1.35",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.36",
-                    "sno": "1.36",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.37",
-                    "sno": "1.37",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.38",
-                    "sno": "1.38",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.39",
-                    "sno": "1.39",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.40",
-                    "sno": "1.40",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.41",
-                    "sno": "1.41",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.42",
-                    "sno": "1.42",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.43",
-                    "sno": "1.43",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.44",
-                    "sno": "1.44",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.45",
-                    "sno": "1.45",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.46",
-                    "sno": "1.46",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.47",
-                    "sno": "1.47",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.48",
-                    "sno": "1.48",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.49",
-                    "sno": "1.49",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.50",
-                    "sno": "1.50",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.51",
-                    "sno": "1.51",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.52",
-                    "sno": "1.52",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.53",
-                    "sno": "1.53",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.54",
-                    "sno": "1.54",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.55",
-                    "sno": "1.55",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.56",
-                    "sno": "1.56",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.57",
-                    "sno": "1.57",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.58",
-                    "sno": "1.58",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.59",
-                    "sno": "1.59",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce107l-1.60",
-                    "sno": "1.60",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce107l-1.61",
-                    "sno": "1.61",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
             "title": "Windows Operating System",
-            "totalPeriods": 1,
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26ce107l-2.1",
                     "sno": "2.1",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Check the software details of the computer System and check hardware present in your computer",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-2.2",
+                    "sno": "2.2",
+                    "topic": "Working with Files and Folders",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-2.3",
+                    "sno": "2.3",
+                    "topic": "Use Windows Accessories like Calculator, Notepad, WordPad and MS Paint",
+                    "period": 1,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 3,
             "title": "MS Word",
-            "totalPeriods": 6,
+            "totalPeriods": 18,
             "topics": [
                 {
                     "id": "26ce107l-3.1",
                     "sno": "3.1",
-                    "topic": "Introduction to Unit 3 concepts",
+                    "topic": "Get familiarized with Ribbon layout of MS word",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-3.2",
                     "sno": "3.2",
-                    "topic": "Detailed analysis of Unit 3 methodologies",
+                    "topic": "Perform basic Word Processing",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-3.3",
                     "sno": "3.3",
-                    "topic": "Practical application and standard setups for Unit 3",
+                    "topic": "Use basic formatting techniques",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-3.4",
                     "sno": "3.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Insert a table of required number of rows and columns",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-3.5",
                     "sno": "3.5",
+                    "topic": "Insert objects, clipart and Hyperlinks",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.6",
+                    "sno": "3.6",
+                    "topic": "Use Mail merge feature of MSWord and use Equations and symbols features",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.7",
+                    "sno": "3.7",
+                    "topic": "Practice and training on Get familiarized with Ribbon layout of MS word",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.8",
+                    "sno": "3.8",
+                    "topic": "Practice and training on Perform basic Word Processing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.9",
+                    "sno": "3.9",
+                    "topic": "Practice and training on Use basic formatting techniques",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.10",
+                    "sno": "3.10",
+                    "topic": "Practice and training on Insert a table of required number of rows and columns",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.11",
+                    "sno": "3.11",
+                    "topic": "Practice and training on Insert objects, clipart and Hyperlinks",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.12",
+                    "sno": "3.12",
+                    "topic": "Practice and training on Use Mail merge feature of MSWord and use Equations and symbols features",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.13",
+                    "sno": "3.13",
+                    "topic": "Advanced practical on Get familiarized with Ribbon layout of MS word",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.14",
+                    "sno": "3.14",
+                    "topic": "Advanced practical on Perform basic Word Processing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.15",
+                    "sno": "3.15",
+                    "topic": "Advanced practical on Use basic formatting techniques",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.16",
+                    "sno": "3.16",
+                    "topic": "Advanced practical on Insert a table of required number of rows and columns",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-3.17",
+                    "sno": "3.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce107l-3.6",
-                    "sno": "3.6",
+                    "id": "26ce107l-3.18",
+                    "sno": "3.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -505,53 +197,151 @@
         {
             "unitNo": 4,
             "title": "MS Excel",
-            "totalPeriods": 7,
+            "totalPeriods": 21,
             "topics": [
                 {
                     "id": "26ce107l-4.1",
                     "sno": "4.1",
-                    "topic": "Introduction to Unit 4 concepts",
+                    "topic": "Get familiarized with MS Excel Ribbon layout and Access/Enter data in cells",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-4.2",
                     "sno": "4.2",
-                    "topic": "Detailed analysis of Unit 4 methodologies",
+                    "topic": "Edit spread sheet: select, Copy, Cut, Paste",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-4.3",
                     "sno": "4.3",
-                    "topic": "Practical application and standard setups for Unit 4",
+                    "topic": "Use built-in functions and Format Data",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-4.4",
                     "sno": "4.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Enter a Formula for automatic calculations",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-4.5",
                     "sno": "4.5",
-                    "topic": "Deep dive into Introduction to Unit 4 concepts",
+                    "topic": "Create Excel Functions, Fill Cells",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-4.6",
                     "sno": "4.6",
+                    "topic": "Sort and filter data in sheet",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.7",
+                    "sno": "4.7",
+                    "topic": "Practice Excel Graphs and Charts and format/print worksheet using page setup",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.8",
+                    "sno": "4.8",
+                    "topic": "Practice and training on Get familiarized with MS Excel Ribbon layout and Access/Enter data in cells",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.9",
+                    "sno": "4.9",
+                    "topic": "Practice and training on Edit spread sheet: select, Copy, Cut, Paste",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.10",
+                    "sno": "4.10",
+                    "topic": "Practice and training on Use built-in functions and Format Data",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.11",
+                    "sno": "4.11",
+                    "topic": "Practice and training on Enter a Formula for automatic calculations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.12",
+                    "sno": "4.12",
+                    "topic": "Practice and training on Create Excel Functions, Fill Cells",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.13",
+                    "sno": "4.13",
+                    "topic": "Practice and training on Sort and filter data in sheet",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.14",
+                    "sno": "4.14",
+                    "topic": "Practice and training on Practice Excel Graphs and Charts and format/print worksheet using page setup",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.15",
+                    "sno": "4.15",
+                    "topic": "Advanced practical on Get familiarized with MS Excel Ribbon layout and Access/Enter data in cells",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.16",
+                    "sno": "4.16",
+                    "topic": "Advanced practical on Edit spread sheet: select, Copy, Cut, Paste",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.17",
+                    "sno": "4.17",
+                    "topic": "Advanced practical on Use built-in functions and Format Data",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.18",
+                    "sno": "4.18",
+                    "topic": "Advanced practical on Enter a Formula for automatic calculations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.19",
+                    "sno": "4.19",
+                    "topic": "Advanced practical on Create Excel Functions, Fill Cells",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-4.20",
+                    "sno": "4.20",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce107l-4.7",
-                    "sno": "4.7",
+                    "id": "26ce107l-4.21",
+                    "sno": "4.21",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -561,46 +351,130 @@
         {
             "unitNo": 5,
             "title": "MS Power Point",
-            "totalPeriods": 6,
+            "totalPeriods": 18,
             "topics": [
                 {
                     "id": "26ce107l-5.1",
                     "sno": "5.1",
-                    "topic": "Introduction to Unit 5 concepts",
+                    "topic": "Get familiarized with Ribbon layout & features of PowerPoint and Create a simple presentation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-5.2",
                     "sno": "5.2",
-                    "topic": "Detailed analysis of Unit 5 methodologies",
+                    "topic": "Set up a Master Slide in PowerPoint and add notes",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-5.3",
                     "sno": "5.3",
-                    "topic": "Practical application and standard setups for Unit 5",
+                    "topic": "Insert Text and Objects",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-5.4",
                     "sno": "5.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Create Flow Charts / Organizational Charts",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-5.5",
                     "sno": "5.5",
+                    "topic": "Insert Tables and Insert Charts/Graphs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.6",
+                    "sno": "5.6",
+                    "topic": "Insert audio & video, Hyperlinks in a slide and Add narration to the slide; Create Animation effects and Reviewing presentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.7",
+                    "sno": "5.7",
+                    "topic": "Practice and training on Get familiarized with Ribbon layout & features of PowerPoint and Create a simple presentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.8",
+                    "sno": "5.8",
+                    "topic": "Practice and training on Set up a Master Slide in PowerPoint and add notes",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.9",
+                    "sno": "5.9",
+                    "topic": "Practice and training on Insert Text and Objects",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.10",
+                    "sno": "5.10",
+                    "topic": "Practice and training on Create Flow Charts / Organizational Charts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.11",
+                    "sno": "5.11",
+                    "topic": "Practice and training on Insert Tables and Insert Charts/Graphs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.12",
+                    "sno": "5.12",
+                    "topic": "Practice and training on Insert audio & video, Hyperlinks in a slide and Add narration to the slide; Create Animation effects and Reviewing presentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.13",
+                    "sno": "5.13",
+                    "topic": "Advanced practical on Get familiarized with Ribbon layout & features of PowerPoint and Create a simple presentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.14",
+                    "sno": "5.14",
+                    "topic": "Advanced practical on Set up a Master Slide in PowerPoint and add notes",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.15",
+                    "sno": "5.15",
+                    "topic": "Advanced practical on Insert Text and Objects",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.16",
+                    "sno": "5.16",
+                    "topic": "Advanced practical on Create Flow Charts / Organizational Charts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-5.17",
+                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce107l-5.6",
-                    "sno": "5.6",
+                    "id": "26ce107l-5.18",
+                    "sno": "5.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -610,67 +484,193 @@
         {
             "unitNo": 6,
             "title": "AI ,ML& Quantum computing Tools",
-            "totalPeriods": 9,
+            "totalPeriods": 27,
             "topics": [
                 {
                     "id": "26ce107l-6.1",
                     "sno": "6.1",
-                    "topic": "Introduction to Unit 6 concepts",
+                    "topic": "Familiarizing with AI Tools and Usage of ChatGPT",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-6.2",
                     "sno": "6.2",
-                    "topic": "Detailed analysis of Unit 6 methodologies",
+                    "topic": "Object identification using AI Tools based on CNN, YOLO, SSD, R-CNN",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-6.3",
                     "sno": "6.3",
-                    "topic": "Practical application and standard setups for Unit 6",
+                    "topic": "Paraphrase text using AI Tools (PEGASUS, GPT, T5)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-6.4",
                     "sno": "6.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Text-to-Image Generation using AI Tools (DALL-E, MIDJOURNEY)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-6.5",
                     "sno": "6.5",
-                    "topic": "Deep dive into Introduction to Unit 6 concepts",
+                    "topic": "Voice Command Simulation using AI Tools (SPEECH-TO-TEXT)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-6.6",
                     "sno": "6.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 6 methodologies",
+                    "topic": "Usage of ML Tools (Teachable Machine, Lobe, Weka, IBM Watson Studio)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-6.7",
                     "sno": "6.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 6",
+                    "topic": "Usage of Quantum Computing Tools (IBM Quantum Experience, Microsoft QDK, Quirk, Quantum Playground)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce107l-6.8",
                     "sno": "6.8",
+                    "topic": "To familiarize with quantum bits (qubits) using Dirac notation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.9",
+                    "sno": "6.9",
+                    "topic": "To familiarize the behavior of single and multiple qubit gates; To familiarize with Qubit as a Coin / Spin Analogy",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.10",
+                    "sno": "6.10",
+                    "topic": "Practice and training on Familiarizing with AI Tools and Usage of ChatGPT",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.11",
+                    "sno": "6.11",
+                    "topic": "Practice and training on Object identification using AI Tools based on CNN, YOLO, SSD, R-CNN",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.12",
+                    "sno": "6.12",
+                    "topic": "Practice and training on Paraphrase text using AI Tools (PEGASUS, GPT, T5)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.13",
+                    "sno": "6.13",
+                    "topic": "Practice and training on Text-to-Image Generation using AI Tools (DALL-E, MIDJOURNEY)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.14",
+                    "sno": "6.14",
+                    "topic": "Practice and training on Voice Command Simulation using AI Tools (SPEECH-TO-TEXT)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.15",
+                    "sno": "6.15",
+                    "topic": "Practice and training on Usage of ML Tools (Teachable Machine, Lobe, Weka, IBM Watson Studio)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.16",
+                    "sno": "6.16",
+                    "topic": "Practice and training on Usage of Quantum Computing Tools (IBM Quantum Experience, Microsoft QDK, Quirk, Quantum Playground)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.17",
+                    "sno": "6.17",
+                    "topic": "Practice and training on To familiarize with quantum bits (qubits) using Dirac notation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.18",
+                    "sno": "6.18",
+                    "topic": "Practice and training on To familiarize the behavior of single and multiple qubit gates; To familiarize with Qubit as a Coin / Spin Analogy",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.19",
+                    "sno": "6.19",
+                    "topic": "Advanced practical on Familiarizing with AI Tools and Usage of ChatGPT",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.20",
+                    "sno": "6.20",
+                    "topic": "Advanced practical on Object identification using AI Tools based on CNN, YOLO, SSD, R-CNN",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.21",
+                    "sno": "6.21",
+                    "topic": "Advanced practical on Paraphrase text using AI Tools (PEGASUS, GPT, T5)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.22",
+                    "sno": "6.22",
+                    "topic": "Advanced practical on Text-to-Image Generation using AI Tools (DALL-E, MIDJOURNEY)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.23",
+                    "sno": "6.23",
+                    "topic": "Advanced practical on Voice Command Simulation using AI Tools (SPEECH-TO-TEXT)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.24",
+                    "sno": "6.24",
+                    "topic": "Advanced practical on Usage of ML Tools (Teachable Machine, Lobe, Weka, IBM Watson Studio)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.25",
+                    "sno": "6.25",
+                    "topic": "Advanced practical on Usage of Quantum Computing Tools (IBM Quantum Experience, Microsoft QDK, Quirk, Quantum Playground)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce107l-6.26",
+                    "sno": "6.26",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce107l-6.9",
-                    "sno": "6.9",
+                    "id": "26ce107l-6.27",
+                    "sno": "6.27",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

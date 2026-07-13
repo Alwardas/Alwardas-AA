@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "INTRODUCTION TO ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING",
-            "totalPeriods": 9,
+            "title": "Introduction to AI and ML",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26me406a-1.1",
@@ -48,37 +48,16 @@
                 {
                     "id": "26me406a-1.6",
                     "sno": "1.6",
-                    "topic": "Deep dive into INTRODUCTION TO ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me406a-1.7",
-                    "sno": "1.7",
-                    "topic": "Deep dive into Understand and explain the basic concepts and evolution of Artificial Intelligence and Machine Learning",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me406a-1.8",
-                    "sno": "1.8",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26me406a-1.9",
-                    "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "DATA PREPARATION AND FEATURE ENGINEERING",
-            "totalPeriods": 7,
+            "title": "Data Preparation and Feature Engineering",
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26me406a-2.1",
@@ -118,13 +97,20 @@
                 {
                     "id": "26me406a-2.6",
                     "sno": "2.6",
+                    "topic": "Deep dive into DATA PREPARATION AND FEATURE ENGINEERING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me406a-2.7",
+                    "sno": "2.7",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me406a-2.7",
-                    "sno": "2.7",
+                    "id": "26me406a-2.8",
+                    "sno": "2.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -133,8 +119,8 @@
         },
         {
             "unitNo": 3,
-            "title": "MACHINE LEARNING ALGORITHMS",
-            "totalPeriods": 7,
+            "title": "Machine Learning Algorithms",
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26me406a-3.1",
@@ -146,7 +132,7 @@
                 {
                     "id": "26me406a-3.2",
                     "sno": "3.2",
-                    "topic": "Differentiate between supervised and unsupervised learning strategies; Implement basic ML algorithms such as Linear Regression, Decision Trees, Na\u00ef...",
+                    "topic": "Differentiate between supervised and unsupervised learning strategies; Implement basic ML algorithms such as Linear Regression, Decision Trees, Naï...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -174,13 +160,20 @@
                 {
                     "id": "26me406a-3.6",
                     "sno": "3.6",
+                    "topic": "Deep dive into MACHINE LEARNING ALGORITHMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me406a-3.7",
+                    "sno": "3.7",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me406a-3.7",
-                    "sno": "3.7",
+                    "id": "26me406a-3.8",
+                    "sno": "3.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -189,8 +182,8 @@
         },
         {
             "unitNo": 4,
-            "title": "INTEGRATION WITH MECHANICAL ENGINEERING",
-            "totalPeriods": 7,
+            "title": "Integration with Mechanical Engineering",
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26me406a-4.1",
@@ -230,13 +223,20 @@
                 {
                     "id": "26me406a-4.6",
                     "sno": "4.6",
+                    "topic": "Deep dive into INTEGRATION WITH MECHANICAL ENGINEERING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me406a-4.7",
+                    "sno": "4.7",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me406a-4.7",
-                    "sno": "4.7",
+                    "id": "26me406a-4.8",
+                    "sno": "4.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

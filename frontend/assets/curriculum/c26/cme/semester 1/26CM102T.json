@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "Algebra",
-            "totalPeriods": 36,
+            "totalPeriods": 31,
             "topics": [
                 {
                     "id": "26cm102t-1.1",
@@ -20,7 +20,7 @@
                 {
                     "id": "26cm102t-1.2",
                     "sno": "1.2",
-                    "topic": "Explain the procedure of resolving proper fractions of the type ( ) ( )( ) f x ax b cx d\uf02b \uf02b",
+                    "topic": "Explain the procedure of resolving proper fractions of the type ( ) ( )( ) f x ax b cx d ",
                     "period": 1,
                     "type": "theory"
                 },
@@ -48,7 +48,7 @@
                 {
                     "id": "26cm102t-1.6",
                     "sno": "1.6",
-                    "topic": "Define the transpose of a matrix and state its properties \u2013 examples",
+                    "topic": "Define the transpose of a matrix and state its properties – examples",
                     "period": 1,
                     "type": "theory"
                 },
@@ -76,7 +76,7 @@
                 {
                     "id": "26cm102t-1.10",
                     "sno": "1.10",
-                    "topic": "Solve a system of three linear equations in three unknowns using Cramer\u2019s rule",
+                    "topic": "Solve a system of three linear equations in three unknowns using Cramer’s rule",
                     "period": 1,
                     "type": "theory"
                 },
@@ -90,7 +90,7 @@
                 {
                     "id": "26cm102t-1.12",
                     "sno": "1.12",
-                    "topic": "Deep dive into Explain the procedure of resolving proper fractions of the type ( ) ( )( ) f x ax b cx d\uf02b \uf02b",
+                    "topic": "Deep dive into Explain the procedure of resolving proper fractions of the type ( ) ( )( ) f x ax b cx d ",
                     "period": 1,
                     "type": "theory"
                 },
@@ -118,7 +118,7 @@
                 {
                     "id": "26cm102t-1.16",
                     "sno": "1.16",
-                    "topic": "Deep dive into Define the transpose of a matrix and state its properties \u2013 examples",
+                    "topic": "Deep dive into Define the transpose of a matrix and state its properties – examples",
                     "period": 1,
                     "type": "theory"
                 },
@@ -146,7 +146,7 @@
                 {
                     "id": "26cm102t-1.20",
                     "sno": "1.20",
-                    "topic": "Deep dive into Solve a system of three linear equations in three unknowns using Cramer\u2019s rule",
+                    "topic": "Deep dive into Solve a system of three linear equations in three unknowns using Cramer’s rule",
                     "period": 1,
                     "type": "theory"
                 },
@@ -160,7 +160,7 @@
                 {
                     "id": "26cm102t-1.22",
                     "sno": "1.22",
-                    "topic": "Problem solving & practice on Explain the procedure of resolving proper fractions of the type ( ) ( )( ) f x ax b cx d\uf02b \uf02b",
+                    "topic": "Problem solving & practice on Explain the procedure of resolving proper fractions of the type ( ) ( )( ) f x ax b cx d ",
                     "period": 1,
                     "type": "theory"
                 },
@@ -188,7 +188,7 @@
                 {
                     "id": "26cm102t-1.26",
                     "sno": "1.26",
-                    "topic": "Problem solving & practice on Define the transpose of a matrix and state its properties \u2013 examples",
+                    "topic": "Problem solving & practice on Define the transpose of a matrix and state its properties – examples",
                     "period": 1,
                     "type": "theory"
                 },
@@ -216,48 +216,13 @@
                 {
                     "id": "26cm102t-1.30",
                     "sno": "1.30",
-                    "topic": "Problem solving & practice on Solve a system of three linear equations in three unknowns using Cramer\u2019s rule",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-1.31",
-                    "sno": "1.31",
-                    "topic": "Practical applications of Define rational, proper and improper fractions of polynomials",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-1.32",
-                    "sno": "1.32",
-                    "topic": "Practical applications of Explain the procedure of resolving proper fractions of the type ( ) ( )( ) f x ax b cx d\uf02b \uf02b",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-1.33",
-                    "sno": "1.33",
-                    "topic": "Practical applications of Define a matrix and order of a matrix",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-1.34",
-                    "sno": "1.34",
-                    "topic": "Practical applications of State various types of matrices with examples (emphasis on 3rd order square matrices)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-1.35",
-                    "sno": "1.35",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm102t-1.36",
-                    "sno": "1.36",
+                    "id": "26cm102t-1.31",
+                    "sno": "1.31",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -267,7 +232,7 @@
         {
             "unitNo": 2,
             "title": "Trigonometry",
-            "totalPeriods": 36,
+            "totalPeriods": 63,
             "topics": [
                 {
                     "id": "26cm102t-2.1",
@@ -286,7 +251,7 @@
                 {
                     "id": "26cm102t-2.3",
                     "sno": "2.3",
-                    "topic": "Define compound angles and state the formulae of sin(A\u00b1B), cos(A\u00b1B),tan(A\u00b1B) and cot(A\u00b1B)",
+                    "topic": "Define compound angles and state the formulae of sin(A±B), cos(A±B),tan(A±B) and cot(A±B)",
                     "period": 1,
                     "type": "theory"
                 },
@@ -300,7 +265,7 @@
                 {
                     "id": "26cm102t-2.5",
                     "sno": "2.5",
-                    "topic": "Derive identities like sin(A+B) sin(A-B) = sin 2 A \u2013sin2 B etc",
+                    "topic": "Derive identities like sin(A+B) sin(A-B) = sin 2 A –sin2 B etc",
                     "period": 1,
                     "type": "theory"
                 },
@@ -370,7 +335,7 @@
                 {
                     "id": "26cm102t-2.15",
                     "sno": "2.15",
-                    "topic": "State various properties of inverse trigonometric functions and identities like 1 1sin cos 2x x \uf070\uf02d \uf02d\uf02b \uf03d etc",
+                    "topic": "State various properties of inverse trigonometric functions and identities like 1 1sin cos 2x x    etc",
                     "period": 1,
                     "type": "theory"
                 },
@@ -433,7 +398,7 @@
                 {
                     "id": "26cm102t-2.24",
                     "sno": "2.24",
-                    "topic": "Unit Test \u2013 2 From 2.12 to 3.8 Unit Test \u2013 3 From 4.1 to 5.14",
+                    "topic": "Unit Test – 2 From 2.12 to 3.8 Unit Test – 3 From 4.1 to 5.14",
                     "period": 1,
                     "type": "theory"
                 },
@@ -454,7 +419,7 @@
                 {
                     "id": "26cm102t-2.27",
                     "sno": "2.27",
-                    "topic": "Deep dive into Define compound angles and state the formulae of sin(A\u00b1B), cos(A\u00b1B),tan(A\u00b1B) and cot(A\u00b1B)",
+                    "topic": "Deep dive into Define compound angles and state the formulae of sin(A±B), cos(A±B),tan(A±B) and cot(A±B)",
                     "period": 1,
                     "type": "theory"
                 },
@@ -468,7 +433,7 @@
                 {
                     "id": "26cm102t-2.29",
                     "sno": "2.29",
-                    "topic": "Deep dive into Derive identities like sin(A+B) sin(A-B) = sin 2 A \u2013sin2 B etc",
+                    "topic": "Deep dive into Derive identities like sin(A+B) sin(A-B) = sin 2 A –sin2 B etc",
                     "period": 1,
                     "type": "theory"
                 },
@@ -510,13 +475,202 @@
                 {
                     "id": "26cm102t-2.35",
                     "sno": "2.35",
+                    "topic": "Deep dive into Solve problems by applying these formulae to sum or difference or product of two terms. Syllabus for Unit test-I completed",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.36",
+                    "sno": "2.36",
+                    "topic": "Deep dive into Explain the concept of inverse of a trigonometric function by selecting an appropriate domain and range",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.37",
+                    "sno": "2.37",
+                    "topic": "Deep dive into Define inverses of six trigonometric functions along with their domains and ranges",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.38",
+                    "sno": "2.38",
+                    "topic": "Deep dive into Derive relations between inverse trigonometric functions so that the given inverse trigonometric function can be expressed in terms of other inverse trigonometric functions with examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.39",
+                    "sno": "2.39",
+                    "topic": "Deep dive into State various properties of inverse trigonometric functions and identities like 1 1sin cos 2x x    etc",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.40",
+                    "sno": "2.40",
+                    "topic": "Deep dive into Explain what is meant by solution of trigonometric equations and find the general solutions of sinx = k, cosx = k and tanx = k with appropriate examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.41",
+                    "sno": "2.41",
+                    "topic": "Deep dive into Solve models of the type a sin2 x + b sin x +c=0 and a sin x + b cos x=c",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.42",
+                    "sno": "2.42",
+                    "topic": "Deep dive into State sine rule, cosine rule, tangent rule and projection rule and solve a triangle using these formulae",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.43",
+                    "sno": "2.43",
+                    "topic": "Deep dive into List various formulae for area of a triangle with examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.44",
+                    "sno": "2.44",
+                    "topic": "Deep dive into Define a complex number, its modulus, conjugate, amplitude and list their properties",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.45",
+                    "sno": "2.45",
+                    "topic": "Deep dive into Define arithmetic operations on complex numbers with examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.46",
+                    "sno": "2.46",
+                    "topic": "Deep dive into Represent the complex number in various forms like modulus-amplitude (polar) form and Exponential (Euler) form with examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.47",
+                    "sno": "2.47",
+                    "topic": "Deep dive into Explain the concept of hyperbolic trigonometric functions and list appropriate formulae",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.48",
+                    "sno": "2.48",
+                    "topic": "Deep dive into Unit Test – 2 From 2.12 to 3.8 Unit Test – 3 From 4.1 to 5.14",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.49",
+                    "sno": "2.49",
+                    "topic": "Problem solving & practice on Recall the trigonometric ratios and their values at specified angles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.50",
+                    "sno": "2.50",
+                    "topic": "Problem solving & practice on Draw graphs of trigonometric functions - Explain periodicity of trigonometric functions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.51",
+                    "sno": "2.51",
+                    "topic": "Problem solving & practice on Define compound angles and state the formulae of sin(A±B), cos(A±B),tan(A±B) and cot(A±B)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.52",
+                    "sno": "2.52",
+                    "topic": "Problem solving & practice on Give simple examples on compound angles to derive the values of sin150,cos150 , sin750, cos750 , tan 150 , tan750 etc",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.53",
+                    "sno": "2.53",
+                    "topic": "Problem solving & practice on Derive identities like sin(A+B) sin(A-B) = sin 2 A –sin2 B etc",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.54",
+                    "sno": "2.54",
+                    "topic": "Problem solving & practice on Solve simple problems using the identities on compound angles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.55",
+                    "sno": "2.55",
+                    "topic": "Problem solving & practice on Derive the formulae of multiple angles 2A, 3A etc., and sub-multiple angle A/2 in terms of angle A of trigonometric functions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.56",
+                    "sno": "2.56",
+                    "topic": "Problem solving & practice on Derive useful allied formulae like sin2A= (1- cos2A)/2 etc",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.57",
+                    "sno": "2.57",
+                    "topic": "Problem solving & practice on Solve simple problems using the multiple and sub-multiple formulae",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.58",
+                    "sno": "2.58",
+                    "topic": "Problem solving & practice on Derive the formulae on transforming sum or difference of two trigonometric ratios into a product and vice versa - examples on these formulae",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.59",
+                    "sno": "2.59",
+                    "topic": "Problem solving & practice on Solve problems by applying these formulae to sum or difference or product of two terms. Syllabus for Unit test-I completed",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.60",
+                    "sno": "2.60",
+                    "topic": "Problem solving & practice on Explain the concept of inverse of a trigonometric function by selecting an appropriate domain and range",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.61",
+                    "sno": "2.61",
+                    "topic": "Problem solving & practice on Define inverses of six trigonometric functions along with their domains and ranges",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm102t-2.62",
+                    "sno": "2.62",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm102t-2.36",
-                    "sno": "2.36",
+                    "id": "26cm102t-2.63",
+                    "sno": "2.63",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -526,12 +680,12 @@
         {
             "unitNo": 3,
             "title": "Co-ordinate Geometry",
-            "totalPeriods": 36,
+            "totalPeriods": 26,
             "topics": [
                 {
                     "id": "26cm102t-3.1",
                     "sno": "3.1",
-                    "topic": "Write different forms of a straight line \u2013 general form, point-slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
+                    "topic": "Write different forms of a straight line – general form, point-slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
                     "period": 1,
                     "type": "theory"
                 },
@@ -580,14 +734,14 @@
                 {
                     "id": "26cm102t-3.8",
                     "sno": "3.8",
-                    "topic": "Describe the properties of Parabola 2 4 .y ax\uf03d",
+                    "topic": "Describe the properties of Parabola 2 4 .y ax",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-3.9",
                     "sno": "3.9",
-                    "topic": "Deep dive into Write different forms of a straight line \u2013 general form, point-slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
+                    "topic": "Deep dive into Write different forms of a straight line – general form, point-slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
                     "period": 1,
                     "type": "theory"
                 },
@@ -636,14 +790,14 @@
                 {
                     "id": "26cm102t-3.16",
                     "sno": "3.16",
-                    "topic": "Deep dive into Describe the properties of Parabola 2 4 .y ax\uf03d",
+                    "topic": "Deep dive into Describe the properties of Parabola 2 4 .y ax",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-3.17",
                     "sno": "3.17",
-                    "topic": "Problem solving & practice on Write different forms of a straight line \u2013 general form, point-slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
+                    "topic": "Problem solving & practice on Write different forms of a straight line – general form, point-slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
                     "period": 1,
                     "type": "theory"
                 },
@@ -692,90 +846,20 @@
                 {
                     "id": "26cm102t-3.24",
                     "sno": "3.24",
-                    "topic": "Problem solving & practice on Describe the properties of Parabola 2 4 .y ax\uf03d",
+                    "topic": "Problem solving & practice on Describe the properties of Parabola 2 4 .y ax",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-3.25",
                     "sno": "3.25",
-                    "topic": "Practical applications of Write different forms of a straight line \u2013 general form, point-slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.26",
-                    "sno": "3.26",
-                    "topic": "Practical applications of Find distance of a point from a line, acute angle between two lines, intersection of two non-parallel lines and distance between two parallel lines",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.27",
-                    "sno": "3.27",
-                    "topic": "Practical applications of Define locus of a point and circle",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.28",
-                    "sno": "3.28",
-                    "topic": "Practical applications of Write the general equation of a circle and find its centre and radius",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.29",
-                    "sno": "3.29",
-                    "topic": "Practical applications of Find the equation of a circle, given (i) centre and radius, (ii)two ends of the diameter(iii) three non collinear points of type (0,0) (a,0), (0, b)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.30",
-                    "sno": "3.30",
-                    "topic": "Practical applications of Define a conic - Explain the terms focus, directrix, eccentricity, axes and latus-rectum of a conic",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.31",
-                    "sno": "3.31",
-                    "topic": "Practical applications of Find the equation of a conic when focus, directrix and eccentricity are given",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.32",
-                    "sno": "3.32",
-                    "topic": "Practical applications of Describe the properties of Parabola 2 4 .y ax\uf03d",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.33",
-                    "sno": "3.33",
-                    "topic": "Practical applications of Write different forms of a straight line \u2013 general form, point-slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.34",
-                    "sno": "3.34",
-                    "topic": "Practical applications of Find distance of a point from a line, acute angle between two lines, intersection of two non-parallel lines and distance between two parallel lines",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-3.35",
-                    "sno": "3.35",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm102t-3.36",
-                    "sno": "3.36",
+                    "id": "26cm102t-3.26",
+                    "sno": "3.26",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -785,26 +869,26 @@
         {
             "unitNo": 4,
             "title": "Differential Calculus",
-            "totalPeriods": 36,
+            "totalPeriods": 34,
             "topics": [
                 {
                     "id": "26cm102t-4.1",
                     "sno": "4.1",
-                    "topic": "Explain the concept of limit and meaning of lim ( )x a f x l\uf0ae \uf03d and state the properties of limits",
+                    "topic": "Explain the concept of limit and meaning of lim ( )x a f x l  and state the properties of limits",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-4.2",
                     "sno": "4.2",
-                    "topic": "Evaluate the limits of the type ( )lim ( )x a f x g x\uf0ae",
+                    "topic": "Evaluate the limits of the type ( )lim ( )x a f x g x",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-4.3",
                     "sno": "4.3",
-                    "topic": "State the Standard limits lim , n n x a x a x a\uf0ae \uf02d \uf02d 0 sinlim ,x x x\uf0ae 0 tanlim ,x x x\uf0ae 0 1lim , x x a x\uf0ae \uf02d 0 1lim , x x e x\uf0ae \uf02d ( without proof) and solve simple problems using these standard limits",
+                    "topic": "State the Standard limits lim , n n x a x a x a   0 sinlim ,x x x 0 tanlim ,x x x 0 1lim , x x a x  0 1lim , x x e x  ( without proof) and solve simple problems using these standard limits",
                     "period": 1,
                     "type": "theory"
                 },
@@ -818,7 +902,7 @@
                 {
                     "id": "26cm102t-4.5",
                     "sno": "4.5",
-                    "topic": "State the concept of derivative of a function y = f(x) \u2013 definition, first principle as 0 ( ) ( )limh f x h f x h\uf0ae \uf02b \uf02d and also write standard notations to denote the derivative of a function",
+                    "topic": "State the concept of derivative of a function y = f(x) – definition, first principle as 0 ( ) ( )limh f x h f x h   and also write standard notations to denote the derivative of a function",
                     "period": 1,
                     "type": "theory"
                 },
@@ -874,7 +958,7 @@
                 {
                     "id": "26cm102t-4.13",
                     "sno": "4.13",
-                    "topic": "Explain the need of taking logarithms for differentiating some functions of ( )[ ( )]g xf x type \u2013 examples on logarithmic differentiation",
+                    "topic": "Explain the need of taking logarithms for differentiating some functions of ( )[ ( )]g xf x type – examples on logarithmic differentiation",
                     "period": 1,
                     "type": "theory"
                 },
@@ -902,21 +986,21 @@
                 {
                     "id": "26cm102t-4.17",
                     "sno": "4.17",
-                    "topic": "Deep dive into Explain the concept of limit and meaning of lim ( )x a f x l\uf0ae \uf03d and state the properties of limits",
+                    "topic": "Deep dive into Explain the concept of limit and meaning of lim ( )x a f x l  and state the properties of limits",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-4.18",
                     "sno": "4.18",
-                    "topic": "Deep dive into Evaluate the limits of the type ( )lim ( )x a f x g x\uf0ae",
+                    "topic": "Deep dive into Evaluate the limits of the type ( )lim ( )x a f x g x",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-4.19",
                     "sno": "4.19",
-                    "topic": "Deep dive into State the Standard limits lim , n n x a x a x a\uf0ae \uf02d \uf02d 0 sinlim ,x x x\uf0ae 0 tanlim ,x x x\uf0ae 0 1lim , x x a x\uf0ae \uf02d 0 1lim , x x e x\uf0ae \uf02d ( without proof) and solve simple problems using these standard limits",
+                    "topic": "Deep dive into State the Standard limits lim , n n x a x a x a   0 sinlim ,x x x 0 tanlim ,x x x 0 1lim , x x a x  0 1lim , x x e x  ( without proof) and solve simple problems using these standard limits",
                     "period": 1,
                     "type": "theory"
                 },
@@ -930,7 +1014,7 @@
                 {
                     "id": "26cm102t-4.21",
                     "sno": "4.21",
-                    "topic": "Deep dive into State the concept of derivative of a function y = f(x) \u2013 definition, first principle as 0 ( ) ( )limh f x h f x h\uf0ae \uf02b \uf02d and also write standard notations to denote the derivative of a function",
+                    "topic": "Deep dive into State the concept of derivative of a function y = f(x) – definition, first principle as 0 ( ) ( )limh f x h f x h   and also write standard notations to denote the derivative of a function",
                     "period": 1,
                     "type": "theory"
                 },
@@ -986,7 +1070,7 @@
                 {
                     "id": "26cm102t-4.29",
                     "sno": "4.29",
-                    "topic": "Deep dive into Explain the need of taking logarithms for differentiating some functions of ( )[ ( )]g xf x type \u2013 examples on logarithmic differentiation",
+                    "topic": "Deep dive into Explain the need of taking logarithms for differentiating some functions of ( )[ ( )]g xf x type – examples on logarithmic differentiation",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1014,27 +1098,13 @@
                 {
                     "id": "26cm102t-4.33",
                     "sno": "4.33",
-                    "topic": "Problem solving & practice on Explain the concept of limit and meaning of lim ( )x a f x l\uf0ae \uf03d and state the properties of limits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-4.34",
-                    "sno": "4.34",
-                    "topic": "Problem solving & practice on Evaluate the limits of the type ( )lim ( )x a f x g x\uf0ae",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-4.35",
-                    "sno": "4.35",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm102t-4.36",
-                    "sno": "4.36",
+                    "id": "26cm102t-4.34",
+                    "sno": "4.34",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -1044,7 +1114,7 @@
         {
             "unitNo": 5,
             "title": "Integral Calculus",
-            "totalPeriods": 36,
+            "totalPeriods": 26,
             "topics": [
                 {
                     "id": "26cm102t-5.1",
@@ -1056,7 +1126,7 @@
                 {
                     "id": "26cm102t-5.2",
                     "sno": "5.2",
-                    "topic": "Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Use Bernoulli’s rule to evaluate the integrals of the form vdxu",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1070,7 +1140,7 @@
                 {
                     "id": "26cm102t-5.4",
                     "sno": "5.4",
-                    "topic": "Deep dive into Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Deep dive into Use Bernoulli’s rule to evaluate the integrals of the form vdxu",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1084,7 +1154,7 @@
                 {
                     "id": "26cm102t-5.6",
                     "sno": "5.6",
-                    "topic": "Problem solving & practice on Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Problem solving & practice on Use Bernoulli’s rule to evaluate the integrals of the form vdxu",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1098,202 +1168,132 @@
                 {
                     "id": "26cm102t-5.8",
                     "sno": "5.8",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Practical applications of Use Bernoulli’s rule to evaluate the integrals of the form vdxu",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.9",
                     "sno": "5.9",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.10",
                     "sno": "5.10",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.11",
                     "sno": "5.11",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.12",
                     "sno": "5.12",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.13",
                     "sno": "5.13",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.14",
                     "sno": "5.14",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.15",
                     "sno": "5.15",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.16",
                     "sno": "5.16",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.17",
                     "sno": "5.17",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.18",
                     "sno": "5.18",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.19",
                     "sno": "5.19",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.20",
                     "sno": "5.20",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.21",
                     "sno": "5.21",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.22",
                     "sno": "5.22",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.23",
                     "sno": "5.23",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.24",
                     "sno": "5.24",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm102t-5.25",
                     "sno": "5.25",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.26",
-                    "sno": "5.26",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.27",
-                    "sno": "5.27",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.28",
-                    "sno": "5.28",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.29",
-                    "sno": "5.29",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.30",
-                    "sno": "5.30",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.31",
-                    "sno": "5.31",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.32",
-                    "sno": "5.32",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.33",
-                    "sno": "5.33",
-                    "topic": "Practical applications of Explain the concept of Indefinite integral as an anti-derivative",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.34",
-                    "sno": "5.34",
-                    "topic": "Practical applications of Use Bernoulli\u2019s rule to evaluate the integrals of the form\uf0f2 vdxu",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm102t-5.35",
-                    "sno": "5.35",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm102t-5.36",
-                    "sno": "5.36",
+                    "id": "26cm102t-5.26",
+                    "sno": "5.26",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

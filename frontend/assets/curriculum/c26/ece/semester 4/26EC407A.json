@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "INTRODUCTION TO ARTIFICIAL INTELLIGENCE",
-            "totalPeriods": 6,
+            "title": "Introduction to Artificial Intelligence",
+            "totalPeriods": 5,
             "topics": [
                 {
                     "id": "26ec407a-1.1",
@@ -44,25 +44,18 @@
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26ec407a-1.6",
-                    "sno": "1.6",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "EYES OF ARTIFICIAL INTELLIGENCE \u2013 SENSORS AND DATA",
+            "title": "Eyes of Artificial Intelligence – Sensors and Data",
             "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec407a-2.1",
                     "sno": "2.1",
-                    "topic": "EYES OF ARTIFICIAL INTELLIGENCE \u2013 SENSORS AND DATA; Definition of Data",
+                    "topic": "EYES OF ARTIFICIAL INTELLIGENCE – SENSORS AND DATA; Definition of Data",
                     "period": 1,
                     "type": "theory"
                 },
@@ -105,8 +98,8 @@
         },
         {
             "unitNo": 3,
-            "title": "BASICS OF MACHINE LEARNING (ML)",
-            "totalPeriods": 6,
+            "title": "Basics of Machine Learning (ML)",
+            "totalPeriods": 7,
             "topics": [
                 {
                     "id": "26ec407a-3.1",
@@ -139,13 +132,20 @@
                 {
                     "id": "26ec407a-3.5",
                     "sno": "3.5",
+                    "topic": "Deep dive into BASICS OF MACHINE LEARNING (ML)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec407a-3.6",
+                    "sno": "3.6",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec407a-3.6",
-                    "sno": "3.6",
+                    "id": "26ec407a-3.7",
+                    "sno": "3.7",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -154,8 +154,8 @@
         },
         {
             "unitNo": 4,
-            "title": "AI APPLICATIONS IN ELECTRONICS AND COMMUNICATION ENGINEERING",
-            "totalPeriods": 6,
+            "title": "AI applications in Electronics and Communication Engineering",
+            "totalPeriods": 7,
             "topics": [
                 {
                     "id": "26ec407a-4.1",
@@ -188,13 +188,20 @@
                 {
                     "id": "26ec407a-4.5",
                     "sno": "4.5",
+                    "topic": "Deep dive into AI APPLICATIONS IN ELECTRONICS AND COMMUNICATION ENGINEERING; Interpret the Role of AI &ML in Smart systems and Automation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec407a-4.6",
+                    "sno": "4.6",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec407a-4.6",
-                    "sno": "4.6",
+                    "id": "26ec407a-4.7",
+                    "sno": "4.7",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -203,8 +210,8 @@
         },
         {
             "unitNo": 5,
-            "title": "ETHICS IN AI, FUTURE SCOPE OF AI AND CAREER AWARENESS IN AI",
-            "totalPeriods": 6,
+            "title": "Ethics in AI, Future Scope of AI and Career awareness in AI",
+            "totalPeriods": 5,
             "topics": [
                 {
                     "id": "26ec407a-5.1",
@@ -240,13 +247,6 @@
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26ec407a-5.6",
-                    "sno": "5.6",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         }

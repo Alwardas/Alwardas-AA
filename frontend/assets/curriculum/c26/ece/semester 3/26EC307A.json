@@ -57,7 +57,7 @@
         {
             "unitNo": 2,
             "title": "Familiarization with core drone hardware and communication systems",
-            "totalPeriods": 6,
+            "totalPeriods": 18,
             "topics": [
                 {
                     "id": "26ec307a-2.1",
@@ -76,7 +76,7 @@
                 {
                     "id": "26ec307a-2.3",
                     "sno": "2.3",
-                    "topic": "Write the syntaxes of the following conditional statements and explain i. If ii. If.. else. iii. Nested if \u2026else; Write the syntax of switch case s...",
+                    "topic": "Write the syntaxes of the following conditional statements and explain i. If ii. If.. else. iii. Nested if …else; Write the syntax of switch case s...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -90,13 +90,97 @@
                 {
                     "id": "26ec307a-2.5",
                     "sno": "2.5",
+                    "topic": "Deep dive into Familiarization with core drone hardware and communication systems Drone frame its structure and function -different motors and their role in gener...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.6",
+                    "sno": "2.6",
+                    "topic": "Deep dive into Conditional Statements and Arrays THEORY; Describe the conditional expression; List the four conditional statements supported by C",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into Write the syntaxes of the following conditional statements and explain i. If ii. If.. else. iii. Nested if …else; Write the syntax of switch case s...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Write simple programs based on conditional statements. i) Write a program to find whether a given year is leap year or not ii) Write a program to f...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.9",
+                    "sno": "2.9",
+                    "topic": "Problem solving & practice on Familiarization with core drone hardware and communication systems Drone frame its structure and function -different motors and their role in gener...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.10",
+                    "sno": "2.10",
+                    "topic": "Problem solving & practice on Conditional Statements and Arrays THEORY; Describe the conditional expression; List the four conditional statements supported by C",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.11",
+                    "sno": "2.11",
+                    "topic": "Problem solving & practice on Write the syntaxes of the following conditional statements and explain i. If ii. If.. else. iii. Nested if …else; Write the syntax of switch case s...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.12",
+                    "sno": "2.12",
+                    "topic": "Problem solving & practice on Write simple programs based on conditional statements. i) Write a program to find whether a given year is leap year or not ii) Write a program to f...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.13",
+                    "sno": "2.13",
+                    "topic": "Practical applications of Familiarization with core drone hardware and communication systems Drone frame its structure and function -different motors and their role in gener...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.14",
+                    "sno": "2.14",
+                    "topic": "Practical applications of Conditional Statements and Arrays THEORY; Describe the conditional expression; List the four conditional statements supported by C",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.15",
+                    "sno": "2.15",
+                    "topic": "Practical applications of Write the syntaxes of the following conditional statements and explain i. If ii. If.. else. iii. Nested if …else; Write the syntax of switch case s...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.16",
+                    "sno": "2.16",
+                    "topic": "Practical applications of Write simple programs based on conditional statements. i) Write a program to find whether a given year is leap year or not ii) Write a program to f...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec307a-2.17",
+                    "sno": "2.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec307a-2.6",
-                    "sno": "2.6",
+                    "id": "26ec307a-2.18",
+                    "sno": "2.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -146,104 +230,6 @@
                 {
                     "id": "26ec307a-3.6",
                     "sno": "3.6",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Circuit simulation using PSPICE or equivalent software",
-            "totalPeriods": 6,
-            "topics": [
-                {
-                    "id": "26ec307a-4.1",
-                    "sno": "4.1",
-                    "topic": "Structures & unions THEORY; Define structure & union in C",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec307a-4.2",
-                    "sno": "4.2",
-                    "topic": "Differentiate between structure and union; State the function of pre-processor directives in C LAB ACTIVITIES",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec307a-4.3",
-                    "sno": "4.3",
-                    "topic": "Practice the method of declaring, initializing a structure variable and accessing of members of a structure; Practice a program to read & print a b...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec307a-4.4",
-                    "sno": "4.4",
-                    "topic": "Practice a program to find size of a structure; Practice the programs with conditional pre-processor directives; Practice the programs with Uncondi...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec307a-4.5",
-                    "sno": "4.5",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec307a-4.6",
-                    "sno": "4.6",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "MATLAB practice",
-            "totalPeriods": 6,
-            "topics": [
-                {
-                    "id": "26ec307a-5.1",
-                    "sno": "5.1",
-                    "topic": "MATLAB practice THEORY; Familiarize with basic structure of MATLAB; Distinguish between C & MATLAB LAB ACTIVITIES",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec307a-5.2",
-                    "sno": "5.2",
-                    "topic": "Practice the usage of i) Rows and column vectors creation ii) Ones, Rand, Zeros iii) linspace operator iv) clc,clear,who, whos commands v) long ass...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec307a-5.3",
-                    "sno": "5.3",
-                    "topic": "Practice plot commands such as: i) plot(x,y) ;ii) fplot() iii) title(); iv) xlabel(); v) ylabel(); vi) ezplot() vii) subplot() viii) bar() ix) pie(...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec307a-5.4",
-                    "sno": "5.4",
-                    "topic": "Practice i) Finding roots, derivative of polynomial using MATLAB ii) Product, division of 2 polynomials using MATLAB iii) Finding approximate value...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec307a-5.5",
-                    "sno": "5.5",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec307a-5.6",
-                    "sno": "5.6",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

@@ -3,7 +3,7 @@
     "subjectName": "Electrical Installation & Estimation",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 45,
+    "totalPeriods": 35,
     "units": [
         {
             "unitNo": 1,
@@ -34,7 +34,7 @@
                 {
                     "id": "26ee306e-1.4",
                     "sno": "1.4",
-                    "topic": "List different types of Solar collectors; State Solar photovoltaic (PV) systems \u2013 types of panels, components; State Advantages and limitations of ...",
+                    "topic": "List different types of Solar collectors; State Solar photovoltaic (PV) systems – types of panels, components; State Advantages and limitations of ...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -175,8 +175,8 @@
         },
         {
             "unitNo": 3,
-            "title": "Estimation of OH Lines and Earthing systems",
-            "totalPeriods": 13,
+            "title": "Unit 3 Topic",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26ee306e-3.1",
@@ -195,79 +195,9 @@
                 {
                     "id": "26ee306e-3.3",
                     "sno": "3.3",
-                    "topic": "Estimate the quantity of all materials required for given 11 kV and 400V overhead lines; Draw and estimate the quantity of materials required for p...",
+                    "topic": "Estimate the quantity of all materials required for given 11 kV and 400V overhead lines; Draw and estimate the quantity of materials required for p...; State the purpose of Earthing and mention its types that are normally used; Select the suitable type of Earthing for a given installation; Draw and Estimate the materials required for pipe and plate earthing. 4. Departmenta...; Introduction; Basics of wind – speed, direction, measurement; Define Wind energy conversion systems and list different types of wind turbines; State site selection for wind farms; Comparison of Grid – connected and standalone wind systems; State Challenges, Advantages and Limitations of wind farms; Activity1: Video on How wind turbines work; Activity2: Site visiting of nearest wind power plant 4. Biomass Power; FA-2 From 3.4 to 5.5",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ee306e-3.4",
-                    "sno": "3.4",
-                    "topic": "State the purpose of Earthing and mention its types that are normally used",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee306e-3.5",
-                    "sno": "3.5",
-                    "topic": "Select the suitable type of Earthing for a given installation; Draw and Estimate the materials required for pipe and plate earthing. 4. Departmenta...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee306e-3.6",
-                    "sno": "3.6",
-                    "topic": "Introduction",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee306e-3.7",
-                    "sno": "3.7",
-                    "topic": "Basics of wind \u2013 speed, direction, measurement; Define Wind energy conversion systems and list different types of wind turbines",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee306e-3.8",
-                    "sno": "3.8",
-                    "topic": "State site selection for wind farms",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee306e-3.9",
-                    "sno": "3.9",
-                    "topic": "Comparison of Grid \u2013 connected and standalone wind systems; State Challenges, Advantages and Limitations of wind farms",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee306e-3.10",
-                    "sno": "3.10",
-                    "topic": "Activity1: Video on How wind turbines work",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee306e-3.11",
-                    "sno": "3.11",
-                    "topic": "Activity2: Site visiting of nearest wind power plant 4. Biomass Power; FA-2 From 3.4 to 5.5",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee306e-3.12",
-                    "sno": "3.12",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee306e-3.13",
-                    "sno": "3.13",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },

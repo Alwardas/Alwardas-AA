@@ -27,14 +27,14 @@
                 {
                     "id": "26ee105t-1.3",
                     "sno": "1.3",
-                    "topic": "State Ohm\u2019s Law and solve problems",
+                    "topic": "State Ohm’s Law and solve problems",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee105t-1.4",
                     "sno": "1.4",
-                    "topic": "List the limitations of Ohm\u2019s Law",
+                    "topic": "List the limitations of Ohm’s Law",
                     "period": 1,
                     "type": "theory"
                 },
@@ -48,7 +48,7 @@
                 {
                     "id": "26ee105t-1.6",
                     "sno": "1.6",
-                    "topic": "Derive the relation R =\ud835\udf0c\ud835\udc59/\ud835\udc4e and solve the problems",
+                    "topic": "Derive the relation R =𝜌𝑙/𝑎 and solve the problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -62,7 +62,7 @@
                 {
                     "id": "26ee105t-1.8",
                     "sno": "1.8",
-                    "topic": "Develop the expression for resistance at any temperature as R t = Ro (1+\u03b1ot)",
+                    "topic": "Develop the expression for resistance at any temperature as R t = Ro (1+αot)",
                     "period": 1,
                     "type": "theory"
                 },
@@ -76,7 +76,7 @@
                 {
                     "id": "26ee105t-1.10",
                     "sno": "1.10",
-                    "topic": "Write the formula for Co-efficient of resistance at any temperatures \ud835\udefc\ud835\udc61 = \ud835\udefc0 1+\ud835\udefc0\ud835\udc61",
+                    "topic": "Write the formula for Co-efficient of resistance at any temperatures 𝛼𝑡 = 𝛼0 1+𝛼0𝑡",
                     "period": 1,
                     "type": "theory"
                 },
@@ -167,14 +167,14 @@
                 {
                     "id": "26ee105t-1.23",
                     "sno": "1.23",
-                    "topic": "Deep dive into State Ohm\u2019s Law and solve problems",
+                    "topic": "Deep dive into State Ohm’s Law and solve problems",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee105t-1.24",
                     "sno": "1.24",
-                    "topic": "Deep dive into List the limitations of Ohm\u2019s Law",
+                    "topic": "Deep dive into List the limitations of Ohm’s Law",
                     "period": 1,
                     "type": "theory"
                 },
@@ -188,7 +188,7 @@
                 {
                     "id": "26ee105t-1.26",
                     "sno": "1.26",
-                    "topic": "Deep dive into Derive the relation R =\ud835\udf0c\ud835\udc59/\ud835\udc4e and solve the problems",
+                    "topic": "Deep dive into Derive the relation R =𝜌𝑙/𝑎 and solve the problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -202,7 +202,7 @@
                 {
                     "id": "26ee105t-1.28",
                     "sno": "1.28",
-                    "topic": "Deep dive into Develop the expression for resistance at any temperature as R t = Ro (1+\u03b1ot)",
+                    "topic": "Deep dive into Develop the expression for resistance at any temperature as R t = Ro (1+αot)",
                     "period": 1,
                     "type": "theory"
                 },
@@ -216,7 +216,7 @@
                 {
                     "id": "26ee105t-1.30",
                     "sno": "1.30",
-                    "topic": "Deep dive into Write the formula for Co-efficient of resistance at any temperatures \ud835\udefc\ud835\udc61 = \ud835\udefc0 1+\ud835\udefc0\ud835\udc61",
+                    "topic": "Deep dive into Write the formula for Co-efficient of resistance at any temperatures 𝛼𝑡 = 𝛼0 1+𝛼0𝑡",
                     "period": 1,
                     "type": "theory"
                 },
@@ -321,7 +321,7 @@
                 {
                     "id": "26ee105t-2.9",
                     "sno": "2.9",
-                    "topic": "State (i) Kirchhoff\u2019s current law (KCL), (ii) Kirchhoff\u2019s voltage law (KVL)",
+                    "topic": "State (i) Kirchhoff’s current law (KCL), (ii) Kirchhoff’s voltage law (KVL)",
                     "period": 1,
                     "type": "theory"
                 },
@@ -356,7 +356,7 @@
                 {
                     "id": "26ee105t-2.14",
                     "sno": "2.14",
-                    "topic": "Define Joule\u2019s law and state its expression",
+                    "topic": "Define Joule’s law and state its expression",
                     "period": 1,
                     "type": "theory"
                 },
@@ -384,7 +384,7 @@
                 {
                     "id": "26ee105t-2.18",
                     "sno": "2.18",
-                    "topic": "Unit Test \u2013 II From 2.11 to 4.8 Unit Test \u2013 III From 4.9 to 5.24",
+                    "topic": "Unit Test – II From 2.11 to 4.8 Unit Test – III From 4.9 to 5.24",
                     "period": 1,
                     "type": "theory"
                 },
@@ -447,7 +447,7 @@
                 {
                     "id": "26ee105t-2.27",
                     "sno": "2.27",
-                    "topic": "Deep dive into State (i) Kirchhoff\u2019s current law (KCL), (ii) Kirchhoff\u2019s voltage law (KVL)",
+                    "topic": "Deep dive into State (i) Kirchhoff’s current law (KCL), (ii) Kirchhoff’s voltage law (KVL)",
                     "period": 1,
                     "type": "theory"
                 },
@@ -482,7 +482,7 @@
                 {
                     "id": "26ee105t-2.32",
                     "sno": "2.32",
-                    "topic": "Deep dive into Define Joule\u2019s law and state its expression",
+                    "topic": "Deep dive into Define Joule’s law and state its expression",
                     "period": 1,
                     "type": "theory"
                 },
@@ -510,7 +510,7 @@
                 {
                     "id": "26ee105t-2.36",
                     "sno": "2.36",
-                    "topic": "Deep dive into Unit Test \u2013 II From 2.11 to 4.8 Unit Test \u2013 III From 4.9 to 5.24",
+                    "topic": "Deep dive into Unit Test – II From 2.11 to 4.8 Unit Test – III From 4.9 to 5.24",
                     "period": 1,
                     "type": "theory"
                 },
@@ -594,7 +594,7 @@
                 {
                     "id": "26ee105t-3.7",
                     "sno": "3.7",
-                    "topic": "State Fleming\u2019s Left-Hand rule",
+                    "topic": "State Fleming’s Left-Hand rule",
                     "period": 1,
                     "type": "theory"
                 },
@@ -636,7 +636,7 @@
                 {
                     "id": "26ee105t-3.13",
                     "sno": "3.13",
-                    "topic": "State Faraday\u2019s laws of Electro-Magnetic Induction",
+                    "topic": "State Faraday’s laws of Electro-Magnetic Induction",
                     "period": 1,
                     "type": "theory"
                 },
@@ -650,14 +650,14 @@
                 {
                     "id": "26ee105t-3.15",
                     "sno": "3.15",
-                    "topic": "State Lenz\u2019s law",
+                    "topic": "State Lenz’s law",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee105t-3.16",
                     "sno": "3.16",
-                    "topic": "Explain Fleming\u2019s Right-Hand rule",
+                    "topic": "Explain Fleming’s Right-Hand rule",
                     "period": 1,
                     "type": "theory"
                 },
@@ -783,7 +783,7 @@
                 {
                     "id": "26ee105t-3.34",
                     "sno": "3.34",
-                    "topic": "Deep dive into State Fleming\u2019s Left-Hand rule",
+                    "topic": "Deep dive into State Fleming’s Left-Hand rule",
                     "period": 1,
                     "type": "theory"
                 },
@@ -825,7 +825,7 @@
                 {
                     "id": "26ee105t-3.40",
                     "sno": "3.40",
-                    "topic": "Deep dive into State Faraday\u2019s laws of Electro-Magnetic Induction",
+                    "topic": "Deep dive into State Faraday’s laws of Electro-Magnetic Induction",
                     "period": 1,
                     "type": "theory"
                 },
@@ -839,14 +839,14 @@
                 {
                     "id": "26ee105t-3.42",
                     "sno": "3.42",
-                    "topic": "Deep dive into State Lenz\u2019s law",
+                    "topic": "Deep dive into State Lenz’s law",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee105t-3.43",
                     "sno": "3.43",
-                    "topic": "Deep dive into Explain Fleming\u2019s Right-Hand rule",
+                    "topic": "Deep dive into Explain Fleming’s Right-Hand rule",
                     "period": 1,
                     "type": "theory"
                 },
@@ -874,7 +874,7 @@
                 {
                     "id": "26ee105t-4.1",
                     "sno": "4.1",
-                    "topic": "State Coulomb\u2019s laws of Electrostatics and solve the problems",
+                    "topic": "State Coulomb’s laws of Electrostatics and solve the problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -944,7 +944,7 @@
                 {
                     "id": "26ee105t-4.11",
                     "sno": "4.11",
-                    "topic": "Know the Permittivity of commonly used di \u2013 electric materials (i) Air (ii)Bakelite (iii)Glass (iv)Mica (v)Paper (vi) Porcelain (vii) Transformer oil",
+                    "topic": "Know the Permittivity of commonly used di – electric materials (i) Air (ii)Bakelite (iii)Glass (iv)Mica (v)Paper (vi) Porcelain (vii) Transformer oil",
                     "period": 1,
                     "type": "theory"
                 },
@@ -986,7 +986,7 @@
                 {
                     "id": "26ee105t-4.17",
                     "sno": "4.17",
-                    "topic": "Deep dive into State Coulomb\u2019s laws of Electrostatics and solve the problems",
+                    "topic": "Deep dive into State Coulomb’s laws of Electrostatics and solve the problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1056,7 +1056,7 @@
                 {
                     "id": "26ee105t-4.27",
                     "sno": "4.27",
-                    "topic": "Deep dive into Know the Permittivity of commonly used di \u2013 electric materials (i) Air (ii)Bakelite (iii)Glass (iv)Mica (v)Paper (vi) Porcelain (vii) Transformer oil",
+                    "topic": "Deep dive into Know the Permittivity of commonly used di – electric materials (i) Air (ii)Bakelite (iii)Glass (iv)Mica (v)Paper (vi) Porcelain (vii) Transformer oil",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1154,7 +1154,7 @@
                 {
                     "id": "26ee105t-5.10",
                     "sno": "5.10",
-                    "topic": "List the materials used in construction of LED\u2019s",
+                    "topic": "List the materials used in construction of LED’s",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1196,7 +1196,7 @@
                 {
                     "id": "26ee105t-5.16",
                     "sno": "5.16",
-                    "topic": "Classify the PCB\u2019s and list the types of laminates used in PCB\u2019s",
+                    "topic": "Classify the PCB’s and list the types of laminates used in PCB’s",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1217,14 +1217,14 @@
                 {
                     "id": "26ee105t-5.19",
                     "sno": "5.19",
-                    "topic": "List the steps involved in screen-printing for making PCB\u2019s",
+                    "topic": "List the steps involved in screen-printing for making PCB’s",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee105t-5.20",
                     "sno": "5.20",
-                    "topic": "Explain the methods of etching, cleaning and drilling of PCB\u2019s",
+                    "topic": "Explain the methods of etching, cleaning and drilling of PCB’s",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1252,7 +1252,7 @@
                 {
                     "id": "26ee105t-5.24",
                     "sno": "5.24",
-                    "topic": "List the soldering methods of PCB\u2019s",
+                    "topic": "List the soldering methods of PCB’s",
                     "period": 1,
                     "type": "theory"
                 },

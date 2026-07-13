@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "PRODUCTION OF IRON AND STEEL",
-            "totalPeriods": 18,
+            "title": "Production of Iron and Steel",
+            "totalPeriods": 16,
             "topics": [
                 {
                     "id": "26me403t-1.1",
@@ -111,27 +111,13 @@
                 {
                     "id": "26me403t-1.15",
                     "sno": "1.15",
-                    "topic": "Problem solving & practice on PRODUCTION OF IRON AND STEEL",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-1.16",
-                    "sno": "1.16",
-                    "topic": "Problem solving & practice on Name the various raw materials required for production of iron",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-1.17",
-                    "sno": "1.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me403t-1.18",
-                    "sno": "1.18",
+                    "id": "26me403t-1.16",
+                    "sno": "1.16",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -140,8 +126,8 @@
         },
         {
             "unitNo": 2,
-            "title": "HEAT TREATMENT OF STEEL",
-            "totalPeriods": 18,
+            "title": "Heat treatment of Steel",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26me403t-2.1",
@@ -195,7 +181,7 @@
                 {
                     "id": "26me403t-2.8",
                     "sno": "2.8",
-                    "topic": "HEAT TREATMENT OF STEEL Cooling curve for pure metal. Allotropic forms of pure Iron. Iron carbon equilibrium diagram. Importance of heat treatment. Heat treatment processes \u2013 annealing, normalizing, hardening, tempering, carburizing, nitriding and cyaniding",
+                    "topic": "HEAT TREATMENT OF STEEL Cooling curve for pure metal. Allotropic forms of pure Iron. Iron carbon equilibrium diagram. Importance of heat treatment. Heat treatment processes – annealing, normalizing, hardening, tempering, carburizing, nitriding and cyaniding",
                     "period": 1,
                     "type": "theory"
                 },
@@ -216,55 +202,13 @@
                 {
                     "id": "26me403t-2.11",
                     "sno": "2.11",
-                    "topic": "Deep dive into Mention the allotropic forms of pure iron with temperatures and their crystal structures",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-2.12",
-                    "sno": "2.12",
-                    "topic": "Deep dive into Draw the iron carbon equilibrium diagram, identify various structures of the iron carbon system",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-2.13",
-                    "sno": "2.13",
-                    "topic": "Deep dive into State the importance of heat treatment for steels",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-2.14",
-                    "sno": "2.14",
-                    "topic": "Deep dive into Explain Annealing, Normalising, Hardening and Tempering",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-2.15",
-                    "sno": "2.15",
-                    "topic": "Deep dive into Explain use of case hardening processes like; carburizing, nitriding and Cyaniding",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-2.16",
-                    "sno": "2.16",
-                    "topic": "Deep dive into HEAT TREATMENT OF STEEL Cooling curve for pure metal. Allotropic forms of pure Iron. Iron carbon equilibrium diagram. Importance of heat treatment. Heat treatment processes \u2013 annealing, normalizing, hardening, tempering, carburizing, nitriding and cyaniding",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-2.17",
-                    "sno": "2.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me403t-2.18",
-                    "sno": "2.18",
+                    "id": "26me403t-2.12",
+                    "sno": "2.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +217,8 @@
         },
         {
             "unitNo": 3,
-            "title": "MILLING MACHINES AND GEAR MAKING PROCESSES",
-            "totalPeriods": 18,
+            "title": "Milling Machines and Gear Making Processes",
+            "totalPeriods": 24,
             "topics": [
                 {
                     "id": "26me403t-3.1",
@@ -377,7 +321,7 @@
                 {
                     "id": "26me403t-3.15",
                     "sno": "3.15",
-                    "topic": "MILLING MACHINES AND GEAR GENERATING PROCESSES Definition - Types of Milling machines: Constructional details and Principle of operation of Column and knee type and Universal milling machines - Specification of milling machines \u2013 Purpose of indexing \u2013 Methods of indexing - Work holding and Tool holdin g devices \u2013 Types of milling cutters \u2013 Cutter materials - Milling Operations :Face Milling, Plain Milling, Side Milling, Straddle Milling and Gang Milling. Definition of Gear \u2013 Gear nomenclature - Methods of manufacturing of gears \u2013 Gear generating processes: Principle of operation of Gear Shaping and Gear hobbing \u2013 Gear materials - Gear finishing processes: Burnishing, Shaving, Honing, Lapping and Super finishing",
+                    "topic": "MILLING MACHINES AND GEAR GENERATING PROCESSES Definition - Types of Milling machines: Constructional details and Principle of operation of Column and knee type and Universal milling machines - Specification of milling machines – Purpose of indexing – Methods of indexing - Work holding and Tool holdin g devices – Types of milling cutters – Cutter materials - Milling Operations :Face Milling, Plain Milling, Side Milling, Straddle Milling and Gang Milling. Definition of Gear – Gear nomenclature - Methods of manufacturing of gears – Gear generating processes: Principle of operation of Gear Shaping and Gear hobbing – Gear materials - Gear finishing processes: Burnishing, Shaving, Honing, Lapping and Super finishing",
                     "period": 1,
                     "type": "theory"
                 },
@@ -391,13 +335,55 @@
                 {
                     "id": "26me403t-3.17",
                     "sno": "3.17",
+                    "topic": "Deep dive into Explain the working principle of a Milling machine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Explain the constructional details and Principle of operation of Column and knee type and Universal milling machines with legible sketches",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-3.19",
+                    "sno": "3.19",
+                    "topic": "Deep dive into State the purpose and list the methods of indexing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-3.20",
+                    "sno": "3.20",
+                    "topic": "Deep dive into List different types of milling cutters and their applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-3.21",
+                    "sno": "3.21",
+                    "topic": "Deep dive into State the functions of different tool holding devices",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-3.22",
+                    "sno": "3.22",
+                    "topic": "Deep dive into State the functions of different work holding devices",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-3.23",
+                    "sno": "3.23",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me403t-3.18",
-                    "sno": "3.18",
+                    "id": "26me403t-3.24",
+                    "sno": "3.24",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +392,8 @@
         },
         {
             "unitNo": 4,
-            "title": "WELDING",
-            "totalPeriods": 18,
+            "title": "Welding",
+            "totalPeriods": 22,
             "topics": [
                 {
                     "id": "26me403t-4.1",
@@ -440,97 +426,125 @@
                 {
                     "id": "26me403t-4.5",
                     "sno": "4.5",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.6",
                     "sno": "4.6",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.7",
                     "sno": "4.7",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.8",
                     "sno": "4.8",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.9",
                     "sno": "4.9",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.10",
                     "sno": "4.10",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.11",
                     "sno": "4.11",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.12",
                     "sno": "4.12",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.13",
                     "sno": "4.13",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.14",
                     "sno": "4.14",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.15",
                     "sno": "4.15",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.16",
                     "sno": "4.16",
-                    "topic": "Practical applications of WELDING",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-4.17",
                     "sno": "4.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-4.18",
+                    "sno": "4.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-4.19",
+                    "sno": "4.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-4.20",
+                    "sno": "4.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me403t-4.21",
+                    "sno": "4.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me403t-4.18",
-                    "sno": "4.18",
+                    "id": "26me403t-4.22",
+                    "sno": "4.22",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,8 +553,8 @@
         },
         {
             "unitNo": 5,
-            "title": "NON CONVENTIONAL MACHINING PROCESSES",
-            "totalPeriods": 18,
+            "title": "Nonconventional Machining Processes",
+            "totalPeriods": 16,
             "topics": [
                 {
                     "id": "26me403t-5.1",
@@ -587,7 +601,7 @@
                 {
                     "id": "26me403t-5.7",
                     "sno": "5.7",
-                    "topic": "NON CONVENTIONAL MACHINING PROCESSES Introduction \u2013 Comparison with Conventional machining processes \u2013 Methods of Nonconventional Machining Processes \u2013 Applications. Description of Ultrasonic machining (USM) Process - advantages \u2013 disadvantages. Description of Electrical Discharge Machining ( EDM) Process \u2013 advantages \u2013 disadvantages. Description of Abrasive jet machining - advantages \u2013 disadvantages. Description of Laser beam machining - advantages \u2013 disadvantages. REFERENCE BOOKS 1. Material Science and Engineering - Raghavan PHI Publishers 2. Introduction to Physical Metallurgy - Avner Tata McGraw Hill Publishers 3. Material science and metallurgy - O P Khanna Dhanpati Rai Publishers 4. Manufacturing Technology - P N Rao (MGH Publishers) 5. Production Technology - R.C.Patel 6. Production Technology - Jain & Gupta. Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.10 Unit Test \u2013 II From 3.11 to 5.6",
+                    "topic": "NON CONVENTIONAL MACHINING PROCESSES Introduction – Comparison with Conventional machining processes – Methods of Nonconventional Machining Processes – Applications. Description of Ultrasonic machining (USM) Process - advantages – disadvantages. Description of Electrical Discharge Machining ( EDM) Process – advantages – disadvantages. Description of Abrasive jet machining - advantages – disadvantages. Description of Laser beam machining - advantages – disadvantages. REFERENCE BOOKS 1. Material Science and Engineering - Raghavan PHI Publishers 2. Introduction to Physical Metallurgy - Avner Tata McGraw Hill Publishers 3. Material science and metallurgy - O P Khanna Dhanpati Rai Publishers 4. Manufacturing Technology - P N Rao (MGH Publishers) 5. Production Technology - R.C.Patel 6. Production Technology - Jain & Gupta. Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test – I From 1.1 to 3.10 Unit Test – II From 3.11 to 5.6",
                     "period": 1,
                     "type": "theory"
                 },
@@ -636,34 +650,20 @@
                 {
                     "id": "26me403t-5.14",
                     "sno": "5.14",
-                    "topic": "Deep dive into NON CONVENTIONAL MACHINING PROCESSES Introduction \u2013 Comparison with Conventional machining processes \u2013 Methods of Nonconventional Machining Processes \u2013 Applications. Description of Ultrasonic machining (USM) Process - advantages \u2013 disadvantages. Description of Electrical Discharge Machining ( EDM) Process \u2013 advantages \u2013 disadvantages. Description of Abrasive jet machining - advantages \u2013 disadvantages. Description of Laser beam machining - advantages \u2013 disadvantages. REFERENCE BOOKS 1. Material Science and Engineering - Raghavan PHI Publishers 2. Introduction to Physical Metallurgy - Avner Tata McGraw Hill Publishers 3. Material science and metallurgy - O P Khanna Dhanpati Rai Publishers 4. Manufacturing Technology - P N Rao (MGH Publishers) 5. Production Technology - R.C.Patel 6. Production Technology - Jain & Gupta. Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.10 Unit Test \u2013 II From 3.11 to 5.6",
+                    "topic": "Deep dive into NON CONVENTIONAL MACHINING PROCESSES Introduction – Comparison with Conventional machining processes – Methods of Nonconventional Machining Processes – Applications. Description of Ultrasonic machining (USM) Process - advantages – disadvantages. Description of Electrical Discharge Machining ( EDM) Process – advantages – disadvantages. Description of Abrasive jet machining - advantages – disadvantages. Description of Laser beam machining - advantages – disadvantages. REFERENCE BOOKS 1. Material Science and Engineering - Raghavan PHI Publishers 2. Introduction to Physical Metallurgy - Avner Tata McGraw Hill Publishers 3. Material science and metallurgy - O P Khanna Dhanpati Rai Publishers 4. Manufacturing Technology - P N Rao (MGH Publishers) 5. Production Technology - R.C.Patel 6. Production Technology - Jain & Gupta. Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test – I From 1.1 to 3.10 Unit Test – II From 3.11 to 5.6",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me403t-5.15",
                     "sno": "5.15",
-                    "topic": "Problem solving & practice on NON CONVENTIONAL MACHINING PROCESSES",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-5.16",
-                    "sno": "5.16",
-                    "topic": "Problem solving & practice on Distinguish between nonconventional machining processes and conventional methods",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me403t-5.17",
-                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me403t-5.18",
-                    "sno": "5.18",
+                    "id": "26me403t-5.16",
+                    "sno": "5.16",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

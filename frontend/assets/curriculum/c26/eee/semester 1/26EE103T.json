@@ -8,490 +8,70 @@
         {
             "unitNo": 1,
             "title": "Units and Measurements",
-            "totalPeriods": 69,
+            "totalPeriods": 9,
             "topics": [
                 {
                     "id": "26ee103t-1.1",
                     "sno": "1.1",
-                    "topic": "Introduction to Units and Measurements",
+                    "topic": "Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee103t-1.2",
                     "sno": "1.2",
-                    "topic": "Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
+                    "topic": "Explain the concept of units in measurement",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee103t-1.3",
                     "sno": "1.3",
-                    "topic": "Explain the concept of units in measurement",
+                    "topic": "Define the term 'unit'",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee103t-1.4",
                     "sno": "1.4",
-                    "topic": "Define the term 'unit'",
+                    "topic": "Define fundamental units and derived units",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee103t-1.5",
                     "sno": "1.5",
-                    "topic": "Define fundamental units and derived units",
+                    "topic": "State the SI units of fundamental quantities along with their symbols",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee103t-1.6",
                     "sno": "1.6",
-                    "topic": "State the SI units of fundamental quantities along with their symbols",
+                    "topic": "State the common multiples and submultiples used in the SI system",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee103t-1.7",
                     "sno": "1.7",
-                    "topic": "State the common multiples and submultiples used in the SI system",
+                    "topic": "State the rules for writing SI units",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee103t-1.8",
                     "sno": "1.8",
-                    "topic": "State the rules for writing SI units",
+                    "topic": "State the advantages of using SI units",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee103t-1.9",
                     "sno": "1.9",
-                    "topic": "State the advantages of using SI units",
+                    "topic": "Differentiate between direct and indirect measurements; Define accuracy and least count in the context of measurement; Define error in measurement; Define absolute, relative and percentage errors and state their respective  \n        formulae; Solve numerical problems on errors in measurements. \n \n2 ELEMENTS OF VECTORS",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.10",
-                    "sno": "1.10",
-                    "topic": "Differentiate between direct and indirect measurements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.11",
-                    "sno": "1.11",
-                    "topic": "Define accuracy and least count in the context of measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.12",
-                    "sno": "1.12",
-                    "topic": "Define error in measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.13",
-                    "sno": "1.13",
-                    "topic": "Define absolute, relative and percentage errors and state their respective  \n        formulae",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.14",
-                    "sno": "1.14",
-                    "topic": "Solve numerical problems on errors in measurements. \n \n2 ELEMENTS OF VECTORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.15",
-                    "sno": "1.15",
-                    "topic": "Deep dive into Introduction to Units and Measurements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.16",
-                    "sno": "1.16",
-                    "topic": "Deep dive into Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.17",
-                    "sno": "1.17",
-                    "topic": "Deep dive into Explain the concept of units in measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.18",
-                    "sno": "1.18",
-                    "topic": "Deep dive into Define the term 'unit'",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.19",
-                    "sno": "1.19",
-                    "topic": "Deep dive into Define fundamental units and derived units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.20",
-                    "sno": "1.20",
-                    "topic": "Deep dive into State the SI units of fundamental quantities along with their symbols",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.21",
-                    "sno": "1.21",
-                    "topic": "Deep dive into State the common multiples and submultiples used in the SI system",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.22",
-                    "sno": "1.22",
-                    "topic": "Deep dive into State the rules for writing SI units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.23",
-                    "sno": "1.23",
-                    "topic": "Deep dive into State the advantages of using SI units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.24",
-                    "sno": "1.24",
-                    "topic": "Deep dive into Differentiate between direct and indirect measurements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.25",
-                    "sno": "1.25",
-                    "topic": "Deep dive into Define accuracy and least count in the context of measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.26",
-                    "sno": "1.26",
-                    "topic": "Deep dive into Define error in measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.27",
-                    "sno": "1.27",
-                    "topic": "Deep dive into Define absolute, relative and percentage errors and state their respective  \n        formulae",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.28",
-                    "sno": "1.28",
-                    "topic": "Deep dive into Solve numerical problems on errors in measurements. \n \n2 ELEMENTS OF VECTORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.29",
-                    "sno": "1.29",
-                    "topic": "Problem solving & practice on Introduction to Units and Measurements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.30",
-                    "sno": "1.30",
-                    "topic": "Problem solving & practice on Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.31",
-                    "sno": "1.31",
-                    "topic": "Problem solving & practice on Explain the concept of units in measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.32",
-                    "sno": "1.32",
-                    "topic": "Problem solving & practice on Define the term 'unit'",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.33",
-                    "sno": "1.33",
-                    "topic": "Problem solving & practice on Define fundamental units and derived units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.34",
-                    "sno": "1.34",
-                    "topic": "Problem solving & practice on State the SI units of fundamental quantities along with their symbols",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.35",
-                    "sno": "1.35",
-                    "topic": "Problem solving & practice on State the common multiples and submultiples used in the SI system",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.36",
-                    "sno": "1.36",
-                    "topic": "Problem solving & practice on State the rules for writing SI units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.37",
-                    "sno": "1.37",
-                    "topic": "Problem solving & practice on State the advantages of using SI units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.38",
-                    "sno": "1.38",
-                    "topic": "Problem solving & practice on Differentiate between direct and indirect measurements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.39",
-                    "sno": "1.39",
-                    "topic": "Problem solving & practice on Define accuracy and least count in the context of measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.40",
-                    "sno": "1.40",
-                    "topic": "Problem solving & practice on Define error in measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.41",
-                    "sno": "1.41",
-                    "topic": "Problem solving & practice on Define absolute, relative and percentage errors and state their respective  \n        formulae",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.42",
-                    "sno": "1.42",
-                    "topic": "Problem solving & practice on Solve numerical problems on errors in measurements. \n \n2 ELEMENTS OF VECTORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.43",
-                    "sno": "1.43",
-                    "topic": "Practical applications of Introduction to Units and Measurements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.44",
-                    "sno": "1.44",
-                    "topic": "Practical applications of Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.45",
-                    "sno": "1.45",
-                    "topic": "Practical applications of Explain the concept of units in measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.46",
-                    "sno": "1.46",
-                    "topic": "Practical applications of Define the term 'unit'",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.47",
-                    "sno": "1.47",
-                    "topic": "Practical applications of Define fundamental units and derived units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.48",
-                    "sno": "1.48",
-                    "topic": "Practical applications of State the SI units of fundamental quantities along with their symbols",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.49",
-                    "sno": "1.49",
-                    "topic": "Practical applications of State the common multiples and submultiples used in the SI system",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.50",
-                    "sno": "1.50",
-                    "topic": "Practical applications of State the rules for writing SI units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.51",
-                    "sno": "1.51",
-                    "topic": "Practical applications of State the advantages of using SI units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.52",
-                    "sno": "1.52",
-                    "topic": "Practical applications of Differentiate between direct and indirect measurements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.53",
-                    "sno": "1.53",
-                    "topic": "Practical applications of Define accuracy and least count in the context of measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.54",
-                    "sno": "1.54",
-                    "topic": "Practical applications of Define error in measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.55",
-                    "sno": "1.55",
-                    "topic": "Practical applications of Define absolute, relative and percentage errors and state their respective  \n        formulae",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.56",
-                    "sno": "1.56",
-                    "topic": "Practical applications of Solve numerical problems on errors in measurements. \n \n2 ELEMENTS OF VECTORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.57",
-                    "sno": "1.57",
-                    "topic": "Practical applications of Introduction to Units and Measurements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.58",
-                    "sno": "1.58",
-                    "topic": "Practical applications of Define the terms: a) Physical quantity b) Fundamental physical quantities  \n      and c) Derived physical quantities",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.59",
-                    "sno": "1.59",
-                    "topic": "Practical applications of Explain the concept of units in measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.60",
-                    "sno": "1.60",
-                    "topic": "Practical applications of Define the term 'unit'",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.61",
-                    "sno": "1.61",
-                    "topic": "Practical applications of Define fundamental units and derived units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.62",
-                    "sno": "1.62",
-                    "topic": "Practical applications of State the SI units of fundamental quantities along with their symbols",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.63",
-                    "sno": "1.63",
-                    "topic": "Practical applications of State the common multiples and submultiples used in the SI system",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.64",
-                    "sno": "1.64",
-                    "topic": "Practical applications of State the rules for writing SI units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.65",
-                    "sno": "1.65",
-                    "topic": "Practical applications of State the advantages of using SI units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.66",
-                    "sno": "1.66",
-                    "topic": "Practical applications of Differentiate between direct and indirect measurements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.67",
-                    "sno": "1.67",
-                    "topic": "Practical applications of Define accuracy and least count in the context of measurement",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee103t-1.68",
-                    "sno": "1.68",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee103t-1.69",
-                    "sno": "1.69",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
@@ -608,7 +188,7 @@
                 {
                     "id": "26ee103t-3.4",
                     "sno": "3.4",
-                    "topic": "State and explain Lami\u2019s theorem; State equations of motion of a body moving in a straight line with uniform acceleration",
+                    "topic": "State and explain Lami’s theorem; State equations of motion of a body moving in a straight line with uniform acceleration",
                     "period": 1,
                     "type": "theory"
                 },
@@ -650,6 +230,461 @@
                 {
                     "id": "26ee103t-3.10",
                     "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Fundamentals of Astrodynamics",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "26ee103t-4.1",
+                    "sno": "4.1",
+                    "topic": "Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.5",
+                    "sno": "4.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.6",
+                    "sno": "4.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.7",
+                    "sno": "4.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.8",
+                    "sno": "4.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.9",
+                    "sno": "4.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.10",
+                    "sno": "4.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.11",
+                    "sno": "4.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-4.12",
+                    "sno": "4.12",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee103t-4.13",
+                    "sno": "4.13",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Energy and Thermal Physics",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "26ee103t-5.1",
+                    "sno": "5.1",
+                    "topic": "Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.4",
+                    "sno": "5.4",
+                    "topic": "Practical applications of Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.5",
+                    "sno": "5.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.6",
+                    "sno": "5.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.7",
+                    "sno": "5.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.8",
+                    "sno": "5.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.9",
+                    "sno": "5.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.10",
+                    "sno": "5.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-5.11",
+                    "sno": "5.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee103t-5.12",
+                    "sno": "5.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Concepts of Acoustics",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "26ee103t-6.1",
+                    "sno": "6.1",
+                    "topic": "Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.2",
+                    "sno": "6.2",
+                    "topic": "Deep dive into Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.3",
+                    "sno": "6.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.4",
+                    "sno": "6.4",
+                    "topic": "Practical applications of Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.5",
+                    "sno": "6.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.6",
+                    "sno": "6.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.7",
+                    "sno": "6.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.8",
+                    "sno": "6.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.9",
+                    "sno": "6.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.10",
+                    "sno": "6.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-6.11",
+                    "sno": "6.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee103t-6.12",
+                    "sno": "6.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Electricity and Magnetism",
+            "totalPeriods": 13,
+            "topics": [
+                {
+                    "id": "26ee103t-7.1",
+                    "sno": "7.1",
+                    "topic": "Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.2",
+                    "sno": "7.2",
+                    "topic": "Deep dive into Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.3",
+                    "sno": "7.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.4",
+                    "sno": "7.4",
+                    "topic": "Practical applications of Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.5",
+                    "sno": "7.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.6",
+                    "sno": "7.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.7",
+                    "sno": "7.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.8",
+                    "sno": "7.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.9",
+                    "sno": "7.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.10",
+                    "sno": "7.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.11",
+                    "sno": "7.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-7.12",
+                    "sno": "7.12",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee103t-7.13",
+                    "sno": "7.13",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Modern Physics",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ee103t-8.1",
+                    "sno": "8.1",
+                    "topic": "Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-8.2",
+                    "sno": "8.2",
+                    "topic": "Deep dive into Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-8.3",
+                    "sno": "8.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-8.4",
+                    "sno": "8.4",
+                    "topic": "Practical applications of Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-8.5",
+                    "sno": "8.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-8.6",
+                    "sno": "8.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-8.7",
+                    "sno": "8.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-8.8",
+                    "sno": "8.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee103t-8.9",
+                    "sno": "8.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee103t-8.10",
+                    "sno": "8.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

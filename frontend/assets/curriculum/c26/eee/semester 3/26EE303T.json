@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Applications of Definite Integrals",
-            "totalPeriods": 30,
+            "title": "DC Network Theorems",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ee303t-1.1",
@@ -111,121 +111,16 @@
                 {
                     "id": "26ee303t-1.15",
                     "sno": "1.15",
-                    "topic": "State Reciprocity theorem Unit 2: AC Fundamentals, Single Phase AC Circuits",
+                    "topic": "State Reciprocity theorem Unit 2: AC Fundamentals, Single Phase AC Circuits; Find the area bounded by a curve and axes; Determine the volumes of solids of revolution along the x-axis; Obtain the Mean and R.M.S values of simple functions; Solve the problems of areas using Numerical Integration. Unit-II C.O.2 Solve first-order and first- degree differential equations and second- order homogeneous and non-homogeneous linear differential equations. L.O.2.1 Define a Differential equation, its order and degree",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.16",
-                    "sno": "1.16",
-                    "topic": "Find the area bounded by a curve and axes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.17",
-                    "sno": "1.17",
-                    "topic": "Determine the volumes of solids of revolution along the x-axis",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.18",
-                    "sno": "1.18",
-                    "topic": "Obtain the Mean and R.M.S values of simple functions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.19",
-                    "sno": "1.19",
-                    "topic": "Solve the problems of areas using Numerical Integration. Unit-II C.O.2 Solve first-order and first- degree differential equations and second- order homogeneous and non-homogeneous linear differential equations. L.O.2.1 Define a Differential equation, its order and degree",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.20",
-                    "sno": "1.20",
-                    "topic": "Deep dive into State ideal voltage source and ideal current source, practical voltage and current sources",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.21",
-                    "sno": "1.21",
-                    "topic": "Deep dive into Explain Source transformation technique",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.22",
-                    "sno": "1.22",
-                    "topic": "Deep dive into Solve simple problems on Source transformation technique",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.23",
-                    "sno": "1.23",
-                    "topic": "Deep dive into State Superposition theorem",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.24",
-                    "sno": "1.24",
-                    "topic": "Deep dive into State the steps involved in solving superposition theorem",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.25",
-                    "sno": "1.25",
-                    "topic": "Deep dive into Solve simple problems on superposition theorem",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.26",
-                    "sno": "1.26",
-                    "topic": "Deep dive into StateThevenin's theorem",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.27",
-                    "sno": "1.27",
-                    "topic": "Deep dive into State the steps for finding VTh and RTh",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.28",
-                    "sno": "1.28",
-                    "topic": "Deep dive into Solve simple Problems on Thevenin's theorem",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-1.29",
-                    "sno": "1.29",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee303t-1.30",
-                    "sno": "1.30",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Differential Equations",
-            "totalPeriods": 30,
+            "title": "AC Fundamentals, Single Phase AC Circuits",
+            "totalPeriods": 27,
             "topics": [
                 {
                     "id": "26ee303t-2.1",
@@ -398,51 +293,30 @@
                 {
                     "id": "26ee303t-2.25",
                     "sno": "2.25",
-                    "topic": "Solve linear differential equation of the form PQdy ydx \uf02b\uf03d , where P and Q are functions of x only or constants. Syllabus for Unit test-I completed",
+                    "topic": "Solve linear differential equation of the form PQdy ydx  , where P and Q are functions of x only or constants. Syllabus for Unit test-I completed",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee303t-2.26",
                     "sno": "2.26",
-                    "topic": "Solve Differential equations of the type (aD2 +bD + c) y = 0 where a (\u2260 0), b, and c are real numbers",
+                    "topic": "Solve Differential equations of the type (aD2 +bD + c) y = 0 where a (≠ 0), b, and c are real numbers",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee303t-2.27",
                     "sno": "2.27",
-                    "topic": "Define complementary function, particular integral and general solution of a non-homogeneous linear differential equation of second order with cons...",
+                    "topic": "Define complementary function, particular integral and general solution of a non-homogeneous linear differential equation of second order with cons...; Describe the method of solving f(D)y= 𝑒𝑎𝑥 , where f(D) is a polynomial of second order. Unit-III C.O. 3 Apply various probability and statistical t...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ee303t-2.28",
-                    "sno": "2.28",
-                    "topic": "Describe the method of solving f(D)y= \ud835\udc52\ud835\udc4e\ud835\udc65 , where f(D) is a polynomial of second order. Unit-III C.O. 3 Apply various probability and statistical t...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee303t-2.29",
-                    "sno": "2.29",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee303t-2.30",
-                    "sno": "2.30",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "Probability and Statistics",
-            "totalPeriods": 30,
+            "title": "Polyphase Circuits",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ee303t-3.1",
@@ -454,21 +328,21 @@
                 {
                     "id": "26ee303t-3.2",
                     "sno": "3.2",
-                    "topic": "Explain the relationships between line and phase values of voltages and currents for both balanced Star (Y) and Delta (\u0394) connected systems",
+                    "topic": "Explain the relationships between line and phase values of voltages and currents for both balanced Star (Y) and Delta (Δ) connected systems",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee303t-3.3",
                     "sno": "3.3",
-                    "topic": "Calculate the power in balanced three-phase loads for both Star (Y) and Delta (\u0394) connections",
+                    "topic": "Calculate the power in balanced three-phase loads for both Star (Y) and Delta (Δ) connections",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee303t-3.4",
                     "sno": "3.4",
-                    "topic": "Differentiate between Star (Y) and Delta (\u0394) connection configurations based on their voltage, current, and power characteristics",
+                    "topic": "Differentiate between Star (Y) and Delta (Δ) connection configurations based on their voltage, current, and power characteristics",
                     "period": 1,
                     "type": "theory"
                 },
@@ -510,146 +384,286 @@
                 {
                     "id": "26ee303t-3.10",
                     "sno": "3.10",
-                    "topic": "Explain dependent, independent events and state multiplication theorem",
+                    "topic": "Explain dependent, independent events and state multiplication theorem; Solve simple problems on multiplication theorem; Recall the measures of central tendency; Explain the significance of measures of dispersion to determine the degree of heterogeneity of the data; Find the measures of dispersion, Range, Mean Deviation and Standard Deviation for ungrouped data; Explain the merits and demerits of these measures of dispersion; Explain bivariate data; Explain the concept of covariance and correlation between two variables",
+                    "period": 1,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Fundamentals of Measurement and Analog Instruments",
+            "totalPeriods": 22,
+            "topics": [
+                {
+                    "id": "26ee303t-4.1",
+                    "sno": "4.1",
+                    "topic": "Study and analysis of Unit 4",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.11",
-                    "sno": "3.11",
-                    "topic": "Solve simple problems on multiplication theorem",
+                    "id": "26ee303t-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Study and analysis of Unit 4",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.12",
-                    "sno": "3.12",
-                    "topic": "Recall the measures of central tendency",
+                    "id": "26ee303t-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 4",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.13",
-                    "sno": "3.13",
-                    "topic": "Explain the significance of measures of dispersion to determine the degree of heterogeneity of the data",
+                    "id": "26ee303t-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Study and analysis of Unit 4",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.14",
-                    "sno": "3.14",
-                    "topic": "Find the measures of dispersion, Range, Mean Deviation and Standard Deviation for ungrouped data",
+                    "id": "26ee303t-4.5",
+                    "sno": "4.5",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.15",
-                    "sno": "3.15",
-                    "topic": "Explain the merits and demerits of these measures of dispersion",
+                    "id": "26ee303t-4.6",
+                    "sno": "4.6",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.16",
-                    "sno": "3.16",
-                    "topic": "Explain bivariate data",
+                    "id": "26ee303t-4.7",
+                    "sno": "4.7",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.17",
-                    "sno": "3.17",
-                    "topic": "Explain the concept of covariance and correlation between two variables",
+                    "id": "26ee303t-4.8",
+                    "sno": "4.8",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.18",
-                    "sno": "3.18",
-                    "topic": "Deep dive into Define phase sequence and a balanced system related to polyphase circuits",
+                    "id": "26ee303t-4.9",
+                    "sno": "4.9",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.19",
-                    "sno": "3.19",
-                    "topic": "Deep dive into Explain the relationships between line and phase values of voltages and currents for both balanced Star (Y) and Delta (\u0394) connected systems",
+                    "id": "26ee303t-4.10",
+                    "sno": "4.10",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.20",
-                    "sno": "3.20",
-                    "topic": "Deep dive into Calculate the power in balanced three-phase loads for both Star (Y) and Delta (\u0394) connections",
+                    "id": "26ee303t-4.11",
+                    "sno": "4.11",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.21",
-                    "sno": "3.21",
-                    "topic": "Deep dive into Differentiate between Star (Y) and Delta (\u0394) connection configurations based on their voltage, current, and power characteristics",
+                    "id": "26ee303t-4.12",
+                    "sno": "4.12",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.22",
-                    "sno": "3.22",
-                    "topic": "Deep dive into Explain the basic principle of the two-wattmeter method for measuring three-phase power",
+                    "id": "26ee303t-4.13",
+                    "sno": "4.13",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.23",
-                    "sno": "3.23",
-                    "topic": "Deep dive into State addition theorem of probability for two mutually exclusive and exhaustive events",
+                    "id": "26ee303t-4.14",
+                    "sno": "4.14",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.24",
-                    "sno": "3.24",
-                    "topic": "Deep dive into Solve simple problems on addition theorem",
+                    "id": "26ee303t-4.15",
+                    "sno": "4.15",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.25",
-                    "sno": "3.25",
-                    "topic": "Deep dive into Explain conditional event and conditional probability",
+                    "id": "26ee303t-4.16",
+                    "sno": "4.16",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.26",
-                    "sno": "3.26",
-                    "topic": "Deep dive into Solve simple problems on conditional probability",
+                    "id": "26ee303t-4.17",
+                    "sno": "4.17",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.27",
-                    "sno": "3.27",
-                    "topic": "Deep dive into Explain dependent, independent events and state multiplication theorem",
+                    "id": "26ee303t-4.18",
+                    "sno": "4.18",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.28",
-                    "sno": "3.28",
-                    "topic": "Deep dive into Solve simple problems on multiplication theorem",
+                    "id": "26ee303t-4.19",
+                    "sno": "4.19",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee303t-3.29",
-                    "sno": "3.29",
+                    "id": "26ee303t-4.20",
+                    "sno": "4.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-4.21",
+                    "sno": "4.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee303t-3.30",
-                    "sno": "3.30",
+                    "id": "26ee303t-4.22",
+                    "sno": "4.22",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Electronic and Digital Measuring Instruments",
+            "totalPeriods": 16,
+            "topics": [
+                {
+                    "id": "26ee303t-5.1",
+                    "sno": "5.1",
+                    "topic": "Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.4",
+                    "sno": "5.4",
+                    "topic": "Practical applications of Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.5",
+                    "sno": "5.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.6",
+                    "sno": "5.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.7",
+                    "sno": "5.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.8",
+                    "sno": "5.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.9",
+                    "sno": "5.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.10",
+                    "sno": "5.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.11",
+                    "sno": "5.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.12",
+                    "sno": "5.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.13",
+                    "sno": "5.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.14",
+                    "sno": "5.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee303t-5.15",
+                    "sno": "5.15",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee303t-5.16",
+                    "sno": "5.16",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

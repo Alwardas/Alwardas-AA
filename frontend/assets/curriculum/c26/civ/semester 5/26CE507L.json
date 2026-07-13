@@ -7,565 +7,33 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Ingredients of concrete",
-            "totalPeriods": 80,
+            "title": "Site Preparation: Clearing, levelling, and marking given plot boundaries.",
+            "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26ce507l-1.1",
                     "sno": "1.1",
-                    "topic": "Identify and describe the ingredients of concrete and their roles in achieving \ndesired properties",
+                    "topic": "Clearing, levelling, and marking given plot boundaries according to details in registered site document.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-1.2",
                     "sno": "1.2",
-                    "topic": "Identify different types of cement and their uses",
+                    "topic": "Practice and training on Clearing, levelling, and marking given plot boundaries according to details in registered site document.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-1.3",
                     "sno": "1.3",
-                    "topic": "Explain the physical properties and storage methods of cement",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.4",
-                    "sno": "1.4",
-                    "topic": "Differentiate between natural and manufactured fine aggregates",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.5",
-                    "sno": "1.5",
-                    "topic": "Interpret grading requirements and their impact on workability",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.6",
-                    "sno": "1.6",
-                    "topic": "List desirable properties of coarse aggregates",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.7",
-                    "sno": "1.7",
-                    "topic": "Relate aggregate properties to strength and durability of concrete",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.8",
-                    "sno": "1.8",
-                    "topic": "State the role of water in hydration and setting of cement",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.9",
-                    "sno": "1.9",
-                    "topic": "List quality standards for mixing and curing water",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.10",
-                    "sno": "1.10",
-                    "topic": "Define different types of admixtures (chemical and mineral)",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.11",
-                    "sno": "1.11",
-                    "topic": "Explain the purpose and effects of admixtures on concrete behavior",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.12",
-                    "sno": "1.12",
-                    "topic": "Understand \u2018Grades\u2019 of concrete",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.13",
-                    "sno": "1.13",
-                    "topic": "State the grades of concrete recommended for different types of works \n2. CONCRETE MIXING AND PLACEMENT METHODS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.14",
-                    "sno": "1.14",
-                    "topic": "Explain the importance of building services",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.15",
-                    "sno": "1.15",
-                    "topic": "State the objectives of services in buildings",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.16",
-                    "sno": "1.16",
-                    "topic": "List different types of building services",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.17",
-                    "sno": "1.17",
-                    "topic": "Select appropriate services for a particular type of building. \n2. WATER SUPPLY AND SANITARY SYSTEMS IN BUILDINGS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.18",
-                    "sno": "1.18",
-                    "topic": "Define the concept and explain the need for green buildings in the context of \nsustainable development",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.19",
-                    "sno": "1.19",
-                    "topic": "List and describe the basic features and principles that characterize a green \nbuilding",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.20",
-                    "sno": "1.20",
-                    "topic": "Identify and differentiate among major green building rating systems such as \nLEED, IGBC, and GRIHA",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.21",
-                    "sno": "1.21",
-                    "topic": "Explain the environmental, economic, and health benefits associated with green \nbuildings",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.22",
-                    "sno": "1.22",
-                    "topic": "Discuss the merits and limitations of adopting green building technologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.23",
-                    "sno": "1.23",
-                    "topic": "Recognize the contribution of buildings to global warming and the need for \nsustainable practices to mitigate climate impact. \n2. ENERGY SOURCES & CARBON EMISSIONS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.24",
-                    "sno": "1.24",
-                    "topic": "Sketch the conventional signs of Civil Engineering materials, Plumbing and \nElectrical fixtures",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.25",
-                    "sno": "1.25",
-                    "topic": "Draw the cross section of load bearing wall and name all components below \nand above ground level",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.26",
-                    "sno": "1.26",
-                    "topic": "Draw the cross section of an isolated column footing of a framed structure",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.27",
-                    "sno": "1.27",
-                    "topic": "Draw the plan of one Brick wall and 1\u00bd brick wall meeting at corner showing \nalternative courses of header and stretchers in English bond",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.28",
-                    "sno": "1.28",
-                    "topic": "Draw the following views of a fully panelled door and label the parts1. Elevation \nand 2. Sectional plan",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.29",
-                    "sno": "1.29",
-                    "topic": "Draw the following views of fully panelled window and glazed window and label \nthe parts.1. Elevation and 2. Sectional plan",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.30",
-                    "sno": "1.30",
-                    "topic": "Draw the following views of flushed door and label the parts \n1. Elevation and \n  2. Sectional plan",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.31",
-                    "sno": "1.31",
-                    "topic": "Draw the elevation of the following trusses and label the parts with the given \ndata (details of joints not required)1. King post truss and 2. Queen post truss \n2.  RESIDENTIAL BUILDINGS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.32",
-                    "sno": "1.32",
-                    "topic": "Conventional signs for materials like bricks, stone, concrete, wood, glass, earth, \nsteel and electrical fixtures like ceiling fan, bulb, main switch, bell push, buzzer, \nA.C motor, and water supply and sanitary fixtures like tap, wash basin, sink, \nW.C pan (Indian and European type), shower, flush tank, doors & window types",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.33",
-                    "sno": "1.33",
-                    "topic": "Cross section of a load bearing wall showing all the components below and \nabove the ground level",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.34",
-                    "sno": "1.34",
-                    "topic": "Cross section of an isolated column footing in a framed structure",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.35",
-                    "sno": "1.35",
-                    "topic": "Plan of one brick wall and 1\u00bd brick wall meeting at a corner showing odd and \neven courses in English bond",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.36",
-                    "sno": "1.36",
-                    "topic": "Plan and Cross section of a Fully panelled door showing all the component parts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.37",
-                    "sno": "1.37",
-                    "topic": "Plan and Cross section of a Fully panelled window and glazed window showing \nall the component parts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.38",
-                    "sno": "1.38",
-                    "topic": "Plan and cross section of a flushed door showing all the component parts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.39",
-                    "sno": "1.39",
-                    "topic": "Elevation of King post and Queen post trusses with the given data (details of \njoints not required) \n2. RESIDENTIAL BUILDINGS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.40",
-                    "sno": "1.40",
-                    "topic": "Identify and describe the component parts and fundamental lines of a transit \ntheodolite",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.41",
-                    "sno": "1.41",
-                    "topic": "Understand and explain technical terms used in theodolite surveying such as \nface left/right, transiting, and swinging",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.42",
-                    "sno": "1.42",
-                    "topic": "Perform temporary adjustments of the theodolite accurately",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.43",
-                    "sno": "1.43",
-                    "topic": "Measure horizontal angles using repetition and reiteration methods",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.44",
-                    "sno": "1.44",
-                    "topic": "Measure vertical angles and interpret the readings",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.45",
-                    "sno": "1.45",
-                    "topic": "Record and book field observations correctly in a field book",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.46",
-                    "sno": "1.46",
-                    "topic": "Determine magnetic bearings, deflection angles, and direct angles",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.47",
-                    "sno": "1.47",
-                    "topic": "Apply methods of extending a straight -line using theodolite:  single/double \ntransiting and fore sighting",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.48",
-                    "sno": "1.48",
-                    "topic": "Identify and minimize errors in theodolite work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.49",
-                    "sno": "1.49",
-                    "topic": "Execute theodolite traversing using included angle, deflection angle  and \nmagnetic bearing methods",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.50",
-                    "sno": "1.50",
-                    "topic": "Perform checks for closed and open traverses",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.51",
-                    "sno": "1.51",
-                    "topic": "List the omitted measurements of a closed traverse and calculate the  omitted \nmeasurements when Length and bearing of one side only are omitted",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.52",
-                    "sno": "1.52",
-                    "topic": "Compute latitude and departure, determine closing error, and calculate \nconsecutive and independent coordinates",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.53",
-                    "sno": "1.53",
-                    "topic": "Determine the area of a closed traverse. \n2.  TRIGONOMETRIC LEVELLING",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.54",
-                    "sno": "1.54",
-                    "topic": "Identification of the component parts of a theodolite",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.55",
-                    "sno": "1.55",
-                    "topic": "Performing temporary adjustment of theodolite",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.56",
-                    "sno": "1.56",
-                    "topic": "Measurement of horizontal angle by repetition method and record the \nobservations in the field book",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.57",
-                    "sno": "1.57",
-                    "topic": "Measurement of horizontal angles by reiteration method and record the \nobservations in the field book",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.58",
-                    "sno": "1.58",
-                    "topic": "Measurement of Vertical angles and record the observations in the field book",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.59",
-                    "sno": "1.59",
-                    "topic": "Measurement of the horizontal distance between two inaccessible points using \ntheodolite",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.60",
-                    "sno": "1.60",
-                    "topic": "Measurement of bearing of a survey line",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.61",
-                    "sno": "1.61",
-                    "topic": "Conducting (i) Theodolite traversing (closed) (ii) Compute latitudes and \ndepartures and (iii) Calculate the area of traverse. \n \n2. TRIGONOMETRIC LEVELLING",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.62",
-                    "sno": "1.62",
-                    "topic": "Deep dive into Identify and describe the ingredients of concrete and their roles in achieving \ndesired properties",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.63",
-                    "sno": "1.63",
-                    "topic": "Deep dive into Identify different types of cement and their uses",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.64",
-                    "sno": "1.64",
-                    "topic": "Deep dive into Explain the physical properties and storage methods of cement",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.65",
-                    "sno": "1.65",
-                    "topic": "Deep dive into Differentiate between natural and manufactured fine aggregates",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.66",
-                    "sno": "1.66",
-                    "topic": "Deep dive into Interpret grading requirements and their impact on workability",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.67",
-                    "sno": "1.67",
-                    "topic": "Deep dive into List desirable properties of coarse aggregates",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.68",
-                    "sno": "1.68",
-                    "topic": "Deep dive into Relate aggregate properties to strength and durability of concrete",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.69",
-                    "sno": "1.69",
-                    "topic": "Deep dive into State the role of water in hydration and setting of cement",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.70",
-                    "sno": "1.70",
-                    "topic": "Deep dive into List quality standards for mixing and curing water",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.71",
-                    "sno": "1.71",
-                    "topic": "Deep dive into Define different types of admixtures (chemical and mineral)",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.72",
-                    "sno": "1.72",
-                    "topic": "Deep dive into Explain the purpose and effects of admixtures on concrete behavior",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.73",
-                    "sno": "1.73",
-                    "topic": "Deep dive into Understand \u2018Grades\u2019 of concrete",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.74",
-                    "sno": "1.74",
-                    "topic": "Deep dive into State the grades of concrete recommended for different types of works \n2. CONCRETE MIXING AND PLACEMENT METHODS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.75",
-                    "sno": "1.75",
-                    "topic": "Deep dive into Explain the importance of building services",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.76",
-                    "sno": "1.76",
-                    "topic": "Deep dive into State the objectives of services in buildings",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.77",
-                    "sno": "1.77",
-                    "topic": "Deep dive into List different types of building services",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.78",
-                    "sno": "1.78",
-                    "topic": "Deep dive into Select appropriate services for a particular type of building. \n2. WATER SUPPLY AND SANITARY SYSTEMS IN BUILDINGS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce507l-1.79",
-                    "sno": "1.79",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce507l-1.80",
-                    "sno": "1.80",
+                    "id": "26ce507l-1.4",
+                    "sno": "1.4",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -574,75 +42,89 @@
         },
         {
             "unitNo": 2,
-            "title": "Concrete Mixing and Placement Methods",
-            "totalPeriods": 10,
+            "title": "Setting out works: Marking for the earth work for a column at the junction of two walls, centre line marking for simple buildings. Marking High flood level.",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26ce507l-2.1",
                     "sno": "2.1",
-                    "topic": "Differentiate between volume and weight batching; Understand the importance of accurate batching; Describe the procedure for hand and machine mixin...",
+                    "topic": "Marking for the earth work of a Column & for the Earth work of the junction of two walls.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-2.2",
                     "sno": "2.2",
-                    "topic": "State precautions during transportation; Explain correct methods of placing concrete; List do\u2019s and don\u2019ts in placing; State the importance of comp...",
+                    "topic": "Marking for the earth work for a simple two roomed building.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-2.3",
                     "sno": "2.3",
-                    "topic": "Understand the impact of curing on strength development; Explain the concept of ready-mix concrete and its advantages 3. CONCRETE TESTING AND QUALI...",
+                    "topic": "Marking for the centre line of a one room in a residential building with reference to the given point using Total Station.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-2.4",
                     "sno": "2.4",
-                    "topic": "State the advantages of various pipe material used in water supply system in buildings; List various sanitary fittings and plumbing traps; Explain ...",
+                    "topic": "Marking high flood level of the site.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-2.5",
                     "sno": "2.5",
-                    "topic": "Differentiate between renewable and non -renewable energy sources with examples like solar, wind, and coal; Explain the methods of utilizing solar ...",
+                    "topic": "Practice and training on Marking for the earth work of a Column & for the Earth work of the junction of two walls.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-2.6",
                     "sno": "2.6",
-                    "topic": "Draw the following views of single storeyed load bearing type residential building from the given line diagram and set of specifications for a) One...",
+                    "topic": "Practice and training on Marking for the earth work for a simple two roomed building.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-2.7",
                     "sno": "2.7",
-                    "topic": "Setbacks and orientation principles for planning residential buildings as per local bye laws and NBC; Single storied two-bedroom load bearing resid...",
+                    "topic": "Practice and training on Marking for the centre line of a one room in a residential building with reference to the given point using Total Station.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-2.8",
                     "sno": "2.8",
-                    "topic": "Determine the Horizontal and Vertical Distance of an object whose base is accessible; Determine the Horizontal and Vertical Distance of an object w...",
+                    "topic": "Practice and training on Marking high flood level of the site.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-2.9",
                     "sno": "2.9",
+                    "topic": "Advanced practical on Marking for the earth work of a Column & for the Earth work of the junction of two walls.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-2.10",
+                    "sno": "2.10",
+                    "topic": "Advanced practical on Marking for the earth work for a simple two roomed building.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-2.11",
+                    "sno": "2.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce507l-2.10",
-                    "sno": "2.10",
+                    "id": "26ce507l-2.12",
+                    "sno": "2.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -651,61 +133,96 @@
         },
         {
             "unitNo": 3,
-            "title": "Concrete Testing and Quality Evaluation",
-            "totalPeriods": 8,
+            "title": "Foundation Works: Excavation, refilling trenches and Termite treatment",
+            "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26ce507l-3.1",
                     "sno": "3.1",
-                    "topic": "Perform slump and compaction factor tests; Interpret results to assess workability; Prepare and test concrete specimens; Interpret strength test re...",
+                    "topic": "Excavation methods in different soils and precautions.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-3.2",
                     "sno": "3.2",
-                    "topic": "Explain durability-related parameters; State importance of low permeability in concrete; Interpret acceptance criteria for concrete strength; Apply...",
+                    "topic": "Termite treatment in foundations and basement.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-3.3",
                     "sno": "3.3",
-                    "topic": "State the requirements of a good electrical wiring; List the different types of electrical wirings; State the objectives of electrical earthing; Ex...",
+                    "topic": "Refilling methods of foundation trenches.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce507l-3.4",
                     "sno": "3.4",
-                    "topic": "Identify and classify various renewable and recyclable materials used in green buildings, with relevant examples; Describe energy -efficient and lo...",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Concrete works: Proportioning and mixing concrete, shuttering, Levelling of shuttering, centering and placement of reinforcement",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "26ce507l-4.1",
+                    "sno": "4.1",
+                    "topic": "Proportion and mixing of Concrete by hand and machine mixing.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce507l-3.5",
-                    "sno": "3.5",
-                    "topic": "Draw the plan of Primary school building for 250 to 300 students\u2019 capacity; Draw the plan and sectional elevation of lift provision in high raised ...",
+                    "id": "26ce507l-4.2",
+                    "sno": "4.2",
+                    "topic": "Learning different Shuttering and Centering methods.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce507l-3.6",
-                    "sno": "3.6",
-                    "topic": "Provision of lift in a raised building; Provisions of fire safety in a building; Provisions to be made for Physically challenged and aged people in...",
+                    "id": "26ce507l-4.3",
+                    "sno": "4.3",
+                    "topic": "Accuracy and precautions in placement of reinforcement in formwork, tolerable limits of eccentricity.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce507l-3.7",
-                    "sno": "3.7",
+                    "id": "26ce507l-4.4",
+                    "sno": "4.4",
+                    "topic": "Practice and training on Proportion and mixing of Concrete by hand and machine mixing.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-4.5",
+                    "sno": "4.5",
+                    "topic": "Practice and training on Learning different Shuttering and Centering methods.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-4.6",
+                    "sno": "4.6",
+                    "topic": "Practice and training on Accuracy and precautions in placement of reinforcement in formwork, tolerable limits of eccentricity.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-4.7",
+                    "sno": "4.7",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce507l-3.8",
-                    "sno": "3.8",
+                    "id": "26ce507l-4.8",
+                    "sno": "4.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -713,55 +230,587 @@
             ]
         },
         {
-            "unitNo": 4,
-            "title": "Types of concretes",
-            "totalPeriods": 7,
+            "unitNo": 5,
+            "title": "Masonry Works: Brick work in English bond, Preparation of cement mortar with specified mix, Supervisory skills of Plastering of a wall. Provision of lintel over the openings, Placement of bands in 115 mm brick wall. Ceiling finish in different methods.",
+            "totalPeriods": 15,
             "topics": [
                 {
-                    "id": "26ce507l-4.1",
-                    "sno": "4.1",
-                    "topic": "Differentiate between PCC, RCC, and PSC; State suitable applications for each; Understand the following special concretes (a) Fiber Reinforced Conc...",
+                    "id": "26ce507l-5.1",
+                    "sno": "5.1",
+                    "topic": "Construction of 230mm and 115mm thick brick wall in English Bond at the corner of a wall.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce507l-4.2",
-                    "sno": "4.2",
-                    "topic": "State HVAC systems; Explain various components of HVAC systems; State different types of Air conditioning systems used in a building; Explain the h...",
+                    "id": "26ce507l-5.2",
+                    "sno": "5.2",
+                    "topic": "Preparation of cement mortar with specified mix proportion by manual mixing and volumetric proportioning.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce507l-4.3",
-                    "sno": "4.3",
-                    "topic": "Explain Lift and Escalator systems with layouts. 5. FIRE SAFETY AND BUILDING SECURITY SYSTEMS; Explain the concept of sustainable site selection an...",
+                    "id": "26ce507l-5.3",
+                    "sno": "5.3",
+                    "topic": "Supervisory skills of Plastering of a wall and finishing Ceiling with cement mortar or fixing POP ceiling.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce507l-4.4",
-                    "sno": "4.4",
-                    "topic": "Prepare a working drawing for the purpose of marking the width of foundation for the given plan of a building; Calculate the following for the give...",
+                    "id": "26ce507l-5.4",
+                    "sno": "5.4",
+                    "topic": "Practice and training on Construction of 230mm and 115mm thick brick wall in English Bond at the corner of a wall.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce507l-4.5",
-                    "sno": "4.5",
-                    "topic": "Calculate the following for the given plan of a building 1. Plinth area, 2. Carpet area and 3. Floor area ratio/ Floor space Index; Working drawing...",
+                    "id": "26ce507l-5.5",
+                    "sno": "5.5",
+                    "topic": "Practice and training on Preparation of cement mortar with specified mix proportion by manual mixing and volumetric proportioning.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce507l-4.6",
-                    "sno": "4.6",
+                    "id": "26ce507l-5.6",
+                    "sno": "5.6",
+                    "topic": "Practice and training on Supervisory skills of Plastering of a wall and finishing Ceiling with cement mortar or fixing POP ceiling.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-5.7",
+                    "sno": "5.7",
+                    "topic": "Advanced practical on Construction of 230mm and 115mm thick brick wall in English Bond at the corner of a wall.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-5.8",
+                    "sno": "5.8",
+                    "topic": "Advanced practical on Preparation of cement mortar with specified mix proportion by manual mixing and volumetric proportioning.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-5.9",
+                    "sno": "5.9",
+                    "topic": "Advanced practical on Supervisory skills of Plastering of a wall and finishing Ceiling with cement mortar or fixing POP ceiling.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-5.10",
+                    "sno": "5.10",
+                    "topic": "Real-world simulation of Construction of 230mm and 115mm thick brick wall in English Bond at the corner of a wall.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-5.11",
+                    "sno": "5.11",
+                    "topic": "Real-world simulation of Preparation of cement mortar with specified mix proportion by manual mixing and volumetric proportioning.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-5.12",
+                    "sno": "5.12",
+                    "topic": "Real-world simulation of Supervisory skills of Plastering of a wall and finishing Ceiling with cement mortar or fixing POP ceiling.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-5.13",
+                    "sno": "5.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-5.14",
+                    "sno": "5.14",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce507l-4.7",
-                    "sno": "4.7",
+                    "id": "26ce507l-5.15",
+                    "sno": "5.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Flooring and finishing: Marking of flooring levels. Supervisory skills for construction with Cement mortar, Ceramic tile and marble flooring and for fixing of floor trap, gully trap and their connections to drain.",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "26ce507l-6.1",
+                    "sno": "6.1",
+                    "topic": "Supervisory skills for construction of Cement Concrete Flooring; Laying base concrete and finishing the surface.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-6.2",
+                    "sno": "6.2",
+                    "topic": "Fixing of floor trap, Gully trap in the floor and their connections to drain.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-6.3",
+                    "sno": "6.3",
+                    "topic": "Practice and training on Supervisory skills for construction of Cement Concrete Flooring; Laying base concrete and finishing the surface.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-6.4",
+                    "sno": "6.4",
+                    "topic": "Practice and training on Fixing of floor trap, Gully trap in the floor and their connections to drain.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-6.5",
+                    "sno": "6.5",
+                    "topic": "Advanced practical on Supervisory skills for construction of Cement Concrete Flooring; Laying base concrete and finishing the surface.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-6.6",
+                    "sno": "6.6",
+                    "topic": "Advanced practical on Fixing of floor trap, Gully trap in the floor and their connections to drain.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-6.7",
+                    "sno": "6.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce507l-6.8",
+                    "sno": "6.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Structural Works: Placement of reinforcement in an Isolated Column Footing, Sun shade (with specific attention of location), Stairs spanning longitudinal case (with specific attention at the junction of waist and landing slabs). Placement of reinforcement for slab (with specific attention of chairs). Placement of reinforcement for a Beam column junction (with specific attention to Earth quake resistance design).",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "26ce507l-7.1",
+                    "sno": "7.1",
+                    "topic": "Placement of reinforcement for an Isolated Column Footing and positioning of shuttering to the column reinforcement.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.2",
+                    "sno": "7.2",
+                    "topic": "Placement of reinforcement for sun shade (with specific attention of location).",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.3",
+                    "sno": "7.3",
+                    "topic": "Placement of reinforcement for stairs spanning longitudinal case at junction of waist and landing slabs.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.4",
+                    "sno": "7.4",
+                    "topic": "Placement of reinforcement for slab (with specific attention of chairs) and placement of reinforcement.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.5",
+                    "sno": "7.5",
+                    "topic": "Placement of reinforcement for a beam column junction (with specific attention to Earth Quake resistance design).",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.6",
+                    "sno": "7.6",
+                    "topic": "Practice and training on Placement of reinforcement for an Isolated Column Footing and positioning of shuttering to the column reinforcement.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.7",
+                    "sno": "7.7",
+                    "topic": "Practice and training on Placement of reinforcement for sun shade (with specific attention of location).",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.8",
+                    "sno": "7.8",
+                    "topic": "Practice and training on Placement of reinforcement for stairs spanning longitudinal case at junction of waist and landing slabs.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.9",
+                    "sno": "7.9",
+                    "topic": "Practice and training on Placement of reinforcement for slab (with specific attention of chairs) and placement of reinforcement.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.10",
+                    "sno": "7.10",
+                    "topic": "Practice and training on Placement of reinforcement for a beam column junction (with specific attention to Earth Quake resistance design).",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.11",
+                    "sno": "7.11",
+                    "topic": "Advanced practical on Placement of reinforcement for an Isolated Column Footing and positioning of shuttering to the column reinforcement.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.12",
+                    "sno": "7.12",
+                    "topic": "Advanced practical on Placement of reinforcement for sun shade (with specific attention of location).",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.13",
+                    "sno": "7.13",
+                    "topic": "Advanced practical on Placement of reinforcement for stairs spanning longitudinal case at junction of waist and landing slabs.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.14",
+                    "sno": "7.14",
+                    "topic": "Advanced practical on Placement of reinforcement for slab (with specific attention of chairs) and placement of reinforcement.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.15",
+                    "sno": "7.15",
+                    "topic": "Advanced practical on Placement of reinforcement for a beam column junction (with specific attention to Earth Quake resistance design).",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.16",
+                    "sno": "7.16",
+                    "topic": "Real-world simulation of Placement of reinforcement for an Isolated Column Footing and positioning of shuttering to the column reinforcement.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-7.17",
+                    "sno": "7.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce507l-7.18",
+                    "sno": "7.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Plumbing and Sanitary Works: Calculation of slopes for Laying water supply line, Sewerage line with details of joints.",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ce507l-8.1",
+                    "sno": "8.1",
+                    "topic": "Method of laying water supply lines, with PVC pipes jointing them with different elements using solvents.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-8.2",
+                    "sno": "8.2",
+                    "topic": "Laying PVC Sewerage lines connecting drain with gully/intercepting trap.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-8.3",
+                    "sno": "8.3",
+                    "topic": "Connection sewer line to septic tank and soak pit.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-8.4",
+                    "sno": "8.4",
+                    "topic": "Practice and training on Method of laying water supply lines, with PVC pipes jointing them with different elements using solvents.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-8.5",
+                    "sno": "8.5",
+                    "topic": "Practice and training on Laying PVC Sewerage lines connecting drain with gully/intercepting trap.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-8.6",
+                    "sno": "8.6",
+                    "topic": "Practice and training on Connection sewer line to septic tank and soak pit.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-8.7",
+                    "sno": "8.7",
+                    "topic": "Advanced practical on Method of laying water supply lines, with PVC pipes jointing them with different elements using solvents.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-8.8",
+                    "sno": "8.8",
+                    "topic": "Advanced practical on Laying PVC Sewerage lines connecting drain with gully/intercepting trap.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-8.9",
+                    "sno": "8.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce507l-8.10",
+                    "sno": "8.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 9,
+            "title": "Safety Practices on Site: PPE, Safety in scaffolding, Fire safety, First aid.",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "id": "26ce507l-9.1",
+                    "sno": "9.1",
+                    "topic": "PPE (Personal protection equipment) and safety in scaffolding, fire safety at construction sites.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-9.2",
+                    "sno": "9.2",
+                    "topic": "First aid practices.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-9.3",
+                    "sno": "9.3",
+                    "topic": "Practice and training on PPE (Personal protection equipment) and safety in scaffolding, fire safety at construction sites.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-9.4",
+                    "sno": "9.4",
+                    "topic": "Practice and training on First aid practices.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-9.5",
+                    "sno": "9.5",
+                    "topic": "Advanced practical on PPE (Personal protection equipment) and safety in scaffolding, fire safety at construction sites.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-9.6",
+                    "sno": "9.6",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce507l-9.7",
+                    "sno": "9.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 10,
+            "title": "Onsite records and reports: Daily activity logbook, Photographic documentation, work progress reports.",
+            "totalPeriods": 3,
+            "topics": [
+                {
+                    "id": "26ce507l-10.1",
+                    "sno": "10.1",
+                    "topic": "Method of maintaining onsite records and daily activity logbook.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-10.2",
+                    "sno": "10.2",
+                    "topic": "Preparation of Photographic documentation and submission of work progress reports.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-10.3",
+                    "sno": "10.3",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                }
+            ]
+        },
+        {
+            "unitNo": 11,
+            "title": "Field visits: Residential building under construction, RMC plant, High way and Bridge construction site.",
+            "totalPeriods": 16,
+            "topics": [
+                {
+                    "id": "26ce507l-11.1",
+                    "sno": "11.1",
+                    "topic": "Field visit to a residential building under construction and RMC (Ready Mix Cement concrete) Plant.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.2",
+                    "sno": "11.2",
+                    "topic": "Visit to Highway construction sites and Bridge construction site.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.3",
+                    "sno": "11.3",
+                    "topic": "Practice and training on Field visit to a residential building under construction and RMC (Ready Mix Cement concrete) Plant.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.4",
+                    "sno": "11.4",
+                    "topic": "Practice and training on Visit to Highway construction sites and Bridge construction site.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.5",
+                    "sno": "11.5",
+                    "topic": "Advanced practical on Field visit to a residential building under construction and RMC (Ready Mix Cement concrete) Plant.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.6",
+                    "sno": "11.6",
+                    "topic": "Advanced practical on Visit to Highway construction sites and Bridge construction site.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.7",
+                    "sno": "11.7",
+                    "topic": "Real-world simulation of Field visit to a residential building under construction and RMC (Ready Mix Cement concrete) Plant.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.8",
+                    "sno": "11.8",
+                    "topic": "Real-world simulation of Visit to Highway construction sites and Bridge construction site.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.9",
+                    "sno": "11.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.10",
+                    "sno": "11.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.11",
+                    "sno": "11.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.12",
+                    "sno": "11.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.13",
+                    "sno": "11.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.14",
+                    "sno": "11.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce507l-11.15",
+                    "sno": "11.15",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce507l-11.16",
+                    "sno": "11.16",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

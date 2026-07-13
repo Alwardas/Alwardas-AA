@@ -6,90 +6,132 @@
     "totalPeriods": 45,
     "units": [
         {
+            "unitNo": 1,
+            "title": "SOIL COMPOSITION AND PHASE RELATIONSHIPS",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "26ce505e-1.1",
+                    "sno": "1.1",
+                    "topic": "Explains the importance of soil mechanics and lists types, formation, deposition",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.2",
+                    "sno": "1.2",
+                    "topic": "Explains the phase composition and soil as a 3-phase system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.3",
+                    "sno": "1.3",
+                    "topic": "Defines void ratio, porosity, soil moisture, plasticity, Atterberg Limits, specific gravity, density",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.4",
+                    "sno": "1.4",
+                    "topic": "Expresses relationships between volume of voids, moisture, density, saturation, air voids",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.5",
+                    "sno": "1.5",
+                    "topic": "Work out simple problems using the relationships between various soil parameters",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.6",
+                    "sno": "1.6",
+                    "topic": "Explains test for soil moisture content by Oven drying, Atterberg's Limits, specific gravity",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.7",
+                    "sno": "1.7",
+                    "topic": "Deep dive into Explains the importance of soil mechanics and lists types, formation, deposition",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.8",
+                    "sno": "1.8",
+                    "topic": "Deep dive into Explains the phase composition and soil as a 3-phase system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.9",
+                    "sno": "1.9",
+                    "topic": "Deep dive into Defines void ratio, porosity, soil moisture, plasticity, Atterberg Limits, specific gravity, density",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.10",
+                    "sno": "1.10",
+                    "topic": "Deep dive into Expresses relationships between volume of voids, moisture, density, saturation, air voids",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-1.11",
+                    "sno": "1.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce505e-1.12",
+                    "sno": "1.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
             "unitNo": 2,
             "title": "CLASSIFICATION OF SOILS",
-            "totalPeriods": 12,
+            "totalPeriods": 5,
             "topics": [
                 {
                     "id": "26ce505e-2.1",
                     "sno": "2.1",
-                    "topic": "CLASSIFICATION OF SOILS",
+                    "topic": "States the different systems of classification of soils",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-2.2",
                     "sno": "2.2",
-                    "topic": "States the different systems of classification of soils",
+                    "topic": "Explains the textural classification of soils with a neat sketch",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-2.3",
                     "sno": "2.3",
-                    "topic": "Explains the textural classification of soils with a neat sketch",
+                    "topic": "I.S. classification of soils",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-2.4",
                     "sno": "2.4",
-                    "topic": "I.S. classification of soils",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-2.5",
-                    "sno": "2.5",
-                    "topic": "Deep dive into CLASSIFICATION OF SOILS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-2.6",
-                    "sno": "2.6",
-                    "topic": "Deep dive into States the different systems of classification of soils",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-2.7",
-                    "sno": "2.7",
-                    "topic": "Deep dive into Explains the textural classification of soils with a neat sketch",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-2.8",
-                    "sno": "2.8",
-                    "topic": "Deep dive into I.S. classification of soils",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-2.9",
-                    "sno": "2.9",
-                    "topic": "Problem solving & practice on CLASSIFICATION OF SOILS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-2.10",
-                    "sno": "2.10",
-                    "topic": "Problem solving & practice on States the different systems of classification of soils",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-2.11",
-                    "sno": "2.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce505e-2.12",
-                    "sno": "2.12",
+                    "id": "26ce505e-2.5",
+                    "sno": "2.5",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -99,81 +141,88 @@
         {
             "unitNo": 3,
             "title": "PERMEABILITY",
-            "totalPeriods": 11,
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26ce505e-3.1",
                     "sno": "3.1",
-                    "topic": "PERMEABILITY",
+                    "topic": "Explain Darcy's law and Coefficient of permeability",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-3.2",
                     "sno": "3.2",
-                    "topic": "Explain Darcy\u2019s law and Coefficient of permeability",
+                    "topic": "Explains determination of Coefficient of permeability by Constant head and Falling head methods",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-3.3",
                     "sno": "3.3",
-                    "topic": "Explains the determination of Coefficient of permeability by Constant head method and Falling head method",
+                    "topic": "Permeability of stratified soils; Quick sand",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-3.4",
                     "sno": "3.4",
-                    "topic": "Permeability of stratified soils",
+                    "topic": "Deep dive into Explain Darcy's law and Coefficient of permeability",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-3.5",
                     "sno": "3.5",
-                    "topic": "Quick sand",
+                    "topic": "Deep dive into Explains determination of Coefficient of permeability by Constant head and Falling head methods",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-3.6",
                     "sno": "3.6",
-                    "topic": "Unit Test \u2013 II From 3.3 to 5.3",
+                    "topic": "Deep dive into Permeability of stratified soils; Quick sand",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-3.7",
                     "sno": "3.7",
-                    "topic": "Deep dive into PERMEABILITY",
+                    "topic": "Problem solving & practice on Explain Darcy's law and Coefficient of permeability",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-3.8",
                     "sno": "3.8",
-                    "topic": "Deep dive into Explain Darcy\u2019s law and Coefficient of permeability",
+                    "topic": "Problem solving & practice on Explains determination of Coefficient of permeability by Constant head and Falling head methods",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-3.9",
                     "sno": "3.9",
-                    "topic": "Deep dive into Explains the determination of Coefficient of permeability by Constant head method and Falling head method",
+                    "topic": "Problem solving & practice on Permeability of stratified soils; Quick sand",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-3.10",
                     "sno": "3.10",
+                    "topic": "Practical applications of Explain Darcy's law and Coefficient of permeability",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce505e-3.11",
+                    "sno": "3.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce505e-3.11",
-                    "sno": "3.11",
+                    "id": "26ce505e-3.12",
+                    "sno": "3.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -183,81 +232,39 @@
         {
             "unitNo": 4,
             "title": "CONSOLIDATION OF COMPRESSIVE SOILS",
-            "totalPeriods": 11,
+            "totalPeriods": 5,
             "topics": [
                 {
                     "id": "26ce505e-4.1",
                     "sno": "4.1",
-                    "topic": "CONSOLIDATION OF COMPRESSIVE SOILS",
+                    "topic": "Defines the principle of 'Consolidation'",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-4.2",
                     "sno": "4.2",
-                    "topic": "Defines the principle of \u201cConsolidation\u201d",
+                    "topic": "Explain in detail the Terzaghi's model analogy of compression springs",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-4.3",
                     "sno": "4.3",
-                    "topic": "Explain in detail, the Terzaghi\u2019s model analogy of compression springs, showing the process of consolidation",
+                    "topic": "Explain the field implications of consolidation",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-4.4",
                     "sno": "4.4",
-                    "topic": "Explain the field implications of consolidation",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-4.5",
-                    "sno": "4.5",
-                    "topic": "Deep dive into CONSOLIDATION OF COMPRESSIVE SOILS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-4.6",
-                    "sno": "4.6",
-                    "topic": "Deep dive into Defines the principle of \u201cConsolidation\u201d",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-4.7",
-                    "sno": "4.7",
-                    "topic": "Deep dive into Explain in detail, the Terzaghi\u2019s model analogy of compression springs, showing the process of consolidation",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-4.8",
-                    "sno": "4.8",
-                    "topic": "Deep dive into Explain the field implications of consolidation",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-4.9",
-                    "sno": "4.9",
-                    "topic": "Problem solving & practice on CONSOLIDATION OF COMPRESSIVE SOILS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce505e-4.10",
-                    "sno": "4.10",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce505e-4.11",
-                    "sno": "4.11",
+                    "id": "26ce505e-4.5",
+                    "sno": "4.5",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -272,63 +279,63 @@
                 {
                     "id": "26ce505e-5.1",
                     "sno": "5.1",
-                    "topic": "COMPACTION OF SOILS",
+                    "topic": "Theory of compaction - compaction and its objectives - factors affecting compaction",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-5.2",
                     "sno": "5.2",
-                    "topic": "Theory of compaction \u2013 compaction and its objectives \u2013 factors affecting compaction",
+                    "topic": "Laboratory compaction tests - Proctor's compaction test & Modified Proctor compaction test",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-5.3",
                     "sno": "5.3",
-                    "topic": "Laboratory compaction tests \u2013 Proctor\u2018s compaction test \u2013Modified Proctor compaction test",
+                    "topic": "Field measurement of compaction (core cutter, sand replacement, CBR) and pavement design importance",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-5.4",
                     "sno": "5.4",
-                    "topic": "Field measurement of compaction by core cutter method and sand replacement method \u2013 California Bearing Ratio \u2013 definition and its importance in the design of pavements",
+                    "topic": "Deep dive into Theory of compaction - compaction and its objectives - factors affecting compaction",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-5.5",
                     "sno": "5.5",
-                    "topic": "Deep dive into COMPACTION OF SOILS",
+                    "topic": "Deep dive into Laboratory compaction tests - Proctor's compaction test & Modified Proctor compaction test",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-5.6",
                     "sno": "5.6",
-                    "topic": "Deep dive into Theory of compaction \u2013 compaction and its objectives \u2013 factors affecting compaction",
+                    "topic": "Deep dive into Field measurement of compaction (core cutter, sand replacement, CBR) and pavement design importance",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-5.7",
                     "sno": "5.7",
-                    "topic": "Deep dive into Laboratory compaction tests \u2013 Proctor\u2018s compaction test \u2013Modified Proctor compaction test",
+                    "topic": "Problem solving & practice on Theory of compaction - compaction and its objectives - factors affecting compaction",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-5.8",
                     "sno": "5.8",
-                    "topic": "Deep dive into Field measurement of compaction by core cutter method and sand replacement method \u2013 California Bearing Ratio \u2013 definition and its importance in the design of pavements",
+                    "topic": "Problem solving & practice on Laboratory compaction tests - Proctor's compaction test & Modified Proctor compaction test",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce505e-5.9",
                     "sno": "5.9",
-                    "topic": "Problem solving & practice on COMPACTION OF SOILS",
+                    "topic": "Problem solving & practice on Field measurement of compaction (core cutter, sand replacement, CBR) and pavement design importance",
                     "period": 1,
                     "type": "theory"
                 },

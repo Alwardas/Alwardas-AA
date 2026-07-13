@@ -3,12 +3,12 @@
     "subjectName": "Applied Thermodynamics & Hydraulics Lab",
     "regulation": "C26",
     "semester": 4,
-    "totalPeriods": 90,
+    "totalPeriods": 54,
     "units": [
         {
             "unitNo": 1,
-            "title": "Conduct an experiment to determine the flash and fire point of a given sample of fuel using given",
-            "totalPeriods": 15,
+            "title": "Flash & Fire point tests",
+            "totalPeriods": 9,
             "topics": [
                 {
                     "id": "26me407l-1.1",
@@ -69,58 +69,16 @@
                 {
                     "id": "26me407l-1.9",
                     "sno": "1.9",
-                    "topic": "Identify the colour change of the flame",
+                    "topic": "Identify the colour change of the flame; Record the two temperatures of flash and fire point; Verification Of Bernoulli’s Theorem; State Bernoulli’s theorem; Identify the apparatus required; Explain the Test procedure to verify Bernoulli’s experiment",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me407l-1.10",
-                    "sno": "1.10",
-                    "topic": "Record the two temperatures of flash and fire point",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-1.11",
-                    "sno": "1.11",
-                    "topic": "Verification Of Bernoulli\u2019s Theorem",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-1.12",
-                    "sno": "1.12",
-                    "topic": "State Bernoulli\u2019s theorem",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-1.13",
-                    "sno": "1.13",
-                    "topic": "Identify the apparatus required; Explain the Test procedure to verify Bernoulli\u2019s experiment",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-1.14",
-                    "sno": "1.14",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me407l-1.15",
-                    "sno": "1.15",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Conduct an experiment to determine viscosity of a given sample of oil using given apparatus",
-            "totalPeriods": 15,
+            "title": "Viscosity measurement",
+            "totalPeriods": 9,
             "topics": [
                 {
                     "id": "26me407l-2.1",
@@ -181,58 +139,16 @@
                 {
                     "id": "26me407l-2.9",
                     "sno": "2.9",
-                    "topic": "Calculate the Viscosity; Plot the related graphs",
+                    "topic": "Calculate the Viscosity; Plot the related graphs; Determination of Cd of Venturimeter; Record the time taken for collecting volume of fluid by varying the discharge; Calculate the areas of the pipe and throat of the given venturimeter; Calculate coefficient of discharge of venturimeter",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me407l-2.10",
-                    "sno": "2.10",
-                    "topic": "Determination of Cd of Venturimeter",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-2.11",
-                    "sno": "2.11",
-                    "topic": "State the practical applications of venturimeter; Record the manometric head readings from U-tube manometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-2.12",
-                    "sno": "2.12",
-                    "topic": "Record the time taken for collecting volume of fluid by varying the discharge",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-2.13",
-                    "sno": "2.13",
-                    "topic": "Calculate the areas of the pipe and throat of the given venturimeter; Calculate coefficient of discharge of venturimeter",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-2.14",
-                    "sno": "2.14",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me407l-2.15",
-                    "sno": "2.15",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "Conduct an experiment to draw the valve and port timing diagrams",
-            "totalPeriods": 15,
+            "title": "Valve timing diagram and Port timing diagram",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26me407l-3.1",
@@ -272,79 +188,16 @@
                 {
                     "id": "26me407l-3.6",
                     "sno": "3.6",
-                    "topic": "Mark the operations (Suction, Compression, Ignition, Expansion and Exhaust)",
+                    "topic": "Mark the operations (Suction, Compression, Ignition, Expansion and Exhaust); Measure the circumference of flywheel; Locate exact position of inlet valve/port opening and inlet valve/port closing by inserting feeler gauge bet...; Find exact position of Ignition starting and ignition tripping; Locate exact position of exhaust valve/port opening and exhaust valve/ port closing by inserting feeler gauge between outlet roller and cam; Measur...; Determination of loss of head due to friction in a given pipe; Measure the length of the given pipe; Record the pressure head readings from U-tube manometer; Record the time taken for collecting volume of fluid by varying the discharge; Calculate the loss of head through the pipe; Calculate the friction factor",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me407l-3.7",
-                    "sno": "3.7",
-                    "topic": "Measure the circumference of flywheel; Locate exact position of inlet valve/port opening and inlet valve/port closing by inserting feeler gauge bet...",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-3.8",
-                    "sno": "3.8",
-                    "topic": "Find exact position of Ignition starting and ignition tripping",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-3.9",
-                    "sno": "3.9",
-                    "topic": "Locate exact position of exhaust valve/port opening and exhaust valve/ port closing by inserting feeler gauge between outlet roller and cam; Measur...",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-3.10",
-                    "sno": "3.10",
-                    "topic": "Determination of loss of head due to friction in a given pipe",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-3.11",
-                    "sno": "3.11",
-                    "topic": "Measure the length of the given pipe; Record the pressure head readings from U-tube manometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-3.12",
-                    "sno": "3.12",
-                    "topic": "Record the time taken for collecting volume of fluid by varying the discharge",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-3.13",
-                    "sno": "3.13",
-                    "topic": "Calculate the loss of head through the pipe; Calculate the friction factor",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-3.14",
-                    "sno": "3.14",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me407l-3.15",
-                    "sno": "3.15",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Conduct an experiment to determine the performance parameters",
-            "totalPeriods": 15,
+            "title": "Performance tests on S.I and C.I engines",
+            "totalPeriods": 9,
             "topics": [
                 {
                     "id": "26me407l-4.1",
@@ -405,58 +258,16 @@
                 {
                     "id": "26me407l-4.9",
                     "sno": "4.9",
-                    "topic": "Determination of Power required and Efficiency of Centrifugal Pump; Identify the components of centrifugal pump",
+                    "topic": "Determination of Power required and Efficiency of Centrifugal Pump; Identify the components of centrifugal pump; Record the suction and delivery pressures from pressure gauges; Record the time taken for collecting the volume of fluid; Record the energy meter readings and calculate input power; Calculate the power input; Calculate the efficiency; Draw characterstic curves",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me407l-4.10",
-                    "sno": "4.10",
-                    "topic": "Record the suction and delivery pressures from pressure gauges",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-4.11",
-                    "sno": "4.11",
-                    "topic": "Record the time taken for collecting the volume of fluid; Record the energy meter readings and calculate input power",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-4.12",
-                    "sno": "4.12",
-                    "topic": "Calculate the power input",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-4.13",
-                    "sno": "4.13",
-                    "topic": "Calculate the efficiency; Draw characterstic curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-4.14",
-                    "sno": "4.14",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me407l-4.15",
-                    "sno": "4.15",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Conduct an experiment to find the performance on a multi cylinder engine",
-            "totalPeriods": 15,
+            "title": "Morse Test",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26me407l-5.1",
@@ -496,79 +307,16 @@
                 {
                     "id": "26me407l-5.6",
                     "sno": "5.6",
-                    "topic": "Apply the load",
+                    "topic": "Apply the load; Record brake load, speed of rotation (RPM), the rate of fuel consumption; Cut off the first cylinder; Record brake load, speed of rotation (RPM), the rate of fuel consumption; Repeat the above operations for all the cylinders; Determination of of Power required and Efficiency of Reciprocating Pump; Identify the components of reciprocating pump; Record the suction and delivery pressures from pressure gauges; Record the time taken for collecting the discharge; Record the energy meter readings and calculate input power; Calculate the power input; Calculate the efficiency; Draw characterstic curves",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me407l-5.7",
-                    "sno": "5.7",
-                    "topic": "Record brake load, speed of rotation (RPM), the rate of fuel consumption; Cut off the first cylinder",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-5.8",
-                    "sno": "5.8",
-                    "topic": "Record brake load, speed of rotation (RPM), the rate of fuel consumption",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-5.9",
-                    "sno": "5.9",
-                    "topic": "Repeat the above operations for all the cylinders; Determination of of Power required and Efficiency of Reciprocating Pump",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-5.10",
-                    "sno": "5.10",
-                    "topic": "Identify the components of reciprocating pump; Record the suction and delivery pressures from pressure gauges",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-5.11",
-                    "sno": "5.11",
-                    "topic": "Record the time taken for collecting the discharge",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-5.12",
-                    "sno": "5.12",
-                    "topic": "Record the energy meter readings and calculate input power; Calculate the power input",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-5.13",
-                    "sno": "5.13",
-                    "topic": "Calculate the efficiency; Draw characterstic curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-5.14",
-                    "sno": "5.14",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me407l-5.15",
-                    "sno": "5.15",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 6,
-            "title": "Conduct performance test on Air compressor",
-            "totalPeriods": 15,
+            "title": "Performance of Air compressor",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26me407l-6.1",
@@ -608,69 +356,76 @@
                 {
                     "id": "26me407l-6.6",
                     "sno": "6.6",
-                    "topic": "Check function and usage of stop watch",
+                    "topic": "Check function and usage of stop watch; Record time taken for 10 revolutions of energy meter disc; Record compressor speed (RPM) using tachometer; Record manometer readings; Determination of Power and Efficiency of Pelton Wheel; Identify the components of Pelton wheel; Start turbine by switching on jet of water slowly; Apply load steadily; Record load, speed; Calculate brake power and efficiency of turbine",
+                    "period": 1,
+                    "type": "practical"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Performance test on Air compressor 26ME407L (b) : Hydraulics lab :",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26me407l-7.1",
+                    "sno": "7.1",
+                    "topic": "Study and analysis of Unit 7",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26me407l-6.7",
-                    "sno": "6.7",
-                    "topic": "Record time taken for 10 revolutions of energy meter disc",
+                    "id": "26me407l-7.2",
+                    "sno": "7.2",
+                    "topic": "Practice and training on Study and analysis of Unit 7",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26me407l-6.8",
-                    "sno": "6.8",
-                    "topic": "Record compressor speed (RPM) using tachometer",
+                    "id": "26me407l-7.3",
+                    "sno": "7.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 7",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26me407l-6.9",
-                    "sno": "6.9",
-                    "topic": "Record manometer readings; Determination of Power and Efficiency of Pelton Wheel",
+                    "id": "26me407l-7.4",
+                    "sno": "7.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 7",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26me407l-6.10",
-                    "sno": "6.10",
-                    "topic": "Identify the components of Pelton wheel",
+                    "id": "26me407l-7.5",
+                    "sno": "7.5",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26me407l-6.11",
-                    "sno": "6.11",
-                    "topic": "Start turbine by switching on jet of water slowly",
+                    "id": "26me407l-7.6",
+                    "sno": "7.6",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26me407l-6.12",
-                    "sno": "6.12",
-                    "topic": "Apply load steadily",
+                    "id": "26me407l-7.7",
+                    "sno": "7.7",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26me407l-6.13",
-                    "sno": "6.13",
-                    "topic": "Record load, speed; Calculate brake power and efficiency of turbine",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me407l-6.14",
-                    "sno": "6.14",
+                    "id": "26me407l-7.8",
+                    "sno": "7.8",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me407l-6.15",
-                    "sno": "6.15",
+                    "id": "26me407l-7.9",
+                    "sno": "7.9",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

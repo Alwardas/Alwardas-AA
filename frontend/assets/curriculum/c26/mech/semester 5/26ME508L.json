@@ -3,12 +3,411 @@
     "subjectName": "Refrigeration & Air Conditioning Lab (Practicum)",
     "regulation": "C26",
     "semester": 5,
-    "totalPeriods": 60,
+    "totalPeriods": 53,
     "units": [
+        {
+            "unitNo": 1,
+            "title": "Perform basic fabrication operations viz., flaring, swaging, bending and brazing on soft copper tubes",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "26me508l-1.1",
+                    "sno": "1.1",
+                    "topic": "Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-1.2",
+                    "sno": "1.2",
+                    "topic": "Practice and training on Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-1.3",
+                    "sno": "1.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-1.4",
+                    "sno": "1.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-1.5",
+                    "sno": "1.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-1.6",
+                    "sno": "1.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-1.7",
+                    "sno": "1.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me508l-1.8",
+                    "sno": "1.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Evaluate the C.O.P of a given Vapour Compression cycle test rig",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "26me508l-2.1",
+                    "sno": "2.1",
+                    "topic": "Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-2.2",
+                    "sno": "2.2",
+                    "topic": "Practice and training on Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-2.3",
+                    "sno": "2.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-2.4",
+                    "sno": "2.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-2.5",
+                    "sno": "2.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-2.6",
+                    "sno": "2.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-2.7",
+                    "sno": "2.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me508l-2.8",
+                    "sno": "2.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Evaluate the C.O.P of a Domestic Refrigerator",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "26me508l-3.1",
+                    "sno": "3.1",
+                    "topic": "Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-3.2",
+                    "sno": "3.2",
+                    "topic": "Practice and training on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-3.3",
+                    "sno": "3.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-3.4",
+                    "sno": "3.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-3.5",
+                    "sno": "3.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-3.6",
+                    "sno": "3.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-3.7",
+                    "sno": "3.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me508l-3.8",
+                    "sno": "3.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Evaluate the C.O.P of a water cooler",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "26me508l-4.1",
+                    "sno": "4.1",
+                    "topic": "Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-4.2",
+                    "sno": "4.2",
+                    "topic": "Practice and training on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-4.3",
+                    "sno": "4.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-4.4",
+                    "sno": "4.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-4.5",
+                    "sno": "4.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-4.6",
+                    "sno": "4.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-4.7",
+                    "sno": "4.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me508l-4.8",
+                    "sno": "4.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Study of Ice Plant",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "26me508l-5.1",
+                    "sno": "5.1",
+                    "topic": "Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-5.2",
+                    "sno": "5.2",
+                    "topic": "Practice and training on Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-5.3",
+                    "sno": "5.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-5.4",
+                    "sno": "5.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-5.5",
+                    "sno": "5.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-5.6",
+                    "sno": "5.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-5.7",
+                    "sno": "5.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me508l-5.8",
+                    "sno": "5.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Perform various types of leak detection methods of a refrigeration system",
+            "totalPeriods": 4,
+            "topics": [
+                {
+                    "id": "26me508l-6.1",
+                    "sno": "6.1",
+                    "topic": "Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-6.2",
+                    "sno": "6.2",
+                    "topic": "Practice and training on Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-6.3",
+                    "sno": "6.3",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me508l-6.4",
+                    "sno": "6.4",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Evaluate the C.O.P. of given air-conditioning system",
+            "totalPeriods": 1,
+            "topics": [
+                {
+                    "id": "26me508l-7.1",
+                    "sno": "7.1",
+                    "topic": "Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "practical"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Unit 8 Topic",
+            "totalPeriods": 4,
+            "topics": [
+                {
+                    "id": "26me508l-8.1",
+                    "sno": "8.1",
+                    "topic": "Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-8.2",
+                    "sno": "8.2",
+                    "topic": "Practice and training on Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me508l-8.3",
+                    "sno": "8.3",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me508l-8.4",
+                    "sno": "8.4",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
         {
             "unitNo": 9,
             "title": "Study of Window Air Conditioning System",
-            "totalPeriods": 60,
+            "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26me508l-9.1",
@@ -34,401 +433,9 @@
                 {
                     "id": "26me508l-9.4",
                     "sno": "9.4",
-                    "topic": "Deep dive into Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.5",
-                    "sno": "9.5",
-                    "topic": "Deep dive into Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.6",
-                    "sno": "9.6",
-                    "topic": "Deep dive into Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.7",
-                    "sno": "9.7",
-                    "topic": "Problem solving & practice on Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.8",
-                    "sno": "9.8",
-                    "topic": "Problem solving & practice on Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.9",
-                    "sno": "9.9",
-                    "topic": "Problem solving & practice on Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.10",
-                    "sno": "9.10",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.11",
-                    "sno": "9.11",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.12",
-                    "sno": "9.12",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.13",
-                    "sno": "9.13",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.14",
-                    "sno": "9.14",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.15",
-                    "sno": "9.15",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.16",
-                    "sno": "9.16",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.17",
-                    "sno": "9.17",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.18",
-                    "sno": "9.18",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.19",
-                    "sno": "9.19",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.20",
-                    "sno": "9.20",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.21",
-                    "sno": "9.21",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.22",
-                    "sno": "9.22",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.23",
-                    "sno": "9.23",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.24",
-                    "sno": "9.24",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.25",
-                    "sno": "9.25",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.26",
-                    "sno": "9.26",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.27",
-                    "sno": "9.27",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.28",
-                    "sno": "9.28",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.29",
-                    "sno": "9.29",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.30",
-                    "sno": "9.30",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.31",
-                    "sno": "9.31",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.32",
-                    "sno": "9.32",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.33",
-                    "sno": "9.33",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.34",
-                    "sno": "9.34",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.35",
-                    "sno": "9.35",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.36",
-                    "sno": "9.36",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.37",
-                    "sno": "9.37",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.38",
-                    "sno": "9.38",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.39",
-                    "sno": "9.39",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.40",
-                    "sno": "9.40",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.41",
-                    "sno": "9.41",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.42",
-                    "sno": "9.42",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.43",
-                    "sno": "9.43",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.44",
-                    "sno": "9.44",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.45",
-                    "sno": "9.45",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.46",
-                    "sno": "9.46",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.47",
-                    "sno": "9.47",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.48",
-                    "sno": "9.48",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.49",
-                    "sno": "9.49",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.50",
-                    "sno": "9.50",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.51",
-                    "sno": "9.51",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.52",
-                    "sno": "9.52",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.53",
-                    "sno": "9.53",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.54",
-                    "sno": "9.54",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.55",
-                    "sno": "9.55",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.56",
-                    "sno": "9.56",
-                    "topic": "Practical applications of Identify the components of given window A/C",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.57",
-                    "sno": "9.57",
-                    "topic": "Practical applications of Understand the functions of the components",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.58",
-                    "sno": "9.58",
-                    "topic": "Practical applications of Study of Window Air Conditioning System",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me508l-9.59",
-                    "sno": "9.59",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26me508l-9.60",
-                    "sno": "9.60",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         }

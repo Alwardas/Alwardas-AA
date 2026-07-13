@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction to Object Oriented Programming(OO P)",
-            "totalPeriods": 35,
+            "title": "Introduction to object oriented concepts and implementation of OOP features, Sequential data structure Array-operations on arrays, built in data structures like lists, Tuple, dictionary and sets",
+            "totalPeriods": 21,
             "topics": [
                 {
                     "id": "26cm308l-1.1",
@@ -97,160 +97,62 @@
                 {
                     "id": "26cm308l-1.13",
                     "sno": "1.13",
-                    "topic": "Deep dive into Define OOP",
+                    "topic": "Practice and training on Define OOP",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-1.14",
                     "sno": "1.14",
-                    "topic": "Deep dive into Differentiate between procedural oriented programming (POP) and \nobject-oriented   \n           programming (OOP)",
+                    "topic": "Practice and training on Differentiate between procedural oriented programming (POP) and \nobject-oriented   \n           programming (OOP)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-1.15",
                     "sno": "1.15",
-                    "topic": "Deep dive into List and Explain  the  core principles of OOP",
+                    "topic": "Practice and training on List and Explain  the  core principles of OOP",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-1.16",
                     "sno": "1.16",
-                    "topic": "Deep dive into State the  importance of Data Abstraction and  Encapsulation",
+                    "topic": "Practice and training on State the  importance of Data Abstraction and  Encapsulation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-1.17",
                     "sno": "1.17",
-                    "topic": "Deep dive into Describe  Inheritance and Polymorphism",
+                    "topic": "Practice and training on Describe  Inheritance and Polymorphism",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-1.18",
                     "sno": "1.18",
-                    "topic": "Deep dive into Define   Class and   Object  in Python",
+                    "topic": "Practice and training on Define   Class and   Object  in Python",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-1.19",
                     "sno": "1.19",
-                    "topic": "Deep dive into Know the creation of    classes in Python",
+                    "topic": "Practice and training on Know the creation of    classes in Python",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-1.20",
                     "sno": "1.20",
-                    "topic": "Deep dive into Know the  creation of   objects (instances)  in Python",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.21",
-                    "sno": "1.21",
-                    "topic": "Deep dive into State the importance of  __init__ method (constructor) and self",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.22",
-                    "sno": "1.22",
-                    "topic": "Deep dive into Explain  Method Overloading",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.23",
-                    "sno": "1.23",
-                    "topic": "Deep dive into Explian  Method Overriding",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.24",
-                    "sno": "1.24",
-                    "topic": "Deep dive into Explain various types of inheritance. \n      2. Introduction to Data Structures",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.25",
-                    "sno": "1.25",
-                    "topic": "Problem solving & practice on Define OOP",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.26",
-                    "sno": "1.26",
-                    "topic": "Problem solving & practice on Differentiate between procedural oriented programming (POP) and \nobject-oriented   \n           programming (OOP)",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.27",
-                    "sno": "1.27",
-                    "topic": "Problem solving & practice on List and Explain  the  core principles of OOP",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.28",
-                    "sno": "1.28",
-                    "topic": "Problem solving & practice on State the  importance of Data Abstraction and  Encapsulation",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.29",
-                    "sno": "1.29",
-                    "topic": "Problem solving & practice on Describe  Inheritance and Polymorphism",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.30",
-                    "sno": "1.30",
-                    "topic": "Problem solving & practice on Define   Class and   Object  in Python",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.31",
-                    "sno": "1.31",
-                    "topic": "Problem solving & practice on Know the creation of    classes in Python",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.32",
-                    "sno": "1.32",
-                    "topic": "Problem solving & practice on Know the  creation of   objects (instances)  in Python",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.33",
-                    "sno": "1.33",
-                    "topic": "Problem solving & practice on State the importance of  __init__ method (constructor) and self",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-1.34",
-                    "sno": "1.34",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm308l-1.35",
-                    "sno": "1.35",
+                    "id": "26cm308l-1.21",
+                    "sno": "1.21",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -259,8 +161,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Introduction to Data Structures",
-            "totalPeriods": 20,
+            "title": "Searching and sorting techniques, Linked Storage Representation-Linked Lists",
+            "totalPeriods": 30,
             "topics": [
                 {
                     "id": "26cm308l-2.1",
@@ -349,55 +251,125 @@
                 {
                     "id": "26cm308l-2.13",
                     "sno": "2.13",
-                    "topic": "Deep dive into Define Data structure",
+                    "topic": "Practice and training on Define Data structure",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-2.14",
                     "sno": "2.14",
-                    "topic": "Deep dive into List various types of Data Structures",
+                    "topic": "Practice and training on List various types of Data Structures",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-2.15",
                     "sno": "2.15",
-                    "topic": "Deep dive into Explain Linear Data Structures",
+                    "topic": "Practice and training on Explain Linear Data Structures",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-2.16",
                     "sno": "2.16",
-                    "topic": "Deep dive into Explain Non-Linear Data Structures",
+                    "topic": "Practice and training on Explain Non-Linear Data Structures",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-2.17",
                     "sno": "2.17",
-                    "topic": "Deep dive into Know about Time and Space complexities",
+                    "topic": "Practice and training on Know about Time and Space complexities",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-2.18",
                     "sno": "2.18",
-                    "topic": "Deep dive into List and Explain Abstract Data Types",
+                    "topic": "Practice and training on List and Explain Abstract Data Types",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-2.19",
                     "sno": "2.19",
+                    "topic": "Practice and training on List and Explain Built-in data structures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.20",
+                    "sno": "2.20",
+                    "topic": "Practice and training on Various Sorting Techniques",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.21",
+                    "sno": "2.21",
+                    "topic": "Practice and training on Various Searching Techniques",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.22",
+                    "sno": "2.22",
+                    "topic": "Practice and training on Creation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.23",
+                    "sno": "2.23",
+                    "topic": "Practice and training on Perform insertion, deletion and traverse operations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.24",
+                    "sno": "2.24",
+                    "topic": "Practice and training on Perform search and replace an element",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.25",
+                    "sno": "2.25",
+                    "topic": "Advanced practical on Define Data structure",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.26",
+                    "sno": "2.26",
+                    "topic": "Advanced practical on List various types of Data Structures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.27",
+                    "sno": "2.27",
+                    "topic": "Advanced practical on Explain Linear Data Structures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.28",
+                    "sno": "2.28",
+                    "topic": "Advanced practical on Explain Non-Linear Data Structures",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-2.29",
+                    "sno": "2.29",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm308l-2.20",
-                    "sno": "2.20",
+                    "id": "26cm308l-2.30",
+                    "sno": "2.30",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +378,8 @@
         },
         {
             "unitNo": 3,
-            "title": "Linear Data structure-Linked lists",
-            "totalPeriods": 20,
+            "title": "Linear Data Structures-Stacks",
+            "totalPeriods": 18,
             "topics": [
                 {
                     "id": "26cm308l-3.1",
@@ -482,69 +454,55 @@
                 {
                     "id": "26cm308l-3.11",
                     "sno": "3.11",
-                    "topic": "Deep dive into Explain arrays in Python",
+                    "topic": "Practice and training on Explain arrays in Python",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-3.12",
                     "sno": "3.12",
-                    "topic": "Deep dive into Explain the following for Singly Linked List",
+                    "topic": "Practice and training on Explain the following for Singly Linked List",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-3.13",
                     "sno": "3.13",
-                    "topic": "Deep dive into Explain the following for Doubly Linked List",
+                    "topic": "Practice and training on Explain the following for Doubly Linked List",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-3.14",
                     "sno": "3.14",
-                    "topic": "Deep dive into Creation",
+                    "topic": "Practice and training on Creation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-3.15",
                     "sno": "3.15",
-                    "topic": "Deep dive into Perform insertion, deletion, and traverse operations",
+                    "topic": "Practice and training on Perform insertion, deletion, and traverse operations",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-3.16",
                     "sno": "3.16",
-                    "topic": "Deep dive into Perform search and replace an element",
+                    "topic": "Practice and training on Perform search and replace an element",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm308l-3.17",
                     "sno": "3.17",
-                    "topic": "Deep dive into Explain the following for Singly Circular List",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-3.18",
-                    "sno": "3.18",
-                    "topic": "Deep dive into Explain the following for Doubly Circular List",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm308l-3.19",
-                    "sno": "3.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm308l-3.20",
-                    "sno": "3.20",
+                    "id": "26cm308l-3.18",
+                    "sno": "3.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -553,8 +511,8 @@
         },
         {
             "unitNo": 4,
-            "title": "Linear Data structure \u2013Stacks",
-            "totalPeriods": 15,
+            "title": "Linear Data Structures-Queues",
+            "totalPeriods": 9,
             "topics": [
                 {
                     "id": "26cm308l-4.1",
@@ -615,48 +573,97 @@
                 {
                     "id": "26cm308l-4.9",
                     "sno": "4.9",
-                    "topic": "List the applications of Stacks",
+                    "topic": "List the applications of Stacks; Convert Infix expression to Postfix expression; Explain the steps for Conversion of Infix expression to Postfix expression with program; Explain the steps for Evaluating Postfix expression with program; Evaluate Postfix expression 5. Queues and Trees",
+                    "period": 1,
+                    "type": "practical"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Non Linear Data Structures- Trees,",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "26cm308l-5.1",
+                    "sno": "5.1",
+                    "topic": "Study and analysis of Unit 5",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26cm308l-4.10",
-                    "sno": "4.10",
-                    "topic": "Convert Infix expression to Postfix expression",
+                    "id": "26cm308l-5.2",
+                    "sno": "5.2",
+                    "topic": "Practice and training on Study and analysis of Unit 5",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26cm308l-4.11",
-                    "sno": "4.11",
-                    "topic": "Explain the steps for Conversion of Infix expression to Postfix expression with program",
+                    "id": "26cm308l-5.3",
+                    "sno": "5.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 5",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26cm308l-4.12",
-                    "sno": "4.12",
-                    "topic": "Explain the steps for Evaluating Postfix expression with program",
+                    "id": "26cm308l-5.4",
+                    "sno": "5.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 5",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26cm308l-4.13",
-                    "sno": "4.13",
-                    "topic": "Evaluate Postfix expression 5. Queues and Trees",
+                    "id": "26cm308l-5.5",
+                    "sno": "5.5",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26cm308l-4.14",
-                    "sno": "4.14",
+                    "id": "26cm308l-5.6",
+                    "sno": "5.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-5.7",
+                    "sno": "5.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-5.8",
+                    "sno": "5.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-5.9",
+                    "sno": "5.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-5.10",
+                    "sno": "5.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm308l-5.11",
+                    "sno": "5.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm308l-4.15",
-                    "sno": "4.15",
+                    "id": "26cm308l-5.12",
+                    "sno": "5.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

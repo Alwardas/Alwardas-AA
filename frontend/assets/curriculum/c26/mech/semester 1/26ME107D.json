@@ -3,12 +3,12 @@
     "subjectName": "Engineering Graphics",
     "regulation": "C26",
     "semester": 1,
-    "totalPeriods": 180,
+    "totalPeriods": 35,
     "units": [
         {
             "unitNo": 1,
-            "title": "B.I.S SPECIFICATIONS SHOULD INVARIABLY BE FOLLOWED IN ALL THE TOPICS",
-            "totalPeriods": 18,
+            "title": "Importance of Engineering Drawing --",
+            "totalPeriods": 1,
             "topics": [
                 {
                     "id": "26me107d-1.1",
@@ -16,132 +16,13 @@
                     "topic": "State the importance of drawing as an engineering communication Medium State the necessity of B.I.S. Code of practice for Engineering Drawing",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.2",
-                    "sno": "1.2",
-                    "topic": "Explain the linkages between Engineering drawing and other subjects of Mechanical Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.3",
-                    "sno": "1.3",
-                    "topic": "B.I.S SPECIFICATIONS SHOULD INVARIABLY BE FOLLOWED IN ALL THE TOPICS A-3 Size Drawing Sheets are to be used for all Drawing Practice Exercises. The importance of Engineering Drawing Explanation of the scope and objectives of the subject of Engineering Drawing Its importance as a graphic communication -Need for preparing drawing as per standards \u2013 SP-46 \u20131988 \u2013Mention B.I.S \u2013 Role of drawing in-engineering education\u2013Link between Engineering drawing and other subjects of study",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.4",
-                    "sno": "1.4",
-                    "topic": "Deep dive into State the importance of drawing as an engineering communication Medium State the necessity of B.I.S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.5",
-                    "sno": "1.5",
-                    "topic": "Deep dive into Explain the linkages between Engineering drawing and other subjects of Mechanical Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.6",
-                    "sno": "1.6",
-                    "topic": "Deep dive into B.I.S SPECIFICATIONS SHOULD INVARIABLY BE FOLLOWED IN ALL THE TOPICS A-3 Size Drawing Sheets are to be used for all Drawing Practice Exercises. The importance of Engineering Drawing Explanation of the scope and objectives of the subject of Engineering Drawing Its importance as a graphic communication -Need for preparing drawing as per standards \u2013 SP-46 \u20131988 \u2013Mention B.I.S \u2013 Role of drawing in-engineering education\u2013Link between Engineering drawing and other subjects of study",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.7",
-                    "sno": "1.7",
-                    "topic": "Problem solving & practice on State the importance of drawing as an engineering communication Medium State the necessity of B.I.S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.8",
-                    "sno": "1.8",
-                    "topic": "Problem solving & practice on Explain the linkages between Engineering drawing and other subjects of Mechanical Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.9",
-                    "sno": "1.9",
-                    "topic": "Problem solving & practice on B.I.S SPECIFICATIONS SHOULD INVARIABLY BE FOLLOWED IN ALL THE TOPICS A-3 Size Drawing Sheets are to be used for all Drawing Practice Exercises. The importance of Engineering Drawing Explanation of the scope and objectives of the subject of Engineering Drawing Its importance as a graphic communication -Need for preparing drawing as per standards \u2013 SP-46 \u20131988 \u2013Mention B.I.S \u2013 Role of drawing in-engineering education\u2013Link between Engineering drawing and other subjects of study",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.10",
-                    "sno": "1.10",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication Medium State the necessity of B.I.S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.11",
-                    "sno": "1.11",
-                    "topic": "Practical applications of Explain the linkages between Engineering drawing and other subjects of Mechanical Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.12",
-                    "sno": "1.12",
-                    "topic": "Practical applications of B.I.S SPECIFICATIONS SHOULD INVARIABLY BE FOLLOWED IN ALL THE TOPICS A-3 Size Drawing Sheets are to be used for all Drawing Practice Exercises. The importance of Engineering Drawing Explanation of the scope and objectives of the subject of Engineering Drawing Its importance as a graphic communication -Need for preparing drawing as per standards \u2013 SP-46 \u20131988 \u2013Mention B.I.S \u2013 Role of drawing in-engineering education\u2013Link between Engineering drawing and other subjects of study",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.13",
-                    "sno": "1.13",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication Medium State the necessity of B.I.S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.14",
-                    "sno": "1.14",
-                    "topic": "Practical applications of Explain the linkages between Engineering drawing and other subjects of Mechanical Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.15",
-                    "sno": "1.15",
-                    "topic": "Practical applications of B.I.S SPECIFICATIONS SHOULD INVARIABLY BE FOLLOWED IN ALL THE TOPICS A-3 Size Drawing Sheets are to be used for all Drawing Practice Exercises. The importance of Engineering Drawing Explanation of the scope and objectives of the subject of Engineering Drawing Its importance as a graphic communication -Need for preparing drawing as per standards \u2013 SP-46 \u20131988 \u2013Mention B.I.S \u2013 Role of drawing in-engineering education\u2013Link between Engineering drawing and other subjects of study",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.16",
-                    "sno": "1.16",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication Medium State the necessity of B.I.S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-1.17",
-                    "sno": "1.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me107d-1.18",
-                    "sno": "1.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "ENGINEERING DRAWING INSTRUMENTS",
-            "totalPeriods": 18,
+            "title": "Engineering Drawing Instruments",
+            "totalPeriods": 5,
             "topics": [
                 {
                     "id": "26me107d-2.1",
@@ -174,107 +55,16 @@
                 {
                     "id": "26me107d-2.5",
                     "sno": "2.5",
-                    "topic": "Prepare Title block as per B.I.S. Specifications",
+                    "topic": "Prepare Title block as per B.I.S. Specifications; Identify the steps to be taken to keep the drawing clean and tidy. DrawingPlate1: Use of engineering Drawing Instruments; ENGINEERING DRAWING INSTRUMENTS Classifications: Basic Tools, tools for drawing straight lines, tools for curved lines, tools for measuring distances and special tools like mini drafter & drafting machine – Mentioning of names under each classification and their brief description -Scales: Recommended scales reduced & enlarged -Lines: Types of lines, selection of line thickness - Selection of Pencils -Sheet Sizes: A0, A1, A2, A3, A4, A5, Layout of drawing sheets in respect of A0, A1, A3 sizes, Sizes of the Title block and its contents -Care and maintenance of Drawing Sheet",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.6",
-                    "sno": "2.6",
-                    "topic": "Identify the steps to be taken to keep the drawing clean and tidy. DrawingPlate1: Use of engineering Drawing Instruments",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.7",
-                    "sno": "2.7",
-                    "topic": "ENGINEERING DRAWING INSTRUMENTS Classifications: Basic Tools, tools for drawing straight lines, tools for curved lines, tools for measuring distances and special tools like mini drafter & drafting machine \u2013 Mentioning of names under each classification and their brief description -Scales: Recommended scales reduced & enlarged -Lines: Types of lines, selection of line thickness - Selection of Pencils -Sheet Sizes: A0, A1, A2, A3, A4, A5, Layout of drawing sheets in respect of A0, A1, A3 sizes, Sizes of the Title block and its contents -Care and maintenance of Drawing Sheet",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.8",
-                    "sno": "2.8",
-                    "topic": "Deep dive into Select the correct instruments to draw the different lines /curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.9",
-                    "sno": "2.9",
-                    "topic": "Deep dive into Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.10",
-                    "sno": "2.10",
-                    "topic": "Deep dive into Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.11",
-                    "sno": "2.11",
-                    "topic": "Deep dive into Identify different drawing sheet sizes as per I.S. and Standard Lay-outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.12",
-                    "sno": "2.12",
-                    "topic": "Deep dive into Prepare Title block as per B.I.S. Specifications",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.13",
-                    "sno": "2.13",
-                    "topic": "Deep dive into Identify the steps to be taken to keep the drawing clean and tidy. DrawingPlate1: Use of engineering Drawing Instruments",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.14",
-                    "sno": "2.14",
-                    "topic": "Deep dive into ENGINEERING DRAWING INSTRUMENTS Classifications: Basic Tools, tools for drawing straight lines, tools for curved lines, tools for measuring distances and special tools like mini drafter & drafting machine \u2013 Mentioning of names under each classification and their brief description -Scales: Recommended scales reduced & enlarged -Lines: Types of lines, selection of line thickness - Selection of Pencils -Sheet Sizes: A0, A1, A2, A3, A4, A5, Layout of drawing sheets in respect of A0, A1, A3 sizes, Sizes of the Title block and its contents -Care and maintenance of Drawing Sheet",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.15",
-                    "sno": "2.15",
-                    "topic": "Problem solving & practice on Select the correct instruments to draw the different lines /curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.16",
-                    "sno": "2.16",
-                    "topic": "Problem solving & practice on Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-2.17",
-                    "sno": "2.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me107d-2.18",
-                    "sno": "2.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "FREE HAND LETTERING AND NUMBERING",
-            "totalPeriods": 18,
+            "title": "Free hand lettering & Numbering",
+            "totalPeriods": 1,
             "topics": [
                 {
                     "id": "26me107d-3.1",
@@ -282,132 +72,13 @@
                     "topic": "Write titles using vertical lettering and numerals of 7mm, 10mm and14mm height",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.2",
-                    "sno": "3.2",
-                    "topic": "Write titles using sloping lettering and numerals of7mm, 10mm and14mm height",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.3",
-                    "sno": "3.3",
-                    "topic": "Select suitable sizes of lettering for different layouts and applications Drawingplate2:Exercises on Free hand lettering and numbering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.4",
-                    "sno": "3.4",
-                    "topic": "FREE HAND LETTERING AND NUMBERING Importance of lettering \u2013 Types of lettering -Guide Lines for Lettering Practicing of letters & numbers of given sizes ( 7 mm, 10 mm and 14 mm) Advantages of single stroke or simple style of lettering-Use of lettering stencils",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.5",
-                    "sno": "3.5",
-                    "topic": "Deep dive into Write titles using vertical lettering and numerals of 7mm, 10mm and14mm height",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.6",
-                    "sno": "3.6",
-                    "topic": "Deep dive into Write titles using sloping lettering and numerals of7mm, 10mm and14mm height",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.7",
-                    "sno": "3.7",
-                    "topic": "Deep dive into Select suitable sizes of lettering for different layouts and applications Drawingplate2:Exercises on Free hand lettering and numbering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.8",
-                    "sno": "3.8",
-                    "topic": "Deep dive into FREE HAND LETTERING AND NUMBERING Importance of lettering \u2013 Types of lettering -Guide Lines for Lettering Practicing of letters & numbers of given sizes ( 7 mm, 10 mm and 14 mm) Advantages of single stroke or simple style of lettering-Use of lettering stencils",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.9",
-                    "sno": "3.9",
-                    "topic": "Problem solving & practice on Write titles using vertical lettering and numerals of 7mm, 10mm and14mm height",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.10",
-                    "sno": "3.10",
-                    "topic": "Problem solving & practice on Write titles using sloping lettering and numerals of7mm, 10mm and14mm height",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.11",
-                    "sno": "3.11",
-                    "topic": "Problem solving & practice on Select suitable sizes of lettering for different layouts and applications Drawingplate2:Exercises on Free hand lettering and numbering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.12",
-                    "sno": "3.12",
-                    "topic": "Problem solving & practice on FREE HAND LETTERING AND NUMBERING Importance of lettering \u2013 Types of lettering -Guide Lines for Lettering Practicing of letters & numbers of given sizes ( 7 mm, 10 mm and 14 mm) Advantages of single stroke or simple style of lettering-Use of lettering stencils",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.13",
-                    "sno": "3.13",
-                    "topic": "Practical applications of Write titles using vertical lettering and numerals of 7mm, 10mm and14mm height",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.14",
-                    "sno": "3.14",
-                    "topic": "Practical applications of Write titles using sloping lettering and numerals of7mm, 10mm and14mm height",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.15",
-                    "sno": "3.15",
-                    "topic": "Practical applications of Select suitable sizes of lettering for different layouts and applications Drawingplate2:Exercises on Free hand lettering and numbering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.16",
-                    "sno": "3.16",
-                    "topic": "Practical applications of FREE HAND LETTERING AND NUMBERING Importance of lettering \u2013 Types of lettering -Guide Lines for Lettering Practicing of letters & numbers of given sizes ( 7 mm, 10 mm and 14 mm) Advantages of single stroke or simple style of lettering-Use of lettering stencils",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-3.17",
-                    "sno": "3.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me107d-3.18",
-                    "sno": "3.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "DIMENSIONING PRACTICE",
-            "totalPeriods": 18,
+            "title": "Dimensioning Practice",
+            "totalPeriods": 1,
             "topics": [
                 {
                     "id": "26me107d-4.1",
@@ -415,132 +86,13 @@
                     "topic": "Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.2",
-                    "sno": "4.2",
-                    "topic": "Dimension a given drawing using standard notations and desired system of dimensioning. DrawingPlate3:ExercisesonDimensioningPractice",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.3",
-                    "sno": "4.3",
-                    "topic": "DIMENSIONING PRACTICE Purpose of engineering Drawing, Need of B.I.S code in dimensioning -Shape description of an Engineering object -Definition of Dimensioning size description -Location of features, surface finish, fully dimensioned Drawing -Notations or tools of dimensioni ng, dimension line extension line, leader line, arrows, symbols, number and notes, rules to be observed in the use of above tools -Placing dimensions: Aligned system and uni -directional system ( SP -46-1988)-Arrangement of dimensions Chain, parallel, combined progressive, and dimensioning by co-ordinate methods-The rules for dimensioning standard, features \u201cCircles(holes)arcs, angles, tapers, chamfers, and dimension of narrow spaces",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.4",
-                    "sno": "4.4",
-                    "topic": "Deep dive into Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.5",
-                    "sno": "4.5",
-                    "topic": "Deep dive into Dimension a given drawing using standard notations and desired system of dimensioning. DrawingPlate3:ExercisesonDimensioningPractice",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.6",
-                    "sno": "4.6",
-                    "topic": "Deep dive into DIMENSIONING PRACTICE Purpose of engineering Drawing, Need of B.I.S code in dimensioning -Shape description of an Engineering object -Definition of Dimensioning size description -Location of features, surface finish, fully dimensioned Drawing -Notations or tools of dimensioni ng, dimension line extension line, leader line, arrows, symbols, number and notes, rules to be observed in the use of above tools -Placing dimensions: Aligned system and uni -directional system ( SP -46-1988)-Arrangement of dimensions Chain, parallel, combined progressive, and dimensioning by co-ordinate methods-The rules for dimensioning standard, features \u201cCircles(holes)arcs, angles, tapers, chamfers, and dimension of narrow spaces",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.7",
-                    "sno": "4.7",
-                    "topic": "Problem solving & practice on Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.8",
-                    "sno": "4.8",
-                    "topic": "Problem solving & practice on Dimension a given drawing using standard notations and desired system of dimensioning. DrawingPlate3:ExercisesonDimensioningPractice",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.9",
-                    "sno": "4.9",
-                    "topic": "Problem solving & practice on DIMENSIONING PRACTICE Purpose of engineering Drawing, Need of B.I.S code in dimensioning -Shape description of an Engineering object -Definition of Dimensioning size description -Location of features, surface finish, fully dimensioned Drawing -Notations or tools of dimensioni ng, dimension line extension line, leader line, arrows, symbols, number and notes, rules to be observed in the use of above tools -Placing dimensions: Aligned system and uni -directional system ( SP -46-1988)-Arrangement of dimensions Chain, parallel, combined progressive, and dimensioning by co-ordinate methods-The rules for dimensioning standard, features \u201cCircles(holes)arcs, angles, tapers, chamfers, and dimension of narrow spaces",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.10",
-                    "sno": "4.10",
-                    "topic": "Practical applications of Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.11",
-                    "sno": "4.11",
-                    "topic": "Practical applications of Dimension a given drawing using standard notations and desired system of dimensioning. DrawingPlate3:ExercisesonDimensioningPractice",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.12",
-                    "sno": "4.12",
-                    "topic": "Practical applications of DIMENSIONING PRACTICE Purpose of engineering Drawing, Need of B.I.S code in dimensioning -Shape description of an Engineering object -Definition of Dimensioning size description -Location of features, surface finish, fully dimensioned Drawing -Notations or tools of dimensioni ng, dimension line extension line, leader line, arrows, symbols, number and notes, rules to be observed in the use of above tools -Placing dimensions: Aligned system and uni -directional system ( SP -46-1988)-Arrangement of dimensions Chain, parallel, combined progressive, and dimensioning by co-ordinate methods-The rules for dimensioning standard, features \u201cCircles(holes)arcs, angles, tapers, chamfers, and dimension of narrow spaces",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.13",
-                    "sno": "4.13",
-                    "topic": "Practical applications of Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.14",
-                    "sno": "4.14",
-                    "topic": "Practical applications of Dimension a given drawing using standard notations and desired system of dimensioning. DrawingPlate3:ExercisesonDimensioningPractice",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.15",
-                    "sno": "4.15",
-                    "topic": "Practical applications of DIMENSIONING PRACTICE Purpose of engineering Drawing, Need of B.I.S code in dimensioning -Shape description of an Engineering object -Definition of Dimensioning size description -Location of features, surface finish, fully dimensioned Drawing -Notations or tools of dimensioni ng, dimension line extension line, leader line, arrows, symbols, number and notes, rules to be observed in the use of above tools -Placing dimensions: Aligned system and uni -directional system ( SP -46-1988)-Arrangement of dimensions Chain, parallel, combined progressive, and dimensioning by co-ordinate methods-The rules for dimensioning standard, features \u201cCircles(holes)arcs, angles, tapers, chamfers, and dimension of narrow spaces",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.16",
-                    "sno": "4.16",
-                    "topic": "Practical applications of Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-4.17",
-                    "sno": "4.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me107d-4.18",
-                    "sno": "4.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "GEOMETRIC CONSTRUCTIONS",
-            "totalPeriods": 18,
+            "title": "Geometrical constructions",
+            "totalPeriods": 1,
             "topics": [
                 {
                     "id": "26me107d-5.1",
@@ -548,132 +100,27 @@
                     "topic": "Practice the basic geometric constructions like i)dividing a line into equal parts ii)exterior and interior tangents to the given two circles iii)tangent arcs to two given lines and arcs",
                     "period": 1,
                     "type": "practical"
-                },
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Projections of Points, Lines, Planes& Auxiliary Planes",
+            "totalPeriods": 1,
+            "topics": [
                 {
-                    "id": "26me107d-5.2",
-                    "sno": "5.2",
-                    "topic": "Draw any regular polygon using general method when i) side length is given ii)inscribing circle radius is given iii) describing circle radius is given",
+                    "id": "26me107d-6.1",
+                    "sno": "6.1",
+                    "topic": "Study and analysis of Unit 6",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.3",
-                    "sno": "5.3",
-                    "topic": "Draw the conics using general and special methods",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.4",
-                    "sno": "5.4",
-                    "topic": "GEOMETRIC CONSTRUCTIONS Division of a line: to divide a straight line into given number of equal parts Construction of tangent lines: to draw interior and exterior tangents to two circles of given radii and centre distance Construction of tangent arcs: I. To draw tangent arc of given radius to touch two lines inclined at given angle (acute, right and obtuse angles). II. Tangent arc of given radius touching a circle or an arc and a given line. Tangent arcs of radius R, touching two given circles internally and externally. Construction of polygon: construction of any regular polygon by general method for given side length, inscribing circle radius and describing /superscribing circle radius Conics: Explanation of Ellipse, Parabola, Hyperbola, as sections of a double cone and a loci of a moving point, Eccentricity of above curves\u2013Their Engg. Applications viz., Projectiles, General Curves: Involute, Cycloid and Helix, explanations as locus of a moving point, their engineering application, viz., Gear tooth profile, screw threads, springs etc.\u2013their construction",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.5",
-                    "sno": "5.5",
-                    "topic": "Deep dive into Practice the basic geometric constructions like i)dividing a line into equal parts ii)exterior and interior tangents to the given two circles iii)tangent arcs to two given lines and arcs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.6",
-                    "sno": "5.6",
-                    "topic": "Deep dive into Draw any regular polygon using general method when i) side length is given ii)inscribing circle radius is given iii) describing circle radius is given",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.7",
-                    "sno": "5.7",
-                    "topic": "Deep dive into Draw the conics using general and special methods",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.8",
-                    "sno": "5.8",
-                    "topic": "Deep dive into GEOMETRIC CONSTRUCTIONS Division of a line: to divide a straight line into given number of equal parts Construction of tangent lines: to draw interior and exterior tangents to two circles of given radii and centre distance Construction of tangent arcs: I. To draw tangent arc of given radius to touch two lines inclined at given angle (acute, right and obtuse angles). II. Tangent arc of given radius touching a circle or an arc and a given line. Tangent arcs of radius R, touching two given circles internally and externally. Construction of polygon: construction of any regular polygon by general method for given side length, inscribing circle radius and describing /superscribing circle radius Conics: Explanation of Ellipse, Parabola, Hyperbola, as sections of a double cone and a loci of a moving point, Eccentricity of above curves\u2013Their Engg. Applications viz., Projectiles, General Curves: Involute, Cycloid and Helix, explanations as locus of a moving point, their engineering application, viz., Gear tooth profile, screw threads, springs etc.\u2013their construction",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.9",
-                    "sno": "5.9",
-                    "topic": "Problem solving & practice on Practice the basic geometric constructions like i)dividing a line into equal parts ii)exterior and interior tangents to the given two circles iii)tangent arcs to two given lines and arcs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.10",
-                    "sno": "5.10",
-                    "topic": "Problem solving & practice on Draw any regular polygon using general method when i) side length is given ii)inscribing circle radius is given iii) describing circle radius is given",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.11",
-                    "sno": "5.11",
-                    "topic": "Problem solving & practice on Draw the conics using general and special methods",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.12",
-                    "sno": "5.12",
-                    "topic": "Problem solving & practice on GEOMETRIC CONSTRUCTIONS Division of a line: to divide a straight line into given number of equal parts Construction of tangent lines: to draw interior and exterior tangents to two circles of given radii and centre distance Construction of tangent arcs: I. To draw tangent arc of given radius to touch two lines inclined at given angle (acute, right and obtuse angles). II. Tangent arc of given radius touching a circle or an arc and a given line. Tangent arcs of radius R, touching two given circles internally and externally. Construction of polygon: construction of any regular polygon by general method for given side length, inscribing circle radius and describing /superscribing circle radius Conics: Explanation of Ellipse, Parabola, Hyperbola, as sections of a double cone and a loci of a moving point, Eccentricity of above curves\u2013Their Engg. Applications viz., Projectiles, General Curves: Involute, Cycloid and Helix, explanations as locus of a moving point, their engineering application, viz., Gear tooth profile, screw threads, springs etc.\u2013their construction",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.13",
-                    "sno": "5.13",
-                    "topic": "Practical applications of Practice the basic geometric constructions like i)dividing a line into equal parts ii)exterior and interior tangents to the given two circles iii)tangent arcs to two given lines and arcs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.14",
-                    "sno": "5.14",
-                    "topic": "Practical applications of Draw any regular polygon using general method when i) side length is given ii)inscribing circle radius is given iii) describing circle radius is given",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.15",
-                    "sno": "5.15",
-                    "topic": "Practical applications of Draw the conics using general and special methods",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.16",
-                    "sno": "5.16",
-                    "topic": "Practical applications of GEOMETRIC CONSTRUCTIONS Division of a line: to divide a straight line into given number of equal parts Construction of tangent lines: to draw interior and exterior tangents to two circles of given radii and centre distance Construction of tangent arcs: I. To draw tangent arc of given radius to touch two lines inclined at given angle (acute, right and obtuse angles). II. Tangent arc of given radius touching a circle or an arc and a given line. Tangent arcs of radius R, touching two given circles internally and externally. Construction of polygon: construction of any regular polygon by general method for given side length, inscribing circle radius and describing /superscribing circle radius Conics: Explanation of Ellipse, Parabola, Hyperbola, as sections of a double cone and a loci of a moving point, Eccentricity of above curves\u2013Their Engg. Applications viz., Projectiles, General Curves: Involute, Cycloid and Helix, explanations as locus of a moving point, their engineering application, viz., Gear tooth profile, screw threads, springs etc.\u2013their construction",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-5.17",
-                    "sno": "5.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me107d-5.18",
-                    "sno": "5.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 7,
-            "title": "PROJECTION OF REGULAR SOLIDS",
-            "totalPeriods": 18,
+            "title": "Projections of Solids",
+            "totalPeriods": 1,
             "topics": [
                 {
                     "id": "26me107d-7.1",
@@ -681,132 +128,13 @@
                     "topic": "PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.2",
-                    "sno": "7.2",
-                    "topic": "Deep dive into PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.3",
-                    "sno": "7.3",
-                    "topic": "Problem solving & practice on PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.4",
-                    "sno": "7.4",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.5",
-                    "sno": "7.5",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.6",
-                    "sno": "7.6",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.7",
-                    "sno": "7.7",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.8",
-                    "sno": "7.8",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.9",
-                    "sno": "7.9",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.10",
-                    "sno": "7.10",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.11",
-                    "sno": "7.11",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.12",
-                    "sno": "7.12",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.13",
-                    "sno": "7.13",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.14",
-                    "sno": "7.14",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.15",
-                    "sno": "7.15",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.16",
-                    "sno": "7.16",
-                    "topic": "Practical applications of PROJECTION OF REGULAR SOLIDS a). Axis perpendicular to one of the planes b). Axis parallel to VP and inclined to HP and vice versa",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-7.17",
-                    "sno": "7.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me107d-7.18",
-                    "sno": "7.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 8,
-            "title": "SECTIONS OF SOLIDS",
-            "totalPeriods": 18,
+            "title": "Sections of Solids",
+            "totalPeriods": 1,
             "topics": [
                 {
                     "id": "26me107d-8.1",
@@ -814,132 +142,13 @@
                     "topic": "Identify the need to draw sectional views",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.2",
-                    "sno": "8.2",
-                    "topic": "Differentiate between true shape and apparent shape of section",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.3",
-                    "sno": "8.3",
-                    "topic": "Draw sectional views and true sections of regular solids by applying the principles of hatching. Drawing Plate\u201311: Problems on section of solid",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.4",
-                    "sno": "8.4",
-                    "topic": "SECTIONS OF SOLIDS Need for drawing sectional views \u2013 what is a sectional view - Hatching\u2013 Section of regular solids section planes inclined to one plane and perpendicular to other plane",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.5",
-                    "sno": "8.5",
-                    "topic": "Deep dive into Identify the need to draw sectional views",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.6",
-                    "sno": "8.6",
-                    "topic": "Deep dive into Differentiate between true shape and apparent shape of section",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.7",
-                    "sno": "8.7",
-                    "topic": "Deep dive into Draw sectional views and true sections of regular solids by applying the principles of hatching. Drawing Plate\u201311: Problems on section of solid",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.8",
-                    "sno": "8.8",
-                    "topic": "Deep dive into SECTIONS OF SOLIDS Need for drawing sectional views \u2013 what is a sectional view - Hatching\u2013 Section of regular solids section planes inclined to one plane and perpendicular to other plane",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.9",
-                    "sno": "8.9",
-                    "topic": "Problem solving & practice on Identify the need to draw sectional views",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.10",
-                    "sno": "8.10",
-                    "topic": "Problem solving & practice on Differentiate between true shape and apparent shape of section",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.11",
-                    "sno": "8.11",
-                    "topic": "Problem solving & practice on Draw sectional views and true sections of regular solids by applying the principles of hatching. Drawing Plate\u201311: Problems on section of solid",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.12",
-                    "sno": "8.12",
-                    "topic": "Problem solving & practice on SECTIONS OF SOLIDS Need for drawing sectional views \u2013 what is a sectional view - Hatching\u2013 Section of regular solids section planes inclined to one plane and perpendicular to other plane",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.13",
-                    "sno": "8.13",
-                    "topic": "Practical applications of Identify the need to draw sectional views",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.14",
-                    "sno": "8.14",
-                    "topic": "Practical applications of Differentiate between true shape and apparent shape of section",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.15",
-                    "sno": "8.15",
-                    "topic": "Practical applications of Draw sectional views and true sections of regular solids by applying the principles of hatching. Drawing Plate\u201311: Problems on section of solid",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.16",
-                    "sno": "8.16",
-                    "topic": "Practical applications of SECTIONS OF SOLIDS Need for drawing sectional views \u2013 what is a sectional view - Hatching\u2013 Section of regular solids section planes inclined to one plane and perpendicular to other plane",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-8.17",
-                    "sno": "8.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me107d-8.18",
-                    "sno": "8.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 9,
-            "title": "ORTHOGRAPHIC PROJECTIONS",
-            "totalPeriods": 18,
+            "title": "Orthographic Projections",
+            "totalPeriods": 1,
             "topics": [
                 {
                     "id": "26me107d-9.1",
@@ -947,132 +156,13 @@
                     "topic": "Draw the orthographic views of an object from its pictorial drawing",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.2",
-                    "sno": "9.2",
-                    "topic": "Draw the minimum number of views needed to represent a given object fully. DrawingPlate12: Problems on orthographic projections 10. PREPARE PICTORIAL DRAWINGS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.3",
-                    "sno": "9.3",
-                    "topic": "ORTHOGRAPHIC PROJECTIONS Meaning of orthographic projection - Using a viewing box and a model \u2013 Number of views obtained on the six faces of the box, - Legible sketches of only 3 views for describing object -Concept of front view, top view, and side view sketching these views for a number of engg objects - Explanation of first angle projection. \u2013 Positioning of three views in First angle projection -Projection of points as a means of locating the corners of the surfaces of an object \u2013 Use of miter line in drawing a third view when other two views are given -Method of representing hidden lines -Selection of minimum number of views to describe an object fully",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.4",
-                    "sno": "9.4",
-                    "topic": "Deep dive into Draw the orthographic views of an object from its pictorial drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.5",
-                    "sno": "9.5",
-                    "topic": "Deep dive into Draw the minimum number of views needed to represent a given object fully. DrawingPlate12: Problems on orthographic projections 10. PREPARE PICTORIAL DRAWINGS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.6",
-                    "sno": "9.6",
-                    "topic": "Deep dive into ORTHOGRAPHIC PROJECTIONS Meaning of orthographic projection - Using a viewing box and a model \u2013 Number of views obtained on the six faces of the box, - Legible sketches of only 3 views for describing object -Concept of front view, top view, and side view sketching these views for a number of engg objects - Explanation of first angle projection. \u2013 Positioning of three views in First angle projection -Projection of points as a means of locating the corners of the surfaces of an object \u2013 Use of miter line in drawing a third view when other two views are given -Method of representing hidden lines -Selection of minimum number of views to describe an object fully",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.7",
-                    "sno": "9.7",
-                    "topic": "Problem solving & practice on Draw the orthographic views of an object from its pictorial drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.8",
-                    "sno": "9.8",
-                    "topic": "Problem solving & practice on Draw the minimum number of views needed to represent a given object fully. DrawingPlate12: Problems on orthographic projections 10. PREPARE PICTORIAL DRAWINGS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.9",
-                    "sno": "9.9",
-                    "topic": "Problem solving & practice on ORTHOGRAPHIC PROJECTIONS Meaning of orthographic projection - Using a viewing box and a model \u2013 Number of views obtained on the six faces of the box, - Legible sketches of only 3 views for describing object -Concept of front view, top view, and side view sketching these views for a number of engg objects - Explanation of first angle projection. \u2013 Positioning of three views in First angle projection -Projection of points as a means of locating the corners of the surfaces of an object \u2013 Use of miter line in drawing a third view when other two views are given -Method of representing hidden lines -Selection of minimum number of views to describe an object fully",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.10",
-                    "sno": "9.10",
-                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.11",
-                    "sno": "9.11",
-                    "topic": "Practical applications of Draw the minimum number of views needed to represent a given object fully. DrawingPlate12: Problems on orthographic projections 10. PREPARE PICTORIAL DRAWINGS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.12",
-                    "sno": "9.12",
-                    "topic": "Practical applications of ORTHOGRAPHIC PROJECTIONS Meaning of orthographic projection - Using a viewing box and a model \u2013 Number of views obtained on the six faces of the box, - Legible sketches of only 3 views for describing object -Concept of front view, top view, and side view sketching these views for a number of engg objects - Explanation of first angle projection. \u2013 Positioning of three views in First angle projection -Projection of points as a means of locating the corners of the surfaces of an object \u2013 Use of miter line in drawing a third view when other two views are given -Method of representing hidden lines -Selection of minimum number of views to describe an object fully",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.13",
-                    "sno": "9.13",
-                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.14",
-                    "sno": "9.14",
-                    "topic": "Practical applications of Draw the minimum number of views needed to represent a given object fully. DrawingPlate12: Problems on orthographic projections 10. PREPARE PICTORIAL DRAWINGS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.15",
-                    "sno": "9.15",
-                    "topic": "Practical applications of ORTHOGRAPHIC PROJECTIONS Meaning of orthographic projection - Using a viewing box and a model \u2013 Number of views obtained on the six faces of the box, - Legible sketches of only 3 views for describing object -Concept of front view, top view, and side view sketching these views for a number of engg objects - Explanation of first angle projection. \u2013 Positioning of three views in First angle projection -Projection of points as a means of locating the corners of the surfaces of an object \u2013 Use of miter line in drawing a third view when other two views are given -Method of representing hidden lines -Selection of minimum number of views to describe an object fully",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.16",
-                    "sno": "9.16",
-                    "topic": "Practical applications of Draw the orthographic views of an object from its pictorial drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-9.17",
-                    "sno": "9.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me107d-9.18",
-                    "sno": "9.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 10,
-            "title": "PICTORIAL DRAWINGS",
-            "totalPeriods": 18,
+            "title": "Isometric Views",
+            "totalPeriods": 1,
             "topics": [
                 {
                     "id": "26me107d-10.1",
@@ -1080,132 +170,13 @@
                     "topic": "Prepare Isometric views from the given orthographic drawings. Drawingplate13:Exercise on Isometric drawings only",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.2",
-                    "sno": "10.2",
-                    "topic": "PICTORIAL DRAWINGS Brief description of different types of pictorial drawing viz., Isometric, oblique, and perspective and their use-Isometric drawings: Isometric axes, angle between them, meaning of visual distortion in dimensions - Need for an isometric scale, difference b etween Isometric scale, and trues cale - difference between Isometric view and Isometric projection - Isometric and non-Isometric lines - Isometric drawing of common features like rectangles, circular - shapes, non-isometric lines \u2013 Drawing the isometric views for the given orthographic projections-Use of box/off set method",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.3",
-                    "sno": "10.3",
-                    "topic": "Deep dive into Prepare Isometric views from the given orthographic drawings. Drawingplate13:Exercise on Isometric drawings only",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.4",
-                    "sno": "10.4",
-                    "topic": "Deep dive into PICTORIAL DRAWINGS Brief description of different types of pictorial drawing viz., Isometric, oblique, and perspective and their use-Isometric drawings: Isometric axes, angle between them, meaning of visual distortion in dimensions - Need for an isometric scale, difference b etween Isometric scale, and trues cale - difference between Isometric view and Isometric projection - Isometric and non-Isometric lines - Isometric drawing of common features like rectangles, circular - shapes, non-isometric lines \u2013 Drawing the isometric views for the given orthographic projections-Use of box/off set method",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.5",
-                    "sno": "10.5",
-                    "topic": "Problem solving & practice on Prepare Isometric views from the given orthographic drawings. Drawingplate13:Exercise on Isometric drawings only",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.6",
-                    "sno": "10.6",
-                    "topic": "Problem solving & practice on PICTORIAL DRAWINGS Brief description of different types of pictorial drawing viz., Isometric, oblique, and perspective and their use-Isometric drawings: Isometric axes, angle between them, meaning of visual distortion in dimensions - Need for an isometric scale, difference b etween Isometric scale, and trues cale - difference between Isometric view and Isometric projection - Isometric and non-Isometric lines - Isometric drawing of common features like rectangles, circular - shapes, non-isometric lines \u2013 Drawing the isometric views for the given orthographic projections-Use of box/off set method",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.7",
-                    "sno": "10.7",
-                    "topic": "Practical applications of Prepare Isometric views from the given orthographic drawings. Drawingplate13:Exercise on Isometric drawings only",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.8",
-                    "sno": "10.8",
-                    "topic": "Practical applications of PICTORIAL DRAWINGS Brief description of different types of pictorial drawing viz., Isometric, oblique, and perspective and their use-Isometric drawings: Isometric axes, angle between them, meaning of visual distortion in dimensions - Need for an isometric scale, difference b etween Isometric scale, and trues cale - difference between Isometric view and Isometric projection - Isometric and non-Isometric lines - Isometric drawing of common features like rectangles, circular - shapes, non-isometric lines \u2013 Drawing the isometric views for the given orthographic projections-Use of box/off set method",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.9",
-                    "sno": "10.9",
-                    "topic": "Practical applications of Prepare Isometric views from the given orthographic drawings. Drawingplate13:Exercise on Isometric drawings only",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.10",
-                    "sno": "10.10",
-                    "topic": "Practical applications of PICTORIAL DRAWINGS Brief description of different types of pictorial drawing viz., Isometric, oblique, and perspective and their use-Isometric drawings: Isometric axes, angle between them, meaning of visual distortion in dimensions - Need for an isometric scale, difference b etween Isometric scale, and trues cale - difference between Isometric view and Isometric projection - Isometric and non-Isometric lines - Isometric drawing of common features like rectangles, circular - shapes, non-isometric lines \u2013 Drawing the isometric views for the given orthographic projections-Use of box/off set method",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.11",
-                    "sno": "10.11",
-                    "topic": "Practical applications of Prepare Isometric views from the given orthographic drawings. Drawingplate13:Exercise on Isometric drawings only",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.12",
-                    "sno": "10.12",
-                    "topic": "Practical applications of PICTORIAL DRAWINGS Brief description of different types of pictorial drawing viz., Isometric, oblique, and perspective and their use-Isometric drawings: Isometric axes, angle between them, meaning of visual distortion in dimensions - Need for an isometric scale, difference b etween Isometric scale, and trues cale - difference between Isometric view and Isometric projection - Isometric and non-Isometric lines - Isometric drawing of common features like rectangles, circular - shapes, non-isometric lines \u2013 Drawing the isometric views for the given orthographic projections-Use of box/off set method",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.13",
-                    "sno": "10.13",
-                    "topic": "Practical applications of Prepare Isometric views from the given orthographic drawings. Drawingplate13:Exercise on Isometric drawings only",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.14",
-                    "sno": "10.14",
-                    "topic": "Practical applications of PICTORIAL DRAWINGS Brief description of different types of pictorial drawing viz., Isometric, oblique, and perspective and their use-Isometric drawings: Isometric axes, angle between them, meaning of visual distortion in dimensions - Need for an isometric scale, difference b etween Isometric scale, and trues cale - difference between Isometric view and Isometric projection - Isometric and non-Isometric lines - Isometric drawing of common features like rectangles, circular - shapes, non-isometric lines \u2013 Drawing the isometric views for the given orthographic projections-Use of box/off set method",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.15",
-                    "sno": "10.15",
-                    "topic": "Practical applications of Prepare Isometric views from the given orthographic drawings. Drawingplate13:Exercise on Isometric drawings only",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.16",
-                    "sno": "10.16",
-                    "topic": "Practical applications of PICTORIAL DRAWINGS Brief description of different types of pictorial drawing viz., Isometric, oblique, and perspective and their use-Isometric drawings: Isometric axes, angle between them, meaning of visual distortion in dimensions - Need for an isometric scale, difference b etween Isometric scale, and trues cale - difference between Isometric view and Isometric projection - Isometric and non-Isometric lines - Isometric drawing of common features like rectangles, circular - shapes, non-isometric lines \u2013 Drawing the isometric views for the given orthographic projections-Use of box/off set method",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me107d-10.17",
-                    "sno": "10.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me107d-10.18",
-                    "sno": "10.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 11,
-            "title": "INTRODUCTION TO AutoCAD",
-            "totalPeriods": 18,
+            "title": "Introduction to AutoCAD -",
+            "totalPeriods": 21,
             "topics": [
                 {
                     "id": "26me107d-11.1",
@@ -1322,13 +293,34 @@
                 {
                     "id": "26me107d-11.17",
                     "sno": "11.17",
+                    "topic": "Practice and training on Define CAD and explain its significance in the design, development, and manufacturing processes within mechanical engineering",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me107d-11.18",
+                    "sno": "11.18",
+                    "topic": "Practice and training on Identify the key advantages of using CAD over traditional manual drafting methods",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me107d-11.19",
+                    "sno": "11.19",
+                    "topic": "Practice and training on Describe the function of key components of the AutoCAD interface, including the Ribbon, Command Line, Status Bar, Model Space, Paper Space, and Too...",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me107d-11.20",
+                    "sno": "11.20",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me107d-11.18",
-                    "sno": "11.18",
+                    "id": "26me107d-11.21",
+                    "sno": "11.21",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

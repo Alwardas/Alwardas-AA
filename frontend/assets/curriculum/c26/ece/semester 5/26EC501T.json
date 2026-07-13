@@ -3,12 +3,12 @@
     "subjectName": "Industrial Management and Entrepreneurship",
     "regulation": "C26",
     "semester": 5,
-    "totalPeriods": 90,
+    "totalPeriods": 72,
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
+            "title": "Basics of Industrial Management, Organization structure & Organizational behaviour",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ec501t-1.1",
@@ -62,7 +62,7 @@
                 {
                     "id": "26ec501t-1.8",
                     "sno": "1.8",
-                    "topic": "Explain Maslow\u2019s Hierarchy of needs",
+                    "topic": "Explain Maslow’s Hierarchy of needs",
                     "period": 1,
                     "type": "theory"
                 },
@@ -99,7 +99,7 @@
                     "sno": "1.13",
                     "topic": "Explain assessment of Human Resources requirements",
                     "period": 1,
-                    "type": "theory"
+                    "type": "assessment"
                 },
                 {
                     "id": "26ec501t-1.14",
@@ -111,37 +111,16 @@
                 {
                     "id": "26ec501t-1.15",
                     "sno": "1.15",
-                    "topic": "Explain different types of Business ownerships and compare them",
+                    "topic": "Explain different types of Business ownerships and compare them; Define social responsibilities and Corporate social responsibility. 2. Electronic Product design and Development stages",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec501t-1.16",
-                    "sno": "1.16",
-                    "topic": "Define social responsibilities and Corporate social responsibility. 2. Electronic Product design and Development stages",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-1.17",
-                    "sno": "1.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec501t-1.18",
-                    "sno": "1.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
             "topics": [
                 {
                     "id": "26ec501t-2.1",
@@ -153,118 +132,6 @@
                 {
                     "id": "26ec501t-2.2",
                     "sno": "2.2",
-                    "topic": "Classify different types of Electronic Products",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.3",
-                    "sno": "2.3",
-                    "topic": "Explain the Techno Commercial Feasibility of a product",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.4",
-                    "sno": "2.4",
-                    "topic": "Explain customer requirements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.5",
-                    "sno": "2.5",
-                    "topic": "Explain R&D prototype Assessment of reliability",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.6",
-                    "sno": "2.6",
-                    "topic": "Explain factors for reliability of equipment",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.7",
-                    "sno": "2.7",
-                    "topic": "Explain quality considerations",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.8",
-                    "sno": "2.8",
-                    "topic": "List the reasons for failure of an electronic product",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.9",
-                    "sno": "2.9",
-                    "topic": "Explain Bathtub curve",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.10",
-                    "sno": "2.10",
-                    "topic": "Explain the concept of ergonomic and aesthetic considerations of pilot production",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.11",
-                    "sno": "2.11",
-                    "topic": "Explain Product packaging and storage",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.12",
-                    "sno": "2.12",
-                    "topic": "Estimate power supply requirements of an electronic product",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.13",
-                    "sno": "2.13",
-                    "topic": "List two types of power supply protection devices",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.14",
-                    "sno": "2.14",
-                    "topic": "Define noise reduction",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.15",
-                    "sno": "2.15",
-                    "topic": "Explain grounding, shielding and guarding techniques",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.16",
-                    "sno": "2.16",
-                    "topic": "Explain Thermal management. 3. Electronic Product testing & documentation",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-2.17",
-                    "sno": "2.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec501t-2.18",
-                    "sno": "2.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +140,8 @@
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
+            "title": "Electronic Product testing & documentation",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec501t-3.1",
@@ -391,13 +258,27 @@
                 {
                     "id": "26ec501t-3.17",
                     "sno": "3.17",
+                    "topic": "Deep dive into State the importance of product testing and Environmental testing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Explain Dry heat testing, Vibration testing, random testing and Bump testing",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-3.19",
+                    "sno": "3.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec501t-3.18",
-                    "sno": "3.18",
+                    "id": "26ec501t-3.20",
+                    "sno": "3.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +287,8 @@
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "Entrepreneurship Development.",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ec501t-4.1",
@@ -513,34 +394,13 @@
                     "topic": "Explain the steps involved in Preparing feasibility study report 5. Industrial Safety and E-waste management",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec501t-4.16",
-                    "sno": "4.16",
-                    "topic": "Deep dive into Define the word entrepreneur",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec501t-4.17",
-                    "sno": "4.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec501t-4.18",
-                    "sno": "4.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
+            "title": "Industrial Safety and E-waste management",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec501t-5.1",
@@ -552,7 +412,7 @@
                 {
                     "id": "26ec501t-5.2",
                     "sno": "5.2",
-                    "topic": "Explain the principles of 5\u2019S safety system",
+                    "topic": "Explain the principles of 5’S safety system",
                     "period": 1,
                     "type": "theory"
                 },
@@ -636,7 +496,7 @@
                 {
                     "id": "26ec501t-5.14",
                     "sno": "5.14",
-                    "topic": "Deep dive into Explain the principles of 5\u2019S safety system",
+                    "topic": "Deep dive into Explain the principles of 5’S safety system",
                     "period": 1,
                     "type": "theory"
                 },
@@ -657,13 +517,27 @@
                 {
                     "id": "26ec501t-5.17",
                     "sno": "5.17",
+                    "topic": "Deep dive into Explain method of first aid treatment for someone suffering from electric shock",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-5.18",
+                    "sno": "5.18",
+                    "topic": "Deep dive into State general electrical safety rules",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-5.19",
+                    "sno": "5.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec501t-5.18",
-                    "sno": "5.18",
+                    "id": "26ec501t-5.20",
+                    "sno": "5.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

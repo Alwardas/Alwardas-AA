@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "CULVERTS",
-            "totalPeriods": 24,
+            "totalPeriods": 25,
             "topics": [
                 {
                     "id": "26ce407l-1.1",
@@ -27,153 +27,160 @@
                 {
                     "id": "26ce407l-1.3",
                     "sno": "1.3",
-                    "topic": "Deep dive into CULVERTS",
+                    "topic": "Practice and training on CULVERTS",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.4",
                     "sno": "1.4",
-                    "topic": "Deep dive into Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Practice and training on Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.5",
                     "sno": "1.5",
-                    "topic": "Problem solving & practice on CULVERTS",
+                    "topic": "Advanced practical on CULVERTS",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.6",
                     "sno": "1.6",
-                    "topic": "Problem solving & practice on Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Advanced practical on Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.7",
                     "sno": "1.7",
-                    "topic": "Practical applications of CULVERTS",
+                    "topic": "Real-world simulation of CULVERTS",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.8",
                     "sno": "1.8",
-                    "topic": "Practical applications of Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Real-world simulation of Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.9",
                     "sno": "1.9",
-                    "topic": "Practical applications of CULVERTS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.10",
                     "sno": "1.10",
-                    "topic": "Practical applications of Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.11",
                     "sno": "1.11",
-                    "topic": "Practical applications of CULVERTS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.12",
                     "sno": "1.12",
-                    "topic": "Practical applications of Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.13",
                     "sno": "1.13",
-                    "topic": "Practical applications of CULVERTS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.14",
                     "sno": "1.14",
-                    "topic": "Practical applications of Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.15",
                     "sno": "1.15",
-                    "topic": "Practical applications of CULVERTS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.16",
                     "sno": "1.16",
-                    "topic": "Practical applications of Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.17",
                     "sno": "1.17",
-                    "topic": "Practical applications of CULVERTS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.18",
                     "sno": "1.18",
-                    "topic": "Practical applications of Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.19",
                     "sno": "1.19",
-                    "topic": "Practical applications of CULVERTS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.20",
                     "sno": "1.20",
-                    "topic": "Practical applications of Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.21",
                     "sno": "1.21",
-                    "topic": "Practical applications of CULVERTS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.22",
                     "sno": "1.22",
-                    "topic": "Practical applications of Identify the component parts of the pipe culvert and R.C.C. slab culvert from the given set of specifications",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-1.23",
                     "sno": "1.23",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce407l-1.24",
+                    "sno": "1.24",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce407l-1.24",
-                    "sno": "1.24",
+                    "id": "26ce407l-1.25",
+                    "sno": "1.25",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -183,7 +190,7 @@
         {
             "unitNo": 2,
             "title": "PUBLIC HEALTH ENGINEERING WORKS",
-            "totalPeriods": 22,
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ce407l-2.1",
@@ -230,111 +237,97 @@
                 {
                     "id": "26ce407l-2.7",
                     "sno": "2.7",
-                    "topic": "Deep dive into PUBLIC HEALTH ENGINEERING WORKS",
+                    "topic": "Practice and training on PUBLIC HEALTH ENGINEERING WORKS",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.8",
                     "sno": "2.8",
-                    "topic": "Deep dive into Label the component parts of given Public health engineering structures",
+                    "topic": "Practice and training on Label the component parts of given Public health engineering structures",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.9",
                     "sno": "2.9",
-                    "topic": "Deep dive into Draw the sectional elevation, plan and cross section of Public health Engineering works viz., septic tank, sanitary block, overhead tank, from the set of given specifications",
+                    "topic": "Practice and training on Draw the sectional elevation, plan and cross section of Public health Engineering works viz., septic tank, sanitary block, overhead tank, from the set of given specifications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.10",
                     "sno": "2.10",
-                    "topic": "Deep dive into Septic tank with details of connections to a dispersion trench/soak pit",
+                    "topic": "Practice and training on Septic tank with details of connections to a dispersion trench/soak pit",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.11",
                     "sno": "2.11",
-                    "topic": "Deep dive into Sanitary block for a public building",
+                    "topic": "Practice and training on Sanitary block for a public building",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.12",
                     "sno": "2.12",
-                    "topic": "Deep dive into R.C.C. rectangular/square overhead tank 3 IRRIGATION ENGINEERING DRAWINGS BY USING CAD",
+                    "topic": "Practice and training on R.C.C. rectangular/square overhead tank 3 IRRIGATION ENGINEERING DRAWINGS BY USING CAD",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.13",
                     "sno": "2.13",
-                    "topic": "Problem solving & practice on PUBLIC HEALTH ENGINEERING WORKS",
+                    "topic": "Advanced practical on PUBLIC HEALTH ENGINEERING WORKS",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.14",
                     "sno": "2.14",
-                    "topic": "Problem solving & practice on Label the component parts of given Public health engineering structures",
+                    "topic": "Advanced practical on Label the component parts of given Public health engineering structures",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.15",
                     "sno": "2.15",
-                    "topic": "Problem solving & practice on Draw the sectional elevation, plan and cross section of Public health Engineering works viz., septic tank, sanitary block, overhead tank, from the set of given specifications",
+                    "topic": "Advanced practical on Draw the sectional elevation, plan and cross section of Public health Engineering works viz., septic tank, sanitary block, overhead tank, from the set of given specifications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.16",
                     "sno": "2.16",
-                    "topic": "Problem solving & practice on Septic tank with details of connections to a dispersion trench/soak pit",
+                    "topic": "Advanced practical on Septic tank with details of connections to a dispersion trench/soak pit",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.17",
                     "sno": "2.17",
-                    "topic": "Problem solving & practice on Sanitary block for a public building",
+                    "topic": "Advanced practical on Sanitary block for a public building",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.18",
                     "sno": "2.18",
-                    "topic": "Problem solving & practice on R.C.C. rectangular/square overhead tank 3 IRRIGATION ENGINEERING DRAWINGS BY USING CAD",
+                    "topic": "Advanced practical on R.C.C. rectangular/square overhead tank 3 IRRIGATION ENGINEERING DRAWINGS BY USING CAD",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-2.19",
                     "sno": "2.19",
-                    "topic": "Practical applications of PUBLIC HEALTH ENGINEERING WORKS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce407l-2.20",
-                    "sno": "2.20",
-                    "topic": "Practical applications of Label the component parts of given Public health engineering structures",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce407l-2.21",
-                    "sno": "2.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce407l-2.22",
-                    "sno": "2.22",
+                    "id": "26ce407l-2.20",
+                    "sno": "2.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -344,7 +337,7 @@
         {
             "unitNo": 3,
             "title": "IRRIGATION ENGINEERING STRUCTURES BY USING CAD",
-            "totalPeriods": 22,
+            "totalPeriods": 25,
             "topics": [
                 {
                     "id": "26ce407l-3.1",
@@ -391,111 +384,132 @@
                 {
                     "id": "26ce407l-3.7",
                     "sno": "3.7",
-                    "topic": "Deep dive into IRRIGATION ENGINEERING STRUCTURES BY USING CAD",
+                    "topic": "Practice and training on IRRIGATION ENGINEERING STRUCTURES BY USING CAD",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.8",
                     "sno": "3.8",
-                    "topic": "Deep dive into Label the component parts of given Irrigation Engineering structures from the given drawings",
+                    "topic": "Practice and training on Label the component parts of given Irrigation Engineering structures from the given drawings",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.9",
                     "sno": "3.9",
-                    "topic": "Deep dive into Draw the sectional elevation, plan and cross section of different Irrigation engineering structures from the set of given specifications",
+                    "topic": "Practice and training on Draw the sectional elevation, plan and cross section of different Irrigation engineering structures from the set of given specifications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.10",
                     "sno": "3.10",
-                    "topic": "Deep dive into Earthen bunds (a) Homogeneous type (b) Zoned embankment type (c) Diaphragm type",
+                    "topic": "Practice and training on Earthen bunds (a) Homogeneous type (b) Zoned embankment type (c) Diaphragm type",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.11",
                     "sno": "3.11",
-                    "topic": "Deep dive into Tank surplus weir with splayed wing walls",
+                    "topic": "Practice and training on Tank surplus weir with splayed wing walls",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.12",
                     "sno": "3.12",
-                    "topic": "Deep dive into Canal regulator",
+                    "topic": "Practice and training on Canal regulator",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.13",
                     "sno": "3.13",
-                    "topic": "Problem solving & practice on IRRIGATION ENGINEERING STRUCTURES BY USING CAD",
+                    "topic": "Advanced practical on IRRIGATION ENGINEERING STRUCTURES BY USING CAD",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.14",
                     "sno": "3.14",
-                    "topic": "Problem solving & practice on Label the component parts of given Irrigation Engineering structures from the given drawings",
+                    "topic": "Advanced practical on Label the component parts of given Irrigation Engineering structures from the given drawings",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.15",
                     "sno": "3.15",
-                    "topic": "Problem solving & practice on Draw the sectional elevation, plan and cross section of different Irrigation engineering structures from the set of given specifications",
+                    "topic": "Advanced practical on Draw the sectional elevation, plan and cross section of different Irrigation engineering structures from the set of given specifications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.16",
                     "sno": "3.16",
-                    "topic": "Problem solving & practice on Earthen bunds (a) Homogeneous type (b) Zoned embankment type (c) Diaphragm type",
+                    "topic": "Advanced practical on Earthen bunds (a) Homogeneous type (b) Zoned embankment type (c) Diaphragm type",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.17",
                     "sno": "3.17",
-                    "topic": "Problem solving & practice on Tank surplus weir with splayed wing walls",
+                    "topic": "Advanced practical on Tank surplus weir with splayed wing walls",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.18",
                     "sno": "3.18",
-                    "topic": "Problem solving & practice on Canal regulator",
+                    "topic": "Advanced practical on Canal regulator",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.19",
                     "sno": "3.19",
-                    "topic": "Practical applications of IRRIGATION ENGINEERING STRUCTURES BY USING CAD",
+                    "topic": "Real-world simulation of IRRIGATION ENGINEERING STRUCTURES BY USING CAD",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.20",
                     "sno": "3.20",
-                    "topic": "Practical applications of Label the component parts of given Irrigation Engineering structures from the given drawings",
+                    "topic": "Real-world simulation of Label the component parts of given Irrigation Engineering structures from the given drawings",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-3.21",
                     "sno": "3.21",
+                    "topic": "Real-world simulation of Draw the sectional elevation, plan and cross section of different Irrigation engineering structures from the set of given specifications",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce407l-3.22",
+                    "sno": "3.22",
+                    "topic": "Real-world simulation of Earthen bunds (a) Homogeneous type (b) Zoned embankment type (c) Diaphragm type",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce407l-3.23",
+                    "sno": "3.23",
+                    "topic": "Real-world simulation of Tank surplus weir with splayed wing walls",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce407l-3.24",
+                    "sno": "3.24",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce407l-3.22",
-                    "sno": "3.22",
+                    "id": "26ce407l-3.25",
+                    "sno": "3.25",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -505,7 +519,7 @@
         {
             "unitNo": 4,
             "title": "STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
-            "totalPeriods": 22,
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ce407l-4.1",
@@ -538,125 +552,111 @@
                 {
                     "id": "26ce407l-4.5",
                     "sno": "4.5",
-                    "topic": "STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
+                    "topic": "One way slab – plan – cross section – longitudinal section – schedule of reinforcement",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.6",
                     "sno": "4.6",
-                    "topic": "One way slab \u2013 plan \u2013 cross section \u2013 longitudinal section \u2013 schedule of reinforcement",
+                    "topic": "Column with square footing – plan -sectional elevation – schedule of reinforcement",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.7",
                     "sno": "4.7",
-                    "topic": "Column with square footing \u2013 plan -sectional elevation \u2013 schedule of reinforcement",
+                    "topic": "Practice and training on STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.8",
                     "sno": "4.8",
-                    "topic": "Deep dive into STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
+                    "topic": "Practice and training on Draw the longitudinal section and cross sections of singly reinforced simply supported beam, prepare schedule of reinforcement and quantity of steel for singly reinforced simply supported beam",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.9",
                     "sno": "4.9",
-                    "topic": "Deep dive into Draw the longitudinal section and cross sections of singly reinforced simply supported beam, prepare schedule of reinforcement and quantity of steel for singly reinforced simply supported beam",
+                    "topic": "Practice and training on Draw the plan and longitudinal section of one-way slab showing reinforcement details, prepare schedule of reinforcement and quantity of steel for one-way slab showing reinforcement details",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.10",
                     "sno": "4.10",
-                    "topic": "Deep dive into Draw the plan and longitudinal section of one-way slab showing reinforcement details, prepare schedule of reinforcement and quantity of steel for one-way slab showing reinforcement details",
+                    "topic": "Practice and training on Draw the details of column and square footing (plan and sectional elevation)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.11",
                     "sno": "4.11",
-                    "topic": "Deep dive into Draw the details of column and square footing (plan and sectional elevation)",
+                    "topic": "Practice and training on One way slab – plan – cross section – longitudinal section – schedule of reinforcement",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.12",
                     "sno": "4.12",
-                    "topic": "Deep dive into STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
+                    "topic": "Practice and training on Column with square footing – plan -sectional elevation – schedule of reinforcement",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.13",
                     "sno": "4.13",
-                    "topic": "Deep dive into One way slab \u2013 plan \u2013 cross section \u2013 longitudinal section \u2013 schedule of reinforcement",
+                    "topic": "Advanced practical on STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.14",
                     "sno": "4.14",
-                    "topic": "Deep dive into Column with square footing \u2013 plan -sectional elevation \u2013 schedule of reinforcement",
+                    "topic": "Advanced practical on Draw the longitudinal section and cross sections of singly reinforced simply supported beam, prepare schedule of reinforcement and quantity of steel for singly reinforced simply supported beam",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.15",
                     "sno": "4.15",
-                    "topic": "Problem solving & practice on STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
+                    "topic": "Advanced practical on Draw the plan and longitudinal section of one-way slab showing reinforcement details, prepare schedule of reinforcement and quantity of steel for one-way slab showing reinforcement details",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.16",
                     "sno": "4.16",
-                    "topic": "Problem solving & practice on Draw the longitudinal section and cross sections of singly reinforced simply supported beam, prepare schedule of reinforcement and quantity of steel for singly reinforced simply supported beam",
+                    "topic": "Advanced practical on Draw the details of column and square footing (plan and sectional elevation)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.17",
                     "sno": "4.17",
-                    "topic": "Problem solving & practice on Draw the plan and longitudinal section of one-way slab showing reinforcement details, prepare schedule of reinforcement and quantity of steel for one-way slab showing reinforcement details",
+                    "topic": "Advanced practical on One way slab – plan – cross section – longitudinal section – schedule of reinforcement",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.18",
                     "sno": "4.18",
-                    "topic": "Problem solving & practice on Draw the details of column and square footing (plan and sectional elevation)",
+                    "topic": "Advanced practical on Column with square footing – plan -sectional elevation – schedule of reinforcement",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce407l-4.19",
                     "sno": "4.19",
-                    "topic": "Problem solving & practice on STRUCTURAL ENGINEERING DRAWINGS BY USING CAD",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce407l-4.20",
-                    "sno": "4.20",
-                    "topic": "Problem solving & practice on One way slab \u2013 plan \u2013 cross section \u2013 longitudinal section \u2013 schedule of reinforcement",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce407l-4.21",
-                    "sno": "4.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce407l-4.22",
-                    "sno": "4.22",
+                    "id": "26ce407l-4.20",
+                    "sno": "4.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

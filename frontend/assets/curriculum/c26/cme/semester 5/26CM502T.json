@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "Basics of Software Engineering Designs & Life Cycle Models",
-            "totalPeriods": 18,
+            "totalPeriods": 13,
             "topics": [
                 {
                     "id": "26cm502t-1.1",
@@ -97,51 +97,16 @@
                 {
                     "id": "26cm502t-1.13",
                     "sno": "1.13",
-                    "topic": "Explain installation of Android SDK Tools; Explain creation of Android Virtual Devices(AVD)",
+                    "topic": "Explain installation of Android SDK Tools; Explain creation of Android Virtual Devices(AVD); Explain Anatomy of Android Application; Explain Creation of “Hello World” Android Application; Explain procedure for Deploying Android app on USB connected Android device; Activities; Services; Content providers; Broadcast Receivers",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26cm502t-1.14",
-                    "sno": "1.14",
-                    "topic": "Explain Anatomy of Android Application; Explain Creation of \u201cHello World\u201d Android Application",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm502t-1.15",
-                    "sno": "1.15",
-                    "topic": "Explain procedure for Deploying Android app on USB connected Android device; Activities",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm502t-1.16",
-                    "sno": "1.16",
-                    "topic": "Services; Content providers; Broadcast Receivers",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm502t-1.17",
-                    "sno": "1.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26cm502t-1.18",
-                    "sno": "1.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
             "title": "Software Project Management",
-            "totalPeriods": 18,
+            "totalPeriods": 21,
             "topics": [
                 {
                     "id": "26cm502t-2.1",
@@ -258,13 +223,34 @@
                 {
                     "id": "26cm502t-2.17",
                     "sno": "2.17",
+                    "topic": "Deep dive into Software Project Management; Know about Software Project Manager",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-2.18",
+                    "sno": "2.18",
+                    "topic": "Deep dive into Explain Software Project Planning; Explain the components of SPMP document",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-2.19",
+                    "sno": "2.19",
+                    "topic": "Deep dive into Know the Metrics for Project Size Estimation; Know about Project Estimation Techniques",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-2.20",
+                    "sno": "2.20",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm502t-2.18",
-                    "sno": "2.18",
+                    "id": "26cm502t-2.21",
+                    "sno": "2.21",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +259,8 @@
         },
         {
             "unitNo": 3,
-            "title": "Requirement Analysis and Specifications",
-            "totalPeriods": 18,
+            "title": "Requirement Analysis & Specifications",
+            "totalPeriods": 13,
             "topics": [
                 {
                     "id": "26cm502t-3.1",
@@ -356,58 +342,23 @@
                 {
                     "id": "26cm502t-3.12",
                     "sno": "3.12",
-                    "topic": "Android \u2013 User Interface; List types of User Interface layouts; Explain User Interface Designing Layouts",
+                    "topic": "Android – User Interface; List types of User Interface layouts; Explain User Interface Designing Layouts",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm502t-3.13",
                     "sno": "3.13",
-                    "topic": "Define User Interface Controls; List User Interface Controls; Describe the need of Event Handling",
+                    "topic": "Define User Interface Controls; List User Interface Controls; Describe the need of Event Handling; Explain Android Event Handling; Explain the usage of User Interface Controls; Explain development of Android App using above user Interface Controls; Options Menus; Context Menus; Popup Menus; Importance of Content providers; Explain Content Providers; Unit test-2 4.1 to 5.7",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26cm502t-3.14",
-                    "sno": "3.14",
-                    "topic": "Explain Android Event Handling; Explain the usage of User Interface Controls; Explain development of Android App using above user Interface Controls",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm502t-3.15",
-                    "sno": "3.15",
-                    "topic": "Options Menus; Context Menus; Popup Menus",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm502t-3.16",
-                    "sno": "3.16",
-                    "topic": "Importance of Content providers; Explain Content Providers; Unit test-2 4.1 to 5.7",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm502t-3.17",
-                    "sno": "3.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26cm502t-3.18",
-                    "sno": "3.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Principles of Software Design, Coding",
-            "totalPeriods": 18,
+            "title": "Software Design, Coding",
+            "totalPeriods": 23,
             "topics": [
                 {
                     "id": "26cm502t-4.1",
@@ -524,13 +475,48 @@
                 {
                     "id": "26cm502t-4.17",
                     "sno": "4.17",
+                    "topic": "Deep dive into Explain Classical Waterfall Model; Explain Iterative Waterfall Model; Explain Prototyping Model",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-4.18",
+                    "sno": "4.18",
+                    "topic": "Deep dive into Explain Evolutionary Model; Explain Spiral Model; Know about AGILE Development Model- principles and Life Cycle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-4.19",
+                    "sno": "4.19",
+                    "topic": "Deep dive into Compare different Life Cycle Models; Describe Lines of Code (LOC); Describe Function Point Metric",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-4.20",
+                    "sno": "4.20",
+                    "topic": "Deep dive into Principles of Software Design, Coding; Know the Software Design Concepts; Know about Software Design Approaches",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-4.21",
+                    "sno": "4.21",
+                    "topic": "Deep dive into Understand User Interface Design; Understand Unified Modeling Language; Define UML and its purpose in Software Engineering",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-4.22",
+                    "sno": "4.22",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm502t-4.18",
-                    "sno": "4.18",
+                    "id": "26cm502t-4.23",
+                    "sno": "4.23",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,8 +525,8 @@
         },
         {
             "unitNo": 5,
-            "title": "Testing, Debugging, Reliability, Quality Management & Maintenance",
-            "totalPeriods": 18,
+            "title": "Software testing, Debugging, Reliability, Quality Management & Maintenance",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26cm502t-5.1",
@@ -657,13 +643,27 @@
                 {
                     "id": "26cm502t-5.17",
                     "sno": "5.17",
+                    "topic": "Deep dive into What is Empirical Estimation Technique",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-5.18",
+                    "sno": "5.18",
+                    "topic": "Deep dive into What is Heuristic Estimation Technique; Explain Coding Standards",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm502t-5.19",
+                    "sno": "5.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm502t-5.18",
-                    "sno": "5.18",
+                    "id": "26cm502t-5.20",
+                    "sno": "5.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

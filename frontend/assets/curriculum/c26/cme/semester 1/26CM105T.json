@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction",
-            "totalPeriods": 36,
+            "title": "Introduction to Python Programming",
+            "totalPeriods": 40,
             "topics": [
                 {
                     "id": "26cm105t-1.1",
@@ -251,13 +251,41 @@
                 {
                     "id": "26cm105t-1.35",
                     "sno": "1.35",
+                    "topic": "Deep dive into Explain Boolean values",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-1.36",
+                    "sno": "1.36",
+                    "topic": "Deep dive into Explain Operator precedence rules",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-1.37",
+                    "sno": "1.37",
+                    "topic": "Deep dive into State the purpose of modules",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-1.38",
+                    "sno": "1.38",
+                    "topic": "Deep dive into Define functions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-1.39",
+                    "sno": "1.39",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm105t-1.36",
-                    "sno": "1.36",
+                    "id": "26cm105t-1.40",
+                    "sno": "1.40",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -266,8 +294,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Control Flow and Loop Statements",
-            "totalPeriods": 36,
+            "title": "Control Flow and Loop statements",
+            "totalPeriods": 25,
             "topics": [
                 {
                     "id": "26cm105t-2.1",
@@ -433,90 +461,13 @@
                 {
                     "id": "26cm105t-2.24",
                     "sno": "2.24",
-                    "topic": "Practical applications of Unit test-2 From 2.2 to 3.13 Unit test-3 From 4.1 to 5.15",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.25",
-                    "sno": "2.25",
-                    "topic": "Practical applications of Control Flow and Loop Statements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.26",
-                    "sno": "2.26",
-                    "topic": "Practical applications of List and Explain various Control Flow constructs",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.27",
-                    "sno": "2.27",
-                    "topic": "Practical applications of List and Explain various Loop Statements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.28",
-                    "sno": "2.28",
-                    "topic": "Practical applications of Use break, continue & pass statements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.29",
-                    "sno": "2.29",
-                    "topic": "Practical applications of Implement the python programs using control structures",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.30",
-                    "sno": "2.30",
-                    "topic": "Practical applications of Unit test-2 From 2.2 to 3.13 Unit test-3 From 4.1 to 5.15",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.31",
-                    "sno": "2.31",
-                    "topic": "Practical applications of Control Flow and Loop Statements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.32",
-                    "sno": "2.32",
-                    "topic": "Practical applications of List and Explain various Control Flow constructs",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.33",
-                    "sno": "2.33",
-                    "topic": "Practical applications of List and Explain various Loop Statements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.34",
-                    "sno": "2.34",
-                    "topic": "Practical applications of Use break, continue & pass statements",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-2.35",
-                    "sno": "2.35",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm105t-2.36",
-                    "sno": "2.36",
+                    "id": "26cm105t-2.25",
+                    "sno": "2.25",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -526,7 +477,7 @@
         {
             "unitNo": 3,
             "title": "Functions and Arrays",
-            "totalPeriods": 36,
+            "totalPeriods": 40,
             "topics": [
                 {
                     "id": "26cm105t-3.1",
@@ -769,13 +720,41 @@
                 {
                     "id": "26cm105t-3.35",
                     "sno": "3.35",
+                    "topic": "Problem solving & practice on Explain Python Variables: Namespace and scoping",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-3.36",
+                    "sno": "3.36",
+                    "topic": "Problem solving & practice on Explain Python Packages",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-3.37",
+                    "sno": "3.37",
+                    "topic": "Problem solving & practice on List and Explain Strings: String slices, immutability",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-3.38",
+                    "sno": "3.38",
+                    "topic": "Problem solving & practice on List and Explain String functions and methods",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-3.39",
+                    "sno": "3.39",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm105t-3.36",
-                    "sno": "3.36",
+                    "id": "26cm105t-3.40",
+                    "sno": "3.40",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -785,7 +764,7 @@
         {
             "unitNo": 4,
             "title": "Data Structures",
-            "totalPeriods": 36,
+            "totalPeriods": 35,
             "topics": [
                 {
                     "id": "26cm105t-4.1",
@@ -1021,20 +1000,13 @@
                 {
                     "id": "26cm105t-4.34",
                     "sno": "4.34",
-                    "topic": "Problem solving & practice on Explain aliasing",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm105t-4.35",
-                    "sno": "4.35",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm105t-4.36",
-                    "sno": "4.36",
+                    "id": "26cm105t-4.35",
+                    "sno": "4.35",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -1043,8 +1015,8 @@
         },
         {
             "unitNo": 5,
-            "title": "Object Oriented Programming , Python Libraries & File",
-            "totalPeriods": 36,
+            "title": "Object Oriented Programming basics, Python Libraries and File Handling",
+            "totalPeriods": 40,
             "topics": [
                 {
                     "id": "26cm105t-5.1",
@@ -1112,7 +1084,7 @@
                 {
                     "id": "26cm105t-5.10",
                     "sno": "5.10",
-                    "topic": "Use Python standard library\u2019s functions and modules",
+                    "topic": "Use Python standard library’s functions and modules",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1224,7 +1196,7 @@
                 {
                     "id": "26cm105t-5.26",
                     "sno": "5.26",
-                    "topic": "Deep dive into Use Python standard library\u2019s functions and modules",
+                    "topic": "Deep dive into Use Python standard library’s functions and modules",
                     "period": 1,
                     "type": "theory"
                 },
@@ -1287,13 +1259,41 @@
                 {
                     "id": "26cm105t-5.35",
                     "sno": "5.35",
+                    "topic": "Problem solving & practice on Create Objects",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-5.36",
+                    "sno": "5.36",
+                    "topic": "Problem solving & practice on Explain Data Hiding",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-5.37",
+                    "sno": "5.37",
+                    "topic": "Problem solving & practice on Explain Data Abstraction",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-5.38",
+                    "sno": "5.38",
+                    "topic": "Problem solving & practice on Explain Inheritance",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm105t-5.39",
+                    "sno": "5.39",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm105t-5.36",
-                    "sno": "5.36",
+                    "id": "26cm105t-5.40",
+                    "sno": "5.40",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

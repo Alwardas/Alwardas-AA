@@ -7,7 +7,7 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Foundations of UI/UX and Human-Centered Design.",
+            "title": "Foundations of UI/UX and Human-Centered Design",
             "totalPeriods": 10,
             "topics": [
                 {
@@ -84,13 +84,13 @@
         },
         {
             "unitNo": 2,
-            "title": "UI/UX Design Process \u2013 User Flows and Wireframes",
+            "title": "UI/UX Design Process and Prototyping Techniques",
             "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26cm506a-2.1",
                     "sno": "2.1",
-                    "topic": "UI/UX Design Process \u2013 User Flows and Wireframes",
+                    "topic": "UI/UX Design Process – User Flows and Wireframes",
                     "period": 1,
                     "type": "theory"
                 },
@@ -111,7 +111,7 @@
                 {
                     "id": "26cm506a-2.4",
                     "sno": "2.4",
-                    "topic": "Deep dive into UI/UX Design Process \u2013 User Flows and Wireframes",
+                    "topic": "Deep dive into UI/UX Design Process – User Flows and Wireframes",
                     "period": 1,
                     "type": "theory"
                 },
@@ -132,7 +132,7 @@
                 {
                     "id": "26cm506a-2.7",
                     "sno": "2.7",
-                    "topic": "Problem solving & practice on UI/UX Design Process \u2013 User Flows and Wireframes",
+                    "topic": "Problem solving & practice on UI/UX Design Process – User Flows and Wireframes",
                     "period": 1,
                     "type": "theory"
                 },
@@ -161,7 +161,7 @@
         },
         {
             "unitNo": 3,
-            "title": "Prototyping and Usability Testing",
+            "title": "Interactive Prototyping and Usability Testing",
             "totalPeriods": 10,
             "topics": [
                 {
@@ -181,7 +181,7 @@
                 {
                     "id": "26cm506a-3.3",
                     "sno": "3.3",
-                    "topic": "Practical Learning Outcomes (PLOs): 1. Create an interactive prototype using Figma\u2019s Prototyping Tool 2. Conduct a basic usability test with peers and document findings 3. Collect feedback using Google Forms and summarize user insights 4. Perform accessibility testing using WAVE browser extension Free Tools: Figma, Google Forms, WAVE, OBS Studio (for usability recordings)",
+                    "topic": "Practical Learning Outcomes (PLOs): 1. Create an interactive prototype using Figma’s Prototyping Tool 2. Conduct a basic usability test with peers and document findings 3. Collect feedback using Google Forms and summarize user insights 4. Perform accessibility testing using WAVE browser extension Free Tools: Figma, Google Forms, WAVE, OBS Studio (for usability recordings)",
                     "period": 1,
                     "type": "theory"
                 },
@@ -202,7 +202,7 @@
                 {
                     "id": "26cm506a-3.6",
                     "sno": "3.6",
-                    "topic": "Deep dive into Practical Learning Outcomes (PLOs): 1. Create an interactive prototype using Figma\u2019s Prototyping Tool 2. Conduct a basic usability test with peers and document findings 3. Collect feedback using Google Forms and summarize user insights 4. Perform accessibility testing using WAVE browser extension Free Tools: Figma, Google Forms, WAVE, OBS Studio (for usability recordings)",
+                    "topic": "Deep dive into Practical Learning Outcomes (PLOs): 1. Create an interactive prototype using Figma’s Prototyping Tool 2. Conduct a basic usability test with peers and document findings 3. Collect feedback using Google Forms and summarize user insights 4. Perform accessibility testing using WAVE browser extension Free Tools: Figma, Google Forms, WAVE, OBS Studio (for usability recordings)",
                     "period": 1,
                     "type": "theory"
                 },

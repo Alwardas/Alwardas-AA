@@ -3,37 +3,308 @@
     "subjectName": "Computer Hardware and Servicing",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 0,
+    "totalPeriods": 38,
     "units": [
         {
             "unitNo": 1,
-            "title": "Understand motherboard and its features",
-            "totalPeriods": 0,
-            "topics": []
+            "title": "Mother Board",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26ec306e-1.1",
+                    "sno": "1.1",
+                    "topic": "Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-1.2",
+                    "sno": "1.2",
+                    "topic": "Deep dive into Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-1.3",
+                    "sno": "1.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-1.4",
+                    "sno": "1.4",
+                    "topic": "Practical applications of Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-1.5",
+                    "sno": "1.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-1.6",
+                    "sno": "1.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-1.7",
+                    "sno": "1.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-1.8",
+                    "sno": "1.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec306e-1.9",
+                    "sno": "1.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         },
         {
             "unitNo": 2,
-            "title": "Comprehend the use of various computer peripherals",
-            "totalPeriods": 0,
-            "topics": []
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
+            "topics": [
+                {
+                    "id": "26ec306e-2.1",
+                    "sno": "2.1",
+                    "topic": "Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-2.2",
+                    "sno": "2.2",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         },
         {
             "unitNo": 3,
-            "title": "Comprehend the use of various Computer Accessories",
-            "totalPeriods": 0,
-            "topics": []
+            "title": "Computer Accessories",
+            "totalPeriods": 8,
+            "topics": [
+                {
+                    "id": "26ec306e-3.1",
+                    "sno": "3.1",
+                    "topic": "Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-3.2",
+                    "sno": "3.2",
+                    "topic": "Deep dive into Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-3.3",
+                    "sno": "3.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-3.4",
+                    "sno": "3.4",
+                    "topic": "Practical applications of Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-3.5",
+                    "sno": "3.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-3.6",
+                    "sno": "3.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-3.7",
+                    "sno": "3.7",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec306e-3.8",
+                    "sno": "3.8",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         },
         {
             "unitNo": 4,
-            "title": "PC assembly and software installation",
-            "totalPeriods": 0,
-            "topics": []
+            "title": "PC assembly & Software Installation",
+            "totalPeriods": 9,
+            "topics": [
+                {
+                    "id": "26ec306e-4.1",
+                    "sno": "4.1",
+                    "topic": "Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-4.5",
+                    "sno": "4.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-4.6",
+                    "sno": "4.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-4.7",
+                    "sno": "4.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-4.8",
+                    "sno": "4.8",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec306e-4.9",
+                    "sno": "4.9",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         },
         {
             "unitNo": 5,
-            "title": "Understand PC/ LAPTOP Troubleshooting",
-            "totalPeriods": 0,
-            "topics": []
+            "title": "PC servicing",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ec306e-5.1",
+                    "sno": "5.1",
+                    "topic": "Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-5.4",
+                    "sno": "5.4",
+                    "topic": "Practical applications of Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-5.5",
+                    "sno": "5.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-5.6",
+                    "sno": "5.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-5.7",
+                    "sno": "5.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-5.8",
+                    "sno": "5.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec306e-5.9",
+                    "sno": "5.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec306e-5.10",
+                    "sno": "5.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         }
     ]
 }

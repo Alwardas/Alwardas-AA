@@ -7,1265 +7,1314 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "State the importance of drawing as an engineering communication medium.",
-            "totalPeriods": 180,
+            "title": "Introduction to Engineering Drawing",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ce108d-1.1",
                     "sno": "1.1",
-                    "topic": "State the importance of drawing as an engineering communication medium",
+                    "topic": "State the importance of drawing as an engineering communication medium; State the necessity of B.I.S. Code of practice for Engineering Drawing",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce108d-1.2",
                     "sno": "1.2",
-                    "topic": "State the necessity of B. I. S. Code of practice for Engineering Drawing",
+                    "topic": "Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce108d-1.3",
                     "sno": "1.3",
-                    "topic": "Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
+                    "topic": "Select the correct instruments to draw the different lines / curves",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce108d-1.4",
                     "sno": "1.4",
-                    "topic": "Select the correct instruments to draw the different lines / curves",
+                    "topic": "Use correct grade of pencil to draw different types of lines and for different purposes",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce108d-1.5",
                     "sno": "1.5",
-                    "topic": "Use correct grade of pencil to draw different types of lines and for different purposes",
+                    "topic": "Select and use appropriate scales for a given application; Identify different drawing sheet sizes as per I.S. and Standard Layouts",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce108d-1.6",
                     "sno": "1.6",
-                    "topic": "Select and use appropriate scales for a given application",
+                    "topic": "Prepare title block as per B.I.S. Specifications",
                     "period": 1,
                     "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.7",
-                    "sno": "1.7",
-                    "topic": "Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.8",
-                    "sno": "1.8",
-                    "topic": "Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.9",
-                    "sno": "1.9",
-                    "topic": "Deep dive into State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.10",
-                    "sno": "1.10",
-                    "topic": "Deep dive into State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.11",
-                    "sno": "1.11",
-                    "topic": "Deep dive into Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.12",
-                    "sno": "1.12",
-                    "topic": "Deep dive into Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.13",
-                    "sno": "1.13",
-                    "topic": "Deep dive into Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.14",
-                    "sno": "1.14",
-                    "topic": "Deep dive into Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.15",
-                    "sno": "1.15",
-                    "topic": "Deep dive into Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.16",
-                    "sno": "1.16",
-                    "topic": "Deep dive into Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.17",
-                    "sno": "1.17",
-                    "topic": "Problem solving & practice on State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.18",
-                    "sno": "1.18",
-                    "topic": "Problem solving & practice on State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.19",
-                    "sno": "1.19",
-                    "topic": "Problem solving & practice on Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.20",
-                    "sno": "1.20",
-                    "topic": "Problem solving & practice on Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.21",
-                    "sno": "1.21",
-                    "topic": "Problem solving & practice on Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.22",
-                    "sno": "1.22",
-                    "topic": "Problem solving & practice on Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.23",
-                    "sno": "1.23",
-                    "topic": "Problem solving & practice on Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.24",
-                    "sno": "1.24",
-                    "topic": "Problem solving & practice on Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.25",
-                    "sno": "1.25",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.26",
-                    "sno": "1.26",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.27",
-                    "sno": "1.27",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.28",
-                    "sno": "1.28",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.29",
-                    "sno": "1.29",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.30",
-                    "sno": "1.30",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.31",
-                    "sno": "1.31",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.32",
-                    "sno": "1.32",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.33",
-                    "sno": "1.33",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.34",
-                    "sno": "1.34",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.35",
-                    "sno": "1.35",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.36",
-                    "sno": "1.36",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.37",
-                    "sno": "1.37",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.38",
-                    "sno": "1.38",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.39",
-                    "sno": "1.39",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.40",
-                    "sno": "1.40",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.41",
-                    "sno": "1.41",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.42",
-                    "sno": "1.42",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.43",
-                    "sno": "1.43",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.44",
-                    "sno": "1.44",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.45",
-                    "sno": "1.45",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.46",
-                    "sno": "1.46",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.47",
-                    "sno": "1.47",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.48",
-                    "sno": "1.48",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.49",
-                    "sno": "1.49",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.50",
-                    "sno": "1.50",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.51",
-                    "sno": "1.51",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.52",
-                    "sno": "1.52",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.53",
-                    "sno": "1.53",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.54",
-                    "sno": "1.54",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.55",
-                    "sno": "1.55",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.56",
-                    "sno": "1.56",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.57",
-                    "sno": "1.57",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.58",
-                    "sno": "1.58",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.59",
-                    "sno": "1.59",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.60",
-                    "sno": "1.60",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.61",
-                    "sno": "1.61",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.62",
-                    "sno": "1.62",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.63",
-                    "sno": "1.63",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.64",
-                    "sno": "1.64",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.65",
-                    "sno": "1.65",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.66",
-                    "sno": "1.66",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.67",
-                    "sno": "1.67",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.68",
-                    "sno": "1.68",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.69",
-                    "sno": "1.69",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.70",
-                    "sno": "1.70",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.71",
-                    "sno": "1.71",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.72",
-                    "sno": "1.72",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.73",
-                    "sno": "1.73",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.74",
-                    "sno": "1.74",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.75",
-                    "sno": "1.75",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.76",
-                    "sno": "1.76",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.77",
-                    "sno": "1.77",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.78",
-                    "sno": "1.78",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.79",
-                    "sno": "1.79",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.80",
-                    "sno": "1.80",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.81",
-                    "sno": "1.81",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.82",
-                    "sno": "1.82",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.83",
-                    "sno": "1.83",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.84",
-                    "sno": "1.84",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.85",
-                    "sno": "1.85",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.86",
-                    "sno": "1.86",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.87",
-                    "sno": "1.87",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.88",
-                    "sno": "1.88",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.89",
-                    "sno": "1.89",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.90",
-                    "sno": "1.90",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.91",
-                    "sno": "1.91",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.92",
-                    "sno": "1.92",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.93",
-                    "sno": "1.93",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.94",
-                    "sno": "1.94",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.95",
-                    "sno": "1.95",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.96",
-                    "sno": "1.96",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.97",
-                    "sno": "1.97",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.98",
-                    "sno": "1.98",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.99",
-                    "sno": "1.99",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.100",
-                    "sno": "1.100",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.101",
-                    "sno": "1.101",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.102",
-                    "sno": "1.102",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.103",
-                    "sno": "1.103",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.104",
-                    "sno": "1.104",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.105",
-                    "sno": "1.105",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.106",
-                    "sno": "1.106",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.107",
-                    "sno": "1.107",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.108",
-                    "sno": "1.108",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.109",
-                    "sno": "1.109",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.110",
-                    "sno": "1.110",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.111",
-                    "sno": "1.111",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.112",
-                    "sno": "1.112",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.113",
-                    "sno": "1.113",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.114",
-                    "sno": "1.114",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.115",
-                    "sno": "1.115",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.116",
-                    "sno": "1.116",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.117",
-                    "sno": "1.117",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.118",
-                    "sno": "1.118",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.119",
-                    "sno": "1.119",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.120",
-                    "sno": "1.120",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.121",
-                    "sno": "1.121",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.122",
-                    "sno": "1.122",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.123",
-                    "sno": "1.123",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.124",
-                    "sno": "1.124",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.125",
-                    "sno": "1.125",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.126",
-                    "sno": "1.126",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.127",
-                    "sno": "1.127",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.128",
-                    "sno": "1.128",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.129",
-                    "sno": "1.129",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.130",
-                    "sno": "1.130",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.131",
-                    "sno": "1.131",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.132",
-                    "sno": "1.132",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.133",
-                    "sno": "1.133",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.134",
-                    "sno": "1.134",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.135",
-                    "sno": "1.135",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.136",
-                    "sno": "1.136",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.137",
-                    "sno": "1.137",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.138",
-                    "sno": "1.138",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.139",
-                    "sno": "1.139",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.140",
-                    "sno": "1.140",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.141",
-                    "sno": "1.141",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.142",
-                    "sno": "1.142",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.143",
-                    "sno": "1.143",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.144",
-                    "sno": "1.144",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.145",
-                    "sno": "1.145",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.146",
-                    "sno": "1.146",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.147",
-                    "sno": "1.147",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.148",
-                    "sno": "1.148",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.149",
-                    "sno": "1.149",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.150",
-                    "sno": "1.150",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.151",
-                    "sno": "1.151",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.152",
-                    "sno": "1.152",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.153",
-                    "sno": "1.153",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.154",
-                    "sno": "1.154",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.155",
-                    "sno": "1.155",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.156",
-                    "sno": "1.156",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.157",
-                    "sno": "1.157",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.158",
-                    "sno": "1.158",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.159",
-                    "sno": "1.159",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.160",
-                    "sno": "1.160",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.161",
-                    "sno": "1.161",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.162",
-                    "sno": "1.162",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.163",
-                    "sno": "1.163",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.164",
-                    "sno": "1.164",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce108d-1.165",
-                    "sno": "1.165",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
-                    "period": 1,
-                    "type": "practical"
-                },
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Freehand lettering, Numbering and Dimensioning practice",
+            "totalPeriods": 15,
+            "topics": [
                 {
-                    "id": "26ce108d-1.166",
-                    "sno": "1.166",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
+                    "id": "26ce108d-2.1",
+                    "sno": "2.1",
+                    "topic": "Write titles using vertical lettering and numerals of 7mm and 10mm height",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.167",
-                    "sno": "1.167",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
+                    "id": "26ce108d-2.2",
+                    "sno": "2.2",
+                    "topic": "Write titles using sloping lettering and numerals of 7mm and 10mm height",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.168",
-                    "sno": "1.168",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
+                    "id": "26ce108d-2.3",
+                    "sno": "2.3",
+                    "topic": "Select suitable sizes of lettering for different layouts and applications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.169",
-                    "sno": "1.169",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
+                    "id": "26ce108d-2.4",
+                    "sno": "2.4",
+                    "topic": "Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.170",
-                    "sno": "1.170",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
+                    "id": "26ce108d-2.5",
+                    "sno": "2.5",
+                    "topic": "Dimension a given drawing using standard notations and desired system of dimensioning",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.171",
-                    "sno": "1.171",
-                    "topic": "Practical applications of Explain the linkage between Engineering drawing and other subjects of Civil Engineering",
+                    "id": "26ce108d-2.6",
+                    "sno": "2.6",
+                    "topic": "Practice and training on Write titles using vertical lettering and numerals of 7mm and 10mm height",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.172",
-                    "sno": "1.172",
-                    "topic": "Practical applications of Select the correct instruments to draw the different lines / curves",
+                    "id": "26ce108d-2.7",
+                    "sno": "2.7",
+                    "topic": "Practice and training on Write titles using sloping lettering and numerals of 7mm and 10mm height",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.173",
-                    "sno": "1.173",
-                    "topic": "Practical applications of Use correct grade of pencil to draw different types of lines and for different purposes",
+                    "id": "26ce108d-2.8",
+                    "sno": "2.8",
+                    "topic": "Practice and training on Select suitable sizes of lettering for different layouts and applications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.174",
-                    "sno": "1.174",
-                    "topic": "Practical applications of Select and use appropriate scales for a given application",
+                    "id": "26ce108d-2.9",
+                    "sno": "2.9",
+                    "topic": "Practice and training on Acquaint with the conventions, notations, rules and methods of dimensioning in engineering drawing as per the B.I.S",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.175",
-                    "sno": "1.175",
-                    "topic": "Practical applications of Identify different drawing sheet sizes as per I.S. and Standard Lay- outs",
+                    "id": "26ce108d-2.10",
+                    "sno": "2.10",
+                    "topic": "Practice and training on Dimension a given drawing using standard notations and desired system of dimensioning",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.176",
-                    "sno": "1.176",
-                    "topic": "Practical applications of Prepare title block as per B.I.S. Specifications. 2. FREE HAND LETTERING, NUMBERING AND DIMENSIONING PRACTICE",
+                    "id": "26ce108d-2.11",
+                    "sno": "2.11",
+                    "topic": "Advanced practical on Write titles using vertical lettering and numerals of 7mm and 10mm height",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.177",
-                    "sno": "1.177",
-                    "topic": "Practical applications of State the importance of drawing as an engineering communication medium",
+                    "id": "26ce108d-2.12",
+                    "sno": "2.12",
+                    "topic": "Advanced practical on Write titles using sloping lettering and numerals of 7mm and 10mm height",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.178",
-                    "sno": "1.178",
-                    "topic": "Practical applications of State the necessity of B. I. S. Code of practice for Engineering Drawing",
+                    "id": "26ce108d-2.13",
+                    "sno": "2.13",
+                    "topic": "Advanced practical on Select suitable sizes of lettering for different layouts and applications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce108d-1.179",
-                    "sno": "1.179",
+                    "id": "26ce108d-2.14",
+                    "sno": "2.14",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce108d-1.180",
-                    "sno": "1.180",
+                    "id": "26ce108d-2.15",
+                    "sno": "2.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Geometrical Constructions",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "26ce108d-3.1",
+                    "sno": "3.1",
+                    "topic": "Practice the basic geometric constructions like division of a line, tangents to circles, tangent arcs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.2",
+                    "sno": "3.2",
+                    "topic": "Draw any regular polygon using general method, given side length, inscribed/circumscribed about a circle",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.3",
+                    "sno": "3.3",
+                    "topic": "Draw the conics using general and special methods",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.4",
+                    "sno": "3.4",
+                    "topic": "Identify the applications of the above constructions in engineering practice",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.5",
+                    "sno": "3.5",
+                    "topic": "Practice and training on Practice the basic geometric constructions like division of a line, tangents to circles, tangent arcs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.6",
+                    "sno": "3.6",
+                    "topic": "Practice and training on Draw any regular polygon using general method, given side length, inscribed/circumscribed about a circle",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.7",
+                    "sno": "3.7",
+                    "topic": "Practice and training on Draw the conics using general and special methods",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.8",
+                    "sno": "3.8",
+                    "topic": "Practice and training on Identify the applications of the above constructions in engineering practice",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.9",
+                    "sno": "3.9",
+                    "topic": "Advanced practical on Practice the basic geometric constructions like division of a line, tangents to circles, tangent arcs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.10",
+                    "sno": "3.10",
+                    "topic": "Advanced practical on Draw any regular polygon using general method, given side length, inscribed/circumscribed about a circle",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.11",
+                    "sno": "3.11",
+                    "topic": "Advanced practical on Draw the conics using general and special methods",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.12",
+                    "sno": "3.12",
+                    "topic": "Advanced practical on Identify the applications of the above constructions in engineering practice",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.13",
+                    "sno": "3.13",
+                    "topic": "Real-world simulation of Practice the basic geometric constructions like division of a line, tangents to circles, tangent arcs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-3.14",
+                    "sno": "3.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce108d-3.15",
+                    "sno": "3.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Basics of CAD in Civil Engineering",
+            "totalPeriods": 27,
+            "topics": [
+                {
+                    "id": "26ce108d-4.1",
+                    "sno": "4.1",
+                    "topic": "Understand the general features of CAD, Hardware and Software requirements",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.2",
+                    "sno": "4.2",
+                    "topic": "Knows Advantages of using CAD, Starting CAD, Understanding CAD",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.3",
+                    "sno": "4.3",
+                    "topic": "Identify and understand the components of the CAD editor screen",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.4",
+                    "sno": "4.4",
+                    "topic": "Practice draw and modify commands in CAD using short cut keys",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.5",
+                    "sno": "4.5",
+                    "topic": "Practice Setting up limits, Object snap, Units, Paper space, Print, Plot Style Manager",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.6",
+                    "sno": "4.6",
+                    "topic": "Draw CAD Basic Entities- Drawing Line, Arc, Circle, Rectangle, Polygons, and Ellipse using different Coordinate Systems",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.7",
+                    "sno": "4.7",
+                    "topic": "Learn Direct distance entry and line command, picking coordinates on the screen and line command",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.8",
+                    "sno": "4.8",
+                    "topic": "Practice Hatching, Dimensioning, Dimension Style, Point and Point Style and Text style",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.9",
+                    "sno": "4.9",
+                    "topic": "Practice and training on Understand the general features of CAD, Hardware and Software requirements",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.10",
+                    "sno": "4.10",
+                    "topic": "Practice and training on Knows Advantages of using CAD, Starting CAD, Understanding CAD",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.11",
+                    "sno": "4.11",
+                    "topic": "Practice and training on Identify and understand the components of the CAD editor screen",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.12",
+                    "sno": "4.12",
+                    "topic": "Practice and training on Practice draw and modify commands in CAD using short cut keys",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.13",
+                    "sno": "4.13",
+                    "topic": "Practice and training on Practice Setting up limits, Object snap, Units, Paper space, Print, Plot Style Manager",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.14",
+                    "sno": "4.14",
+                    "topic": "Practice and training on Draw CAD Basic Entities- Drawing Line, Arc, Circle, Rectangle, Polygons, and Ellipse using different Coordinate Systems",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.15",
+                    "sno": "4.15",
+                    "topic": "Practice and training on Learn Direct distance entry and line command, picking coordinates on the screen and line command",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.16",
+                    "sno": "4.16",
+                    "topic": "Practice and training on Practice Hatching, Dimensioning, Dimension Style, Point and Point Style and Text style",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.17",
+                    "sno": "4.17",
+                    "topic": "Advanced practical on Understand the general features of CAD, Hardware and Software requirements",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.18",
+                    "sno": "4.18",
+                    "topic": "Advanced practical on Knows Advantages of using CAD, Starting CAD, Understanding CAD",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.19",
+                    "sno": "4.19",
+                    "topic": "Advanced practical on Identify and understand the components of the CAD editor screen",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.20",
+                    "sno": "4.20",
+                    "topic": "Advanced practical on Practice draw and modify commands in CAD using short cut keys",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.21",
+                    "sno": "4.21",
+                    "topic": "Advanced practical on Practice Setting up limits, Object snap, Units, Paper space, Print, Plot Style Manager",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.22",
+                    "sno": "4.22",
+                    "topic": "Advanced practical on Draw CAD Basic Entities- Drawing Line, Arc, Circle, Rectangle, Polygons, and Ellipse using different Coordinate Systems",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.23",
+                    "sno": "4.23",
+                    "topic": "Advanced practical on Learn Direct distance entry and line command, picking coordinates on the screen and line command",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.24",
+                    "sno": "4.24",
+                    "topic": "Advanced practical on Practice Hatching, Dimensioning, Dimension Style, Point and Point Style and Text style",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.25",
+                    "sno": "4.25",
+                    "topic": "Real-world simulation of Understand the general features of CAD, Hardware and Software requirements",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-4.26",
+                    "sno": "4.26",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce108d-4.27",
+                    "sno": "4.27",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Projections of points, Lines, Planes & Solids",
+            "totalPeriods": 24,
+            "topics": [
+                {
+                    "id": "26ce108d-5.1",
+                    "sno": "5.1",
+                    "topic": "Explain the basic principles of the orthographic projections",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.2",
+                    "sno": "5.2",
+                    "topic": "Visualize and draw the projection of a point with respect to the two reference planes (Horizontal Plane and Vertical Plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.3",
+                    "sno": "5.3",
+                    "topic": "Visualize and draw the projections of straight lines with respect to the two reference Planes",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.4",
+                    "sno": "5.4",
+                    "topic": "Visualize and draw the projections of planes (up to planes perpendicular to one plane and inclined to the other)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.5",
+                    "sno": "5.5",
+                    "topic": "Visualize and draw the projections of solids (up to axis of solids parallel to one plane and inclined to the other)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.6",
+                    "sno": "5.6",
+                    "topic": "Practice and training on Explain the basic principles of the orthographic projections",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.7",
+                    "sno": "5.7",
+                    "topic": "Practice and training on Visualize and draw the projection of a point with respect to the two reference planes (Horizontal Plane and Vertical Plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.8",
+                    "sno": "5.8",
+                    "topic": "Practice and training on Visualize and draw the projections of straight lines with respect to the two reference Planes",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.9",
+                    "sno": "5.9",
+                    "topic": "Practice and training on Visualize and draw the projections of planes (up to planes perpendicular to one plane and inclined to the other)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.10",
+                    "sno": "5.10",
+                    "topic": "Practice and training on Visualize and draw the projections of solids (up to axis of solids parallel to one plane and inclined to the other)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.11",
+                    "sno": "5.11",
+                    "topic": "Advanced practical on Explain the basic principles of the orthographic projections",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.12",
+                    "sno": "5.12",
+                    "topic": "Advanced practical on Visualize and draw the projection of a point with respect to the two reference planes (Horizontal Plane and Vertical Plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.13",
+                    "sno": "5.13",
+                    "topic": "Advanced practical on Visualize and draw the projections of straight lines with respect to the two reference Planes",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.14",
+                    "sno": "5.14",
+                    "topic": "Advanced practical on Visualize and draw the projections of planes (up to planes perpendicular to one plane and inclined to the other)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.15",
+                    "sno": "5.15",
+                    "topic": "Advanced practical on Visualize and draw the projections of solids (up to axis of solids parallel to one plane and inclined to the other)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.16",
+                    "sno": "5.16",
+                    "topic": "Real-world simulation of Explain the basic principles of the orthographic projections",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.17",
+                    "sno": "5.17",
+                    "topic": "Real-world simulation of Visualize and draw the projection of a point with respect to the two reference planes (Horizontal Plane and Vertical Plane)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.18",
+                    "sno": "5.18",
+                    "topic": "Real-world simulation of Visualize and draw the projections of straight lines with respect to the two reference Planes",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.19",
+                    "sno": "5.19",
+                    "topic": "Real-world simulation of Visualize and draw the projections of planes (up to planes perpendicular to one plane and inclined to the other)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.20",
+                    "sno": "5.20",
+                    "topic": "Real-world simulation of Visualize and draw the projections of solids (up to axis of solids parallel to one plane and inclined to the other)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.21",
+                    "sno": "5.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.22",
+                    "sno": "5.22",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-5.23",
+                    "sno": "5.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce108d-5.24",
+                    "sno": "5.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Sections of Solids",
+            "totalPeriods": 21,
+            "topics": [
+                {
+                    "id": "26ce108d-6.1",
+                    "sno": "6.1",
+                    "topic": "Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.2",
+                    "sno": "6.2",
+                    "topic": "Differentiate between true shape and apparent shape of a section",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.3",
+                    "sno": "6.3",
+                    "topic": "Draw sectional views and true sections of regular solids by applying the principles of hatching",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.4",
+                    "sno": "6.4",
+                    "topic": "Practice and training on Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.5",
+                    "sno": "6.5",
+                    "topic": "Practice and training on Differentiate between true shape and apparent shape of a section",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.6",
+                    "sno": "6.6",
+                    "topic": "Practice and training on Draw sectional views and true sections of regular solids by applying the principles of hatching",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.7",
+                    "sno": "6.7",
+                    "topic": "Advanced practical on Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.8",
+                    "sno": "6.8",
+                    "topic": "Advanced practical on Differentiate between true shape and apparent shape of a section",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.9",
+                    "sno": "6.9",
+                    "topic": "Advanced practical on Draw sectional views and true sections of regular solids by applying the principles of hatching",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.10",
+                    "sno": "6.10",
+                    "topic": "Real-world simulation of Identify the need to draw sectional views",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.11",
+                    "sno": "6.11",
+                    "topic": "Real-world simulation of Differentiate between true shape and apparent shape of a section",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.12",
+                    "sno": "6.12",
+                    "topic": "Real-world simulation of Draw sectional views and true sections of regular solids by applying the principles of hatching",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.13",
+                    "sno": "6.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.14",
+                    "sno": "6.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.15",
+                    "sno": "6.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.16",
+                    "sno": "6.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.17",
+                    "sno": "6.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.18",
+                    "sno": "6.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.19",
+                    "sno": "6.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-6.20",
+                    "sno": "6.20",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce108d-6.21",
+                    "sno": "6.21",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Orthographic Projections",
+            "totalPeriods": 42,
+            "topics": [
+                {
+                    "id": "26ce108d-7.1",
+                    "sno": "7.1",
+                    "topic": "Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.2",
+                    "sno": "7.2",
+                    "topic": "Draw the minimum number of views needed to represent a given object fully",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.3",
+                    "sno": "7.3",
+                    "topic": "Practice and training on Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.4",
+                    "sno": "7.4",
+                    "topic": "Practice and training on Draw the minimum number of views needed to represent a given object fully",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.5",
+                    "sno": "7.5",
+                    "topic": "Advanced practical on Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.6",
+                    "sno": "7.6",
+                    "topic": "Advanced practical on Draw the minimum number of views needed to represent a given object fully",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.7",
+                    "sno": "7.7",
+                    "topic": "Real-world simulation of Draw the orthographic views of an object from its pictorial drawing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.8",
+                    "sno": "7.8",
+                    "topic": "Real-world simulation of Draw the minimum number of views needed to represent a given object fully",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.9",
+                    "sno": "7.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.10",
+                    "sno": "7.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.11",
+                    "sno": "7.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.12",
+                    "sno": "7.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.13",
+                    "sno": "7.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.14",
+                    "sno": "7.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.15",
+                    "sno": "7.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.16",
+                    "sno": "7.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.17",
+                    "sno": "7.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.18",
+                    "sno": "7.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.19",
+                    "sno": "7.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.20",
+                    "sno": "7.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.21",
+                    "sno": "7.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.22",
+                    "sno": "7.22",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.23",
+                    "sno": "7.23",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.24",
+                    "sno": "7.24",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.25",
+                    "sno": "7.25",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.26",
+                    "sno": "7.26",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.27",
+                    "sno": "7.27",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.28",
+                    "sno": "7.28",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.29",
+                    "sno": "7.29",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.30",
+                    "sno": "7.30",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.31",
+                    "sno": "7.31",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.32",
+                    "sno": "7.32",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.33",
+                    "sno": "7.33",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.34",
+                    "sno": "7.34",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.35",
+                    "sno": "7.35",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.36",
+                    "sno": "7.36",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.37",
+                    "sno": "7.37",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.38",
+                    "sno": "7.38",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.39",
+                    "sno": "7.39",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.40",
+                    "sno": "7.40",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-7.41",
+                    "sno": "7.41",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce108d-7.42",
+                    "sno": "7.42",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Isometric Views",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "26ce108d-8.1",
+                    "sno": "8.1",
+                    "topic": "Identify the need for pictorial drawings",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.2",
+                    "sno": "8.2",
+                    "topic": "Differentiate between isometric scale and true scale",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.3",
+                    "sno": "8.3",
+                    "topic": "Prepare Isometric views for the given orthographic drawings",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.4",
+                    "sno": "8.4",
+                    "topic": "Practice and training on Identify the need for pictorial drawings",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.5",
+                    "sno": "8.5",
+                    "topic": "Practice and training on Differentiate between isometric scale and true scale",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.6",
+                    "sno": "8.6",
+                    "topic": "Practice and training on Prepare Isometric views for the given orthographic drawings",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.7",
+                    "sno": "8.7",
+                    "topic": "Advanced practical on Identify the need for pictorial drawings",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.8",
+                    "sno": "8.8",
+                    "topic": "Advanced practical on Differentiate between isometric scale and true scale",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.9",
+                    "sno": "8.9",
+                    "topic": "Advanced practical on Prepare Isometric views for the given orthographic drawings",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.10",
+                    "sno": "8.10",
+                    "topic": "Real-world simulation of Identify the need for pictorial drawings",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.11",
+                    "sno": "8.11",
+                    "topic": "Real-world simulation of Differentiate between isometric scale and true scale",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.12",
+                    "sno": "8.12",
+                    "topic": "Real-world simulation of Prepare Isometric views for the given orthographic drawings",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.13",
+                    "sno": "8.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.14",
+                    "sno": "8.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.15",
+                    "sno": "8.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.16",
+                    "sno": "8.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.17",
+                    "sno": "8.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.18",
+                    "sno": "8.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.19",
+                    "sno": "8.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.20",
+                    "sno": "8.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.21",
+                    "sno": "8.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.22",
+                    "sno": "8.22",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.23",
+                    "sno": "8.23",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.24",
+                    "sno": "8.24",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.25",
+                    "sno": "8.25",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.26",
+                    "sno": "8.26",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.27",
+                    "sno": "8.27",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.28",
+                    "sno": "8.28",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce108d-8.29",
+                    "sno": "8.29",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce108d-8.30",
+                    "sno": "8.30",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

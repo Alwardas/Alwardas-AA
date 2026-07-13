@@ -3,37 +3,357 @@
     "subjectName": "Signals and Systems",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 0,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
-            "title": "Mathematical Overview (Integrations)",
-            "totalPeriods": 0,
-            "topics": []
+            "title": "Basics of Integrations",
+            "totalPeriods": 7,
+            "topics": [
+                {
+                    "id": "26ec305e-1.1",
+                    "sno": "1.1",
+                    "topic": "Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-1.2",
+                    "sno": "1.2",
+                    "topic": "Deep dive into Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-1.3",
+                    "sno": "1.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-1.4",
+                    "sno": "1.4",
+                    "topic": "Practical applications of Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-1.5",
+                    "sno": "1.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-1.6",
+                    "sno": "1.6",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec305e-1.7",
+                    "sno": "1.7",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         },
         {
             "unitNo": 2,
-            "title": "Continuous time signals",
-            "totalPeriods": 0,
-            "topics": []
+            "title": "Signals and their properties",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ec305e-2.1",
+                    "sno": "2.1",
+                    "topic": "Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-2.2",
+                    "sno": "2.2",
+                    "topic": "Deep dive into Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-2.3",
+                    "sno": "2.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-2.4",
+                    "sno": "2.4",
+                    "topic": "Practical applications of Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-2.5",
+                    "sno": "2.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec305e-2.6",
+                    "sno": "2.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         },
         {
             "unitNo": 3,
             "title": "LTI Systems and Laplace Transforms",
-            "totalPeriods": 0,
-            "topics": []
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "26ec305e-3.1",
+                    "sno": "3.1",
+                    "topic": "Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.2",
+                    "sno": "3.2",
+                    "topic": "Deep dive into Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.3",
+                    "sno": "3.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.4",
+                    "sno": "3.4",
+                    "topic": "Practical applications of Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.5",
+                    "sno": "3.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.6",
+                    "sno": "3.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.7",
+                    "sno": "3.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.8",
+                    "sno": "3.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.9",
+                    "sno": "3.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.10",
+                    "sno": "3.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-3.11",
+                    "sno": "3.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec305e-3.12",
+                    "sno": "3.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         },
         {
             "unitNo": 4,
-            "title": "Fourier analysis of Continuous time signals",
-            "totalPeriods": 0,
-            "topics": []
+            "title": "Fourier analysis of Continuous time Signals",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "26ec305e-4.1",
+                    "sno": "4.1",
+                    "topic": "Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.5",
+                    "sno": "4.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.6",
+                    "sno": "4.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.7",
+                    "sno": "4.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.8",
+                    "sno": "4.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.9",
+                    "sno": "4.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.10",
+                    "sno": "4.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.11",
+                    "sno": "4.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.12",
+                    "sno": "4.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.13",
+                    "sno": "4.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-4.14",
+                    "sno": "4.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec305e-4.15",
+                    "sno": "4.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         },
         {
             "unitNo": 5,
             "title": "Sampling and Quantization",
-            "totalPeriods": 0,
-            "topics": []
+            "totalPeriods": 5,
+            "topics": [
+                {
+                    "id": "26ec305e-5.1",
+                    "sno": "5.1",
+                    "topic": "Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec305e-5.4",
+                    "sno": "5.4",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec305e-5.5",
+                    "sno": "5.5",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
         }
     ]
 }

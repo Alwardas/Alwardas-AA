@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "ELECTRICAL ENGINEERING FUNDAMENTALS",
-            "totalPeriods": 9,
+            "title": "Electrical Engineering Fundamentals",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me307a-1.1",
@@ -20,7 +20,7 @@
                 {
                     "id": "26me307a-1.2",
                     "sno": "1.2",
-                    "topic": "ELECTRICAL ENGINEERING FUNDAMENTALS Concepts of voltage, current, resistance and power \u2013 Ohm\u2019s law and Kirchhoff\u2019s laws \u2013 Difference between DC supply and AC supply \u2013 Energy and calculation of electrical energy consumption in households \u2013 Applications of electricity in workshops such as ligh ting, welding and motors",
+                    "topic": "ELECTRICAL ENGINEERING FUNDAMENTALS Concepts of voltage, current, resistance and power – Ohm’s law and Kirchhoff’s laws – Difference between DC supply and AC supply – Energy and calculation of electrical energy consumption in households – Applications of electricity in workshops such as ligh ting, welding and motors",
                     "period": 1,
                     "type": "theory"
                 },
@@ -34,7 +34,7 @@
                 {
                     "id": "26me307a-1.4",
                     "sno": "1.4",
-                    "topic": "Deep dive into ELECTRICAL ENGINEERING FUNDAMENTALS Concepts of voltage, current, resistance and power \u2013 Ohm\u2019s law and Kirchhoff\u2019s laws \u2013 Difference between DC supply and AC supply \u2013 Energy and calculation of electrical energy consumption in households \u2013 Applications of electricity in workshops such as ligh ting, welding and motors",
+                    "topic": "Deep dive into ELECTRICAL ENGINEERING FUNDAMENTALS Concepts of voltage, current, resistance and power – Ohm’s law and Kirchhoff’s laws – Difference between DC supply and AC supply – Energy and calculation of electrical energy consumption in households – Applications of electricity in workshops such as ligh ting, welding and motors",
                     "period": 1,
                     "type": "theory"
                 },
@@ -48,7 +48,7 @@
                 {
                     "id": "26me307a-1.6",
                     "sno": "1.6",
-                    "topic": "Problem solving & practice on ELECTRICAL ENGINEERING FUNDAMENTALS Concepts of voltage, current, resistance and power \u2013 Ohm\u2019s law and Kirchhoff\u2019s laws \u2013 Difference between DC supply and AC supply \u2013 Energy and calculation of electrical energy consumption in households \u2013 Applications of electricity in workshops such as ligh ting, welding and motors",
+                    "topic": "Problem solving & practice on ELECTRICAL ENGINEERING FUNDAMENTALS Concepts of voltage, current, resistance and power – Ohm’s law and Kirchhoff’s laws – Difference between DC supply and AC supply – Energy and calculation of electrical energy consumption in households – Applications of electricity in workshops such as ligh ting, welding and motors",
                     "period": 1,
                     "type": "theory"
                 },
@@ -62,13 +62,20 @@
                 {
                     "id": "26me307a-1.8",
                     "sno": "1.8",
+                    "topic": "Practical applications of ELECTRICAL ENGINEERING FUNDAMENTALS Concepts of voltage, current, resistance and power – Ohm’s law and Kirchhoff’s laws – Difference between DC supply and AC supply – Energy and calculation of electrical energy consumption in households – Applications of electricity in workshops such as ligh ting, welding and motors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me307a-1.9",
+                    "sno": "1.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me307a-1.9",
-                    "sno": "1.9",
+                    "id": "26me307a-1.10",
+                    "sno": "1.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -77,8 +84,8 @@
         },
         {
             "unitNo": 2,
-            "title": "ELECTRICAL MACHINES",
-            "totalPeriods": 7,
+            "title": "Electrical Machines",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me307a-2.1",
@@ -90,7 +97,7 @@
                 {
                     "id": "26me307a-2.2",
                     "sno": "2.2",
-                    "topic": "ELECTRICAL MACHINES Electrical machines and their uses \u2013 Need for transformers and their classification \u2013 Parts and applications of DC motors \u2013 Basic working and applications of induction motors \u2013 Electrical machines commonly used in fans, pumps, lathes and compressors",
+                    "topic": "ELECTRICAL MACHINES Electrical machines and their uses – Need for transformers and their classification – Parts and applications of DC motors – Basic working and applications of induction motors – Electrical machines commonly used in fans, pumps, lathes and compressors",
                     "period": 1,
                     "type": "theory"
                 },
@@ -104,7 +111,7 @@
                 {
                     "id": "26me307a-2.4",
                     "sno": "2.4",
-                    "topic": "Deep dive into ELECTRICAL MACHINES Electrical machines and their uses \u2013 Need for transformers and their classification \u2013 Parts and applications of DC motors \u2013 Basic working and applications of induction motors \u2013 Electrical machines commonly used in fans, pumps, lathes and compressors",
+                    "topic": "Deep dive into ELECTRICAL MACHINES Electrical machines and their uses – Need for transformers and their classification – Parts and applications of DC motors – Basic working and applications of induction motors – Electrical machines commonly used in fans, pumps, lathes and compressors",
                     "period": 1,
                     "type": "theory"
                 },
@@ -118,13 +125,34 @@
                 {
                     "id": "26me307a-2.6",
                     "sno": "2.6",
+                    "topic": "Problem solving & practice on ELECTRICAL MACHINES Electrical machines and their uses – Need for transformers and their classification – Parts and applications of DC motors – Basic working and applications of induction motors – Electrical machines commonly used in fans, pumps, lathes and compressors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me307a-2.7",
+                    "sno": "2.7",
+                    "topic": "Practical applications of ELECTRICAL MACHINES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me307a-2.8",
+                    "sno": "2.8",
+                    "topic": "Practical applications of ELECTRICAL MACHINES Electrical machines and their uses – Need for transformers and their classification – Parts and applications of DC motors – Basic working and applications of induction motors – Electrical machines commonly used in fans, pumps, lathes and compressors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me307a-2.9",
+                    "sno": "2.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me307a-2.7",
-                    "sno": "2.7",
+                    "id": "26me307a-2.10",
+                    "sno": "2.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -133,8 +161,8 @@
         },
         {
             "unitNo": 3,
-            "title": "ELECTRICAL MEASURING INSTRUMENTS",
-            "totalPeriods": 7,
+            "title": "Electrical Measuring Instruments",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26me307a-3.1",
@@ -146,7 +174,7 @@
                 {
                     "id": "26me307a-3.2",
                     "sno": "3.2",
-                    "topic": "ELECTRICAL MEASURING INSTRUMENTS Purpose and circuit connection of ammeters \u2013 Purpose and circuit connection of voltmeters \u2013 Wattmeter and its use \u2013 Energy meter and its applications in homes, industries and workshops \u2013 Importance of measuring instruments in electrical maintenance and workshop practice",
+                    "topic": "ELECTRICAL MEASURING INSTRUMENTS Purpose and circuit connection of ammeters – Purpose and circuit connection of voltmeters – Wattmeter and its use – Energy meter and its applications in homes, industries and workshops – Importance of measuring instruments in electrical maintenance and workshop practice",
                     "period": 1,
                     "type": "theory"
                 },
@@ -160,27 +188,20 @@
                 {
                     "id": "26me307a-3.4",
                     "sno": "3.4",
-                    "topic": "Deep dive into ELECTRICAL MEASURING INSTRUMENTS Purpose and circuit connection of ammeters \u2013 Purpose and circuit connection of voltmeters \u2013 Wattmeter and its use \u2013 Energy meter and its applications in homes, industries and workshops \u2013 Importance of measuring instruments in electrical maintenance and workshop practice",
+                    "topic": "Deep dive into ELECTRICAL MEASURING INSTRUMENTS Purpose and circuit connection of ammeters – Purpose and circuit connection of voltmeters – Wattmeter and its use – Energy meter and its applications in homes, industries and workshops – Importance of measuring instruments in electrical maintenance and workshop practice",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me307a-3.5",
                     "sno": "3.5",
-                    "topic": "Problem solving & practice on ELECTRICAL MEASURING INSTRUMENTS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me307a-3.6",
-                    "sno": "3.6",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me307a-3.7",
-                    "sno": "3.7",
+                    "id": "26me307a-3.6",
+                    "sno": "3.6",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -189,8 +210,8 @@
         },
         {
             "unitNo": 4,
-            "title": "ELECTRICAL SAFETY",
-            "totalPeriods": 7,
+            "title": "Electrical Safety",
+            "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26me307a-4.1",
@@ -202,41 +223,20 @@
                 {
                     "id": "26me307a-4.2",
                     "sno": "4.2",
-                    "topic": "ELECTRICAL SAFETY Electrical hazards in homes and workshops \u2013 Safety rules and safety equipment \u2013 Need for earthing and different earthing systems \u2013 Fuse and circuit breakers with their functions \u2013 First aid steps in case of electric shock. REFERENCE BOOKS 1. V.K. Mehta, Rohit Mehta \u2013 Basic Electrical Engineering \u2013 S. Chand Publications 2. B.L. Theraja, A.K. Theraja \u2013 A Textbook of Electrical Technology (Vol. I & II) \u2013 S. Chand Publications 3. S. Rao \u2013 Testing, Commissioning, Operation and Maintenance of Electrical Equipment \u2013 Khanna Publishers 4. Surajit Das, Sunil S. Rao \u2013 Handbook on Electrical Safety \u2013 Khanna Publishers",
+                    "topic": "ELECTRICAL SAFETY Electrical hazards in homes and workshops – Safety rules and safety equipment – Need for earthing and different earthing systems – Fuse and circuit breakers with their functions – First aid steps in case of electric shock. REFERENCE BOOKS 1. V.K. Mehta, Rohit Mehta – Basic Electrical Engineering – S. Chand Publications 2. B.L. Theraja, A.K. Theraja – A Textbook of Electrical Technology (Vol. I & II) – S. Chand Publications 3. S. Rao – Testing, Commissioning, Operation and Maintenance of Electrical Equipment – Khanna Publishers 4. Surajit Das, Sunil S. Rao – Handbook on Electrical Safety – Khanna Publishers",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me307a-4.3",
                     "sno": "4.3",
-                    "topic": "Deep dive into ELECTRICAL SAFETY",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me307a-4.4",
-                    "sno": "4.4",
-                    "topic": "Deep dive into ELECTRICAL SAFETY Electrical hazards in homes and workshops \u2013 Safety rules and safety equipment \u2013 Need for earthing and different earthing systems \u2013 Fuse and circuit breakers with their functions \u2013 First aid steps in case of electric shock. REFERENCE BOOKS 1. V.K. Mehta, Rohit Mehta \u2013 Basic Electrical Engineering \u2013 S. Chand Publications 2. B.L. Theraja, A.K. Theraja \u2013 A Textbook of Electrical Technology (Vol. I & II) \u2013 S. Chand Publications 3. S. Rao \u2013 Testing, Commissioning, Operation and Maintenance of Electrical Equipment \u2013 Khanna Publishers 4. Surajit Das, Sunil S. Rao \u2013 Handbook on Electrical Safety \u2013 Khanna Publishers",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me307a-4.5",
-                    "sno": "4.5",
-                    "topic": "Problem solving & practice on ELECTRICAL SAFETY",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me307a-4.6",
-                    "sno": "4.6",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me307a-4.7",
-                    "sno": "4.7",
+                    "id": "26me307a-4.4",
+                    "sno": "4.4",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

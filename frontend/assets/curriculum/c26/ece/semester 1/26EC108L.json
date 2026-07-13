@@ -7,173 +7,33 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 24,
+            "title": "Safety precautions and cleaning",
+            "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26ec108l-1.1",
                     "sno": "1.1",
-                    "topic": "Introduction to Unit 1 concepts",
+                    "topic": "Study and analysis of Unit 1",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-1.2",
                     "sno": "1.2",
-                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 1",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-1.3",
                     "sno": "1.3",
-                    "topic": "Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.4",
-                    "sno": "1.4",
-                    "topic": "Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.5",
-                    "sno": "1.5",
-                    "topic": "Deep dive into Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.6",
-                    "sno": "1.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.7",
-                    "sno": "1.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.8",
-                    "sno": "1.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.9",
-                    "sno": "1.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.10",
-                    "sno": "1.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.11",
-                    "sno": "1.11",
-                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.12",
-                    "sno": "1.12",
-                    "topic": "Problem solving & practice on Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.13",
-                    "sno": "1.13",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.14",
-                    "sno": "1.14",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.15",
-                    "sno": "1.15",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.16",
-                    "sno": "1.16",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.17",
-                    "sno": "1.17",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.18",
-                    "sno": "1.18",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.19",
-                    "sno": "1.19",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.20",
-                    "sno": "1.20",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.21",
-                    "sno": "1.21",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.22",
-                    "sno": "1.22",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-1.23",
-                    "sno": "1.23",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec108l-1.24",
-                    "sno": "1.24",
+                    "id": "26ec108l-1.4",
+                    "sno": "1.4",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -182,173 +42,61 @@
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 24,
+            "title": "Identifying different electronic components",
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26ec108l-2.1",
                     "sno": "2.1",
-                    "topic": "Introduction to Unit 2 concepts",
+                    "topic": "Study and analysis of Unit 2",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-2.2",
                     "sno": "2.2",
-                    "topic": "Detailed analysis of Unit 2 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 2",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-2.3",
                     "sno": "2.3",
-                    "topic": "Practical application and standard setups for Unit 2",
+                    "topic": "Advanced practical on Study and analysis of Unit 2",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-2.4",
                     "sno": "2.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 2",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-2.5",
                     "sno": "2.5",
-                    "topic": "Deep dive into Introduction to Unit 2 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-2.6",
                     "sno": "2.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 2 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-2.7",
                     "sno": "2.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 2",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.8",
-                    "sno": "2.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.9",
-                    "sno": "2.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 2 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.10",
-                    "sno": "2.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 2 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.11",
-                    "sno": "2.11",
-                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 2",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.12",
-                    "sno": "2.12",
-                    "topic": "Problem solving & practice on Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.13",
-                    "sno": "2.13",
-                    "topic": "Practical applications of Introduction to Unit 2 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.14",
-                    "sno": "2.14",
-                    "topic": "Practical applications of Detailed analysis of Unit 2 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.15",
-                    "sno": "2.15",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 2",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.16",
-                    "sno": "2.16",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.17",
-                    "sno": "2.17",
-                    "topic": "Practical applications of Introduction to Unit 2 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.18",
-                    "sno": "2.18",
-                    "topic": "Practical applications of Detailed analysis of Unit 2 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.19",
-                    "sno": "2.19",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 2",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.20",
-                    "sno": "2.20",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.21",
-                    "sno": "2.21",
-                    "topic": "Practical applications of Introduction to Unit 2 concepts",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.22",
-                    "sno": "2.22",
-                    "topic": "Practical applications of Detailed analysis of Unit 2 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec108l-2.23",
-                    "sno": "2.23",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec108l-2.24",
-                    "sno": "2.24",
+                    "id": "26ec108l-2.8",
+                    "sno": "2.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -357,173 +105,201 @@
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 24,
+            "title": "Soldering & De soldering practice and Preparation of PCB",
+            "totalPeriods": 28,
             "topics": [
                 {
                     "id": "26ec108l-3.1",
                     "sno": "3.1",
-                    "topic": "Introduction to Unit 3 concepts",
+                    "topic": "Study and analysis of Unit 3",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.2",
                     "sno": "3.2",
-                    "topic": "Detailed analysis of Unit 3 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 3",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.3",
                     "sno": "3.3",
-                    "topic": "Practical application and standard setups for Unit 3",
+                    "topic": "Advanced practical on Study and analysis of Unit 3",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.4",
                     "sno": "3.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 3",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.5",
                     "sno": "3.5",
-                    "topic": "Deep dive into Introduction to Unit 3 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.6",
                     "sno": "3.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 3 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.7",
                     "sno": "3.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 3",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.8",
                     "sno": "3.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.9",
                     "sno": "3.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 3 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.10",
                     "sno": "3.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 3 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.11",
                     "sno": "3.11",
-                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 3",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.12",
                     "sno": "3.12",
-                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.13",
                     "sno": "3.13",
-                    "topic": "Practical applications of Introduction to Unit 3 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.14",
                     "sno": "3.14",
-                    "topic": "Practical applications of Detailed analysis of Unit 3 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.15",
                     "sno": "3.15",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 3",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.16",
                     "sno": "3.16",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.17",
                     "sno": "3.17",
-                    "topic": "Practical applications of Introduction to Unit 3 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.18",
                     "sno": "3.18",
-                    "topic": "Practical applications of Detailed analysis of Unit 3 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.19",
                     "sno": "3.19",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 3",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.20",
                     "sno": "3.20",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.21",
                     "sno": "3.21",
-                    "topic": "Practical applications of Introduction to Unit 3 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.22",
                     "sno": "3.22",
-                    "topic": "Practical applications of Detailed analysis of Unit 3 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-3.23",
                     "sno": "3.23",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-3.24",
+                    "sno": "3.24",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-3.25",
+                    "sno": "3.25",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-3.26",
+                    "sno": "3.26",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-3.27",
+                    "sno": "3.27",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec108l-3.24",
-                    "sno": "3.24",
+                    "id": "26ec108l-3.28",
+                    "sno": "3.28",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -532,160 +308,160 @@
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
+            "title": "Study of different measuring Instruments and Electronic equipment",
             "totalPeriods": 24,
             "topics": [
                 {
                     "id": "26ec108l-4.1",
                     "sno": "4.1",
-                    "topic": "Introduction to Unit 4 concepts",
+                    "topic": "Study and analysis of Unit 4",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.2",
                     "sno": "4.2",
-                    "topic": "Detailed analysis of Unit 4 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 4",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.3",
                     "sno": "4.3",
-                    "topic": "Practical application and standard setups for Unit 4",
+                    "topic": "Advanced practical on Study and analysis of Unit 4",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.4",
                     "sno": "4.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 4",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.5",
                     "sno": "4.5",
-                    "topic": "Deep dive into Introduction to Unit 4 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.6",
                     "sno": "4.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 4 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.7",
                     "sno": "4.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 4",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.8",
                     "sno": "4.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.9",
                     "sno": "4.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 4 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.10",
                     "sno": "4.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 4 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.11",
                     "sno": "4.11",
-                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 4",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.12",
                     "sno": "4.12",
-                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.13",
                     "sno": "4.13",
-                    "topic": "Practical applications of Introduction to Unit 4 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.14",
                     "sno": "4.14",
-                    "topic": "Practical applications of Detailed analysis of Unit 4 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.15",
                     "sno": "4.15",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 4",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.16",
                     "sno": "4.16",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.17",
                     "sno": "4.17",
-                    "topic": "Practical applications of Introduction to Unit 4 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.18",
                     "sno": "4.18",
-                    "topic": "Practical applications of Detailed analysis of Unit 4 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.19",
                     "sno": "4.19",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 4",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.20",
                     "sno": "4.20",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.21",
                     "sno": "4.21",
-                    "topic": "Practical applications of Introduction to Unit 4 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-4.22",
                     "sno": "4.22",
-                    "topic": "Practical applications of Detailed analysis of Unit 4 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
@@ -707,160 +483,160 @@
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
+            "title": "Testing, obtaining characteristics of electronic devices",
             "totalPeriods": 24,
             "topics": [
                 {
                     "id": "26ec108l-5.1",
                     "sno": "5.1",
-                    "topic": "Introduction to Unit 5 concepts",
+                    "topic": "Study and analysis of Unit 5",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.2",
                     "sno": "5.2",
-                    "topic": "Detailed analysis of Unit 5 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 5",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.3",
                     "sno": "5.3",
-                    "topic": "Practical application and standard setups for Unit 5",
+                    "topic": "Advanced practical on Study and analysis of Unit 5",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.4",
                     "sno": "5.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 5",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.5",
                     "sno": "5.5",
-                    "topic": "Deep dive into Introduction to Unit 5 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.6",
                     "sno": "5.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 5 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.7",
                     "sno": "5.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 5",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.8",
                     "sno": "5.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.9",
                     "sno": "5.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 5 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.10",
                     "sno": "5.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 5 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.11",
                     "sno": "5.11",
-                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 5",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.12",
                     "sno": "5.12",
-                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.13",
                     "sno": "5.13",
-                    "topic": "Practical applications of Introduction to Unit 5 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.14",
                     "sno": "5.14",
-                    "topic": "Practical applications of Detailed analysis of Unit 5 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.15",
                     "sno": "5.15",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 5",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.16",
                     "sno": "5.16",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.17",
                     "sno": "5.17",
-                    "topic": "Practical applications of Introduction to Unit 5 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.18",
                     "sno": "5.18",
-                    "topic": "Practical applications of Detailed analysis of Unit 5 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.19",
                     "sno": "5.19",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 5",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.20",
                     "sno": "5.20",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.21",
                     "sno": "5.21",
-                    "topic": "Practical applications of Introduction to Unit 5 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ec108l-5.22",
                     "sno": "5.22",
-                    "topic": "Practical applications of Detailed analysis of Unit 5 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
@@ -874,6 +650,251 @@
                 {
                     "id": "26ec108l-5.24",
                     "sno": "5.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "PA system",
+            "totalPeriods": 4,
+            "topics": [
+                {
+                    "id": "26ec108l-6.1",
+                    "sno": "6.1",
+                    "topic": "Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-6.2",
+                    "sno": "6.2",
+                    "topic": "Practice and training on Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-6.3",
+                    "sno": "6.3",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec108l-6.4",
+                    "sno": "6.4",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "Batteries",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "26ec108l-7.1",
+                    "sno": "7.1",
+                    "topic": "Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.2",
+                    "sno": "7.2",
+                    "topic": "Practice and training on Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.3",
+                    "sno": "7.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.4",
+                    "sno": "7.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.5",
+                    "sno": "7.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.6",
+                    "sno": "7.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.7",
+                    "sno": "7.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.8",
+                    "sno": "7.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.9",
+                    "sno": "7.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.10",
+                    "sno": "7.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-7.11",
+                    "sno": "7.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec108l-7.12",
+                    "sno": "7.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Verification of Ohm’s Law , KCL & KVL",
+            "totalPeriods": 16,
+            "topics": [
+                {
+                    "id": "26ec108l-8.1",
+                    "sno": "8.1",
+                    "topic": "Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.2",
+                    "sno": "8.2",
+                    "topic": "Practice and training on Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.3",
+                    "sno": "8.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.4",
+                    "sno": "8.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.5",
+                    "sno": "8.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.6",
+                    "sno": "8.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.7",
+                    "sno": "8.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.8",
+                    "sno": "8.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.9",
+                    "sno": "8.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.10",
+                    "sno": "8.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.11",
+                    "sno": "8.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.12",
+                    "sno": "8.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.13",
+                    "sno": "8.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.14",
+                    "sno": "8.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec108l-8.15",
+                    "sno": "8.15",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec108l-8.16",
+                    "sno": "8.16",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

@@ -7,7 +7,7 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
+            "title": "Basics of Digital Electronics",
             "totalPeriods": 18,
             "topics": [
                 {
@@ -34,14 +34,14 @@
                 {
                     "id": "26ee403t-1.4",
                     "sno": "1.4",
-                    "topic": "Write 1\u2018s complement and 2\u2018s complement numbers for a given binary number",
+                    "topic": "Write 1‘s complement and 2‘s complement numbers for a given binary number",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ee403t-1.5",
                     "sno": "1.5",
-                    "topic": "Perform subtraction of binary numbers in 2\u2018s complement method",
+                    "topic": "Perform subtraction of binary numbers in 2‘s complement method",
                     "period": 1,
                     "type": "theory"
                 },
@@ -55,7 +55,7 @@
                 {
                     "id": "26ee403t-1.7",
                     "sno": "1.7",
-                    "topic": "State different postulates and De-Morgan\u2018s theorems in Boolean algebra",
+                    "topic": "State different postulates and De-Morgan‘s theorems in Boolean algebra",
                     "period": 1,
                     "type": "theory"
                 },
@@ -140,8 +140,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 18,
+            "title": "Combinational Logic circuits",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ee403t-2.1",
@@ -174,7 +174,7 @@
                 {
                     "id": "26ee403t-2.5",
                     "sno": "2.5",
-                    "topic": "Realize full-adder using two Half-adders and an OR \u2013 gate and write truth table",
+                    "topic": "Realize full-adder using two Half-adders and an OR – gate and write truth table",
                     "period": 1,
                     "type": "theory"
                 },
@@ -237,34 +237,13 @@
                 {
                     "id": "26ee403t-2.14",
                     "sno": "2.14",
-                    "topic": "Deep dive into Draw the Half adder circuit and verify its functionality using truth table",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee403t-2.15",
-                    "sno": "2.15",
-                    "topic": "Deep dive into Realize a Half-adder using NAND gates and NOR gates",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee403t-2.16",
-                    "sno": "2.16",
-                    "topic": "Deep dive into Draw the full adder circuit and explain its operation with truth table",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee403t-2.17",
-                    "sno": "2.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee403t-2.18",
-                    "sno": "2.18",
+                    "id": "26ee403t-2.15",
+                    "sno": "2.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,7 +252,7 @@
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
+            "title": "Sequential Logic Circuits",
             "totalPeriods": 18,
             "topics": [
                 {
@@ -406,8 +385,8 @@
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "Unit 4 Topic",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ee403t-4.1",
@@ -503,34 +482,13 @@
                 {
                     "id": "26ee403t-4.14",
                     "sno": "4.14",
-                    "topic": "Deep dive into Draw the pin diagram of 8051 micro controller and specify the purpose of each pin",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee403t-4.15",
-                    "sno": "4.15",
-                    "topic": "Deep dive into Explain internal memory, external memory and ports of 8051",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee403t-4.16",
-                    "sno": "4.16",
-                    "topic": "Deep dive into List the interrupts in 8051. 5. Instruction set and Programming",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee403t-4.17",
-                    "sno": "4.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee403t-4.18",
-                    "sno": "4.18",
+                    "id": "26ee403t-4.15",
+                    "sno": "4.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,8 +497,8 @@
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
+            "title": "Unit 5 Topic",
+            "totalPeriods": 24,
             "topics": [
                 {
                     "id": "26ee403t-5.1",
@@ -657,13 +615,55 @@
                 {
                     "id": "26ee403t-5.17",
                     "sno": "5.17",
+                    "topic": "Deep dive into State the need for an instruction set",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee403t-5.18",
+                    "sno": "5.18",
+                    "topic": "Deep dive into Explain the instruction format of 8051",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee403t-5.19",
+                    "sno": "5.19",
+                    "topic": "Deep dive into Explain fetch cycle, execution cycle and instruction cycle",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee403t-5.20",
+                    "sno": "5.20",
+                    "topic": "Deep dive into Define the terms machine language, assembly language, and mnemonics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee403t-5.21",
+                    "sno": "5.21",
+                    "topic": "Deep dive into Differentiate between machine level and assembly level programming",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee403t-5.22",
+                    "sno": "5.22",
+                    "topic": "Deep dive into List the major groups in the instruction set along with examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee403t-5.23",
+                    "sno": "5.23",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee403t-5.18",
-                    "sno": "5.18",
+                    "id": "26ee403t-5.24",
+                    "sno": "5.24",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

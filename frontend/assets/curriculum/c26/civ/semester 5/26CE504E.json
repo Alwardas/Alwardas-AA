@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "INTRODUCTION",
-            "totalPeriods": 9,
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26ce504e-1.1",
@@ -20,55 +20,13 @@
                 {
                     "id": "26ce504e-1.2",
                     "sno": "1.2",
-                    "topic": "Deep dive into INTRODUCTION",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce504e-1.3",
-                    "sno": "1.3",
-                    "topic": "Problem solving & practice on INTRODUCTION",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce504e-1.4",
-                    "sno": "1.4",
-                    "topic": "Practical applications of INTRODUCTION",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce504e-1.5",
-                    "sno": "1.5",
-                    "topic": "Practical applications of INTRODUCTION",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce504e-1.6",
-                    "sno": "1.6",
-                    "topic": "Practical applications of INTRODUCTION",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce504e-1.7",
-                    "sno": "1.7",
-                    "topic": "Practical applications of INTRODUCTION",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce504e-1.8",
-                    "sno": "1.8",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce504e-1.9",
-                    "sno": "1.9",
+                    "id": "26ce504e-1.3",
+                    "sno": "1.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -127,7 +85,7 @@
         {
             "unitNo": 3,
             "title": "MANAGEMENT TOOLS",
-            "totalPeriods": 6,
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26ce504e-3.1",
@@ -160,13 +118,27 @@
                 {
                     "id": "26ce504e-3.5",
                     "sno": "3.5",
+                    "topic": "Deep dive into MANAGEMENT TOOLS; Define CPM and PERT",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-3.6",
+                    "sno": "3.6",
+                    "topic": "Deep dive into State the advantages of CPM and PERT; Explain the use of bar chart and its limitations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-3.7",
+                    "sno": "3.7",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce504e-3.6",
-                    "sno": "3.6",
+                    "id": "26ce504e-3.8",
+                    "sno": "3.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -176,7 +148,7 @@
         {
             "unitNo": 4,
             "title": "CONTRACT, TENDERS AND ARBITRATION",
-            "totalPeriods": 6,
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ce504e-4.1",
@@ -209,13 +181,41 @@
                 {
                     "id": "26ce504e-4.5",
                     "sno": "4.5",
+                    "topic": "Deep dive into CONTRACT, TENDERS AND ARBITRATION; Define contract, State the contents of a contract document, and explain different contract systems available for...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-4.6",
+                    "sno": "4.6",
+                    "topic": "Deep dive into Define tender, Explain the need for calling of tenders, List the steps involved in fixing up agency through tender system; Draft a tender notice fo...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-4.7",
+                    "sno": "4.7",
+                    "topic": "Deep dive into Prepare a comparative statement; Explain the method of selecting a contractor from the tenders, List out the conditions of contract agreements; Def...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-4.8",
+                    "sno": "4.8",
+                    "topic": "Deep dive into Define the terms Dispute and Arbitration, Explain the scope for disputes in a construction industry; State the need for arbitration, List the quali...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-4.9",
+                    "sno": "4.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce504e-4.6",
-                    "sno": "4.6",
+                    "id": "26ce504e-4.10",
+                    "sno": "4.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -225,7 +225,7 @@
         {
             "unitNo": 5,
             "title": "MANAGEMENT OF RESOURCES IN CONSTRUCTION",
-            "totalPeriods": 6,
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26ce504e-5.1",
@@ -258,13 +258,27 @@
                 {
                     "id": "26ce504e-5.5",
                     "sno": "5.5",
+                    "topic": "Deep dive into MANAGEMENT OF RESOURCES IN CONSTRUCTION; Explain the scope of materials management, Classify the common building materials based on the procurement...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-5.6",
+                    "sno": "5.6",
+                    "topic": "Deep dive into Explain the points to be observed in the storage of perishable and non - perishable store materials, Explain the terms Indent, Invoice and Bin card...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce504e-5.7",
+                    "sno": "5.7",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce504e-5.6",
-                    "sno": "5.6",
+                    "id": "26ce504e-5.8",
+                    "sno": "5.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -323,7 +337,7 @@
         {
             "unitNo": 7,
             "title": "HUMAN RELATIONS AND PROFESSIONAL ETHICS",
-            "totalPeriods": 6,
+            "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26ce504e-7.1",
@@ -342,27 +356,13 @@
                 {
                     "id": "26ce504e-7.3",
                     "sno": "7.3",
-                    "topic": "Deep dive into HUMAN RELATIONS AND PROFESSIONAL ETHICS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce504e-7.4",
-                    "sno": "7.4",
-                    "topic": "Deep dive into State role of Human relations and Performance in organization",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce504e-7.5",
-                    "sno": "7.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce504e-7.6",
-                    "sno": "7.6",
+                    "id": "26ce504e-7.4",
+                    "sno": "7.4",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

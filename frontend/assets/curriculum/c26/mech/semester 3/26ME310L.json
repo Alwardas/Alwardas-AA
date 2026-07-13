@@ -6,9 +6,450 @@
     "totalPeriods": 105,
     "units": [
         {
+            "unitNo": 1,
+            "title": "FOUNDRY",
+            "totalPeriods": 24,
+            "topics": [
+                {
+                    "id": "26me310l-1.1",
+                    "sno": "1.1",
+                    "topic": "Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.2",
+                    "sno": "1.2",
+                    "topic": "Practice and training on Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.3",
+                    "sno": "1.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.4",
+                    "sno": "1.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 1",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.5",
+                    "sno": "1.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.6",
+                    "sno": "1.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.7",
+                    "sno": "1.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.8",
+                    "sno": "1.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.9",
+                    "sno": "1.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.10",
+                    "sno": "1.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.11",
+                    "sno": "1.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.12",
+                    "sno": "1.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.13",
+                    "sno": "1.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.14",
+                    "sno": "1.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.15",
+                    "sno": "1.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.16",
+                    "sno": "1.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.17",
+                    "sno": "1.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.18",
+                    "sno": "1.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.19",
+                    "sno": "1.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.20",
+                    "sno": "1.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.21",
+                    "sno": "1.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.22",
+                    "sno": "1.22",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-1.23",
+                    "sno": "1.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me310l-1.24",
+                    "sno": "1.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Turning",
+            "totalPeriods": 24,
+            "topics": [
+                {
+                    "id": "26me310l-2.1",
+                    "sno": "2.1",
+                    "topic": "Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.2",
+                    "sno": "2.2",
+                    "topic": "Practice and training on Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.3",
+                    "sno": "2.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.4",
+                    "sno": "2.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.5",
+                    "sno": "2.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.6",
+                    "sno": "2.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.7",
+                    "sno": "2.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.8",
+                    "sno": "2.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.9",
+                    "sno": "2.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.10",
+                    "sno": "2.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.11",
+                    "sno": "2.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.12",
+                    "sno": "2.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.13",
+                    "sno": "2.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.14",
+                    "sno": "2.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.15",
+                    "sno": "2.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.16",
+                    "sno": "2.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.17",
+                    "sno": "2.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.18",
+                    "sno": "2.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.19",
+                    "sno": "2.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.20",
+                    "sno": "2.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.21",
+                    "sno": "2.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.22",
+                    "sno": "2.22",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-2.23",
+                    "sno": "2.23",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me310l-2.24",
+                    "sno": "2.24",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Welding",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "26me310l-3.1",
+                    "sno": "3.1",
+                    "topic": "Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.2",
+                    "sno": "3.2",
+                    "topic": "Practice and training on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.3",
+                    "sno": "3.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.4",
+                    "sno": "3.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.5",
+                    "sno": "3.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.6",
+                    "sno": "3.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.7",
+                    "sno": "3.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.8",
+                    "sno": "3.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.9",
+                    "sno": "3.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.10",
+                    "sno": "3.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me310l-3.11",
+                    "sno": "3.11",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me310l-3.12",
+                    "sno": "3.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
             "unitNo": 4,
-            "title": "METROLOGY: Measuring Instruments",
-            "totalPeriods": 105,
+            "title": "Metrology laboratory",
+            "totalPeriods": 45,
             "topics": [
                 {
                     "id": "26me310l-4.1",
@@ -34,713 +475,293 @@
                 {
                     "id": "26me310l-4.4",
                     "sno": "4.4",
-                    "topic": "Deep dive into Combination square, universal bevel protractor, sine bar",
+                    "topic": "Practice and training on Combination square, universal bevel protractor, sine bar",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.5",
                     "sno": "4.5",
-                    "topic": "Deep dive into Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Practice and training on Vernier height gauge, Vernier depth gauge, micrometer",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.6",
                     "sno": "4.6",
-                    "topic": "Deep dive into Tool Makers Microscope",
+                    "topic": "Practice and training on Tool Makers Microscope",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.7",
                     "sno": "4.7",
-                    "topic": "Problem solving & practice on Combination square, universal bevel protractor, sine bar",
+                    "topic": "Advanced practical on Combination square, universal bevel protractor, sine bar",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.8",
                     "sno": "4.8",
-                    "topic": "Problem solving & practice on Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Advanced practical on Vernier height gauge, Vernier depth gauge, micrometer",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.9",
                     "sno": "4.9",
-                    "topic": "Problem solving & practice on Tool Makers Microscope",
+                    "topic": "Advanced practical on Tool Makers Microscope",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.10",
                     "sno": "4.10",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Real-world simulation of Combination square, universal bevel protractor, sine bar",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.11",
                     "sno": "4.11",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Real-world simulation of Vernier height gauge, Vernier depth gauge, micrometer",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.12",
                     "sno": "4.12",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Real-world simulation of Tool Makers Microscope",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.13",
                     "sno": "4.13",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.14",
                     "sno": "4.14",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.15",
                     "sno": "4.15",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.16",
                     "sno": "4.16",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.17",
                     "sno": "4.17",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.18",
                     "sno": "4.18",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.19",
                     "sno": "4.19",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.20",
                     "sno": "4.20",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.21",
                     "sno": "4.21",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.22",
                     "sno": "4.22",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.23",
                     "sno": "4.23",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.24",
                     "sno": "4.24",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.25",
                     "sno": "4.25",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.26",
                     "sno": "4.26",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.27",
                     "sno": "4.27",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.28",
                     "sno": "4.28",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.29",
                     "sno": "4.29",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.30",
                     "sno": "4.30",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.31",
                     "sno": "4.31",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.32",
                     "sno": "4.32",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.33",
                     "sno": "4.33",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.34",
                     "sno": "4.34",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.35",
                     "sno": "4.35",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.36",
                     "sno": "4.36",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.37",
                     "sno": "4.37",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.38",
                     "sno": "4.38",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.39",
                     "sno": "4.39",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.40",
                     "sno": "4.40",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.41",
                     "sno": "4.41",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.42",
                     "sno": "4.42",
-                    "topic": "Practical applications of Tool Makers Microscope",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.43",
                     "sno": "4.43",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me310l-4.44",
                     "sno": "4.44",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.45",
-                    "sno": "4.45",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.46",
-                    "sno": "4.46",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.47",
-                    "sno": "4.47",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.48",
-                    "sno": "4.48",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.49",
-                    "sno": "4.49",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.50",
-                    "sno": "4.50",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.51",
-                    "sno": "4.51",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.52",
-                    "sno": "4.52",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.53",
-                    "sno": "4.53",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.54",
-                    "sno": "4.54",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.55",
-                    "sno": "4.55",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.56",
-                    "sno": "4.56",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.57",
-                    "sno": "4.57",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.58",
-                    "sno": "4.58",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.59",
-                    "sno": "4.59",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.60",
-                    "sno": "4.60",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.61",
-                    "sno": "4.61",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.62",
-                    "sno": "4.62",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.63",
-                    "sno": "4.63",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.64",
-                    "sno": "4.64",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.65",
-                    "sno": "4.65",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.66",
-                    "sno": "4.66",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.67",
-                    "sno": "4.67",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.68",
-                    "sno": "4.68",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.69",
-                    "sno": "4.69",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.70",
-                    "sno": "4.70",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.71",
-                    "sno": "4.71",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.72",
-                    "sno": "4.72",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.73",
-                    "sno": "4.73",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.74",
-                    "sno": "4.74",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.75",
-                    "sno": "4.75",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.76",
-                    "sno": "4.76",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.77",
-                    "sno": "4.77",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.78",
-                    "sno": "4.78",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.79",
-                    "sno": "4.79",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.80",
-                    "sno": "4.80",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.81",
-                    "sno": "4.81",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.82",
-                    "sno": "4.82",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.83",
-                    "sno": "4.83",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.84",
-                    "sno": "4.84",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.85",
-                    "sno": "4.85",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.86",
-                    "sno": "4.86",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.87",
-                    "sno": "4.87",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.88",
-                    "sno": "4.88",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.89",
-                    "sno": "4.89",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.90",
-                    "sno": "4.90",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.91",
-                    "sno": "4.91",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.92",
-                    "sno": "4.92",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.93",
-                    "sno": "4.93",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.94",
-                    "sno": "4.94",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.95",
-                    "sno": "4.95",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.96",
-                    "sno": "4.96",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.97",
-                    "sno": "4.97",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.98",
-                    "sno": "4.98",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.99",
-                    "sno": "4.99",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.100",
-                    "sno": "4.100",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.101",
-                    "sno": "4.101",
-                    "topic": "Practical applications of Vernier height gauge, Vernier depth gauge, micrometer",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.102",
-                    "sno": "4.102",
-                    "topic": "Practical applications of Tool Makers Microscope",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.103",
-                    "sno": "4.103",
-                    "topic": "Practical applications of Combination square, universal bevel protractor, sine bar",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me310l-4.104",
-                    "sno": "4.104",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me310l-4.105",
-                    "sno": "4.105",
+                    "id": "26me310l-4.45",
+                    "sno": "4.45",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

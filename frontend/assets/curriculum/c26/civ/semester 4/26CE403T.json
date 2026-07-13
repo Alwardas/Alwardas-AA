@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "NATURE AND SCOPE OF IRRIGATION",
-            "totalPeriods": 15,
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ce403t-1.1",
@@ -76,44 +76,9 @@
                 {
                     "id": "26ce403t-1.10",
                     "sno": "1.10",
-                    "topic": "Explain different methods of expressing duty",
+                    "topic": "Explain different methods of expressing duty; State the relationship between duty and delta; Explain the factors affecting duty; State the duty figures for principal crops and solve simple problems on duty; NATURE AND SCOPE OF IRRIGATION ENGINEERING Definitions- Necessity of ...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ce403t-1.11",
-                    "sno": "1.11",
-                    "topic": "State the relationship between duty and delta",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce403t-1.12",
-                    "sno": "1.12",
-                    "topic": "Explain the factors affecting duty",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce403t-1.13",
-                    "sno": "1.13",
-                    "topic": "State the duty figures for principal crops and solve simple problems on duty; NATURE AND SCOPE OF IRRIGATION ENGINEERING Definitions- Necessity of ...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce403t-1.14",
-                    "sno": "1.14",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce403t-1.15",
-                    "sno": "1.15",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
@@ -139,7 +104,7 @@
                 {
                     "id": "26ce403t-2.3",
                     "sno": "2.3",
-                    "topic": "State different types of rain gauges and explain the method of measurement of rainfall using Simon\u2019s Rain gauge and Float type automatic recording ...",
+                    "topic": "State different types of rain gauges and explain the method of measurement of rainfall using Simon’s Rain gauge and Float type automatic recording ...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -174,7 +139,7 @@
                 {
                     "id": "26ce403t-2.8",
                     "sno": "2.8",
-                    "topic": "State Ryve\u2019s and Dicken\u2019s Formulae and solve simple problems on estimating maximum flood discharge; ELEMENTS OF HYDROLOGY Precipitation \u2013 Types of ...",
+                    "topic": "State Ryve’s and Dicken’s Formulae and solve simple problems on estimating maximum flood discharge; ELEMENTS OF HYDROLOGY Precipitation – Types of ...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -274,7 +239,7 @@
         {
             "unitNo": 4,
             "title": "GRAVITY DAMS AND EARTH DAMS",
-            "totalPeriods": 10,
+            "totalPeriods": 13,
             "topics": [
                 {
                     "id": "26ce403t-4.1",
@@ -335,13 +300,34 @@
                 {
                     "id": "26ce403t-4.9",
                     "sno": "4.9",
+                    "topic": "Deep dive into GRAVITY DAMS AND EARTH DAMS; Distinguish between Rigid dams and Non-rigid dams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce403t-4.10",
+                    "sno": "4.10",
+                    "topic": "Deep dive into State factors influencing selection of site for reservoirs and dams; Define the terms: Full reservoir level, Maximum water level, Top bund level, D...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce403t-4.11",
+                    "sno": "4.11",
+                    "topic": "Deep dive into Explain the causes of failure of gravity dams and their remedies; Draw the elementary profile of a gravity dam for a given height and draw the prac...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce403t-4.12",
+                    "sno": "4.12",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce403t-4.10",
-                    "sno": "4.10",
+                    "id": "26ce403t-4.13",
+                    "sno": "4.13",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -351,7 +337,7 @@
         {
             "unitNo": 5,
             "title": "DISTRIBUTION WORKS",
-            "totalPeriods": 10,
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26ce403t-5.1",
@@ -412,13 +398,27 @@
                 {
                     "id": "26ce403t-5.9",
                     "sno": "5.9",
+                    "topic": "Deep dive into DISTRIBUTION WORKS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce403t-5.10",
+                    "sno": "5.10",
+                    "topic": "Deep dive into State the Classification of canals",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce403t-5.11",
+                    "sno": "5.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce403t-5.10",
-                    "sno": "5.10",
+                    "id": "26ce403t-5.12",
+                    "sno": "5.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -428,7 +428,7 @@
         {
             "unitNo": 6,
             "title": "SOIL EROSION, WATER LOGGING, RIVER TRAINING WORKS",
-            "totalPeriods": 10,
+            "totalPeriods": 11,
             "topics": [
                 {
                     "id": "26ce403t-6.1",
@@ -482,20 +482,27 @@
                 {
                     "id": "26ce403t-6.8",
                     "sno": "6.8",
-                    "topic": "State objectives of river training works and Explain various types of groynes and bell\u2019s bunds with sketches; SOIL EROSION, WATER LOGGING AND RIVER...",
+                    "topic": "State objectives of river training works and Explain various types of groynes and bell’s bunds with sketches; SOIL EROSION, WATER LOGGING AND RIVER...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce403t-6.9",
                     "sno": "6.9",
+                    "topic": "Deep dive into SOIL EROSION, WATER LOGGING, RIVER TRAINING WORKS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce403t-6.10",
+                    "sno": "6.10",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce403t-6.10",
-                    "sno": "6.10",
+                    "id": "26ce403t-6.11",
+                    "sno": "6.11",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -505,7 +512,7 @@
         {
             "unitNo": 7,
             "title": "WATERSHED MANAGEMENT",
-            "totalPeriods": 10,
+            "totalPeriods": 9,
             "topics": [
                 {
                     "id": "26ce403t-7.1",
@@ -559,7 +566,7 @@
                 {
                     "id": "26ce403t-7.8",
                     "sno": "7.8",
-                    "topic": "Explain different methods of artificial recharge of ground water; WATERSHED MANAGEMENT Introduction - Concept of Watershed Management \u2013 Objectives ...",
+                    "topic": "Explain different methods of artificial recharge of ground water; WATERSHED MANAGEMENT Introduction - Concept of Watershed Management – Objectives ...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -569,13 +576,6 @@
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26ce403t-7.10",
-                    "sno": "7.10",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         }

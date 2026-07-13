@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 18,
+            "title": "Non-renewable energy sources of power generation",
+            "totalPeriods": 24,
             "topics": [
                 {
                     "id": "26ee402t-1.1",
@@ -125,13 +125,55 @@
                 {
                     "id": "26ee402t-1.17",
                     "sno": "1.17",
+                    "topic": "Deep dive into Know the different sources of energy and classify them into Renewable energy sources and non-Renewable energy sources",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into State working principle of Thermal power plant; State the factors required for selection of site for Thermal power plant",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Draw the detailed line diagram of a condensing type thermal power station and explain the working of each component of thermal power station",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into State the advantages of (i) Pulverisation (ii) Cooling towers; State the causes of pollution and methods to control them",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into State the advantages and disadvantages of Thermal power plants",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into State the principle of working of Hydro power station; State the factors required for selection of site for Hydro power station",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee402t-1.23",
+                    "sno": "1.23",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee402t-1.18",
-                    "sno": "1.18",
+                    "id": "26ee402t-1.24",
+                    "sno": "1.24",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -140,7 +182,7 @@
         },
         {
             "unitNo": 2,
-            "title": "Core Concepts & Principles",
+            "title": "Renewable energy sources of power generation",
             "totalPeriods": 18,
             "topics": [
                 {
@@ -273,8 +315,8 @@
         },
         {
             "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 18,
+            "title": "Integrated operation and Economics of Power station",
+            "totalPeriods": 16,
             "topics": [
                 {
                     "id": "26ee402t-3.1",
@@ -377,27 +419,13 @@
                 {
                     "id": "26ee402t-3.15",
                     "sno": "3.15",
-                    "topic": "Deep dive into Differentiate between isolated operation and integrated operation of power stations",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee402t-3.16",
-                    "sno": "3.16",
-                    "topic": "Deep dive into Understand the concept of load dispatching and its process",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee402t-3.17",
-                    "sno": "3.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee402t-3.18",
-                    "sno": "3.18",
+                    "id": "26ee402t-3.16",
+                    "sno": "3.16",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +434,8 @@
         },
         {
             "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 18,
+            "title": "Switchgear and Protection",
+            "totalPeriods": 16,
             "topics": [
                 {
                     "id": "26ee402t-4.1",
@@ -517,30 +545,16 @@
                 {
                     "id": "26ee402t-4.16",
                     "sno": "4.16",
-                    "topic": "Deep dive into Define faults and list types of faults in power systems",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee402t-4.17",
-                    "sno": "4.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26ee402t-4.18",
-                    "sno": "4.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 18,
+            "title": "Lightning arresters, Protection of Alternators and Transformers",
+            "totalPeriods": 16,
             "topics": [
                 {
                     "id": "26ee402t-5.1",
@@ -643,27 +657,13 @@
                 {
                     "id": "26ee402t-5.15",
                     "sno": "5.15",
-                    "topic": "Deep dive into Define Lightning arresters",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee402t-5.16",
-                    "sno": "5.16",
-                    "topic": "Deep dive into Explain the types of lightning arresters or surge diverters",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee402t-5.17",
-                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee402t-5.18",
-                    "sno": "5.18",
+                    "id": "26ee402t-5.16",
+                    "sno": "5.16",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

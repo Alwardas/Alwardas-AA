@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "Introduction to Cyber Security",
-            "totalPeriods": 12,
+            "totalPeriods": 14,
             "topics": [
                 {
                     "id": "26cm404e-1.1",
@@ -55,7 +55,7 @@
                 {
                     "id": "26cm404e-1.7",
                     "sno": "1.7",
-                    "topic": "Describe internet Governance \u2013 Challenges and Constraints",
+                    "topic": "Describe internet Governance – Challenges and Constraints",
                     "period": 1,
                     "type": "theory"
                 },
@@ -83,13 +83,27 @@
                 {
                     "id": "26cm404e-1.11",
                     "sno": "1.11",
+                    "topic": "Deep dive into Introduction to Cyber Security",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm404e-1.12",
+                    "sno": "1.12",
+                    "topic": "Deep dive into Define cyber security and explain its fundamental principles",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm404e-1.13",
+                    "sno": "1.13",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm404e-1.12",
-                    "sno": "1.12",
+                    "id": "26cm404e-1.14",
+                    "sno": "1.14",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -99,7 +113,7 @@
         {
             "unitNo": 2,
             "title": "Cyberspace and the law & Cyber forensics",
-            "totalPeriods": 11,
+            "totalPeriods": 13,
             "topics": [
                 {
                     "id": "26cm404e-2.1",
@@ -125,7 +139,7 @@
                 {
                     "id": "26cm404e-2.4",
                     "sno": "2.4",
-                    "topic": "Explain National Cyber Security Policy of India \u2013 objectives, strategies, and limitations",
+                    "topic": "Explain National Cyber Security Policy of India – objectives, strategies, and limitations",
                     "period": 1,
                     "type": "theory"
                 },
@@ -167,13 +181,27 @@
                 {
                     "id": "26cm404e-2.10",
                     "sno": "2.10",
+                    "topic": "Deep dive into Cyberspace and the law & Cyber forensics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm404e-2.11",
+                    "sno": "2.11",
+                    "topic": "Deep dive into Define cyberspace and explain its characteristics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm404e-2.12",
+                    "sno": "2.12",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm404e-2.11",
-                    "sno": "2.11",
+                    "id": "26cm404e-2.13",
+                    "sno": "2.13",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -183,7 +211,7 @@
         {
             "unitNo": 3,
             "title": "Cybercrime in Mobile and Wireless Devices",
-            "totalPeriods": 11,
+            "totalPeriods": 9,
             "topics": [
                 {
                     "id": "26cm404e-3.1",
@@ -237,27 +265,13 @@
                 {
                     "id": "26cm404e-3.8",
                     "sno": "3.8",
-                    "topic": "Deep dive into Cybercrime in Mobile and Wireless Devices",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm404e-3.9",
-                    "sno": "3.9",
-                    "topic": "Deep dive into List different Mobile and Wireless devices",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm404e-3.10",
-                    "sno": "3.10",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm404e-3.11",
-                    "sno": "3.11",
+                    "id": "26cm404e-3.9",
+                    "sno": "3.9",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -266,8 +280,8 @@
         },
         {
             "unitNo": 4,
-            "title": "Privacy Issues:  Basic Data Privacy Concepts",
-            "totalPeriods": 11,
+            "title": "Privacy Issues Basic Data Privacy Concepts",
+            "totalPeriods": 9,
             "topics": [
                 {
                     "id": "26cm404e-4.1",
@@ -321,27 +335,13 @@
                 {
                     "id": "26cm404e-4.8",
                     "sno": "4.8",
-                    "topic": "Deep dive into Discuss Data linking and profiling with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm404e-4.9",
-                    "sno": "4.9",
-                    "topic": "Deep dive into Explain various Privacy policies and their specifications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm404e-4.10",
-                    "sno": "4.10",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm404e-4.11",
-                    "sno": "4.11",
+                    "id": "26cm404e-4.9",
+                    "sno": "4.9",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

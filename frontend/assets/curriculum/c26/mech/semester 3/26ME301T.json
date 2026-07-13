@@ -3,12 +3,12 @@
     "subjectName": "Strength of Materials",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 90,
+    "totalPeriods": 80,
     "units": [
         {
             "unitNo": 1,
-            "title": "SIMPLE STRESSES AND STRAINS",
-            "totalPeriods": 18,
+            "title": "Simple Stresses And Strains",
+            "totalPeriods": 23,
             "topics": [
                 {
                     "id": "26me301t-1.1",
@@ -48,21 +48,21 @@
                 {
                     "id": "26me301t-1.6",
                     "sno": "1.6",
-                    "topic": "Draw the stress \u2013 strain diagrams for ductile and brittle materials subjected to tensile forces",
+                    "topic": "Draw the stress – strain diagrams for ductile and brittle materials subjected to tensile forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me301t-1.7",
                     "sno": "1.7",
-                    "topic": "Define elastic constants and Poisson\u2019s ratio",
+                    "topic": "Define elastic constants and Poisson’s ratio",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me301t-1.8",
                     "sno": "1.8",
-                    "topic": "Write the expression relating the elastic constants and Poisson\u2019s ratio",
+                    "topic": "Write the expression relating the elastic constants and Poisson’s ratio",
                     "period": 1,
                     "type": "theory"
                 },
@@ -76,7 +76,7 @@
                 {
                     "id": "26me301t-1.10",
                     "sno": "1.10",
-                    "topic": "Calculate the stresses and strains in bars of uniform and varying cross \u2013 sections subjected to end forces only",
+                    "topic": "Calculate the stresses and strains in bars of uniform and varying cross – sections subjected to end forces only",
                     "period": 1,
                     "type": "theory"
                 },
@@ -125,13 +125,48 @@
                 {
                     "id": "26me301t-1.17",
                     "sno": "1.17",
+                    "topic": "Deep dive into Explain the Mechanical properties of Metals",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me301t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Explain the concept of stress and strain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me301t-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Draw the stress – strain diagrams for ductile and brittle materials subjected to tensile forces",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me301t-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into Define elastic constants and Poisson’s ratio",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me301t-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into Write the expression relating the elastic constants and Poisson’s ratio",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me301t-1.22",
+                    "sno": "1.22",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me301t-1.18",
-                    "sno": "1.18",
+                    "id": "26me301t-1.23",
+                    "sno": "1.23",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -140,8 +175,8 @@
         },
         {
             "unitNo": 2,
-            "title": "STRAIN ENERGY",
-            "totalPeriods": 18,
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
             "topics": [
                 {
                     "id": "26me301t-2.1",
@@ -153,118 +188,6 @@
                 {
                     "id": "26me301t-2.2",
                     "sno": "2.2",
-                    "topic": "Understand the concept of strain energy and define the terms related to it",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.3",
-                    "sno": "2.3",
-                    "topic": "Write the expressions for the stresses developed in bars subjected to Gradual, Sudden and Impact loads",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.4",
-                    "sno": "2.4",
-                    "topic": "Calculate the Maximum stresses and strain energy stored in the bars subjected to above loads",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.5",
-                    "sno": "2.5",
-                    "topic": "Deep dive into STRAIN ENERGY",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.6",
-                    "sno": "2.6",
-                    "topic": "Deep dive into Understand the concept of strain energy and define the terms related to it",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.7",
-                    "sno": "2.7",
-                    "topic": "Deep dive into Write the expressions for the stresses developed in bars subjected to Gradual, Sudden and Impact loads",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.8",
-                    "sno": "2.8",
-                    "topic": "Deep dive into Calculate the Maximum stresses and strain energy stored in the bars subjected to above loads",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.9",
-                    "sno": "2.9",
-                    "topic": "Problem solving & practice on STRAIN ENERGY",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.10",
-                    "sno": "2.10",
-                    "topic": "Problem solving & practice on Understand the concept of strain energy and define the terms related to it",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.11",
-                    "sno": "2.11",
-                    "topic": "Problem solving & practice on Write the expressions for the stresses developed in bars subjected to Gradual, Sudden and Impact loads",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.12",
-                    "sno": "2.12",
-                    "topic": "Problem solving & practice on Calculate the Maximum stresses and strain energy stored in the bars subjected to above loads",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.13",
-                    "sno": "2.13",
-                    "topic": "Practical applications of STRAIN ENERGY",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.14",
-                    "sno": "2.14",
-                    "topic": "Practical applications of Understand the concept of strain energy and define the terms related to it",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.15",
-                    "sno": "2.15",
-                    "topic": "Practical applications of Write the expressions for the stresses developed in bars subjected to Gradual, Sudden and Impact loads",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.16",
-                    "sno": "2.16",
-                    "topic": "Practical applications of Calculate the Maximum stresses and strain energy stored in the bars subjected to above loads",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-2.17",
-                    "sno": "2.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me301t-2.18",
-                    "sno": "2.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +196,8 @@
         },
         {
             "unitNo": 3,
-            "title": "SHEAR FORCE AND BENDING MOMENT DIAGRAMS",
-            "totalPeriods": 18,
+            "title": "Shear Force And Bending Moment Diagrams",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26me301t-3.1",
@@ -321,7 +244,7 @@
                 {
                     "id": "26me301t-3.7",
                     "sno": "3.7",
-                    "topic": "Unit Test \u2013 II From 3.5 to 5.9",
+                    "topic": "Unit Test – II From 3.5 to 5.9",
                     "period": 1,
                     "type": "theory"
                 },
@@ -370,7 +293,7 @@
                 {
                     "id": "26me301t-3.14",
                     "sno": "3.14",
-                    "topic": "Deep dive into Unit Test \u2013 II From 3.5 to 5.9",
+                    "topic": "Deep dive into Unit Test – II From 3.5 to 5.9",
                     "period": 1,
                     "type": "theory"
                 },
@@ -391,13 +314,27 @@
                 {
                     "id": "26me301t-3.17",
                     "sno": "3.17",
+                    "topic": "Problem solving & practice on Classify beams based on supports",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me301t-3.18",
+                    "sno": "3.18",
+                    "topic": "Problem solving & practice on Define the shear force and bending moment in beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me301t-3.19",
+                    "sno": "3.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me301t-3.18",
-                    "sno": "3.18",
+                    "id": "26me301t-3.20",
+                    "sno": "3.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +343,8 @@
         },
         {
             "unitNo": 4,
-            "title": "THEORY OF SIMPLE BENDING AND DEFLECTION OF BEAMS",
-            "totalPeriods": 18,
+            "title": "Theory Of Simple Bending & Deflection Of Beams",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26me301t-4.1",
@@ -524,13 +461,27 @@
                 {
                     "id": "26me301t-4.17",
                     "sno": "4.17",
+                    "topic": "Problem solving & practice on Define the slope and deflection of beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me301t-4.18",
+                    "sno": "4.18",
+                    "topic": "Problem solving & practice on Write the expressions for slope and deflection in cantilever and simply supported beams for standard cases. Numerical problems related to the above cases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me301t-4.19",
+                    "sno": "4.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me301t-4.18",
-                    "sno": "4.18",
+                    "id": "26me301t-4.20",
+                    "sno": "4.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,8 +490,8 @@
         },
         {
             "unitNo": 5,
-            "title": "TORSION IN SHAFTS AND SPRINGS",
-            "totalPeriods": 18,
+            "title": "Torsion In Shafts And Springs",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26me301t-5.1",
@@ -636,34 +587,13 @@
                 {
                     "id": "26me301t-5.14",
                     "sno": "5.14",
-                    "topic": "Deep dive into Numerical problems related to the above cases",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-5.15",
-                    "sno": "5.15",
-                    "topic": "Deep dive into Function of spring",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-5.16",
-                    "sno": "5.16",
-                    "topic": "Deep dive into Types and applications of springs",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me301t-5.17",
-                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me301t-5.18",
-                    "sno": "5.18",
+                    "id": "26me301t-5.15",
+                    "sno": "5.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

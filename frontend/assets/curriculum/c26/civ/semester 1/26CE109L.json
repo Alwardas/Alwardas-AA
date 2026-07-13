@@ -7,307 +7,307 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Vernier calipers",
+            "title": "Physics Lab Experiments",
             "totalPeriods": 45,
             "topics": [
                 {
                     "id": "26ce109l-1.1",
                     "sno": "1.1",
-                    "topic": "Introduction to Unit 1 concepts",
+                    "topic": "Vernier calipers",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.2",
                     "sno": "1.2",
-                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "topic": "Micrometer (Screw gauge)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.3",
                     "sno": "1.3",
-                    "topic": "Practical application and standard setups for Unit 1",
+                    "topic": "Verification of Lami's theorem using concurrent forces",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.4",
                     "sno": "1.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Revision on Measurement and Force Experiments",
                     "period": 1,
-                    "type": "practical"
+                    "type": "revision"
                 },
                 {
                     "id": "26ce109l-1.5",
                     "sno": "1.5",
-                    "topic": "Deep dive into Introduction to Unit 1 concepts",
+                    "topic": "Determination of 'g' using simple pendulum",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.6",
                     "sno": "1.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 1 methodologies",
+                    "topic": "Focal length and focal power of convex lens by distant object method and U-V method",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.7",
                     "sno": "1.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 1",
+                    "topic": "Verification of Boyle's law using Quill tube",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.8",
                     "sno": "1.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "topic": "Revision on Gravity, Lens and Gas Law Experiments",
                     "period": 1,
-                    "type": "practical"
+                    "type": "revision"
                 },
                 {
                     "id": "26ce109l-1.9",
                     "sno": "1.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 1 concepts",
+                    "topic": "Drawing of magnetic lines of force",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.10",
                     "sno": "1.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 1 methodologies",
+                    "topic": "Resonance apparatus-Determination of velocity of sound in air",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.11",
                     "sno": "1.11",
-                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 1",
+                    "topic": "Refractive index of a solid using travelling microscope",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.12",
                     "sno": "1.12",
-                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "topic": "Revision on Magnetism, Sound and Refraction Experiments",
                     "period": 1,
-                    "type": "practical"
+                    "type": "revision"
                 },
                 {
                     "id": "26ce109l-1.13",
                     "sno": "1.13",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "topic": "Meter bridge-Determination of resistance and specific resistance of material of given wire",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.14",
                     "sno": "1.14",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "topic": "Projectile motion- study the range of a projectile for different launch angles",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.15",
                     "sno": "1.15",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "topic": "Generation of Beats using water columns",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.16",
                     "sno": "1.16",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Practice and training on Vernier calipers",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.17",
                     "sno": "1.17",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "topic": "Practice and training on Micrometer (Screw gauge)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.18",
                     "sno": "1.18",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "topic": "Practice and training on Verification of Lami's theorem using concurrent forces",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.19",
                     "sno": "1.19",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "topic": "Practice and training on Revision on Measurement and Force Experiments",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.20",
                     "sno": "1.20",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Practice and training on Determination of 'g' using simple pendulum",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.21",
                     "sno": "1.21",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "topic": "Practice and training on Focal length and focal power of convex lens by distant object method and U-V method",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.22",
                     "sno": "1.22",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "topic": "Practice and training on Verification of Boyle's law using Quill tube",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.23",
                     "sno": "1.23",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "topic": "Practice and training on Revision on Gravity, Lens and Gas Law Experiments",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.24",
                     "sno": "1.24",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Practice and training on Drawing of magnetic lines of force",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.25",
                     "sno": "1.25",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "topic": "Practice and training on Resonance apparatus-Determination of velocity of sound in air",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.26",
                     "sno": "1.26",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "topic": "Practice and training on Refractive index of a solid using travelling microscope",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.27",
                     "sno": "1.27",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "topic": "Practice and training on Revision on Magnetism, Sound and Refraction Experiments",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.28",
                     "sno": "1.28",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Practice and training on Meter bridge-Determination of resistance and specific resistance of material of given wire",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.29",
                     "sno": "1.29",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "topic": "Practice and training on Projectile motion- study the range of a projectile for different launch angles",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.30",
                     "sno": "1.30",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "topic": "Practice and training on Generation of Beats using water columns",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.31",
                     "sno": "1.31",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "topic": "Advanced practical on Vernier calipers",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.32",
                     "sno": "1.32",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Advanced practical on Micrometer (Screw gauge)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.33",
                     "sno": "1.33",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "topic": "Advanced practical on Verification of Lami's theorem using concurrent forces",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.34",
                     "sno": "1.34",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "topic": "Advanced practical on Revision on Measurement and Force Experiments",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.35",
                     "sno": "1.35",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "topic": "Advanced practical on Determination of 'g' using simple pendulum",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.36",
                     "sno": "1.36",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Advanced practical on Focal length and focal power of convex lens by distant object method and U-V method",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.37",
                     "sno": "1.37",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "topic": "Advanced practical on Verification of Boyle's law using Quill tube",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.38",
                     "sno": "1.38",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "topic": "Advanced practical on Revision on Gravity, Lens and Gas Law Experiments",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.39",
                     "sno": "1.39",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "topic": "Advanced practical on Drawing of magnetic lines of force",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.40",
                     "sno": "1.40",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Advanced practical on Resonance apparatus-Determination of velocity of sound in air",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.41",
                     "sno": "1.41",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
+                    "topic": "Advanced practical on Refractive index of a solid using travelling microscope",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.42",
                     "sno": "1.42",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
+                    "topic": "Advanced practical on Revision on Magnetism, Sound and Refraction Experiments",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce109l-1.43",
                     "sno": "1.43",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
+                    "topic": "Advanced practical on Meter bridge-Determination of resistance and specific resistance of material of given wire",
                     "period": 1,
                     "type": "practical"
                 },

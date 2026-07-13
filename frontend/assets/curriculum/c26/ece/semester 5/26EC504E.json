@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "Introduction to PLC",
-            "totalPeriods": 9,
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec504e-1.1",
@@ -41,34 +41,41 @@
                 {
                     "id": "26ec504e-1.5",
                     "sno": "1.5",
-                    "topic": "Practical applications of Introduction to PLC Identify the specified parts of PLC -Functions of PLC Parts -Identify different programming devices types -Differentiate different types of PLCs -redundancy concept of PLC",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec504e-1.6",
                     "sno": "1.6",
-                    "topic": "Practical applications of Introduction to PLC Identify the specified parts of PLC -Functions of PLC Parts -Identify different programming devices types -Differentiate different types of PLCs -redundancy concept of PLC",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec504e-1.7",
                     "sno": "1.7",
-                    "topic": "Practical applications of Introduction to PLC Identify the specified parts of PLC -Functions of PLC Parts -Identify different programming devices types -Differentiate different types of PLCs -redundancy concept of PLC",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec504e-1.8",
                     "sno": "1.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec504e-1.9",
+                    "sno": "1.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec504e-1.9",
-                    "sno": "1.9",
+                    "id": "26ec504e-1.10",
+                    "sno": "1.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -78,7 +85,7 @@
         {
             "unitNo": 2,
             "title": "PLC Hardware",
-            "totalPeriods": 9,
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec504e-2.1",
@@ -111,34 +118,41 @@
                 {
                     "id": "26ec504e-2.5",
                     "sno": "2.5",
-                    "topic": "Practical applications of PLC Hardware Discrete Ac input -DC input modules - Analog input modules - Discrete Ac output-DC output modules - Analog output modules -relay-isolated output modules",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec504e-2.6",
                     "sno": "2.6",
-                    "topic": "Practical applications of PLC Hardware Discrete Ac input -DC input modules - Analog input modules - Discrete Ac output-DC output modules - Analog output modules -relay-isolated output modules",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec504e-2.7",
                     "sno": "2.7",
-                    "topic": "Practical applications of PLC Hardware Discrete Ac input -DC input modules - Analog input modules - Discrete Ac output-DC output modules - Analog output modules -relay-isolated output modules",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec504e-2.8",
                     "sno": "2.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec504e-2.9",
+                    "sno": "2.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec504e-2.9",
-                    "sno": "2.9",
+                    "id": "26ec504e-2.10",
+                    "sno": "2.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -148,7 +162,7 @@
         {
             "unitNo": 3,
             "title": "PLC Programming and applications",
-            "totalPeriods": 9,
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec504e-3.1",
@@ -202,13 +216,20 @@
                 {
                     "id": "26ec504e-3.8",
                     "sno": "3.8",
+                    "topic": "Practical applications of Unit Test-II From 3.3 to 5.6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec504e-3.9",
+                    "sno": "3.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec504e-3.9",
-                    "sno": "3.9",
+                    "id": "26ec504e-3.10",
+                    "sno": "3.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -218,67 +239,39 @@
         {
             "unitNo": 4,
             "title": "Introduction to SCADA",
-            "totalPeriods": 9,
+            "totalPeriods": 5,
             "topics": [
                 {
                     "id": "26ec504e-4.1",
                     "sno": "4.1",
-                    "topic": "Introduction to SCADA Applications of SCADA -block diagram of SCADA \u2014SCADA configuration - Differentiate between SCADA and PLC",
+                    "topic": "Introduction to SCADA Applications of SCADA -block diagram of SCADA —SCADA configuration - Differentiate between SCADA and PLC",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec504e-4.2",
                     "sno": "4.2",
-                    "topic": "Deep dive into Introduction to SCADA Applications of SCADA -block diagram of SCADA \u2014SCADA configuration - Differentiate between SCADA and PLC",
+                    "topic": "Deep dive into Introduction to SCADA Applications of SCADA -block diagram of SCADA —SCADA configuration - Differentiate between SCADA and PLC",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec504e-4.3",
                     "sno": "4.3",
-                    "topic": "Problem solving & practice on Introduction to SCADA Applications of SCADA -block diagram of SCADA \u2014SCADA configuration - Differentiate between SCADA and PLC",
+                    "topic": "Problem solving & practice on Introduction to SCADA Applications of SCADA -block diagram of SCADA —SCADA configuration - Differentiate between SCADA and PLC",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec504e-4.4",
                     "sno": "4.4",
-                    "topic": "Practical applications of Introduction to SCADA Applications of SCADA -block diagram of SCADA \u2014SCADA configuration - Differentiate between SCADA and PLC",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec504e-4.5",
-                    "sno": "4.5",
-                    "topic": "Practical applications of Introduction to SCADA Applications of SCADA -block diagram of SCADA \u2014SCADA configuration - Differentiate between SCADA and PLC",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec504e-4.6",
-                    "sno": "4.6",
-                    "topic": "Practical applications of Introduction to SCADA Applications of SCADA -block diagram of SCADA \u2014SCADA configuration - Differentiate between SCADA and PLC",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec504e-4.7",
-                    "sno": "4.7",
-                    "topic": "Practical applications of Introduction to SCADA Applications of SCADA -block diagram of SCADA \u2014SCADA configuration - Differentiate between SCADA and PLC",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec504e-4.8",
-                    "sno": "4.8",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec504e-4.9",
-                    "sno": "4.9",
+                    "id": "26ec504e-4.5",
+                    "sno": "4.5",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -287,8 +280,8 @@
         },
         {
             "unitNo": 5,
-            "title": "SCADA interfacing and applications.",
-            "totalPeriods": 9,
+            "title": "SCADA interfacing and applications",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec504e-5.1",
@@ -328,7 +321,7 @@
                 {
                     "id": "26ec504e-5.6",
                     "sno": "5.6",
-                    "topic": "SCADA interfacing and applications. Interfacing of SCADA with PLC \u2014steps required for creating SCADA screen - Concept of tag and types of tags-Block diagram of SCADA system for Industrial applications",
+                    "topic": "SCADA interfacing and applications. Interfacing of SCADA with PLC —steps required for creating SCADA screen - Concept of tag and types of tags-Block diagram of SCADA system for Industrial applications",
                     "period": 1,
                     "type": "theory"
                 },
@@ -342,13 +335,20 @@
                 {
                     "id": "26ec504e-5.8",
                     "sno": "5.8",
+                    "topic": "Deep dive into Explain the Steps for creating SCADA screen for simple object",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec504e-5.9",
+                    "sno": "5.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec504e-5.9",
-                    "sno": "5.9",
+                    "id": "26ec504e-5.10",
+                    "sno": "5.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

@@ -3,12 +3,12 @@
     "subjectName": "PHYSICS AND CHEMISTRY LAB",
     "regulation": "C26",
     "semester": 1,
-    "totalPeriods": 90,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
-            "title": "Practice volumetric measurements (using pipettes, measuring jars",
-            "totalPeriods": 6,
+            "title": "Vernier calipers",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-1.1",
@@ -20,34 +20,13 @@
                 {
                     "id": "26cm109l-1.2",
                     "sno": "1.2",
-                    "topic": "Deep dive into Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-1.3",
-                    "sno": "1.3",
-                    "topic": "Problem solving & practice on Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-1.4",
-                    "sno": "1.4",
-                    "topic": "Practical applications of Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-1.5",
-                    "sno": "1.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-1.6",
-                    "sno": "1.6",
+                    "id": "26cm109l-1.3",
+                    "sno": "1.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -56,8 +35,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Identify the chemical compounds and solutions by senses.",
-            "totalPeriods": 6,
+            "title": "Micrometer (Screw gauge)",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-2.1",
@@ -69,34 +48,13 @@
                 {
                     "id": "26cm109l-2.2",
                     "sno": "2.2",
-                    "topic": "Deep dive into Identify the chemical compounds and solutions by senses",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-2.3",
-                    "sno": "2.3",
-                    "topic": "Problem solving & practice on Identify the chemical compounds and solutions by senses",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-2.4",
-                    "sno": "2.4",
-                    "topic": "Practical applications of Identify the chemical compounds and solutions by senses",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-2.5",
-                    "sno": "2.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-2.6",
-                    "sno": "2.6",
+                    "id": "26cm109l-2.3",
+                    "sno": "2.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -105,8 +63,8 @@
         },
         {
             "unitNo": 3,
-            "title": "Practice making standard Na2CO3 solutions.",
-            "totalPeriods": 6,
+            "title": "Verification of Lami’s theorem using concurrent forces",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-3.1",
@@ -118,34 +76,13 @@
                 {
                     "id": "26cm109l-3.2",
                     "sno": "3.2",
-                    "topic": "Deep dive into Practice making standard Na2CO3 solutions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-3.3",
-                    "sno": "3.3",
-                    "topic": "Problem solving & practice on Practice making standard Na2CO3 solutions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-3.4",
-                    "sno": "3.4",
-                    "topic": "Practical applications of Practice making standard Na2CO3 solutions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-3.5",
-                    "sno": "3.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-3.6",
-                    "sno": "3.6",
+                    "id": "26cm109l-3.3",
+                    "sno": "3.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -154,8 +91,8 @@
         },
         {
             "unitNo": 4,
-            "title": "Conduct titrations adopting standard procedures and using standard",
-            "totalPeriods": 6,
+            "title": "Determination of ‘g’ using simple pendulum",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-4.1",
@@ -167,34 +104,13 @@
                 {
                     "id": "26cm109l-4.2",
                     "sno": "4.2",
-                    "topic": "Deep dive into Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-4.3",
-                    "sno": "4.3",
-                    "topic": "Problem solving & practice on Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-4.4",
-                    "sno": "4.4",
-                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-4.5",
-                    "sno": "4.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-4.6",
-                    "sno": "4.6",
+                    "id": "26cm109l-4.3",
+                    "sno": "4.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -203,8 +119,8 @@
         },
         {
             "unitNo": 5,
-            "title": "Conduct titrations adopting standard procedures to determine the",
-            "totalPeriods": 6,
+            "title": "Focal length and focal power of convex lens by distant object method and U-V method",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-5.1",
@@ -216,34 +132,13 @@
                 {
                     "id": "26cm109l-5.2",
                     "sno": "5.2",
-                    "topic": "Deep dive into Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-5.3",
-                    "sno": "5.3",
-                    "topic": "Problem solving & practice on Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-5.4",
-                    "sno": "5.4",
-                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-5.5",
-                    "sno": "5.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-5.6",
-                    "sno": "5.6",
+                    "id": "26cm109l-5.3",
+                    "sno": "5.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -252,47 +147,26 @@
         },
         {
             "unitNo": 6,
-            "title": "Conduct titrations adopting standard procedures and using standard",
-            "totalPeriods": 6,
+            "title": "Verification of Boyle’s law using Quill tube",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-6.1",
                     "sno": "6.1",
-                    "topic": "Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt",
+                    "topic": "Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr’s Salt",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm109l-6.2",
                     "sno": "6.2",
-                    "topic": "Deep dive into Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-6.3",
-                    "sno": "6.3",
-                    "topic": "Problem solving & practice on Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-6.4",
-                    "sno": "6.4",
-                    "topic": "Practical applications of Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-6.5",
-                    "sno": "6.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-6.6",
-                    "sno": "6.6",
+                    "id": "26cm109l-6.3",
+                    "sno": "6.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -301,47 +175,26 @@
         },
         {
             "unitNo": 7,
-            "title": "Conduct titrations adopting standard procedures to determine the total",
-            "totalPeriods": 6,
+            "title": "Drawing of magnetic lines of force",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-7.1",
                     "sno": "7.1",
-                    "topic": "Introduction to Unit 7 concepts",
+                    "topic": "Study and analysis of Unit 7",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm109l-7.2",
                     "sno": "7.2",
-                    "topic": "Detailed analysis of Unit 7 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-7.3",
-                    "sno": "7.3",
-                    "topic": "Practical application and standard setups for Unit 7",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-7.4",
-                    "sno": "7.4",
-                    "topic": "Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-7.5",
-                    "sno": "7.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-7.6",
-                    "sno": "7.6",
+                    "id": "26cm109l-7.3",
+                    "sno": "7.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -350,8 +203,8 @@
         },
         {
             "unitNo": 8,
-            "title": "Conduct titrations adopting standard procedures to determine the",
-            "totalPeriods": 6,
+            "title": "Resonance apparatus–Determination of velocity of sound in air",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-8.1",
@@ -363,34 +216,13 @@
                 {
                     "id": "26cm109l-8.2",
                     "sno": "8.2",
-                    "topic": "Deep dive into Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-8.3",
-                    "sno": "8.3",
-                    "topic": "Problem solving & practice on Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-8.4",
-                    "sno": "8.4",
-                    "topic": "Practical applications of Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-8.5",
-                    "sno": "8.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-8.6",
-                    "sno": "8.6",
+                    "id": "26cm109l-8.3",
+                    "sno": "8.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -399,8 +231,8 @@
         },
         {
             "unitNo": 9,
-            "title": "Conduct the test on given samples of water / solutions (like soft drinks",
-            "totalPeriods": 6,
+            "title": "Refractive index of a solid using travelling microscope",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-9.1",
@@ -412,34 +244,13 @@
                 {
                     "id": "26cm109l-9.2",
                     "sno": "9.2",
-                    "topic": "Deep dive into Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-9.3",
-                    "sno": "9.3",
-                    "topic": "Problem solving & practice on Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-9.4",
-                    "sno": "9.4",
-                    "topic": "Practical applications of Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-9.5",
-                    "sno": "9.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-9.6",
-                    "sno": "9.6",
+                    "id": "26cm109l-9.3",
+                    "sno": "9.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -448,8 +259,8 @@
         },
         {
             "unitNo": 10,
-            "title": "Carry out the electrolysis process to estimate the amount of Copper",
-            "totalPeriods": 6,
+            "title": "Meter bridge–Determination of resistance and specific resistance of material of given wire",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-10.1",
@@ -461,34 +272,13 @@
                 {
                     "id": "26cm109l-10.2",
                     "sno": "10.2",
-                    "topic": "Deep dive into Carry out the electrolysis process to estimate the amount of Copper deposited on an object",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-10.3",
-                    "sno": "10.3",
-                    "topic": "Problem solving & practice on Carry out the electrolysis process to estimate the amount of Copper deposited on an object",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-10.4",
-                    "sno": "10.4",
-                    "topic": "Practical applications of Carry out the electrolysis process to estimate the amount of Copper deposited on an object",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-10.5",
-                    "sno": "10.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-10.6",
-                    "sno": "10.6",
+                    "id": "26cm109l-10.3",
+                    "sno": "10.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -497,8 +287,8 @@
         },
         {
             "unitNo": 11,
-            "title": "Conduct the test on given samples of solutions (coloured and non",
-            "totalPeriods": 6,
+            "title": "Projectile motion- study the range of a projectile for different launch angles",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-11.1",
@@ -510,34 +300,13 @@
                 {
                     "id": "26cm109l-11.2",
                     "sno": "11.2",
-                    "topic": "Deep dive into Conduct the test on given samples of solutions (coloured and non- coloured) to determine their turbidity in NTU",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-11.3",
-                    "sno": "11.3",
-                    "topic": "Problem solving & practice on Conduct the test on given samples of solutions (coloured and non- coloured) to determine their turbidity in NTU",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-11.4",
-                    "sno": "11.4",
-                    "topic": "Practical applications of Conduct the test on given samples of solutions (coloured and non- coloured) to determine their turbidity in NTU",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-11.5",
-                    "sno": "11.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-11.6",
-                    "sno": "11.6",
+                    "id": "26cm109l-11.3",
+                    "sno": "11.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -546,8 +315,8 @@
         },
         {
             "unitNo": 12,
-            "title": "Understand the construction and working principle of a Galvanic cell and",
-            "totalPeriods": 6,
+            "title": "Generation of Beats using water columns",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-12.1",
@@ -559,34 +328,13 @@
                 {
                     "id": "26cm109l-12.2",
                     "sno": "12.2",
-                    "topic": "Deep dive into Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-12.3",
-                    "sno": "12.3",
-                    "topic": "Problem solving & practice on Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-12.4",
-                    "sno": "12.4",
-                    "topic": "Practical applications of Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-12.5",
-                    "sno": "12.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-12.6",
-                    "sno": "12.6",
+                    "id": "26cm109l-12.3",
+                    "sno": "12.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -595,8 +343,8 @@
         },
         {
             "unitNo": 13,
-            "title": "Understand the process of polymerization by preparing Bakelite, a",
-            "totalPeriods": 6,
+            "title": "Preparation of a Polymer (Bakelite).",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-13.1",
@@ -608,34 +356,13 @@
                 {
                     "id": "26cm109l-13.2",
                     "sno": "13.2",
-                    "topic": "Deep dive into Understand the process of polymerization by preparing Bakelite, a thermosetting polymer and study its formation through a condensation reaction",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-13.3",
-                    "sno": "13.3",
-                    "topic": "Problem solving & practice on Understand the process of polymerization by preparing Bakelite, a thermosetting polymer and study its formation through a condensation reaction",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-13.4",
-                    "sno": "13.4",
-                    "topic": "Practical applications of Understand the process of polymerization by preparing Bakelite, a thermosetting polymer and study its formation through a condensation reaction",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-13.5",
-                    "sno": "13.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-13.6",
-                    "sno": "13.6",
+                    "id": "26cm109l-13.3",
+                    "sno": "13.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -644,8 +371,8 @@
         },
         {
             "unitNo": 14,
-            "title": "Collect water sample from nearby water body and test for any two",
-            "totalPeriods": 6,
+            "title": "Open Ended Experiments/Micro Projects – I.",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-14.1",
@@ -657,34 +384,13 @@
                 {
                     "id": "26cm109l-14.2",
                     "sno": "14.2",
-                    "topic": "Deep dive into Collect water sample from nearby water body and test for any two parameters",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-14.3",
-                    "sno": "14.3",
-                    "topic": "Problem solving & practice on Collect water sample from nearby water body and test for any two parameters",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-14.4",
-                    "sno": "14.4",
-                    "topic": "Practical applications of Collect water sample from nearby water body and test for any two parameters",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-14.5",
-                    "sno": "14.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-14.6",
-                    "sno": "14.6",
+                    "id": "26cm109l-14.3",
+                    "sno": "14.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -693,47 +399,26 @@
         },
         {
             "unitNo": 15,
-            "title": "Collect water sample from nearby sewage/industrial effluent and test for",
-            "totalPeriods": 6,
+            "title": "Open Ended Experiments/Micro Projects – II.",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26cm109l-15.1",
                     "sno": "15.1",
-                    "topic": "Introduction to Unit 15 concepts",
+                    "topic": "Study and analysis of Unit 15",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26cm109l-15.2",
                     "sno": "15.2",
-                    "topic": "Detailed analysis of Unit 15 methodologies",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-15.3",
-                    "sno": "15.3",
-                    "topic": "Practical application and standard setups for Unit 15",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-15.4",
-                    "sno": "15.4",
-                    "topic": "Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm109l-15.5",
-                    "sno": "15.5",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm109l-15.6",
-                    "sno": "15.6",
+                    "id": "26cm109l-15.3",
+                    "sno": "15.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

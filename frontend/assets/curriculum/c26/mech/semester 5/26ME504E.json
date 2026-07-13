@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "INTRODUCTION TO MECHATRONICS AND SENSORS",
-            "totalPeriods": 9,
+            "title": "Introduction to Mechatronics and Sensors",
+            "totalPeriods": 5,
             "topics": [
                 {
                     "id": "26me504e-1.1",
@@ -41,44 +41,16 @@
                 {
                     "id": "26me504e-1.5",
                     "sno": "1.5",
-                    "topic": "Define a sensor and classify them with examples",
+                    "topic": "Define a sensor and classify them with examples; Differentiate between Analog and Digital sensors; Explain the various types of sensors used in mechatronics systems; Evaluate the advantages and disadvantages of using mechatronic systems in manufa...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26me504e-1.6",
-                    "sno": "1.6",
-                    "topic": "Differentiate between Analog and Digital sensors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me504e-1.7",
-                    "sno": "1.7",
-                    "topic": "Explain the various types of sensors used in mechatronics systems; Evaluate the advantages and disadvantages of using mechatronic systems in manufa...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me504e-1.8",
-                    "sno": "1.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me504e-1.9",
-                    "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "ACTUATORS AND SIGNAL CONDITIONING",
-            "totalPeriods": 9,
+            "title": "Actuators and Signal Conditioning",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me504e-2.1",
@@ -132,13 +104,20 @@
                 {
                     "id": "26me504e-2.8",
                     "sno": "2.8",
+                    "topic": "Deep dive into ACTUATORS AND SIGNAL CONDITIONING",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me504e-2.9",
+                    "sno": "2.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me504e-2.9",
-                    "sno": "2.9",
+                    "id": "26me504e-2.10",
+                    "sno": "2.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -147,8 +126,8 @@
         },
         {
             "unitNo": 3,
-            "title": "DIGITAL ELECTRONICS AND MICROCONTROLLERS",
-            "totalPeriods": 9,
+            "title": "Digital Electronics and Microcontrollers",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me504e-3.1",
@@ -202,13 +181,20 @@
                 {
                     "id": "26me504e-3.8",
                     "sno": "3.8",
+                    "topic": "Deep dive into DIGITAL ELECTRONICS AND MICROCONTROLLERS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me504e-3.9",
+                    "sno": "3.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me504e-3.9",
-                    "sno": "3.9",
+                    "id": "26me504e-3.10",
+                    "sno": "3.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -217,8 +203,8 @@
         },
         {
             "unitNo": 4,
-            "title": "SYSTEM MODELLING AND CONTROL SYSTEMS",
-            "totalPeriods": 9,
+            "title": "System Modelling and Control Systems",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me504e-4.1",
@@ -272,13 +258,20 @@
                 {
                     "id": "26me504e-4.8",
                     "sno": "4.8",
+                    "topic": "Deep dive into SYSTEM MODELLING AND CONTROL SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me504e-4.9",
+                    "sno": "4.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me504e-4.9",
-                    "sno": "4.9",
+                    "id": "26me504e-4.10",
+                    "sno": "4.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -287,8 +280,8 @@
         },
         {
             "unitNo": 5,
-            "title": "PROGRAMMABLE LOGIC CONTROLLERS (PLCS) AND MECHATRONICS SYSTEM DESIGN",
-            "totalPeriods": 9,
+            "title": "Programmable Logic Controllers (PLCs) and Mechatronics System Design",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me504e-5.1",
@@ -342,13 +335,20 @@
                 {
                     "id": "26me504e-5.8",
                     "sno": "5.8",
+                    "topic": "Deep dive into PROGRAMMABLE LOGIC CONTROLLERS (PLCS) AND MECHATRONICS SYSTEM DESIGN",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me504e-5.9",
+                    "sno": "5.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me504e-5.9",
-                    "sno": "5.9",
+                    "id": "26me504e-5.10",
+                    "sno": "5.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

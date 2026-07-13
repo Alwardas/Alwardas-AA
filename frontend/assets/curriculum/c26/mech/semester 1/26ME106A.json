@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "INTRODUCTION TO PYTHON PROGRAMMING",
-            "totalPeriods": 12,
+            "title": "Introduction to Python Programming",
+            "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26me106a-1.1",
@@ -27,79 +27,16 @@
                 {
                     "id": "26me106a-1.3",
                     "sno": "1.3",
-                    "topic": "List Python features",
+                    "topic": "List Python features; Describe Python Integrated Development and Learning Environment (IDLE); Explain Applications of Python; Compare with other programming languages; INTRODUCTION TO PYTHON PROGRAMMING History of Python, Introduction to Python and installation, Explain Applications of Python. Comparison with other programming languages (e.g., MATLAB, C++ - Brief overview of why Python is suitable for beginners and engineering tasks). Motivation for Computing",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26me106a-1.4",
-                    "sno": "1.4",
-                    "topic": "Describe Python Integrated Development and Learning Environment (IDLE)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me106a-1.5",
-                    "sno": "1.5",
-                    "topic": "Explain Applications of Python",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me106a-1.6",
-                    "sno": "1.6",
-                    "topic": "Compare with other programming languages",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me106a-1.7",
-                    "sno": "1.7",
-                    "topic": "INTRODUCTION TO PYTHON PROGRAMMING History of Python, Introduction to Python and installation, Explain Applications of Python. Comparison with other programming languages (e.g., MATLAB, C++ - Brief overview of why Python is suitable for beginners and engineering tasks). Motivation for Computing",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me106a-1.8",
-                    "sno": "1.8",
-                    "topic": "Deep dive into INTRODUCTION TO PYTHON PROGRAMMING",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me106a-1.9",
-                    "sno": "1.9",
-                    "topic": "Deep dive into Understand the evolution, versatility and popularity of Python language",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me106a-1.10",
-                    "sno": "1.10",
-                    "topic": "Deep dive into List Python features",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me106a-1.11",
-                    "sno": "1.11",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me106a-1.12",
-                    "sno": "1.12",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "PYTHON FUNDAMENTALS",
-            "totalPeriods": 12,
+            "title": "Python Fundamentals",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26me106a-2.1",
@@ -174,13 +111,34 @@
                 {
                     "id": "26me106a-2.11",
                     "sno": "2.11",
+                    "topic": "Deep dive into PYTHON FUNDAMENTALS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into Explain Identifiers, Keywords, Indentation and Variables",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-2.13",
+                    "sno": "2.13",
+                    "topic": "Deep dive into Explain various datatypes (Int, float, Boolean, string, and list)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-2.14",
+                    "sno": "2.14",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me106a-2.12",
-                    "sno": "2.12",
+                    "id": "26me106a-2.15",
+                    "sno": "2.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -189,8 +147,8 @@
         },
         {
             "unitNo": 3,
-            "title": "CONTROL FLOW",
-            "totalPeriods": 12,
+            "title": "Control Flow",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me106a-3.1",
@@ -251,27 +209,13 @@
                 {
                     "id": "26me106a-3.9",
                     "sno": "3.9",
-                    "topic": "Problem solving & practice on CONTROL FLOW If...Else Statements - Conditions and logic , Comparison Operators - >, <, ==, !=, etc., Logical Operators - and, or, not ,Nested Conditions & Elif - More complex decision trees",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me106a-3.10",
-                    "sno": "3.10",
-                    "topic": "Practical applications of CONTROL FLOW",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me106a-3.11",
-                    "sno": "3.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me106a-3.12",
-                    "sno": "3.12",
+                    "id": "26me106a-3.10",
+                    "sno": "3.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -280,7 +224,7 @@
         },
         {
             "unitNo": 4,
-            "title": "LOOPS",
+            "title": "Loops",
             "totalPeriods": 12,
             "topics": [
                 {
@@ -371,8 +315,8 @@
         },
         {
             "unitNo": 5,
-            "title": "PRACTICE SIMPLE PROGRAMMES",
-            "totalPeriods": 12,
+            "title": "Practice the Simple Programs using the Control Flow and Loops",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26me106a-5.1",
@@ -384,7 +328,7 @@
                 {
                     "id": "26me106a-5.2",
                     "sno": "5.2",
-                    "topic": "PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
+                    "topic": "PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first “n” natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
                     "period": 1,
                     "type": "theory"
                 },
@@ -398,7 +342,7 @@
                 {
                     "id": "26me106a-5.4",
                     "sno": "5.4",
-                    "topic": "Deep dive into PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
+                    "topic": "Deep dive into PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first “n” natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
                     "period": 1,
                     "type": "theory"
                 },
@@ -412,7 +356,7 @@
                 {
                     "id": "26me106a-5.6",
                     "sno": "5.6",
-                    "topic": "Problem solving & practice on PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
+                    "topic": "Problem solving & practice on PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first “n” natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
                     "period": 1,
                     "type": "theory"
                 },
@@ -426,34 +370,90 @@
                 {
                     "id": "26me106a-5.8",
                     "sno": "5.8",
-                    "topic": "Practical applications of PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
+                    "topic": "Practical applications of PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first “n” natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me106a-5.9",
                     "sno": "5.9",
-                    "topic": "Practical applications of PRACTICE SIMPLE PROGRAMMES",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me106a-5.10",
                     "sno": "5.10",
-                    "topic": "Practical applications of PYTHON PROGRAMMING Write a Program to Find the Largest Among Three Numbers , Write a Program to Temperature conversion from Celsius to Fahrenheit, Write a Program to check a number is prime or not, Write a Program to Convert Kilometer to Miles, Write a Program to display multiplication table of a given number, Write a Program to sum of square of first \u201cn\u201d natural numbers, Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal , Write a Program for creating a Hotel bill, Write a Program to calculate unknowns of Ideal gas equations. REFERENCEBOOKS 1. Python Programing by K. Nageswara Rao, Shaikh Akbar - Scitech Publications (India) Pvt. Ltd. 2. Python Programming: A Modern Approach, Vamsi Kurama, Pearson",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me106a-5.11",
                     "sno": "5.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.12",
+                    "sno": "5.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.13",
+                    "sno": "5.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.14",
+                    "sno": "5.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.15",
+                    "sno": "5.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.16",
+                    "sno": "5.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.17",
+                    "sno": "5.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.18",
+                    "sno": "5.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me106a-5.19",
+                    "sno": "5.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me106a-5.12",
-                    "sno": "5.12",
+                    "id": "26me106a-5.20",
+                    "sno": "5.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

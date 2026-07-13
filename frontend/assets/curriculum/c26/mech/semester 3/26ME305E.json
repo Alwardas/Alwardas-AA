@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "MEASURING INSTRUMENTS & THEIR CHARACTERISTICS",
-            "totalPeriods": 9,
+            "title": "Measuring Instruments & their Characteristics",
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26me305e-1.1",
@@ -55,7 +55,7 @@
                 {
                     "id": "26me305e-1.7",
                     "sno": "1.7",
-                    "topic": "Explain and illustrate the working principle of: \u27a2 Mechanical Tachometers \u2013 Revolution Counter and Timer, Slipping Clutch Tachometer. \u27a2 Electrical ...",
+                    "topic": "Explain and illustrate the working principle of: ➢ Mechanical Tachometers – Revolution Counter and Timer, Slipping Clutch Tachometer. ➢ Electrical ...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -65,20 +65,13 @@
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26me305e-1.9",
-                    "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "LINEAR AND ANGULAR MEASUREMENT",
-            "totalPeriods": 9,
+            "title": "Linear and Angular Measurements",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26me305e-2.1",
@@ -132,13 +125,34 @@
                 {
                     "id": "26me305e-2.8",
                     "sno": "2.8",
+                    "topic": "Deep dive into LINEAR AND ANGULAR MEASUREMENT Linear Measurement",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me305e-2.9",
+                    "sno": "2.9",
+                    "topic": "Deep dive into Describe the construction features and use of Steel Rule, Calipers, Surface Plate, Angle Plate, V-block; Describe the construction features and use...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me305e-2.10",
+                    "sno": "2.10",
+                    "topic": "Deep dive into Explain slip gauges, Cylinder bore gauges, feeler, wire gauges, Telescopic Gauge, Gauge Blocks. Checking flatness, roundness, and squareness Angula...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me305e-2.11",
+                    "sno": "2.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me305e-2.9",
-                    "sno": "2.9",
+                    "id": "26me305e-2.12",
+                    "sno": "2.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -147,8 +161,8 @@
         },
         {
             "unitNo": 3,
-            "title": "DIMENSIONAL AND SURFACE METROLOGY",
-            "totalPeriods": 9,
+            "title": "Dimensional and Surface Metrology",
+            "totalPeriods": 5,
             "topics": [
                 {
                     "id": "26me305e-3.1",
@@ -181,44 +195,16 @@
                 {
                     "id": "26me305e-3.5",
                     "sno": "3.5",
-                    "topic": "Analyze Factors Affecting Surface Finish",
+                    "topic": "Analyze Factors Affecting Surface Finish; Calculate CLA, RMS, and Ra Values; Describe and Demonstrate Stylus Probe Instruments – Taylor Surface Talysurf; DIMENSIONAL AND SURFACE METROLOGY Limits, Fits, and Tolerance, Termino...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26me305e-3.6",
-                    "sno": "3.6",
-                    "topic": "Calculate CLA, RMS, and Ra Values",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me305e-3.7",
-                    "sno": "3.7",
-                    "topic": "Describe and Demonstrate Stylus Probe Instruments \u2013 Taylor Surface Talysurf; DIMENSIONAL AND SURFACE METROLOGY Limits, Fits, and Tolerance, Termino...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me305e-3.8",
-                    "sno": "3.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me305e-3.9",
-                    "sno": "3.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "TRANSDUCERS",
-            "totalPeriods": 9,
+            "title": "Transducers",
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26me305e-4.1",
@@ -275,20 +261,13 @@
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26me305e-4.9",
-                    "sno": "4.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "MEASUREMENT OF ANGULAR SPEED, TEMPERATURE, PRESSURE, AND FLOW",
-            "totalPeriods": 9,
+            "title": "Measurement of Angular Speed, Temperature, Pressure, and Flow",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26me305e-5.1",
@@ -321,7 +300,7 @@
                 {
                     "id": "26me305e-5.5",
                     "sno": "5.5",
-                    "topic": "MEASUREMENT OF ANGULAR SPEED, TEMPERATURE, PRESSURE, AND FLOW Measurement of angular speed: List the types of Tachometers, explain the working principle of the following Tachometers with a legible sketch: Mechanical Tachometers - Revolution counter and timer, slipping Clutch Tachometer. Electrical / electronic tachometers, Stroboscopes, Incrementa l and absolute encoders, Laser Doppler velocimeters / interferometers. Measurement of Temperature: List the types of thermometers, explain the Bimetallic thermometer, Thermocouples, thermistors, Bimetallic thermometers, Infrar ed pyrometers, and thermal cameras, Fiber optic temperature sensors, Calibration, range, linearization, and error sources. Explain Pyrometers-Radiation and Optical. Measurement of Pressure: List the Types of Pressure Measurement Devices. Explain the Bourdon tube Pressure gauge, Manometers, Elastic and force balance transducers, Strain gauge pressure cells, Piezoelectric, piezo resistive, and capacitive pressure sensors, High -pressure and low -pressure measurement techniques, Applications for mechanical and industrial systems. Measurement of Flow: List the Types of Flow meters- Explain Rota meters, hot wire anemometer (constant temp and constant Current), and an Ultrasonic flow meter REFERENCE BOOKS 1. Mechanical Measurements &Control -Dr.. D. S. Kumar (Metropolitan Book Co. Pvt.Ltd) 2. Mechanical & Industrial Measurements - R.K. Jain 3. Engineering Metrology and Measurements \u2013 N.V. Raghavendra & L. Krishnamurthy 4. A Textbook of Engineering Metrology \u2013 I.C. Gupta 5. Metrology and Measurement\u2013 Anand Bewoor & Vinay Kulkarni Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.3 Unit Test \u2013 II From 3.4 to 5.4",
+                    "topic": "MEASUREMENT OF ANGULAR SPEED, TEMPERATURE, PRESSURE, AND FLOW Measurement of angular speed: List the types of Tachometers, explain the working principle of the following Tachometers with a legible sketch: Mechanical Tachometers - Revolution counter and timer, slipping Clutch Tachometer. Electrical / electronic tachometers, Stroboscopes, Incrementa l and absolute encoders, Laser Doppler velocimeters / interferometers. Measurement of Temperature: List the types of thermometers, explain the Bimetallic thermometer, Thermocouples, thermistors, Bimetallic thermometers, Infrar ed pyrometers, and thermal cameras, Fiber optic temperature sensors, Calibration, range, linearization, and error sources. Explain Pyrometers-Radiation and Optical. Measurement of Pressure: List the Types of Pressure Measurement Devices. Explain the Bourdon tube Pressure gauge, Manometers, Elastic and force balance transducers, Strain gauge pressure cells, Piezoelectric, piezo resistive, and capacitive pressure sensors, High -pressure and low -pressure measurement techniques, Applications for mechanical and industrial systems. Measurement of Flow: List the Types of Flow meters- Explain Rota meters, hot wire anemometer (constant temp and constant Current), and an Ultrasonic flow meter REFERENCE BOOKS 1. Mechanical Measurements &Control -Dr.. D. S. Kumar (Metropolitan Book Co. Pvt.Ltd) 2. Mechanical & Industrial Measurements - R.K. Jain 3. Engineering Metrology and Measurements – N.V. Raghavendra & L. Krishnamurthy 4. A Textbook of Engineering Metrology – I.C. Gupta 5. Metrology and Measurement– Anand Bewoor & Vinay Kulkarni Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test – I From 1.1 to 3.3 Unit Test – II From 3.4 to 5.4",
                     "period": 1,
                     "type": "theory"
                 },
@@ -342,13 +321,34 @@
                 {
                     "id": "26me305e-5.8",
                     "sno": "5.8",
+                    "topic": "Deep dive into Measurement of Temperature",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me305e-5.9",
+                    "sno": "5.9",
+                    "topic": "Deep dive into List Pressure Measurement Devices and Explain Bourdon Tube Pressure Gauge",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me305e-5.10",
+                    "sno": "5.10",
+                    "topic": "Deep dive into MEASUREMENT OF ANGULAR SPEED, TEMPERATURE, PRESSURE, AND FLOW Measurement of angular speed: List the types of Tachometers, explain the working principle of the following Tachometers with a legible sketch: Mechanical Tachometers - Revolution counter and timer, slipping Clutch Tachometer. Electrical / electronic tachometers, Stroboscopes, Incrementa l and absolute encoders, Laser Doppler velocimeters / interferometers. Measurement of Temperature: List the types of thermometers, explain the Bimetallic thermometer, Thermocouples, thermistors, Bimetallic thermometers, Infrar ed pyrometers, and thermal cameras, Fiber optic temperature sensors, Calibration, range, linearization, and error sources. Explain Pyrometers-Radiation and Optical. Measurement of Pressure: List the Types of Pressure Measurement Devices. Explain the Bourdon tube Pressure gauge, Manometers, Elastic and force balance transducers, Strain gauge pressure cells, Piezoelectric, piezo resistive, and capacitive pressure sensors, High -pressure and low -pressure measurement techniques, Applications for mechanical and industrial systems. Measurement of Flow: List the Types of Flow meters- Explain Rota meters, hot wire anemometer (constant temp and constant Current), and an Ultrasonic flow meter REFERENCE BOOKS 1. Mechanical Measurements &Control -Dr.. D. S. Kumar (Metropolitan Book Co. Pvt.Ltd) 2. Mechanical & Industrial Measurements - R.K. Jain 3. Engineering Metrology and Measurements – N.V. Raghavendra & L. Krishnamurthy 4. A Textbook of Engineering Metrology – I.C. Gupta 5. Metrology and Measurement– Anand Bewoor & Vinay Kulkarni Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test – I From 1.1 to 3.3 Unit Test – II From 3.4 to 5.4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me305e-5.11",
+                    "sno": "5.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me305e-5.9",
-                    "sno": "5.9",
+                    "id": "26me305e-5.12",
+                    "sno": "5.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "FUNDAMENTALS OF REFRIGERATION",
-            "totalPeriods": 9,
+            "title": "Fundamentals of Refrigeration",
+            "totalPeriods": 7,
             "topics": [
                 {
                     "id": "26me404e-1.1",
@@ -20,7 +20,7 @@
                 {
                     "id": "26me404e-1.2",
                     "sno": "1.2",
-                    "topic": "Define the term \u2018Refrigeration\u2019",
+                    "topic": "Define the term ‘Refrigeration’",
                     "period": 1,
                     "type": "theory"
                 },
@@ -34,14 +34,14 @@
                 {
                     "id": "26me404e-1.4",
                     "sno": "1.4",
-                    "topic": "Define the term \u2018Ton of Refrigeration\u2019. Give the value in S.I units",
+                    "topic": "Define the term ‘Ton of Refrigeration’. Give the value in S.I units",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me404e-1.5",
                     "sno": "1.5",
-                    "topic": "Define the term \u2018Coefficient of Performance\u2019",
+                    "topic": "Define the term ‘Coefficient of Performance’",
                     "period": 1,
                     "type": "theory"
                 },
@@ -55,30 +55,16 @@
                 {
                     "id": "26me404e-1.7",
                     "sno": "1.7",
-                    "topic": "Explain thermodynamic processes involved in air refrigeration cycle working on bell coleman cycle; FUNDAMENTALS OF REFRIGERATION Introduction \u2013 Def...",
+                    "topic": "Explain thermodynamic processes involved in air refrigeration cycle working on bell coleman cycle; FUNDAMENTALS OF REFRIGERATION Introduction – Def...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26me404e-1.8",
-                    "sno": "1.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me404e-1.9",
-                    "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "VAPOUR COMPRESSION AND VAPOUR ABSORPTION REFRIGERATION SYATEM",
-            "totalPeriods": 9,
+            "title": "Vapour compression & Vapour absorption Refrigeration Systems",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26me404e-2.1",
@@ -132,13 +118,34 @@
                 {
                     "id": "26me404e-2.8",
                     "sno": "2.8",
+                    "topic": "Deep dive into VAPOUR COMPRESSION AND VAPOUR ABSORPTION REFRIGERATION SYATEM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me404e-2.9",
+                    "sno": "2.9",
+                    "topic": "Deep dive into Describe main components and Principle of working of a vapour compression refrigeration system with flash chamber and accumulator; Explain theoreti...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me404e-2.10",
+                    "sno": "2.10",
+                    "topic": "Deep dive into Calculate COP of ideal vapour compression refrigeration Cycle when the vapour is dry and saturated at the beginning and end of compression without ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me404e-2.11",
+                    "sno": "2.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me404e-2.9",
-                    "sno": "2.9",
+                    "id": "26me404e-2.12",
+                    "sno": "2.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -147,7 +154,7 @@
         },
         {
             "unitNo": 3,
-            "title": "REFRIGERATION EQUIPMENT & APPLICATIONS OF REFRIGERATION",
+            "title": "Refrigeration equipment & Applications of Refrigeration.",
             "totalPeriods": 9,
             "topics": [
                 {
@@ -217,7 +224,7 @@
         },
         {
             "unitNo": 4,
-            "title": "AIR CONDITIONING & PSYCHROMETRY",
+            "title": "Air Conditioning & Psychrometry",
             "totalPeriods": 9,
             "topics": [
                 {
@@ -287,8 +294,8 @@
         },
         {
             "unitNo": 5,
-            "title": "AIR CONDTIONING EQUIPMENT & APPLICATIONS OF AIR CONDITIONING",
-            "totalPeriods": 9,
+            "title": "Air Conditioning Equipment & Applications of Air Conditioning.",
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26me404e-5.1",
@@ -314,7 +321,7 @@
                 {
                     "id": "26me404e-5.4",
                     "sno": "5.4",
-                    "topic": "Describe the working of a window air \u2013 conditioner with a neat sketch",
+                    "topic": "Describe the working of a window air – conditioner with a neat sketch",
                     "period": 1,
                     "type": "theory"
                 },
@@ -335,7 +342,7 @@
                 {
                     "id": "26me404e-5.7",
                     "sno": "5.7",
-                    "topic": "AIR CONDITIONING EQUIPMENT & APPLICATIONS Air Conditioning Equipment: Functions of Air Conditioning equipment such as fans, supply ducts, outlets, return outlets, ducts, Grills, dampers, registers, humidifiers, dehumidifiers, Heating and cooling coils, Filters and dust collectors. Working of Air distribution Systems: Radial perimeter, loop perimeter and extended plenum systems. Applications of Air conditioning: Describe the working of Window air conditioner \u2013 Describe the working of Summer and Winter air conditioning systems \u2013 Working Principle of Split type, Central AC systems. REFERENCE BOOKS 1. Arora C P, Refrigeration and Air Conditioning, 2009, MGH Publishers 2. P N Ananthanarayana, Basic Refrigeration and Air conditioning, 2013, MGH Publishers 3. John Tomczyk, Troubleshooting and Servicing Modern Air Conditioning and Refrigeration Systems, 1995, Esco Press Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.5 Unit Test \u2013 II From 3.6 to 5.6",
+                    "topic": "AIR CONDITIONING EQUIPMENT & APPLICATIONS Air Conditioning Equipment: Functions of Air Conditioning equipment such as fans, supply ducts, outlets, return outlets, ducts, Grills, dampers, registers, humidifiers, dehumidifiers, Heating and cooling coils, Filters and dust collectors. Working of Air distribution Systems: Radial perimeter, loop perimeter and extended plenum systems. Applications of Air conditioning: Describe the working of Window air conditioner – Describe the working of Summer and Winter air conditioning systems – Working Principle of Split type, Central AC systems. REFERENCE BOOKS 1. Arora C P, Refrigeration and Air Conditioning, 2009, MGH Publishers 2. P N Ananthanarayana, Basic Refrigeration and Air conditioning, 2013, MGH Publishers 3. John Tomczyk, Troubleshooting and Servicing Modern Air Conditioning and Refrigeration Systems, 1995, Esco Press Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test – I From 1.1 to 3.5 Unit Test – II From 3.6 to 5.6",
                     "period": 1,
                     "type": "theory"
                 },
@@ -345,13 +352,6 @@
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26me404e-5.9",
-                    "sno": "5.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         }

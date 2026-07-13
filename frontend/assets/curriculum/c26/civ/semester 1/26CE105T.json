@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Define Mechanics and Engineering Mechanics",
-            "totalPeriods": 75,
+            "title": "Introduction",
+            "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26ce105t-1.1",
@@ -34,503 +34,174 @@
                 {
                     "id": "26ce105t-1.4",
                     "sno": "1.4",
-                    "topic": "Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "topic": "Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics; List the systems of measurements and Units; List S.I and M.K.S units of physical quantities used in Civil Engineering",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.5",
-                    "sno": "1.5",
-                    "topic": "List the systems of measurements and Units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.6",
-                    "sno": "1.6",
-                    "topic": "List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.7",
-                    "sno": "1.7",
-                    "topic": "Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.8",
-                    "sno": "1.8",
-                    "topic": "Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.9",
-                    "sno": "1.9",
-                    "topic": "Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.10",
-                    "sno": "1.10",
-                    "topic": "Deep dive into Define Mechanics and Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.11",
-                    "sno": "1.11",
-                    "topic": "Deep dive into State the applications of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.12",
-                    "sno": "1.12",
-                    "topic": "Deep dive into State the branches of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.13",
-                    "sno": "1.13",
-                    "topic": "Deep dive into Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.14",
-                    "sno": "1.14",
-                    "topic": "Deep dive into List the systems of measurements and Units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.15",
-                    "sno": "1.15",
-                    "topic": "Deep dive into List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.16",
-                    "sno": "1.16",
-                    "topic": "Deep dive into Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.17",
-                    "sno": "1.17",
-                    "topic": "Deep dive into Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.18",
-                    "sno": "1.18",
-                    "topic": "Deep dive into Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.19",
-                    "sno": "1.19",
-                    "topic": "Problem solving & practice on Define Mechanics and Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.20",
-                    "sno": "1.20",
-                    "topic": "Problem solving & practice on State the applications of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.21",
-                    "sno": "1.21",
-                    "topic": "Problem solving & practice on State the branches of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.22",
-                    "sno": "1.22",
-                    "topic": "Problem solving & practice on Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.23",
-                    "sno": "1.23",
-                    "topic": "Problem solving & practice on List the systems of measurements and Units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.24",
-                    "sno": "1.24",
-                    "topic": "Problem solving & practice on List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.25",
-                    "sno": "1.25",
-                    "topic": "Problem solving & practice on Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.26",
-                    "sno": "1.26",
-                    "topic": "Problem solving & practice on Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.27",
-                    "sno": "1.27",
-                    "topic": "Problem solving & practice on Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.28",
-                    "sno": "1.28",
-                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.29",
-                    "sno": "1.29",
-                    "topic": "Practical applications of State the applications of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.30",
-                    "sno": "1.30",
-                    "topic": "Practical applications of State the branches of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.31",
-                    "sno": "1.31",
-                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.32",
-                    "sno": "1.32",
-                    "topic": "Practical applications of List the systems of measurements and Units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.33",
-                    "sno": "1.33",
-                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.34",
-                    "sno": "1.34",
-                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.35",
-                    "sno": "1.35",
-                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.36",
-                    "sno": "1.36",
-                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.37",
-                    "sno": "1.37",
-                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.38",
-                    "sno": "1.38",
-                    "topic": "Practical applications of State the applications of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.39",
-                    "sno": "1.39",
-                    "topic": "Practical applications of State the branches of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.40",
-                    "sno": "1.40",
-                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.41",
-                    "sno": "1.41",
-                    "topic": "Practical applications of List the systems of measurements and Units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.42",
-                    "sno": "1.42",
-                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.43",
-                    "sno": "1.43",
-                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.44",
-                    "sno": "1.44",
-                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.45",
-                    "sno": "1.45",
-                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.46",
-                    "sno": "1.46",
-                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.47",
-                    "sno": "1.47",
-                    "topic": "Practical applications of State the applications of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.48",
-                    "sno": "1.48",
-                    "topic": "Practical applications of State the branches of Engineering Mechanics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.49",
-                    "sno": "1.49",
-                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.50",
-                    "sno": "1.50",
-                    "topic": "Practical applications of List the systems of measurements and Units",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.51",
-                    "sno": "1.51",
-                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-1.52",
-                    "sno": "1.52",
-                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
-                    "period": 1,
-                    "type": "theory"
-                },
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Forces & Moments",
+            "totalPeriods": 23,
+            "topics": [
                 {
-                    "id": "26ce105t-1.53",
-                    "sno": "1.53",
-                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "id": "26ce105t-2.1",
+                    "sno": "2.1",
+                    "topic": "Define the following terms: Force, Moment & Resultant",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.54",
-                    "sno": "1.54",
-                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "id": "26ce105t-2.2",
+                    "sno": "2.2",
+                    "topic": "Distinguish between Scalar and Vector quantities, Coplanar and non-coplanar forces, Parallel and non-parallel forces, Like and unlike parallel forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.55",
-                    "sno": "1.55",
-                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
+                    "id": "26ce105t-2.3",
+                    "sno": "2.3",
+                    "topic": "Define 'Parallelogram law of forces' and derive the resultant of two coplanar forces acting at a point",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.56",
-                    "sno": "1.56",
-                    "topic": "Practical applications of State the applications of Engineering Mechanics",
+                    "id": "26ce105t-2.4",
+                    "sno": "2.4",
+                    "topic": "Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.57",
-                    "sno": "1.57",
-                    "topic": "Practical applications of State the branches of Engineering Mechanics",
+                    "id": "26ce105t-2.5",
+                    "sno": "2.5",
+                    "topic": "Define i) Triangle law of forces, ii) Polygon Law of forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.58",
-                    "sno": "1.58",
-                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "id": "26ce105t-2.6",
+                    "sno": "2.6",
+                    "topic": "Explain 'Lami's Theorem' and solve simple problems using Lami's Theorem",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.59",
-                    "sno": "1.59",
-                    "topic": "Practical applications of List the systems of measurements and Units",
+                    "id": "26ce105t-2.7",
+                    "sno": "2.7",
+                    "topic": "Define 'Resolution of forces' and calculate resultant of co-planar concurrent forces by analytical methods",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.60",
-                    "sno": "1.60",
-                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
+                    "id": "26ce105t-2.8",
+                    "sno": "2.8",
+                    "topic": "Solve problems on computation of the resultant of a system of coplanar parallel forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.61",
-                    "sno": "1.61",
-                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
+                    "id": "26ce105t-2.9",
+                    "sno": "2.9",
+                    "topic": "Define Couple, Moment of a couple and state the properties of a couple",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.62",
-                    "sno": "1.62",
-                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "id": "26ce105t-2.10",
+                    "sno": "2.10",
+                    "topic": "Define Equilibrium of forces and Equilibrant; List the conditions of equilibrium of a rigid body subjected to a number of coplanar forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.63",
-                    "sno": "1.63",
-                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "id": "26ce105t-2.11",
+                    "sno": "2.11",
+                    "topic": "Deep dive into Define the following terms: Force, Moment & Resultant",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.64",
-                    "sno": "1.64",
-                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
+                    "id": "26ce105t-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into Distinguish between Scalar and Vector quantities, Coplanar and non-coplanar forces, Parallel and non-parallel forces, Like and unlike parallel forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.65",
-                    "sno": "1.65",
-                    "topic": "Practical applications of State the applications of Engineering Mechanics",
+                    "id": "26ce105t-2.13",
+                    "sno": "2.13",
+                    "topic": "Deep dive into Define 'Parallelogram law of forces' and derive the resultant of two coplanar forces acting at a point",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.66",
-                    "sno": "1.66",
-                    "topic": "Practical applications of State the branches of Engineering Mechanics",
+                    "id": "26ce105t-2.14",
+                    "sno": "2.14",
+                    "topic": "Deep dive into Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.67",
-                    "sno": "1.67",
-                    "topic": "Practical applications of Define the terms 1. Statics, 2. Dynamics, 3. Kinetics and 4. Kinematics",
+                    "id": "26ce105t-2.15",
+                    "sno": "2.15",
+                    "topic": "Deep dive into Define i) Triangle law of forces, ii) Polygon Law of forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.68",
-                    "sno": "1.68",
-                    "topic": "Practical applications of List the systems of measurements and Units",
+                    "id": "26ce105t-2.16",
+                    "sno": "2.16",
+                    "topic": "Deep dive into Explain 'Lami's Theorem' and solve simple problems using Lami's Theorem",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.69",
-                    "sno": "1.69",
-                    "topic": "Practical applications of List S.I and M.K.S units of physical quantities used in Civil Engineering 2. FORCES AND MOMENTS",
+                    "id": "26ce105t-2.17",
+                    "sno": "2.17",
+                    "topic": "Deep dive into Define 'Resolution of forces' and calculate resultant of co-planar concurrent forces by analytical methods",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.70",
-                    "sno": "1.70",
-                    "topic": "Practical applications of Define Types of Supports \u2013 a) Roller Support b) Hinged Support c) Fixed Support",
+                    "id": "26ce105t-2.18",
+                    "sno": "2.18",
+                    "topic": "Deep dive into Solve problems on computation of the resultant of a system of coplanar parallel forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.71",
-                    "sno": "1.71",
-                    "topic": "Practical applications of Define Types of beams \u2013 a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "id": "26ce105t-2.19",
+                    "sno": "2.19",
+                    "topic": "Deep dive into Define Couple, Moment of a couple and state the properties of a couple",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.72",
-                    "sno": "1.72",
-                    "topic": "Practical applications of Define types of loads \u2013 a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "id": "26ce105t-2.20",
+                    "sno": "2.20",
+                    "topic": "Deep dive into Define Equilibrium of forces and Equilibrant; List the conditions of equilibrium of a rigid body subjected to a number of coplanar forces",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.73",
-                    "sno": "1.73",
-                    "topic": "Practical applications of Define Mechanics and Engineering Mechanics",
+                    "id": "26ce105t-2.21",
+                    "sno": "2.21",
+                    "topic": "Problem solving & practice on Define the following terms: Force, Moment & Resultant",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ce105t-1.74",
-                    "sno": "1.74",
+                    "id": "26ce105t-2.22",
+                    "sno": "2.22",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce105t-1.75",
-                    "sno": "1.75",
+                    "id": "26ce105t-2.23",
+                    "sno": "2.23",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,530 +210,887 @@
         },
         {
             "unitNo": 3,
-            "title": "Define Centroid and Centre of gravity",
-            "totalPeriods": 75,
+            "title": "Centroid",
+            "totalPeriods": 18,
             "topics": [
                 {
                     "id": "26ce105t-3.1",
                     "sno": "3.1",
-                    "topic": "Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "topic": "Define Centroid and Centre of gravity; Distinguish between Centroid and Centre of gravity",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.2",
                     "sno": "3.2",
-                    "topic": "Define Centroid and Centre of gravity",
+                    "topic": "State the need for finding the Centroid and Centre of gravity for various engineering applications",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.3",
                     "sno": "3.3",
-                    "topic": "Distinguish between Centroid and Centre of gravity",
+                    "topic": "Calculate the positions of Centroid for simple plane figures from first principles",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.4",
                     "sno": "3.4",
-                    "topic": "State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "topic": "Explain the method of determining the Centroid by 'Method of Moments'",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.5",
                     "sno": "3.5",
-                    "topic": "Calculate the positions of Centroid for simple plane figures from first principles",
+                    "topic": "Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I-section",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.6",
                     "sno": "3.6",
-                    "topic": "Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "topic": "Calculate the position of Centroid of built-up sections consisting of RSJs and flange plates and Plane figures having hollow portions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.7",
                     "sno": "3.7",
-                    "topic": "Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "topic": "Deep dive into Define Centroid and Centre of gravity; Distinguish between Centroid and Centre of gravity",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.8",
                     "sno": "3.8",
-                    "topic": "Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
+                    "topic": "Deep dive into State the need for finding the Centroid and Centre of gravity for various engineering applications",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.9",
                     "sno": "3.9",
-                    "topic": "Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
+                    "topic": "Deep dive into Calculate the positions of Centroid for simple plane figures from first principles",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.10",
                     "sno": "3.10",
-                    "topic": "Deep dive into Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
+                    "topic": "Deep dive into Explain the method of determining the Centroid by 'Method of Moments'",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.11",
                     "sno": "3.11",
-                    "topic": "Deep dive into Define Centroid and Centre of gravity",
+                    "topic": "Deep dive into Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I-section",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.12",
                     "sno": "3.12",
-                    "topic": "Deep dive into Distinguish between Centroid and Centre of gravity",
+                    "topic": "Deep dive into Calculate the position of Centroid of built-up sections consisting of RSJs and flange plates and Plane figures having hollow portions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.13",
                     "sno": "3.13",
-                    "topic": "Deep dive into State the need for finding the Centroid and Centre of gravity for various engineering applications",
+                    "topic": "Problem solving & practice on Define Centroid and Centre of gravity; Distinguish between Centroid and Centre of gravity",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.14",
                     "sno": "3.14",
-                    "topic": "Deep dive into Calculate the positions of Centroid for simple plane figures from first principles",
+                    "topic": "Problem solving & practice on State the need for finding the Centroid and Centre of gravity for various engineering applications",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.15",
                     "sno": "3.15",
-                    "topic": "Deep dive into Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
+                    "topic": "Problem solving & practice on Calculate the positions of Centroid for simple plane figures from first principles",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.16",
                     "sno": "3.16",
-                    "topic": "Deep dive into Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
+                    "topic": "Problem solving & practice on Explain the method of determining the Centroid by 'Method of Moments'",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce105t-3.17",
                     "sno": "3.17",
-                    "topic": "Deep dive into Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.18",
-                    "sno": "3.18",
-                    "topic": "Deep dive into Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.19",
-                    "sno": "3.19",
-                    "topic": "Problem solving & practice on Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.20",
-                    "sno": "3.20",
-                    "topic": "Problem solving & practice on Define Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.21",
-                    "sno": "3.21",
-                    "topic": "Problem solving & practice on Distinguish between Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.22",
-                    "sno": "3.22",
-                    "topic": "Problem solving & practice on State the need for finding the Centroid and Centre of gravity for various engineering applications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.23",
-                    "sno": "3.23",
-                    "topic": "Problem solving & practice on Calculate the positions of Centroid for simple plane figures from first principles",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.24",
-                    "sno": "3.24",
-                    "topic": "Problem solving & practice on Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.25",
-                    "sno": "3.25",
-                    "topic": "Problem solving & practice on Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.26",
-                    "sno": "3.26",
-                    "topic": "Problem solving & practice on Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.27",
-                    "sno": "3.27",
-                    "topic": "Problem solving & practice on Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.28",
-                    "sno": "3.28",
-                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.29",
-                    "sno": "3.29",
-                    "topic": "Practical applications of Define Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.30",
-                    "sno": "3.30",
-                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.31",
-                    "sno": "3.31",
-                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.32",
-                    "sno": "3.32",
-                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.33",
-                    "sno": "3.33",
-                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.34",
-                    "sno": "3.34",
-                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.35",
-                    "sno": "3.35",
-                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.36",
-                    "sno": "3.36",
-                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.37",
-                    "sno": "3.37",
-                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.38",
-                    "sno": "3.38",
-                    "topic": "Practical applications of Define Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.39",
-                    "sno": "3.39",
-                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.40",
-                    "sno": "3.40",
-                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.41",
-                    "sno": "3.41",
-                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.42",
-                    "sno": "3.42",
-                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.43",
-                    "sno": "3.43",
-                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.44",
-                    "sno": "3.44",
-                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.45",
-                    "sno": "3.45",
-                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.46",
-                    "sno": "3.46",
-                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.47",
-                    "sno": "3.47",
-                    "topic": "Practical applications of Define Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.48",
-                    "sno": "3.48",
-                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.49",
-                    "sno": "3.49",
-                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.50",
-                    "sno": "3.50",
-                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.51",
-                    "sno": "3.51",
-                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.52",
-                    "sno": "3.52",
-                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.53",
-                    "sno": "3.53",
-                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.54",
-                    "sno": "3.54",
-                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.55",
-                    "sno": "3.55",
-                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.56",
-                    "sno": "3.56",
-                    "topic": "Practical applications of Define Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.57",
-                    "sno": "3.57",
-                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.58",
-                    "sno": "3.58",
-                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.59",
-                    "sno": "3.59",
-                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.60",
-                    "sno": "3.60",
-                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.61",
-                    "sno": "3.61",
-                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.62",
-                    "sno": "3.62",
-                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.63",
-                    "sno": "3.63",
-                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.64",
-                    "sno": "3.64",
-                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.65",
-                    "sno": "3.65",
-                    "topic": "Practical applications of Define Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.66",
-                    "sno": "3.66",
-                    "topic": "Practical applications of Distinguish between Centroid and Centre of gravity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.67",
-                    "sno": "3.67",
-                    "topic": "Practical applications of State the need for finding the Centroid and Centre of gravity for various engineering applications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.68",
-                    "sno": "3.68",
-                    "topic": "Practical applications of Calculate the positions of Centroid for simple plane figures from first principles",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.69",
-                    "sno": "3.69",
-                    "topic": "Practical applications of Explain the method of determining the Centroid by \u2018Method of Moments\u2019",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.70",
-                    "sno": "3.70",
-                    "topic": "Practical applications of Calculate the position of Centroid for standard sections - L, T, I, Channel section, and Unsymmetrical I - Section",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.71",
-                    "sno": "3.71",
-                    "topic": "Practical applications of Calculate the position of Centroid of built -up sections consisting of RSJs and flange plates and Plane figures having hollow portions 4. MOMENT OF INERTIA",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.72",
-                    "sno": "3.72",
-                    "topic": "Practical applications of Unit Test \u2013 II From 4.1 to 5.5 Unit Test \u2013 III From 5.6 to 6.10",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.73",
-                    "sno": "3.73",
-                    "topic": "Practical applications of Compute the resultant of two coplanar forces acting at a point by Parallelogram law of forces",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce105t-3.74",
-                    "sno": "3.74",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce105t-3.75",
-                    "sno": "3.75",
+                    "id": "26ce105t-3.18",
+                    "sno": "3.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Moment of Inertia",
+            "totalPeriods": 25,
+            "topics": [
+                {
+                    "id": "26ce105t-4.1",
+                    "sno": "4.1",
+                    "topic": "Define Moment of Inertia, Polar Moment of Inertia and Radius of gyration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.2",
+                    "sno": "4.2",
+                    "topic": "State the necessity of finding Moment of Inertia for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.3",
+                    "sno": "4.3",
+                    "topic": "Compute Moment of Inertia and Radius of Gyration for regular geometrical sections like T, L, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.4",
+                    "sno": "4.4",
+                    "topic": "State 1. Parallel axis theorem and 2. Perpendicular axis theorem to determine Moment of Inertia",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.5",
+                    "sno": "4.5",
+                    "topic": "Compute MI of standard sections by applying the parallel axis theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.6",
+                    "sno": "4.6",
+                    "topic": "Compute MI of built-up sections by applying the parallel axis theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.7",
+                    "sno": "4.7",
+                    "topic": "Calculate the radius of gyration of standard sections",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.8",
+                    "sno": "4.8",
+                    "topic": "Compute Polar Moment of Inertia for solid and hollow circular sections by applying perpendicular axis theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.9",
+                    "sno": "4.9",
+                    "topic": "Deep dive into Define Moment of Inertia, Polar Moment of Inertia and Radius of gyration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.10",
+                    "sno": "4.10",
+                    "topic": "Deep dive into State the necessity of finding Moment of Inertia for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.11",
+                    "sno": "4.11",
+                    "topic": "Deep dive into Compute Moment of Inertia and Radius of Gyration for regular geometrical sections like T, L, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.12",
+                    "sno": "4.12",
+                    "topic": "Deep dive into State 1. Parallel axis theorem and 2. Perpendicular axis theorem to determine Moment of Inertia",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.13",
+                    "sno": "4.13",
+                    "topic": "Deep dive into Compute MI of standard sections by applying the parallel axis theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.14",
+                    "sno": "4.14",
+                    "topic": "Deep dive into Compute MI of built-up sections by applying the parallel axis theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.15",
+                    "sno": "4.15",
+                    "topic": "Deep dive into Calculate the radius of gyration of standard sections",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.16",
+                    "sno": "4.16",
+                    "topic": "Deep dive into Compute Polar Moment of Inertia for solid and hollow circular sections by applying perpendicular axis theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.17",
+                    "sno": "4.17",
+                    "topic": "Problem solving & practice on Define Moment of Inertia, Polar Moment of Inertia and Radius of gyration",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.18",
+                    "sno": "4.18",
+                    "topic": "Problem solving & practice on State the necessity of finding Moment of Inertia for various engineering applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.19",
+                    "sno": "4.19",
+                    "topic": "Problem solving & practice on Compute Moment of Inertia and Radius of Gyration for regular geometrical sections like T, L, I, Channel section, and Unsymmetrical I - Section",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.20",
+                    "sno": "4.20",
+                    "topic": "Problem solving & practice on State 1. Parallel axis theorem and 2. Perpendicular axis theorem to determine Moment of Inertia",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.21",
+                    "sno": "4.21",
+                    "topic": "Problem solving & practice on Compute MI of standard sections by applying the parallel axis theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.22",
+                    "sno": "4.22",
+                    "topic": "Problem solving & practice on Compute MI of built-up sections by applying the parallel axis theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.23",
+                    "sno": "4.23",
+                    "topic": "Problem solving & practice on Calculate the radius of gyration of standard sections",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-4.24",
+                    "sno": "4.24",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce105t-4.25",
+                    "sno": "4.25",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Simple Stresses and Strains",
+            "totalPeriods": 40,
+            "topics": [
+                {
+                    "id": "26ce105t-5.1",
+                    "sno": "5.1",
+                    "topic": "Define the following terms: Stress, Strain, Modulus of Elasticity, Longitudinal/Lateral Strain, Poisson's ratio, Modulus of rigidity, Bulk Modulus, Working stress, Factor of safety, Resilience, Strain Energy, Proof resilience, Modulus of Resilience",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.2",
+                    "sno": "5.2",
+                    "topic": "Distinguish between different kinds of stresses and strains",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.3",
+                    "sno": "5.3",
+                    "topic": "Draw the stress-strain curve for ductile materials (Mild steel) and explain the salient points on the curve",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.4",
+                    "sno": "5.4",
+                    "topic": "States Hooke's law, limit of proportionality, factor of safety and the factors affecting the Factor of Safety",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.5",
+                    "sno": "5.5",
+                    "topic": "Solves problems on relationship between simple stress and simple strain under axial loading on uniform bars and stepped bars",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.6",
+                    "sno": "5.6",
+                    "topic": "State the relationship among the elastic constants; Solves problems on relationship between elastic constants",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.7",
+                    "sno": "5.7",
+                    "topic": "Define composite member and calculate stresses in simple and composite members under axial loading",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.8",
+                    "sno": "5.8",
+                    "topic": "Define temperature stress, strain and Hoop stress",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.9",
+                    "sno": "5.9",
+                    "topic": "List and explain mechanical properties of materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.10",
+                    "sno": "5.10",
+                    "topic": "Deep dive into Define the following terms: Stress, Strain, Modulus of Elasticity, Longitudinal/Lateral Strain, Poisson's ratio, Modulus of rigidity, Bulk Modulus, Working stress, Factor of safety, Resilience, Strain Energy, Proof resilience, Modulus of Resilience",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.11",
+                    "sno": "5.11",
+                    "topic": "Deep dive into Distinguish between different kinds of stresses and strains",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.12",
+                    "sno": "5.12",
+                    "topic": "Deep dive into Draw the stress-strain curve for ductile materials (Mild steel) and explain the salient points on the curve",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.13",
+                    "sno": "5.13",
+                    "topic": "Deep dive into States Hooke's law, limit of proportionality, factor of safety and the factors affecting the Factor of Safety",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.14",
+                    "sno": "5.14",
+                    "topic": "Deep dive into Solves problems on relationship between simple stress and simple strain under axial loading on uniform bars and stepped bars",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.15",
+                    "sno": "5.15",
+                    "topic": "Deep dive into State the relationship among the elastic constants; Solves problems on relationship between elastic constants",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.16",
+                    "sno": "5.16",
+                    "topic": "Deep dive into Define composite member and calculate stresses in simple and composite members under axial loading",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.17",
+                    "sno": "5.17",
+                    "topic": "Deep dive into Define temperature stress, strain and Hoop stress",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.18",
+                    "sno": "5.18",
+                    "topic": "Deep dive into List and explain mechanical properties of materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.19",
+                    "sno": "5.19",
+                    "topic": "Problem solving & practice on Define the following terms: Stress, Strain, Modulus of Elasticity, Longitudinal/Lateral Strain, Poisson's ratio, Modulus of rigidity, Bulk Modulus, Working stress, Factor of safety, Resilience, Strain Energy, Proof resilience, Modulus of Resilience",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.20",
+                    "sno": "5.20",
+                    "topic": "Problem solving & practice on Distinguish between different kinds of stresses and strains",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.21",
+                    "sno": "5.21",
+                    "topic": "Problem solving & practice on Draw the stress-strain curve for ductile materials (Mild steel) and explain the salient points on the curve",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.22",
+                    "sno": "5.22",
+                    "topic": "Problem solving & practice on States Hooke's law, limit of proportionality, factor of safety and the factors affecting the Factor of Safety",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.23",
+                    "sno": "5.23",
+                    "topic": "Problem solving & practice on Solves problems on relationship between simple stress and simple strain under axial loading on uniform bars and stepped bars",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.24",
+                    "sno": "5.24",
+                    "topic": "Problem solving & practice on State the relationship among the elastic constants; Solves problems on relationship between elastic constants",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.25",
+                    "sno": "5.25",
+                    "topic": "Problem solving & practice on Define composite member and calculate stresses in simple and composite members under axial loading",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.26",
+                    "sno": "5.26",
+                    "topic": "Problem solving & practice on Define temperature stress, strain and Hoop stress",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.27",
+                    "sno": "5.27",
+                    "topic": "Problem solving & practice on List and explain mechanical properties of materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.28",
+                    "sno": "5.28",
+                    "topic": "Practical applications of Define the following terms: Stress, Strain, Modulus of Elasticity, Longitudinal/Lateral Strain, Poisson's ratio, Modulus of rigidity, Bulk Modulus, Working stress, Factor of safety, Resilience, Strain Energy, Proof resilience, Modulus of Resilience",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.29",
+                    "sno": "5.29",
+                    "topic": "Practical applications of Distinguish between different kinds of stresses and strains",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.30",
+                    "sno": "5.30",
+                    "topic": "Practical applications of Draw the stress-strain curve for ductile materials (Mild steel) and explain the salient points on the curve",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.31",
+                    "sno": "5.31",
+                    "topic": "Practical applications of States Hooke's law, limit of proportionality, factor of safety and the factors affecting the Factor of Safety",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.32",
+                    "sno": "5.32",
+                    "topic": "Practical applications of Solves problems on relationship between simple stress and simple strain under axial loading on uniform bars and stepped bars",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.33",
+                    "sno": "5.33",
+                    "topic": "Practical applications of State the relationship among the elastic constants; Solves problems on relationship between elastic constants",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.34",
+                    "sno": "5.34",
+                    "topic": "Practical applications of Define composite member and calculate stresses in simple and composite members under axial loading",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.35",
+                    "sno": "5.35",
+                    "topic": "Practical applications of Define temperature stress, strain and Hoop stress",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.36",
+                    "sno": "5.36",
+                    "topic": "Practical applications of List and explain mechanical properties of materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.37",
+                    "sno": "5.37",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.38",
+                    "sno": "5.38",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-5.39",
+                    "sno": "5.39",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce105t-5.40",
+                    "sno": "5.40",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Shear force and Bending Moment",
+            "totalPeriods": 40,
+            "topics": [
+                {
+                    "id": "26ce105t-6.1",
+                    "sno": "6.1",
+                    "topic": "Define Types of Supports - a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.2",
+                    "sno": "6.2",
+                    "topic": "Define Types of beams - a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.3",
+                    "sno": "6.3",
+                    "topic": "Define types of loads - a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.4",
+                    "sno": "6.4",
+                    "topic": "Calculate reactions at roller, hinged and fixed supports for Simply Supported, Cantilever and Overhanging beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.5",
+                    "sno": "6.5",
+                    "topic": "Explain a) Shear Force and b) Bending Moment; Explain sign conventions used for Shear Force and Bending Moment diagrams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.6",
+                    "sno": "6.6",
+                    "topic": "Deduce the relationship among the rate of loading, shear force and bending moment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.7",
+                    "sno": "6.7",
+                    "topic": "Determine Shear Force and Bending Moments on Cantilever and Simply Supported beams for simple cases of loading analytically",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.8",
+                    "sno": "6.8",
+                    "topic": "Describe the procedures for sketching the Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.9",
+                    "sno": "6.9",
+                    "topic": "Sketch Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD) for Cantilever and Simply Supported Beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.10",
+                    "sno": "6.10",
+                    "topic": "Define point of contra flexure; Determine the Shear Force, Bending Moment and point of contra-flexure for overhanging beams and sketch SFD and BMD",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.11",
+                    "sno": "6.11",
+                    "topic": "Deep dive into Define Types of Supports - a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.12",
+                    "sno": "6.12",
+                    "topic": "Deep dive into Define Types of beams - a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.13",
+                    "sno": "6.13",
+                    "topic": "Deep dive into Define types of loads - a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.14",
+                    "sno": "6.14",
+                    "topic": "Deep dive into Calculate reactions at roller, hinged and fixed supports for Simply Supported, Cantilever and Overhanging beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.15",
+                    "sno": "6.15",
+                    "topic": "Deep dive into Explain a) Shear Force and b) Bending Moment; Explain sign conventions used for Shear Force and Bending Moment diagrams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.16",
+                    "sno": "6.16",
+                    "topic": "Deep dive into Deduce the relationship among the rate of loading, shear force and bending moment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.17",
+                    "sno": "6.17",
+                    "topic": "Deep dive into Determine Shear Force and Bending Moments on Cantilever and Simply Supported beams for simple cases of loading analytically",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.18",
+                    "sno": "6.18",
+                    "topic": "Deep dive into Describe the procedures for sketching the Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.19",
+                    "sno": "6.19",
+                    "topic": "Deep dive into Sketch Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD) for Cantilever and Simply Supported Beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.20",
+                    "sno": "6.20",
+                    "topic": "Deep dive into Define point of contra flexure; Determine the Shear Force, Bending Moment and point of contra-flexure for overhanging beams and sketch SFD and BMD",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.21",
+                    "sno": "6.21",
+                    "topic": "Problem solving & practice on Define Types of Supports - a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.22",
+                    "sno": "6.22",
+                    "topic": "Problem solving & practice on Define Types of beams - a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.23",
+                    "sno": "6.23",
+                    "topic": "Problem solving & practice on Define types of loads - a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.24",
+                    "sno": "6.24",
+                    "topic": "Problem solving & practice on Calculate reactions at roller, hinged and fixed supports for Simply Supported, Cantilever and Overhanging beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.25",
+                    "sno": "6.25",
+                    "topic": "Problem solving & practice on Explain a) Shear Force and b) Bending Moment; Explain sign conventions used for Shear Force and Bending Moment diagrams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.26",
+                    "sno": "6.26",
+                    "topic": "Problem solving & practice on Deduce the relationship among the rate of loading, shear force and bending moment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.27",
+                    "sno": "6.27",
+                    "topic": "Problem solving & practice on Determine Shear Force and Bending Moments on Cantilever and Simply Supported beams for simple cases of loading analytically",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.28",
+                    "sno": "6.28",
+                    "topic": "Problem solving & practice on Describe the procedures for sketching the Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.29",
+                    "sno": "6.29",
+                    "topic": "Problem solving & practice on Sketch Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD) for Cantilever and Simply Supported Beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.30",
+                    "sno": "6.30",
+                    "topic": "Problem solving & practice on Define point of contra flexure; Determine the Shear Force, Bending Moment and point of contra-flexure for overhanging beams and sketch SFD and BMD",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.31",
+                    "sno": "6.31",
+                    "topic": "Practical applications of Define Types of Supports - a) Roller Support b) Hinged Support c) Fixed Support",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.32",
+                    "sno": "6.32",
+                    "topic": "Practical applications of Define Types of beams - a) Cantilever beam b) Simply supported beam c) Fixed beam d) Continuous beam e) Overhanging beam f) Propped Cantilever beam",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.33",
+                    "sno": "6.33",
+                    "topic": "Practical applications of Define types of loads - a) Point Load b) Uniformly Distributed Load c) Uniformly Varying load",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.34",
+                    "sno": "6.34",
+                    "topic": "Practical applications of Calculate reactions at roller, hinged and fixed supports for Simply Supported, Cantilever and Overhanging beams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.35",
+                    "sno": "6.35",
+                    "topic": "Practical applications of Explain a) Shear Force and b) Bending Moment; Explain sign conventions used for Shear Force and Bending Moment diagrams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.36",
+                    "sno": "6.36",
+                    "topic": "Practical applications of Deduce the relationship among the rate of loading, shear force and bending moment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.37",
+                    "sno": "6.37",
+                    "topic": "Practical applications of Determine Shear Force and Bending Moments on Cantilever and Simply Supported beams for simple cases of loading analytically",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.38",
+                    "sno": "6.38",
+                    "topic": "Practical applications of Describe the procedures for sketching the Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce105t-6.39",
+                    "sno": "6.39",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce105t-6.40",
+                    "sno": "6.40",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

@@ -3,12 +3,12 @@
     "subjectName": "Electronic Circuits",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 90,
+    "totalPeriods": 72,
     "units": [
         {
             "unitNo": 1,
-            "title": "DC Power Supplies and Wave Shaping Circuits",
-            "totalPeriods": 18,
+            "title": "DC Power Supplies & Wave shaping Circuits",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec301t-1.1",
@@ -125,13 +125,27 @@
                 {
                     "id": "26ec301t-1.17",
                     "sno": "1.17",
+                    "topic": "Deep dive into DC Power Supplies and Wave Shaping Circuits; State the necessity of D.C. power supply for Electronic circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec301t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Draw the block diagram of DC Regulated Power Supply and explain the function of each block; Explain the working of Half wave rectifier, Full Wave c...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec301t-1.19",
+                    "sno": "1.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec301t-1.18",
-                    "sno": "1.18",
+                    "id": "26ec301t-1.20",
+                    "sno": "1.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -140,8 +154,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Small Signal and Large Signal Amplifiers",
-            "totalPeriods": 18,
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
             "topics": [
                 {
                     "id": "26ec301t-2.1",
@@ -153,118 +167,6 @@
                 {
                     "id": "26ec301t-2.2",
                     "sno": "2.2",
-                    "topic": "State the need for stabilization; Define Stability factor and give their equations; List the types of biasing circuits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.3",
-                    "sno": "2.3",
-                    "topic": "State the importance of heat sink; Classify the amplifiers based on frequency of operation, period of conduction and type of coupling",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.4",
-                    "sno": "2.4",
-                    "topic": "Define the terms gain, gain in dB, frequency response and bandwidth of an amplifier; Draw the practical single stage transistor CE amplifier and ex...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.5",
-                    "sno": "2.5",
-                    "topic": "Explain the working of two-stage RC coupled amplifier with circuit diagram; Draw and explain the frequency response of RC coupled amplifier",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.6",
-                    "sno": "2.6",
-                    "topic": "Explain the working of two-stage transformer coupled amplifier with circuit diagram; Draw and explain the frequency response of transformer-coupled...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.7",
-                    "sno": "2.7",
-                    "topic": "Compare voltage and power amplifier; Classify power amplifiers based on period of conduction",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.8",
-                    "sno": "2.8",
-                    "topic": "Explain the working of Class A, Class B, Class AB and Class C amplifiers with waveforms and mention the efficiency; Explain the working of compleme...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.9",
-                    "sno": "2.9",
-                    "topic": "Mention the applications of Class C Amplifiers; List different ICs for power amplifiers",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.10",
-                    "sno": "2.10",
-                    "topic": "Small Signal and Large Signal Amplifiers DC and AC load lines - transistor biasing - operating point - types of biasing circuits - bias stabilizati...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.11",
-                    "sno": "2.11",
-                    "topic": "List the types of angle modulation; Define Frequency modulation and draw its waveform",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.12",
-                    "sno": "2.12",
-                    "topic": "Define frequency deviation and modulation index of an FM signal; Derive the time domain equation for FM signal; Draw the frequency spectrum of FM wave",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.13",
-                    "sno": "2.13",
-                    "topic": "State Carson\u2019s rule to compute bandwidth of an FM signal; Distinguish between narrowband and wideband FM",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.14",
-                    "sno": "2.14",
-                    "topic": "Define Phase Modulation; Explain the basic relation between FM and PM from their equations; Explain the need for pre-emphasis and de-emphasis",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.15",
-                    "sno": "2.15",
-                    "topic": "Compare AM, FM and PM; Classify different types of noise",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.16",
-                    "sno": "2.16",
-                    "topic": "Define thermal noise; Define the terms: i) Signal to Noise Ratio; ii) Noise Figure; and iii) Noise Temperature; Angle Modulation techniques Angle m...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-2.17",
-                    "sno": "2.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec301t-2.18",
-                    "sno": "2.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,7 +175,7 @@
         },
         {
             "unitNo": 3,
-            "title": "Feedback Amplifiers and Oscillators",
+            "title": "Feedback amplifiers &Oscillators",
             "totalPeriods": 18,
             "topics": [
                 {
@@ -335,7 +237,7 @@
                 {
                     "id": "26ec301t-3.9",
                     "sno": "3.9",
-                    "topic": "Feedback Amplifiers& Oscillators Concept of feedback \u2013 positive and negative feedback -Block diagram of negative feedback amplifier - four types of...",
+                    "topic": "Feedback Amplifiers& Oscillators Concept of feedback – positive and negative feedback -Block diagram of negative feedback amplifier - four types of...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -406,8 +308,8 @@
         },
         {
             "unitNo": 4,
-            "title": "Linear Integrated Circuits",
-            "totalPeriods": 18,
+            "title": "Linear ICs and Applications",
+            "totalPeriods": 22,
             "topics": [
                 {
                     "id": "26ec301t-4.1",
@@ -461,7 +363,7 @@
                 {
                     "id": "26ec301t-4.8",
                     "sno": "4.8",
-                    "topic": "Define information capacity of a channel; State the Hartley theorem for information capacity; Mention the Shannon\u2019s limit on channel capacity",
+                    "topic": "Define information capacity of a channel; State the Hartley theorem for information capacity; Mention the Shannon’s limit on channel capacity",
                     "period": 1,
                     "type": "theory"
                 },
@@ -524,13 +426,41 @@
                 {
                     "id": "26ec301t-4.17",
                     "sno": "4.17",
+                    "topic": "Deep dive into Linear Integrated Circuits; List the advantages and disadvantages of Integrated Circuits over discrete circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec301t-4.18",
+                    "sno": "4.18",
+                    "topic": "Deep dive into Classify ICs based on manufacturing process; Explain the working of differential amplifier constructed using BJTs",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec301t-4.19",
+                    "sno": "4.19",
+                    "topic": "Deep dive into Explain the working of OP-Amp based Wein-bridge Oscillator circuit; Explain the working of OP-Amp based RC Phase shift oscillator circuit",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec301t-4.20",
+                    "sno": "4.20",
+                    "topic": "Deep dive into Explain the working of OP-Amp based Astable multi-vibrator with waveforms; Explain the working of OP-Amp based Schmitt trigger circuit with waveforms",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec301t-4.21",
+                    "sno": "4.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec301t-4.18",
-                    "sno": "4.18",
+                    "id": "26ec301t-4.22",
+                    "sno": "4.22",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,8 +469,8 @@
         },
         {
             "unitNo": 5,
-            "title": "Field Effect Transistor",
-            "totalPeriods": 18,
+            "title": "Field Effect Transistors",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec301t-5.1",
@@ -580,7 +510,7 @@
                 {
                     "id": "26ec301t-5.6",
                     "sno": "5.6",
-                    "topic": "Field Effect Transistor: Classification \u2013N channel JFET Construction, Principle of operation \u2013 Drain characteristics \u2013 Transfer characteristics \u2013 P...",
+                    "topic": "Field Effect Transistor: Classification –N channel JFET Construction, Principle of operation – Drain characteristics – Transfer characteristics – P...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -608,65 +538,9 @@
                 {
                     "id": "26ec301t-5.10",
                     "sno": "5.10",
-                    "topic": "Define ASK, FSK and PSK; Explain Binary ASK modulator with block diagram",
+                    "topic": "Define ASK, FSK and PSK; Explain Binary ASK modulator with block diagram; Explain Binary ASK coherent demodulator with block diagram; Explain BFSK modulator with block diagram; Explain Coherent BFSK demodulator; Explain BPSK modulator with block diagram; Explain BPSK demodulator with block diagram; State the need for multilevel digital modulation techniques; Explain 4-PSK modulation and draw its constellation diagram; Compare ASK, FSK and PSK; State the need for QAM; Explain 4-QAM Modulator with block diagram and draw its constellation diagram; State the need for a MODEM in data communications; List different types of MODEMs; List the features of Digital Subscriber Line (DSL) Modems; Digital Modulation Techniques Data encoding techniques -...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec301t-5.11",
-                    "sno": "5.11",
-                    "topic": "Explain Binary ASK coherent demodulator with block diagram; Explain BFSK modulator with block diagram; Explain Coherent BFSK demodulator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-5.12",
-                    "sno": "5.12",
-                    "topic": "Explain BPSK modulator with block diagram; Explain BPSK demodulator with block diagram",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-5.13",
-                    "sno": "5.13",
-                    "topic": "State the need for multilevel digital modulation techniques; Explain 4-PSK modulation and draw its constellation diagram",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-5.14",
-                    "sno": "5.14",
-                    "topic": "Compare ASK, FSK and PSK; State the need for QAM",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-5.15",
-                    "sno": "5.15",
-                    "topic": "Explain 4-QAM Modulator with block diagram and draw its constellation diagram; State the need for a MODEM in data communications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-5.16",
-                    "sno": "5.16",
-                    "topic": "List different types of MODEMs; List the features of Digital Subscriber Line (DSL) Modems; Digital Modulation Techniques Data encoding techniques -...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec301t-5.17",
-                    "sno": "5.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec301t-5.18",
-                    "sno": "5.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         }

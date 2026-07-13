@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "Introduction to Electronic CAD Tools",
-            "totalPeriods": 11,
+            "totalPeriods": 16,
             "topics": [
                 {
                     "id": "26ec106a-1.1",
@@ -41,7 +41,7 @@
                 {
                     "id": "26ec106a-1.5",
                     "sno": "1.5",
-                    "topic": "Introduction to Electronic CAD Tools Introduction to Electronic CAD tools such as TinkerCAD /EveryCircuit/PSPICE/OrCAD and Proteus \u2013 Familiarizatio...",
+                    "topic": "Introduction to Electronic CAD Tools Introduction to Electronic CAD tools such as TinkerCAD /EveryCircuit/PSPICE/OrCAD and Proteus – Familiarizatio...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -76,13 +76,48 @@
                 {
                     "id": "26ec106a-1.10",
                     "sno": "1.10",
+                    "topic": "Deep dive into Introduction to Electronic CAD Tools",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-1.11",
+                    "sno": "1.11",
+                    "topic": "Deep dive into Introduction to Electronic CAD tools such as TinkerCAD/EveryCircuit/PSPICE/OrCAD/ProteUs",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-1.12",
+                    "sno": "1.12",
+                    "topic": "Deep dive into Familiarize the circuit design environment of tools such as TinkerCAD/EveryCircuit/PSPICE, OrCAD/ProteUs; Identify various electronic components, d...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-1.13",
+                    "sno": "1.13",
+                    "topic": "Deep dive into Familiarize with setting of component parameters as per the component value",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-1.14",
+                    "sno": "1.14",
+                    "topic": "Deep dive into Introduction to Electronic CAD Tools Introduction to Electronic CAD tools such as TinkerCAD /EveryCircuit/PSPICE/OrCAD and Proteus – Familiarizatio...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-1.15",
+                    "sno": "1.15",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec106a-1.11",
-                    "sno": "1.11",
+                    "id": "26ec106a-1.16",
+                    "sno": "1.16",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -92,7 +127,7 @@
         {
             "unitNo": 2,
             "title": "Basic Circuit Simulation",
-            "totalPeriods": 7,
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec106a-2.1",
@@ -132,13 +167,104 @@
                 {
                     "id": "26ec106a-2.6",
                     "sno": "2.6",
+                    "topic": "Deep dive into Basic Circuit Simulation; Usage of basic components Resistor, Battery, LED, Switch in TinkerCAD; Series and Parallel Circuits using EveryCircuit; O...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.7",
+                    "sno": "2.7",
+                    "topic": "Deep dive into Comparison of circuit simulation tools TinkerCAD, EveryCircuit, PSPICE, OrCAD; LED control with push button using TinkerCAD; Buzzer control with sw...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.8",
+                    "sno": "2.8",
+                    "topic": "Deep dive into Battery level indicator using multiple LEDs; Continuity tester using buzzer and probes; Basic Circuit Simulation Usage of basic components such as ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.9",
+                    "sno": "2.9",
+                    "topic": "Deep dive into Define the terms: branch, node, junction and loop in circuits; Determine the number of mesh equations required to solve the given Network; Write th...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.10",
+                    "sno": "2.10",
+                    "topic": "Deep dive into Determine the number of node voltage equations for a given network; Write the node voltage equations for a given network and arrange them in matrix...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.11",
+                    "sno": "2.11",
+                    "topic": "Problem solving & practice on Basic Circuit Simulation; Usage of basic components Resistor, Battery, LED, Switch in TinkerCAD; Series and Parallel Circuits using EveryCircuit; O...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.12",
+                    "sno": "2.12",
+                    "topic": "Problem solving & practice on Comparison of circuit simulation tools TinkerCAD, EveryCircuit, PSPICE, OrCAD; LED control with push button using TinkerCAD; Buzzer control with sw...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.13",
+                    "sno": "2.13",
+                    "topic": "Problem solving & practice on Battery level indicator using multiple LEDs; Continuity tester using buzzer and probes; Basic Circuit Simulation Usage of basic components such as ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.14",
+                    "sno": "2.14",
+                    "topic": "Problem solving & practice on Define the terms: branch, node, junction and loop in circuits; Determine the number of mesh equations required to solve the given Network; Write th...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.15",
+                    "sno": "2.15",
+                    "topic": "Problem solving & practice on Determine the number of node voltage equations for a given network; Write the node voltage equations for a given network and arrange them in matrix...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.16",
+                    "sno": "2.16",
+                    "topic": "Practical applications of Basic Circuit Simulation; Usage of basic components Resistor, Battery, LED, Switch in TinkerCAD; Series and Parallel Circuits using EveryCircuit; O...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.17",
+                    "sno": "2.17",
+                    "topic": "Practical applications of Comparison of circuit simulation tools TinkerCAD, EveryCircuit, PSPICE, OrCAD; LED control with push button using TinkerCAD; Buzzer control with sw...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.18",
+                    "sno": "2.18",
+                    "topic": "Practical applications of Battery level indicator using multiple LEDs; Continuity tester using buzzer and probes; Basic Circuit Simulation Usage of basic components such as ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-2.19",
+                    "sno": "2.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec106a-2.7",
-                    "sno": "2.7",
+                    "id": "26ec106a-2.20",
+                    "sno": "2.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -148,7 +274,7 @@
         {
             "unitNo": 3,
             "title": "PCB Design Basics",
-            "totalPeriods": 7,
+            "totalPeriods": 24,
             "topics": [
                 {
                     "id": "26ec106a-3.1",
@@ -167,14 +293,14 @@
                 {
                     "id": "26ec106a-3.3",
                     "sno": "3.3",
-                    "topic": "Practice and review of PCB layouts; Network Theorems; State Thevenin\u2019s theorem; Apply the above theorems to solve networks",
+                    "topic": "Practice and review of PCB layouts; Network Theorems; State Thevenin’s theorem; Apply the above theorems to solve networks",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec106a-3.4",
                     "sno": "3.4",
-                    "topic": "State Norton\u2019s theorem; Apply the above theorems to solve networks; State superposition theorem; Solve simple problems using superposition theorem",
+                    "topic": "State Norton’s theorem; Apply the above theorems to solve networks; State superposition theorem; Solve simple problems using superposition theorem",
                     "period": 1,
                     "type": "theory"
                 },
@@ -188,293 +314,132 @@
                 {
                     "id": "26ec106a-3.6",
                     "sno": "3.6",
-                    "topic": "Revision",
+                    "topic": "Deep dive into PCB Design Basics; Drawing simple schematic using PCB Wizard & KiCad; Converting schematic to layout using PCB Wizard & KiCad",
                     "period": 1,
-                    "type": "revision"
+                    "type": "theory"
                 },
                 {
                     "id": "26ec106a-3.7",
                     "sno": "3.7",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "Resonance in RLC Circuits",
-            "totalPeriods": 7,
-            "topics": [
-                {
-                    "id": "26ec106a-4.1",
-                    "sno": "4.1",
-                    "topic": "Resonance in RLC Circuits",
+                    "topic": "Deep dive into Component placement & footprint selection; Manual and Auto Routing using KiCad; Design rules and clearance checking; Gerber File Generation using K...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ec106a-4.2",
-                    "sno": "4.2",
-                    "topic": "Explain the concept of resonance in RLC series circuit",
+                    "id": "26ec106a-3.8",
+                    "sno": "3.8",
+                    "topic": "Deep dive into Practice and review of PCB layouts; Network Theorems; State Thevenin’s theorem; Apply the above theorems to solve networks",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ec106a-4.3",
-                    "sno": "4.3",
-                    "topic": "Study of different measuring Instruments and Electronic equipment a) Study of AC/DC voltmeter, AC/DC ammeter, ohm meter,analog multimeter, digital multi meter. b) Study of RPS unit, CRO, Function Generator using their manuals and familiarise with the operation of each equipment. c) i)Measure Resistance using multimeter and compare with the calculated value using the colour code. ii) Measure L and C using digital LCR meter and compare with the calculated value using the code",
+                    "id": "26ec106a-3.9",
+                    "sno": "3.9",
+                    "topic": "Deep dive into State Norton’s theorem; Apply the above theorems to solve networks; State superposition theorem; Solve simple problems using superposition theorem",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ec106a-4.4",
-                    "sno": "4.4",
-                    "topic": "Deep dive into Resonance in RLC Circuits",
+                    "id": "26ec106a-3.10",
+                    "sno": "3.10",
+                    "topic": "Deep dive into State Maximum power transfer theorem for DC & AC circuits; Solve simple problems using maximum power transfer theorem; State the importance of impe...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ec106a-4.5",
-                    "sno": "4.5",
-                    "topic": "Deep dive into Explain the concept of resonance in RLC series circuit",
+                    "id": "26ec106a-3.11",
+                    "sno": "3.11",
+                    "topic": "Problem solving & practice on PCB Design Basics; Drawing simple schematic using PCB Wizard & KiCad; Converting schematic to layout using PCB Wizard & KiCad",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ec106a-4.6",
-                    "sno": "4.6",
+                    "id": "26ec106a-3.12",
+                    "sno": "3.12",
+                    "topic": "Problem solving & practice on Component placement & footprint selection; Manual and Auto Routing using KiCad; Design rules and clearance checking; Gerber File Generation using K...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.13",
+                    "sno": "3.13",
+                    "topic": "Problem solving & practice on Practice and review of PCB layouts; Network Theorems; State Thevenin’s theorem; Apply the above theorems to solve networks",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.14",
+                    "sno": "3.14",
+                    "topic": "Problem solving & practice on State Norton’s theorem; Apply the above theorems to solve networks; State superposition theorem; Solve simple problems using superposition theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.15",
+                    "sno": "3.15",
+                    "topic": "Problem solving & practice on State Maximum power transfer theorem for DC & AC circuits; Solve simple problems using maximum power transfer theorem; State the importance of impe...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.16",
+                    "sno": "3.16",
+                    "topic": "Practical applications of PCB Design Basics; Drawing simple schematic using PCB Wizard & KiCad; Converting schematic to layout using PCB Wizard & KiCad",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.17",
+                    "sno": "3.17",
+                    "topic": "Practical applications of Component placement & footprint selection; Manual and Auto Routing using KiCad; Design rules and clearance checking; Gerber File Generation using K...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.18",
+                    "sno": "3.18",
+                    "topic": "Practical applications of Practice and review of PCB layouts; Network Theorems; State Thevenin’s theorem; Apply the above theorems to solve networks",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.19",
+                    "sno": "3.19",
+                    "topic": "Practical applications of State Norton’s theorem; Apply the above theorems to solve networks; State superposition theorem; Solve simple problems using superposition theorem",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.20",
+                    "sno": "3.20",
+                    "topic": "Practical applications of State Maximum power transfer theorem for DC & AC circuits; Solve simple problems using maximum power transfer theorem; State the importance of impe...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.21",
+                    "sno": "3.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.22",
+                    "sno": "3.22",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec106a-3.23",
+                    "sno": "3.23",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec106a-4.7",
-                    "sno": "4.7",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "Filters & Attenuators",
-            "totalPeriods": 7,
-            "topics": [
-                {
-                    "id": "26ec106a-5.1",
-                    "sno": "5.1",
-                    "topic": "Filters & Attenuators",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-5.2",
-                    "sno": "5.2",
-                    "topic": "Define the terms: neper, decibel, characteristic impedance, propagation constant and Attenuation; Define the terms: filter, LPF, HPF, BPF and BSF",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-5.3",
-                    "sno": "5.3",
-                    "topic": "Draw the characteristic curves for the above filters; Give the expression for fc for constant K-LPF,HPF",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-5.4",
-                    "sno": "5.4",
-                    "topic": "List the disadvantages of constant K filters; State the function of attenuator circuit and list different types of attenuators",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-5.5",
-                    "sno": "5.5",
-                    "topic": "Explain T & \u03c0 type attenuators with circuit diagram Experiment.No Name of the Experiment 1 Construct a RC Low pass filter and draw its amplitude re...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-5.6",
-                    "sno": "5.6",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec106a-5.7",
-                    "sno": "5.7",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 6,
-            "title": "Testing of Loudspeakers and arranging PA system",
-            "totalPeriods": 7,
-            "topics": [
-                {
-                    "id": "26ec106a-6.1",
-                    "sno": "6.1",
-                    "topic": "Testing of Loudspeakers and arranging PA system a) Measure the input impedance of Loud Speakers b) Arrange PA system with multi speakers and microphones (with cord and cordless)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-6.2",
-                    "sno": "6.2",
-                    "topic": "Deep dive into Testing of Loudspeakers and arranging PA system a) Measure the input impedance of Loud Speakers b) Arrange PA system with multi speakers and microphones (with cord and cordless)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-6.3",
-                    "sno": "6.3",
-                    "topic": "Problem solving & practice on Testing of Loudspeakers and arranging PA system a) Measure the input impedance of Loud Speakers b) Arrange PA system with multi speakers and microphones (with cord and cordless)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-6.4",
-                    "sno": "6.4",
-                    "topic": "Practical applications of Testing of Loudspeakers and arranging PA system a) Measure the input impedance of Loud Speakers b) Arrange PA system with multi speakers and microphones (with cord and cordless)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-6.5",
-                    "sno": "6.5",
-                    "topic": "Practical applications of Testing of Loudspeakers and arranging PA system a) Measure the input impedance of Loud Speakers b) Arrange PA system with multi speakers and microphones (with cord and cordless)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-6.6",
-                    "sno": "6.6",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec106a-6.7",
-                    "sno": "6.7",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 7,
-            "title": "Batteries",
-            "totalPeriods": 7,
-            "topics": [
-                {
-                    "id": "26ec106a-7.1",
-                    "sno": "7.1",
-                    "topic": "Batteries a)Identify the given cells and test whether they are in good condition or not b) Connect the given two batteries in series and measure the voltage across the series connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cell c) Connect the given two batteries in parallel and measure the voltage across the parallel connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cel d) Study various sections of Battery charger circuit",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-7.2",
-                    "sno": "7.2",
-                    "topic": "Deep dive into Batteries a)Identify the given cells and test whether they are in good condition or not b) Connect the given two batteries in series and measure the voltage across the series connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cell c) Connect the given two batteries in parallel and measure the voltage across the parallel connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cel d) Study various sections of Battery charger circuit",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-7.3",
-                    "sno": "7.3",
-                    "topic": "Problem solving & practice on Batteries a)Identify the given cells and test whether they are in good condition or not b) Connect the given two batteries in series and measure the voltage across the series connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cell c) Connect the given two batteries in parallel and measure the voltage across the parallel connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cel d) Study various sections of Battery charger circuit",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-7.4",
-                    "sno": "7.4",
-                    "topic": "Practical applications of Batteries a)Identify the given cells and test whether they are in good condition or not b) Connect the given two batteries in series and measure the voltage across the series connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cell c) Connect the given two batteries in parallel and measure the voltage across the parallel connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cel d) Study various sections of Battery charger circuit",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-7.5",
-                    "sno": "7.5",
-                    "topic": "Practical applications of Batteries a)Identify the given cells and test whether they are in good condition or not b) Connect the given two batteries in series and measure the voltage across the series connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cell c) Connect the given two batteries in parallel and measure the voltage across the parallel connection. What do you learn from the measured equivalent voltage and the voltage of each battery/ Cel d) Study various sections of Battery charger circuit",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-7.6",
-                    "sno": "7.6",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec106a-7.7",
-                    "sno": "7.7",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 8,
-            "title": "Verification of laws",
-            "totalPeriods": 7,
-            "topics": [
-                {
-                    "id": "26ec106a-8.1",
-                    "sno": "8.1",
-                    "topic": "Verification of laws",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-8.2",
-                    "sno": "8.2",
-                    "topic": "Deep dive into Verification of laws",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-8.3",
-                    "sno": "8.3",
-                    "topic": "Problem solving & practice on Verification of laws",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-8.4",
-                    "sno": "8.4",
-                    "topic": "Practical applications of Verification of laws",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-8.5",
-                    "sno": "8.5",
-                    "topic": "Practical applications of Verification of laws",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec106a-8.6",
-                    "sno": "8.6",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec106a-8.7",
-                    "sno": "8.7",
+                    "id": "26ec106a-3.24",
+                    "sno": "3.24",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

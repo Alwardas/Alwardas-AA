@@ -3,7 +3,7 @@
     "subjectName": "Communication and Emp Skills",
     "regulation": "C26",
     "semester": 4,
-    "totalPeriods": 60,
+    "totalPeriods": 55,
     "units": [
         {
             "unitNo": 1,
@@ -13,28 +13,28 @@
                 {
                     "id": "26me408l-1.1",
                     "sno": "1.1",
-                    "topic": "Introduction to Unit 1 concepts",
+                    "topic": "Study and analysis of Unit 1",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-1.2",
                     "sno": "1.2",
-                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 1",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-1.3",
                     "sno": "1.3",
-                    "topic": "Practical application and standard setups for Unit 1",
+                    "topic": "Advanced practical on Study and analysis of Unit 1",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-1.4",
                     "sno": "1.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 1",
                     "period": 1,
                     "type": "practical"
                 },
@@ -62,28 +62,28 @@
                 {
                     "id": "26me408l-2.1",
                     "sno": "2.1",
-                    "topic": "Introduction to Unit 2 concepts",
+                    "topic": "Study and analysis of Unit 2",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-2.2",
                     "sno": "2.2",
-                    "topic": "Detailed analysis of Unit 2 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 2",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-2.3",
                     "sno": "2.3",
-                    "topic": "Practical application and standard setups for Unit 2",
+                    "topic": "Advanced practical on Study and analysis of Unit 2",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-2.4",
                     "sno": "2.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 2",
                     "period": 1,
                     "type": "practical"
                 },
@@ -111,14 +111,14 @@
                 {
                     "id": "26me408l-3.1",
                     "sno": "3.1",
-                    "topic": "Introduction to Unit 3 concepts; Detailed analysis of Unit 3 methodologies",
+                    "topic": "Study and analysis of Unit 3",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-3.2",
                     "sno": "3.2",
-                    "topic": "Practical application and standard setups for Unit 3; Review of core implementations and exercises",
+                    "topic": "Practice and training on Study and analysis of Unit 3",
                     "period": 1,
                     "type": "practical"
                 },
@@ -140,20 +140,20 @@
         },
         {
             "unitNo": 4,
-            "title": "Let's Talk About\u2026",
+            "title": "Let's Talk About…",
             "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26me408l-4.1",
                     "sno": "4.1",
-                    "topic": "Introduction to Unit 4 concepts; Detailed analysis of Unit 4 methodologies",
+                    "topic": "Study and analysis of Unit 4",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-4.2",
                     "sno": "4.2",
-                    "topic": "Practical application and standard setups for Unit 4; Review of core implementations and exercises",
+                    "topic": "Practice and training on Study and analysis of Unit 4",
                     "period": 1,
                     "type": "practical"
                 },
@@ -176,47 +176,12 @@
         {
             "unitNo": 5,
             "title": "JAM",
-            "totalPeriods": 6,
+            "totalPeriods": 1,
             "topics": [
                 {
                     "id": "26me408l-5.1",
                     "sno": "5.1",
-                    "topic": "Internal Assessment \u2013 II From 6.1 to. 10.3",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me408l-5.2",
-                    "sno": "5.2",
-                    "topic": "Deep dive into Internal Assessment \u2013 II From 6.1 to. 10.3",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me408l-5.3",
-                    "sno": "5.3",
-                    "topic": "Problem solving & practice on Internal Assessment \u2013 II From 6.1 to. 10.3",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me408l-5.4",
-                    "sno": "5.4",
-                    "topic": "Practical applications of Internal Assessment \u2013 II From 6.1 to. 10.3",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me408l-5.5",
-                    "sno": "5.5",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me408l-5.6",
-                    "sno": "5.6",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "Internal Assessment – II From 6.1 to. 10.3",
                     "period": 1,
                     "type": "assessment"
                 }
@@ -224,34 +189,34 @@
         },
         {
             "unitNo": 6,
-            "title": "Interpreting Data",
+            "title": "Unit 6 Topic",
             "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26me408l-6.1",
                     "sno": "6.1",
-                    "topic": "Introduction to Unit 6 concepts",
+                    "topic": "Study and analysis of Unit 6",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-6.2",
                     "sno": "6.2",
-                    "topic": "Detailed analysis of Unit 6 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 6",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-6.3",
                     "sno": "6.3",
-                    "topic": "Practical application and standard setups for Unit 6",
+                    "topic": "Advanced practical on Study and analysis of Unit 6",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-6.4",
                     "sno": "6.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 6",
                     "period": 1,
                     "type": "practical"
                 },
@@ -279,14 +244,14 @@
                 {
                     "id": "26me408l-7.1",
                     "sno": "7.1",
-                    "topic": "Introduction to Unit 7 concepts; Detailed analysis of Unit 7 methodologies",
+                    "topic": "Study and analysis of Unit 7",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-7.2",
                     "sno": "7.2",
-                    "topic": "Practical application and standard setups for Unit 7; Review of core implementations and exercises",
+                    "topic": "Practice and training on Study and analysis of Unit 7",
                     "period": 1,
                     "type": "practical"
                 },
@@ -314,42 +279,42 @@
                 {
                     "id": "26me408l-8.1",
                     "sno": "8.1",
-                    "topic": "Introduction to Unit 8 concepts",
+                    "topic": "Study and analysis of Unit 8",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-8.2",
                     "sno": "8.2",
-                    "topic": "Detailed analysis of Unit 8 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 8",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-8.3",
                     "sno": "8.3",
-                    "topic": "Practical application and standard setups for Unit 8",
+                    "topic": "Advanced practical on Study and analysis of Unit 8",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-8.4",
                     "sno": "8.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 8",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-8.5",
                     "sno": "8.5",
-                    "topic": "Deep dive into Introduction to Unit 8 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-8.6",
                     "sno": "8.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 8 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
@@ -377,42 +342,42 @@
                 {
                     "id": "26me408l-9.1",
                     "sno": "9.1",
-                    "topic": "Introduction to Unit 9 concepts",
+                    "topic": "Study and analysis of Unit 9",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-9.2",
                     "sno": "9.2",
-                    "topic": "Detailed analysis of Unit 9 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 9",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-9.3",
                     "sno": "9.3",
-                    "topic": "Practical application and standard setups for Unit 9",
+                    "topic": "Advanced practical on Study and analysis of Unit 9",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-9.4",
                     "sno": "9.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 9",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-9.5",
                     "sno": "9.5",
-                    "topic": "Deep dive into Introduction to Unit 9 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-9.6",
                     "sno": "9.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 9 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
@@ -440,42 +405,42 @@
                 {
                     "id": "26me408l-10.1",
                     "sno": "10.1",
-                    "topic": "Introduction to Unit 10 concepts",
+                    "topic": "Study and analysis of Unit 10",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-10.2",
                     "sno": "10.2",
-                    "topic": "Detailed analysis of Unit 10 methodologies",
+                    "topic": "Practice and training on Study and analysis of Unit 10",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-10.3",
                     "sno": "10.3",
-                    "topic": "Practical application and standard setups for Unit 10",
+                    "topic": "Advanced practical on Study and analysis of Unit 10",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-10.4",
                     "sno": "10.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Real-world simulation of Study and analysis of Unit 10",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-10.5",
                     "sno": "10.5",
-                    "topic": "Deep dive into Introduction to Unit 10 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me408l-10.6",
                     "sno": "10.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 10 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "practical"
                 },

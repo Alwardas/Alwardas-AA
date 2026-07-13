@@ -3,12 +3,12 @@
     "subjectName": "English Essentials",
     "regulation": "C26",
     "semester": 1,
-    "totalPeriods": 90,
+    "totalPeriods": 80,
     "units": [
         {
             "unitNo": 1,
-            "title": "Algebra",
-            "totalPeriods": 18,
+            "title": "Exploring English",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec101t-1.1",
@@ -55,7 +55,7 @@
                 {
                     "id": "26ec101t-1.7",
                     "sno": "1.7",
-                    "topic": "Exploring English Reading \u2013 Roleplay \u2013 Picture Interpretation \u2013 Sounds and Spellings \u2013 Parts of Speech \u2013 Articles and Prepositions",
+                    "topic": "Exploring English Reading – Roleplay – Picture Interpretation – Sounds and Spellings – Parts of Speech – Articles and Prepositions",
                     "period": 1,
                     "type": "theory"
                 },
@@ -76,72 +76,16 @@
                 {
                     "id": "26ec101t-1.10",
                     "sno": "1.10",
-                    "topic": "Define a matrix and order of a matrix",
+                    "topic": "Define a matrix and order of a matrix; State various types of matrices with examples (emphasis on 3 rd order square matrices); Compute sum, difference, scalar multiplication and product of matrices. Illustrate the properties of these operations such as commutative, associat...; Define the transpose of a matrix and state its properties – examples; Define symmetric and skew-symmetric matrices with examples. Resolve a square matrix into a sum of symmetric and skew-symmetric matrices with examples; Define determinant of a square matrix; minor, co -factor of an element of a 3x3 square matrix with examples. Expand the determinant of a 3x3 matrix...; Distinguish singular and non-singular matrices. Define multiplicative inverse of a matrix and list properties of adjoint and inverse. Compute adjoi...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec101t-1.11",
-                    "sno": "1.11",
-                    "topic": "State various types of matrices with examples (emphasis on 3 rd order square matrices)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-1.12",
-                    "sno": "1.12",
-                    "topic": "Compute sum, difference, scalar multiplication and product of matrices. Illustrate the properties of these operations such as commutative, associat...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-1.13",
-                    "sno": "1.13",
-                    "topic": "Define the transpose of a matrix and state its properties \u2013 examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-1.14",
-                    "sno": "1.14",
-                    "topic": "Define symmetric and skew-symmetric matrices with examples. Resolve a square matrix into a sum of symmetric and skew-symmetric matrices with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-1.15",
-                    "sno": "1.15",
-                    "topic": "Define determinant of a square matrix; minor, co -factor of an element of a 3x3 square matrix with examples. Expand the determinant of a 3x3 matrix...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-1.16",
-                    "sno": "1.16",
-                    "topic": "Distinguish singular and non-singular matrices. Define multiplicative inverse of a matrix and list properties of adjoint and inverse. Compute adjoi...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-1.17",
-                    "sno": "1.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec101t-1.18",
-                    "sno": "1.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Trigonometry",
-            "totalPeriods": 18,
+            "title": "The Better You!",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec101t-2.1",
@@ -167,7 +111,7 @@
                 {
                     "id": "26ec101t-2.4",
                     "sno": "2.4",
-                    "topic": "The Better You! Reading \u2013 Dialogue Writing \u2013 Synonyms and Antonyms \u2013 Word order \u2013 Verbs; Solve problems using the concept of trigonometric function...",
+                    "topic": "The Better You! Reading – Dialogue Writing – Synonyms and Antonyms – Word order – Verbs; Solve problems using the concept of trigonometric function...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -181,14 +125,14 @@
                 {
                     "id": "26ec101t-2.6",
                     "sno": "2.6",
-                    "topic": "Define compound angles and state the formulae of sin(A\u00b1B), cos(A\u00b1B),tan(A\u00b1B) and cot(A\u00b1B); Give simple examples on compound angles to derive the va...",
+                    "topic": "Define compound angles and state the formulae of sin(A±B), cos(A±B),tan(A±B) and cot(A±B); Give simple examples on compound angles to derive the va...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec101t-2.7",
                     "sno": "2.7",
-                    "topic": "Derive identities like sin(A+B) sin(A-B) = sin 2 A \u2013sin2 B etc; Solve simple problems using the identities on compound angles",
+                    "topic": "Derive identities like sin(A+B) sin(A-B) = sin 2 A –sin2 B etc; Solve simple problems using the identities on compound angles",
                     "period": 1,
                     "type": "theory"
                 },
@@ -209,72 +153,16 @@
                 {
                     "id": "26ec101t-2.10",
                     "sno": "2.10",
-                    "topic": "Solve problems by applying these formulae to sum or difference or product of two terms. Syllabus for Unit test-I completed; Explain the concept of ...",
+                    "topic": "Solve problems by applying these formulae to sum or difference or product of two terms. Syllabus for Unit test-I completed; Explain the concept of ...; Define inverses of six trigonometric functions along with their domains and ranges; Derive relations between inverse trigonometric functions so tha...; State various properties of inverse trigonometric functions and identities like 11sin cos 2xx −− += etc; Explain what is meant by solution of trig...; Solve models of the type a sin2 x + b sin x +c=0 and a sin x + b cos x=c; State sine rule, cosine rule, tangent rule and projection rule and solve ...; List various formulae for area of a triangle with examples; Define a complex number, its modulus , conjugate, amplitude and list their properties; Define arithmetic operations on complex numbers with examples; Represent the complex number in various forms like mod ulus-amplitude (polar) form a...; Explain the concept of hyperbolic trigonometric functions and list appropriate formulae; Unit Test – 2 From 2.12 to 3.8 Unit Test – 3 From 4.1 to 5.14",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec101t-2.11",
-                    "sno": "2.11",
-                    "topic": "Define inverses of six trigonometric functions along with their domains and ranges; Derive relations between inverse trigonometric functions so tha...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-2.12",
-                    "sno": "2.12",
-                    "topic": "State various properties of inverse trigonometric functions and identities like 11sin cos 2xx \uf070\u2212\u2212 += etc; Explain what is meant by solution of trig...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-2.13",
-                    "sno": "2.13",
-                    "topic": "Solve models of the type a sin2 x + b sin x +c=0 and a sin x + b cos x=c; State sine rule, cosine rule, tangent rule and projection rule and solve ...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-2.14",
-                    "sno": "2.14",
-                    "topic": "List various formulae for area of a triangle with examples; Define a complex number, its modulus , conjugate, amplitude and list their properties",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-2.15",
-                    "sno": "2.15",
-                    "topic": "Define arithmetic operations on complex numbers with examples; Represent the complex number in various forms like mod ulus-amplitude (polar) form a...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-2.16",
-                    "sno": "2.16",
-                    "topic": "Explain the concept of hyperbolic trigonometric functions and list appropriate formulae; Unit Test \u2013 2 From 2.12 to 3.8 Unit Test \u2013 3 From 4.1 to 5.14",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-2.17",
-                    "sno": "2.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec101t-2.18",
-                    "sno": "2.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "Co-ordinate Geometry",
-            "totalPeriods": 18,
+            "title": "Drive to Destiny!",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec101t-3.1",
@@ -314,7 +202,7 @@
                 {
                     "id": "26ec101t-3.6",
                     "sno": "3.6",
-                    "topic": "Drive To Destiny Reading \u2013 Paragraph Writing \u2013 Homophones, Homonyms, Homographs \u2013 Concord \u2013 Tenses",
+                    "topic": "Drive To Destiny Reading – Paragraph Writing – Homophones, Homonyms, Homographs – Concord – Tenses",
                     "period": 1,
                     "type": "theory"
                 },
@@ -328,7 +216,7 @@
                 {
                     "id": "26ec101t-3.8",
                     "sno": "3.8",
-                    "topic": "Write different forms of a straight line \u2013 general form, point -slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
+                    "topic": "Write different forms of a straight line – general form, point -slope form, slope- intercept form, two-point form, intercept form and normal form or perpendicular form",
                     "period": 1,
                     "type": "theory"
                 },
@@ -342,72 +230,16 @@
                 {
                     "id": "26ec101t-3.10",
                     "sno": "3.10",
-                    "topic": "Define locus of a point and circle",
+                    "topic": "Define locus of a point and circle; Write the general equation of a circle and find its centre and radius; Find the equation of a circle, given (i) centre and radius, (ii)two ends of the diameter(iii) three non collinear points of type (0,0) (a,0), (0, b); Define a conic - Explain the terms focus, directrix, eccentricity, axes and latus - rectum of a conic; Find the equation of a conic when focus, directrix and eccentricity are given; Describe the properties of Parabola 2 4.y ax= 4 Evaluate the limits and derivatives of various functions",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec101t-3.11",
-                    "sno": "3.11",
-                    "topic": "Write the general equation of a circle and find its centre and radius",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-3.12",
-                    "sno": "3.12",
-                    "topic": "Find the equation of a circle, given (i) centre and radius, (ii)two ends of the diameter(iii) three non collinear points of type (0,0) (a,0), (0, b)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-3.13",
-                    "sno": "3.13",
-                    "topic": "Define a conic - Explain the terms focus, directrix, eccentricity, axes and latus - rectum of a conic",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-3.14",
-                    "sno": "3.14",
-                    "topic": "Find the equation of a conic when focus, directrix and eccentricity are given",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-3.15",
-                    "sno": "3.15",
-                    "topic": "Describe the properties of Parabola 2 4.y ax= 4 Evaluate the limits and derivatives of various functions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-3.16",
-                    "sno": "3.16",
-                    "topic": "Deep dive into DRIVE TO DESTINY",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-3.17",
-                    "sno": "3.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec101t-3.18",
-                    "sno": "3.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Differential Calculus",
-            "totalPeriods": 18,
+            "title": "Renew, Rewire & Resolve!",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec101t-4.1",
@@ -440,21 +272,21 @@
                 {
                     "id": "26ec101t-4.5",
                     "sno": "4.5",
-                    "topic": "To apply the skills of critical thinking and creativity in solving problems; RENEW, REWIRE & RESOLVE Reading \u2013 E-mail Writing \u2013 Roots, Affixes \u2013 Ki...",
+                    "topic": "To apply the skills of critical thinking and creativity in solving problems; RENEW, REWIRE & RESOLVE Reading – E-mail Writing – Roots, Affixes – Ki...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec101t-4.6",
                     "sno": "4.6",
-                    "topic": "Explain the concept of limit and meaning of lim ( ) xa f x l \u2192 = and state the properties of limits",
+                    "topic": "Explain the concept of limit and meaning of lim ( ) xa f x l → = and state the properties of limits",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec101t-4.7",
                     "sno": "4.7",
-                    "topic": "Evaluate the limits of the type ()lim ()xa fx gx\u2192 Syllabus for Unit test-II completed completed; State the Standard limits lim , nn xa xa xa\u2192 \u2212 \u2212 0...",
+                    "topic": "Evaluate the limits of the type ()lim ()xa fx gx→ Syllabus for Unit test-II completed completed; State the Standard limits lim , nn xa xa xa→ − − 0...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -468,79 +300,23 @@
                 {
                     "id": "26ec101t-4.9",
                     "sno": "4.9",
-                    "topic": "State the concept of derivative of a function y = f(x) \u2013 definition, first principle as 0 ( ) ( )lim h f x h f x h\u2192 +\u2212 and also write sta ndard not...",
+                    "topic": "State the concept of derivative of a function y = f(x) – definition, first principle as 0 ( ) ( )lim h f x h f x h→ +− and also write sta ndard not...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec101t-4.10",
                     "sno": "4.10",
-                    "topic": "Explain the significance of derivative in scientific and engineering applications; Find the derivatives of standard algebraic, logarithmic, exponen...",
+                    "topic": "Explain the significance of derivative in scientific and engineering applications; Find the derivatives of standard algebraic, logarithmic, exponen...; Find the derivatives of hyperbolic and inverse hyperbolic functions; State the rules of differentiation of sum, difference, scalar multiplication, product and quotient of functions with simple illustrative examples; ...; Explain the method of differentiation of parametric functions with examples; Explain the procedure for finding the derivatives of implicit functions with examples; Explain the need of taking logarithms for differentiating so...; Explain the concept of finding the second order derivatives with examples; Define maximum and minimum values of a function and find the maximum and minimum values for quadratic polynomials; Explain the concept of functions...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec101t-4.11",
-                    "sno": "4.11",
-                    "topic": "Find the derivatives of hyperbolic and inverse hyperbolic functions",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-4.12",
-                    "sno": "4.12",
-                    "topic": "State the rules of differentiation of sum, difference, scalar multiplication, product and quotient of functions with simple illustrative examples; ...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-4.13",
-                    "sno": "4.13",
-                    "topic": "Explain the method of differentiation of parametric functions with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-4.14",
-                    "sno": "4.14",
-                    "topic": "Explain the procedure for finding the derivatives of implicit functions with examples; Explain the need of taking logarithms for differentiating so...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-4.15",
-                    "sno": "4.15",
-                    "topic": "Explain the concept of finding the second order derivatives with examples",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-4.16",
-                    "sno": "4.16",
-                    "topic": "Define maximum and minimum values of a function and find the maximum and minimum values for quadratic polynomials; Explain the concept of functions...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-4.17",
-                    "sno": "4.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec101t-4.18",
-                    "sno": "4.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Integral Calculus",
-            "totalPeriods": 18,
+            "title": "Brains & Bots",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec101t-5.1",
@@ -580,7 +356,7 @@
                 {
                     "id": "26ec101t-5.6",
                     "sno": "5.6",
-                    "topic": "Brains & Bots Reading \u2013 Describing Process \u2013 Phrasal Verbs \u2013 Voice",
+                    "topic": "Brains & Bots Reading – Describing Process – Phrasal Verbs – Voice",
                     "period": 1,
                     "type": "theory"
                 },
@@ -594,76 +370,251 @@
                 {
                     "id": "26ec101t-5.8",
                     "sno": "5.8",
-                    "topic": "Use Bernoulli\u2019s rule to evaluate the integrals of the form \uf0f2 vdxu",
+                    "topic": "Use Bernoulli’s rule to evaluate the integrals of the form  vdxu",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec101t-5.9",
                     "sno": "5.9",
-                    "topic": "Deep dive into Brains & Bots",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-5.10",
-                    "sno": "5.10",
-                    "topic": "Deep dive into To read and comprehend the description of a process with sequence markers",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-5.11",
-                    "sno": "5.11",
-                    "topic": "Deep dive into To communicate using phrasal verbs intelligibly",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-5.12",
-                    "sno": "5.12",
-                    "topic": "Deep dive into To use active and passive voice appropriately",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-5.13",
-                    "sno": "5.13",
-                    "topic": "Deep dive into To describe processes and procedures using appropriate sentence forms. 55. To appraise the importance and use of robotics and artificial intelligence in human life",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-5.14",
-                    "sno": "5.14",
-                    "topic": "Deep dive into Brains & Bots Reading \u2013 Describing Process \u2013 Phrasal Verbs \u2013 Voice",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-5.15",
-                    "sno": "5.15",
-                    "topic": "Deep dive into Explain the concept of Indefinite integral as an anti-derivative",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-5.16",
-                    "sno": "5.16",
-                    "topic": "Deep dive into Use Bernoulli\u2019s rule to evaluate the integrals of the form \uf0f2 vdxu",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec101t-5.17",
-                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec101t-5.18",
-                    "sno": "5.18",
+                    "id": "26ec101t-5.10",
+                    "sno": "5.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "The Blue Planet: Mend or End",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ec101t-6.1",
+                    "sno": "6.1",
+                    "topic": "Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-6.2",
+                    "sno": "6.2",
+                    "topic": "Deep dive into Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-6.3",
+                    "sno": "6.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-6.4",
+                    "sno": "6.4",
+                    "topic": "Practical applications of Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-6.5",
+                    "sno": "6.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-6.6",
+                    "sno": "6.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-6.7",
+                    "sno": "6.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-6.8",
+                    "sno": "6.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-6.9",
+                    "sno": "6.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec101t-6.10",
+                    "sno": "6.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 7,
+            "title": "One World One Dream",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ec101t-7.1",
+                    "sno": "7.1",
+                    "topic": "Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-7.2",
+                    "sno": "7.2",
+                    "topic": "Deep dive into Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-7.3",
+                    "sno": "7.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-7.4",
+                    "sno": "7.4",
+                    "topic": "Practical applications of Study and analysis of Unit 7",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-7.5",
+                    "sno": "7.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-7.6",
+                    "sno": "7.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-7.7",
+                    "sno": "7.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-7.8",
+                    "sno": "7.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-7.9",
+                    "sno": "7.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec101t-7.10",
+                    "sno": "7.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "The Net Norms",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ec101t-8.1",
+                    "sno": "8.1",
+                    "topic": "Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-8.2",
+                    "sno": "8.2",
+                    "topic": "Deep dive into Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-8.3",
+                    "sno": "8.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-8.4",
+                    "sno": "8.4",
+                    "topic": "Practical applications of Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-8.5",
+                    "sno": "8.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-8.6",
+                    "sno": "8.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-8.7",
+                    "sno": "8.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-8.8",
+                    "sno": "8.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-8.9",
+                    "sno": "8.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec101t-8.10",
+                    "sno": "8.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

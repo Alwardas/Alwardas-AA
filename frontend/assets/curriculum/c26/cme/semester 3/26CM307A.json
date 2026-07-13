@@ -7,34 +7,34 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "MS Access -  create Database, create table with and without constraints,  Insert, delete, update records, implement queries, create relationship between two tables",
+            "title": "MS Access - create Database, create table with and without constraints, Insert, delete, update records, implement queries, create relationship between two tables",
             "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26cm307a-1.1",
                     "sno": "1.1",
-                    "topic": "Introduction to Unit 1 concepts",
+                    "topic": "Study and analysis of Unit 1",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-1.2",
                     "sno": "1.2",
-                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "topic": "Deep dive into Study and analysis of Unit 1",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-1.3",
                     "sno": "1.3",
-                    "topic": "Practical application and standard setups for Unit 1",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 1",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-1.4",
                     "sno": "1.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Practical applications of Study and analysis of Unit 1",
                     "period": 1,
                     "type": "theory"
                 },
@@ -56,76 +56,76 @@
         },
         {
             "unitNo": 2,
-            "title": "PageMaker - Creation of publication using tools, text, shapes, etc, Custom template, colors, text block,  Objects, Styles, Page elements, Printing the documents",
+            "title": "PageMaker - Creation of publication using tools, text, shapes, etc, Custom template, colors, text block, Objects, Styles, Page elements, Printing the documents",
             "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26cm307a-2.1",
                     "sno": "2.1",
-                    "topic": "Introduction to Unit 2 concepts",
+                    "topic": "Study and analysis of Unit 2",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-2.2",
                     "sno": "2.2",
-                    "topic": "Detailed analysis of Unit 2 methodologies",
+                    "topic": "Deep dive into Study and analysis of Unit 2",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-2.3",
                     "sno": "2.3",
-                    "topic": "Practical application and standard setups for Unit 2",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 2",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-2.4",
                     "sno": "2.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Practical applications of Study and analysis of Unit 2",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-2.5",
                     "sno": "2.5",
-                    "topic": "Deep dive into Introduction to Unit 2 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-2.6",
                     "sno": "2.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 2 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-2.7",
                     "sno": "2.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 2",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-2.8",
                     "sno": "2.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-2.9",
                     "sno": "2.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 2 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-2.10",
                     "sno": "2.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 2 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
@@ -147,76 +147,76 @@
         },
         {
             "unitNo": 3,
-            "title": "Photoshop \u2013 Different tools,  Working with Layers,  Working with painting tools, Colors, Brushes",
+            "title": "Photoshop – Different tools, Working with Layers, Working with painting tools, Colors, Brushes",
             "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26cm307a-3.1",
                     "sno": "3.1",
-                    "topic": "Introduction to Unit 3 concepts",
+                    "topic": "Study and analysis of Unit 3",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-3.2",
                     "sno": "3.2",
-                    "topic": "Detailed analysis of Unit 3 methodologies",
+                    "topic": "Deep dive into Study and analysis of Unit 3",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-3.3",
                     "sno": "3.3",
-                    "topic": "Practical application and standard setups for Unit 3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 3",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-3.4",
                     "sno": "3.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Practical applications of Study and analysis of Unit 3",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-3.5",
                     "sno": "3.5",
-                    "topic": "Deep dive into Introduction to Unit 3 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-3.6",
                     "sno": "3.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 3 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-3.7",
                     "sno": "3.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 3",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-3.8",
                     "sno": "3.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-3.9",
                     "sno": "3.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 3 concepts",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm307a-3.10",
                     "sno": "3.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 3 methodologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },

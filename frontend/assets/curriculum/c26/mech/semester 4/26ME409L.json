@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "MILLING",
-            "totalPeriods": 18,
+            "title": "Hands on practice on Milling Machine • T-Slot cutting • Spur Gear Cutting • Helical Gear Cutting",
+            "totalPeriods": 24,
             "topics": [
                 {
                     "id": "26me409l-1.1",
@@ -83,55 +83,97 @@
                 {
                     "id": "26me409l-1.11",
                     "sno": "1.11",
-                    "topic": "Select milling cutter to perform the job",
+                    "topic": "Index the job",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-1.12",
                     "sno": "1.12",
-                    "topic": "Set the Job on Machine",
+                    "topic": "Select the speed for helical gear cutting operation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-1.13",
                     "sno": "1.13",
-                    "topic": "Index the job",
+                    "topic": "Practice helical gear cutting operation on a milling machine",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-1.14",
                     "sno": "1.14",
-                    "topic": "Select the speed for helical gear cutting operation",
+                    "topic": "Use measuring instruments for checking dimensions 2. SLOTTER Perform keyway cutting on slotting machine; MILLING Perform T-slot cutting on milling ...",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-1.15",
                     "sno": "1.15",
-                    "topic": "Practice helical gear cutting operation on a milling machine",
+                    "topic": "Practice and training on Select proper tool to perform the job",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-1.16",
                     "sno": "1.16",
-                    "topic": "Use measuring instruments for checking dimensions 2. SLOTTER Perform keyway cutting on slotting machine; MILLING Perform T-slot cutting on milling ...",
+                    "topic": "Practice and training on Set the Job on Machine",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-1.17",
                     "sno": "1.17",
+                    "topic": "Practice and training on Select the speed for milling operation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-1.18",
+                    "sno": "1.18",
+                    "topic": "Practice and training on Practice T-slot cutting operation on a milling machine",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-1.19",
+                    "sno": "1.19",
+                    "topic": "Practice and training on Use measuring instruments for checking dimensions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-1.20",
+                    "sno": "1.20",
+                    "topic": "Practice and training on Indexing methods explanation and application on milling machine Perform Spur gear cutting on milling machine",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-1.21",
+                    "sno": "1.21",
+                    "topic": "Practice and training on Select milling cutter to perform the job",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-1.22",
+                    "sno": "1.22",
+                    "topic": "Practice and training on Set the Job on Machine; Index the job",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-1.23",
+                    "sno": "1.23",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me409l-1.18",
-                    "sno": "1.18",
+                    "id": "26me409l-1.24",
+                    "sno": "1.24",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -140,8 +182,8 @@
         },
         {
             "unitNo": 2,
-            "title": "SLOTTER",
-            "totalPeriods": 18,
+            "title": "Hands on practice on Slotting Machine • Keyway Cutting",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26me409l-2.1",
@@ -188,83 +230,62 @@
                 {
                     "id": "26me409l-2.7",
                     "sno": "2.7",
-                    "topic": "Deep dive into Select cutter to perform the job",
+                    "topic": "Practice and training on Select cutter to perform the job",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-2.8",
                     "sno": "2.8",
-                    "topic": "Deep dive into Set the Job on Machine",
+                    "topic": "Practice and training on Set the Job on Machine",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-2.9",
                     "sno": "2.9",
-                    "topic": "Deep dive into Select the speed for Slotting operation",
+                    "topic": "Practice and training on Select the speed for Slotting operation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-2.10",
                     "sno": "2.10",
-                    "topic": "Deep dive into Practice slotting operation on a slotting",
+                    "topic": "Practice and training on Practice slotting operation on a slotting",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-2.11",
                     "sno": "2.11",
-                    "topic": "Deep dive into Use measuring instruments for checking dimensions 3. SHAPER Perform keyway cutting on shaping machine",
+                    "topic": "Practice and training on Use measuring instruments for checking dimensions 3. SHAPER Perform keyway cutting on shaping machine",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-2.12",
                     "sno": "2.12",
-                    "topic": "Deep dive into SLOTTER Perform keyway cutting on slotting machine",
+                    "topic": "Practice and training on SLOTTER Perform keyway cutting on slotting machine",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-2.13",
                     "sno": "2.13",
-                    "topic": "Problem solving & practice on Select cutter to perform the job",
+                    "topic": "Advanced practical on Select cutter to perform the job",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-2.14",
                     "sno": "2.14",
-                    "topic": "Problem solving & practice on Set the Job on Machine",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-2.15",
-                    "sno": "2.15",
-                    "topic": "Problem solving & practice on Select the speed for Slotting operation",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-2.16",
-                    "sno": "2.16",
-                    "topic": "Problem solving & practice on Practice slotting operation on a slotting",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-2.17",
-                    "sno": "2.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me409l-2.18",
-                    "sno": "2.18",
+                    "id": "26me409l-2.15",
+                    "sno": "2.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +294,8 @@
         },
         {
             "unitNo": 3,
-            "title": "SHAPER",
-            "totalPeriods": 18,
+            "title": "Hands on practice on shaper • Keyway Cutting on shaft",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26me409l-3.1",
@@ -321,83 +342,62 @@
                 {
                     "id": "26me409l-3.7",
                     "sno": "3.7",
-                    "topic": "Deep dive into Select cutter to perform the job",
+                    "topic": "Practice and training on Select cutter to perform the job",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-3.8",
                     "sno": "3.8",
-                    "topic": "Deep dive into Set the Job on Machine",
+                    "topic": "Practice and training on Set the Job on Machine",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-3.9",
                     "sno": "3.9",
-                    "topic": "Deep dive into Select the speed for shaping operation CO4 26ME409L .4 Perform the operations on Grinding Machine CO5 26ME409L .5 Perform the operations on Oxy- Fuel Welding",
+                    "topic": "Practice and training on Select the speed for shaping operation CO4 26ME409L .4 Perform the operations on Grinding Machine CO5 26ME409L .5 Perform the operations on Oxy- Fuel Welding",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-3.10",
                     "sno": "3.10",
-                    "topic": "Deep dive into Practice key way cutting on a shaper",
+                    "topic": "Practice and training on Practice key way cutting on a shaper",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-3.11",
                     "sno": "3.11",
-                    "topic": "Deep dive into Use measuring instruments for checking dimensions 4. GRINDING Perform surface grinding on rectangular block",
+                    "topic": "Practice and training on Use measuring instruments for checking dimensions 4. GRINDING Perform surface grinding on rectangular block",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-3.12",
                     "sno": "3.12",
-                    "topic": "Deep dive into SHAPER Perform keyway cutting on shaping machine",
+                    "topic": "Practice and training on SHAPER Perform keyway cutting on shaping machine",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-3.13",
                     "sno": "3.13",
-                    "topic": "Problem solving & practice on Select cutter to perform the job",
+                    "topic": "Advanced practical on Select cutter to perform the job",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-3.14",
                     "sno": "3.14",
-                    "topic": "Problem solving & practice on Set the Job on Machine",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-3.15",
-                    "sno": "3.15",
-                    "topic": "Problem solving & practice on Select the speed for shaping operation CO4 26ME409L .4 Perform the operations on Grinding Machine CO5 26ME409L .5 Perform the operations on Oxy- Fuel Welding",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-3.16",
-                    "sno": "3.16",
-                    "topic": "Problem solving & practice on Practice key way cutting on a shaper",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-3.17",
-                    "sno": "3.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me409l-3.18",
-                    "sno": "3.18",
+                    "id": "26me409l-3.15",
+                    "sno": "3.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +406,8 @@
         },
         {
             "unitNo": 4,
-            "title": "GRINDING",
-            "totalPeriods": 18,
+            "title": "Hands on practice on Surface Grinding Machine • Preparation of Rectangular Block",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26me409l-4.1",
@@ -468,69 +468,48 @@
                 {
                     "id": "26me409l-4.9",
                     "sno": "4.9",
-                    "topic": "Deep dive into Explain the constructional features, working principles and safety aspect of Surface grinder",
+                    "topic": "Practice and training on Explain the constructional features, working principles and safety aspect of Surface grinder",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-4.10",
                     "sno": "4.10",
-                    "topic": "Deep dive into Explain functional application of different levers, stoppers, adjustment Practice grinding operation",
+                    "topic": "Practice and training on Explain functional application of different levers, stoppers, adjustment Practice grinding operation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-4.11",
                     "sno": "4.11",
-                    "topic": "Deep dive into Identify different lubrication points of surface grinder",
+                    "topic": "Practice and training on Identify different lubrication points of surface grinder",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-4.12",
                     "sno": "4.12",
-                    "topic": "Deep dive into Identify lubricants and their usage for application in surface grinder",
+                    "topic": "Practice and training on Identify lubricants and their usage for application in surface grinder",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-4.13",
                     "sno": "4.13",
-                    "topic": "Deep dive into Identify different work and tool holding devices and acquaint with functional application of each device",
+                    "topic": "Practice and training on Identify different work and tool holding devices and acquaint with functional application of each device",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-4.14",
                     "sno": "4.14",
-                    "topic": "Deep dive into Mount the work and tool holding devices with required alignment and check for its functional usage to perform surface grinding operations",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-4.15",
-                    "sno": "4.15",
-                    "topic": "Deep dive into Observe safety procedure during mounting as per standard norms 5. Oxy- Fuel Welding",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-4.16",
-                    "sno": "4.16",
-                    "topic": "Deep dive into GRINDING Perform surface grinding on rectangular block",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-4.17",
-                    "sno": "4.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me409l-4.18",
-                    "sno": "4.18",
+                    "id": "26me409l-4.15",
+                    "sno": "4.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,8 +518,8 @@
         },
         {
             "unitNo": 5,
-            "title": "OXY FUEL WELDING",
-            "totalPeriods": 18,
+            "title": "Hands on practice on Oxy- Fuel Welding • Preparation of joining of metals",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26me409l-5.1",
@@ -566,7 +545,7 @@
                 {
                     "id": "26me409l-5.4",
                     "sno": "5.4",
-                    "topic": "Fuel gases: Acetylene, LPG, Hydrogen \u2013 properties, selection, applications",
+                    "topic": "Fuel gases: Acetylene, LPG, Hydrogen – properties, selection, applications",
                     "period": 1,
                     "type": "practical"
                 },
@@ -580,90 +559,118 @@
                 {
                     "id": "26me409l-5.6",
                     "sno": "5.6",
-                    "topic": "Deep dive into Fundamentals of Oxy-Fuel Welding",
+                    "topic": "Practice and training on Fundamentals of Oxy-Fuel Welding",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-5.7",
                     "sno": "5.7",
-                    "topic": "Deep dive into Introduction to welding and classification of welding processes",
+                    "topic": "Practice and training on Introduction to welding and classification of welding processes",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-5.8",
                     "sno": "5.8",
-                    "topic": "Deep dive into Principles of oxy-fuel gas welding",
+                    "topic": "Practice and training on Principles of oxy-fuel gas welding",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-5.9",
                     "sno": "5.9",
-                    "topic": "Deep dive into Fuel gases: Acetylene, LPG, Hydrogen \u2013 properties, selection, applications",
+                    "topic": "Practice and training on Fuel gases: Acetylene, LPG, Hydrogen – properties, selection, applications",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-5.10",
                     "sno": "5.10",
-                    "topic": "Deep dive into OXY FUEL WELDING Assembly of gear, shaft and key",
+                    "topic": "Practice and training on OXY FUEL WELDING Assembly of gear, shaft and key",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-5.11",
                     "sno": "5.11",
-                    "topic": "Problem solving & practice on Fundamentals of Oxy-Fuel Welding",
+                    "topic": "Advanced practical on Fundamentals of Oxy-Fuel Welding",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-5.12",
                     "sno": "5.12",
-                    "topic": "Problem solving & practice on Introduction to welding and classification of welding processes",
+                    "topic": "Advanced practical on Introduction to welding and classification of welding processes",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-5.13",
                     "sno": "5.13",
-                    "topic": "Problem solving & practice on Principles of oxy-fuel gas welding",
+                    "topic": "Advanced practical on Principles of oxy-fuel gas welding",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me409l-5.14",
                     "sno": "5.14",
-                    "topic": "Problem solving & practice on Fuel gases: Acetylene, LPG, Hydrogen \u2013 properties, selection, applications",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-5.15",
-                    "sno": "5.15",
-                    "topic": "Problem solving & practice on OXY FUEL WELDING Assembly of gear, shaft and key",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-5.16",
-                    "sno": "5.16",
-                    "topic": "Practical applications of Fundamentals of Oxy-Fuel Welding",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me409l-5.17",
-                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me409l-5.18",
-                    "sno": "5.18",
+                    "id": "26me409l-5.15",
+                    "sno": "5.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "Assembly of gear, shaft and key",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26me409l-6.1",
+                    "sno": "6.1",
+                    "topic": "Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-6.2",
+                    "sno": "6.2",
+                    "topic": "Practice and training on Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-6.3",
+                    "sno": "6.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-6.4",
+                    "sno": "6.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 6",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me409l-6.5",
+                    "sno": "6.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26me409l-6.6",
+                    "sno": "6.6",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

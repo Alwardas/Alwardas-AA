@@ -3,12 +3,12 @@
     "subjectName": "Basic Thermodynamics",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 90,
+    "totalPeriods": 78,
     "units": [
         {
             "unitNo": 1,
-            "title": "FUNDAMENTALS OF THERMODYNAMICS",
-            "totalPeriods": 18,
+            "title": "Fundamentals of Thermodynamics",
+            "totalPeriods": 26,
             "topics": [
                 {
                     "id": "26me302t-1.1",
@@ -90,7 +90,7 @@
                 {
                     "id": "26me302t-1.12",
                     "sno": "1.12",
-                    "topic": "Define Perfect Gas and Derive the Characteristic Gas Equation; State Boyle\u2019s Law, Charle\u2019s Law, Avogadro\u2019s Law, Regnault\u2019s Law and Joule\u2019s Law with...",
+                    "topic": "Define Perfect Gas and Derive the Characteristic Gas Equation; State Boyle’s Law, Charle’s Law, Avogadro’s Law, Regnault’s Law and Joule’s Law with...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -125,13 +125,69 @@
                 {
                     "id": "26me302t-1.17",
                     "sno": "1.17",
+                    "topic": "Deep dive into FUNDAMENTALS OF THERMODYNAMICS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me302t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Define the System, Boundary, Universe and Working Fluid of a Thermodynamic System",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me302t-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Explain the Three Types of Thermodynamic Systems with Examples; List and Explain Different Extensive and Intensive Properties of a Thermodynamic Sy...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me302t-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into Define Thermodynamic State, Path, Process And Cycle with Graphical Representations",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me302t-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into Define the Terms Heat, Work, Quasi-Static Work and Flow Work; State the Concept of Entropy and Change of Entropy with Mathematical Expression",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me302t-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Differentiate Reversible and Irreversible Processes with Examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me302t-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into State the Relationship Connecting the Two Specific Heats and Characteristic Gas Constant (R); Define the Zeroth Law of Thermodynamics and Thermal E...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me302t-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into State First Law of Thermodynamics for a Cycle, its Significance, Limitations and Applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me302t-1.25",
+                    "sno": "1.25",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me302t-1.18",
-                    "sno": "1.18",
+                    "id": "26me302t-1.26",
+                    "sno": "1.26",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -140,8 +196,8 @@
         },
         {
             "unitNo": 2,
-            "title": "THERMODYNAMIC PROCESSES ON GASES",
-            "totalPeriods": 18,
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
             "topics": [
                 {
                     "id": "26me302t-2.1",
@@ -153,118 +209,6 @@
                 {
                     "id": "26me302t-2.2",
                     "sno": "2.2",
-                    "topic": "List Thermodynamic Processes on Gases",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.3",
-                    "sno": "2.3",
-                    "topic": "Explain Various Thermodynamic Processes Such as Isochoric, Isobaric, Isothermal Isentropic and Polytropic Processes with Pressure -Volume and Temperature\u2013 Entropy Diagrams",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.4",
-                    "sno": "2.4",
-                    "topic": "Write mathematical expressions for Change in Internal Energy, Work Transfer, Heat Transfer, Change in Enthalpy and Change in Entropy For Isochoric, Isobaric, Isothermal, Isentropic And Polytropic Processes (Without Proofs)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.5",
-                    "sno": "2.5",
-                    "topic": "Solve Simple Problems on the Above Thermodynamic Processes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.6",
-                    "sno": "2.6",
-                    "topic": "Description of Hyperbolic, Free Expansion and Throttling Processes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.7",
-                    "sno": "2.7",
-                    "topic": "THERMODYNAMIC PROCESSES ON GASES Description of Constant Volume, Constant Pressure, Isothermal, Isentropic (Reversible Adiabatic) a nd Po lytropic Processes - Explanation of the Above Thermodynamic Processes with the help of Pressure -Volume and Temperature \u2013 Entropy Diagrams- Write the Mathematical Expressions for Change in Internal Energy, Work Transfer, Heat Transfer, Change in Enthalpy and Change in Entropy for Isochoric, Isobaric, Isothermal, Isentropic and Polytropic Process (Without Proofs) - Simple Problems- Description of Hyperbolic, Free Expansion and Throttling Processes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.8",
-                    "sno": "2.8",
-                    "topic": "Deep dive into THERMODYNAMIC PROCESSES ON GASES",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.9",
-                    "sno": "2.9",
-                    "topic": "Deep dive into List Thermodynamic Processes on Gases",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.10",
-                    "sno": "2.10",
-                    "topic": "Deep dive into Explain Various Thermodynamic Processes Such as Isochoric, Isobaric, Isothermal Isentropic and Polytropic Processes with Pressure -Volume and Temperature\u2013 Entropy Diagrams",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.11",
-                    "sno": "2.11",
-                    "topic": "Deep dive into Write mathematical expressions for Change in Internal Energy, Work Transfer, Heat Transfer, Change in Enthalpy and Change in Entropy For Isochoric, Isobaric, Isothermal, Isentropic And Polytropic Processes (Without Proofs)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.12",
-                    "sno": "2.12",
-                    "topic": "Deep dive into Solve Simple Problems on the Above Thermodynamic Processes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.13",
-                    "sno": "2.13",
-                    "topic": "Deep dive into Description of Hyperbolic, Free Expansion and Throttling Processes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.14",
-                    "sno": "2.14",
-                    "topic": "Deep dive into THERMODYNAMIC PROCESSES ON GASES Description of Constant Volume, Constant Pressure, Isothermal, Isentropic (Reversible Adiabatic) a nd Po lytropic Processes - Explanation of the Above Thermodynamic Processes with the help of Pressure -Volume and Temperature \u2013 Entropy Diagrams- Write the Mathematical Expressions for Change in Internal Energy, Work Transfer, Heat Transfer, Change in Enthalpy and Change in Entropy for Isochoric, Isobaric, Isothermal, Isentropic and Polytropic Process (Without Proofs) - Simple Problems- Description of Hyperbolic, Free Expansion and Throttling Processes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.15",
-                    "sno": "2.15",
-                    "topic": "Problem solving & practice on THERMODYNAMIC PROCESSES ON GASES",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.16",
-                    "sno": "2.16",
-                    "topic": "Problem solving & practice on List Thermodynamic Processes on Gases",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-2.17",
-                    "sno": "2.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me302t-2.18",
-                    "sno": "2.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,7 +217,7 @@
         },
         {
             "unitNo": 3,
-            "title": "VAPOUR PROCESSES",
+            "title": "Vapour Processes",
             "totalPeriods": 18,
             "topics": [
                 {
@@ -406,8 +350,8 @@
         },
         {
             "unitNo": 4,
-            "title": "AIR STANDARD CYCLES",
-            "totalPeriods": 18,
+            "title": "Air Standard Cycles",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26me302t-4.1",
@@ -419,7 +363,7 @@
                 {
                     "id": "26me302t-4.2",
                     "sno": "4.2",
-                    "topic": "Define the Term \u2018Air Standard Cycle\u2019",
+                    "topic": "Define the Term ‘Air Standard Cycle’",
                     "period": 1,
                     "type": "theory"
                 },
@@ -440,7 +384,7 @@
                 {
                     "id": "26me302t-4.5",
                     "sno": "4.5",
-                    "topic": "State the Assumptions Made in the Analysis of \u2018Air Standard Cycles\u2019",
+                    "topic": "State the Assumptions Made in the Analysis of ‘Air Standard Cycles’",
                     "period": 1,
                     "type": "theory"
                 },
@@ -496,41 +440,20 @@
                 {
                     "id": "26me302t-4.13",
                     "sno": "4.13",
-                    "topic": "AIR STANDARD CYCLES Meaning of air standard cycle \u2013 important air standard cycles - assumptions made in the analysis of various air standard cycles \u2013 air standard efficiency; explanation of thermodynamic processes of carnot cycle on p -v and t -s diagrams \u2013 mathematical expression for air standard efficiency of carnot cycle ( derivation omitted ) \u2013 simple problems on carnot cycle - explanation of thermodynamic processes of otto cycle on p -v and t -s diagrams \u2013 mathematical expression for air standard efficiency of otto cycle ( derivation omitted ) \u2013 simple problems on otto cycle - explanation of thermodynamic processes of diesel cycle on p -v and t -s diagrams \u2013 mathematical expression for air standard efficiency of diesel cycle ( derivation omitted) - simple problems on diesel cycle- reasons for the highest efficiency of carnot cycle over other air standard cycles working between same temperature limits - comparison of otto cycle and diesel cycle",
+                    "topic": "AIR STANDARD CYCLES Meaning of air standard cycle – important air standard cycles - assumptions made in the analysis of various air standard cycles – air standard efficiency; explanation of thermodynamic processes of carnot cycle on p -v and t -s diagrams – mathematical expression for air standard efficiency of carnot cycle ( derivation omitted ) – simple problems on carnot cycle - explanation of thermodynamic processes of otto cycle on p -v and t -s diagrams – mathematical expression for air standard efficiency of otto cycle ( derivation omitted ) – simple problems on otto cycle - explanation of thermodynamic processes of diesel cycle on p -v and t -s diagrams – mathematical expression for air standard efficiency of diesel cycle ( derivation omitted) - simple problems on diesel cycle- reasons for the highest efficiency of carnot cycle over other air standard cycles working between same temperature limits - comparison of otto cycle and diesel cycle",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me302t-4.14",
                     "sno": "4.14",
-                    "topic": "Deep dive into AIR STANDARD CYCLES",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-4.15",
-                    "sno": "4.15",
-                    "topic": "Deep dive into Define the Term \u2018Air Standard Cycle\u2019",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-4.16",
-                    "sno": "4.16",
-                    "topic": "Deep dive into List Important Air Standard Cycles and their Practical Applications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-4.17",
-                    "sno": "4.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me302t-4.18",
-                    "sno": "4.18",
+                    "id": "26me302t-4.15",
+                    "sno": "4.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,8 +462,8 @@
         },
         {
             "unitNo": 5,
-            "title": "FUELS AND COMBUSTION",
-            "totalPeriods": 18,
+            "title": "Fuels and Combustion",
+            "totalPeriods": 17,
             "topics": [
                 {
                     "id": "26me302t-5.1",
@@ -587,7 +510,7 @@
                 {
                     "id": "26me302t-5.7",
                     "sno": "5.7",
-                    "topic": "Solve Simple Problems on Calculating the Higher Calorific Value of a Fuel and Then Lower Calorific Value of the Fuel by Using Dulong\u2019s Formula",
+                    "topic": "Solve Simple Problems on Calculating the Higher Calorific Value of a Fuel and Then Lower Calorific Value of the Fuel by Using Dulong’s Formula",
                     "period": 1,
                     "type": "theory"
                 },
@@ -601,7 +524,7 @@
                 {
                     "id": "26me302t-5.9",
                     "sno": "5.9",
-                    "topic": "Describe Junker\u2019s Gas Calorimeter for the Determination of Calorific Value of Gaseous Fuel",
+                    "topic": "Describe Junker’s Gas Calorimeter for the Determination of Calorific Value of Gaseous Fuel",
                     "period": 1,
                     "type": "theory"
                 },
@@ -622,7 +545,7 @@
                 {
                     "id": "26me302t-5.12",
                     "sno": "5.12",
-                    "topic": "FUELS AND COMBUSTION Fuels: Definition Of Fuel \u2013 Renewable Energy Sources And Non-Renewable Energy Sources Of Fuels-Classifications Of Fuels As Solid, Liquid And Gaseous Fuels With Examples \u2013 Merits, Limitations And Applications Of The Above Fuels - Calorific Value Of Fuels \u2013 Higher And Lower Calorific Values \u2013 Dulong\u2019s Formula \u2013 Simple Problems \u2013 Determination Of Calorific Values Of Solid And Liquid Fuels By Using Bomb calorimeter and Gaseous Fuels By Using Junker\u2019s Gas Calorimeter. (Description Only). Combustion: Definition Of Combustion- Write Combustion Chemical Equations For The Combustion Of Carbon, Hydrogen, Sulphur, Methane And Ethane \u2013 Calculation Of Minimum Air Required For Complete Combustion Of Fuel On Mass Basis And Volume Basis \u2013 Simple Problems \u2013 Need Of Excess Air. REFERENCE BOOKS 1. Engineering Thermodynamics, P. K. Nag, McGraw Hill Education Publishers 2. Thermodynamics, 2004, C. P. Arora, McGraw Hill Education Publishers 3. Thermal Engineering - J.K.Guptha and R. S. Khurmi, S. Chand& Company Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Out comes to be covered Unit Test \u2013I From 1.1 to 3.4 Unit Test \u2013II From 3.5 to 5.11",
+                    "topic": "FUELS AND COMBUSTION Fuels: Definition Of Fuel – Renewable Energy Sources And Non-Renewable Energy Sources Of Fuels-Classifications Of Fuels As Solid, Liquid And Gaseous Fuels With Examples – Merits, Limitations And Applications Of The Above Fuels - Calorific Value Of Fuels – Higher And Lower Calorific Values – Dulong’s Formula – Simple Problems – Determination Of Calorific Values Of Solid And Liquid Fuels By Using Bomb calorimeter and Gaseous Fuels By Using Junker’s Gas Calorimeter. (Description Only). Combustion: Definition Of Combustion- Write Combustion Chemical Equations For The Combustion Of Carbon, Hydrogen, Sulphur, Methane And Ethane – Calculation Of Minimum Air Required For Complete Combustion Of Fuel On Mass Basis And Volume Basis – Simple Problems – Need Of Excess Air. REFERENCE BOOKS 1. Engineering Thermodynamics, P. K. Nag, McGraw Hill Education Publishers 2. Thermodynamics, 2004, C. P. Arora, McGraw Hill Education Publishers 3. Thermal Engineering - J.K.Guptha and R. S. Khurmi, S. Chand& Company Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Out comes to be covered Unit Test –I From 1.1 to 3.4 Unit Test –II From 3.5 to 5.11",
                     "period": 1,
                     "type": "theory"
                 },
@@ -650,20 +573,13 @@
                 {
                     "id": "26me302t-5.16",
                     "sno": "5.16",
-                    "topic": "Deep dive into Compare Solid, Liquid and Gaseous Fuels",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me302t-5.17",
-                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me302t-5.18",
-                    "sno": "5.18",
+                    "id": "26me302t-5.17",
+                    "sno": "5.17",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

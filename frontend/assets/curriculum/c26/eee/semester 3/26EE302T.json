@@ -3,7 +3,7 @@
     "subjectName": "Electronics Engineerig",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 90,
+    "totalPeriods": 77,
     "units": [
         {
             "unitNo": 1,
@@ -189,8 +189,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Power Supplies",
-            "totalPeriods": 15,
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
             "topics": [
                 {
                     "id": "26ee302t-2.1",
@@ -202,97 +202,6 @@
                 {
                     "id": "26ee302t-2.2",
                     "sno": "2.2",
-                    "topic": "Explain the working and draw the circuit diagrams and waveforms of: a) Half Wave Rectifier (b) Full Wave Rectifier (c) Bridge Rectifier",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.3",
-                    "sno": "2.3",
-                    "topic": "State the need of filter in power supplies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.4",
-                    "sno": "2.4",
-                    "topic": "List the different types of filters used in power supplies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.5",
-                    "sno": "2.5",
-                    "topic": "Explain working of a RC, CRC, CLC filters used for full wave rectifier",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.6",
-                    "sno": "2.6",
-                    "topic": "Define voltage regulator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.7",
-                    "sno": "2.7",
-                    "topic": "Explain the working of Zener diode as a Voltage regulator in a power supply",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.8",
-                    "sno": "2.8",
-                    "topic": "Explain the working of voltage regulated power supply",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.9",
-                    "sno": "2.9",
-                    "topic": "List the types of IC regulators",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.10",
-                    "sno": "2.10",
-                    "topic": "Give the advantages of IC regulators",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.11",
-                    "sno": "2.11",
-                    "topic": "Explain the operation of adjustable voltage regulator 3 Amplifiers",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.12",
-                    "sno": "2.12",
-                    "topic": "Deep dive into Define Rectifier",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.13",
-                    "sno": "2.13",
-                    "topic": "Deep dive into Explain the working and draw the circuit diagrams and waveforms of: a) Half Wave Rectifier (b) Full Wave Rectifier (c) Bridge Rectifier",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee302t-2.14",
-                    "sno": "2.14",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee302t-2.15",
-                    "sno": "2.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -447,7 +356,7 @@
                 {
                     "id": "26ee302t-4.5",
                     "sno": "4.5",
-                    "topic": "Draw the circuit diagram and explain the working of Colpitts\u2019s Oscillator",
+                    "topic": "Draw the circuit diagram and explain the working of Colpitts’s Oscillator",
                     "period": 1,
                     "type": "theory"
                 },
@@ -496,7 +405,7 @@
                 {
                     "id": "26ee302t-4.12",
                     "sno": "4.12",
-                    "topic": "List IC numbers of any three ADC\u2019s and DAC\u2019s 5 Linear Integrated Circuits",
+                    "topic": "List IC numbers of any three ADC’s and DAC’s 5 Linear Integrated Circuits",
                     "period": 1,
                     "type": "theory"
                 },
@@ -531,7 +440,7 @@
                 {
                     "id": "26ee302t-4.17",
                     "sno": "4.17",
-                    "topic": "Deep dive into Draw the circuit diagram and explain the working of Colpitts\u2019s Oscillator",
+                    "topic": "Deep dive into Draw the circuit diagram and explain the working of Colpitts’s Oscillator",
                     "period": 1,
                     "type": "theory"
                 },

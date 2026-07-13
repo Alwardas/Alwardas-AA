@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "Basic Concepts of Chemistry",
-            "totalPeriods": 13,
+            "totalPeriods": 14,
             "topics": [
                 {
                     "id": "26cm104t-1.1",
@@ -34,7 +34,7 @@
                 {
                     "id": "26cm104t-1.4",
                     "sno": "1.4",
-                    "topic": "Explain the Postulates of Bohr\u2019s atomic theory and its limitations",
+                    "topic": "Explain the Postulates of Bohr’s atomic theory and its limitations",
                     "period": 1,
                     "type": "theory"
                 },
@@ -55,7 +55,7 @@
                 {
                     "id": "26cm104t-1.7",
                     "sno": "1.7",
-                    "topic": "Explain (i). Aufbau principle (ii). Hund\u2019s rule and (iii). Pauli\u2019s exclusion principle; Write the Electronic configuration of elements up to Atomic...",
+                    "topic": "Explain (i). Aufbau principle (ii). Hund’s rule and (iii). Pauli’s exclusion principle; Write the Electronic configuration of elements up to Atomic...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -90,13 +90,20 @@
                 {
                     "id": "26cm104t-1.12",
                     "sno": "1.12",
+                    "topic": "Deep dive into Basic Concepts of Chemistry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-1.13",
+                    "sno": "1.13",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm104t-1.13",
-                    "sno": "1.13",
+                    "id": "26cm104t-1.14",
+                    "sno": "1.14",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -106,7 +113,7 @@
         {
             "unitNo": 2,
             "title": "Solutions, Acids and Bases",
-            "totalPeriods": 11,
+            "totalPeriods": 14,
             "topics": [
                 {
                     "id": "26cm104t-2.1",
@@ -167,20 +174,41 @@
                 {
                     "id": "26cm104t-2.9",
                     "sno": "2.9",
-                    "topic": "Define buffer solution and classify buffer solutions with examples. Give its applications; Unit Test \u2013 2 From 3.1 to 5.10 Unit Test \u2013 3 From 6.1 to...",
+                    "topic": "Define buffer solution and classify buffer solutions with examples. Give its applications; Unit Test – 2 From 3.1 to 5.10 Unit Test – 3 From 6.1 to...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm104t-2.10",
                     "sno": "2.10",
+                    "topic": "Deep dive into Solutions, Acids and Bases",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-2.11",
+                    "sno": "2.11",
+                    "topic": "Deep dive into Define the terms: (i). Solution (ii). Solute and (iii). Solvent with examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-2.12",
+                    "sno": "2.12",
+                    "topic": "Deep dive into Classify solutions based on physical state of solvent with examples",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-2.13",
+                    "sno": "2.13",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm104t-2.11",
-                    "sno": "2.11",
+                    "id": "26cm104t-2.14",
+                    "sno": "2.14",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -190,7 +218,7 @@
         {
             "unitNo": 3,
             "title": "Electrochemistry",
-            "totalPeriods": 11,
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26cm104t-3.1",
@@ -251,20 +279,27 @@
                 {
                     "id": "26cm104t-3.9",
                     "sno": "3.9",
-                    "topic": "Define battery and list the types of batteries with examples; Explain the construction, working and applications of (i). Dry cell (Leclanch\u00e9 cell) ...",
+                    "topic": "Define battery and list the types of batteries with examples; Explain the construction, working and applications of (i). Dry cell (Leclanché cell) ...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm104t-3.10",
                     "sno": "3.10",
+                    "topic": "Deep dive into Electrochemistry",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-3.11",
+                    "sno": "3.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm104t-3.11",
-                    "sno": "3.11",
+                    "id": "26cm104t-3.12",
+                    "sno": "3.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -274,7 +309,7 @@
         {
             "unitNo": 4,
             "title": "Corrosion",
-            "totalPeriods": 11,
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26cm104t-4.1",
@@ -321,34 +356,13 @@
                 {
                     "id": "26cm104t-4.7",
                     "sno": "4.7",
-                    "topic": "Deep dive into Corrosion",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm104t-4.8",
-                    "sno": "4.8",
-                    "topic": "Deep dive into Define the term corrosion",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm104t-4.9",
-                    "sno": "4.9",
-                    "topic": "Deep dive into State the factors which influencing the rate of corrosion",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm104t-4.10",
-                    "sno": "4.10",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm104t-4.11",
-                    "sno": "4.11",
+                    "id": "26cm104t-4.8",
+                    "sno": "4.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -358,7 +372,7 @@
         {
             "unitNo": 5,
             "title": "Water Treatment",
-            "totalPeriods": 11,
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26cm104t-5.1",
@@ -412,37 +426,16 @@
                 {
                     "id": "26cm104t-5.8",
                     "sno": "5.8",
-                    "topic": "List out the applications and advantages of reverse osmosis technique",
+                    "topic": "List out the applications and advantages of reverse osmosis technique; List out the essential qualities of drinking water/potable water; Explain Municipal treatment of water for drinking purpose (only flow chart)",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26cm104t-5.9",
-                    "sno": "5.9",
-                    "topic": "List out the essential qualities of drinking water/potable water; Explain Municipal treatment of water for drinking purpose (only flow chart)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm104t-5.10",
-                    "sno": "5.10",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26cm104t-5.11",
-                    "sno": "5.11",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 6,
-            "title": "Polymers and Engineering Materials.",
-            "totalPeriods": 11,
+            "title": "Polymers and Engineering Materials",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26cm104t-6.1",
@@ -503,20 +496,13 @@
                 {
                     "id": "26cm104t-6.9",
                     "sno": "6.9",
-                    "topic": "Deep dive into Explain monomers, polymers and the concept of polymerization",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm104t-6.10",
-                    "sno": "6.10",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm104t-6.11",
-                    "sno": "6.11",
+                    "id": "26cm104t-6.10",
+                    "sno": "6.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -526,7 +512,7 @@
         {
             "unitNo": 7,
             "title": "Fuels and Alternative Energy Sources",
-            "totalPeriods": 11,
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26cm104t-7.1",
@@ -569,48 +555,13 @@
                     "topic": "Define Green fuel. State the advantages and disadvantages of hydrogen as a green fuel",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26cm104t-7.7",
-                    "sno": "7.7",
-                    "topic": "Deep dive into Fuels and Alternative Energy Sources",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm104t-7.8",
-                    "sno": "7.8",
-                    "topic": "Deep dive into Define the term fuel",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm104t-7.9",
-                    "sno": "7.9",
-                    "topic": "Deep dive into Classification of fuels as Natural fuels and Synthetic fuels",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm104t-7.10",
-                    "sno": "7.10",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26cm104t-7.11",
-                    "sno": "7.11",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 8,
             "title": "Environmental Studies",
-            "totalPeriods": 11,
+            "totalPeriods": 18,
             "topics": [
                 {
                     "id": "26cm104t-8.1",
@@ -671,20 +622,69 @@
                 {
                     "id": "26cm104t-8.9",
                     "sno": "8.9",
-                    "topic": "Define e \u2013 pollution. State the sources of e \u2013 pollution. Explain its health effects and its management; Define Green Chemistry. List the Green Che...",
+                    "topic": "Define e – pollution. State the sources of e – pollution. Explain its health effects and its management; Define Green Chemistry. List the Green Che...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm104t-8.10",
                     "sno": "8.10",
+                    "topic": "Deep dive into Environmental Studies",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-8.11",
+                    "sno": "8.11",
+                    "topic": "Deep dive into Importance of environmental studies",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-8.12",
+                    "sno": "8.12",
+                    "topic": "Deep dive into Define the following terms: (i). Pollution, (ii). Pollutant, (iii). Sink, (iv). Receptor, (v). Particulate Matter, (vi). Dissolved Oxygen (DO) and ...",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-8.13",
+                    "sno": "8.13",
+                    "topic": "Deep dive into State the uses of forest resources",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-8.14",
+                    "sno": "8.14",
+                    "topic": "Deep dive into Define deforestation. Explain the causes, effects and controlling methods of deforestation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-8.15",
+                    "sno": "8.15",
+                    "topic": "Deep dive into Define Air pollution. Explain the causes, effects and controlling methods of Air pollution",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-8.16",
+                    "sno": "8.16",
+                    "topic": "Deep dive into Explain the global impacts of Air pollution: (i). Global Warming, (ii). Ozone Layer Depletion and (iii). Acid Rain",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm104t-8.17",
+                    "sno": "8.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm104t-8.11",
-                    "sno": "8.11",
+                    "id": "26cm104t-8.18",
+                    "sno": "8.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

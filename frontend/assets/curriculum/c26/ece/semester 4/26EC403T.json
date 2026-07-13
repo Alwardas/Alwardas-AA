@@ -3,12 +3,12 @@
     "subjectName": "Industrial Electronics",
     "regulation": "C26",
     "semester": 4,
-    "totalPeriods": 90,
+    "totalPeriods": 72,
     "units": [
         {
             "unitNo": 1,
-            "title": "POWER ELECTRONIC DEVICES",
-            "totalPeriods": 18,
+            "title": "Power Electronic Devices",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec403t-1.1",
@@ -125,13 +125,27 @@
                 {
                     "id": "26ec403t-1.17",
                     "sno": "1.17",
+                    "topic": "Deep dive into Sketch the ISI circuit symbols of SCR, SCS, SBS, SUS, DIAC, TRIAC and GTO SCR",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Explain the construction and working of SCR and its VI Characteristics",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-1.19",
+                    "sno": "1.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec403t-1.18",
-                    "sno": "1.18",
+                    "id": "26ec403t-1.20",
+                    "sno": "1.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -140,8 +154,8 @@
         },
         {
             "unitNo": 2,
-            "title": "INVERTERS, SMPS, UPS& BATTERY MANAGEMENT",
-            "totalPeriods": 18,
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
             "topics": [
                 {
                     "id": "26ec403t-2.1",
@@ -153,118 +167,6 @@
                 {
                     "id": "26ec403t-2.2",
                     "sno": "2.2",
-                    "topic": "State the need for inverters",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.3",
-                    "sno": "2.3",
-                    "topic": "State the principle of operation of inverter",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.4",
-                    "sno": "2.4",
-                    "topic": "Explain the working of MOSFET based Inverter circuit; Explain Voltage control of inverter using PWM",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.5",
-                    "sno": "2.5",
-                    "topic": "List the applications of inverters",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.6",
-                    "sno": "2.6",
-                    "topic": "Explain the working of SMPS with block diagram",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.7",
-                    "sno": "2.7",
-                    "topic": "List the applications of SMPS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.8",
-                    "sno": "2.8",
-                    "topic": "Explain the working of Off Line UPS and Online UPS; List the applications of UPS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.9",
-                    "sno": "2.9",
-                    "topic": "List various Batteries used in Industries and e-vehicles",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.10",
-                    "sno": "2.10",
-                    "topic": "State the importance of Battery Management",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.11",
-                    "sno": "2.11",
-                    "topic": "Explain about the Battery management concepts used in e-vehicles",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.12",
-                    "sno": "2.12",
-                    "topic": "List various methods used for charging for Battery; Understand the charging circuit for Battery",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.13",
-                    "sno": "2.13",
-                    "topic": "Understand the various stages of charging Battery",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.14",
-                    "sno": "2.14",
-                    "topic": "Understand the concept of short circuit protection of Battery",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.15",
-                    "sno": "2.15",
-                    "topic": "Understand the concept of Overload protection of Battery",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.16",
-                    "sno": "2.16",
-                    "topic": "Understand the concept of deep Discharge protection of Battery; Understand the concept of Over Heat protection of Battery",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-2.17",
-                    "sno": "2.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec403t-2.18",
-                    "sno": "2.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +175,8 @@
         },
         {
             "unitNo": 3,
-            "title": "TRANSDUCERS & TIMERS",
-            "totalPeriods": 18,
+            "title": "Transducers and Timers",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec403t-3.1",
@@ -391,13 +293,27 @@
                 {
                     "id": "26ec403t-3.17",
                     "sno": "3.17",
+                    "topic": "Deep dive into Define the term transducer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Classify different electrical/electronic transducers on the basis of principle of operation and applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec403t-3.19",
+                    "sno": "3.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec403t-3.18",
-                    "sno": "3.18",
+                    "id": "26ec403t-3.20",
+                    "sno": "3.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +322,8 @@
         },
         {
             "unitNo": 4,
-            "title": "OPTO-ELECTRONIC DEVICES",
-            "totalPeriods": 18,
+            "title": "Opto Electronic Devices",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ec403t-4.1",
@@ -503,34 +419,13 @@
                 {
                     "id": "26ec403t-4.14",
                     "sno": "4.14",
-                    "topic": "Deep dive into Explain the structure, working principle and characteristics of LED",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-4.15",
-                    "sno": "4.15",
-                    "topic": "Deep dive into List the applications of LED",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-4.16",
-                    "sno": "4.16",
-                    "topic": "Deep dive into Explain the structure, operation and characteristics of photo diode",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-4.17",
-                    "sno": "4.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec403t-4.18",
-                    "sno": "4.18",
+                    "id": "26ec403t-4.15",
+                    "sno": "4.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,8 +434,8 @@
         },
         {
             "unitNo": 5,
-            "title": "CONTROL SYSTEMS",
-            "totalPeriods": 18,
+            "title": "Control Systems",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ec403t-5.1",
@@ -573,97 +468,76 @@
                 {
                     "id": "26ec403t-5.5",
                     "sno": "5.5",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec403t-5.6",
                     "sno": "5.6",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec403t-5.7",
                     "sno": "5.7",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec403t-5.8",
                     "sno": "5.8",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec403t-5.9",
                     "sno": "5.9",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec403t-5.10",
                     "sno": "5.10",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec403t-5.11",
                     "sno": "5.11",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec403t-5.12",
                     "sno": "5.12",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec403t-5.13",
                     "sno": "5.13",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec403t-5.14",
                     "sno": "5.14",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-5.15",
-                    "sno": "5.15",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-5.16",
-                    "sno": "5.16",
-                    "topic": "Practical applications of CONTROL SYSTEMS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec403t-5.17",
-                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec403t-5.18",
-                    "sno": "5.18",
+                    "id": "26ec403t-5.15",
+                    "sno": "5.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

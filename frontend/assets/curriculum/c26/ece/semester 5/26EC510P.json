@@ -3,12 +3,12 @@
     "subjectName": "PROJECT WORK",
     "regulation": "C26",
     "semester": 5,
-    "totalPeriods": 60,
+    "totalPeriods": 16,
     "units": [
         {
             "unitNo": 1,
-            "title": "Design/Assembling/Analysis/Case Study Projects in the areas of Electronics &",
-            "totalPeriods": 60,
+            "title": "Problem solving and Critical Thinking",
+            "totalPeriods": 13,
             "topics": [
                 {
                     "id": "26ec510p-1.1",
@@ -100,332 +100,31 @@
                     "topic": "Preparation of project report. 2. Communication",
                     "period": 1,
                     "type": "practical"
-                },
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Communication",
+            "totalPeriods": 3,
+            "topics": [
                 {
-                    "id": "26ec510p-1.14",
-                    "sno": "1.14",
-                    "topic": "Deep dive into Identify different works to be carried out in the Project",
+                    "id": "26ec510p-2.1",
+                    "sno": "2.1",
+                    "topic": "Study and analysis of Unit 2",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ec510p-1.15",
-                    "sno": "1.15",
-                    "topic": "Deep dive into Collect data relevant to the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.16",
-                    "sno": "1.16",
-                    "topic": "Deep dive into Carryout need survey",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.17",
-                    "sno": "1.17",
-                    "topic": "Deep dive into Select the most efficient method from the available choices based on preliminary investigation",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.18",
-                    "sno": "1.18",
-                    "topic": "Deep dive into Design the required elements of the project work as per standard practices",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.19",
-                    "sno": "1.19",
-                    "topic": "Deep dive into Prepare the working modules / equipment required for the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.20",
-                    "sno": "1.20",
-                    "topic": "Deep dive into Estimate the cost of project, technological need, computer skills, materials and other equipment",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.21",
-                    "sno": "1.21",
-                    "topic": "Deep dive into Prepare the plan and schedule of starting time and sequence of operations to be carried out at various stages of the project work in detail",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.22",
-                    "sno": "1.22",
-                    "topic": "Deep dive into Prepare critical activities at various stages of the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.23",
-                    "sno": "1.23",
-                    "topic": "Deep dive into Test various conditions with different electrical input parameter if required",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.24",
-                    "sno": "1.24",
-                    "topic": "Deep dive into Implement project work and record the results",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.25",
-                    "sno": "1.25",
-                    "topic": "Deep dive into Draw Appropriate Conclusions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.26",
-                    "sno": "1.26",
-                    "topic": "Deep dive into Preparation of project report. 2. Communication",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.27",
-                    "sno": "1.27",
-                    "topic": "Problem solving & practice on Identify different works to be carried out in the Project",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.28",
-                    "sno": "1.28",
-                    "topic": "Problem solving & practice on Collect data relevant to the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.29",
-                    "sno": "1.29",
-                    "topic": "Problem solving & practice on Carryout need survey",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.30",
-                    "sno": "1.30",
-                    "topic": "Problem solving & practice on Select the most efficient method from the available choices based on preliminary investigation",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.31",
-                    "sno": "1.31",
-                    "topic": "Problem solving & practice on Design the required elements of the project work as per standard practices",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.32",
-                    "sno": "1.32",
-                    "topic": "Problem solving & practice on Prepare the working modules / equipment required for the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.33",
-                    "sno": "1.33",
-                    "topic": "Problem solving & practice on Estimate the cost of project, technological need, computer skills, materials and other equipment",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.34",
-                    "sno": "1.34",
-                    "topic": "Problem solving & practice on Prepare the plan and schedule of starting time and sequence of operations to be carried out at various stages of the project work in detail",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.35",
-                    "sno": "1.35",
-                    "topic": "Problem solving & practice on Prepare critical activities at various stages of the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.36",
-                    "sno": "1.36",
-                    "topic": "Problem solving & practice on Test various conditions with different electrical input parameter if required",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.37",
-                    "sno": "1.37",
-                    "topic": "Problem solving & practice on Implement project work and record the results",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.38",
-                    "sno": "1.38",
-                    "topic": "Problem solving & practice on Draw Appropriate Conclusions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.39",
-                    "sno": "1.39",
-                    "topic": "Problem solving & practice on Preparation of project report. 2. Communication",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.40",
-                    "sno": "1.40",
-                    "topic": "Practical applications of Identify different works to be carried out in the Project",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.41",
-                    "sno": "1.41",
-                    "topic": "Practical applications of Collect data relevant to the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.42",
-                    "sno": "1.42",
-                    "topic": "Practical applications of Carryout need survey",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.43",
-                    "sno": "1.43",
-                    "topic": "Practical applications of Select the most efficient method from the available choices based on preliminary investigation",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.44",
-                    "sno": "1.44",
-                    "topic": "Practical applications of Design the required elements of the project work as per standard practices",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.45",
-                    "sno": "1.45",
-                    "topic": "Practical applications of Prepare the working modules / equipment required for the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.46",
-                    "sno": "1.46",
-                    "topic": "Practical applications of Estimate the cost of project, technological need, computer skills, materials and other equipment",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.47",
-                    "sno": "1.47",
-                    "topic": "Practical applications of Prepare the plan and schedule of starting time and sequence of operations to be carried out at various stages of the project work in detail",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.48",
-                    "sno": "1.48",
-                    "topic": "Practical applications of Prepare critical activities at various stages of the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.49",
-                    "sno": "1.49",
-                    "topic": "Practical applications of Test various conditions with different electrical input parameter if required",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.50",
-                    "sno": "1.50",
-                    "topic": "Practical applications of Implement project work and record the results",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.51",
-                    "sno": "1.51",
-                    "topic": "Practical applications of Draw Appropriate Conclusions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.52",
-                    "sno": "1.52",
-                    "topic": "Practical applications of Preparation of project report. 2. Communication",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.53",
-                    "sno": "1.53",
-                    "topic": "Practical applications of Identify different works to be carried out in the Project",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.54",
-                    "sno": "1.54",
-                    "topic": "Practical applications of Collect data relevant to the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.55",
-                    "sno": "1.55",
-                    "topic": "Practical applications of Carryout need survey",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.56",
-                    "sno": "1.56",
-                    "topic": "Practical applications of Select the most efficient method from the available choices based on preliminary investigation",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.57",
-                    "sno": "1.57",
-                    "topic": "Practical applications of Design the required elements of the project work as per standard practices",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.58",
-                    "sno": "1.58",
-                    "topic": "Practical applications of Prepare the working modules / equipment required for the project work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec510p-1.59",
-                    "sno": "1.59",
+                    "id": "26ec510p-2.2",
+                    "sno": "2.2",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec510p-1.60",
-                    "sno": "1.60",
+                    "id": "26ec510p-2.3",
+                    "sno": "2.3",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

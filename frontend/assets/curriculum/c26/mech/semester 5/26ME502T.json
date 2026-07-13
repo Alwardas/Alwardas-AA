@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "FUNDAMENTAL CONCEPTS IN MACHINE DESIGN",
-            "totalPeriods": 18,
+            "title": "Fundamental concepts in Machine Design",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me502t-1.1",
@@ -48,14 +48,14 @@
                 {
                     "id": "26me502t-1.6",
                     "sno": "1.6",
-                    "topic": "Explain combined stresses \u2013 torsion and bending stresses",
+                    "topic": "Explain combined stresses – torsion and bending stresses",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me502t-1.7",
                     "sno": "1.7",
-                    "topic": "FUNDAMENTAL CONCEPTS IN MACHINE DESIGN Introduction to design process (General sequence of steps in designing a machine element) Factors influencing the design of machine elements - Selection of materials based on mechanical properties \u2013 Types of loading -Direct, Bending and Torsional stress equations - Design based on strength & Rigidity - Theories of failures- Factor of safety-Working stress, yield strength and ultimate strength - Combined Stresses-Torsion and bending stresses",
+                    "topic": "FUNDAMENTAL CONCEPTS IN MACHINE DESIGN Introduction to design process (General sequence of steps in designing a machine element) Factors influencing the design of machine elements - Selection of materials based on mechanical properties – Types of loading -Direct, Bending and Torsional stress equations - Design based on strength & Rigidity - Theories of failures- Factor of safety-Working stress, yield strength and ultimate strength - Combined Stresses-Torsion and bending stresses",
                     "period": 1,
                     "type": "theory"
                 },
@@ -69,69 +69,13 @@
                 {
                     "id": "26me502t-1.9",
                     "sno": "1.9",
-                    "topic": "Deep dive into Explain the basic procedure of designing of machine members",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-1.10",
-                    "sno": "1.10",
-                    "topic": "Deep dive into Explain the factors governing the design of machine members",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-1.11",
-                    "sno": "1.11",
-                    "topic": "Deep dive into Explain the design based on strength and rigidity",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-1.12",
-                    "sno": "1.12",
-                    "topic": "Deep dive into Explain various theories of failures",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-1.13",
-                    "sno": "1.13",
-                    "topic": "Deep dive into Explain combined stresses \u2013 torsion and bending stresses",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-1.14",
-                    "sno": "1.14",
-                    "topic": "Deep dive into FUNDAMENTAL CONCEPTS IN MACHINE DESIGN Introduction to design process (General sequence of steps in designing a machine element) Factors influencing the design of machine elements - Selection of materials based on mechanical properties \u2013 Types of loading -Direct, Bending and Torsional stress equations - Design based on strength & Rigidity - Theories of failures- Factor of safety-Working stress, yield strength and ultimate strength - Combined Stresses-Torsion and bending stresses",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-1.15",
-                    "sno": "1.15",
-                    "topic": "Problem solving & practice on FUNDAMENTAL CONCEPTS IN MACHINE DESIGN",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-1.16",
-                    "sno": "1.16",
-                    "topic": "Problem solving & practice on Explain the basic procedure of designing of machine members",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-1.17",
-                    "sno": "1.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me502t-1.18",
-                    "sno": "1.18",
+                    "id": "26me502t-1.10",
+                    "sno": "1.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -140,8 +84,8 @@
         },
         {
             "unitNo": 2,
-            "title": "SCREWED JOINTS",
-            "totalPeriods": 18,
+            "title": "Screw Joints",
+            "totalPeriods": 16,
             "topics": [
                 {
                     "id": "26me502t-2.1",
@@ -167,7 +111,7 @@
                 {
                     "id": "26me502t-2.4",
                     "sno": "2.4",
-                    "topic": "Design of bolts subjected to tensile load only\u2013Simple problems",
+                    "topic": "Design of bolts subjected to tensile load only–Simple problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -181,7 +125,7 @@
                 {
                     "id": "26me502t-2.6",
                     "sno": "2.6",
-                    "topic": "SCREWED JOINTS Types of Fasteners - Advantages, disadvantages and applications of threaded joints \u2013 Bolt Materials -Specification of bolt - Stresses induced in the bolted joints \u2013 Failure of bolted joints - Design of bolts subjected to initial tightening and external ten sile forces - Design of bolts for Cylinder covers \u2013 Bolt of Uniform strength - Simple problems. Design and of an eye bolt for a given tensile load using empirical proportions - Applications of eye-bolt",
+                    "topic": "SCREWED JOINTS Types of Fasteners - Advantages, disadvantages and applications of threaded joints – Bolt Materials -Specification of bolt - Stresses induced in the bolted joints – Failure of bolted joints - Design of bolts subjected to initial tightening and external ten sile forces - Design of bolts for Cylinder covers – Bolt of Uniform strength - Simple problems. Design and of an eye bolt for a given tensile load using empirical proportions - Applications of eye-bolt",
                     "period": 1,
                     "type": "theory"
                 },
@@ -209,7 +153,7 @@
                 {
                     "id": "26me502t-2.10",
                     "sno": "2.10",
-                    "topic": "Deep dive into Design of bolts subjected to tensile load only\u2013Simple problems",
+                    "topic": "Deep dive into Design of bolts subjected to tensile load only–Simple problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -223,7 +167,7 @@
                 {
                     "id": "26me502t-2.12",
                     "sno": "2.12",
-                    "topic": "Deep dive into SCREWED JOINTS Types of Fasteners - Advantages, disadvantages and applications of threaded joints \u2013 Bolt Materials -Specification of bolt - Stresses induced in the bolted joints \u2013 Failure of bolted joints - Design of bolts subjected to initial tightening and external ten sile forces - Design of bolts for Cylinder covers \u2013 Bolt of Uniform strength - Simple problems. Design and of an eye bolt for a given tensile load using empirical proportions - Applications of eye-bolt",
+                    "topic": "Deep dive into SCREWED JOINTS Types of Fasteners - Advantages, disadvantages and applications of threaded joints – Bolt Materials -Specification of bolt - Stresses induced in the bolted joints – Failure of bolted joints - Design of bolts subjected to initial tightening and external ten sile forces - Design of bolts for Cylinder covers – Bolt of Uniform strength - Simple problems. Design and of an eye bolt for a given tensile load using empirical proportions - Applications of eye-bolt",
                     "period": 1,
                     "type": "theory"
                 },
@@ -244,27 +188,13 @@
                 {
                     "id": "26me502t-2.15",
                     "sno": "2.15",
-                    "topic": "Problem solving & practice on Explain Modes of failure and Strength of bolts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-2.16",
-                    "sno": "2.16",
-                    "topic": "Problem solving & practice on Design of bolts subjected to tensile load only\u2013Simple problems",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me502t-2.17",
-                    "sno": "2.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me502t-2.18",
-                    "sno": "2.18",
+                    "id": "26me502t-2.16",
+                    "sno": "2.16",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +203,8 @@
         },
         {
             "unitNo": 3,
-            "title": "SHAFTS, KEYS AND COUPLINGS",
-            "totalPeriods": 18,
+            "title": "Shafts, Keys and Couplings",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26me502t-3.1",
@@ -314,14 +244,14 @@
                 {
                     "id": "26me502t-3.6",
                     "sno": "3.6",
-                    "topic": "Design the Solid shaft subjected to Combined Torsion and Bending using Rankine and Guest theories of failures based on Strength (for static load only) \u2013 Simple Numerical problems",
+                    "topic": "Design the Solid shaft subjected to Combined Torsion and Bending using Rankine and Guest theories of failures based on Strength (for static load only) – Simple Numerical problems",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me502t-3.7",
                     "sno": "3.7",
-                    "topic": "Design the hallow shaft subjected to Combined Torsion and Bending using Rankine and Guest theories of failures based on Rigidity (for static load only) \u2013Simple Numerical problems",
+                    "topic": "Design the hallow shaft subjected to Combined Torsion and Bending using Rankine and Guest theories of failures based on Rigidity (for static load only) –Simple Numerical problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -363,7 +293,7 @@
                 {
                     "id": "26me502t-3.13",
                     "sno": "3.13",
-                    "topic": "SHAFTS, KEYS AND COUPLINGS Shafts: Define i) Shaft ii) Axle iii) Spindle -Functions of shafts \u2013 Stresses induced in shafts \u2013 Torque and Bending equations for the Shafts subjected to pure twisting and pure bending. Design of Solid shaft subjected to both twisting and bending using Rankine\u2018s and Guest\u2018s theories of failures to transmit a given power at given rpm., based on (a) Strength and (b) Rigidity - Simple problems considering mean and maximum torques. Keys: Functions of keys\u2013Stresses induced in keys - Failure of keys Couplings: Functions of coupling \u2013 Types of couplings \u2013 Design of Muff Coupling and C.I Rigid Protected flange coupling for a given torque using empirical proportions \u2013 Simple problems on muff coupling only",
+                    "topic": "SHAFTS, KEYS AND COUPLINGS Shafts: Define i) Shaft ii) Axle iii) Spindle -Functions of shafts – Stresses induced in shafts – Torque and Bending equations for the Shafts subjected to pure twisting and pure bending. Design of Solid shaft subjected to both twisting and bending using Rankine‘s and Guest‘s theories of failures to transmit a given power at given rpm., based on (a) Strength and (b) Rigidity - Simple problems considering mean and maximum torques. Keys: Functions of keys–Stresses induced in keys - Failure of keys Couplings: Functions of coupling – Types of couplings – Design of Muff Coupling and C.I Rigid Protected flange coupling for a given torque using empirical proportions – Simple problems on muff coupling only",
                     "period": 1,
                     "type": "theory"
                 },
@@ -391,13 +321,27 @@
                 {
                     "id": "26me502t-3.17",
                     "sno": "3.17",
+                    "topic": "Deep dive into Write the formula for the power transmitted by the solid and hollow shafts subjected to pure torsion from the torsional equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Design the Solid shaft and hallow shaft subjected to pure bending from bending equation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-3.19",
+                    "sno": "3.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me502t-3.18",
-                    "sno": "3.18",
+                    "id": "26me502t-3.20",
+                    "sno": "3.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +350,8 @@
         },
         {
             "unitNo": 4,
-            "title": "POWER TRANSMISSION SYSTEMS",
-            "totalPeriods": 18,
+            "title": "Power Transmission Systems",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26me502t-4.1",
@@ -524,13 +468,27 @@
                 {
                     "id": "26me502t-4.17",
                     "sno": "4.17",
+                    "topic": "Deep dive into POWER TRANSMISSION SYSTEMS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-4.18",
+                    "sno": "4.18",
+                    "topic": "Deep dive into List the different power drives and compare the flexible drives with the rigid drives",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-4.19",
+                    "sno": "4.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me502t-4.18",
-                    "sno": "4.18",
+                    "id": "26me502t-4.20",
+                    "sno": "4.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,8 +497,8 @@
         },
         {
             "unitNo": 5,
-            "title": "CAMS, FLYWHEEL, GOVERNORS AND BEARINGS",
-            "totalPeriods": 18,
+            "title": "Cams, Flywheel, Governors and Bearings",
+            "totalPeriods": 24,
             "topics": [
                 {
                     "id": "26me502t-5.1",
@@ -629,7 +587,7 @@
                 {
                     "id": "26me502t-5.13",
                     "sno": "5.13",
-                    "topic": "CAMS, FLYWHEEL, GOVERNORS AND BEARINGS Cams: Functions of cam - Classification of cams and followers \u2013 Working principle of plate and cylindrical cams - Nomenclature of radial cam profile. Time vs displacement diagrams only for the Motions of the followers: Uniform velocity, Uniform acceleration and retardation and Simple harmonic motion. Construction of Cam profile of a radial cam with Roller follower for all the three types of motions, when the axis of the follower passes through the axis of the cam. Flywheels: Function and applications of fly wheel -Definition of Coefficient of fluctuation of speed, maximum fluctuation in energy and Coefficient of fluctuation of energy \u2013 Mass Moment of Inertia - Mathematical expression for kinetic energy stored in the flywheel - Simple Problems on the above. Governors: Functions \u2013 Differences between Flywheel and Governor - Classification \u2013 Working Principle of Watt governor and Porter governor. Bearings: Functions, Types of bearings - Journal bearing \u2013McKee\u2019s Equation, Bearing Modulus - Simple Problems on Power lost in friction and Heat to be removed in journal bearings REFERENCES 1. Machine Design- R.S. Khurmi., S Chand & Company 2. Design of Machine Elements- Pandya and Shah, Charotar Publishing House. 3 Design of Machine Elements\u2013V B Bhandari, Tata Mc Graw Hill. 4 Machine Design\u2013 R.K.Jain, Khanna Publications Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.11 Unit Test \u2013 II From 4.1 to 5.12",
+                    "topic": "CAMS, FLYWHEEL, GOVERNORS AND BEARINGS Cams: Functions of cam - Classification of cams and followers – Working principle of plate and cylindrical cams - Nomenclature of radial cam profile. Time vs displacement diagrams only for the Motions of the followers: Uniform velocity, Uniform acceleration and retardation and Simple harmonic motion. Construction of Cam profile of a radial cam with Roller follower for all the three types of motions, when the axis of the follower passes through the axis of the cam. Flywheels: Function and applications of fly wheel -Definition of Coefficient of fluctuation of speed, maximum fluctuation in energy and Coefficient of fluctuation of energy – Mass Moment of Inertia - Mathematical expression for kinetic energy stored in the flywheel - Simple Problems on the above. Governors: Functions – Differences between Flywheel and Governor - Classification – Working Principle of Watt governor and Porter governor. Bearings: Functions, Types of bearings - Journal bearing –McKee’s Equation, Bearing Modulus - Simple Problems on Power lost in friction and Heat to be removed in journal bearings REFERENCES 1. Machine Design- R.S. Khurmi., S Chand & Company 2. Design of Machine Elements- Pandya and Shah, Charotar Publishing House. 3 Design of Machine Elements–V B Bhandari, Tata Mc Graw Hill. 4 Machine Design– R.K.Jain, Khanna Publications Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test – I From 1.1 to 3.11 Unit Test – II From 4.1 to 5.12",
                     "period": 1,
                     "type": "theory"
                 },
@@ -657,13 +615,55 @@
                 {
                     "id": "26me502t-5.17",
                     "sno": "5.17",
+                    "topic": "Deep dive into Define the terms related to cam profile",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-5.18",
+                    "sno": "5.18",
+                    "topic": "Deep dive into Draw displacement diagram for the following motion of the knife edge followers when the axis of the follower passes through the axis of the cam. a) Uniform velocity. b) S.H.M. c) Uniform acceleration & retardation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-5.19",
+                    "sno": "5.19",
+                    "topic": "Deep dive into State the function of flywheel and governor and list their applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-5.20",
+                    "sno": "5.20",
+                    "topic": "Deep dive into Explain the terms related to design of flywheel",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-5.21",
+                    "sno": "5.21",
+                    "topic": "Deep dive into Write the expression for maximum fluctuation of energy- Simple Problems",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-5.22",
+                    "sno": "5.22",
+                    "topic": "Deep dive into Classify the governors",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me502t-5.23",
+                    "sno": "5.23",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me502t-5.18",
-                    "sno": "5.18",
+                    "id": "26me502t-5.24",
+                    "sno": "5.24",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

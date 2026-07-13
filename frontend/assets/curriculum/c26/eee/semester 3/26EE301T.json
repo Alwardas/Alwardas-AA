@@ -3,12 +3,12 @@
     "subjectName": "Electrical Machines",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 90,
+    "totalPeriods": 78,
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction.",
-            "totalPeriods": 45,
+            "title": "Fundamentals of D.C Generators, Armature reaction and Characteristics",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ee301t-1.1",
@@ -55,7 +55,7 @@
                 {
                     "id": "26ee301t-1.7",
                     "sno": "1.7",
-                    "topic": "Derive the E.M.F equation of D.C generator in terms of \u03a6, Z, N, P & A and solve problems",
+                    "topic": "Derive the E.M.F equation of D.C generator in terms of Φ, Z, N, P & A and solve problems",
                     "period": 1,
                     "type": "theory"
                 },
@@ -139,188 +139,13 @@
                 {
                     "id": "26ee301t-1.19",
                     "sno": "1.19",
-                    "topic": "Deep dive into Explain the working principle of D.C generator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.20",
-                    "sno": "1.20",
-                    "topic": "Deep dive into State the types of armature windings",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.21",
-                    "sno": "1.21",
-                    "topic": "Deep dive into Derive the E.M.F equation of D.C generator in terms of \u03a6, Z, N, P & A and solve problems",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.22",
-                    "sno": "1.22",
-                    "topic": "Deep dive into Classify D.C Generators based on excitation and draw their equivalent circuits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.23",
-                    "sno": "1.23",
-                    "topic": "Deep dive into State various losses incurred in a D.C Generator and draw the power flow diagram",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.24",
-                    "sno": "1.24",
-                    "topic": "Deep dive into Define the mechanical, electrical and overall efficiencies of DC Generator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.25",
-                    "sno": "1.25",
-                    "topic": "Deep dive into Define Armature reaction and state its effects",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.26",
-                    "sno": "1.26",
-                    "topic": "Deep dive into State Commutation and list the different methods of improving commutation",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.27",
-                    "sno": "1.27",
-                    "topic": "Deep dive into Plot Open Circuit Characteristics, Internal characteristics and external characteristics of the following types of D.C. Generators: (i) Separately excited ii) Shunt (iii)Series",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.28",
-                    "sno": "1.28",
-                    "topic": "Deep dive into List the applications of above D.C generators. 2. Fundamentals of D.C Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.29",
-                    "sno": "1.29",
-                    "topic": "Problem solving & practice on Introduction",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.30",
-                    "sno": "1.30",
-                    "topic": "Problem solving & practice on Explain electro mechanical energy conversion",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.31",
-                    "sno": "1.31",
-                    "topic": "Problem solving & practice on Define DC Generator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.32",
-                    "sno": "1.32",
-                    "topic": "Problem solving & practice on Describe the constructional features of a D.C generator with a legible sketch and list the various materials used for each part",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.33",
-                    "sno": "1.33",
-                    "topic": "Problem solving & practice on Explain the working principle of D.C generator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.34",
-                    "sno": "1.34",
-                    "topic": "Problem solving & practice on State the types of armature windings",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.35",
-                    "sno": "1.35",
-                    "topic": "Problem solving & practice on Derive the E.M.F equation of D.C generator in terms of \u03a6, Z, N, P & A and solve problems",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.36",
-                    "sno": "1.36",
-                    "topic": "Problem solving & practice on Classify D.C Generators based on excitation and draw their equivalent circuits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.37",
-                    "sno": "1.37",
-                    "topic": "Problem solving & practice on State various losses incurred in a D.C Generator and draw the power flow diagram",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.38",
-                    "sno": "1.38",
-                    "topic": "Problem solving & practice on Define the mechanical, electrical and overall efficiencies of DC Generator",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.39",
-                    "sno": "1.39",
-                    "topic": "Problem solving & practice on Define Armature reaction and state its effects",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.40",
-                    "sno": "1.40",
-                    "topic": "Problem solving & practice on State Commutation and list the different methods of improving commutation",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.41",
-                    "sno": "1.41",
-                    "topic": "Problem solving & practice on Plot Open Circuit Characteristics, Internal characteristics and external characteristics of the following types of D.C. Generators: (i) Separately excited ii) Shunt (iii)Series",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.42",
-                    "sno": "1.42",
-                    "topic": "Problem solving & practice on List the applications of above D.C generators. 2. Fundamentals of D.C Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.43",
-                    "sno": "1.43",
-                    "topic": "Practical applications of Introduction",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-1.44",
-                    "sno": "1.44",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee301t-1.45",
-                    "sno": "1.45",
+                    "id": "26ee301t-1.20",
+                    "sno": "1.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -329,8 +154,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Introduction.",
-            "totalPeriods": 45,
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
             "topics": [
                 {
                     "id": "26ee301t-2.1",
@@ -342,307 +167,419 @@
                 {
                     "id": "26ee301t-2.2",
                     "sno": "2.2",
-                    "topic": "Define DC motor",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Speed Control and Testing of D.C Motors",
+            "totalPeriods": 12,
+            "topics": [
+                {
+                    "id": "26ee301t-3.1",
+                    "sno": "3.1",
+                    "topic": "Study and analysis of Unit 3",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.3",
-                    "sno": "2.3",
-                    "topic": "Explain the working of D.C motor",
+                    "id": "26ee301t-3.2",
+                    "sno": "3.2",
+                    "topic": "Deep dive into Study and analysis of Unit 3",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.4",
-                    "sno": "2.4",
-                    "topic": "Explain the significance of back E.M.F",
+                    "id": "26ee301t-3.3",
+                    "sno": "3.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 3",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.5",
-                    "sno": "2.5",
-                    "topic": "Classify DC motors and draw their equivalent circuits",
+                    "id": "26ee301t-3.4",
+                    "sno": "3.4",
+                    "topic": "Practical applications of Study and analysis of Unit 3",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.6",
-                    "sno": "2.6",
-                    "topic": "Define Torque and derive Torque equation of a D.C motor",
+                    "id": "26ee301t-3.5",
+                    "sno": "3.5",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.7",
-                    "sno": "2.7",
-                    "topic": "Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
+                    "id": "26ee301t-3.6",
+                    "sno": "3.6",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.8",
-                    "sno": "2.8",
-                    "topic": "List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
+                    "id": "26ee301t-3.7",
+                    "sno": "3.7",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.9",
-                    "sno": "2.9",
-                    "topic": "Deep dive into Introduction",
+                    "id": "26ee301t-3.8",
+                    "sno": "3.8",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.10",
-                    "sno": "2.10",
-                    "topic": "Deep dive into Define DC motor",
+                    "id": "26ee301t-3.9",
+                    "sno": "3.9",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.11",
-                    "sno": "2.11",
-                    "topic": "Deep dive into Explain the working of D.C motor",
+                    "id": "26ee301t-3.10",
+                    "sno": "3.10",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26ee301t-2.12",
-                    "sno": "2.12",
-                    "topic": "Deep dive into Explain the significance of back E.M.F",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.13",
-                    "sno": "2.13",
-                    "topic": "Deep dive into Classify DC motors and draw their equivalent circuits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.14",
-                    "sno": "2.14",
-                    "topic": "Deep dive into Define Torque and derive Torque equation of a D.C motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.15",
-                    "sno": "2.15",
-                    "topic": "Deep dive into Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.16",
-                    "sno": "2.16",
-                    "topic": "Deep dive into List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.17",
-                    "sno": "2.17",
-                    "topic": "Problem solving & practice on Introduction",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.18",
-                    "sno": "2.18",
-                    "topic": "Problem solving & practice on Define DC motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.19",
-                    "sno": "2.19",
-                    "topic": "Problem solving & practice on Explain the working of D.C motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.20",
-                    "sno": "2.20",
-                    "topic": "Problem solving & practice on Explain the significance of back E.M.F",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.21",
-                    "sno": "2.21",
-                    "topic": "Problem solving & practice on Classify DC motors and draw their equivalent circuits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.22",
-                    "sno": "2.22",
-                    "topic": "Problem solving & practice on Define Torque and derive Torque equation of a D.C motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.23",
-                    "sno": "2.23",
-                    "topic": "Problem solving & practice on Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.24",
-                    "sno": "2.24",
-                    "topic": "Problem solving & practice on List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.25",
-                    "sno": "2.25",
-                    "topic": "Practical applications of Introduction",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.26",
-                    "sno": "2.26",
-                    "topic": "Practical applications of Define DC motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.27",
-                    "sno": "2.27",
-                    "topic": "Practical applications of Explain the working of D.C motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.28",
-                    "sno": "2.28",
-                    "topic": "Practical applications of Explain the significance of back E.M.F",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.29",
-                    "sno": "2.29",
-                    "topic": "Practical applications of Classify DC motors and draw their equivalent circuits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.30",
-                    "sno": "2.30",
-                    "topic": "Practical applications of Define Torque and derive Torque equation of a D.C motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.31",
-                    "sno": "2.31",
-                    "topic": "Practical applications of Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.32",
-                    "sno": "2.32",
-                    "topic": "Practical applications of List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.33",
-                    "sno": "2.33",
-                    "topic": "Practical applications of Introduction",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.34",
-                    "sno": "2.34",
-                    "topic": "Practical applications of Define DC motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.35",
-                    "sno": "2.35",
-                    "topic": "Practical applications of Explain the working of D.C motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.36",
-                    "sno": "2.36",
-                    "topic": "Practical applications of Explain the significance of back E.M.F",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.37",
-                    "sno": "2.37",
-                    "topic": "Practical applications of Classify DC motors and draw their equivalent circuits",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.38",
-                    "sno": "2.38",
-                    "topic": "Practical applications of Define Torque and derive Torque equation of a D.C motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.39",
-                    "sno": "2.39",
-                    "topic": "Practical applications of Plot the Electrical characteristics and Mechanical characteristics of (a) D.C Shunt (b) D.C Series Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.40",
-                    "sno": "2.40",
-                    "topic": "Practical applications of List the applications of the various D.C motors. 3. Speed Control and testing of D.C Motors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.41",
-                    "sno": "2.41",
-                    "topic": "Practical applications of Introduction",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.42",
-                    "sno": "2.42",
-                    "topic": "Practical applications of Define DC motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.43",
-                    "sno": "2.43",
-                    "topic": "Practical applications of Explain the working of D.C motor",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee301t-2.44",
-                    "sno": "2.44",
+                    "id": "26ee301t-3.11",
+                    "sno": "3.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee301t-2.45",
-                    "sno": "2.45",
+                    "id": "26ee301t-3.12",
+                    "sno": "3.12",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Single phase transformers",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "26ee301t-4.1",
+                    "sno": "4.1",
+                    "topic": "Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.5",
+                    "sno": "4.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.6",
+                    "sno": "4.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.7",
+                    "sno": "4.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.8",
+                    "sno": "4.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.9",
+                    "sno": "4.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.10",
+                    "sno": "4.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.11",
+                    "sno": "4.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.12",
+                    "sno": "4.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.13",
+                    "sno": "4.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.14",
+                    "sno": "4.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.15",
+                    "sno": "4.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.16",
+                    "sno": "4.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.17",
+                    "sno": "4.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.18",
+                    "sno": "4.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.19",
+                    "sno": "4.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.20",
+                    "sno": "4.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.21",
+                    "sno": "4.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.22",
+                    "sno": "4.22",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.23",
+                    "sno": "4.23",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.24",
+                    "sno": "4.24",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.25",
+                    "sno": "4.25",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.26",
+                    "sno": "4.26",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.27",
+                    "sno": "4.27",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.28",
+                    "sno": "4.28",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-4.29",
+                    "sno": "4.29",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee301t-4.30",
+                    "sno": "4.30",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Three phase transformers and Auto Transformers",
+            "totalPeriods": 14,
+            "topics": [
+                {
+                    "id": "26ee301t-5.1",
+                    "sno": "5.1",
+                    "topic": "Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.4",
+                    "sno": "5.4",
+                    "topic": "Practical applications of Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.5",
+                    "sno": "5.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.6",
+                    "sno": "5.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.7",
+                    "sno": "5.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.8",
+                    "sno": "5.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.9",
+                    "sno": "5.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.10",
+                    "sno": "5.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.11",
+                    "sno": "5.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.12",
+                    "sno": "5.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee301t-5.13",
+                    "sno": "5.13",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ee301t-5.14",
+                    "sno": "5.14",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

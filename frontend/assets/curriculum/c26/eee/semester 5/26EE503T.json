@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction to Artificial Intelligence and AI Models",
-            "totalPeriods": 24,
+            "title": "Power Electronic devices",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ee503t-1.1",
@@ -34,7 +34,7 @@
                 {
                     "id": "26ee503t-1.4",
                     "sno": "1.4",
-                    "topic": "Explain the Volt\u2013Ampere characteristics of SCR with the help of a diagram",
+                    "topic": "Explain the Volt–Ampere characteristics of SCR with the help of a diagram",
                     "period": 1,
                     "type": "theory"
                 },
@@ -83,7 +83,7 @@
                 {
                     "id": "26ee503t-1.11",
                     "sno": "1.11",
-                    "topic": "Explain the Volt-ampere characteristics of TRIAC under forward/ reverse bias; State the necessity of Commutation in SCR\u2019s",
+                    "topic": "Explain the Volt-ampere characteristics of TRIAC under forward/ reverse bias; State the necessity of Commutation in SCR’s",
                     "period": 1,
                     "type": "theory"
                 },
@@ -146,44 +146,16 @@
                 {
                     "id": "26ee503t-1.20",
                     "sno": "1.20",
-                    "topic": "Explain the Impact of AI on various industries i.e. Health Care, BFSI, Entertainment and Administration; List Different AI tools in the market and ...",
+                    "topic": "Explain the Impact of AI on various industries i.e. Health Care, BFSI, Entertainment and Administration; List Different AI tools in the market and ...; Define Sensor and Explain the Role of Sensors in AI; List Types of Sensors and their applications; Explain the process of data collection using sensors interfaced with Arduino or Raspberry Pi",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ee503t-1.21",
-                    "sno": "1.21",
-                    "topic": "Define Sensor and Explain the Role of Sensors in AI",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-1.22",
-                    "sno": "1.22",
-                    "topic": "List Types of Sensors and their applications; Explain the process of data collection using sensors interfaced with Arduino or Raspberry Pi",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-1.23",
-                    "sno": "1.23",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee503t-1.24",
-                    "sno": "1.24",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Basics of Machine Learning (ML) and Role of Data",
-            "totalPeriods": 22,
+            "title": "Converters",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26ee503t-2.1",
@@ -265,86 +237,16 @@
                 {
                     "id": "26ee503t-2.12",
                     "sno": "2.12",
-                    "topic": "List types of Data",
+                    "topic": "List types of Data; List the Importance of Data in AI; List different types of Data Collection method; Definition of ML (Basic ideas using simple examples); Importance of ML in AI; Application of ML; List Learning methods; Explain different Learning methods; List Simple ML Algorithms and their significance use in ML",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ee503t-2.13",
-                    "sno": "2.13",
-                    "topic": "List the Importance of Data in AI",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-2.14",
-                    "sno": "2.14",
-                    "topic": "List different types of Data Collection method",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-2.15",
-                    "sno": "2.15",
-                    "topic": "Definition of ML (Basic ideas using simple examples)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-2.16",
-                    "sno": "2.16",
-                    "topic": "Importance of ML in AI",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-2.17",
-                    "sno": "2.17",
-                    "topic": "Application of ML",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-2.18",
-                    "sno": "2.18",
-                    "topic": "List Learning methods",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-2.19",
-                    "sno": "2.19",
-                    "topic": "Explain different Learning methods",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-2.20",
-                    "sno": "2.20",
-                    "topic": "List Simple ML Algorithms and their significance use in ML",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-2.21",
-                    "sno": "2.21",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee503t-2.22",
-                    "sno": "2.22",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "AI applications in Electrical and Electronics Engineering",
-            "totalPeriods": 22,
+            "title": "AC Voltage controllers & Choppers",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ee503t-3.1",
@@ -447,65 +349,16 @@
                 {
                     "id": "26ee503t-3.15",
                     "sno": "3.15",
-                    "topic": "Explain the Role of AI &ML in Predictive Maintenance for Electrical Equipment",
+                    "topic": "Explain the Role of AI &ML in Predictive Maintenance for Electrical Equipment; Explain the Role of AI &ML in Embedded systems and IoT; Explain the Role of AI &ML in Renewable energy forecasting; Explain the Role of AI &ML in Fault Detection and Diagnosis in power systems; List any three uses of AI in automated electronic design automation (EDA) for electronics engineering; Explain the Role of AI &ML in Automated Electronic Design Automation (EDA); Explain the Role of AI &ML in Battery Management Systems 198",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ee503t-3.16",
-                    "sno": "3.16",
-                    "topic": "Explain the Role of AI &ML in Embedded systems and IoT",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-3.17",
-                    "sno": "3.17",
-                    "topic": "Explain the Role of AI &ML in Renewable energy forecasting",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-3.18",
-                    "sno": "3.18",
-                    "topic": "Explain the Role of AI &ML in Fault Detection and Diagnosis in power systems",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-3.19",
-                    "sno": "3.19",
-                    "topic": "List any three uses of AI in automated electronic design automation (EDA) for electronics engineering",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-3.20",
-                    "sno": "3.20",
-                    "topic": "Explain the Role of AI &ML in Automated Electronic Design Automation (EDA); Explain the Role of AI &ML in Battery Management Systems 198",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ee503t-3.21",
-                    "sno": "3.21",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ee503t-3.22",
-                    "sno": "3.22",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Ethics in AI, Future Scope of AI and Career awareness in AI",
-            "totalPeriods": 22,
+            "title": "Inverters",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ee503t-4.1",
@@ -646,17 +499,171 @@
                     "topic": "List the Future applications and advancements in AI",
                     "period": 1,
                     "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Applications of Power Electronic circuits",
+            "totalPeriods": 23,
+            "topics": [
+                {
+                    "id": "26ee503t-5.1",
+                    "sno": "5.1",
+                    "topic": "Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
                 },
                 {
-                    "id": "26ee503t-4.21",
-                    "sno": "4.21",
+                    "id": "26ee503t-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.4",
+                    "sno": "5.4",
+                    "topic": "Practical applications of Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.5",
+                    "sno": "5.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.6",
+                    "sno": "5.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.7",
+                    "sno": "5.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.8",
+                    "sno": "5.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.9",
+                    "sno": "5.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.10",
+                    "sno": "5.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.11",
+                    "sno": "5.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.12",
+                    "sno": "5.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.13",
+                    "sno": "5.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.14",
+                    "sno": "5.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.15",
+                    "sno": "5.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.16",
+                    "sno": "5.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.17",
+                    "sno": "5.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.18",
+                    "sno": "5.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.19",
+                    "sno": "5.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.20",
+                    "sno": "5.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.21",
+                    "sno": "5.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ee503t-5.22",
+                    "sno": "5.22",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ee503t-4.22",
-                    "sno": "4.22",
+                    "id": "26ee503t-5.23",
+                    "sno": "5.23",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

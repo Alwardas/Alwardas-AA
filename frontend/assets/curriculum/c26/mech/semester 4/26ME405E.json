@@ -3,12 +3,12 @@
     "subjectName": "Automobile Engineering",
     "regulation": "C26",
     "semester": 4,
-    "totalPeriods": 45,
+    "totalPeriods": 37,
     "units": [
         {
             "unitNo": 1,
-            "title": "BASICS OF AUTOMOBILE ENGINEERING",
-            "totalPeriods": 9,
+            "title": "Basics of Automobile Engineering",
+            "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26me405e-1.1",
@@ -34,51 +34,16 @@
                 {
                     "id": "26me405e-1.4",
                     "sno": "1.4",
-                    "topic": "Explain the constructional details of different types of Inlet and exhaust manifolds; State the requirements for good manifold design",
+                    "topic": "Explain the constructional details of different types of Inlet and exhaust manifolds; State the requirements for good manifold design; Explain the constructional details of different types of air cleaners; State the necessity of Mufflers; List different types of Mufflers; State the necessity of Emission norms; List different types of emission norms; Basics of Automobile Engineering Definition & History of Automobile – Know the developments of Automobile v...",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26me405e-1.5",
-                    "sno": "1.5",
-                    "topic": "Explain the constructional details of different types of air cleaners; State the necessity of Mufflers",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me405e-1.6",
-                    "sno": "1.6",
-                    "topic": "List different types of Mufflers; State the necessity of Emission norms",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me405e-1.7",
-                    "sno": "1.7",
-                    "topic": "List different types of emission norms; Basics of Automobile Engineering Definition & History of Automobile \u2013 Know the developments of Automobile v...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me405e-1.8",
-                    "sno": "1.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me405e-1.9",
-                    "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "AUTOMOBILE TRANSMISSION SYSTEMS",
-            "totalPeriods": 9,
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
             "topics": [
                 {
                     "id": "26me405e-2.1",
@@ -90,55 +55,6 @@
                 {
                     "id": "26me405e-2.2",
                     "sno": "2.2",
-                    "topic": "Draw the layout of automobile transmission system and explain; List the elements of transmission system of a vehicle; State the function of clutch",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me405e-2.3",
-                    "sno": "2.3",
-                    "topic": "List different types of clutches; Explain the principles of operation of the clutch; Draw the line diagram and explain the working clutches Single ...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me405e-2.4",
-                    "sno": "2.4",
-                    "topic": "State the function of gearbox; List different types of gearboxes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me405e-2.5",
-                    "sno": "2.5",
-                    "topic": "Explain the principles and operation of sliding mesh, Constant mesh and Synchromesh with number of speeds; State the function of propeller shaft an...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me405e-2.6",
-                    "sno": "2.6",
-                    "topic": "List various components of rear axle assembly; State loads acting on the rear axles; List different types of rear axles and Explain semi floating, ...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me405e-2.7",
-                    "sno": "2.7",
-                    "topic": "State the necessity of differential unit and explain the working principle of differential; State the purpose of the four-wheel drive and explain t...",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me405e-2.8",
-                    "sno": "2.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me405e-2.9",
-                    "sno": "2.9",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -147,8 +63,8 @@
         },
         {
             "unitNo": 3,
-            "title": "AUTOMOBILE CHASIS & BODY ENGINEERING",
-            "totalPeriods": 9,
+            "title": "Automobile chassis & Body Engineering",
+            "totalPeriods": 11,
             "topics": [
                 {
                     "id": "26me405e-3.1",
@@ -174,7 +90,7 @@
                 {
                     "id": "26me405e-3.4",
                     "sno": "3.4",
-                    "topic": "Know various terms of Steering geometry\u2013camber, King-pin inclination, Caster, Toe- in,Toe-out, Combined inclination and Scrub radius; Know ECU Cont...",
+                    "topic": "Know various terms of Steering geometry–camber, King-pin inclination, Caster, Toe- in,Toe-out, Combined inclination and Scrub radius; Know ECU Cont...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -202,13 +118,27 @@
                 {
                     "id": "26me405e-3.8",
                     "sno": "3.8",
+                    "topic": "Deep dive into AUTOMOBILE CHASIS & BODY ENGINEERING; State the functions of chassis frame",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me405e-3.9",
+                    "sno": "3.9",
+                    "topic": "Deep dive into Draw the layout of the chassis; List the components of chassis frame; List different types of chassis frames",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me405e-3.10",
+                    "sno": "3.10",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me405e-3.9",
-                    "sno": "3.9",
+                    "id": "26me405e-3.11",
+                    "sno": "3.11",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -217,8 +147,8 @@
         },
         {
             "unitNo": 4,
-            "title": "INTRODUCTION TO ELECTRIC AND ELECTRIC HYBRID VEHICLES & ENERGY",
-            "totalPeriods": 9,
+            "title": "Introduction to Electric, Electric hybrid vehicles & Energy storage",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me405e-4.1",
@@ -272,13 +202,20 @@
                 {
                     "id": "26me405e-4.8",
                     "sno": "4.8",
+                    "topic": "Deep dive into INTRODUCTION TO ELECTRIC AND ELECTRIC HYBRID VEHICLES & ENERGY STORAGE",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me405e-4.9",
+                    "sno": "4.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me405e-4.9",
-                    "sno": "4.9",
+                    "id": "26me405e-4.10",
+                    "sno": "4.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -287,8 +224,8 @@
         },
         {
             "unitNo": 5,
-            "title": "DRIVE TRAIN & ELECTRIC PROPULSION",
-            "totalPeriods": 9,
+            "title": "Drive Train and Electric Propulsion",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me405e-5.1",
@@ -335,20 +272,27 @@
                 {
                     "id": "26me405e-5.7",
                     "sno": "5.7",
-                    "topic": "Explain configuration of drives; DRIVE TRAIN & ELECTRIC PROPULSION Hybrid Electric drive train \u2013 a) Series hybrid b) parallel hybrid c) series \u2013 pa...",
+                    "topic": "Explain configuration of drives; DRIVE TRAIN & ELECTRIC PROPULSION Hybrid Electric drive train – a) Series hybrid b) parallel hybrid c) series – pa...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me405e-5.8",
                     "sno": "5.8",
+                    "topic": "Deep dive into DRIVE TRAIN & ELECTRIC PROPULSION",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me405e-5.9",
+                    "sno": "5.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me405e-5.9",
-                    "sno": "5.9",
+                    "id": "26me405e-5.10",
+                    "sno": "5.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

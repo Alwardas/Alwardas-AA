@@ -20,105 +20,105 @@
                 {
                     "id": "26ec503t-1.2",
                     "sno": "1.2",
-                    "topic": "Define data and information",
+                    "topic": "Deep dive into Basics of Data communication and OSI Reference Model",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.3",
                     "sno": "1.3",
-                    "topic": "Define data communication",
+                    "topic": "Problem solving & practice on Basics of Data communication and OSI Reference Model",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.4",
                     "sno": "1.4",
-                    "topic": "State the characteristics of data communication",
+                    "topic": "Practical applications of Basics of Data communication and OSI Reference Model",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.5",
                     "sno": "1.5",
-                    "topic": "State the components of data communication",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.6",
                     "sno": "1.6",
-                    "topic": "Explain briefly about data representation of numbers, text, images, audio and video",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.7",
                     "sno": "1.7",
-                    "topic": "Define the different modes of data flow ( simplex, half duplex and full duplex )",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.8",
                     "sno": "1.8",
-                    "topic": "Define computer network and state its use",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.9",
                     "sno": "1.9",
-                    "topic": "State the need for data communication networking",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.10",
                     "sno": "1.10",
-                    "topic": "Define network topology",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.11",
                     "sno": "1.11",
-                    "topic": "List different network topologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.12",
                     "sno": "1.12",
-                    "topic": "Explain Bus, Star, Ring network topologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.13",
                     "sno": "1.13",
-                    "topic": "Compare the performances of the above three topologies",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.14",
                     "sno": "1.14",
-                    "topic": "Draw the ISO: OSI 7 layer reference model and State the functions of each layer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.15",
                     "sno": "1.15",
-                    "topic": "Draw TCP/IP protocol stack and State the functions of each layer",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec503t-1.16",
                     "sno": "1.16",
-                    "topic": "Compare ISO :OSI 7 layer reference model with TCP/IP protocol stack; Basics of Data communication and OSI Reference Model Need for data communicati...",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
@@ -141,7 +141,7 @@
         {
             "unitNo": 2,
             "title": "Physical Layer and Data Link Layer",
-            "totalPeriods": 18,
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ec503t-2.1",
@@ -244,37 +244,16 @@
                 {
                     "id": "26ec503t-2.15",
                     "sno": "2.15",
-                    "topic": "Deep dive into Physical Layer and Data Link Layer a) Physical Layer",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec503t-2.16",
-                    "sno": "2.16",
-                    "topic": "Deep dive into List the different types of physical transmission media used in networking",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec503t-2.17",
-                    "sno": "2.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26ec503t-2.18",
-                    "sno": "2.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 3,
             "title": "Network Layer, Transport Layer and Application Layer",
-            "totalPeriods": 18,
+            "totalPeriods": 30,
             "topics": [
                 {
                     "id": "26ec503t-3.1",
@@ -391,13 +370,97 @@
                 {
                     "id": "26ec503t-3.17",
                     "sno": "3.17",
+                    "topic": "Deep dive into Network Layer, Transport Layer and Application Layer a) Network Layer",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Define the terms Internet and Intranet; Explain classful addressing in IPv4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.19",
+                    "sno": "3.19",
+                    "topic": "Deep dive into Explain classless addressing (CIDR) in IPv4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.20",
+                    "sno": "3.20",
+                    "topic": "Deep dive into State the use of routers in networking; Explain the concept of routers and routing packets in computer networks",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.21",
+                    "sno": "3.21",
+                    "topic": "Deep dive into Distinguish among cut through, store-and-forward and adaptive switch mechanisms",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.22",
+                    "sno": "3.22",
+                    "topic": "Deep dive into Explain the packet transfer mechanism using routers and IP address. b) Transport Layer; List the features of Transmission Control Protocol (TCP)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.23",
+                    "sno": "3.23",
+                    "topic": "Deep dive into Explain the flow control in TCP",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.24",
+                    "sno": "3.24",
+                    "topic": "Deep dive into Explain error control in TCP; Explain the connectivity of systems using TCP (Three way hand shake)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.25",
+                    "sno": "3.25",
+                    "topic": "Deep dive into Explain end-to-end connectivity in TCP using ports and sockets; Explain the features of User Datagram Protocol (UDP)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.26",
+                    "sno": "3.26",
+                    "topic": "Deep dive into Compare the features of TCP and UDP",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.27",
+                    "sno": "3.27",
+                    "topic": "Deep dive into State the use of Gateway Router. c) Application Layer; State the role of DNS server",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.28",
+                    "sno": "3.28",
+                    "topic": "Deep dive into Explain how email is transferred",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec503t-3.29",
+                    "sno": "3.29",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec503t-3.18",
-                    "sno": "3.18",
+                    "id": "26ec503t-3.30",
+                    "sno": "3.30",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -407,7 +470,7 @@
         {
             "unitNo": 4,
             "title": "Wireless Network Protocols",
-            "totalPeriods": 18,
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ec503t-4.1",
@@ -510,37 +573,16 @@
                 {
                     "id": "26ec503t-4.15",
                     "sno": "4.15",
-                    "topic": "Explain the architecture of LoRaWAN",
+                    "topic": "Explain the architecture of LoRaWAN; State the features and applications of Sigfox",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec503t-4.16",
-                    "sno": "4.16",
-                    "topic": "State the features and applications of Sigfox",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec503t-4.17",
-                    "sno": "4.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec503t-4.18",
-                    "sno": "4.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Cyber Security",
-            "totalPeriods": 18,
+            "title": "Wireless Security",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26ec503t-5.1",
@@ -615,55 +657,13 @@
                 {
                     "id": "26ec503t-5.11",
                     "sno": "5.11",
-                    "topic": "Deep dive into Define the term Cyber Security",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec503t-5.12",
-                    "sno": "5.12",
-                    "topic": "Deep dive into State the necessity of Cyber Security",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec503t-5.13",
-                    "sno": "5.13",
-                    "topic": "Deep dive into State the fundamentals of Cyber Security",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec503t-5.14",
-                    "sno": "5.14",
-                    "topic": "Deep dive into List the layers of Cyber Security",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec503t-5.15",
-                    "sno": "5.15",
-                    "topic": "Deep dive into Explain the active and passive attacks in Cyber-attacks",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec503t-5.16",
-                    "sno": "5.16",
-                    "topic": "Deep dive into Explain the functions of firewall",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec503t-5.17",
-                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec503t-5.18",
-                    "sno": "5.18",
+                    "id": "26ec503t-5.12",
+                    "sno": "5.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

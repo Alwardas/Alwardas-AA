@@ -7,7 +7,7 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "INTRODUCTION TO ENGINEERING MATERIALS",
+            "title": "Classification of Engineering Materials",
             "totalPeriods": 18,
             "topics": [
                 {
@@ -55,7 +55,7 @@
                 {
                     "id": "26me303t-1.7",
                     "sno": "1.7",
-                    "topic": "Explain the composition, properties and applications of Cast Iron \u2013Grey, White, Malleable, and Spheroidal",
+                    "topic": "Explain the composition, properties and applications of Cast Iron –Grey, White, Malleable, and Spheroidal",
                     "period": 1,
                     "type": "theory"
                 },
@@ -90,7 +90,7 @@
                 {
                     "id": "26me303t-1.12",
                     "sno": "1.12",
-                    "topic": "Describe the properties and applications of \u2013Copper, Aluminium, Tin, Zinc, Lead, Nickel, Magnesium and Chromium",
+                    "topic": "Describe the properties and applications of –Copper, Aluminium, Tin, Zinc, Lead, Nickel, Magnesium and Chromium",
                     "period": 1,
                     "type": "theory"
                 },
@@ -111,7 +111,7 @@
                 {
                     "id": "26me303t-1.15",
                     "sno": "1.15",
-                    "topic": "INTRODUCTION TO ENGINEERING MATERIALS Classification of engineering materials \u2013 Metals (ferrous, non -ferrous), non -metals (polymers, ceramics), Composites (Metal matrix composites, polymer matrix composites, ceramic matrix composites, Nano composites). Constituents in composites (matrix, reinforcement), Different types of reinforcements. A few Mechanical Engineering Materials, Importance of their study with applications. Various mechanical properties of engineering materials \u2013 Tensile strength, Compressive strength, Ductility, Malleability, Hardness, Toughness, Brittleness, Impact strength, Fatigue, Creep resistance Classification of Cast Iron \u2013 Grey, White, Malleable, Spheroidal \u2013 Composition, properties and applications. Plain Carbon Steels: Effect of carbon in steels, Soft, Mild, Medium and High carbon and also their properties and applications. Alloy Steels: Nickel Steels, Chromium steels, 18/8 stainless steel, High Speed Steels, Manganese Steel. Properties and uses of Copper, Aluminium, Tin, Zinc, Lead, Nickel, Magnesium and Chromium alloys, Copper and Aluminium alloys - Properties of bearing metals, Babbit metals",
+                    "topic": "INTRODUCTION TO ENGINEERING MATERIALS Classification of engineering materials – Metals (ferrous, non -ferrous), non -metals (polymers, ceramics), Composites (Metal matrix composites, polymer matrix composites, ceramic matrix composites, Nano composites). Constituents in composites (matrix, reinforcement), Different types of reinforcements. A few Mechanical Engineering Materials, Importance of their study with applications. Various mechanical properties of engineering materials – Tensile strength, Compressive strength, Ductility, Malleability, Hardness, Toughness, Brittleness, Impact strength, Fatigue, Creep resistance Classification of Cast Iron – Grey, White, Malleable, Spheroidal – Composition, properties and applications. Plain Carbon Steels: Effect of carbon in steels, Soft, Mild, Medium and High carbon and also their properties and applications. Alloy Steels: Nickel Steels, Chromium steels, 18/8 stainless steel, High Speed Steels, Manganese Steel. Properties and uses of Copper, Aluminium, Tin, Zinc, Lead, Nickel, Magnesium and Chromium alloys, Copper and Aluminium alloys - Properties of bearing metals, Babbit metals",
                     "period": 1,
                     "type": "theory"
                 },
@@ -140,8 +140,8 @@
         },
         {
             "unitNo": 2,
-            "title": "PRODUCTION LATHES",
-            "totalPeriods": 18,
+            "title": "Production Lathes",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26me303t-2.1",
@@ -188,7 +188,7 @@
                 {
                     "id": "26me303t-2.7",
                     "sno": "2.7",
-                    "topic": "LATHE AND LATHE WORK Working Principle of Lathe - types of Lathes - Engine lathe \u2013 construction details and specifications. Nomenclature of single point cutting tool, geometry, tool signature, functions of tool angles. General and special operations \u2013 (Turning, facing, taper turning, thread cutting, knurling, forming, drilling, boring, reaming, key way cutting.) Methods of taper turning \u2013 explanation. Lathe accessories viz., work holding devices and tool holding devices",
+                    "topic": "LATHE AND LATHE WORK Working Principle of Lathe - types of Lathes - Engine lathe – construction details and specifications. Nomenclature of single point cutting tool, geometry, tool signature, functions of tool angles. General and special operations – (Turning, facing, taper turning, thread cutting, knurling, forming, drilling, boring, reaming, key way cutting.) Methods of taper turning – explanation. Lathe accessories viz., work holding devices and tool holding devices",
                     "period": 1,
                     "type": "theory"
                 },
@@ -237,7 +237,7 @@
                 {
                     "id": "26me303t-2.14",
                     "sno": "2.14",
-                    "topic": "Deep dive into LATHE AND LATHE WORK Working Principle of Lathe - types of Lathes - Engine lathe \u2013 construction details and specifications. Nomenclature of single point cutting tool, geometry, tool signature, functions of tool angles. General and special operations \u2013 (Turning, facing, taper turning, thread cutting, knurling, forming, drilling, boring, reaming, key way cutting.) Methods of taper turning \u2013 explanation. Lathe accessories viz., work holding devices and tool holding devices",
+                    "topic": "Deep dive into LATHE AND LATHE WORK Working Principle of Lathe - types of Lathes - Engine lathe – construction details and specifications. Nomenclature of single point cutting tool, geometry, tool signature, functions of tool angles. General and special operations – (Turning, facing, taper turning, thread cutting, knurling, forming, drilling, boring, reaming, key way cutting.) Methods of taper turning – explanation. Lathe accessories viz., work holding devices and tool holding devices",
                     "period": 1,
                     "type": "theory"
                 },
@@ -258,13 +258,27 @@
                 {
                     "id": "26me303t-2.17",
                     "sno": "2.17",
+                    "topic": "Problem solving & practice on List a) The six types of lathe machines b) List any three work holding devices",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me303t-2.18",
+                    "sno": "2.18",
+                    "topic": "Problem solving & practice on Describe the working of Lathe with legible sketch",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me303t-2.19",
+                    "sno": "2.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me303t-2.18",
-                    "sno": "2.18",
+                    "id": "26me303t-2.20",
+                    "sno": "2.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +287,8 @@
         },
         {
             "unitNo": 3,
-            "title": "SHAPING, SLOTTING, AND PLANNING",
-            "totalPeriods": 18,
+            "title": "Shaper, Slotter and Planer",
+            "totalPeriods": 17,
             "topics": [
                 {
                     "id": "26me303t-3.1",
@@ -384,20 +398,13 @@
                 {
                     "id": "26me303t-3.16",
                     "sno": "3.16",
-                    "topic": "Practical applications of Describe a) The construction and working principle of shaper with legible sketch. b) The construction and working principle of slotter with legible sketch. c) The construction and working principle of planer with legible sketch",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me303t-3.17",
-                    "sno": "3.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me303t-3.18",
-                    "sno": "3.18",
+                    "id": "26me303t-3.17",
+                    "sno": "3.17",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +413,8 @@
         },
         {
             "unitNo": 4,
-            "title": "FOUNDRY",
-            "totalPeriods": 18,
+            "title": "Foundry",
+            "totalPeriods": 17,
             "topics": [
                 {
                     "id": "26me303t-4.1",
@@ -454,7 +461,7 @@
                 {
                     "id": "26me303t-4.7",
                     "sno": "4.7",
-                    "topic": "FOUNDRY Introduction: Evolution of foundry as a manufacturing process, advantages and limitations of casting over other manufacturing processes. Foundry equipment: Hand moulding tools: shovel, riddle, rammers, trowels, slicks, lifter, strike-off bar, sprue pin bellow, swab, gate cutter, mallet, vent rod, draw spike, rapping plate or lifting plate, pouring weight, gagger, clamps, spirit level, moulding boxes, snap box & flash box. Sands: Properties of moulding sand - porosity, flowability, collapsibility, adhesiveness, cohesiveness and refractoriness. Types of moulding sand: green sand, dry sand, loam sand, facing sand, backing sand, parting sand, core sand, system sand their ingredients and uses. Various types of patterns Casting: green sand and dry sand moulding, cement bonded moulding, shell moulding , ceramic moulding, defects in castings and their remedies. Special casting processes: (Principles and applications only) die casting \u2013 hot chamber and cold chamber, centrifugal casting, CO2 process, investment casting",
+                    "topic": "FOUNDRY Introduction: Evolution of foundry as a manufacturing process, advantages and limitations of casting over other manufacturing processes. Foundry equipment: Hand moulding tools: shovel, riddle, rammers, trowels, slicks, lifter, strike-off bar, sprue pin bellow, swab, gate cutter, mallet, vent rod, draw spike, rapping plate or lifting plate, pouring weight, gagger, clamps, spirit level, moulding boxes, snap box & flash box. Sands: Properties of moulding sand - porosity, flowability, collapsibility, adhesiveness, cohesiveness and refractoriness. Types of moulding sand: green sand, dry sand, loam sand, facing sand, backing sand, parting sand, core sand, system sand their ingredients and uses. Various types of patterns Casting: green sand and dry sand moulding, cement bonded moulding, shell moulding , ceramic moulding, defects in castings and their remedies. Special casting processes: (Principles and applications only) die casting – hot chamber and cold chamber, centrifugal casting, CO2 process, investment casting",
                     "period": 1,
                     "type": "theory"
                 },
@@ -503,7 +510,7 @@
                 {
                     "id": "26me303t-4.14",
                     "sno": "4.14",
-                    "topic": "Deep dive into FOUNDRY Introduction: Evolution of foundry as a manufacturing process, advantages and limitations of casting over other manufacturing processes. Foundry equipment: Hand moulding tools: shovel, riddle, rammers, trowels, slicks, lifter, strike-off bar, sprue pin bellow, swab, gate cutter, mallet, vent rod, draw spike, rapping plate or lifting plate, pouring weight, gagger, clamps, spirit level, moulding boxes, snap box & flash box. Sands: Properties of moulding sand - porosity, flowability, collapsibility, adhesiveness, cohesiveness and refractoriness. Types of moulding sand: green sand, dry sand, loam sand, facing sand, backing sand, parting sand, core sand, system sand their ingredients and uses. Various types of patterns Casting: green sand and dry sand moulding, cement bonded moulding, shell moulding , ceramic moulding, defects in castings and their remedies. Special casting processes: (Principles and applications only) die casting \u2013 hot chamber and cold chamber, centrifugal casting, CO2 process, investment casting",
+                    "topic": "Deep dive into FOUNDRY Introduction: Evolution of foundry as a manufacturing process, advantages and limitations of casting over other manufacturing processes. Foundry equipment: Hand moulding tools: shovel, riddle, rammers, trowels, slicks, lifter, strike-off bar, sprue pin bellow, swab, gate cutter, mallet, vent rod, draw spike, rapping plate or lifting plate, pouring weight, gagger, clamps, spirit level, moulding boxes, snap box & flash box. Sands: Properties of moulding sand - porosity, flowability, collapsibility, adhesiveness, cohesiveness and refractoriness. Types of moulding sand: green sand, dry sand, loam sand, facing sand, backing sand, parting sand, core sand, system sand their ingredients and uses. Various types of patterns Casting: green sand and dry sand moulding, cement bonded moulding, shell moulding , ceramic moulding, defects in castings and their remedies. Special casting processes: (Principles and applications only) die casting – hot chamber and cold chamber, centrifugal casting, CO2 process, investment casting",
                     "period": 1,
                     "type": "theory"
                 },
@@ -517,20 +524,13 @@
                 {
                     "id": "26me303t-4.16",
                     "sno": "4.16",
-                    "topic": "Problem solving & practice on List hand moulding tools",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me303t-4.17",
-                    "sno": "4.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me303t-4.18",
-                    "sno": "4.18",
+                    "id": "26me303t-4.17",
+                    "sno": "4.17",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -539,7 +539,7 @@
         },
         {
             "unitNo": 5,
-            "title": "GRINDING MACHINES",
+            "title": "Grinding and Finishing Processes",
             "totalPeriods": 18,
             "topics": [
                 {
@@ -601,7 +601,7 @@
                 {
                     "id": "26me303t-5.9",
                     "sno": "5.9",
-                    "topic": "Describe a) The principle of Electro\u2013plating with a legible sketch. b) The processes of various organic coatings",
+                    "topic": "Describe a) The principle of Electro–plating with a legible sketch. b) The processes of various organic coatings",
                     "period": 1,
                     "type": "theory"
                 },
@@ -636,7 +636,7 @@
                 {
                     "id": "26me303t-5.14",
                     "sno": "5.14",
-                    "topic": "GRINDING MACHINES Principle of Grinding \u2013 Abrasives: Natural and Artificial - Types of Bonds and Applications \u2013 Grit, Grade and Structure of wheels - Standard marking systems of grinding wheel \u2013 Selection of grinding wheel. Grinding machines classification and applications \u2013 Specifications - Principle of operation of Cylindrical grinder and Centreless grinder - Advantages & Limitations of centreless grinding - Work holding devices - Balancing of grinding wheels \u2013 Dressing and Truing of grind wheels. Finishing Processes: Finishing by grinding: Honing, Lapping, Super finishing. Electroplating \u2013 Basic principles \u2013 Plating metals \u2013 applications. Hot dipping: Galvanizing, Tin coating, Parkerising, Anodizing. Metal spraying: wire process, powder process an d applications. Organic coatings: Oil-based, Lacquer based paints, Enamels, Bituminous paints, rubber base coating. Jig Boring : Introduction to jig boring - Types of jig boring machines Broaching: Principle of Broaching- Types of Broaching Machines REFERENCE BOOKS 1. Elements of Work Shop Technology vol.I&II by Hazra Choudry 2. Manufacturing Technology(volume-1) by PN Rao(Tata Mc Graw Hill) 3. Production Technology - R.C. Patel 4. Production Technology - Jain & Gupta. 5. Material Science and Engineering Raghavan PHI Publishers 6. Introduction to Physical Metallurgy Avner Tata McGraw Hill Publishers 7. Material science and metallurgy O P Khanna Dhanpati Rai Publishers Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test \u2013 I From 1.1 to 3.2 Unit Test \u2013 II From 3.3 to 5.14",
+                    "topic": "GRINDING MACHINES Principle of Grinding – Abrasives: Natural and Artificial - Types of Bonds and Applications – Grit, Grade and Structure of wheels - Standard marking systems of grinding wheel – Selection of grinding wheel. Grinding machines classification and applications – Specifications - Principle of operation of Cylindrical grinder and Centreless grinder - Advantages & Limitations of centreless grinding - Work holding devices - Balancing of grinding wheels – Dressing and Truing of grind wheels. Finishing Processes: Finishing by grinding: Honing, Lapping, Super finishing. Electroplating – Basic principles – Plating metals – applications. Hot dipping: Galvanizing, Tin coating, Parkerising, Anodizing. Metal spraying: wire process, powder process an d applications. Organic coatings: Oil-based, Lacquer based paints, Enamels, Bituminous paints, rubber base coating. Jig Boring : Introduction to jig boring - Types of jig boring machines Broaching: Principle of Broaching- Types of Broaching Machines REFERENCE BOOKS 1. Elements of Work Shop Technology vol.I&II by Hazra Choudry 2. Manufacturing Technology(volume-1) by PN Rao(Tata Mc Graw Hill) 3. Production Technology - R.C. Patel 4. Production Technology - Jain & Gupta. 5. Material Science and Engineering Raghavan PHI Publishers 6. Introduction to Physical Metallurgy Avner Tata McGraw Hill Publishers 7. Material science and metallurgy O P Khanna Dhanpati Rai Publishers Table specifying the scope of syllabus to be covered for Unit Test-I & Unit Test-II Unit Test Learning Outcomes to be covered Unit Test – I From 1.1 to 3.2 Unit Test – II From 3.3 to 5.14",
                     "period": 1,
                     "type": "theory"
                 },

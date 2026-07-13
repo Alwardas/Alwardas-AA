@@ -3,12 +3,12 @@
     "subjectName": "Applied Thermodynamics",
     "regulation": "C26",
     "semester": 4,
-    "totalPeriods": 90,
+    "totalPeriods": 82,
     "units": [
         {
             "unitNo": 1,
-            "title": "INTERNAL COMBUSTION ENGINES",
-            "totalPeriods": 18,
+            "title": "Internal Combustion Engines.",
+            "totalPeriods": 30,
             "topics": [
                 {
                     "id": "26me402t-1.1",
@@ -20,7 +20,7 @@
                 {
                     "id": "26me402t-1.2",
                     "sno": "1.2",
-                    "topic": "Define \u201cHeat Engine\u201d and classify heat engines based on the location of combustion",
+                    "topic": "Define “Heat Engine” and classify heat engines based on the location of combustion",
                     "period": 1,
                     "type": "theory"
                 },
@@ -125,13 +125,97 @@
                 {
                     "id": "26me402t-1.17",
                     "sno": "1.17",
+                    "topic": "Deep dive into INTERNAL COMBUSTION ENGINES",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.18",
+                    "sno": "1.18",
+                    "topic": "Deep dive into Define “Heat Engine” and classify heat engines based on the location of combustion",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.19",
+                    "sno": "1.19",
+                    "topic": "Deep dive into Classify Internal Combustion Engines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.20",
+                    "sno": "1.20",
+                    "topic": "Deep dive into Describe the working of four-stroke petrol and diesel engines with line diagrams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.21",
+                    "sno": "1.21",
+                    "topic": "Deep dive into Describe the working of two-stroke petrol engine with line diagrams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.22",
+                    "sno": "1.22",
+                    "topic": "Deep dive into Compare two stroke engines with four stroke engines; Describe the working of fuel system of diesel engine with a line diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.23",
+                    "sno": "1.23",
+                    "topic": "Deep dive into Describe the working of fuel system of petrol engine with a line diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.24",
+                    "sno": "1.24",
+                    "topic": "Deep dive into Describe the working of Zenith carburetor with a neat sketch",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.25",
+                    "sno": "1.25",
+                    "topic": "Deep dive into Explain different methods of cooling systems of I.C engines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.26",
+                    "sno": "1.26",
+                    "topic": "Deep dive into Explain different methods of Ignition systems of IC engine",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.27",
+                    "sno": "1.27",
+                    "topic": "Deep dive into Explain different methods of lubricating systems in I.C. engines; Explain different methods of governing of I.C. engines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.28",
+                    "sno": "1.28",
+                    "topic": "Deep dive into State and briefly explain recent advances in IC engines",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-1.29",
+                    "sno": "1.29",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me402t-1.18",
-                    "sno": "1.18",
+                    "id": "26me402t-1.30",
+                    "sno": "1.30",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -140,8 +224,8 @@
         },
         {
             "unitNo": 2,
-            "title": "AIR COMPRESSORS",
-            "totalPeriods": 18,
+            "title": "Unit 2 Topic",
+            "totalPeriods": 2,
             "topics": [
                 {
                     "id": "26me402t-2.1",
@@ -153,118 +237,6 @@
                 {
                     "id": "26me402t-2.2",
                     "sno": "2.2",
-                    "topic": "Deep dive into AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.3",
-                    "sno": "2.3",
-                    "topic": "Problem solving & practice on AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.4",
-                    "sno": "2.4",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.5",
-                    "sno": "2.5",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.6",
-                    "sno": "2.6",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.7",
-                    "sno": "2.7",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.8",
-                    "sno": "2.8",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.9",
-                    "sno": "2.9",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.10",
-                    "sno": "2.10",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.11",
-                    "sno": "2.11",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.12",
-                    "sno": "2.12",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.13",
-                    "sno": "2.13",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.14",
-                    "sno": "2.14",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.15",
-                    "sno": "2.15",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.16",
-                    "sno": "2.16",
-                    "topic": "Practical applications of AIR COMPRESSORS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-2.17",
-                    "sno": "2.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me402t-2.18",
-                    "sno": "2.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -273,8 +245,8 @@
         },
         {
             "unitNo": 3,
-            "title": "POWER PLANTS",
-            "totalPeriods": 18,
+            "title": "Power Plants",
+            "totalPeriods": 25,
             "topics": [
                 {
                     "id": "26me402t-3.1",
@@ -356,7 +328,7 @@
                 {
                     "id": "26me402t-3.12",
                     "sno": "3.12",
-                    "topic": "Explain the principle of working of a simple De-Laval turbine with a line diagram; Explain the working principle of Parson\u2019s Reaction turbine with ...",
+                    "topic": "Explain the principle of working of a simple De-Laval turbine with a line diagram; Explain the working principle of Parson’s Reaction turbine with ...",
                     "period": 1,
                     "type": "theory"
                 },
@@ -384,20 +356,69 @@
                 {
                     "id": "26me402t-3.16",
                     "sno": "3.16",
-                    "topic": "Compare nuclear power plants with thermal power plants; POWER PLANTS Thermal Power Plants: Functions of the elements of a Thermal Power Plant \u2013 Adv...",
+                    "topic": "Compare nuclear power plants with thermal power plants; POWER PLANTS Thermal Power Plants: Functions of the elements of a Thermal Power Plant – Adv...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26me402t-3.17",
                     "sno": "3.17",
+                    "topic": "Deep dive into POWER PLANTS",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into Describe the functions of elements of a thermal power plant",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-3.19",
+                    "sno": "3.19",
+                    "topic": "Deep dive into State the functions of a boiler",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-3.20",
+                    "sno": "3.20",
+                    "topic": "Deep dive into Classify the boilers; Distinguish between water-tube and fire-tube boilers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-3.21",
+                    "sno": "3.21",
+                    "topic": "Deep dive into State the need of high pressure modern boilers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-3.22",
+                    "sno": "3.22",
+                    "topic": "Deep dive into Explain the working principle of Lamont and Benson Boilers with legible sketches",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-3.23",
+                    "sno": "3.23",
+                    "topic": "Deep dive into State the function of the mountings such as pressure gauge, water level indicator, safety valve, fusible plug, blow down cock and stop valve",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me402t-3.24",
+                    "sno": "3.24",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me402t-3.18",
-                    "sno": "3.18",
+                    "id": "26me402t-3.25",
+                    "sno": "3.25",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +427,8 @@
         },
         {
             "unitNo": 4,
-            "title": "GAS TURBINES & JET PROPULSIONS.",
-            "totalPeriods": 18,
+            "title": "Gas Turbines & Jet Propulsion.",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26me402t-4.1",
@@ -475,72 +496,16 @@
                 {
                     "id": "26me402t-4.10",
                     "sno": "4.10",
-                    "topic": "State the applications of jet engine",
+                    "topic": "State the applications of jet engine; Describe the working of a rocket engine with a line sketch; List the fuels used in Gas turbines and jet propulsion",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26me402t-4.11",
-                    "sno": "4.11",
-                    "topic": "Describe the working of a rocket engine with a line sketch",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-4.12",
-                    "sno": "4.12",
-                    "topic": "List the fuels used in Gas turbines and jet propulsion",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-4.13",
-                    "sno": "4.13",
-                    "topic": "Deep dive into GAS TURBINES & JET PROPULSIONS",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-4.14",
-                    "sno": "4.14",
-                    "topic": "Deep dive into Define and classify the gas turbines",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-4.15",
-                    "sno": "4.15",
-                    "topic": "Deep dive into Differentiate the gas turbines with the I.C. engines",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-4.16",
-                    "sno": "4.16",
-                    "topic": "Deep dive into State the advantages and limitations of gas turbine",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-4.17",
-                    "sno": "4.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me402t-4.18",
-                    "sno": "4.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "REFRIGERATION AND AIR CONDITIONS",
-            "totalPeriods": 18,
+            "title": "Basics of Refrigeration and Air conditioning",
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26me402t-5.1",
@@ -552,7 +517,7 @@
                 {
                     "id": "26me402t-5.2",
                     "sno": "5.2",
-                    "topic": "Define the term \u2018Refrigeration\u2019",
+                    "topic": "Define the term ‘Refrigeration’",
                     "period": 1,
                     "type": "theory"
                 },
@@ -566,7 +531,7 @@
                 {
                     "id": "26me402t-5.4",
                     "sno": "5.4",
-                    "topic": "Define the terms \u2018Ton of Refrigeration, Coefficient of Performance",
+                    "topic": "Define the terms ‘Ton of Refrigeration, Coefficient of Performance",
                     "period": 1,
                     "type": "theory"
                 },
@@ -636,34 +601,13 @@
                 {
                     "id": "26me402t-5.14",
                     "sno": "5.14",
-                    "topic": "Deep dive into Define the term \u2018Refrigeration\u2019",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-5.15",
-                    "sno": "5.15",
-                    "topic": "Deep dive into List different methods of refrigeration and applications",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-5.16",
-                    "sno": "5.16",
-                    "topic": "Deep dive into Define the terms \u2018Ton of Refrigeration, Coefficient of Performance",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me402t-5.17",
-                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me402t-5.18",
-                    "sno": "5.18",
+                    "id": "26me402t-5.15",
+                    "sno": "5.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

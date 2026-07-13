@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "INTRODUCTION TO ADDITIVE MANUFACTURING",
-            "totalPeriods": 9,
+            "title": "Introduction to Additive Manufacturing.",
+            "totalPeriods": 5,
             "topics": [
                 {
                     "id": "26me505e-1.1",
@@ -41,44 +41,16 @@
                 {
                     "id": "26me505e-1.5",
                     "sno": "1.5",
-                    "topic": "Deep dive into INTRODUCTION TO ADDITIVE MANUFACTURING",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me505e-1.6",
-                    "sno": "1.6",
-                    "topic": "Deep dive into Explain the principles, history, and evolution of additive manufacturing",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me505e-1.7",
-                    "sno": "1.7",
-                    "topic": "Deep dive into Distinguish between additive, subtractive, and formative manufacturing processes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me505e-1.8",
-                    "sno": "1.8",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
-                },
-                {
-                    "id": "26me505e-1.9",
-                    "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "MATERIALS FOR AM AND CLASSIFICATION OF AM PROCESSES",
-            "totalPeriods": 9,
+            "title": "Materials for AM and Classification of AM Techniques.",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26me505e-2.1",
@@ -132,13 +104,34 @@
                 {
                     "id": "26me505e-2.8",
                     "sno": "2.8",
+                    "topic": "Deep dive into Describe the properties and uses of AM materials including polymers, metals, ceramics, and composite materials",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me505e-2.9",
+                    "sno": "2.9",
+                    "topic": "Deep dive into Select suitable materials for a given application or process based on mechanical, thermal, and chemical requirements",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me505e-2.10",
+                    "sno": "2.10",
+                    "topic": "Deep dive into Identify and describe the seven categories of AM processes as per ISO/ASTM standards",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me505e-2.11",
+                    "sno": "2.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me505e-2.9",
-                    "sno": "2.9",
+                    "id": "26me505e-2.12",
+                    "sno": "2.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -147,8 +140,8 @@
         },
         {
             "unitNo": 3,
-            "title": "PROCESS MODELLING AND ENERGY SOURCES OF AM",
-            "totalPeriods": 9,
+            "title": "Process Modeling and Energy sources of AM.",
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26me505e-3.1",
@@ -202,13 +195,34 @@
                 {
                     "id": "26me505e-3.8",
                     "sno": "3.8",
+                    "topic": "Deep dive into PROCESS MODELLING AND ENERGY SOURCES OF AM",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me505e-3.9",
+                    "sno": "3.9",
+                    "topic": "Deep dive into Understand how changes in process variables (layer thickness, scan speed, energy intensity, etc.) affect the temperature distribution, residual stresses, microstructure, and overall mechanical properties of printed parts",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me505e-3.10",
+                    "sno": "3.10",
+                    "topic": "Deep dive into Explain how different AM technologies use various energy sources (e.g., lasers, electron beams, thermal energy) to achieve material consolidation and how these influence the characteristics and applications of each process",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26me505e-3.11",
+                    "sno": "3.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me505e-3.9",
-                    "sno": "3.9",
+                    "id": "26me505e-3.12",
+                    "sno": "3.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -217,8 +231,8 @@
         },
         {
             "unitNo": 4,
-            "title": "DESIGN FOR ADDITIVE MANUFACTURING (DfAM)",
-            "totalPeriods": 9,
+            "title": "Design for Additive Manufacturing (DfAM) and Applications.",
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26me505e-4.1",
@@ -244,7 +258,7 @@
                 {
                     "id": "26me505e-4.4",
                     "sno": "4.4",
-                    "topic": "DESIGN FOR ADDITIVE MANUFACTURING (DFAM) AND APPLICATIONS Design strategies unique to 3D printing (e.g., lattice structures, topology optimization), Support structures, part orientation, and post-processing requirements. Applications of AM:Industrial sectors: Aerospace, automotive, medical/dental, architecture, art, prototyping, tooling.Emerging research and development areas, Real-world case studies highlighting AM\u2019s benefits and challenges",
+                    "topic": "DESIGN FOR ADDITIVE MANUFACTURING (DFAM) AND APPLICATIONS Design strategies unique to 3D printing (e.g., lattice structures, topology optimization), Support structures, part orientation, and post-processing requirements. Applications of AM:Industrial sectors: Aerospace, automotive, medical/dental, architecture, art, prototyping, tooling.Emerging research and development areas, Real-world case studies highlighting AM’s benefits and challenges",
                     "period": 1,
                     "type": "theory"
                 },
@@ -265,20 +279,13 @@
                 {
                     "id": "26me505e-4.7",
                     "sno": "4.7",
-                    "topic": "Deep dive into Evaluate how AM constraints affect product design and development",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me505e-4.8",
-                    "sno": "4.8",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me505e-4.9",
-                    "sno": "4.9",
+                    "id": "26me505e-4.8",
+                    "sno": "4.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -287,8 +294,8 @@
         },
         {
             "unitNo": 5,
-            "title": "POST-PROCESSING AND QUALITY ASSURANCE IN AM",
-            "totalPeriods": 9,
+            "title": "Post-processing and Quality Assurance in AM.",
+            "totalPeriods": 8,
             "topics": [
                 {
                     "id": "26me505e-5.1",
@@ -335,20 +342,13 @@
                 {
                     "id": "26me505e-5.7",
                     "sno": "5.7",
-                    "topic": "Deep dive into Understand the need for quality control, testing, and standardization in AM components",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26me505e-5.8",
-                    "sno": "5.8",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26me505e-5.9",
-                    "sno": "5.9",
+                    "id": "26me505e-5.8",
+                    "sno": "5.8",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

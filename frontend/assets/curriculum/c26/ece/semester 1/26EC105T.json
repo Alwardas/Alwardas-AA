@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "Passive Components",
-            "totalPeriods": 26,
+            "totalPeriods": 30,
             "topics": [
                 {
                     "id": "26ec105t-1.1",
@@ -41,7 +41,7 @@
                 {
                     "id": "26ec105t-1.5",
                     "sno": "1.5",
-                    "topic": "Explain the working of thermistor and sensistor and mention their applications; State Ohm\u2019s Law and its limitations",
+                    "topic": "Explain the working of thermistor and sensistor and mention their applications; State Ohm’s Law and its limitations",
                     "period": 1,
                     "type": "theory"
                 },
@@ -55,7 +55,7 @@
                 {
                     "id": "26ec105t-1.7",
                     "sno": "1.7",
-                    "topic": "Define magnetic flux density, magnetic field intensity. State Faraday\u2019s laws of electro - magnetic induction",
+                    "topic": "Define magnetic flux density, magnetic field intensity. State Faraday’s laws of electro - magnetic induction",
                     "period": 1,
                     "type": "theory"
                 },
@@ -174,20 +174,48 @@
                 {
                     "id": "26ec105t-1.24",
                     "sno": "1.24",
-                    "topic": "List the applications of capacitors; Passive components Concept of resistance and resistors with classification, symbols, and specifications \u2013 Fact...",
+                    "topic": "List the applications of capacitors; Passive components Concept of resistance and resistors with classification, symbols, and specifications – Fact...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec105t-1.25",
                     "sno": "1.25",
+                    "topic": "Deep dive into Passive Components",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-1.26",
+                    "sno": "1.26",
+                    "topic": "Deep dive into State the physical factors that affect the value of a resistor and calculate resistance value by using colour Code",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-1.27",
+                    "sno": "1.27",
+                    "topic": "Deep dive into Compare the features of carbon and wire wound potentiometers; Explain the working of rheostat and mention its applications",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-1.28",
+                    "sno": "1.28",
+                    "topic": "Deep dive into Define temperature co-efficient of resistance and explain the effects of temperature on resistance",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-1.29",
+                    "sno": "1.29",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec105t-1.26",
-                    "sno": "1.26",
+                    "id": "26ec105t-1.30",
+                    "sno": "1.30",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -197,7 +225,7 @@
         {
             "unitNo": 2,
             "title": "Switches, Connectors, Relays and PCBs",
-            "totalPeriods": 22,
+            "totalPeriods": 30,
             "topics": [
                 {
                     "id": "26ec105t-2.1",
@@ -335,20 +363,76 @@
                 {
                     "id": "26ec105t-2.20",
                     "sno": "2.20",
-                    "topic": "List the soldering methods of PCBs; Switches, Connectors, Relays and PCBs: Classification of switches according to poles and throws \u2013 ISI symbols o...",
+                    "topic": "List the soldering methods of PCBs; Switches, Connectors, Relays and PCBs: Classification of switches according to poles and throws – ISI symbols o...",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec105t-2.21",
                     "sno": "2.21",
+                    "topic": "Deep dive into Switches, Connectors, Relays and PCBs",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-2.22",
+                    "sno": "2.22",
+                    "topic": "Deep dive into Classify switches according to poles and throws",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-2.23",
+                    "sno": "2.23",
+                    "topic": "Deep dive into Sketch the I.S.I symbols of various switches",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-2.24",
+                    "sno": "2.24",
+                    "topic": "Deep dive into State the need of fuse in electronic equipment",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-2.25",
+                    "sno": "2.25",
+                    "topic": "Deep dive into Mention different types of fuses",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-2.26",
+                    "sno": "2.26",
+                    "topic": "Deep dive into State the necessity of connectors in electronic circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-2.27",
+                    "sno": "2.27",
+                    "topic": "Deep dive into List different types of connectors; State the use of MCB",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-2.28",
+                    "sno": "2.28",
+                    "topic": "Deep dive into Define a relay",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-2.29",
+                    "sno": "2.29",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec105t-2.22",
-                    "sno": "2.22",
+                    "id": "26ec105t-2.30",
+                    "sno": "2.30",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -358,7 +442,7 @@
         {
             "unitNo": 3,
             "title": "Semiconductor Physics",
-            "totalPeriods": 22,
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ec105t-3.1",
@@ -447,69 +531,20 @@
                 {
                     "id": "26ec105t-3.13",
                     "sno": "3.13",
-                    "topic": "Semiconductor Physics: Concept of conductivity and resistivity with equations \u2013 Valence band, conduction band and forbidden energy gap \u2013 Energy band diagrams of conductors, semiconductors, and insulators \u2013 Intrinsic semiconductor and Fermi level \u2013 Electron current and hole current \u2013 Bipolar nature of semiconductors \u2013 Need for doping \u2013 Difference between intrinsic and extrinsic semiconductors \u2013 Formation of P-type and N-type semiconductors \u2013 Comparison of P-type and N-type \u2013 Drift and diffusion currents in semiconductors",
+                    "topic": "Semiconductor Physics: Concept of conductivity and resistivity with equations – Valence band, conduction band and forbidden energy gap – Energy band diagrams of conductors, semiconductors, and insulators – Intrinsic semiconductor and Fermi level – Electron current and hole current – Bipolar nature of semiconductors – Need for doping – Difference between intrinsic and extrinsic semiconductors – Formation of P-type and N-type semiconductors – Comparison of P-type and N-type – Drift and diffusion currents in semiconductors",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ec105t-3.14",
                     "sno": "3.14",
-                    "topic": "Deep dive into Semiconductor Physics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-3.15",
-                    "sno": "3.15",
-                    "topic": "Deep dive into Define the terms conductivity and resistivity and give their equations",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-3.16",
-                    "sno": "3.16",
-                    "topic": "Deep dive into Define Valance band, Conduction band and Forbidden energy gap",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-3.17",
-                    "sno": "3.17",
-                    "topic": "Deep dive into Explain Energy Band diagrams of conductors, semiconductors and Insulators",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-3.18",
-                    "sno": "3.18",
-                    "topic": "Deep dive into Define Intrinsic Semiconductor and Fermi level",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-3.19",
-                    "sno": "3.19",
-                    "topic": "Deep dive into Define electron current and hole current",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-3.20",
-                    "sno": "3.20",
-                    "topic": "Deep dive into Explain the bipolar nature of semiconductors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-3.21",
-                    "sno": "3.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec105t-3.22",
-                    "sno": "3.22",
+                    "id": "26ec105t-3.15",
+                    "sno": "3.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -519,7 +554,7 @@
         {
             "unitNo": 4,
             "title": "Semiconductor Diodes",
-            "totalPeriods": 22,
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26ec105t-4.1",
@@ -622,65 +657,16 @@
                 {
                     "id": "26ec105t-4.15",
                     "sno": "4.15",
-                    "topic": "List the applications of varactor diode",
+                    "topic": "List the applications of varactor diode; Semiconductor Diodes: Formation of PN junction – Working of PN junction diode under forward and reverse bias – VI characteristics of a diode – Diode current equation – Specifications of diodes – Applications of diodes – Reverse breakdown phenomenon – Construction and working of Zener diode – Forward and reverse bias characteristics of Zener diode – Zener breakdown phenomenon – Difference between avalanche and Zener breakdown – Applications of Zener diode – Principle of varactor diode – Applications of varactor diode. 5.Bipolar Transistor Formation of BJT – Working of NPN and PNP transistors – Circuit symbols of transistors – Transistor configurations (CB, CE, CC) – Input and output characteristics of CB, CE, and CC configurations – Identification of cutoff, saturation, and active regions – Definition of alpha, beta and gamma – Relationship among alpha, beta and gamma – Collector current expressions in CB and CE configurations – Comparison of CB, CE and CC configurations. 6. AC fundamentals Ideal voltage and current sources – Kirchhoff’s laws (KCL, KVL) – AC through pure resistance, inductance, and capacitance with vector diagrams – Vector representation in rectangular and polar form – Concepts of reactance, impedance, admittance, conductance and power factor – Active, reactive and apparent power in AC circuits – Q factor of a coil – Impedance and current expressions for series RL, RC, RLC circuits – Simple problems on series RL and RC circuits – Admittance and voltage expressions for parallel RL, RC, RLC circuits – Simple problems on parallel RL and RC circuits. 7. Audio systems. Working of carbon, condenser, crystal, and dynamic microphones with polar characteristics – Construction and operation of PMMC loudspeaker with ratings – Woofers and tweeters– Need for horn loudspeakers – Construction and working of horn loudspeaker – Principle, construction, and working of magnetic and crystal headphones – Uses of headphones – Specifications of loudspeakers and microphones – Definitions of speech, music, and noise 8. Measuring & Testing Instruments: Characteristics of ideal voltmeter and ammeter – Construction and working of PMMC instrument – Working of rectifier-type voltmeter – Advantages of digital over analog instruments – Ramp-type digital voltmeter with block diagram – Use of analog and digital multimeters – Specifications of digital multimeters including accuracy, resolution, range, precision, and display digits – Working of function generator with block diagram. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS I, II & III REFERENCE BOOKS Unit Test Learning outcomes to be covered Unit Test-I From 1.1 to 2.21 Unit Test-II From 3.1 to 6.3 Unit Test-III From 6.4 to 8.8 1. G.K.Mithal, Electronic Devices and Circuits, 23rd Edition- Khanna Publication-1988 2. B. Somanathan, Electronic devices and applications, 2nd Edition- PHI. 3. Dr.K.Padmanabham, P.Swaminathan, Electronic components, 2nd Edition,- Laxmi Publications (P) Ltd 4. Walter c bosshart, Printed circuit boards: design and technology -TMH 5. Bernard Grob, Basic Electronics, 4th edition- TMH-1977 6. Millman&Halkias, Electronic devices & Circuits, 4th edition- TMH 7. V K mehata, RohitMehata, Basic electrical engineering-S.Chand Publication 8. HS Kalsi, Electronic Instrumentation, Tata McGraw Hill",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec105t-4.16",
-                    "sno": "4.16",
-                    "topic": "Semiconductor Diodes: Formation of PN junction \u2013 Working of PN junction diode under forward and reverse bias \u2013 VI characteristics of a diode \u2013 Diode current equation \u2013 Specifications of diodes \u2013 Applications of diodes \u2013 Reverse breakdown phenomenon \u2013 Construction and working of Zener diode \u2013 Forward and reverse bias characteristics of Zener diode \u2013 Zener breakdown phenomenon \u2013 Difference between avalanche and Zener breakdown \u2013 Applications of Zener diode \u2013 Principle of varactor diode \u2013 Applications of varactor diode. 5.Bipolar Transistor Formation of BJT \u2013 Working of NPN and PNP transistors \u2013 Circuit symbols of transistors \u2013 Transistor configurations (CB, CE, CC) \u2013 Input and output characteristics of CB, CE, and CC configurations \u2013 Identification of cutoff, saturation, and active regions \u2013 Definition of alpha, beta and gamma \u2013 Relationship among alpha, beta and gamma \u2013 Collector current expressions in CB and CE configurations \u2013 Comparison of CB, CE and CC configurations. 6. AC fundamentals Ideal voltage and current sources \u2013 Kirchhoff\u2019s laws (KCL, KVL) \u2013 AC through pure resistance, inductance, and capacitance with vector diagrams \u2013 Vector representation in rectangular and polar form \u2013 Concepts of reactance, impedance, admittance, conductance and power factor \u2013 Active, reactive and apparent power in AC circuits \u2013 Q factor of a coil \u2013 Impedance and current expressions for series RL, RC, RLC circuits \u2013 Simple problems on series RL and RC circuits \u2013 Admittance and voltage expressions for parallel RL, RC, RLC circuits \u2013 Simple problems on parallel RL and RC circuits. 7. Audio systems. Working of carbon, condenser, crystal, and dynamic microphones with polar characteristics \u2013 Construction and operation of PMMC loudspeaker with ratings \u2013 Woofers and tweeters\u2013 Need for horn loudspeakers \u2013 Construction and working of horn loudspeaker \u2013 Principle, construction, and working of magnetic and crystal headphones \u2013 Uses of headphones \u2013 Specifications of loudspeakers and microphones \u2013 Definitions of speech, music, and noise 8. Measuring & Testing Instruments: Characteristics of ideal voltmeter and ammeter \u2013 Construction and working of PMMC instrument \u2013 Working of rectifier-type voltmeter \u2013 Advantages of digital over analog instruments \u2013 Ramp-type digital voltmeter with block diagram \u2013 Use of analog and digital multimeters \u2013 Specifications of digital multimeters including accuracy, resolution, range, precision, and display digits \u2013 Working of function generator with block diagram. TABLE SPECIFYING THE SCOPE OF SYLLABUS TO BE COVERED FOR UNIT TESTS I, II & III REFERENCE BOOKS Unit Test Learning outcomes to be covered Unit Test-I From 1.1 to 2.21 Unit Test-II From 3.1 to 6.3 Unit Test-III From 6.4 to 8.8 1. G.K.Mithal, Electronic Devices and Circuits, 23rd Edition- Khanna Publication-1988 2. B. Somanathan, Electronic devices and applications, 2nd Edition- PHI. 3. Dr.K.Padmanabham, P.Swaminathan, Electronic components, 2nd Edition,- Laxmi Publications (P) Ltd 4. Walter c bosshart, Printed circuit boards: design and technology -TMH 5. Bernard Grob, Basic Electronics, 4th edition- TMH-1977 6. Millman&Halkias, Electronic devices & Circuits, 4th edition- TMH 7. V K mehata, RohitMehata, Basic electrical engineering-S.Chand Publication 8. HS Kalsi, Electronic Instrumentation, Tata McGraw Hill",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-4.17",
-                    "sno": "4.17",
-                    "topic": "Deep dive into Semiconductor Diodes",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-4.18",
-                    "sno": "4.18",
-                    "topic": "Deep dive into Explain the formation of PN junction diode",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-4.19",
-                    "sno": "4.19",
-                    "topic": "Deep dive into Explain the working of PN junction Diode with forward & reverse biasing",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-4.20",
-                    "sno": "4.20",
-                    "topic": "Deep dive into Draw the VI characteristics of a diode",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-4.21",
-                    "sno": "4.21",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec105t-4.22",
-                    "sno": "4.22",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 5,
             "title": "Bipolar Junction Transistor",
-            "totalPeriods": 22,
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec105t-5.1",
@@ -748,7 +734,7 @@
                 {
                     "id": "26ec105t-5.10",
                     "sno": "5.10",
-                    "topic": "Write collector current expression in CB and CE modes of transistor in terms of \u03b1, \u03b2, IE, IB, IC and ICBO,ICEO",
+                    "topic": "Write collector current expression in CB and CE modes of transistor in terms of α, β, IE, IB, IC and ICBO,ICEO",
                     "period": 1,
                     "type": "theory"
                 },
@@ -811,27 +797,13 @@
                 {
                     "id": "26ec105t-5.19",
                     "sno": "5.19",
-                    "topic": "Deep dive into Define alpha, beta and gamma factors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-5.20",
-                    "sno": "5.20",
-                    "topic": "Deep dive into Derive the relationship among alpha, beta and gamma factors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-5.21",
-                    "sno": "5.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec105t-5.22",
-                    "sno": "5.22",
+                    "id": "26ec105t-5.20",
+                    "sno": "5.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -841,7 +813,7 @@
         {
             "unitNo": 6,
             "title": "AC Fundamentals",
-            "totalPeriods": 22,
+            "totalPeriods": 30,
             "topics": [
                 {
                     "id": "26ec105t-6.1",
@@ -860,7 +832,7 @@
                 {
                     "id": "26ec105t-6.3",
                     "sno": "6.3",
-                    "topic": "State Kirchhoff\u2019s current law and Kirchhoff\u2019s voltage law",
+                    "topic": "State Kirchhoff’s current law and Kirchhoff’s voltage law",
                     "period": 1,
                     "type": "theory"
                 },
@@ -944,7 +916,7 @@
                 {
                     "id": "26ec105t-6.15",
                     "sno": "6.15",
-                    "topic": "Deep dive into State Kirchhoff\u2019s current law and Kirchhoff\u2019s voltage law",
+                    "topic": "Deep dive into State Kirchhoff’s current law and Kirchhoff’s voltage law",
                     "period": 1,
                     "type": "theory"
                 },
@@ -986,13 +958,69 @@
                 {
                     "id": "26ec105t-6.21",
                     "sno": "6.21",
+                    "topic": "Deep dive into Write the expressions for impedance and current for a series RL, RC and RLC circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-6.22",
+                    "sno": "6.22",
+                    "topic": "Deep dive into Solve simple problems on series RL and RC circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-6.23",
+                    "sno": "6.23",
+                    "topic": "Deep dive into Write the expressions for Admittance and voltage for a parallel RL, RC and RLC circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-6.24",
+                    "sno": "6.24",
+                    "topic": "Deep dive into Solve simple problems on parallel RL and RC circuits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-6.25",
+                    "sno": "6.25",
+                    "topic": "Problem solving & practice on AC Fundamentals",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-6.26",
+                    "sno": "6.26",
+                    "topic": "Problem solving & practice on Explain the terms Ideal voltage source and Ideal current source",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-6.27",
+                    "sno": "6.27",
+                    "topic": "Problem solving & practice on State Kirchhoff’s current law and Kirchhoff’s voltage law",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-6.28",
+                    "sno": "6.28",
+                    "topic": "Problem solving & practice on Explain the effect of AC flowing through Pure Resistance, Inductance and Capacitance with vector diagrams",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec105t-6.29",
+                    "sno": "6.29",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec105t-6.22",
-                    "sno": "6.22",
+                    "id": "26ec105t-6.30",
+                    "sno": "6.30",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -1002,7 +1030,7 @@
         {
             "unitNo": 7,
             "title": "Audio Systems",
-            "totalPeriods": 22,
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec105t-7.1",
@@ -1133,27 +1161,13 @@
                 {
                     "id": "26ec105t-7.19",
                     "sno": "7.19",
-                    "topic": "Problem solving & practice on Audio Systems",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-7.20",
-                    "sno": "7.20",
-                    "topic": "Problem solving & practice on Explain the working of carbon, condenser, Crystal and dynamic microphones along with their polar characteristics",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-7.21",
-                    "sno": "7.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec105t-7.22",
-                    "sno": "7.22",
+                    "id": "26ec105t-7.20",
+                    "sno": "7.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -1162,8 +1176,8 @@
         },
         {
             "unitNo": 8,
-            "title": "Measuring and Test Instruments",
-            "totalPeriods": 22,
+            "title": "Measuring Test Instruments",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec105t-8.1",
@@ -1294,27 +1308,13 @@
                 {
                     "id": "26ec105t-8.19",
                     "sno": "8.19",
-                    "topic": "Problem solving & practice on Explain the construction and principle of operation of PMMC instrument",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-8.20",
-                    "sno": "8.20",
-                    "topic": "Problem solving & practice on Explain the working of rectifier type voltmeter",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec105t-8.21",
-                    "sno": "8.21",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec105t-8.22",
-                    "sno": "8.22",
+                    "id": "26ec105t-8.20",
+                    "sno": "8.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

@@ -7,8 +7,8 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Identify and analyze network-related issues in LAN/WAN environments.",
-            "totalPeriods": 29,
+            "title": "Basics of Troubleshooting and Network Faults",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26cm406a-1.1",
@@ -69,146 +69,90 @@
                 {
                     "id": "26cm406a-1.9",
                     "sno": "1.9",
-                    "topic": "Service Desk Process: \nBasic ticket lifecycle \u2013 Ticket creation, classification, assignment, \nresolution, closure \n \nUnit 2: Troubleshooting Tools and Commands",
+                    "topic": "Service Desk Process: \nBasic ticket lifecycle – Ticket creation, classification, assignment, \nresolution, closure \n \nUnit 2: Troubleshooting Tools and Commands",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm406a-1.10",
                     "sno": "1.10",
-                    "topic": "Bad cables",
+                    "topic": "Bad cables; Loose connectors; Improper crimping",
+                    "period": 1,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 2,
+            "title": "Troubleshooting Tools and Commands",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26cm406a-2.1",
+                    "sno": "2.1",
+                    "topic": "Study and analysis of Unit 2",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm406a-1.11",
-                    "sno": "1.11",
-                    "topic": "Loose connectors",
+                    "id": "26cm406a-2.2",
+                    "sno": "2.2",
+                    "topic": "Deep dive into Study and analysis of Unit 2",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm406a-1.12",
-                    "sno": "1.12",
-                    "topic": "Improper crimping",
+                    "id": "26cm406a-2.3",
+                    "sno": "2.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 2",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm406a-1.13",
-                    "sno": "1.13",
-                    "topic": "Deep dive into Fundamentals of troubleshooting?",
+                    "id": "26cm406a-2.4",
+                    "sno": "2.4",
+                    "topic": "Practical applications of Study and analysis of Unit 2",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm406a-1.14",
-                    "sno": "1.14",
-                    "topic": "Deep dive into What is trouble shooting?",
+                    "id": "26cm406a-2.5",
+                    "sno": "2.5",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm406a-1.15",
-                    "sno": "1.15",
-                    "topic": "Deep dive into Types of Maintenance: Preventive & Corrective Maintenance",
+                    "id": "26cm406a-2.6",
+                    "sno": "2.6",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm406a-1.16",
-                    "sno": "1.16",
-                    "topic": "Deep dive into Various approaches to Troubleshooting",
+                    "id": "26cm406a-2.7",
+                    "sno": "2.7",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm406a-1.17",
-                    "sno": "1.17",
-                    "topic": "Deep dive into Key Steps in Network Troubleshooting",
+                    "id": "26cm406a-2.8",
+                    "sno": "2.8",
+                    "topic": "Additional practice sessions",
                     "period": 1,
                     "type": "theory"
                 },
                 {
-                    "id": "26cm406a-1.18",
-                    "sno": "1.18",
-                    "topic": "Deep dive into Common network faults:   \n   Cable issues, NIC failure, switch/router faults",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.19",
-                    "sno": "1.19",
-                    "topic": "Deep dive into Types of errors: \nLink down, IP conflict, DNS resolution error",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.20",
-                    "sno": "1.20",
-                    "topic": "Deep dive into Importance of logs and reporting",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.21",
-                    "sno": "1.21",
-                    "topic": "Deep dive into Service Desk Process: \nBasic ticket lifecycle \u2013 Ticket creation, classification, assignment, \nresolution, closure \n \nUnit 2: Troubleshooting Tools and Commands",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.22",
-                    "sno": "1.22",
-                    "topic": "Deep dive into Bad cables",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.23",
-                    "sno": "1.23",
-                    "topic": "Deep dive into Loose connectors",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.24",
-                    "sno": "1.24",
-                    "topic": "Deep dive into Improper crimping",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.25",
-                    "sno": "1.25",
-                    "topic": "Problem solving & practice on Fundamentals of troubleshooting?",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.26",
-                    "sno": "1.26",
-                    "topic": "Problem solving & practice on What is trouble shooting?",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.27",
-                    "sno": "1.27",
-                    "topic": "Problem solving & practice on Types of Maintenance: Preventive & Corrective Maintenance",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26cm406a-1.28",
-                    "sno": "1.28",
+                    "id": "26cm406a-2.9",
+                    "sno": "2.9",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm406a-1.29",
-                    "sno": "1.29",
+                    "id": "26cm406a-2.10",
+                    "sno": "2.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -216,19 +160,76 @@
             ]
         },
         {
-            "unitNo": 2,
-            "title": "Understand error types in hardware and software components of networks.",
-            "totalPeriods": 0,
-            "topics": []
-        },
-        {
             "unitNo": 3,
-            "title": "Use diagnostic tools and commands to resolve common network problems. COURSE OUTCOMES(Cos) At the end of the course, the student shall able to",
-            "totalPeriods": 1,
+            "title": "Troubleshooting Wired and Wireless Networks",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26cm406a-3.1",
                     "sno": "3.1",
+                    "topic": "Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-3.2",
+                    "sno": "3.2",
+                    "topic": "Deep dive into Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-3.3",
+                    "sno": "3.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-3.4",
+                    "sno": "3.4",
+                    "topic": "Practical applications of Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-3.5",
+                    "sno": "3.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-3.6",
+                    "sno": "3.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-3.7",
+                    "sno": "3.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-3.8",
+                    "sno": "3.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm406a-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm406a-3.10",
+                    "sno": "3.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

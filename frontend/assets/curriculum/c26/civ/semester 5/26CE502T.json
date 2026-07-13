@@ -7,495 +7,103 @@
     "units": [
         {
             "unitNo": 1,
-            "title": "Water Supply Scheme & Sources and Conveyance of Water",
-            "totalPeriods": 70,
+            "title": "WATER SUPPLY SCHEME, SOURCES AND CONVEYANCE OF WATER",
+            "totalPeriods": 14,
             "topics": [
                 {
                     "id": "26ce502t-1.1",
                     "sno": "1.1",
-                    "topic": "Introduction to Unit 1 concepts",
+                    "topic": "Explain the importance of water supply scheme in relevant to Sustainable Development Goals",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.2",
                     "sno": "1.2",
-                    "topic": "Detailed analysis of Unit 1 methodologies",
+                    "topic": "State the need for protected water supply, objectives of protected water supply scheme",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.3",
                     "sno": "1.3",
-                    "topic": "Practical application and standard setups for Unit 1",
+                    "topic": "Define Per capita demand; List the factors affecting and explain variation in demand",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.4",
                     "sno": "1.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "Estimate the quantity of water required by different towns using population forecasting",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.5",
                     "sno": "1.5",
-                    "topic": "Deep dive into Introduction to Unit 1 concepts",
+                    "topic": "State the common sources of water, merits and demerits, salient features of surface sources",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.6",
                     "sno": "1.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 1 methodologies",
+                    "topic": "Define Aquifer, Aquiclude and Ground water table, Classify wells",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.7",
                     "sno": "1.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 1",
+                    "topic": "Explain with sketches Infiltration galleries and Infiltration wells",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.8",
                     "sno": "1.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "topic": "Explain different methods of conveyance of water, joints, laying and testing",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.9",
                     "sno": "1.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 1 concepts",
+                    "topic": "Deep dive into Explain the importance of water supply scheme in relevant to Sustainable Development Goals",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.10",
                     "sno": "1.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 1 methodologies",
+                    "topic": "Deep dive into State the need for protected water supply, objectives of protected water supply scheme",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.11",
                     "sno": "1.11",
-                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 1",
+                    "topic": "Deep dive into Define Per capita demand; List the factors affecting and explain variation in demand",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.12",
                     "sno": "1.12",
-                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "topic": "Deep dive into Estimate the quantity of water required by different towns using population forecasting",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-1.13",
                     "sno": "1.13",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.14",
-                    "sno": "1.14",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.15",
-                    "sno": "1.15",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.16",
-                    "sno": "1.16",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.17",
-                    "sno": "1.17",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.18",
-                    "sno": "1.18",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.19",
-                    "sno": "1.19",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.20",
-                    "sno": "1.20",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.21",
-                    "sno": "1.21",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.22",
-                    "sno": "1.22",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.23",
-                    "sno": "1.23",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.24",
-                    "sno": "1.24",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.25",
-                    "sno": "1.25",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.26",
-                    "sno": "1.26",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.27",
-                    "sno": "1.27",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.28",
-                    "sno": "1.28",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.29",
-                    "sno": "1.29",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.30",
-                    "sno": "1.30",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.31",
-                    "sno": "1.31",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.32",
-                    "sno": "1.32",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.33",
-                    "sno": "1.33",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.34",
-                    "sno": "1.34",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.35",
-                    "sno": "1.35",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.36",
-                    "sno": "1.36",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.37",
-                    "sno": "1.37",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.38",
-                    "sno": "1.38",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.39",
-                    "sno": "1.39",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.40",
-                    "sno": "1.40",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.41",
-                    "sno": "1.41",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.42",
-                    "sno": "1.42",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.43",
-                    "sno": "1.43",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.44",
-                    "sno": "1.44",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.45",
-                    "sno": "1.45",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.46",
-                    "sno": "1.46",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.47",
-                    "sno": "1.47",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.48",
-                    "sno": "1.48",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.49",
-                    "sno": "1.49",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.50",
-                    "sno": "1.50",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.51",
-                    "sno": "1.51",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.52",
-                    "sno": "1.52",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.53",
-                    "sno": "1.53",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.54",
-                    "sno": "1.54",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.55",
-                    "sno": "1.55",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.56",
-                    "sno": "1.56",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.57",
-                    "sno": "1.57",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.58",
-                    "sno": "1.58",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.59",
-                    "sno": "1.59",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.60",
-                    "sno": "1.60",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.61",
-                    "sno": "1.61",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.62",
-                    "sno": "1.62",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.63",
-                    "sno": "1.63",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.64",
-                    "sno": "1.64",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.65",
-                    "sno": "1.65",
-                    "topic": "Practical applications of Introduction to Unit 1 concepts",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.66",
-                    "sno": "1.66",
-                    "topic": "Practical applications of Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.67",
-                    "sno": "1.67",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 1",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.68",
-                    "sno": "1.68",
-                    "topic": "Practical applications of Review of core implementations and exercises",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ce502t-1.69",
-                    "sno": "1.69",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce502t-1.70",
-                    "sno": "1.70",
+                    "id": "26ce502t-1.14",
+                    "sno": "1.14",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -504,132 +112,132 @@
         },
         {
             "unitNo": 2,
-            "title": "Quality and Purification of Water",
+            "title": "QUALITY AND PURIFICATION OF WATER",
             "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ce502t-2.1",
                     "sno": "2.1",
-                    "topic": "Introduction to Unit 2 concepts",
+                    "topic": "State different types of impurities, need for laboratory tests, sampling methods",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.2",
                     "sno": "2.2",
-                    "topic": "Detailed analysis of Unit 2 methodologies",
+                    "topic": "Explain the importance of chemical and bacteriological analysis of water",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.3",
                     "sno": "2.3",
-                    "topic": "Practical application and standard setups for Unit 2",
+                    "topic": "State water borne diseases, maximum acceptable limits of Turbidity, Hardness, Nitrates, Fluorides",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.4",
                     "sno": "2.4",
-                    "topic": "Review of core implementations and exercises",
+                    "topic": "State objectives of treatment of water, Sketch layout of water treatment plant",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.5",
                     "sno": "2.5",
-                    "topic": "Deep dive into Introduction to Unit 2 concepts",
+                    "topic": "Explain Aeration, Plain sedimentation, Sedimentation with coagulation, Filtration, Disinfection",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.6",
                     "sno": "2.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 2 methodologies",
+                    "topic": "Describe different types of sedimentation tanks",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.7",
                     "sno": "2.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 2",
+                    "topic": "Describe slow sand filters, Rapid sand filters and pressure filters",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.8",
                     "sno": "2.8",
-                    "topic": "Deep dive into Review of core implementations and exercises",
+                    "topic": "Define disinfection of water, need, methods and types of Chlorination",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.9",
                     "sno": "2.9",
-                    "topic": "Problem solving & practice on Introduction to Unit 2 concepts",
+                    "topic": "List substances responsible for color, taste, odor; Explain temporary/permanent hardness and removal",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.10",
                     "sno": "2.10",
-                    "topic": "Problem solving & practice on Detailed analysis of Unit 2 methodologies",
+                    "topic": "Describe reverse osmosis method, merits and demerits",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.11",
                     "sno": "2.11",
-                    "topic": "Problem solving & practice on Practical application and standard setups for Unit 2",
+                    "topic": "Deep dive into State different types of impurities, need for laboratory tests, sampling methods",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.12",
                     "sno": "2.12",
-                    "topic": "Problem solving & practice on Review of core implementations and exercises",
+                    "topic": "Deep dive into Explain the importance of chemical and bacteriological analysis of water",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.13",
                     "sno": "2.13",
-                    "topic": "Practical applications of Introduction to Unit 2 concepts",
+                    "topic": "Deep dive into State water borne diseases, maximum acceptable limits of Turbidity, Hardness, Nitrates, Fluorides",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.14",
                     "sno": "2.14",
-                    "topic": "Practical applications of Detailed analysis of Unit 2 methodologies",
+                    "topic": "Deep dive into State objectives of treatment of water, Sketch layout of water treatment plant",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.15",
                     "sno": "2.15",
-                    "topic": "Practical applications of Practical application and standard setups for Unit 2",
+                    "topic": "Deep dive into Explain Aeration, Plain sedimentation, Sedimentation with coagulation, Filtration, Disinfection",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.16",
                     "sno": "2.16",
-                    "topic": "Practical applications of Review of core implementations and exercises",
+                    "topic": "Deep dive into Describe different types of sedimentation tanks",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.17",
                     "sno": "2.17",
-                    "topic": "Practical applications of Introduction to Unit 2 concepts",
+                    "topic": "Deep dive into Describe slow sand filters, Rapid sand filters and pressure filters",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26ce502t-2.18",
                     "sno": "2.18",
-                    "topic": "Practical applications of Detailed analysis of Unit 2 methodologies",
+                    "topic": "Deep dive into Define disinfection of water, need, methods and types of Chlorination",
                     "period": 1,
                     "type": "theory"
                 },
@@ -643,6 +251,426 @@
                 {
                     "id": "26ce502t-2.20",
                     "sno": "2.20",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "INTRODUCTION TO SANITARY ENGINEERING AND QUANTITY OF SEWAGE",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ce502t-3.1",
+                    "sno": "3.1",
+                    "topic": "State the objectives of sewage disposal works",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-3.2",
+                    "sno": "3.2",
+                    "topic": "Define the terms: Sewage, Sewer and Sullage, Sewerage, Refuse and Garbage",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-3.3",
+                    "sno": "3.3",
+                    "topic": "List the objectives of sewerage works and explain sewage collection works",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-3.4",
+                    "sno": "3.4",
+                    "topic": "Explain the different sewerage systems, compare them and discuss suitability",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-3.5",
+                    "sno": "3.5",
+                    "topic": "State main constituents of sewage, Dry weather flow, storm sewage quantity and variation",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-3.6",
+                    "sno": "3.6",
+                    "topic": "List the requirements of good surface drains, explain types with merits/demerits",
+                    "period": 1,
+                    "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "LAYING OF SEWERS AND SEWER APPURTENANCES",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ce502t-4.1",
+                    "sno": "4.1",
+                    "topic": "State various shapes of sewers, explain them with sketch, discuss merits/demerits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-4.2",
+                    "sno": "4.2",
+                    "topic": "Mention different materials used for sewers, discuss merits and demerits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-4.3",
+                    "sno": "4.3",
+                    "topic": "Explain the method of laying sewers as per alignment and need for sewer appurtenances",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-4.4",
+                    "sno": "4.4",
+                    "topic": "Explain the construction, function and location of different sewer appurtenances",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-4.5",
+                    "sno": "4.5",
+                    "topic": "Describe the testing of sewers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-4.6",
+                    "sno": "4.6",
+                    "topic": "Deep dive into State various shapes of sewers, explain them with sketch, discuss merits/demerits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-4.7",
+                    "sno": "4.7",
+                    "topic": "Deep dive into Mention different materials used for sewers, discuss merits and demerits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-4.8",
+                    "sno": "4.8",
+                    "topic": "Deep dive into Explain the method of laying sewers as per alignment and need for sewer appurtenances",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-4.9",
+                    "sno": "4.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce502t-4.10",
+                    "sno": "4.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "CHARACTERISTICS OF SEWAGE, TREATMENT AND DISPOSAL",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "26ce502t-5.1",
+                    "sno": "5.1",
+                    "topic": "Define strength of sewage, describe the method of sampling sewage",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.2",
+                    "sno": "5.2",
+                    "topic": "State the physical, chemical and biological characteristics of sewage",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.3",
+                    "sno": "5.3",
+                    "topic": "Define C.O.D and B.O.D; State significance of tests (Solids, C.O.D, B.O.D, pH, Chlorides)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.4",
+                    "sno": "5.4",
+                    "topic": "State characteristics and treatment principles of industrial waste water",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.5",
+                    "sno": "5.5",
+                    "topic": "State objectives of sewage treatment; Draw conventional sewage treatment plant layout",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.6",
+                    "sno": "5.6",
+                    "topic": "State function of screens, skimming tanks and grit chambers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.7",
+                    "sno": "5.7",
+                    "topic": "Explain Sedimentation tank, Trickling filters, Activated sludge process, Sludge digesters",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.8",
+                    "sno": "5.8",
+                    "topic": "Compare activated sludge process and trickling filters; List methods of sludge disposal",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.9",
+                    "sno": "5.9",
+                    "topic": "Explain with sketch treatment by septic tank and soak pit; List sewage disposal methods",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.10",
+                    "sno": "5.10",
+                    "topic": "Deep dive into Define strength of sewage, describe the method of sampling sewage",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.11",
+                    "sno": "5.11",
+                    "topic": "Deep dive into State the physical, chemical and biological characteristics of sewage",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.12",
+                    "sno": "5.12",
+                    "topic": "Deep dive into Define C.O.D and B.O.D; State significance of tests (Solids, C.O.D, B.O.D, pH, Chlorides)",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.13",
+                    "sno": "5.13",
+                    "topic": "Deep dive into State characteristics and treatment principles of industrial waste water",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.14",
+                    "sno": "5.14",
+                    "topic": "Deep dive into State objectives of sewage treatment; Draw conventional sewage treatment plant layout",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.15",
+                    "sno": "5.15",
+                    "topic": "Deep dive into State function of screens, skimming tanks and grit chambers",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.16",
+                    "sno": "5.16",
+                    "topic": "Deep dive into Explain Sedimentation tank, Trickling filters, Activated sludge process, Sludge digesters",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.17",
+                    "sno": "5.17",
+                    "topic": "Deep dive into Compare activated sludge process and trickling filters; List methods of sludge disposal",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.18",
+                    "sno": "5.18",
+                    "topic": "Deep dive into Explain with sketch treatment by septic tank and soak pit; List sewage disposal methods",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-5.19",
+                    "sno": "5.19",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce502t-5.20",
+                    "sno": "5.20",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 6,
+            "title": "SOLID WASTE MANAGEMENT AND RURAL SANITATION",
+            "totalPeriods": 20,
+            "topics": [
+                {
+                    "id": "26ce502t-6.1",
+                    "sno": "6.1",
+                    "topic": "Explain types, characteristics of solid waste and source segregation of solid waste",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.2",
+                    "sno": "6.2",
+                    "topic": "Describe various methods of disposals of solid waste, merits and demerits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.3",
+                    "sno": "6.3",
+                    "topic": "Concept of bio-mining in landfills and landfill management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.4",
+                    "sno": "6.4",
+                    "topic": "State Vermicomposting, explain procedure and mention advantages",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.5",
+                    "sno": "6.5",
+                    "topic": "Describe with sketches the construction of sanitary latrines in rural areas",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.6",
+                    "sno": "6.6",
+                    "topic": "Describe bio-methanation method, explain biogas plant and factors affecting production",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.7",
+                    "sno": "6.7",
+                    "topic": "Deep dive into Explain types, characteristics of solid waste and source segregation of solid waste",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.8",
+                    "sno": "6.8",
+                    "topic": "Deep dive into Describe various methods of disposals of solid waste, merits and demerits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.9",
+                    "sno": "6.9",
+                    "topic": "Deep dive into Concept of bio-mining in landfills and landfill management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.10",
+                    "sno": "6.10",
+                    "topic": "Deep dive into State Vermicomposting, explain procedure and mention advantages",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.11",
+                    "sno": "6.11",
+                    "topic": "Deep dive into Describe with sketches the construction of sanitary latrines in rural areas",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.12",
+                    "sno": "6.12",
+                    "topic": "Deep dive into Describe bio-methanation method, explain biogas plant and factors affecting production",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.13",
+                    "sno": "6.13",
+                    "topic": "Problem solving & practice on Explain types, characteristics of solid waste and source segregation of solid waste",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.14",
+                    "sno": "6.14",
+                    "topic": "Problem solving & practice on Describe various methods of disposals of solid waste, merits and demerits",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.15",
+                    "sno": "6.15",
+                    "topic": "Problem solving & practice on Concept of bio-mining in landfills and landfill management",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.16",
+                    "sno": "6.16",
+                    "topic": "Problem solving & practice on State Vermicomposting, explain procedure and mention advantages",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.17",
+                    "sno": "6.17",
+                    "topic": "Problem solving & practice on Describe with sketches the construction of sanitary latrines in rural areas",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.18",
+                    "sno": "6.18",
+                    "topic": "Problem solving & practice on Describe bio-methanation method, explain biogas plant and factors affecting production",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ce502t-6.19",
+                    "sno": "6.19",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ce502t-6.20",
+                    "sno": "6.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

@@ -76,7 +76,7 @@
                 {
                     "id": "26cm501t-1.10",
                     "sno": "1.10",
-                    "topic": "Future prospects and trends in quantum technology. Chapter 2 \u2013 Qubits and Superposition",
+                    "topic": "Future prospects and trends in quantum technology. Chapter 2 – Qubits and Superposition",
                     "period": 1,
                     "type": "theory"
                 },
@@ -202,7 +202,7 @@
                 {
                     "id": "26cm501t-2.9",
                     "sno": "2.9",
-                    "topic": "Role of superposition in computational speed-up. Chapter 3 \u2013 Quantum Gates and Circuits",
+                    "topic": "Role of superposition in computational speed-up. Chapter 3 – Quantum Gates and Circuits",
                     "period": 1,
                     "type": "theory"
                 },
@@ -286,14 +286,14 @@
                 {
                     "id": "26cm501t-3.2",
                     "sno": "3.2",
-                    "topic": "Single-qubit gates (X, Y, Z, H) \u2013 conceptual only",
+                    "topic": "Single-qubit gates (X, Y, Z, H) – conceptual only",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm501t-3.3",
                     "sno": "3.3",
-                    "topic": "Multi-qubit gates (CNOT, SWAP) \u2013 conceptual only",
+                    "topic": "Multi-qubit gates (CNOT, SWAP) – conceptual only",
                     "period": 1,
                     "type": "theory"
                 },
@@ -335,7 +335,7 @@
                 {
                     "id": "26cm501t-3.9",
                     "sno": "3.9",
-                    "topic": "Practical examples of gate usage. Chapter 4 \u2013 Entanglement and Quantum Teleportation",
+                    "topic": "Practical examples of gate usage. Chapter 4 – Entanglement and Quantum Teleportation",
                     "period": 1,
                     "type": "theory"
                 },
@@ -356,14 +356,14 @@
                 {
                     "id": "26cm501t-3.12",
                     "sno": "3.12",
-                    "topic": "Deep dive into Single-qubit gates (X, Y, Z, H) \u2013 conceptual only",
+                    "topic": "Deep dive into Single-qubit gates (X, Y, Z, H) – conceptual only",
                     "period": 1,
                     "type": "theory"
                 },
                 {
                     "id": "26cm501t-3.13",
                     "sno": "3.13",
-                    "topic": "Deep dive into Multi-qubit gates (CNOT, SWAP) \u2013 conceptual only",
+                    "topic": "Deep dive into Multi-qubit gates (CNOT, SWAP) – conceptual only",
                     "period": 1,
                     "type": "theory"
                 },
@@ -475,7 +475,7 @@
                 {
                     "id": "26cm501t-4.8",
                     "sno": "4.8",
-                    "topic": "Limitations and challenges of entanglement. Chapter 5 \u2013 Quantum Computing in AI & ML",
+                    "topic": "Limitations and challenges of entanglement. Chapter 5 – Quantum Computing in AI & ML",
                     "period": 1,
                     "type": "theory"
                 },
@@ -531,7 +531,7 @@
                 {
                     "id": "26cm501t-4.16",
                     "sno": "4.16",
-                    "topic": "Deep dive into Limitations and challenges of entanglement. Chapter 5 \u2013 Quantum Computing in AI & ML",
+                    "topic": "Deep dive into Limitations and challenges of entanglement. Chapter 5 – Quantum Computing in AI & ML",
                     "period": 1,
                     "type": "theory"
                 },
@@ -601,7 +601,7 @@
                 {
                     "id": "26cm501t-5.6",
                     "sno": "5.6",
-                    "topic": "Quantum clustering \u2013 high-level explanation",
+                    "topic": "Quantum clustering – high-level explanation",
                     "period": 1,
                     "type": "theory"
                 },

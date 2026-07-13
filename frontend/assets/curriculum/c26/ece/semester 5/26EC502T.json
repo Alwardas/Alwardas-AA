@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "Overview of Fibre Optic Communication",
-            "totalPeriods": 18,
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26ec502t-1.1",
@@ -69,7 +69,7 @@
                 {
                     "id": "26ec502t-1.9",
                     "sno": "1.9",
-                    "topic": "Define Snell\u2019s law in optics",
+                    "topic": "Define Snell’s law in optics",
                     "period": 1,
                     "type": "theory"
                 },
@@ -90,58 +90,16 @@
                 {
                     "id": "26ec502t-1.12",
                     "sno": "1.12",
-                    "topic": "Define acceptance angle and cone of acceptance",
+                    "topic": "Define acceptance angle and cone of acceptance; Derive the formula for acceptance angle; Define numerical aperture (NA); Derive the expression for NA in terms of refractive indices of core and cladding. Lab Experiment; Demonstrate the procedure to measure NA of a fiber experimentally",
                     "period": 1,
                     "type": "theory"
-                },
-                {
-                    "id": "26ec502t-1.13",
-                    "sno": "1.13",
-                    "topic": "Derive the formula for acceptance angle",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec502t-1.14",
-                    "sno": "1.14",
-                    "topic": "Define numerical aperture (NA)",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec502t-1.15",
-                    "sno": "1.15",
-                    "topic": "Derive the expression for NA in terms of refractive indices of core and cladding. Lab Experiment",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec502t-1.16",
-                    "sno": "1.16",
-                    "topic": "Demonstrate the procedure to measure NA of a fiber experimentally",
-                    "period": 1,
-                    "type": "theory"
-                },
-                {
-                    "id": "26ec502t-1.17",
-                    "sno": "1.17",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec502t-1.18",
-                    "sno": "1.18",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Fibre Optic Components and Devices",
-            "totalPeriods": 18,
+            "title": "Fibre Optic components and Devices",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec502t-2.1",
@@ -258,13 +216,27 @@
                 {
                     "id": "26ec502t-2.17",
                     "sno": "2.17",
+                    "topic": "Deep dive into Fibre Optic Components and Devices",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec502t-2.18",
+                    "sno": "2.18",
+                    "topic": "Deep dive into List various fibre optic components; State the need of splicing in optical fibres",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec502t-2.19",
+                    "sno": "2.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec502t-2.18",
-                    "sno": "2.18",
+                    "id": "26ec502t-2.20",
+                    "sno": "2.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -274,7 +246,7 @@
         {
             "unitNo": 3,
             "title": "Cellular system design fundamentals",
-            "totalPeriods": 18,
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec502t-3.1",
@@ -391,13 +363,27 @@
                 {
                     "id": "26ec502t-3.17",
                     "sno": "3.17",
+                    "topic": "Deep dive into Cellular system design fundamentals",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec502t-3.18",
+                    "sno": "3.18",
+                    "topic": "Deep dive into List the limitations of conventional mobile phone system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec502t-3.19",
+                    "sno": "3.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec502t-3.18",
-                    "sno": "3.18",
+                    "id": "26ec502t-3.20",
+                    "sno": "3.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -406,8 +392,8 @@
         },
         {
             "unitNo": 4,
-            "title": "Digital Cellular Mobile System and Multiple access Techniques",
-            "totalPeriods": 18,
+            "title": "Digital Cellular Mobile System and Multiplexing Techniques",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec502t-4.1",
@@ -524,13 +510,27 @@
                 {
                     "id": "26ec502t-4.17",
                     "sno": "4.17",
+                    "topic": "Deep dive into Digital Cellular Mobile System and Multiple access Techniques",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec502t-4.18",
+                    "sno": "4.18",
+                    "topic": "Deep dive into List the features of digital cellular system",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec502t-4.19",
+                    "sno": "4.19",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec502t-4.18",
-                    "sno": "4.18",
+                    "id": "26ec502t-4.20",
+                    "sno": "4.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
