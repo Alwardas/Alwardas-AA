@@ -1,15 +1,13 @@
 import 'package:flutter/foundation.dart';
-import 'dart:io';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
-import 'package:path_provider/path_provider.dart';
-import 'package:open_filex/open_filex.dart'; 
-import 'package:permission_handler/permission_handler.dart';
 import 'package:intl/intl.dart';
+
+import 'file_saver/file_saver.dart';
 
 import '../core/api_constants.dart';
 import '../data/courses_data.dart';
@@ -337,20 +335,8 @@ class PdfService {
 
   static Future<void> _saveAndLaunchPdf(pw.Document pdf, String fileName) async {
     try {
-      if (Platform.isAndroid) {
-        var status = await Permission.storage.status;
-        if (!status.isGranted) {
-           status = await Permission.storage.request();
-           if (!status.isGranted && await Permission.manageExternalStorage.status.isDenied) {
-                 await Permission.manageExternalStorage.request();
-           }
-        }
-      }
-      final dir = await getExternalStorageDirectory(); 
-      String path = "${dir?.path ?? ''}/$fileName";
-      final output = File(path);
-      await output.writeAsBytes(await pdf.save());
-      await OpenFilex.open(path);
+      final bytes = await pdf.save();
+      await FileSaver.saveAndLaunchFile(bytes, fileName);
     } catch (e) {
       debugPrint("Error saving PDF: $e");
     }
@@ -924,20 +910,11 @@ class PdfService {
       final sanitizedSection = section.replaceAll(RegExp(r'[^\w\s\-]'), '_');
       final fileName = "LessonPlan_${sanitizedSubject}_$sanitizedSection.csv";
       
-      if (Platform.isAndroid) {
-        var status = await Permission.storage.status;
-        if (!status.isGranted) {
-          await Permission.storage.request();
-        }
-      }
-      final dir = await getExternalStorageDirectory();
-      final file = File("${dir?.path}/$fileName");
-      await file.writeAsBytes(bytes);
-      await OpenFilex.open(file.path);
+      await FileSaver.saveAndLaunchFile(bytes, fileName);
 
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Lesson Plan Excel exported to ${file.path}")),
+          const SnackBar(content: Text("Lesson Plan Excel exported successfully.")),
         );
       }
     } catch (e) {

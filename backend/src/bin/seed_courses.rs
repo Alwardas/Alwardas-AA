@@ -65,7 +65,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
     let pool = PgPoolOptions::new()
-        .max_connections(5)
+        .max_connections(1)
         .connect(&database_url)
         .await?;
 
@@ -97,34 +97,53 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         // Extract branch and type from path components
         // Path matches format: .../curriculum/{regulation}/{branch}/{semester}/{type}/{subject}.json
+        // Or for C26: .../curriculum/{regulation}/{branch}/{semester}/{subject}.json
         let components: Vec<String> = path
             .components()
             .map(|c| c.as_os_str().to_string_lossy().into_owned())
             .collect();
         
+        let curriculum_index = components
+            .iter()
+            .position(|c| c.to_lowercase() == "curriculum")
+            .unwrap_or(0);
+        
         let mut branch_code = "cme";
         let mut type_code = "theory";
         
-        if components.len() >= 3 {
-            type_code = &components[components.len() - 2]; // e.g. "theory" or "practical"
-            branch_code = &components[components.len() - 4]; // e.g. "cme"
+        if curriculum_index + 2 < components.len() {
+            branch_code = &components[curriculum_index + 2];
+        }
+        if curriculum_index + 4 < components.len() {
+            let next_comp = &components[curriculum_index + 4];
+            if !next_comp.to_lowercase().ends_with(".json") {
+                type_code = next_comp;
+            }
         }
 
         let branch_name = map_branch(branch_code);
         let subject_type = type_code.to_uppercase();
         let semester_name = format!("Semester {}", curriculum.semester);
 
+        // Format course_id to match C-23 or C-26 database strings
+        let reg = curriculum.regulation.trim().replace("-", "");
+        let course_id_str = if reg.len() >= 2 {
+            format!("{}-{}", &reg[..1], &reg[1..])
+        } else {
+            reg
+        };
+
         println!(
-            "Seeding subject: {} ({}) | Branch: {} | Type: {} | Sem: {}",
-            curriculum.subject_code, curriculum.subject_name, branch_name, subject_type, semester_name
+            "Seeding subject: {} ({}) | Branch: {} | Type: {} | Sem: {} | Regulation: {}",
+            curriculum.subject_code, curriculum.subject_name, branch_name, subject_type, semester_name, course_id_str
         );
 
         // 1. Seed Subject
         sqlx::query(
-            "INSERT INTO subjects (id, name, semester, type, branch, faculty_name) 
-             VALUES ($1, $2, $3, $4, $5, $6)
+            "INSERT INTO subjects (id, name, semester, type, branch, faculty_name, course_id) 
+             VALUES ($1, $2, $3, $4, $5, $6, $7)
              ON CONFLICT (id) DO UPDATE 
-             SET name = $2, semester = $3, type = $4, branch = $5"
+             SET name = $2, semester = $3, type = $4, branch = $5, course_id = $7"
         )
         .bind(&curriculum.subject_code)
         .bind(&curriculum.subject_name)
@@ -132,6 +151,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .bind(&subject_type)
         .bind(branch_name)
         .bind(None::<String>)
+        .bind(&course_id_str)
         .execute(&pool)
         .await?;
 
@@ -151,7 +171,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
             sqlx::query(
                 "INSERT INTO lesson_plan_items (id, subject_id, type, text, topic, sno, order_index, completed, completed_date, target_date, review, student_review)
-                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)"
+                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+                 ON CONFLICT (id) DO UPDATE 
+                 SET subject_id = EXCLUDED.subject_id,
+                     type = EXCLUDED.type,
+                     text = EXCLUDED.text,
+                     topic = EXCLUDED.topic,
+                     sno = EXCLUDED.sno,
+                     order_index = EXCLUDED.order_index"
             )
             .bind(&unit_id)
             .bind(&curriculum.subject_code)
@@ -176,7 +203,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
                 sqlx::query(
                     "INSERT INTO lesson_plan_items (id, subject_id, type, text, topic, sno, order_index, completed, completed_date, target_date, review, student_review)
-                     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)"
+                     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+                     ON CONFLICT (id) DO UPDATE 
+                     SET subject_id = EXCLUDED.subject_id,
+                         type = EXCLUDED.type,
+                         text = EXCLUDED.text,
+                         topic = EXCLUDED.topic,
+                         sno = EXCLUDED.sno,
+                         order_index = EXCLUDED.order_index"
                 )
                 .bind(&db_topic_id)
                 .bind(&curriculum.subject_code)
