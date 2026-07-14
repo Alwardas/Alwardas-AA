@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'dart:io';
 
 class ApiConstants {
-  static const String _prodUrl = 'https://alwardas-aa-production-0952.up.railway.app';
-  static const String _prodGrpcHost = 'alwardas-aa-production-0952.up.railway.app';
+  static const String _prodUrl = 'https://alwardas-aa-production-e4b1.up.railway.app';
+  static const String _prodGrpcHost = 'alwardas-aa-production-e4b1.up.railway.app';
 
   static String get baseUrl {
     if (kIsWeb) {
