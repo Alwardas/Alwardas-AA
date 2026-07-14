@@ -3,7 +3,7 @@
     "subjectName": "Industrial Management and Entrepreneurship",
     "regulation": "C26",
     "semester": 5,
-    "totalPeriods": 72,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -119,8 +119,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Unit 2 Topic",
-            "totalPeriods": 2,
+            "title": "Electronic Product design and Development stages",
+            "totalPeriods": 20,
             "topics": [
                 {
                     "id": "26ec501t-2.1",
@@ -132,6 +132,132 @@
                 {
                     "id": "26ec501t-2.2",
                     "sno": "2.2",
+                    "topic": "Deep dive into Explain the concept of product development with a block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.3",
+                    "sno": "2.3",
+                    "topic": "Problem solving & practice on Explain the concept of product development with a block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.4",
+                    "sno": "2.4",
+                    "topic": "Practical applications of Explain the concept of product development with a block diagram",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.5",
+                    "sno": "2.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.6",
+                    "sno": "2.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.7",
+                    "sno": "2.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.8",
+                    "sno": "2.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.9",
+                    "sno": "2.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.10",
+                    "sno": "2.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.11",
+                    "sno": "2.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.12",
+                    "sno": "2.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.13",
+                    "sno": "2.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.14",
+                    "sno": "2.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.15",
+                    "sno": "2.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.16",
+                    "sno": "2.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.17",
+                    "sno": "2.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.18",
+                    "sno": "2.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec501t-2.19",
+                    "sno": "2.19",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec501t-2.20",
+                    "sno": "2.20",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

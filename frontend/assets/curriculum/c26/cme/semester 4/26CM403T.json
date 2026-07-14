@@ -3,7 +3,7 @@
     "subjectName": "COMPUTER NETWORKS",
     "regulation": "C26",
     "semester": 4,
-    "totalPeriods": 91,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -667,20 +667,6 @@
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 6,
-            "title": "Appreciate the importance of network security, and emerging trends in communication systems. COURSE OUTCOMES:  CM403.",
-            "totalPeriods": 1,
-            "topics": [
-                {
-                    "id": "26cm403t-6.1",
-                    "sno": "6.1",
-                    "topic": "Study and analysis of Unit 6",
-                    "period": 1,
-                    "type": "theory"
                 }
             ]
         }

@@ -3,7 +3,7 @@
     "subjectName": "DBMS LAB",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 85,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -582,7 +582,7 @@
         {
             "unitNo": 5,
             "title": "Concepts of NoSQL & Mongo DB.",
-            "totalPeriods": 5,
+            "totalPeriods": 12,
             "topics": [
                 {
                     "id": "26cm309l-5.1",
@@ -608,44 +608,65 @@
                 {
                     "id": "26cm309l-5.4",
                     "sno": "5.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm309l-5.5",
+                    "sno": "5.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm309l-5.6",
+                    "sno": "5.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm309l-5.7",
+                    "sno": "5.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm309l-5.8",
+                    "sno": "5.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm309l-5.9",
+                    "sno": "5.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm309l-5.10",
+                    "sno": "5.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm309l-5.11",
+                    "sno": "5.11",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm309l-5.5",
-                    "sno": "5.5",
+                    "id": "26cm309l-5.12",
+                    "sno": "5.12",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 6,
-            "title": "Exercise on Select command",
-            "totalPeriods": 1,
-            "topics": [
-                {
-                    "id": "26cm309l-6.1",
-                    "sno": "6.1",
-                    "topic": "Study and analysis of Unit 6",
-                    "period": 1,
-                    "type": "practical"
-                }
-            ]
-        },
-        {
-            "unitNo": 7,
-            "title": "Exercise on querying the table using clauses like WHERE, ORDER BY,",
-            "totalPeriods": 1,
-            "topics": [
-                {
-                    "id": "26cm309l-7.1",
-                    "sno": "7.1",
-                    "topic": "Study and analysis of Unit 7",
-                    "period": 1,
-                    "type": "practical"
                 }
             ]
         }

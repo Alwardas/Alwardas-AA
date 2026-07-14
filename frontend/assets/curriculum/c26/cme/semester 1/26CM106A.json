@@ -3,7 +3,7 @@
     "subjectName": "CODING FUNDAMENTALS",
     "regulation": "C26",
     "semester": 1,
-    "totalPeriods": 25,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -188,6 +188,272 @@
                 {
                     "id": "26cm106a-2.15",
                     "sno": "2.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Introduction to coding",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26cm106a-3.1",
+                    "sno": "3.1",
+                    "topic": "Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-3.2",
+                    "sno": "3.2",
+                    "topic": "Deep dive into Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-3.3",
+                    "sno": "3.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-3.4",
+                    "sno": "3.4",
+                    "topic": "Practical applications of Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-3.5",
+                    "sno": "3.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-3.6",
+                    "sno": "3.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-3.7",
+                    "sno": "3.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-3.8",
+                    "sno": "3.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-3.9",
+                    "sno": "3.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm106a-3.10",
+                    "sno": "3.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Fun with functions",
+            "totalPeriods": 15,
+            "topics": [
+                {
+                    "id": "26cm106a-4.1",
+                    "sno": "4.1",
+                    "topic": "Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.2",
+                    "sno": "4.2",
+                    "topic": "Deep dive into Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.3",
+                    "sno": "4.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.4",
+                    "sno": "4.4",
+                    "topic": "Practical applications of Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.5",
+                    "sno": "4.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.6",
+                    "sno": "4.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.7",
+                    "sno": "4.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.8",
+                    "sno": "4.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.9",
+                    "sno": "4.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.10",
+                    "sno": "4.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.11",
+                    "sno": "4.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.12",
+                    "sno": "4.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.13",
+                    "sno": "4.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-4.14",
+                    "sno": "4.14",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm106a-4.15",
+                    "sno": "4.15",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 5,
+            "title": "Understanding arrays and collections",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26cm106a-5.1",
+                    "sno": "5.1",
+                    "topic": "Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-5.2",
+                    "sno": "5.2",
+                    "topic": "Deep dive into Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-5.3",
+                    "sno": "5.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-5.4",
+                    "sno": "5.4",
+                    "topic": "Practical applications of Study and analysis of Unit 5",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-5.5",
+                    "sno": "5.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-5.6",
+                    "sno": "5.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-5.7",
+                    "sno": "5.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-5.8",
+                    "sno": "5.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26cm106a-5.9",
+                    "sno": "5.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm106a-5.10",
+                    "sno": "5.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

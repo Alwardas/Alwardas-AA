@@ -3,7 +3,7 @@
     "subjectName": "English Essentials",
     "regulation": "C26",
     "semester": 1,
-    "totalPeriods": 80,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -615,6 +615,83 @@
                 {
                     "id": "26ec101t-8.10",
                     "sno": "8.10",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 9,
+            "title": "Managing Moods & Moments",
+            "totalPeriods": 10,
+            "topics": [
+                {
+                    "id": "26ec101t-9.1",
+                    "sno": "9.1",
+                    "topic": "Study and analysis of Unit 9",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-9.2",
+                    "sno": "9.2",
+                    "topic": "Deep dive into Study and analysis of Unit 9",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-9.3",
+                    "sno": "9.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 9",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-9.4",
+                    "sno": "9.4",
+                    "topic": "Practical applications of Study and analysis of Unit 9",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-9.5",
+                    "sno": "9.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-9.6",
+                    "sno": "9.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-9.7",
+                    "sno": "9.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-9.8",
+                    "sno": "9.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec101t-9.9",
+                    "sno": "9.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec101t-9.10",
+                    "sno": "9.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

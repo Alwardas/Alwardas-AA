@@ -3,7 +3,7 @@
     "subjectName": "LINUX PRACTICALS",
     "regulation": "C26",
     "semester": 3,
-    "totalPeriods": 57,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -246,7 +246,7 @@
         {
             "unitNo": 3,
             "title": "LINUX editors",
-            "totalPeriods": 1,
+            "totalPeriods": 4,
             "topics": [
                 {
                     "id": "26cm310l-3.1",
@@ -254,12 +254,33 @@
                     "topic": "Study and analysis of Unit 3",
                     "period": 1,
                     "type": "practical"
+                },
+                {
+                    "id": "26cm310l-3.2",
+                    "sno": "3.2",
+                    "topic": "Practice and training on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm310l-3.3",
+                    "sno": "3.3",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm310l-3.4",
+                    "sno": "3.4",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Unit 4 Topic",
+            "title": "LINUX Shell Programs",
             "totalPeriods": 24,
             "topics": [
                 {

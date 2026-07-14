@@ -3,7 +3,7 @@
     "subjectName": "Medical Electronics",
     "regulation": "C26",
     "semester": 4,
-    "totalPeriods": 37,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
@@ -49,8 +49,8 @@
         },
         {
             "unitNo": 2,
-            "title": "Unit 2 Topic",
-            "totalPeriods": 2,
+            "title": "Bio-Electrodes and Bio-Recorders",
+            "totalPeriods": 10,
             "topics": [
                 {
                     "id": "26ec404e-2.1",
@@ -62,6 +62,62 @@
                 {
                     "id": "26ec404e-2.2",
                     "sno": "2.2",
+                    "topic": "Deep dive into Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec404e-2.3",
+                    "sno": "2.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec404e-2.4",
+                    "sno": "2.4",
+                    "topic": "Practical applications of Study and analysis of Unit 2",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec404e-2.5",
+                    "sno": "2.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec404e-2.6",
+                    "sno": "2.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec404e-2.7",
+                    "sno": "2.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec404e-2.8",
+                    "sno": "2.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec404e-2.9",
+                    "sno": "2.9",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec404e-2.10",
+                    "sno": "2.10",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

@@ -8,7 +8,7 @@
         {
             "unitNo": 1,
             "title": "HTML & Basic Web Design",
-            "totalPeriods": 12,
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26cm407l-1.1",
@@ -83,13 +83,34 @@
                 {
                     "id": "26cm407l-1.11",
                     "sno": "1.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm407l-1.12",
+                    "sno": "1.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm407l-1.13",
+                    "sno": "1.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm407l-1.14",
+                    "sno": "1.14",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm407l-1.12",
-                    "sno": "1.12",
+                    "id": "26cm407l-1.15",
+                    "sno": "1.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -232,7 +253,7 @@
         {
             "unitNo": 3,
             "title": "JavaScript & JQuery",
-            "totalPeriods": 25,
+            "totalPeriods": 21,
             "topics": [
                 {
                     "id": "26cm407l-3.1",
@@ -370,41 +391,13 @@
                 {
                     "id": "26cm407l-3.20",
                     "sno": "3.20",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm407l-3.21",
-                    "sno": "3.21",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm407l-3.22",
-                    "sno": "3.22",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm407l-3.23",
-                    "sno": "3.23",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm407l-3.24",
-                    "sno": "3.24",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm407l-3.25",
-                    "sno": "3.25",
+                    "id": "26cm407l-3.21",
+                    "sno": "3.21",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -414,7 +407,7 @@
         {
             "unitNo": 4,
             "title": "PHP",
-            "totalPeriods": 25,
+            "totalPeriods": 21,
             "topics": [
                 {
                     "id": "26cm407l-4.1",
@@ -552,41 +545,13 @@
                 {
                     "id": "26cm407l-4.20",
                     "sno": "4.20",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm407l-4.21",
-                    "sno": "4.21",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm407l-4.22",
-                    "sno": "4.22",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm407l-4.23",
-                    "sno": "4.23",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26cm407l-4.24",
-                    "sno": "4.24",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm407l-4.25",
-                    "sno": "4.25",
+                    "id": "26cm407l-4.21",
+                    "sno": "4.21",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -596,7 +561,7 @@
         {
             "unitNo": 5,
             "title": "Mini – Project",
-            "totalPeriods": 10,
+            "totalPeriods": 15,
             "topics": [
                 {
                     "id": "26cm407l-5.1",
@@ -657,13 +622,48 @@
                 {
                     "id": "26cm407l-5.9",
                     "sno": "5.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm407l-5.10",
+                    "sno": "5.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm407l-5.11",
+                    "sno": "5.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm407l-5.12",
+                    "sno": "5.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm407l-5.13",
+                    "sno": "5.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26cm407l-5.14",
+                    "sno": "5.14",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26cm407l-5.10",
-                    "sno": "5.10",
+                    "id": "26cm407l-5.15",
+                    "sno": "5.15",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

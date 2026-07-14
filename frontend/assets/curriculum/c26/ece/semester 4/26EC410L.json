@@ -3,7 +3,7 @@
     "subjectName": "IOT and Sensors Lab",
     "regulation": "C26",
     "semester": 4,
-    "totalPeriods": 54,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -77,7 +77,7 @@
         },
         {
             "unitNo": 2,
-            "title": "Basic Interfacing, Programming using",
+            "title": "Basic Interfacing, Programming using Arduino Uno Board, Arduino IDE and Tinker cad",
             "totalPeriods": 45,
             "topics": [
                 {
@@ -391,6 +391,272 @@
                 {
                     "id": "26ec410l-2.45",
                     "sno": "2.45",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 3,
+            "title": "Familiarize with Esp8266 Board (or equivalent Board) and Blynk IoT",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ec410l-3.1",
+                    "sno": "3.1",
+                    "topic": "Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-3.2",
+                    "sno": "3.2",
+                    "topic": "Practice and training on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-3.3",
+                    "sno": "3.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-3.4",
+                    "sno": "3.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 3",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-3.5",
+                    "sno": "3.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec410l-3.6",
+                    "sno": "3.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
+                }
+            ]
+        },
+        {
+            "unitNo": 4,
+            "title": "Basic Interfacing and programming using ESP8266 and Blynk IoT App",
+            "totalPeriods": 30,
+            "topics": [
+                {
+                    "id": "26ec410l-4.1",
+                    "sno": "4.1",
+                    "topic": "Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.2",
+                    "sno": "4.2",
+                    "topic": "Practice and training on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.3",
+                    "sno": "4.3",
+                    "topic": "Advanced practical on Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.4",
+                    "sno": "4.4",
+                    "topic": "Real-world simulation of Study and analysis of Unit 4",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.5",
+                    "sno": "4.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.6",
+                    "sno": "4.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.7",
+                    "sno": "4.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.8",
+                    "sno": "4.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.9",
+                    "sno": "4.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.10",
+                    "sno": "4.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.11",
+                    "sno": "4.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.12",
+                    "sno": "4.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.13",
+                    "sno": "4.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.14",
+                    "sno": "4.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.15",
+                    "sno": "4.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.16",
+                    "sno": "4.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.17",
+                    "sno": "4.17",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.18",
+                    "sno": "4.18",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.19",
+                    "sno": "4.19",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.20",
+                    "sno": "4.20",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.21",
+                    "sno": "4.21",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.22",
+                    "sno": "4.22",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.23",
+                    "sno": "4.23",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.24",
+                    "sno": "4.24",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.25",
+                    "sno": "4.25",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.26",
+                    "sno": "4.26",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.27",
+                    "sno": "4.27",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.28",
+                    "sno": "4.28",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec410l-4.29",
+                    "sno": "4.29",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec410l-4.30",
+                    "sno": "4.30",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

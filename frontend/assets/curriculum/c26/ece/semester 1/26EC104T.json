@@ -3,7 +3,7 @@
     "subjectName": "Engineering Chemistry and Environmental Studies",
     "regulation": "C26",
     "semester": 1,
-    "totalPeriods": 72,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
@@ -555,6 +555,139 @@
                     "topic": "Define Green fuel. State the advantages and disadvantages of hydrogen as a green fuel",
                     "period": 1,
                     "type": "theory"
+                }
+            ]
+        },
+        {
+            "unitNo": 8,
+            "title": "Environmental Studies",
+            "totalPeriods": 18,
+            "topics": [
+                {
+                    "id": "26ec104t-8.1",
+                    "sno": "8.1",
+                    "topic": "Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.2",
+                    "sno": "8.2",
+                    "topic": "Deep dive into Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.3",
+                    "sno": "8.3",
+                    "topic": "Problem solving & practice on Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.4",
+                    "sno": "8.4",
+                    "topic": "Practical applications of Study and analysis of Unit 8",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.5",
+                    "sno": "8.5",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.6",
+                    "sno": "8.6",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.7",
+                    "sno": "8.7",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.8",
+                    "sno": "8.8",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.9",
+                    "sno": "8.9",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.10",
+                    "sno": "8.10",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.11",
+                    "sno": "8.11",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.12",
+                    "sno": "8.12",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.13",
+                    "sno": "8.13",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.14",
+                    "sno": "8.14",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.15",
+                    "sno": "8.15",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.16",
+                    "sno": "8.16",
+                    "topic": "Additional practice sessions",
+                    "period": 1,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec104t-8.17",
+                    "sno": "8.17",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26ec104t-8.18",
+                    "sno": "8.18",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         }

@@ -3,761 +3,320 @@
     "subjectName": "Physics & Chemistry Lab",
     "regulation": "C26",
     "semester": 1,
-    "totalPeriods": 98,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
-            "title": "Vernier calipers",
-            "totalPeriods": 3,
+            "title": "Week 1: Vernier calipers / Introduction to Fundamentals of Analytical Chemistry.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-1.1",
                     "sno": "1.1",
-                    "topic": "Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
-                    "period": 1,
+                    "topic": "Vernier calipers",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26ec109l-1.2",
                     "sno": "1.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec109l-1.3",
-                    "sno": "1.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Introduction to Fundamentals of Analytical Chemistry.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Micrometer (Screw gauge)",
-            "totalPeriods": 3,
+            "title": "Week 2: Micrometer (Screw gauge) / Chemical Recognition by Sensory Cues.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-2.1",
                     "sno": "2.1",
-                    "topic": "Identify the chemical compounds and solutions by senses",
-                    "period": 1,
+                    "topic": "Micrometer (Screw gauge)",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26ec109l-2.2",
                     "sno": "2.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec109l-2.3",
-                    "sno": "2.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Chemical Recognition by Sensory Cues.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "Verification of Lami’s theorem using concurrent forces",
-            "totalPeriods": 3,
+            "title": "Week 3: Verification of Lami's theorem using concurrent forces / Preparation of Standard Na2CO3 Solution.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-3.1",
                     "sno": "3.1",
-                    "topic": "Practice making standard Na2CO3 solutions",
-                    "period": 1,
+                    "topic": "Verification of Lami's theorem using concurrent forces",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26ec109l-3.2",
                     "sno": "3.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec109l-3.3",
-                    "sno": "3.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Preparation of Standard Na2CO3 Solution.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 4,
-            "title": "Determination of ‘g’ using simple pendulum",
-            "totalPeriods": 3,
+            "title": "Week 4: Revision on Measurement and Force Experiments / Estimation of HCl Using Standard NaOH Solution.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-4.1",
                     "sno": "4.1",
-                    "topic": "Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
-                    "period": 1,
-                    "type": "practical"
+                    "topic": "Revision on Measurement and Force Experiments",
+                    "period": 3,
+                    "type": "revision"
                 },
                 {
                     "id": "26ec109l-4.2",
                     "sno": "4.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec109l-4.3",
-                    "sno": "4.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Estimation of HCl Using Standard NaOH Solution.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 5,
-            "title": "Focal length and focal power of convex lens by distant object method and U-V method",
-            "totalPeriods": 3,
+            "title": "Week 5: Determination of 'g' using simple pendulum / Determination of Alkalinity of Water Sample.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-5.1",
                     "sno": "5.1",
-                    "topic": "Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
-                    "period": 1,
+                    "topic": "Determination of 'g' using simple pendulum",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26ec109l-5.2",
                     "sno": "5.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec109l-5.3",
-                    "sno": "5.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Determination of Alkalinity of Water Sample.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 6,
-            "title": "Verification of Boyle’s law using Quill tube",
-            "totalPeriods": 3,
+            "title": "Week 6: Focal length and focal power of convex lens by distant object method and U-V method / Estimation of Mohr's Salt Using Standard KMnO4 Solution.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-6.1",
                     "sno": "6.1",
-                    "topic": "Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr’s Salt",
-                    "period": 1,
+                    "topic": "Focal length and focal power of convex lens by distant object method and U-V method",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26ec109l-6.2",
                     "sno": "6.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec109l-6.3",
-                    "sno": "6.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Estimation of Mohr's Salt Using Standard KMnO4 Solution.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 7,
-            "title": "Drawing of magnetic lines of force",
-            "totalPeriods": 3,
+            "title": "Week 7: Verification of Boyle's law using Quill tube / Determination of Total Hardness of Water Using Standard EDTA Solution.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-7.1",
                     "sno": "7.1",
-                    "topic": "Study and analysis of Unit 7",
-                    "period": 1,
+                    "topic": "Verification of Boyle's law using Quill tube",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26ec109l-7.2",
                     "sno": "7.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec109l-7.3",
-                    "sno": "7.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Determination of Total Hardness of Water Using Standard EDTA Solution.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 8,
-            "title": "Resonance apparatus–Determination of velocity of sound in air",
-            "totalPeriods": 3,
+            "title": "Week 8: Revision on Gravity, Lens and Gas Law Experiments / Estimation of Chlorides Present in Water Sample Using Standard AgNO3 Solution.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-8.1",
                     "sno": "8.1",
-                    "topic": "Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
-                    "period": 1,
-                    "type": "practical"
+                    "topic": "Revision on Gravity, Lens and Gas Law Experiments",
+                    "period": 3,
+                    "type": "revision"
                 },
                 {
                     "id": "26ec109l-8.2",
                     "sno": "8.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec109l-8.3",
-                    "sno": "8.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Estimation of Chlorides Present in Water Sample Using Standard AgNO3 Solution.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 9,
-            "title": "Refractive index of a solid using travelling microscope",
-            "totalPeriods": 3,
+            "title": "Week 9: Drawing of magnetic lines of force / Analyzing pH of Common Compounds Using Visual and Instrumental Methods.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-9.1",
                     "sno": "9.1",
-                    "topic": "Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
-                    "period": 1,
+                    "topic": "Drawing of magnetic lines of force",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26ec109l-9.2",
                     "sno": "9.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ec109l-9.3",
-                    "sno": "9.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Analyzing pH of Common Compounds Using Visual and Instrumental Methods.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 10,
-            "title": "Meter bridge–Determination of resistance and specific resistance of material of given wire",
-            "totalPeriods": 71,
+            "title": "Week 10: Resonance apparatus-Determination of velocity of sound in air / Estimation of Copper Deposited on an Object by Using Electrolysis Process.",
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26ec109l-10.1",
                     "sno": "10.1",
-                    "topic": "Carry out the electrolysis process to estimate the amount of Copper deposited on an object",
-                    "period": 1,
+                    "topic": "Resonance apparatus-Determination of velocity of sound in air",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26ec109l-10.2",
                     "sno": "10.2",
-                    "topic": "Practice and training on Carry out the electrolysis process to estimate the amount of Copper deposited on an object",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.3",
-                    "sno": "10.3",
-                    "topic": "Advanced practical on Carry out the electrolysis process to estimate the amount of Copper deposited on an object",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.4",
-                    "sno": "10.4",
-                    "topic": "Real-world simulation of Carry out the electrolysis process to estimate the amount of Copper deposited on an object",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.5",
-                    "sno": "10.5",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.6",
-                    "sno": "10.6",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.7",
-                    "sno": "10.7",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.8",
-                    "sno": "10.8",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.9",
-                    "sno": "10.9",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.10",
-                    "sno": "10.10",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.11",
-                    "sno": "10.11",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.12",
-                    "sno": "10.12",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.13",
-                    "sno": "10.13",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.14",
-                    "sno": "10.14",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.15",
-                    "sno": "10.15",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.16",
-                    "sno": "10.16",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.17",
-                    "sno": "10.17",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.18",
-                    "sno": "10.18",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.19",
-                    "sno": "10.19",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.20",
-                    "sno": "10.20",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.21",
-                    "sno": "10.21",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.22",
-                    "sno": "10.22",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.23",
-                    "sno": "10.23",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.24",
-                    "sno": "10.24",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.25",
-                    "sno": "10.25",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.26",
-                    "sno": "10.26",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.27",
-                    "sno": "10.27",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.28",
-                    "sno": "10.28",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.29",
-                    "sno": "10.29",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.30",
-                    "sno": "10.30",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.31",
-                    "sno": "10.31",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.32",
-                    "sno": "10.32",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.33",
-                    "sno": "10.33",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.34",
-                    "sno": "10.34",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.35",
-                    "sno": "10.35",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.36",
-                    "sno": "10.36",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.37",
-                    "sno": "10.37",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.38",
-                    "sno": "10.38",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.39",
-                    "sno": "10.39",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.40",
-                    "sno": "10.40",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.41",
-                    "sno": "10.41",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.42",
-                    "sno": "10.42",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.43",
-                    "sno": "10.43",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.44",
-                    "sno": "10.44",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.45",
-                    "sno": "10.45",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.46",
-                    "sno": "10.46",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.47",
-                    "sno": "10.47",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.48",
-                    "sno": "10.48",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.49",
-                    "sno": "10.49",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.50",
-                    "sno": "10.50",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.51",
-                    "sno": "10.51",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.52",
-                    "sno": "10.52",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.53",
-                    "sno": "10.53",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.54",
-                    "sno": "10.54",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.55",
-                    "sno": "10.55",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.56",
-                    "sno": "10.56",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.57",
-                    "sno": "10.57",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.58",
-                    "sno": "10.58",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.59",
-                    "sno": "10.59",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.60",
-                    "sno": "10.60",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.61",
-                    "sno": "10.61",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.62",
-                    "sno": "10.62",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.63",
-                    "sno": "10.63",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.64",
-                    "sno": "10.64",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.65",
-                    "sno": "10.65",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.66",
-                    "sno": "10.66",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.67",
-                    "sno": "10.67",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.68",
-                    "sno": "10.68",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.69",
-                    "sno": "10.69",
-                    "topic": "Additional practice sessions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ec109l-10.70",
-                    "sno": "10.70",
-                    "topic": "Revision",
-                    "period": 1,
+                    "topic": "Estimation of Copper Deposited on an Object by Using Electrolysis Process.",
+                    "period": 3,
+                    "type": "practical"
+                }
+            ]
+        },
+        {
+            "unitNo": 11,
+            "title": "Week 11: Refractive index of a solid using travelling microscope / Determination of Turbidity of Water Sample by Using Nephelometer.",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ec109l-11.1",
+                    "sno": "11.1",
+                    "topic": "Refractive index of a solid using travelling microscope",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec109l-11.2",
+                    "sno": "11.2",
+                    "topic": "Determination of Turbidity of Water Sample by Using Nephelometer.",
+                    "period": 3,
+                    "type": "practical"
+                }
+            ]
+        },
+        {
+            "unitNo": 12,
+            "title": "Week 12: Revision on Magnetism, Sound and Refraction Experiments / Construction and Working of Galvanic Cell.",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ec109l-12.1",
+                    "sno": "12.1",
+                    "topic": "Revision on Magnetism, Sound and Refraction Experiments",
+                    "period": 3,
                     "type": "revision"
                 },
                 {
-                    "id": "26ec109l-10.71",
-                    "sno": "10.71",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "id": "26ec109l-12.2",
+                    "sno": "12.2",
+                    "topic": "Construction and Working of Galvanic Cell.",
+                    "period": 3,
+                    "type": "practical"
+                }
+            ]
+        },
+        {
+            "unitNo": 13,
+            "title": "Week 13: Meter bridge-Determination of resistance and specific resistance of material of given wire / Preparation of a Polymer (Bakelite).",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ec109l-13.1",
+                    "sno": "13.1",
+                    "topic": "Meter bridge-Determination of resistance and specific resistance of material of given wire",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec109l-13.2",
+                    "sno": "13.2",
+                    "topic": "Preparation of a Polymer (Bakelite).",
+                    "period": 3,
+                    "type": "practical"
+                }
+            ]
+        },
+        {
+            "unitNo": 14,
+            "title": "Week 14: Projectile motion- study the range of a projectile for different launch angles / Open Ended Experiments/Micro Projects - I.",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ec109l-14.1",
+                    "sno": "14.1",
+                    "topic": "Projectile motion- study the range of a projectile for different launch angles",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec109l-14.2",
+                    "sno": "14.2",
+                    "topic": "Open Ended Experiments/Micro Projects - I.",
+                    "period": 3,
+                    "type": "practical"
+                }
+            ]
+        },
+        {
+            "unitNo": 15,
+            "title": "Week 15: Generation of Beats using water columns / Open Ended Experiments/Micro Projects - II.",
+            "totalPeriods": 6,
+            "topics": [
+                {
+                    "id": "26ec109l-15.1",
+                    "sno": "15.1",
+                    "topic": "Generation of Beats using water columns",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ec109l-15.2",
+                    "sno": "15.2",
+                    "topic": "Open Ended Experiments/Micro Projects - II.",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         }

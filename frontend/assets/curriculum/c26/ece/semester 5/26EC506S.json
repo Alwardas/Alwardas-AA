@@ -3,37 +3,119 @@
     "subjectName": "Swayam Course in Emerging Technologies with",
     "regulation": "C26",
     "semester": 5,
-    "totalPeriods": 0,
+    "totalPeriods": 45,
     "units": [
         {
             "unitNo": 1,
-            "title": "Introduction & Fundamentals",
-            "totalPeriods": 0,
-            "topics": []
-        },
-        {
-            "unitNo": 2,
-            "title": "Core Concepts & Principles",
-            "totalPeriods": 0,
-            "topics": []
-        },
-        {
-            "unitNo": 3,
-            "title": "System Design & Methodology",
-            "totalPeriods": 0,
-            "topics": []
-        },
-        {
-            "unitNo": 4,
-            "title": "Advanced Applications & Operations",
-            "totalPeriods": 0,
-            "topics": []
-        },
-        {
-            "unitNo": 5,
-            "title": "Best Practices & Case Studies",
-            "totalPeriods": 0,
-            "topics": []
+            "title": "Swayam Course in Engineering & Technology",
+            "totalPeriods": 45,
+            "topics": [
+                {
+                    "id": "26ec506s-1.1",
+                    "sno": "1.1",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 1",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.2",
+                    "sno": "1.2",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 2",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.3",
+                    "sno": "1.3",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 3",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.4",
+                    "sno": "1.4",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 4",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.5",
+                    "sno": "1.5",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 5",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.6",
+                    "sno": "1.6",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 6",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.7",
+                    "sno": "1.7",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 7",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.8",
+                    "sno": "1.8",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 8",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.9",
+                    "sno": "1.9",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 9",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.10",
+                    "sno": "1.10",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 10",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.11",
+                    "sno": "1.11",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 11",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.12",
+                    "sno": "1.12",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 12",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.13",
+                    "sno": "1.13",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 13",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.14",
+                    "sno": "1.14",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 14",
+                    "period": 3,
+                    "type": "theory"
+                },
+                {
+                    "id": "26ec506s-1.15",
+                    "sno": "1.15",
+                    "topic": "Swayam course lectures, discussion, assignments and practice - Week 15",
+                    "period": 3,
+                    "type": "theory"
+                }
+            ]
         }
     ]
 }

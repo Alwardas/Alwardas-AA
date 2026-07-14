@@ -3,7 +3,7 @@
     "subjectName": "COMMUNICATION & EMPLOYABILITY SKILLS",
     "regulation": "C26",
     "semester": 4,
-    "totalPeriods": 55,
+    "totalPeriods": 60,
     "units": [
         {
             "unitNo": 1,
@@ -176,7 +176,7 @@
         {
             "unitNo": 5,
             "title": "JAM",
-            "totalPeriods": 1,
+            "totalPeriods": 6,
             "topics": [
                 {
                     "id": "26cm408l-5.1",
@@ -184,12 +184,47 @@
                     "topic": "Internal Assessment – II From 6.1 to. 10.3",
                     "period": 1,
                     "type": "assessment"
+                },
+                {
+                    "id": "26cm408l-5.2",
+                    "sno": "5.2",
+                    "topic": "Practice and training on Internal Assessment – II From 6.1 to. 10.3",
+                    "period": 1,
+                    "type": "assessment"
+                },
+                {
+                    "id": "26cm408l-5.3",
+                    "sno": "5.3",
+                    "topic": "Advanced practical on Internal Assessment – II From 6.1 to. 10.3",
+                    "period": 1,
+                    "type": "assessment"
+                },
+                {
+                    "id": "26cm408l-5.4",
+                    "sno": "5.4",
+                    "topic": "Real-world simulation of Internal Assessment – II From 6.1 to. 10.3",
+                    "period": 1,
+                    "type": "assessment"
+                },
+                {
+                    "id": "26cm408l-5.5",
+                    "sno": "5.5",
+                    "topic": "Revision",
+                    "period": 1,
+                    "type": "revision"
+                },
+                {
+                    "id": "26cm408l-5.6",
+                    "sno": "5.6",
+                    "topic": "Assessment / Practice / Problem Solving",
+                    "period": 1,
+                    "type": "assessment"
                 }
             ]
         },
         {
             "unitNo": 6,
-            "title": "Unit 6 Topic",
+            "title": "Interpreting Data",
             "totalPeriods": 6,
             "topics": [
                 {
