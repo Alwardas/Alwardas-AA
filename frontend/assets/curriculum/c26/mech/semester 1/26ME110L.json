@@ -13,23 +13,23 @@
                 {
                     "id": "26me110l-1.1",
                     "sno": "1.1",
-                    "topic": "Study and analysis of Unit 1",
+                    "topic": "To get familiarized with Computer system and hardware connections",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-1.2",
                     "sno": "1.2",
-                    "topic": "Revision",
+                    "topic": "To start and Shut down Computer correctly",
                     "period": 1,
-                    "type": "revision"
+                    "type": "practical"
                 },
                 {
                     "id": "26me110l-1.3",
                     "sno": "1.3",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "To explore Windows Desktop",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practical"
                 }
             ]
         },
@@ -41,23 +41,23 @@
                 {
                     "id": "26me110l-2.1",
                     "sno": "2.1",
-                    "topic": "Study and analysis of Unit 2",
+                    "topic": "To check the software and hardware details of the computer",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-2.2",
                     "sno": "2.2",
-                    "topic": "Revision",
+                    "topic": "To work with Files and Folders",
                     "period": 1,
-                    "type": "revision"
+                    "type": "practical"
                 },
                 {
                     "id": "26me110l-2.3",
                     "sno": "2.3",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "To use Windows Accessories: Calculator – Notepad – WordPad – MS Paint",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practical"
                 }
             ]
         },
@@ -69,112 +69,112 @@
                 {
                     "id": "26me110l-3.1",
                     "sno": "3.1",
-                    "topic": "Study and analysis of Unit 3",
+                    "topic": "To get familiarized with Ribbon layout of MSWord.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.2",
                     "sno": "3.2",
-                    "topic": "Practice and training on Study and analysis of Unit 3",
+                    "topic": "To perform basic word processing",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.3",
                     "sno": "3.3",
-                    "topic": "Advanced practical on Study and analysis of Unit 3",
+                    "topic": "To use basic formatting techniques",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.4",
                     "sno": "3.4",
-                    "topic": "Real-world simulation of Study and analysis of Unit 3",
+                    "topic": "To insert a table of required number of rows and columns",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.5",
                     "sno": "3.5",
-                    "topic": "Additional practice sessions",
+                    "topic": "To insert Objects, Clipart and Hyperlinks",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.6",
                     "sno": "3.6",
-                    "topic": "Additional practice sessions",
+                    "topic": "To use Mail Merge feature of MS Word",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.7",
                     "sno": "3.7",
-                    "topic": "Additional practice sessions",
+                    "topic": "To use Equations and symbols features",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.8",
                     "sno": "3.8",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To get familiarized with Ribbon layout of MSWord.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.9",
                     "sno": "3.9",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To perform basic word processing",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.10",
                     "sno": "3.10",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To use basic formatting techniques",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.11",
                     "sno": "3.11",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To insert a table of required number of rows and columns",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.12",
                     "sno": "3.12",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To insert Objects, Clipart and Hyperlinks",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.13",
                     "sno": "3.13",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To use Mail Merge feature of MS Word",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.14",
                     "sno": "3.14",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To use Equations and symbols features",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.15",
                     "sno": "3.15",
-                    "topic": "Additional practice sessions",
+                    "topic": "Advanced practical on To get familiarized with Ribbon layout of MSWord.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-3.16",
                     "sno": "3.16",
-                    "topic": "Additional practice sessions",
+                    "topic": "Advanced practical on To perform basic word processing",
                     "period": 1,
                     "type": "practical"
                 },
@@ -202,133 +202,133 @@
                 {
                     "id": "26me110l-4.1",
                     "sno": "4.1",
-                    "topic": "Study and analysis of Unit 4",
+                    "topic": "To get familiarized with MS-EXCEL ribbon layout",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.2",
                     "sno": "4.2",
-                    "topic": "Practice and training on Study and analysis of Unit 4",
+                    "topic": "To access and enter data in the cells",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.3",
                     "sno": "4.3",
-                    "topic": "Advanced practical on Study and analysis of Unit 4",
+                    "topic": "To edit a spread sheet-Copy, Cut, Paste, and selecting Cells",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.4",
                     "sno": "4.4",
-                    "topic": "Real-world simulation of Study and analysis of Unit 4",
+                    "topic": "To use built in functions and Data Formatting",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.5",
                     "sno": "4.5",
-                    "topic": "Additional practice sessions",
+                    "topic": "To create Excel Functions, use auto fill feature",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.6",
                     "sno": "4.6",
-                    "topic": "Additional practice sessions",
+                    "topic": "To enter a Formula for automatic calculations",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.7",
                     "sno": "4.7",
-                    "topic": "Additional practice sessions",
+                    "topic": "To sort and filter data in sheet.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.8",
                     "sno": "4.8",
-                    "topic": "Additional practice sessions",
+                    "topic": "To present data using Excel Graphs and Charts.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.9",
                     "sno": "4.9",
-                    "topic": "Additional practice sessions",
+                    "topic": "To format a Work sheet in Excel for printing using Page layout",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.10",
                     "sno": "4.10",
-                    "topic": "Additional practice sessions",
+                    "topic": "To develop lab report formats of respective discipline.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.11",
                     "sno": "4.11",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To get familiarized with MS-EXCEL ribbon layout",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.12",
                     "sno": "4.12",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To access and enter data in the cells",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.13",
                     "sno": "4.13",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To edit a spread sheet-Copy, Cut, Paste, and selecting Cells",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.14",
                     "sno": "4.14",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To use built in functions and Data Formatting",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.15",
                     "sno": "4.15",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To create Excel Functions, use auto fill feature",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.16",
                     "sno": "4.16",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To enter a Formula for automatic calculations",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.17",
                     "sno": "4.17",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To sort and filter data in sheet.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.18",
                     "sno": "4.18",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To present data using Excel Graphs and Charts.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-4.19",
                     "sno": "4.19",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To format a Work sheet in Excel for printing using Page layout",
                     "period": 1,
                     "type": "practical"
                 },
@@ -356,112 +356,112 @@
                 {
                     "id": "26me110l-5.1",
                     "sno": "5.1",
-                    "topic": "Study and analysis of Unit 5",
+                    "topic": "To get familiarized with Ribbon layout features of Power Point.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.2",
                     "sno": "5.2",
-                    "topic": "Practice and training on Study and analysis of Unit 5",
+                    "topic": "To create a simple Power Point Presentation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.3",
                     "sno": "5.3",
-                    "topic": "Advanced practical on Study and analysis of Unit 5",
+                    "topic": "To set up a Master Slide in Power Point",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.4",
                     "sno": "5.4",
-                    "topic": "Real-world simulation of Study and analysis of Unit 5",
+                    "topic": "To insert Text and Objects",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.5",
                     "sno": "5.5",
-                    "topic": "Additional practice sessions",
+                    "topic": "To insert Flow Charts",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.6",
                     "sno": "5.6",
-                    "topic": "Additional practice sessions",
+                    "topic": "To insert Tables",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.7",
                     "sno": "5.7",
-                    "topic": "Additional practice sessions",
+                    "topic": "To insert Charts/Graphs",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.8",
                     "sno": "5.8",
-                    "topic": "Additional practice sessions",
+                    "topic": "To insert video and audio",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.9",
                     "sno": "5.9",
-                    "topic": "Additional practice sessions",
+                    "topic": "To animate text, objects and slides.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.10",
                     "sno": "5.10",
-                    "topic": "Additional practice sessions",
+                    "topic": "To Review Presentations",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.11",
                     "sno": "5.11",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To get familiarized with Ribbon layout features of Power Point.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.12",
                     "sno": "5.12",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To create a simple Power Point Presentation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.13",
                     "sno": "5.13",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To set up a Master Slide in Power Point",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.14",
                     "sno": "5.14",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To insert Text and Objects",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.15",
                     "sno": "5.15",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To insert Flow Charts",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-5.16",
                     "sno": "5.16",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To insert Tables",
                     "period": 1,
                     "type": "practical"
                 },
@@ -489,175 +489,175 @@
                 {
                     "id": "26me110l-6.1",
                     "sno": "6.1",
-                    "topic": "Study and analysis of Unit 6",
+                    "topic": "To get familiarized with AI Tools",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.2",
                     "sno": "6.2",
-                    "topic": "Practice and training on Study and analysis of Unit 6",
+                    "topic": "To get familiarized with working of Chat GPT",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.3",
                     "sno": "6.3",
-                    "topic": "Advanced practical on Study and analysis of Unit 6",
+                    "topic": "Identify Objects using AI Tools based on CNN, YOLO, SSD, R-CNN",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.4",
                     "sno": "6.4",
-                    "topic": "Real-world simulation of Study and analysis of Unit 6",
+                    "topic": "To paraphrase text using AI Tools (PEGASUS, GPT, T5)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.5",
                     "sno": "6.5",
-                    "topic": "Additional practice sessions",
+                    "topic": "To use text-to-Image Generation AI Tools (DALL-E, MID JOURNEY)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.6",
                     "sno": "6.6",
-                    "topic": "Additional practice sessions",
+                    "topic": "To use voice command simulation AI Tools (SPEECH-TO-TEXT)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.7",
                     "sno": "6.7",
-                    "topic": "Additional practice sessions",
+                    "topic": "To get familiarized with ML Tools",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.8",
                     "sno": "6.8",
-                    "topic": "Additional practice sessions",
+                    "topic": "To get familiarized with Quantum Computing Tools",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.9",
                     "sno": "6.9",
-                    "topic": "Additional practice sessions",
+                    "topic": "To familiarize with quantum bits (qubits) using Dirac notation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.10",
                     "sno": "6.10",
-                    "topic": "Additional practice sessions",
+                    "topic": "To familiarize the behavior of single and multiple qubit gates.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.11",
                     "sno": "6.11",
-                    "topic": "Additional practice sessions",
+                    "topic": "To familiarize with Qubit as a Coin / Spin Analogy",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.12",
                     "sno": "6.12",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To get familiarized with AI Tools",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.13",
                     "sno": "6.13",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To get familiarized with working of Chat GPT",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.14",
                     "sno": "6.14",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on Identify Objects using AI Tools based on CNN, YOLO, SSD, R-CNN",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.15",
                     "sno": "6.15",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To paraphrase text using AI Tools (PEGASUS, GPT, T5)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.16",
                     "sno": "6.16",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To use text-to-Image Generation AI Tools (DALL-E, MID JOURNEY)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.17",
                     "sno": "6.17",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To use voice command simulation AI Tools (SPEECH-TO-TEXT)",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.18",
                     "sno": "6.18",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To get familiarized with ML Tools",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.19",
                     "sno": "6.19",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To get familiarized with Quantum Computing Tools",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.20",
                     "sno": "6.20",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To familiarize with quantum bits (qubits) using Dirac notation",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.21",
                     "sno": "6.21",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To familiarize the behavior of single and multiple qubit gates.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.22",
                     "sno": "6.22",
-                    "topic": "Additional practice sessions",
+                    "topic": "Practice and training on To familiarize with Qubit as a Coin / Spin Analogy",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.23",
                     "sno": "6.23",
-                    "topic": "Additional practice sessions",
+                    "topic": "Advanced practical on To get familiarized with AI Tools",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.24",
                     "sno": "6.24",
-                    "topic": "Additional practice sessions",
+                    "topic": "Advanced practical on To get familiarized with working of Chat GPT",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26me110l-6.25",
                     "sno": "6.25",
-                    "topic": "Additional practice sessions",
+                    "topic": "Advanced practical on Identify Objects using AI Tools based on CNN, YOLO, SSD, R-CNN",
                     "period": 1,
                     "type": "practical"
                 },

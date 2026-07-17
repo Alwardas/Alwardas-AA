@@ -3,86 +3,191 @@
     "subjectName": "Chemistry Lab",
     "regulation": "C26",
     "semester": 1,
-    "totalPeriods": 45,
+    "totalPeriods": 90,
     "units": [
         {
             "unitNo": 1,
-            "title": "Practice volumetric measurements (using pipettes, measuring jars",
+            "title": "Computer hardware and Software Basics",
             "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26ce110l-1.1",
                     "sno": "1.1",
-                    "topic": "Practice volumetric measurements (using pipettes, measuring jars, volumetric flask, burettes) and gravimetric measurements (using different types of balances), making dilutions, etc",
+                    "topic": "To get familiarized with Computer system and hardware connections",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce110l-1.2",
                     "sno": "1.2",
-                    "topic": "Revision",
+                    "topic": "To start and Shut down Computer correctly",
                     "period": 1,
-                    "type": "revision"
+                    "type": "practical"
                 },
                 {
                     "id": "26ce110l-1.3",
                     "sno": "1.3",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "To explore Windows Desktop",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 2,
-            "title": "Identify the chemical compounds and solutions by senses.",
+            "title": "Windows Operating System",
             "totalPeriods": 3,
             "topics": [
                 {
                     "id": "26ce110l-2.1",
                     "sno": "2.1",
-                    "topic": "Identify the chemical compounds and solutions by senses",
+                    "topic": "To check the software and hardware details of the computer",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce110l-2.2",
                     "sno": "2.2",
-                    "topic": "Revision",
+                    "topic": "To work with Files and Folders",
                     "period": 1,
-                    "type": "revision"
+                    "type": "practical"
                 },
                 {
                     "id": "26ce110l-2.3",
                     "sno": "2.3",
-                    "topic": "Assessment / Practice / Problem Solving",
+                    "topic": "To use Windows Accessories: Calculator – Notepad – WordPad – MS Paint",
                     "period": 1,
-                    "type": "assessment"
+                    "type": "practical"
                 }
             ]
         },
         {
             "unitNo": 3,
-            "title": "Practice making standard Na2CO3 solutions.",
-            "totalPeriods": 3,
+            "title": "MS Word",
+            "totalPeriods": 18,
             "topics": [
                 {
                     "id": "26ce110l-3.1",
                     "sno": "3.1",
-                    "topic": "Practice making standard Na2CO3 solutions",
+                    "topic": "To get familiarized with Ribbon layout of MSWord.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce110l-3.2",
                     "sno": "3.2",
+                    "topic": "To perform basic word processing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.3",
+                    "sno": "3.3",
+                    "topic": "To use basic formatting techniques",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.4",
+                    "sno": "3.4",
+                    "topic": "To insert a table of required number of rows and columns",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.5",
+                    "sno": "3.5",
+                    "topic": "To insert Objects, Clipart and Hyperlinks",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.6",
+                    "sno": "3.6",
+                    "topic": "To use Mail Merge feature of MS Word",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.7",
+                    "sno": "3.7",
+                    "topic": "To use Equations and symbols features",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.8",
+                    "sno": "3.8",
+                    "topic": "Practice and training on To get familiarized with Ribbon layout of MSWord.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.9",
+                    "sno": "3.9",
+                    "topic": "Practice and training on To perform basic word processing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.10",
+                    "sno": "3.10",
+                    "topic": "Practice and training on To use basic formatting techniques",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.11",
+                    "sno": "3.11",
+                    "topic": "Practice and training on To insert a table of required number of rows and columns",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.12",
+                    "sno": "3.12",
+                    "topic": "Practice and training on To insert Objects, Clipart and Hyperlinks",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.13",
+                    "sno": "3.13",
+                    "topic": "Practice and training on To use Mail Merge feature of MS Word",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.14",
+                    "sno": "3.14",
+                    "topic": "Practice and training on To use Equations and symbols features",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.15",
+                    "sno": "3.15",
+                    "topic": "Advanced practical on To get familiarized with Ribbon layout of MSWord.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.16",
+                    "sno": "3.16",
+                    "topic": "Advanced practical on To perform basic word processing",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-3.17",
+                    "sno": "3.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce110l-3.3",
-                    "sno": "3.3",
+                    "id": "26ce110l-3.18",
+                    "sno": "3.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -91,26 +196,152 @@
         },
         {
             "unitNo": 4,
-            "title": "Conduct titrations adopting standard procedures and using standard",
-            "totalPeriods": 3,
+            "title": "MS Excel",
+            "totalPeriods": 21,
             "topics": [
                 {
                     "id": "26ce110l-4.1",
                     "sno": "4.1",
-                    "topic": "Conduct titrations adopting standard procedures and using standard NaOH solution for estimation of HCl",
+                    "topic": "To get familiarized with MS-EXCEL ribbon layout",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce110l-4.2",
                     "sno": "4.2",
+                    "topic": "To access and enter data in the cells",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.3",
+                    "sno": "4.3",
+                    "topic": "To edit a spread sheet-Copy, Cut, Paste, and selecting Cells",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.4",
+                    "sno": "4.4",
+                    "topic": "To use built in functions and Data Formatting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.5",
+                    "sno": "4.5",
+                    "topic": "To create Excel Functions, use auto fill feature",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.6",
+                    "sno": "4.6",
+                    "topic": "To enter a Formula for automatic calculations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.7",
+                    "sno": "4.7",
+                    "topic": "To sort and filter data in sheet.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.8",
+                    "sno": "4.8",
+                    "topic": "To present data using Excel Graphs and Charts.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.9",
+                    "sno": "4.9",
+                    "topic": "To format a Work sheet in Excel for printing using Page layout",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.10",
+                    "sno": "4.10",
+                    "topic": "To develop lab report formats of respective discipline.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.11",
+                    "sno": "4.11",
+                    "topic": "Practice and training on To get familiarized with MS-EXCEL ribbon layout",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.12",
+                    "sno": "4.12",
+                    "topic": "Practice and training on To access and enter data in the cells",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.13",
+                    "sno": "4.13",
+                    "topic": "Practice and training on To edit a spread sheet-Copy, Cut, Paste, and selecting Cells",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.14",
+                    "sno": "4.14",
+                    "topic": "Practice and training on To use built in functions and Data Formatting",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.15",
+                    "sno": "4.15",
+                    "topic": "Practice and training on To create Excel Functions, use auto fill feature",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.16",
+                    "sno": "4.16",
+                    "topic": "Practice and training on To enter a Formula for automatic calculations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.17",
+                    "sno": "4.17",
+                    "topic": "Practice and training on To sort and filter data in sheet.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.18",
+                    "sno": "4.18",
+                    "topic": "Practice and training on To present data using Excel Graphs and Charts.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.19",
+                    "sno": "4.19",
+                    "topic": "Practice and training on To format a Work sheet in Excel for printing using Page layout",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-4.20",
+                    "sno": "4.20",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce110l-4.3",
-                    "sno": "4.3",
+                    "id": "26ce110l-4.21",
+                    "sno": "4.21",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -119,26 +350,131 @@
         },
         {
             "unitNo": 5,
-            "title": "Conduct titrations adopting standard procedures to determine the",
-            "totalPeriods": 3,
+            "title": "MS Power Point",
+            "totalPeriods": 18,
             "topics": [
                 {
                     "id": "26ce110l-5.1",
                     "sno": "5.1",
-                    "topic": "Conduct titrations adopting standard procedures to determine the alkalinity of given samples of water (one ground water and one surface / tap water) using standard H2SO4 solution",
+                    "topic": "To get familiarized with Ribbon layout features of Power Point.",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce110l-5.2",
                     "sno": "5.2",
+                    "topic": "To create a simple Power Point Presentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.3",
+                    "sno": "5.3",
+                    "topic": "To set up a Master Slide in Power Point",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.4",
+                    "sno": "5.4",
+                    "topic": "To insert Text and Objects",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.5",
+                    "sno": "5.5",
+                    "topic": "To insert Flow Charts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.6",
+                    "sno": "5.6",
+                    "topic": "To insert Tables",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.7",
+                    "sno": "5.7",
+                    "topic": "To insert Charts/Graphs",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.8",
+                    "sno": "5.8",
+                    "topic": "To insert video and audio",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.9",
+                    "sno": "5.9",
+                    "topic": "To animate text, objects and slides.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.10",
+                    "sno": "5.10",
+                    "topic": "To Review Presentations",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.11",
+                    "sno": "5.11",
+                    "topic": "Practice and training on To get familiarized with Ribbon layout features of Power Point.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.12",
+                    "sno": "5.12",
+                    "topic": "Practice and training on To create a simple Power Point Presentation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.13",
+                    "sno": "5.13",
+                    "topic": "Practice and training on To set up a Master Slide in Power Point",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.14",
+                    "sno": "5.14",
+                    "topic": "Practice and training on To insert Text and Objects",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.15",
+                    "sno": "5.15",
+                    "topic": "Practice and training on To insert Flow Charts",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.16",
+                    "sno": "5.16",
+                    "topic": "Practice and training on To insert Tables",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-5.17",
+                    "sno": "5.17",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce110l-5.3",
-                    "sno": "5.3",
+                    "id": "26ce110l-5.18",
+                    "sno": "5.18",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"
@@ -147,278 +483,194 @@
         },
         {
             "unitNo": 6,
-            "title": "Conduct titrations adopting standard procedures and using standard",
-            "totalPeriods": 3,
+            "title": "AI ,ML& Quantum computing Tools",
+            "totalPeriods": 27,
             "topics": [
                 {
                     "id": "26ce110l-6.1",
                     "sno": "6.1",
-                    "topic": "Conduct titrations adopting standard procedures and using standard KMnO4 solution for estimation of Mohr\u2019s Salt",
+                    "topic": "To get familiarized with AI Tools",
                     "period": 1,
                     "type": "practical"
                 },
                 {
                     "id": "26ce110l-6.2",
                     "sno": "6.2",
-                    "topic": "Revision",
+                    "topic": "To get familiarized with working of Chat GPT",
                     "period": 1,
-                    "type": "revision"
+                    "type": "practical"
                 },
                 {
                     "id": "26ce110l-6.3",
                     "sno": "6.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 7,
-            "title": "Conduct titrations adopting standard procedures to determine the total",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "26ce110l-7.1",
-                    "sno": "7.1",
-                    "topic": "Introduction to Unit 7 concepts; Detailed analysis of Unit 7 methodologies; Practical application and standard setups for Unit 7; Review of core im...",
+                    "topic": "Identify Objects using AI Tools based on CNN, YOLO, SSD, R-CNN",
                     "period": 1,
                     "type": "practical"
                 },
                 {
-                    "id": "26ce110l-7.2",
-                    "sno": "7.2",
+                    "id": "26ce110l-6.4",
+                    "sno": "6.4",
+                    "topic": "To paraphrase text using AI Tools (PEGASUS, GPT, T5)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.5",
+                    "sno": "6.5",
+                    "topic": "To use text-to-Image Generation AI Tools (DALL-E, MID JOURNEY)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.6",
+                    "sno": "6.6",
+                    "topic": "To use voice command simulation AI Tools (SPEECH-TO-TEXT)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.7",
+                    "sno": "6.7",
+                    "topic": "To get familiarized with ML Tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.8",
+                    "sno": "6.8",
+                    "topic": "To get familiarized with Quantum Computing Tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.9",
+                    "sno": "6.9",
+                    "topic": "To familiarize with quantum bits (qubits) using Dirac notation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.10",
+                    "sno": "6.10",
+                    "topic": "To familiarize the behavior of single and multiple qubit gates.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.11",
+                    "sno": "6.11",
+                    "topic": "To familiarize with Qubit as a Coin / Spin Analogy",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.12",
+                    "sno": "6.12",
+                    "topic": "Practice and training on To get familiarized with AI Tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.13",
+                    "sno": "6.13",
+                    "topic": "Practice and training on To get familiarized with working of Chat GPT",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.14",
+                    "sno": "6.14",
+                    "topic": "Practice and training on Identify Objects using AI Tools based on CNN, YOLO, SSD, R-CNN",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.15",
+                    "sno": "6.15",
+                    "topic": "Practice and training on To paraphrase text using AI Tools (PEGASUS, GPT, T5)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.16",
+                    "sno": "6.16",
+                    "topic": "Practice and training on To use text-to-Image Generation AI Tools (DALL-E, MID JOURNEY)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.17",
+                    "sno": "6.17",
+                    "topic": "Practice and training on To use voice command simulation AI Tools (SPEECH-TO-TEXT)",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.18",
+                    "sno": "6.18",
+                    "topic": "Practice and training on To get familiarized with ML Tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.19",
+                    "sno": "6.19",
+                    "topic": "Practice and training on To get familiarized with Quantum Computing Tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.20",
+                    "sno": "6.20",
+                    "topic": "Practice and training on To familiarize with quantum bits (qubits) using Dirac notation",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.21",
+                    "sno": "6.21",
+                    "topic": "Practice and training on To familiarize the behavior of single and multiple qubit gates.",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.22",
+                    "sno": "6.22",
+                    "topic": "Practice and training on To familiarize with Qubit as a Coin / Spin Analogy",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.23",
+                    "sno": "6.23",
+                    "topic": "Advanced practical on To get familiarized with AI Tools",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.24",
+                    "sno": "6.24",
+                    "topic": "Advanced practical on To get familiarized with working of Chat GPT",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.25",
+                    "sno": "6.25",
+                    "topic": "Advanced practical on Identify Objects using AI Tools based on CNN, YOLO, SSD, R-CNN",
+                    "period": 1,
+                    "type": "practical"
+                },
+                {
+                    "id": "26ce110l-6.26",
+                    "sno": "6.26",
                     "topic": "Revision",
                     "period": 1,
                     "type": "revision"
                 },
                 {
-                    "id": "26ce110l-7.3",
-                    "sno": "7.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 8,
-            "title": "Conduct titrations adopting standard procedures to determine the",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "26ce110l-8.1",
-                    "sno": "8.1",
-                    "topic": "Conduct titrations adopting standard procedures to determine the chlorides present in the given samples of water (one ground water and one surface / tap water) and waste water by using standard AgNO3 solution",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce110l-8.2",
-                    "sno": "8.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce110l-8.3",
-                    "sno": "8.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 9,
-            "title": "Conduct the test on given samples of water / solutions (like soft drinks",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "26ce110l-9.1",
-                    "sno": "9.1",
-                    "topic": "Conduct the test on given samples of water / solutions (like soft drinks, sewage etc.,) to determine their pH using pH paper, Universal indicator, digital pH meter",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce110l-9.2",
-                    "sno": "9.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce110l-9.3",
-                    "sno": "9.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 10,
-            "title": "Carry out the electrolysis process to estimate the amount of Copper",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "26ce110l-10.1",
-                    "sno": "10.1",
-                    "topic": "Carry out the electrolysis process to estimate the amount of Copper deposited on an object",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce110l-10.2",
-                    "sno": "10.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce110l-10.3",
-                    "sno": "10.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 11,
-            "title": "Conduct the test on given samples of solutions (coloured and non-coloured)",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "26ce110l-11.1",
-                    "sno": "11.1",
-                    "topic": "Conduct the test on given samples of solutions (coloured and non-coloured) to determine their turbidity in NTU",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce110l-11.2",
-                    "sno": "11.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce110l-11.3",
-                    "sno": "11.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 12,
-            "title": "Understand the construction and working principle of a Galvanic cell and",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "26ce110l-12.1",
-                    "sno": "12.1",
-                    "topic": "Understand the construction and working principle of a Galvanic cell and identify how chemical energy is converted into electrical energy through redox reactions",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce110l-12.2",
-                    "sno": "12.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce110l-12.3",
-                    "sno": "12.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 13,
-            "title": "Understand the process of polymerization by preparing Bakelite, a",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "26ce110l-13.1",
-                    "sno": "13.1",
-                    "topic": "Understand the process of polymerization by preparing Bakelite, a thermosetting polymer and study its formation through a condensation reaction",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce110l-13.2",
-                    "sno": "13.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce110l-13.3",
-                    "sno": "13.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 14,
-            "title": "Collect water sample from nearby water body and test for any two",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "26ce110l-14.1",
-                    "sno": "14.1",
-                    "topic": "Collect water sample from nearby water body and test for any two parameters",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce110l-14.2",
-                    "sno": "14.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce110l-14.3",
-                    "sno": "14.3",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 15,
-            "title": "Collect water sample from nearby sewage/industrial effluent and test for",
-            "totalPeriods": 3,
-            "topics": [
-                {
-                    "id": "26ce110l-15.1",
-                    "sno": "15.1",
-                    "topic": "Introduction to Unit 15 concepts; Detailed analysis of Unit 15 methodologies; Practical application and standard setups for Unit 15; Review of core...",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26ce110l-15.2",
-                    "sno": "15.2",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26ce110l-15.3",
-                    "sno": "15.3",
+                    "id": "26ce110l-6.27",
+                    "sno": "6.27",
                     "topic": "Assessment / Practice / Problem Solving",
                     "period": 1,
                     "type": "assessment"

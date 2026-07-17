@@ -6,352 +6,114 @@
     "totalPeriods": 45,
     "units": [
         {
-            "unitNo": 2,
-            "title": "COMMUNICATION",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "id": "26me510p-2.1",
-                    "sno": "2.1",
-                    "topic": "COMMUNICATION",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-2.2",
-                    "sno": "2.2",
-                    "topic": "Communicate effectively",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-2.3",
-                    "sno": "2.3",
-                    "topic": "Present Ideas Clearly",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-2.4",
-                    "sno": "2.4",
-                    "topic": "Present Ideas Coherently",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-2.5",
-                    "sno": "2.5",
-                    "topic": "Report writing",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-2.6",
-                    "sno": "2.6",
-                    "topic": "Deep dive into COMMUNICATION",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-2.7",
-                    "sno": "2.7",
-                    "topic": "Deep dive into Communicate effectively",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-2.8",
-                    "sno": "2.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me510p-2.9",
-                    "sno": "2.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 3,
-            "title": "COLLABORATION",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "id": "26me510p-3.1",
-                    "sno": "3.1",
-                    "topic": "COLLABORATION",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-3.2",
-                    "sno": "3.2",
-                    "topic": "Coordinate with team members",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-3.3",
-                    "sno": "3.3",
-                    "topic": "Deep dive into COLLABORATION",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-3.4",
-                    "sno": "3.4",
-                    "topic": "Deep dive into Coordinate with team members",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-3.5",
-                    "sno": "3.5",
-                    "topic": "Problem solving & practice on COLLABORATION",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-3.6",
-                    "sno": "3.6",
-                    "topic": "Problem solving & practice on Coordinate with team members",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-3.7",
-                    "sno": "3.7",
-                    "topic": "Practical applications of COLLABORATION",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-3.8",
-                    "sno": "3.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me510p-3.9",
-                    "sno": "3.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 4,
-            "title": "INDEPENDENT LEARNING",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "id": "26me510p-4.1",
-                    "sno": "4.1",
-                    "topic": "INDEPENDENT LEARNING",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-4.2",
-                    "sno": "4.2",
-                    "topic": "Deep dive into INDEPENDENT LEARNING",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-4.3",
-                    "sno": "4.3",
-                    "topic": "Problem solving & practice on INDEPENDENT LEARNING",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-4.4",
-                    "sno": "4.4",
-                    "topic": "Practical applications of INDEPENDENT LEARNING",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-4.5",
-                    "sno": "4.5",
-                    "topic": "Practical applications of INDEPENDENT LEARNING",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-4.6",
-                    "sno": "4.6",
-                    "topic": "Practical applications of INDEPENDENT LEARNING",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-4.7",
-                    "sno": "4.7",
-                    "topic": "Practical applications of INDEPENDENT LEARNING",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-4.8",
-                    "sno": "4.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me510p-4.9",
-                    "sno": "4.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
-            "unitNo": 5,
-            "title": "ETHICS",
-            "totalPeriods": 9,
-            "topics": [
-                {
-                    "id": "26me510p-5.1",
-                    "sno": "5.1",
-                    "topic": "ETHICS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-5.2",
-                    "sno": "5.2",
-                    "topic": "Give respect and value to all classmates, educators, colleagues, and others",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-5.3",
-                    "sno": "5.3",
-                    "topic": "Understand the health, safety, and environmental impacts of their work",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-5.4",
-                    "sno": "5.4",
-                    "topic": "Recognize the constraints of limited resources",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-5.5",
-                    "sno": "5.5",
-                    "topic": "Develop sustainable products and processes that protect the health, safety, and prosperity of future generations",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-5.6",
-                    "sno": "5.6",
-                    "topic": "Deep dive into ETHICS",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-5.7",
-                    "sno": "5.7",
-                    "topic": "Deep dive into Give respect and value to all classmates, educators, colleagues, and others",
-                    "period": 1,
-                    "type": "practical"
-                },
-                {
-                    "id": "26me510p-5.8",
-                    "sno": "5.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
-                },
-                {
-                    "id": "26me510p-5.9",
-                    "sno": "5.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
-                }
-            ]
-        },
-        {
             "unitNo": 1,
-            "title": "Design/Fabrication/Analysis/ Case Study Projects in the areas of Mechanical",
-            "totalPeriods": 9,
+            "title": "Project Work",
+            "totalPeriods": 45,
             "topics": [
                 {
                     "id": "26me510p-1.1",
                     "sno": "1.1",
-                    "topic": "Introduction to Unit 1 concepts",
-                    "period": 1,
+                    "topic": "Identify hardware components and software requirements.",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26me510p-1.2",
                     "sno": "1.2",
-                    "topic": "Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
+                    "topic": "Prepare an SRS document based on gathered and analyzed requirements.",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26me510p-1.3",
                     "sno": "1.3",
-                    "topic": "Practical application and standard setups for Unit 1",
-                    "period": 1,
+                    "topic": "Design the plan document based on the SRS.",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26me510p-1.4",
                     "sno": "1.4",
-                    "topic": "Review of core implementations and exercises",
-                    "period": 1,
+                    "topic": "Code and test the software based on the design document.",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26me510p-1.5",
                     "sno": "1.5",
-                    "topic": "Deep dive into Introduction to Unit 1 concepts",
-                    "period": 1,
+                    "topic": "Practice software maintenance skills, ensuring quality and reliability.",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26me510p-1.6",
                     "sno": "1.6",
-                    "topic": "Deep dive into Detailed analysis of Unit 1 methodologies",
-                    "period": 1,
+                    "topic": "Calculate software metrics like cost, LOC, scheduling, manpower, and other resources.",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26me510p-1.7",
                     "sno": "1.7",
-                    "topic": "Deep dive into Practical application and standard setups for Unit 1",
-                    "period": 1,
+                    "topic": "Project execution, documentation and evaluation - Session 7",
+                    "period": 3,
                     "type": "practical"
                 },
                 {
                     "id": "26me510p-1.8",
                     "sno": "1.8",
-                    "topic": "Revision",
-                    "period": 1,
-                    "type": "revision"
+                    "topic": "Project execution, documentation and evaluation - Session 8",
+                    "period": 3,
+                    "type": "practical"
                 },
                 {
                     "id": "26me510p-1.9",
                     "sno": "1.9",
-                    "topic": "Assessment / Practice / Problem Solving",
-                    "period": 1,
-                    "type": "assessment"
+                    "topic": "Project execution, documentation and evaluation - Session 9",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me510p-1.10",
+                    "sno": "1.10",
+                    "topic": "Project execution, documentation and evaluation - Session 10",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me510p-1.11",
+                    "sno": "1.11",
+                    "topic": "Project execution, documentation and evaluation - Session 11",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me510p-1.12",
+                    "sno": "1.12",
+                    "topic": "Project execution, documentation and evaluation - Session 12",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me510p-1.13",
+                    "sno": "1.13",
+                    "topic": "Project execution, documentation and evaluation - Session 13",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me510p-1.14",
+                    "sno": "1.14",
+                    "topic": "Project execution, documentation and evaluation - Session 14",
+                    "period": 3,
+                    "type": "practical"
+                },
+                {
+                    "id": "26me510p-1.15",
+                    "sno": "1.15",
+                    "topic": "Project execution, documentation and evaluation - Session 15",
+                    "period": 3,
+                    "type": "practical"
                 }
             ]
         }
