@@ -83,7 +83,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           'overallPercentage': 75,
           'years': [
             {'year': '1st Year', 'percentage': 88}, // Fast -> Orange
-            {'year': '2nd Year', 'percentage': 72}, // On Schedule -> Green
+            {'year': '2nd Year', 'percentage': 72}, // On Track -> Green
             {'year': '3rd Year', 'percentage': 54}, // Lagging -> Red
           ]
         },
@@ -91,7 +91,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           'branch': 'Civil Engineering',
           'overallPercentage': 60,
           'years': [
-            {'year': '1st Year', 'percentage': 68}, // On Schedule -> Green
+            {'year': '1st Year', 'percentage': 68}, // On Track -> Green
             {'year': '2nd Year', 'percentage': 55}, // Lagging -> Red
             {'year': '3rd Year', 'percentage': 89}, // Fast -> Orange
           ]
@@ -101,15 +101,15 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           'overallPercentage': 82,
           'years': [
             {'year': '1st Year', 'percentage': 90}, // Fast -> Orange
-            {'year': '2nd Year', 'percentage': 80}, // On Schedule -> Green
-            {'year': '3rd Year', 'percentage': 76}, // On Schedule -> Green
+            {'year': '2nd Year', 'percentage': 80}, // On Track -> Green
+            {'year': '3rd Year', 'percentage': 76}, // On Track -> Green
           ]
         },
         {
           'branch': 'Electrical & Electronics Engineering',
           'overallPercentage': 68,
           'years': [
-            {'year': '1st Year', 'percentage': 70}, // On Schedule -> Green
+            {'year': '1st Year', 'percentage': 70}, // On Track -> Green
             {'year': '2nd Year', 'percentage': 62}, // Lagging -> Red
             {'year': '3rd Year', 'percentage': 86}, // Fast -> Orange
           ]
@@ -176,7 +176,8 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           _yearSectionsProgress = response.data is List ? response.data : [];
           if (_yearSectionsProgress.isNotEmpty) {
             final firstSec = _yearSectionsProgress[0];
-            _selectedSection = firstSec['sectionName'] ?? firstSec['section'] ?? 'A';
+            final rawSec = firstSec['sectionName'] ?? firstSec['section'] ?? 'A';
+            _selectedSection = rawSec.toString().replaceAll('Section ', '').trim();
             _selectedSemester = firstSec['semester'] ?? (_selectedYear == '1st Year' ? 'Semester 1' : (_selectedYear == '2nd Year' ? 'Semester 3' : 'Semester 5'));
           } else {
             _selectedSection = 'A';
@@ -215,8 +216,9 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
   Future<void> _fetchSectionSubjectsProgress() async {
     if (_selectedBranch == null || _selectedSection == null || _selectedSemester == null) return;
     try {
+      final cleanSection = _selectedSection!.replaceAll('Section ', '').trim();
       final response = await ApiConfig.get(
-        '${ApiConstants.baseUrl}/api/hod/syllabus/section-subjects-progress?branch=${Uri.encodeComponent(_selectedBranch!)}&year=${Uri.encodeComponent(_selectedYear)}&section=${Uri.encodeComponent(_selectedSection!)}&courseId=$_selectedCourseId&semester=${Uri.encodeComponent(_selectedSemester!)}'
+        '${ApiConstants.baseUrl}/api/hod/syllabus/section-subjects-progress?branch=${Uri.encodeComponent(_selectedBranch!)}&year=${Uri.encodeComponent(_selectedYear)}&section=${Uri.encodeComponent(cleanSection)}&courseId=$_selectedCourseId&semester=${Uri.encodeComponent(_selectedSemester!)}'
       );
       if (response.success && response.data != null) {
         setState(() {
@@ -236,10 +238,32 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     setState(() {
       _sectionSubjectsProgress = [
         {
-          'subjectName': 'Engineering Mathematics',
+          'subjectName': 'English Essentials',
+          'facultyName': 'Prof. A. Sharma',
+          'progress': 0,
+          'completionPercentage': 0,
+          'status': 'On Track',
+          'topics': [
+            {
+              'topicName': 'Unit 1: Grammar & Vocabulary Essentials',
+              'completed': true,
+              'completedDate': '2026-02-05',
+              'comments': 'Module completed ahead of schedule.'
+            },
+            {
+              'topicName': 'Unit 2: Professional Communication & Writing',
+              'completed': false,
+              'scheduleDate': '2026-03-25',
+              'comments': 'Ongoing with 50% assignments submitted.'
+            },
+          ]
+        },
+        {
+          'subjectName': 'Engineering Mathematics-I',
           'facultyName': 'Dr. K. Srinivas',
-          'progress': _selectedYear == '1st Year' ? 85 : 75,
-          'completionPercentage': _selectedYear == '1st Year' ? 85 : 75,
+          'progress': 85,
+          'completionPercentage': 85,
+          'status': 'Fast',
           'topics': [
             {
               'topicName': 'Unit 1: Linear Algebra & Matrices',
@@ -259,72 +283,23 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
               'scheduleDate': '2026-03-25',
               'comments': 'In progress. 65% of vector integration completed.'
             },
-            {
-              'topicName': 'Unit 4: Differential Equations & Transforms',
-              'completed': false,
-              'scheduleDate': '2026-04-10',
-              'comments': 'Scheduled for next month.'
-            },
           ]
         },
         {
-          'subjectName': 'Data Structures & Algorithms',
-          'facultyName': 'Prof. P. Ravi',
-          'progress': _selectedYear == '1st Year' ? 80 : 70,
-          'completionPercentage': _selectedYear == '1st Year' ? 80 : 70,
+          'subjectName': 'Engineering Physics',
+          'facultyName': 'Dr. M. Reddy',
+          'progress': 70,
+          'completionPercentage': 70,
+          'status': 'On Track',
           'topics': [
             {
-              'topicName': 'Unit 1: Arrays, Linked Lists & Stacks',
-              'completed': true,
-              'completedDate': '2026-02-05',
-              'comments': 'Lab practice finished with C/C++ implementations.'
-            },
-            {
-              'topicName': 'Unit 2: Queues & Trees (BST, AVL)',
-              'completed': true,
-              'completedDate': '2026-02-22',
-              'comments': 'Tree traversals completed with assignment reviews.'
-            },
-            {
-              'topicName': 'Unit 3: Graph Algorithms & Hashing',
-              'completed': false,
-              'scheduleDate': '2026-03-20',
-              'comments': 'BFS/DFS covered, Shortest path algorithms ongoing.'
-            },
-            {
-              'topicName': 'Unit 4: Sorting & Searching Techniques',
-              'completed': false,
-              'scheduleDate': '2026-04-05',
-              'comments': 'Scheduled.'
-            },
-          ]
-        },
-        {
-          'subjectName': 'Object Oriented Programming',
-          'facultyName': 'Mrs. S. Lakshmi',
-          'progress': _selectedYear == '1st Year' ? 90 : 65,
-          'completionPercentage': _selectedYear == '1st Year' ? 90 : 65,
-          'topics': [
-            {
-              'topicName': 'Unit 1: Java Classes, Objects & Inheritance',
-              'completed': true,
-              'completedDate': '2026-01-28',
-              'comments': 'All basic OOP concepts demonstrated.'
-            },
-            {
-              'topicName': 'Unit 2: Polymorphism & Interfaces',
+              'topicName': 'Unit 1: Wave Optics & Interference',
               'completed': true,
               'completedDate': '2026-02-15',
-              'comments': 'Interface lab exams conducted.'
+              'comments': 'Lab experiment finished.'
             },
             {
-              'topicName': 'Unit 3: Exception Handling & Multithreading',
-              'completed': true,
-              'completedDate': '2026-03-01',
-              'comments': 'Concurrency concepts completed.'
-            },
-            {
-              'topicName': 'Unit 4: Java Collections & Streams API',
+              'topicName': 'Unit 2: Quantum Physics & Lasers',
               'completed': false,
               'scheduleDate': '2026-03-28',
               'comments': 'Ongoing.'
@@ -332,37 +307,26 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           ]
         },
         {
-          'subjectName': 'Database Management Systems',
-          'facultyName': 'Mr. V. Kumar',
-          'progress': _selectedYear == '1st Year' ? 75 : 60,
-          'completionPercentage': _selectedYear == '1st Year' ? 75 : 60,
+          'subjectName': 'Python Programming',
+          'facultyName': 'Prof. P. Ravi',
+          'progress': 80,
+          'completionPercentage': 80,
+          'status': 'Fast',
           'topics': [
             {
-              'topicName': 'Unit 1: ER Modeling & Relational Algebra',
+              'topicName': 'Unit 1: Python Data Types & Control Structures',
               'completed': true,
-              'completedDate': '2026-02-01',
-              'comments': 'ER Diagrams drawn and validated for all students.'
+              'completedDate': '2026-02-05',
+              'comments': 'Lab practice finished with Python 3.11 implementations.'
             },
             {
-              'topicName': 'Unit 2: SQL Queries & Joins',
+              'topicName': 'Unit 2: Functions, Modules & File I/O',
               'completed': true,
-              'completedDate': '2026-02-20',
-              'comments': 'PostgreSQL hands-on lab sessions finished.'
-            },
-            {
-              'topicName': 'Unit 3: Normalization & Transaction Control',
-              'completed': false,
-              'scheduleDate': '2026-03-18',
-              'comments': 'BCNF normalization ongoing.'
-            },
-            {
-              'topicName': 'Unit 4: Indexing & NoSQL Databases',
-              'completed': false,
-              'scheduleDate': '2026-04-02',
-              'comments': 'Scheduled.'
+              'completedDate': '2026-02-22',
+              'comments': 'File handling completed.'
             },
           ]
-        }
+        },
       ];
       _isLoadingDetails = false;
     });
@@ -370,15 +334,22 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
 
   // Helper function: Calculate status color based on topic target dates vs completion
   Color _getYearScheduleColor(int percentage) {
-    // Orange = Fast (Completing ahead of schedule > 85%)
-    // Green = On Schedule (Completing on time 65% - 85%)
-    // Red = Lagging Behind (Topics past scheduled target date < 65%)
     if (percentage >= 85) {
       return Colors.orangeAccent;
     } else if (percentage >= 65) {
       return Colors.greenAccent;
     } else {
       return Colors.redAccent;
+    }
+  }
+
+  String _getScheduleStatusText(int percentage) {
+    if (percentage >= 85) {
+      return 'Fast';
+    } else if (percentage >= 65) {
+      return 'On Track';
+    } else {
+      return 'Lagging';
     }
   }
 
@@ -532,6 +503,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                 final Color yr3Color = _getYearScheduleColor(yr3Pct);
 
                 final Color overallColor = _getYearScheduleColor(percentage);
+                final String statusText = _getScheduleStatusText(percentage);
 
                 return InkWell(
                   onTap: () {
@@ -564,42 +536,27 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Card Header Row: Department Name + Icon Badge
+                        // Card Header Row: Department Name + Icon Badge (Diploma ERP Tag Removed)
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.all(6),
-                                  decoration: BoxDecoration(
-                                    color: Colors.blueAccent.withOpacity(0.12),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: const Icon(Icons.school_outlined, color: Colors.blueAccent, size: 18),
-                                ),
-                                const SizedBox(width: 10),
-                                Text(
-                                  branchName,
-                                  style: GoogleFonts.poppins(
-                                    color: context.textPrimary,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ],
-                            ),
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                              padding: const EdgeInsets.all(6),
                               decoration: BoxDecoration(
-                                color: context.bgColor,
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(color: context.borderColor),
+                                color: Colors.blueAccent.withOpacity(0.12),
+                                borderRadius: BorderRadius.circular(8),
                               ),
+                              child: const Icon(Icons.school_outlined, color: Colors.blueAccent, size: 18),
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
                               child: Text(
-                                'Diploma ERP',
-                                style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10, fontWeight: FontWeight.w500),
+                                branchName,
+                                style: GoogleFonts.poppins(
+                                  color: context.textPrimary,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                           ],
@@ -615,20 +572,39 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                           ],
                         ),
 
-                        // Overall Progress Bar Section
+                        // Overall Progress Bar Section with Status Text Beside "Progress:"
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  'Progress:',
-                                  style: GoogleFonts.poppins(
-                                    color: context.textPrimary,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Progress: ',
+                                      style: GoogleFonts.poppins(
+                                        color: context.textPrimary,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                      decoration: BoxDecoration(
+                                        color: overallColor.withOpacity(0.15),
+                                        borderRadius: BorderRadius.circular(4),
+                                      ),
+                                      child: Text(
+                                        statusText,
+                                        style: GoogleFonts.poppins(
+                                          color: overallColor,
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 Text(
                                   '$percentage%',
@@ -967,7 +943,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: sections.map((sec) {
-        final isSelected = _selectedSection == sec;
+        final isSelected = _selectedSection == sec || _selectedSection == 'Section $sec';
         return Padding(
           padding: const EdgeInsets.only(right: 6),
           child: InkWell(
@@ -1059,66 +1035,75 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
             shape: const RoundedRectangleBorder(side: BorderSide.none),
             collapsedShape: const RoundedRectangleBorder(side: BorderSide.none),
             tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            title: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        subjectName,
-                        style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold, fontSize: 14),
+            title: LayoutBuilder(
+              builder: (context, constraints) {
+                final bool isCompact = constraints.maxWidth < 600;
+                return Row(
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            subjectName,
+                            style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold, fontSize: 13),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            'Faculty: $faculty',
+                            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 2),
-                      Text(
-                        'Faculty: $faculty',
-                        style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  width: 140,
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        '$progress% Completed',
-                        style: GoogleFonts.poppins(
-                          color: progress >= 75 ? Colors.greenAccent : (progress >= 60 ? Colors.orangeAccent : Colors.redAccent),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 11,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      LinearProgressIndicator(
-                        value: (progress / 100.0).clamp(0.0, 1.0),
-                        backgroundColor: context.borderColor,
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          progress >= 75 ? Colors.greenAccent : (progress >= 60 ? Colors.orangeAccent : Colors.redAccent),
-                        ),
-                        minHeight: 4,
-                      ),
-                    ],
-                  ),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () => _downloadLessonPlan(subjectName),
-                  icon: const Icon(Icons.download_outlined, size: 14),
-                  label: Text('Download Lesson Plan', style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.w600)),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueAccent.withOpacity(0.15),
-                    foregroundColor: Colors.blueAccent,
-                    elevation: 0,
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      side: BorderSide(color: Colors.blueAccent.withOpacity(0.3)),
                     ),
-                  ),
-                ),
-              ],
+                    const SizedBox(width: 8),
+                    Flexible(
+                      flex: 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            '$progress% Completed',
+                            style: GoogleFonts.poppins(
+                              color: progress >= 75 ? Colors.greenAccent : (progress >= 60 ? Colors.orangeAccent : Colors.redAccent),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 11,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          LinearProgressIndicator(
+                            value: (progress / 100.0).clamp(0.0, 1.0),
+                            backgroundColor: context.borderColor,
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              progress >= 75 ? Colors.greenAccent : (progress >= 60 ? Colors.orangeAccent : Colors.redAccent),
+                            ),
+                            minHeight: 4,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    ElevatedButton.icon(
+                      onPressed: () => _downloadLessonPlan(subjectName),
+                      icon: const Icon(Icons.download_outlined, size: 14),
+                      label: Text(isCompact ? 'Plan' : 'Download Lesson Plan', style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.w600)),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent.withOpacity(0.15),
+                        foregroundColor: Colors.blueAccent,
+                        elevation: 0,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          side: BorderSide(color: Colors.blueAccent.withOpacity(0.3)),
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
             children: [
               Container(
