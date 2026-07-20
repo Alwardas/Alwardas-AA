@@ -102,6 +102,30 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
     return '0';
   }
 
+  String _formatCollectedToday() {
+    final val = _coordinatorStats?['collectedToday'];
+    if (val != null && val is num && val > 0) {
+      return _formatCurrency(val);
+    }
+    return '-';
+  }
+
+  String _formatPendingFees() {
+    final val = _coordinatorStats?['pendingFees'];
+    if (val != null && val is num && val > 0) {
+      return _formatCurrency(val);
+    }
+    return '-';
+  }
+
+  String _formatPlacementRate() {
+    final val = _coordinatorStats?['placementRate'];
+    if (val != null && val is num && val > 0) {
+      return '${val.toDouble().toStringAsFixed(1)}%';
+    }
+    return '-';
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
@@ -341,9 +365,9 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               _buildKpiCard('Total Faculty', _formatFaculty(), Icons.badge, Colors.greenAccent),
               _buildKpiCard("Today's Attendance", _formatAttendance(), Icons.done_all, Colors.cyanAccent),
               _buildKpiCard('Active Courses', _formatActiveCourses(), Icons.class_outlined, Colors.purpleAccent),
-              _buildKpiCard('Collected Today', '₹4,52,000', Icons.payments_outlined, Colors.orangeAccent),
-              _buildKpiCard('Pending Fees', '₹12,80,000', Icons.pending_actions_outlined, Colors.redAccent),
-              _buildKpiCard('Placement Rate', '88.5%', Icons.trending_up, Colors.pinkAccent),
+              _buildKpiCard('Collected Today', _formatCollectedToday(), Icons.payments_outlined, Colors.orangeAccent),
+              _buildKpiCard('Pending Fees', _formatPendingFees(), Icons.pending_actions_outlined, Colors.redAccent),
+              _buildKpiCard('Placement Rate', _formatPlacementRate(), Icons.trending_up, Colors.pinkAccent),
               _buildKpiCard('Active Complaints', _formatActiveComplaints(), Icons.report_problem_outlined, Colors.amberAccent),
             ],
           ),
