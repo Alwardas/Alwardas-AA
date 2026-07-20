@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/providers/desktop_providers.dart';
 import '../../../theme/theme_extensions.dart';
+import '../../../widgets/desktop_skeleton_loading.dart';
 
 class DesktopStudentManagementView extends ConsumerStatefulWidget {
   final Map<String, dynamic> userData;
@@ -426,7 +427,7 @@ class _DesktopStudentManagementViewState extends ConsumerState<DesktopStudentMan
           // Students List Table View
           Expanded(
             child: _isLoading
-                ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                ? const DesktopSkeletonTable()
                 : Container(
                     decoration: BoxDecoration(
                       color: context.cardColor,

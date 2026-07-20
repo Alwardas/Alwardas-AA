@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
 import '../../../core/providers/desktop_providers.dart';
+import '../../../widgets/desktop_skeleton_loading.dart';
 
 class DesktopHodDashboardView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -37,14 +38,12 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
     final dateStr = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
     try {
-      // 1. Fetch Today's Attendance Stats
       final statsUri = '${ApiConstants.baseUrl}/api/attendance/stats?branch=${Uri.encodeComponent(branch)}&date=$dateStr&session=Morning';
       final statsRes = await ApiConfig.get(statsUri);
       if (statsRes.success && statsRes.data != null) {
         _absentCount = statsRes.data['totalAbsent'] ?? 0;
       }
 
-      // 2. Fetch Syllabus Progress
       final progressUri = '${ApiConstants.baseUrl}/api/hod/syllabus/branch-progress?branch=${Uri.encodeComponent(branch)}&courseId=C-23';
       final progressRes = await ApiConfig.get(progressUri);
       if (progressRes.success && progressRes.data != null) {
@@ -57,14 +56,12 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
         }
       }
 
-      // 3. Fetch notifications for recent activities
       final notifUri = '${ApiConstants.baseUrl}/api/notifications?userId=${widget.userData['id']}&role=HOD&branch=${Uri.encodeComponent(branch)}';
       final notifRes = await ApiConfig.get(notifUri);
       if (notifRes.success && notifRes.data != null) {
         _recentActivities = notifRes.data;
       }
 
-      // 4. Fallback/Simulated counts for students/faculty if needed
       final studentsUri = '${ApiConstants.baseUrl}/api/students?branch=${Uri.encodeComponent(branch)}';
       final studentsRes = await ApiConfig.get(studentsUri);
       if (studentsRes.success && studentsRes.data != null && studentsRes.data is List) {
@@ -76,7 +73,6 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
       if (facultyRes.success && facultyRes.data != null && facultyRes.data is List) {
         _facultyCount = (facultyRes.data as List).length;
       }
-
     } catch (e) {
       debugPrint("Error loading HOD dashboard stats: $e");
     } finally {
@@ -89,7 +85,7 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return Center(child: CircularProgressIndicator(color: Colors.blueAccent));
+      return const DesktopSkeletonDashboard();
     }
 
     final branchName = widget.userData['branch'] ?? 'Computer Engineering';
@@ -98,8 +94,8 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
     return Consumer(
       builder: (context, ref, child) {
         return SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          padding: EdgeInsets.all(30),
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.all(30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -126,7 +122,7 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                   ),
                   ElevatedButton.icon(
                     onPressed: _loadDashboardData,
-                    icon: Icon(Icons.refresh, size: 16),
+                    icon: const Icon(Icons.refresh, size: 16),
                     label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: context.cardColor,
@@ -136,12 +132,12 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
 
               // KPI Cards Grid (HOD specific)
               GridView.count(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 4,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,
@@ -153,7 +149,7 @@ class _DesktopHodDashboardViewState extends State<DesktopHodDashboardView> {
                   _buildKpiCard('Syllabus Completion', '${_syllabusProgress.toStringAsFixed(1)}%', Icons.menu_book_outlined, Colors.amberAccent),
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
 
               // Quick Actions & Charts Row
               Row(

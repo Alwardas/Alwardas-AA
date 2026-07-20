@@ -101,3 +101,10 @@ pub async fn get_all_branches_syllabus_progress(pool: &PgPool, _course_id: &str)
     }
     Ok(results)
 }
+
+pub async fn get_dashboard_stats(pool: &PgPool) -> Result<serde_json::Value, StatusCode> {
+    coordinator_repository::get_dashboard_stats(pool)
+        .await
+        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)
+}
+

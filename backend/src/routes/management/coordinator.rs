@@ -241,3 +241,27 @@ pub async fn get_all_branches_syllabus_progress_handler(
         },
     }
 }
+
+pub async fn get_coordinator_dashboard_stats_handler(
+    State(state): State<AppState>,
+) -> Result<Json<serde_json::Value>, (StatusCode, Json<serde_json::Value>)> {
+    match crate::services::management::coordinator_service::get_dashboard_stats(&state.pool).await {
+        Ok(res) => {
+            println!("GET Coordinator Dashboard Stats Result: Success");
+            Ok(Json(json!({
+                "success": true,
+                "message": "Coordinator dashboard stats fetched successfully",
+                "data": res
+            })))
+        },
+        Err(_) => {
+            println!("GET Coordinator Dashboard Stats Error");
+            Err((StatusCode::INTERNAL_SERVER_ERROR, Json(json!({
+                "success": false,
+                "message": "Failed to fetch coordinator dashboard stats",
+                "data": null
+            }))))
+        },
+    }
+}
+

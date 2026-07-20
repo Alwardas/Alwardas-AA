@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import '../../../theme/theme_extensions.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
+import '../../../widgets/desktop_skeleton_loading.dart';
 
 class DesktopDashboardView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -19,6 +20,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
   bool _isLoading = true;
   bool _isFinanceRole = false;
   Map<String, dynamic>? _financeStats;
+  Map<String, dynamic>? _coordinatorStats;
 
   @override
   void initState() {
@@ -40,8 +42,16 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
         debugPrint("Error loading finance dashboard stats: $e");
       }
     } else {
-      // Simulate generic dashboard load delay
-      await Future.delayed(const Duration(milliseconds: 600));
+      try {
+        final res = await ApiConfig.get('${ApiConstants.baseUrl}/api/coordinator/dashboard-stats');
+        if (res.success && res.data != null) {
+          _coordinatorStats = res.data is Map<String, dynamic>
+              ? (res.data['data'] is Map<String, dynamic> ? res.data['data'] : res.data)
+              : null;
+        }
+      } catch (e) {
+        debugPrint("Error loading coordinator dashboard stats: $e");
+      }
     }
     if (mounted) {
       setState(() => _isLoading = false);
@@ -52,10 +62,50 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
     return '₹' + NumberFormat('#,##,###').format(value);
   }
 
+  String _formatStudents() {
+    final val = _coordinatorStats?['totalStudents'];
+    if (val != null && val is num && val > 0) {
+      return NumberFormat('#,##,###').format(val);
+    }
+    return '0';
+  }
+
+  String _formatFaculty() {
+    final val = _coordinatorStats?['totalFaculty'];
+    if (val != null && val is num && val > 0) {
+      return NumberFormat('#,##,###').format(val);
+    }
+    return '0';
+  }
+
+  String _formatAttendance() {
+    final val = _coordinatorStats?['attendancePercentage'];
+    if (val != null && val is num) {
+      return '${val.toDouble().toStringAsFixed(1)}%';
+    }
+    return '0.0%';
+  }
+
+  String _formatActiveCourses() {
+    final val = _coordinatorStats?['activeCourses'];
+    if (val != null && val is num && val > 0) {
+      return val.toString();
+    }
+    return '0';
+  }
+
+  String _formatActiveComplaints() {
+    final val = _coordinatorStats?['activeComplaints'];
+    if (val != null && val is num && val > 0) {
+      return val.toString();
+    }
+    return '0';
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return Center(child: CircularProgressIndicator(color: Colors.blueAccent));
+      return const DesktopSkeletonDashboard();
     }
 
     if (_isFinanceRole) {
@@ -287,14 +337,14 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
             mainAxisSpacing: 20,
             childAspectRatio: 1.8,
             children: [
-              _buildKpiCard('Total Students', '10,240', Icons.people, Colors.blueAccent),
-              _buildKpiCard('Total Faculty', '1,024', Icons.badge, Colors.greenAccent),
-              _buildKpiCard("Today's Attendance", '94.2%', Icons.done_all, Colors.cyanAccent),
-              _buildKpiCard('Active Courses', '48', Icons.class_outlined, Colors.purpleAccent),
+              _buildKpiCard('Total Students', _formatStudents(), Icons.people, Colors.blueAccent),
+              _buildKpiCard('Total Faculty', _formatFaculty(), Icons.badge, Colors.greenAccent),
+              _buildKpiCard("Today's Attendance", _formatAttendance(), Icons.done_all, Colors.cyanAccent),
+              _buildKpiCard('Active Courses', _formatActiveCourses(), Icons.class_outlined, Colors.purpleAccent),
               _buildKpiCard('Collected Today', '₹4,52,000', Icons.payments_outlined, Colors.orangeAccent),
               _buildKpiCard('Pending Fees', '₹12,80,000', Icons.pending_actions_outlined, Colors.redAccent),
               _buildKpiCard('Placement Rate', '88.5%', Icons.trending_up, Colors.pinkAccent),
-              _buildKpiCard('Active Complaints', '4', Icons.report_problem_outlined, Colors.amberAccent),
+              _buildKpiCard('Active Complaints', _formatActiveComplaints(), Icons.report_problem_outlined, Colors.amberAccent),
             ],
           ),
           SizedBox(height: 30),

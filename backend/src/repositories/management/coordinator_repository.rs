@@ -50,3 +50,55 @@ pub async fn update_announcement_pin(pool: &PgPool, id: Uuid, is_pinned: bool) -
 pub async fn find_all_branches(pool: &PgPool) -> Result<Vec<String>, sqlx::Error> {
     sqlx::query_scalar::<_, String>("SELECT DISTINCT branch FROM (SELECT branch FROM department_timings UNION SELECT branch FROM sections UNION SELECT branch FROM users WHERE branch IS NOT NULL AND branch != '') as combined_branches ORDER BY branch ASC").fetch_all(pool).await
 }
+
+pub async fn get_dashboard_stats(pool: &PgPool) -> Result<serde_json::Value, sqlx::Error> {
+    let total_students: i64 = sqlx::query_scalar(
+        "SELECT COUNT(*) FROM users WHERE LOWER(role) = 'student'"
+    ).fetch_one(pool).await.unwrap_or(0);
+
+    let total_faculty: i64 = sqlx::query_scalar(
+        "SELECT COUNT(*) FROM users WHERE LOWER(role) IN ('faculty', 'hod', 'incharge')"
+    ).fetch_one(pool).await.unwrap_or(0);
+
+    let today_records: (i64, i64) = sqlx::query_as(
+        "SELECT 
+            COUNT(CASE WHEN status IN ('P', 'present', 'PRESENT', 'p') THEN 1 END)::bigint as present_cnt,
+            COUNT(*)::bigint as total_cnt
+         FROM attendance 
+         WHERE date = CURRENT_DATE"
+    ).fetch_one(pool).await.unwrap_or((0, 0));
+
+    let attendance_percentage: f64 = if today_records.1 > 0 {
+        ((today_records.0 as f64) / (today_records.1 as f64)) * 100.0
+    } else {
+        let overall_records: (i64, i64) = sqlx::query_as(
+            "SELECT 
+                COUNT(CASE WHEN status IN ('P', 'present', 'PRESENT', 'p') THEN 1 END)::bigint as present_cnt,
+                COUNT(*)::bigint as total_cnt
+             FROM attendance"
+        ).fetch_one(pool).await.unwrap_or((0, 0));
+
+        if overall_records.1 > 0 {
+            ((overall_records.0 as f64) / (overall_records.1 as f64)) * 100.0
+        } else {
+            0.0
+        }
+    };
+
+    let active_courses: i64 = sqlx::query_scalar(
+        "SELECT COUNT(DISTINCT branch) FROM users WHERE branch IS NOT NULL AND branch != ''"
+    ).fetch_one(pool).await.unwrap_or(0);
+
+    let active_complaints: i64 = sqlx::query_scalar(
+        "SELECT COUNT(*) FROM issues WHERE LOWER(status) IN ('open', 'pending')"
+    ).fetch_one(pool).await.unwrap_or(0);
+
+    Ok(serde_json::json!({
+        "totalStudents": total_students,
+        "totalFaculty": total_faculty,
+        "attendancePercentage": (attendance_percentage * 10.0).round() / 10.0,
+        "activeCourses": active_courses,
+        "activeComplaints": active_complaints
+    }))
+}
+

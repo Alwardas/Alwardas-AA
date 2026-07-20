@@ -5,6 +5,7 @@ import '../../../theme/theme_extensions.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
 import '../../../data/courses_data.dart';
+import '../../../widgets/desktop_skeleton_loading.dart';
 
 class DesktopCoordinatorAcademicsView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -270,7 +271,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     if (_isLoadingOverall) {
       return Scaffold(
         backgroundColor: context.bgColor,
-        body: Center(child: CircularProgressIndicator(color: Colors.blueAccent)),
+        body: const DesktopSkeletonDashboard(),
       );
     }
 
