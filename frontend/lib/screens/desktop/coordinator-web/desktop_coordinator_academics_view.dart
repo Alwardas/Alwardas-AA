@@ -82,45 +82,45 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           'branch': 'Computer Engineering',
           'overallPercentage': 75,
           'years': [
-            {'year': '1st Year', 'percentage': 80},
-            {'year': '2nd Year', 'percentage': 70},
-            {'year': '3rd Year', 'percentage': 75},
+            {'year': '1st Year', 'percentage': 88}, // Fast -> Orange
+            {'year': '2nd Year', 'percentage': 72}, // On Schedule -> Green
+            {'year': '3rd Year', 'percentage': 54}, // Lagging -> Red
           ]
         },
         {
           'branch': 'Civil Engineering',
           'overallPercentage': 60,
           'years': [
-            {'year': '1st Year', 'percentage': 65},
-            {'year': '2nd Year', 'percentage': 55},
-            {'year': '3rd Year', 'percentage': 60},
+            {'year': '1st Year', 'percentage': 68}, // On Schedule -> Green
+            {'year': '2nd Year', 'percentage': 55}, // Lagging -> Red
+            {'year': '3rd Year', 'percentage': 89}, // Fast -> Orange
           ]
         },
         {
           'branch': 'Electronics & Communication Engineering',
           'overallPercentage': 82,
           'years': [
-            {'year': '1st Year', 'percentage': 85},
-            {'year': '2nd Year', 'percentage': 80},
-            {'year': '3rd Year', 'percentage': 81},
+            {'year': '1st Year', 'percentage': 90}, // Fast -> Orange
+            {'year': '2nd Year', 'percentage': 80}, // On Schedule -> Green
+            {'year': '3rd Year', 'percentage': 76}, // On Schedule -> Green
           ]
         },
         {
           'branch': 'Electrical & Electronics Engineering',
           'overallPercentage': 68,
           'years': [
-            {'year': '1st Year', 'percentage': 70},
-            {'year': '2nd Year', 'percentage': 65},
-            {'year': '3rd Year', 'percentage': 69},
+            {'year': '1st Year', 'percentage': 70}, // On Schedule -> Green
+            {'year': '2nd Year', 'percentage': 62}, // Lagging -> Red
+            {'year': '3rd Year', 'percentage': 86}, // Fast -> Orange
           ]
         },
         {
           'branch': 'Mechanical Engineering',
           'overallPercentage': 55,
           'years': [
-            {'year': '1st Year', 'percentage': 58},
-            {'year': '2nd Year', 'percentage': 50},
-            {'year': '3rd Year', 'percentage': 57},
+            {'year': '1st Year', 'percentage': 58}, // Lagging -> Red
+            {'year': '2nd Year', 'percentage': 50}, // Lagging -> Red
+            {'year': '3rd Year', 'percentage': 87}, // Fast -> Orange
           ]
         }
       ];
@@ -368,6 +368,20 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     });
   }
 
+  // Helper function: Calculate status color based on topic target dates vs completion
+  Color _getYearScheduleColor(int percentage) {
+    // Orange = Fast (Completing ahead of schedule > 85%)
+    // Green = On Schedule (Completing on time 65% - 85%)
+    // Red = Lagging Behind (Topics past scheduled target date < 65%)
+    if (percentage >= 85) {
+      return Colors.orangeAccent;
+    } else if (percentage >= 65) {
+      return Colors.greenAccent;
+    } else {
+      return Colors.redAccent;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_isLoadingOverall) {
@@ -493,14 +507,14 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           ),
           const SizedBox(height: 14),
 
-          // Compact Grid View of Departments with Fixed Height Cards (No Empty White Space)
+          // Circular Gauge Department Cards Grid (Proportioned Frame: 460px max width, 260px fixed height)
           Expanded(
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 380,
-                mainAxisExtent: 135, // Fixed 135px card height completely eliminates empty white gap
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
+                maxCrossAxisExtent: 460,
+                mainAxisExtent: 260, // Fixed 260px height matching uploaded mockup perfectly
+                crossAxisSpacing: 18,
+                mainAxisSpacing: 18,
               ),
               itemCount: _branches.length,
               itemBuilder: (context, index) {
@@ -509,14 +523,15 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                 final int percentage = (item['overallPercentage'] ?? 0).toInt();
                 final List<dynamic> years = item['years'] ?? [];
 
-                // Custom accent color per department
-                final Color accentColor = index % 5 == 0
-                    ? Colors.blueAccent
-                    : (index % 5 == 1
-                        ? Colors.greenAccent
-                        : (index % 5 == 2
-                            ? Colors.purpleAccent
-                            : (index % 5 == 3 ? Colors.orangeAccent : Colors.pinkAccent)));
+                final int yr1Pct = years.isNotEmpty ? (years[0]['percentage'] ?? 0).toInt() : 80;
+                final int yr2Pct = years.length > 1 ? (years[1]['percentage'] ?? 0).toInt() : 70;
+                final int yr3Pct = years.length > 2 ? (years[2]['percentage'] ?? 0).toInt() : 60;
+
+                final Color yr1Color = _getYearScheduleColor(yr1Pct);
+                final Color yr2Color = _getYearScheduleColor(yr2Pct);
+                final Color yr3Color = _getYearScheduleColor(yr3Pct);
+
+                final Color overallColor = _getYearScheduleColor(percentage);
 
                 return InkWell(
                   onTap: () {
@@ -530,159 +545,176 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                     });
                     _fetchDetails();
                   },
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(16),
                   child: Container(
+                    padding: const EdgeInsets.all(18),
                     decoration: BoxDecoration(
                       color: context.cardColor,
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: context.borderColor),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(color: context.borderColor, width: 1.2),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.04),
-                          blurRadius: 6,
-                          offset: const Offset(0, 2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 3),
                         ),
                       ],
                     ),
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Left Accent Bar
-                        Container(
-                          width: 5,
-                          decoration: BoxDecoration(
-                            color: accentColor,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(12),
-                              bottomLeft: Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // Card Header Row: Department Name + Icon Badge
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
                               children: [
-                                // Top Header Row
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.all(6),
-                                      decoration: BoxDecoration(
-                                        color: accentColor.withOpacity(0.12),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: Icon(Icons.school_outlined, color: accentColor, size: 18),
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Expanded(
-                                      child: Text(
-                                        branchName,
-                                        style: GoogleFonts.poppins(
-                                          color: context.textPrimary,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 13,
-                                        ),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                                      decoration: BoxDecoration(
-                                        color: percentage >= 75
-                                            ? Colors.greenAccent.withOpacity(0.15)
-                                            : percentage >= 60
-                                                ? Colors.orangeAccent.withOpacity(0.15)
-                                                : Colors.redAccent.withOpacity(0.15),
-                                        borderRadius: BorderRadius.circular(6),
-                                      ),
-                                      child: Text(
-                                        '$percentage%',
-                                        style: GoogleFonts.poppins(
-                                          color: percentage >= 75
-                                              ? Colors.greenAccent
-                                              : percentage >= 60
-                                                  ? Colors.orangeAccent
-                                                  : Colors.redAccent,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 11,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                Container(
+                                  padding: const EdgeInsets.all(6),
+                                  decoration: BoxDecoration(
+                                    color: Colors.blueAccent.withOpacity(0.12),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: const Icon(Icons.school_outlined, color: Colors.blueAccent, size: 18),
                                 ),
-
-                                // Middle Progress Bar
-                                Stack(
-                                  children: [
-                                    Container(
-                                      height: 5,
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: context.borderColor,
-                                        borderRadius: BorderRadius.circular(3),
-                                      ),
-                                    ),
-                                    FractionallySizedBox(
-                                      widthFactor: (percentage / 100.0).clamp(0.0, 1.0),
-                                      child: Container(
-                                        height: 5,
-                                        decoration: BoxDecoration(
-                                          color: percentage >= 75
-                                              ? Colors.greenAccent
-                                              : percentage >= 60
-                                                  ? Colors.orangeAccent
-                                                  : Colors.redAccent,
-                                          borderRadius: BorderRadius.circular(3),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-
-                                // Bottom Row: 3 Year Badges + Manage Arrow
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Row(
-                                        children: years.map((y) {
-                                          final String yrLabel = y['year'] ?? '';
-                                          final int yrPct = (y['percentage'] ?? 0).toInt();
-                                          final shortYr = yrLabel.replaceAll(' Year', 'Yr');
-                                          return Container(
-                                            margin: const EdgeInsets.only(right: 6),
-                                            padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
-                                            decoration: BoxDecoration(
-                                              color: context.bgColor,
-                                              borderRadius: BorderRadius.circular(4),
-                                              border: Border.all(color: context.borderColor),
-                                            ),
-                                            child: Text(
-                                              '$shortYr: $yrPct%',
-                                              style: GoogleFonts.poppins(color: context.textMuted, fontSize: 9, fontWeight: FontWeight.w500),
-                                            ),
-                                          );
-                                        }).toList(),
-                                      ),
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Text(
-                                          'Syllabus ',
-                                          style: GoogleFonts.poppins(color: accentColor, fontSize: 11, fontWeight: FontWeight.w600),
-                                        ),
-                                        Icon(Icons.arrow_forward_ios, size: 10, color: accentColor),
-                                      ],
-                                    ),
-                                  ],
+                                const SizedBox(width: 10),
+                                Text(
+                                  branchName,
+                                  style: GoogleFonts.poppins(
+                                    color: context.textPrimary,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ],
                             ),
-                          ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                              decoration: BoxDecoration(
+                                color: context.bgColor,
+                                borderRadius: BorderRadius.circular(6),
+                                border: Border.all(color: context.borderColor),
+                              ),
+                              child: Text(
+                                'Diploma ERP',
+                                style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10, fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ],
+                        ),
+
+                        // 3 Circular Gauges Row (1st Year, 2nd Year, 3rd Year)
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            _buildCircularGauge(context, '1st Year', yr1Pct, yr1Color),
+                            _buildCircularGauge(context, '2nd Year', yr2Pct, yr2Color),
+                            _buildCircularGauge(context, '3rd Year', yr3Pct, yr3Color),
+                          ],
+                        ),
+
+                        // Overall Progress Bar Section
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Progress:',
+                                  style: GoogleFonts.poppins(
+                                    color: context.textPrimary,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  '$percentage%',
+                                  style: GoogleFonts.poppins(
+                                    color: overallColor,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 6),
+                            Stack(
+                              children: [
+                                Container(
+                                  height: 7,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: context.borderColor.withOpacity(0.5),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                ),
+                                FractionallySizedBox(
+                                  widthFactor: (percentage / 100.0).clamp(0.0, 1.0),
+                                  child: Container(
+                                    height: 7,
+                                    decoration: BoxDecoration(
+                                      color: overallColor,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+
+                        // Bottom Footer Row
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: context.bgColor,
+                                    borderRadius: BorderRadius.circular(6),
+                                    border: Border.all(color: context.borderColor),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.notes, size: 14, color: context.textMuted),
+                                      const SizedBox(width: 4),
+                                      Text('24 Subjects', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10, fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: context.bgColor,
+                                    borderRadius: BorderRadius.circular(6),
+                                    border: Border.all(color: context.borderColor),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.chat_bubble_outline, size: 14, color: context.textMuted),
+                                      const SizedBox(width: 4),
+                                      Text('Lesson Plans', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10, fontWeight: FontWeight.w500)),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  'Manage Syllabus ',
+                                  style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 11, fontWeight: FontWeight.bold),
+                                ),
+                                const Icon(Icons.arrow_forward_ios, size: 10, color: Colors.blueAccent),
+                              ],
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -693,6 +725,53 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           ),
         ],
       ),
+    );
+  }
+
+  // Circular Progress Gauge Ring (Matching uploaded mockup image)
+  Widget _buildCircularGauge(BuildContext context, String title, int percentage, Color color) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          width: 68,
+          height: 68,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: 68,
+                height: 68,
+                child: CircularProgressIndicator(
+                  value: (percentage / 100.0).clamp(0.0, 1.0),
+                  strokeWidth: 6.5,
+                  backgroundColor: context.borderColor.withOpacity(0.4),
+                  valueColor: AlwaysStoppedAnimation<Color>(color),
+                  strokeCap: StrokeCap.round,
+                ),
+              ),
+              Text(
+                '$percentage%',
+                style: GoogleFonts.poppins(
+                  color: color,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 6),
+        Text(
+          title.toUpperCase(),
+          style: GoogleFonts.poppins(
+            color: context.textMuted,
+            fontSize: 10,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 0.5,
+          ),
+        ),
+      ],
     );
   }
 
