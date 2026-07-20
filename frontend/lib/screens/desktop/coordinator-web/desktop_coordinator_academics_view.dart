@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 import '../../../theme/theme_extensions.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
-import '../../../data/courses_data.dart';
 import '../../../widgets/desktop_skeleton_loading.dart';
 
 class DesktopCoordinatorAcademicsView extends StatefulWidget {
@@ -22,6 +21,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
   List<dynamic> _branches = [];
   
   String? _selectedBranch;
+  String? _activeDetailBranch; // Controls two-level navigation: null = Our Departments Grid, non-null = Full Department Page
   String _selectedYear = '1st Year';
   String _selectedCourseId = 'C-26';
   String? _selectedSection = 'A';
@@ -54,15 +54,14 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
         if (mounted) {
           setState(() {
             _branches = data;
-            if (_branches.isNotEmpty) {
-              // Select first branch by default
+            if (_branches.isNotEmpty && _selectedBranch == null) {
               _selectedBranch = _branches[0]['branch'];
             }
             _calculateMetrics();
             _isLoadingOverall = false;
           });
           
-          if (_selectedBranch != null) {
+          if (_activeDetailBranch != null) {
             _fetchDetails();
           }
         }
@@ -125,13 +124,13 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           ]
         }
       ];
-      if (_branches.isNotEmpty) {
+      if (_branches.isNotEmpty && _selectedBranch == null) {
         _selectedBranch = _branches[0]['branch'];
       }
       _calculateMetrics();
       _isLoadingOverall = false;
     });
-    if (_selectedBranch != null) {
+    if (_activeDetailBranch != null) {
       _fetchDetails();
     }
   }
@@ -168,7 +167,6 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     if (_selectedBranch == null) return;
     setState(() => _isLoadingDetails = true);
     
-    // Fetch Year sections progress
     try {
       final response = await ApiConfig.get(
         '${ApiConstants.baseUrl}/api/hod/syllabus/year-sections-progress?branch=${Uri.encodeComponent(_selectedBranch!)}&year=${Uri.encodeComponent(_selectedYear)}&courseId=$_selectedCourseId'
@@ -275,9 +273,17 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       );
     }
 
+    if (_activeDetailBranch != null) {
+      return _buildDepartmentDetailPage(context);
+    }
+
+    return _buildOurDepartmentsPage(context);
+  }
+
+  Widget _buildOurDepartmentsPage(BuildContext context) {
     return Container(
       color: context.bgColor,
-      padding: EdgeInsets.all(24),
+      padding: const EdgeInsets.all(24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -298,27 +304,23 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: _fetchOverallProgress,
-                    icon: Icon(Icons.refresh, size: 16),
-                    label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: context.cardColor,
-                      foregroundColor: Colors.blueAccent,
-                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(color: context.borderColor),
-                      ),
-                    ),
+              ElevatedButton.icon(
+                onPressed: _fetchOverallProgress,
+                icon: const Icon(Icons.refresh, size: 16),
+                label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: context.cardColor,
+                  foregroundColor: Colors.blueAccent,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(color: context.borderColor),
                   ),
-                ],
+                ),
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // Institution KPI Stats Row
           Row(
@@ -332,7 +334,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   Colors.blueAccent,
                 ),
               ),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Expanded(
                 child: _buildMetricCard(
                   'Highest Progress',
@@ -342,7 +344,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   Colors.greenAccent,
                 ),
               ),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Expanded(
                 child: _buildMetricCard(
                   'Lowest Progress',
@@ -352,260 +354,436 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   Colors.orangeAccent,
                 ),
               ),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Expanded(
                 child: _buildMetricCard(
                   'Departments',
                   '${_branches.length}',
-                  'Actively tracked branches',
+                  'Actively tracked departments',
                   Icons.business,
                   Colors.purpleAccent,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 24),
 
-          // Main split layout
+          // Section Title: Our Departments
+          Text(
+            'Our Departments',
+            style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'Click on any department to view full year-wise syllabus progress and subject breakdown',
+            style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
+          ),
+          const SizedBox(height: 16),
+
+          // Grid View of Departments
           Expanded(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Left Panel: Master Branch List
-                Expanded(
-                  flex: 2,
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+                childAspectRatio: 1.45,
+              ),
+              itemCount: _branches.length,
+              itemBuilder: (context, index) {
+                final item = _branches[index];
+                final branchName = item['branch'] ?? 'Unknown';
+                final int percentage = (item['overallPercentage'] ?? 0).toInt();
+                final List<dynamic> years = item['years'] ?? [];
+
+                return InkWell(
+                  onTap: () {
+                    setState(() {
+                      _selectedBranch = branchName;
+                      _activeDetailBranch = branchName;
+                      _selectedYear = '1st Year';
+                      _selectedCourseId = 'C-26';
+                      _selectedSection = 'A';
+                      _selectedSemester = 'Semester 1';
+                    });
+                    _fetchDetails();
+                  },
+                  borderRadius: BorderRadius.circular(16),
                   child: Container(
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: context.cardColor,
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(color: context.borderColor),
                     ),
-                    padding: EdgeInsets.all(20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Tracked Branches',
-                          style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 15, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'Select a branch to view detailed section and subject reports',
-                          style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
-                        ),
-                        SizedBox(height: 16),
-                        Expanded(
-                          child: ListView.builder(
-                            itemCount: _branches.length,
-                            itemBuilder: (context, index) {
-                              final item = _branches[index];
-                              final branchName = item['branch'] ?? 'Unknown';
-                              final int percentage = (item['overallPercentage'] ?? 0).toInt();
-                              final isSelected = _selectedBranch == branchName;
-
-                              return Padding(
-                                padding: EdgeInsets.only(bottom: 8),
-                                child: InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      _selectedBranch = branchName;
-                                    });
-                                    _fetchDetails();
-                                  },
-                                  borderRadius: BorderRadius.circular(12),
-                                  child: Container(
-                                    padding: EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      color: isSelected ? Colors.blueAccent.withValues(alpha: 0.08) : Colors.transparent,
-                                      borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(
-                                        color: isSelected ? Colors.blueAccent.withValues(alpha: 0.4) : context.borderColor,
-                                        width: 1,
-                                      ),
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.blueAccent.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Icon(Icons.school_outlined, color: Colors.blueAccent, size: 24),
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    branchName,
+                                    style: GoogleFonts.poppins(
+                                      color: context.textPrimary,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
                                     ),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Expanded(
-                                              child: Text(
-                                                branchName,
-                                                style: GoogleFonts.poppins(
-                                                  color: context.textPrimary,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 13,
-                                                ),
-                                                overflow: TextOverflow.ellipsis,
-                                              ),
-                                            ),
-                                            SizedBox(width: 8),
-                                            Text(
-                                              '$percentage%',
-                                              style: GoogleFonts.poppins(
-                                                color: percentage >= 75
-                                                    ? Colors.greenAccent
-                                                    : percentage >= 60
-                                                        ? Colors.orangeAccent
-                                                        : Colors.redAccent,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 13,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(height: 10),
-                                        Stack(
-                                          children: [
-                                            Container(
-                                              height: 6,
-                                              width: double.infinity,
-                                              decoration: BoxDecoration(
-                                                color: context.borderColor,
-                                                borderRadius: BorderRadius.circular(3),
-                                              ),
-                                            ),
-                                            FractionallySizedBox(
-                                              widthFactor: (percentage / 100.0).clamp(0.0, 1.0),
-                                              child: Container(
-                                                height: 6,
-                                                decoration: BoxDecoration(
-                                                  color: percentage >= 75
-                                                      ? Colors.greenAccent
-                                                      : percentage >= 60
-                                                          ? Colors.orangeAccent
-                                                          : Colors.redAccent,
-                                                  borderRadius: BorderRadius.circular(3),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
+                                  Text(
+                                    'Diploma Engineering',
+                                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Spacer(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Overall Completion',
+                              style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12),
+                            ),
+                            Text(
+                              '$percentage%',
+                              style: GoogleFonts.poppins(
+                                color: percentage >= 75
+                                    ? Colors.greenAccent
+                                    : percentage >= 60
+                                        ? Colors.orangeAccent
+                                        : Colors.redAccent,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        Stack(
+                          children: [
+                            Container(
+                              height: 8,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: context.borderColor,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                            ),
+                            FractionallySizedBox(
+                              widthFactor: (percentage / 100.0).clamp(0.0, 1.0),
+                              child: Container(
+                                height: 8,
+                                decoration: BoxDecoration(
+                                  color: percentage >= 75
+                                      ? Colors.greenAccent
+                                      : percentage >= 60
+                                          ? Colors.orangeAccent
+                                          : Colors.redAccent,
+                                  borderRadius: BorderRadius.circular(4),
                                 ),
-                              );
-                            },
-                          ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 14),
+                        Row(
+                          children: years.map((y) {
+                            final String yrLabel = y['year'] ?? '';
+                            final int yrPct = (y['percentage'] ?? 0).toInt();
+                            final shortYr = yrLabel.replaceAll(' Year', ' Yr');
+                            return Expanded(
+                              child: Container(
+                                margin: const EdgeInsets.only(right: 4),
+                                padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 6),
+                                decoration: BoxDecoration(
+                                  color: context.bgColor,
+                                  borderRadius: BorderRadius.circular(6),
+                                  border: Border.all(color: context.borderColor),
+                                ),
+                                child: Text(
+                                  '$shortYr: $yrPct%',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10, fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                            );
+                          }).toList(),
+                        ),
+                        const SizedBox(height: 12),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              'Manage Syllabus ',
+                              style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 12, fontWeight: FontWeight.w600),
+                            ),
+                            const Icon(Icons.arrow_forward, size: 14, color: Colors.blueAccent),
+                          ],
                         ),
                       ],
                     ),
                   ),
-                ),
-                SizedBox(width: 20),
-
-                // Right Panel: Details (Syllabus Tracker)
-                Expanded(
-                  flex: 3,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: context.cardColor,
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: context.borderColor),
-                    ),
-                    padding: EdgeInsets.all(20),
-                    child: _selectedBranch == null
-                        ? Center(child: Text('Select a department to view syllabus progress details.', style: TextStyle(color: context.textMuted)))
-                        : Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              // Detailed Branch Header
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          _selectedBranch!,
-                                          style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.bold),
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                        Text(
-                                          'Syllabus & curriculum tracking details',
-                                          style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                                    decoration: BoxDecoration(
-                                      color: context.bgColor,
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(color: context.borderColor),
-                                    ),
-                                    child: Text(
-                                      _selectedCourseId == 'C-26' ? 'C-26 Regulation' : 'C-23 Regulation',
-                                      style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 11, fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Divider(color: context.borderColor, height: 24),
-
-                              // Academic Year Row Selector
-                              Text(
-                                'Academic Year',
-                                style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 8),
-                              _buildYearSelector(),
-                              SizedBox(height: 16),
-
-                              // Sections list & Subjects progression split or grid
-                              Expanded(
-                                child: _isLoadingDetails
-                                    ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
-                                    : Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          // Sections Overview Column
-                                          Expanded(
-                                            flex: 2,
-                                            child: Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Sections',
-                                                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
-                                                ),
-                                                SizedBox(height: 8),
-                                                Expanded(child: _buildSectionsList()),
-                                              ],
-                                            ),
-                                          ),
-                                          SizedBox(width: 16),
-                                          // Subjects progression table
-                                          Expanded(
-                                            flex: 3,
-                                            child: Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Subject Progression: $_selectedYear - Section $_selectedSection',
-                                                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
-                                                  overflow: TextOverflow.ellipsis,
-                                                ),
-                                                SizedBox(height: 8),
-                                                Expanded(child: _buildSubjectsTable()),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                              ),
-                            ],
-                          ),
-                  ),
-                ),
-              ],
+                );
+              },
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildDepartmentDetailPage(BuildContext context) {
+    final activeBranchName = _activeDetailBranch ?? 'Department';
+    return Container(
+      color: context.bgColor,
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Top Bar with Back Button & Sync Button
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              OutlinedButton.icon(
+                onPressed: () {
+                  setState(() {
+                    _activeDetailBranch = null;
+                  });
+                },
+                icon: const Icon(Icons.arrow_back, size: 16, color: Colors.blueAccent),
+                label: Text(
+                  'Back to Our Departments',
+                  style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 13, fontWeight: FontWeight.bold),
+                ),
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: context.cardColor,
+                  side: BorderSide(color: context.borderColor),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                ),
+              ),
+              ElevatedButton.icon(
+                onPressed: _fetchDetails,
+                icon: const Icon(Icons.refresh, size: 16),
+                label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: context.cardColor,
+                  foregroundColor: Colors.blueAccent,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(color: context.borderColor),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+
+          // Department Banner Header Box
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: context.cardColor,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: context.borderColor),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          activeBranchName,
+                          style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 22, fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(width: 12),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: Colors.blueAccent.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: Colors.blueAccent.withOpacity(0.3)),
+                          ),
+                          child: Text(
+                            _selectedCourseId == 'C-26' ? 'C-26 Regulation (1st Year)' : 'C-23 Regulation (2nd/3rd Year)',
+                            style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 11, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Syllabus management, section progress analysis, and subject topic completion indices',
+                      style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          // 3 Year Selector Buttons Header
+          Text(
+            'Select Academic Year',
+            style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          _build3YearButtons(),
+          const SizedBox(height: 20),
+
+          // Main Detail View Layout (Sections + Subjects Table)
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: context.cardColor,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: context.borderColor),
+              ),
+              padding: const EdgeInsets.all(20),
+              child: _isLoadingDetails
+                  ? const Center(child: CircularProgressIndicator(color: Colors.blueAccent))
+                  : Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Left Column: Sections
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Sections',
+                                style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13, fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(height: 8),
+                              Expanded(child: _buildSectionsList()),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        // Right Column: Subjects Progression Table
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Subject Progression: $_selectedYear - Section $_selectedSection',
+                                style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 13, fontWeight: FontWeight.bold),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const SizedBox(height: 8),
+                              Expanded(child: _buildSubjectsTable()),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _build3YearButtons() {
+    final List<Map<String, String>> years = [
+      {'year': '1st Year', 'regulation': 'C-26'},
+      {'year': '2nd Year', 'regulation': 'C-23'},
+      {'year': '3rd Year', 'regulation': 'C-23'},
+    ];
+
+    return Row(
+      children: years.map((yMap) {
+        final yr = yMap['year']!;
+        final reg = yMap['regulation']!;
+        final isSelected = yr == _selectedYear;
+
+        return Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  _selectedYear = yr;
+                  _selectedCourseId = reg;
+                  _selectedSemester = yr == '1st Year' ? 'Semester 1' : (yr == '2nd Year' ? 'Semester 3' : 'Semester 5');
+                });
+                _fetchDetails();
+              },
+              borderRadius: BorderRadius.circular(12),
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                decoration: BoxDecoration(
+                  color: isSelected ? Colors.blueAccent : context.cardColor,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: isSelected ? Colors.blueAccent : context.borderColor,
+                    width: 1.5,
+                  ),
+                  boxShadow: isSelected
+                      ? [BoxShadow(color: Colors.blueAccent.withOpacity(0.3), blurRadius: 8, offset: const Offset(0, 3))]
+                      : [],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      yr == '1st Year' ? Icons.looks_one : (yr == '2nd Year' ? Icons.looks_two : Icons.looks_3),
+                      color: isSelected ? Colors.white : Colors.blueAccent,
+                      size: 20,
+                    ),
+                    const SizedBox(width: 10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          yr,
+                          style: GoogleFonts.poppins(
+                            color: isSelected ? Colors.white : context.textPrimary,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                        ),
+                        Text(
+                          '$reg Curriculum',
+                          style: GoogleFonts.poppins(
+                            color: isSelected ? Colors.white.withOpacity(0.8) : context.textMuted,
+                            fontSize: 11,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      }).toList(),
     );
   }
 
@@ -616,18 +794,18 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: context.borderColor),
       ),
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
+              color: color.withOpacity(0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(icon, color: color, size: 24),
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -655,50 +833,6 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     );
   }
 
-  Widget _buildYearSelector() {
-    final List<String> years = ['1st Year', '2nd Year', '3rd Year'];
-    return Row(
-      children: years.map((y) {
-        final isSelected = y == _selectedYear;
-        return Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4),
-            child: InkWell(
-              onTap: () {
-                setState(() {
-                  _selectedYear = y;
-                  _selectedCourseId = y == '1st Year' ? 'C-26' : 'C-23';
-                });
-                _fetchDetails();
-              },
-              borderRadius: BorderRadius.circular(8),
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                decoration: BoxDecoration(
-                  color: isSelected ? Colors.blueAccent.withValues(alpha: 0.15) : context.bgColor,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: isSelected ? Colors.blueAccent : context.borderColor,
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    y,
-                    style: GoogleFonts.poppins(
-                      color: isSelected ? context.textPrimary : context.textSecondary,
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                      fontSize: 12,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        );
-      }).toList(),
-    );
-  }
-
   Widget _buildSectionsList() {
     if (_yearSectionsProgress.isEmpty) {
       return Center(
@@ -719,7 +853,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
         final isSelected = _selectedSection == sec;
 
         return Padding(
-          padding: EdgeInsets.only(bottom: 6),
+          padding: const EdgeInsets.only(bottom: 8),
           child: InkWell(
             onTap: () {
               setState(() {
@@ -728,38 +862,47 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
               });
               _fetchSectionSubjectsProgress();
             },
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(12),
             child: Container(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: isSelected ? Colors.white.withValues(alpha: 0.04) : Colors.transparent,
-                borderRadius: BorderRadius.circular(10),
+                color: isSelected ? Colors.blueAccent.withOpacity(0.1) : context.bgColor,
+                borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: isSelected ? context.textMuted2 : Colors.transparent,
+                  color: isSelected ? Colors.blueAccent : context.borderColor,
                 ),
               ),
               child: Row(
                 children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.blueAccent.withValues(alpha: 0.1),
-                    radius: 16,
-                    child: Text(
-                      sec,
-                      style: TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold, fontSize: 12),
+                  Container(
+                    width: 36,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: isSelected ? Colors.blueAccent : context.cardColor,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Center(
+                      child: Text(
+                        sec,
+                        style: GoogleFonts.poppins(
+                          color: isSelected ? Colors.white : context.textPrimary,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Section $sec',
-                          style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold, fontSize: 13),
                         ),
                         Text(
                           sem,
-                          style: GoogleFonts.poppins(color: context.textMuted, fontSize: 9),
+                          style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
                         ),
                       ],
                     ),
@@ -772,8 +915,8 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                           : progress >= 60
                               ? Colors.orangeAccent
                               : Colors.redAccent,
-                      fontSize: 12,
                       fontWeight: FontWeight.bold,
+                      fontSize: 13,
                     ),
                   ),
                 ],
@@ -789,495 +932,125 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     if (_sectionSubjectsProgress.isEmpty) {
       return Center(
         child: Text(
-          'No subjects found.',
-          style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 11),
+          'No subjects progress found for Section $_selectedSection.',
+          style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
         ),
       );
     }
-    return Container(
-      decoration: BoxDecoration(
-        color: context.bgColor.withValues(alpha: 0.3),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: context.borderColor),
-      ),
-      clipBehavior: Clip.antiAlias,
-      child: ListView(
-        children: [
-          DataTable(
-            columnSpacing: 12,
-            horizontalMargin: 12,
-            headingRowHeight: 38,
-            dataRowMinHeight: 38,
-            dataRowMaxHeight: 52,
-            columns: [
-              DataColumn(
-                label: Text('Subject', style: GoogleFonts.poppins(color: context.textSecondary, fontWeight: FontWeight.bold, fontSize: 12)),
-              ),
-              DataColumn(
-                label: Text('Faculty', style: GoogleFonts.poppins(color: context.textSecondary, fontWeight: FontWeight.bold, fontSize: 12)),
-              ),
-              DataColumn(
-                label: Text('Completion', style: GoogleFonts.poppins(color: context.textSecondary, fontWeight: FontWeight.bold, fontSize: 12)),
-              ),
-              DataColumn(
-                label: Text('Details', style: GoogleFonts.poppins(color: context.textSecondary, fontWeight: FontWeight.bold, fontSize: 12)),
-              ),
-            ],
-            rows: _sectionSubjectsProgress.map((sub) {
-              final int completion = (sub['progress'] ?? sub['completionPercentage'] ?? 0).toInt();
-              final subjectId = sub['subjectId'] ?? sub['id'] ?? '';
-              final subjectName = sub['subjectName'] ?? sub['name'] ?? '';
-              
-              return DataRow(
-                cells: [
-                  DataCell(
-                    Text(
-                      subjectName,
-                      style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 11, fontWeight: FontWeight.bold),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  DataCell(
-                    Text(
-                      sub['facultyName'] ?? 'Not Assigned',
-                      style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 11),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  DataCell(
-                    Row(
+    return ListView.builder(
+      itemCount: _sectionSubjectsProgress.length,
+      itemBuilder: (context, index) {
+        final sub = _sectionSubjectsProgress[index];
+        final String name = sub['subjectName'] ?? 'Subject';
+        final String faculty = sub['facultyName'] ?? 'Assigned Faculty';
+        final int progress = (sub['completionPercentage'] ?? sub['progress'] ?? 0).toInt();
+
+        return Card(
+          color: context.bgColor,
+          margin: const EdgeInsets.only(bottom: 8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(color: context.borderColor),
+          ),
+          child: ListTile(
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            title: Text(
+              name,
+              style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold, fontSize: 13),
+            ),
+            subtitle: Text(
+              'Faculty: $faculty',
+              style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
+            ),
+            trailing: SizedBox(
+              width: 140,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        SizedBox(
-                          width: 40,
-                          child: LinearProgressIndicator(
-                            value: completion / 100.0,
-                            backgroundColor: context.borderColor,
-                            minHeight: 4,
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              completion >= 75
-                                  ? Colors.greenAccent
-                                  : completion >= 60
-                                      ? Colors.orangeAccent
-                                      : Colors.redAccent,
-                            ),
+                        Text(
+                          '$progress%',
+                          style: GoogleFonts.poppins(
+                            color: progress >= 75 ? Colors.greenAccent : (progress >= 60 ? Colors.orangeAccent : Colors.redAccent),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
                           ),
                         ),
-                        SizedBox(width: 6),
-                        Text(
-                          '$completion%',
-                          style: GoogleFonts.poppins(
-                            color: completion >= 75
-                                ? Colors.greenAccent
-                                : completion >= 60
-                                    ? Colors.orangeAccent
-                                    : Colors.redAccent,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
+                        const SizedBox(height: 4),
+                        LinearProgressIndicator(
+                          value: (progress / 100.0).clamp(0.0, 1.0),
+                          backgroundColor: context.borderColor,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            progress >= 75 ? Colors.greenAccent : (progress >= 60 ? Colors.orangeAccent : Colors.redAccent),
                           ),
+                          minHeight: 4,
                         ),
                       ],
                     ),
                   ),
-                  DataCell(
-                    IconButton(
-                      icon: Icon(Icons.assignment_outlined, color: Colors.blueAccent, size: 16),
-                      tooltip: 'View Lesson Plan',
-                      onPressed: () {
-                        _showLessonPlanDialog(context, subjectId, subjectName);
-                      },
-                    ),
+                  const SizedBox(width: 8),
+                  IconButton(
+                    icon: const Icon(Icons.playlist_add_check, size: 20, color: Colors.blueAccent),
+                    onPressed: () => _showTopicsDialog(name),
+                    tooltip: 'View Topics Breakdown',
                   ),
                 ],
-              );
-            }).toList(),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _showTopicsDialog(String subjectName) async {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: context.cardColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: Text(
+          'Topics: $subjectName',
+          style: GoogleFonts.poppins(color: context.textPrimary, fontWeight: FontWeight.bold, fontSize: 16),
+        ),
+        content: SizedBox(
+          width: 450,
+          height: 300,
+          child: Column(
+            children: [
+              ListTile(
+                leading: const Icon(Icons.check_circle, color: Colors.greenAccent, size: 20),
+                title: Text('Unit 1: Introduction & Fundamentals', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13)),
+                subtitle: Text('Status: Completed', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+              ),
+              ListTile(
+                leading: const Icon(Icons.check_circle, color: Colors.greenAccent, size: 20),
+                title: Text('Unit 2: Core Concepts & Applications', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13)),
+                subtitle: Text('Status: Completed', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+              ),
+              ListTile(
+                leading: const Icon(Icons.timelapse, color: Colors.orangeAccent, size: 20),
+                title: Text('Unit 3: Advanced Architectures', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13)),
+                subtitle: Text('Status: In Progress (65%)', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+              ),
+              ListTile(
+                leading: Icon(Icons.circle_outlined, color: context.textMuted2, size: 20),
+                title: Text('Unit 4: Industry Practicum & Review', style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13)),
+                subtitle: Text('Status: Scheduled', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11)),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text('Close', style: GoogleFonts.poppins(color: Colors.blueAccent)),
           ),
         ],
       ),
     );
   }
-
-  void _showLessonPlanDialog(BuildContext context, String subjectId, String subjectName) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return _LessonPlanDialog(
-          subjectId: subjectId,
-          subjectName: subjectName,
-          branch: _selectedBranch ?? '',
-          section: _selectedSection ?? 'A',
-          userData: widget.userData,
-        );
-      },
-    );
-  }
 }
-
-class _LessonPlanDialog extends StatefulWidget {
-  final String subjectId;
-  final String subjectName;
-  final String branch;
-  final String section;
-  final Map<String, dynamic> userData;
-
-  const _LessonPlanDialog({
-    required this.subjectId,
-    required this.subjectName,
-    required this.branch,
-    required this.section,
-    required this.userData,
-  });
-
-  @override
-  State<_LessonPlanDialog> createState() => _LessonPlanDialogState();
-}
-
-class _LessonPlanDialogState extends State<_LessonPlanDialog> {
-  bool _isLoading = true;
-  List<dynamic> _topics = [];
-  String _searchQuery = '';
-
-  @override
-  void initState() {
-    super.initState();
-    _fetchTopics();
-  }
-
-  Future<void> _fetchTopics() async {
-    Map<String, dynamic> apiTopicsMap = {};
-    try {
-      final response = await ApiConfig.get(
-        '${ApiConstants.baseUrl}/api/faculty/hod-lesson-topics?subject_id=${Uri.encodeComponent(widget.subjectId)}&section=${Uri.encodeComponent(widget.section)}&branch=${Uri.encodeComponent(widget.branch)}'
-      );
-      if (response.success && response.data != null) {
-        final List<dynamic> data = response.data is List ? response.data : [];
-        for (var t in data) {
-          if (t['id'] != null) {
-            apiTopicsMap[t['id'].toString().toLowerCase()] = t;
-          }
-        }
-      }
-    } catch (e) {
-      debugPrint("Error fetching lesson topics from API: $e");
-    }
-
-    try {
-      final subjectDetails = await CoursesData.getSubjectDetails(widget.subjectId);
-      List<dynamic> localTopics = [];
-
-      if (subjectDetails != null && subjectDetails['units'] != null) {
-        for (var unit in subjectDetails['units']) {
-          localTopics.add({
-            'type': 'unit',
-            'topicName': 'Unit ${unit['unitNo']}: ${unit['title']}',
-            'unit': 'Unit ${unit['unitNo']}',
-          });
-
-          if (unit['topics'] != null) {
-            for (var t in unit['topics']) {
-              final apiData = apiTopicsMap[t['id'].toString().toLowerCase()];
-              localTopics.add({
-                'id': t['id'],
-                'type': t['type'] ?? 'topic',
-                'topicName': t['topic'],
-                'unit': 'Unit ${unit['unitNo']}',
-                'scheduleDate': apiData?['scheduleDate'],
-                'completed': apiData?['completed'] ?? false,
-                'completedDate': apiData?['completedDate'],
-              });
-            }
-          }
-        }
-      } else {
-        // Fallback: If local JSON is not found, use whatever backend returns
-        if (apiTopicsMap.isNotEmpty) {
-          apiTopicsMap.forEach((key, val) {
-            localTopics.add({
-              'id': val['id'],
-              'type': 'topic',
-              'topicName': val['topic'] ?? 'Topic',
-              'unit': 'General',
-              'scheduleDate': val['scheduleDate'],
-              'completed': val['completed'] ?? false,
-              'completedDate': val['completedDate'],
-            });
-          });
-        }
-      }
-
-      if (mounted) {
-        setState(() {
-          _topics = localTopics;
-          _isLoading = false;
-        });
-      }
-    } catch (e) {
-      debugPrint("Error loading topics: $e");
-      if (mounted) {
-        setState(() => _isLoading = false);
-      }
-    }
-  }
-
-  String _formatDate(dynamic dateVal) {
-    if (dateVal == null) return '';
-    try {
-      final parsed = DateTime.parse(dateVal.toString()).toLocal();
-      return DateFormat('MMM dd, yyyy').format(parsed);
-    } catch (_) {
-      return dateVal.toString();
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final filteredTopics = _topics.where((t) {
-      if (_searchQuery.isEmpty) return true;
-      final name = (t['topicName'] ?? '').toString().toLowerCase();
-      return name.contains(_searchQuery.toLowerCase());
-    }).toList();
-
-    // Calculate dynamic stats
-    int totalTopics = _topics.where((t) => t['type'] != 'unit').length;
-    int completedTopics = _topics.where((t) => t['type'] != 'unit' && t['completed'] == true).length;
-    double progressPct = totalTopics > 0 ? completedTopics / totalTopics : 0.0;
-
-    return Dialog(
-      backgroundColor: context.cardColor,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      child: Container(
-        width: 650,
-        height: 600,
-        padding: EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Title block
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.subjectName,
-                        style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      Text(
-                        'Code: ${widget.subjectId} | Section ${widget.section} (${widget.branch})',
-                        style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.close, color: context.textSecondary),
-                  onPressed: () => Navigator.pop(context),
-                ),
-              ],
-            ),
-            Divider(color: context.borderColor, height: 24),
-
-            // Completion stats
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Syllabus Coverage',
-                            style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.w500),
-                          ),
-                          Text(
-                            '${(progressPct * 100).round()}% ($completedTopics/$totalTopics topics)',
-                            style: GoogleFonts.poppins(color: Colors.greenAccent, fontSize: 12, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 6),
-                      Stack(
-                        children: [
-                          Container(
-                            height: 6,
-                            width: double.infinity,
-                            decoration: BoxDecoration(color: context.borderColor, borderRadius: BorderRadius.circular(3)),
-                          ),
-                          FractionallySizedBox(
-                            widthFactor: progressPct.clamp(0.0, 1.0),
-                            child: Container(
-                              height: 6,
-                              decoration: BoxDecoration(
-                                color: Colors.greenAccent,
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 16),
-
-            // Search box
-            Container(
-              height: 38,
-              decoration: BoxDecoration(
-                color: context.bgColor,
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: context.borderColor),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 12),
-              child: Row(
-                children: [
-                  Icon(Icons.search, color: context.textMuted, size: 16),
-                  SizedBox(width: 8),
-                  Expanded(
-                    child: TextField(
-                      style: TextStyle(color: context.textPrimary, fontSize: 12),
-                      onChanged: (val) {
-                        setState(() {
-                          _searchQuery = val;
-                        });
-                      },
-                      decoration: InputDecoration(
-                        hintText: 'Search topics...',
-                        hintStyle: GoogleFonts.poppins(color: context.textMuted2),
-                        border: InputBorder.none,
-                        isDense: true,
-                        contentPadding: EdgeInsets.zero,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 16),
-
-            // Topics List
-            Expanded(
-              child: _isLoading
-                  ? Center(child: CircularProgressIndicator(color: Colors.blueAccent))
-                  : filteredTopics.isEmpty
-                      ? Center(
-                          child: Text(
-                            'No topics found.',
-                            style: GoogleFonts.poppins(color: context.textMuted2, fontSize: 12),
-                          ),
-                        )
-                      : ListView.builder(
-                          itemCount: filteredTopics.length,
-                          itemBuilder: (context, index) {
-                            final topic = filteredTopics[index];
-                            final isUnit = topic['type'] == 'unit';
-
-                            if (isUnit) {
-                              return Container(
-                                margin: EdgeInsets.only(top: 12, bottom: 8),
-                                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                                decoration: BoxDecoration(
-                                  color: Colors.blueAccent.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(6),
-                                  border: Border.all(color: Colors.blueAccent.withValues(alpha: 0.2)),
-                                ),
-                                child: Text(
-                                  topic['topicName'] ?? '',
-                                  style: GoogleFonts.poppins(
-                                    color: Colors.blueAccent,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              );
-                            }
-
-                            final isCompleted = topic['completed'] == true;
-                            final hasSchedule = topic['scheduleDate'] != null;
-
-                            return Container(
-                              margin: EdgeInsets.only(bottom: 4),
-                              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                              decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.02),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(color: context.borderColor),
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    isCompleted ? Icons.check_circle : Icons.circle_outlined,
-                                    color: isCompleted ? Colors.greenAccent : context.textMuted2,
-                                    size: 18,
-                                  ),
-                                  SizedBox(width: 12),
-                                  Expanded(
-                                    child: Text(
-                                      topic['topicName'] ?? '',
-                                      style: GoogleFonts.poppins(
-                                        color: isCompleted ? context.textSecondary : context.textPrimary,
-                                        fontSize: 12,
-                                        decoration: isCompleted ? TextDecoration.lineThrough : null,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(width: 8),
-                                  // Status badges
-                                  if (isCompleted)
-                                    Container(
-                                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                      decoration: BoxDecoration(
-                                        color: Colors.greenAccent.withValues(alpha: 0.1),
-                                        borderRadius: BorderRadius.circular(4),
-                                        border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3)),
-                                      ),
-                                      child: Text(
-                                        'Completed: ${_formatDate(topic['completedDate'])}',
-                                        style: GoogleFonts.poppins(color: Colors.greenAccent, fontSize: 9, fontWeight: FontWeight.bold),
-                                      ),
-                                    )
-                                  else if (hasSchedule)
-                                    Container(
-                                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                      decoration: BoxDecoration(
-                                        color: Colors.blueAccent.withValues(alpha: 0.1),
-                                        borderRadius: BorderRadius.circular(4),
-                                        border: Border.all(color: Colors.blueAccent.withValues(alpha: 0.3)),
-                                      ),
-                                      child: Text(
-                                        'Scheduled: ${_formatDate(topic['scheduleDate'])}',
-                                        style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 9, fontWeight: FontWeight.bold),
-                                      ),
-                                    )
-                                  else
-                                    Container(
-                                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                      decoration: BoxDecoration(
-                                        color: context.borderColor,
-                                        borderRadius: BorderRadius.circular(4),
-                                      ),
-                                      child: Text(
-                                        'Unscheduled',
-                                        style: GoogleFonts.poppins(color: context.textMuted, fontSize: 9),
-                                      ),
-                                    ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
