@@ -493,14 +493,14 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           ),
           const SizedBox(height: 14),
 
-          // Compact Grid View of Departments
+          // Compact Grid View of Departments with Fixed Height Cards (No Empty White Space)
           Expanded(
             child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 380,
+                mainAxisExtent: 135, // Fixed 135px card height completely eliminates empty white gap
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
-                childAspectRatio: 2.1,
               ),
               itemCount: _branches.length,
               itemBuilder: (context, index) {
@@ -508,6 +508,15 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                 final branchName = item['branch'] ?? 'Unknown';
                 final int percentage = (item['overallPercentage'] ?? 0).toInt();
                 final List<dynamic> years = item['years'] ?? [];
+
+                // Custom accent color per department
+                final Color accentColor = index % 5 == 0
+                    ? Colors.blueAccent
+                    : (index % 5 == 1
+                        ? Colors.greenAccent
+                        : (index % 5 == 2
+                            ? Colors.purpleAccent
+                            : (index % 5 == 3 ? Colors.orangeAccent : Colors.pinkAccent)));
 
                 return InkWell(
                   onTap: () {
@@ -521,105 +530,159 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                     });
                     _fetchDetails();
                   },
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(12),
                   child: Container(
-                    padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
                       color: context.cardColor,
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(12),
                       border: Border.all(color: context.borderColor),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.04),
+                          blurRadius: 6,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    child: Row(
                       children: [
-                        Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                color: Colors.blueAccent.withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: const Icon(Icons.school_outlined, color: Colors.blueAccent, size: 20),
+                        // Left Accent Bar
+                        Container(
+                          width: 5,
+                          decoration: BoxDecoration(
+                            color: accentColor,
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(12),
+                              bottomLeft: Radius.circular(12),
                             ),
-                            const SizedBox(width: 10),
-                            Expanded(
-                              child: Text(
-                                branchName,
-                                style: GoogleFonts.poppins(
-                                  color: context.textPrimary,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 13,
-                                ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            Text(
-                              '$percentage%',
-                              style: GoogleFonts.poppins(
-                                color: percentage >= 75
-                                    ? Colors.greenAccent
-                                    : percentage >= 60
-                                        ? Colors.orangeAccent
-                                        : Colors.redAccent,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13,
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                        const SizedBox(height: 6),
-                        Stack(
-                          children: [
-                            Container(
-                              height: 6,
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: context.borderColor,
-                                borderRadius: BorderRadius.circular(3),
-                              ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                // Top Header Row
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(6),
+                                      decoration: BoxDecoration(
+                                        color: accentColor.withOpacity(0.12),
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      child: Icon(Icons.school_outlined, color: accentColor, size: 18),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    Expanded(
+                                      child: Text(
+                                        branchName,
+                                        style: GoogleFonts.poppins(
+                                          color: context.textPrimary,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 13,
+                                        ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                      decoration: BoxDecoration(
+                                        color: percentage >= 75
+                                            ? Colors.greenAccent.withOpacity(0.15)
+                                            : percentage >= 60
+                                                ? Colors.orangeAccent.withOpacity(0.15)
+                                                : Colors.redAccent.withOpacity(0.15),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      child: Text(
+                                        '$percentage%',
+                                        style: GoogleFonts.poppins(
+                                          color: percentage >= 75
+                                              ? Colors.greenAccent
+                                              : percentage >= 60
+                                                  ? Colors.orangeAccent
+                                                  : Colors.redAccent,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 11,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                // Middle Progress Bar
+                                Stack(
+                                  children: [
+                                    Container(
+                                      height: 5,
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: context.borderColor,
+                                        borderRadius: BorderRadius.circular(3),
+                                      ),
+                                    ),
+                                    FractionallySizedBox(
+                                      widthFactor: (percentage / 100.0).clamp(0.0, 1.0),
+                                      child: Container(
+                                        height: 5,
+                                        decoration: BoxDecoration(
+                                          color: percentage >= 75
+                                              ? Colors.greenAccent
+                                              : percentage >= 60
+                                                  ? Colors.orangeAccent
+                                                  : Colors.redAccent,
+                                          borderRadius: BorderRadius.circular(3),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                // Bottom Row: 3 Year Badges + Manage Arrow
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Expanded(
+                                      child: Row(
+                                        children: years.map((y) {
+                                          final String yrLabel = y['year'] ?? '';
+                                          final int yrPct = (y['percentage'] ?? 0).toInt();
+                                          final shortYr = yrLabel.replaceAll(' Year', 'Yr');
+                                          return Container(
+                                            margin: const EdgeInsets.only(right: 6),
+                                            padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+                                            decoration: BoxDecoration(
+                                              color: context.bgColor,
+                                              borderRadius: BorderRadius.circular(4),
+                                              border: Border.all(color: context.borderColor),
+                                            ),
+                                            child: Text(
+                                              '$shortYr: $yrPct%',
+                                              style: GoogleFonts.poppins(color: context.textMuted, fontSize: 9, fontWeight: FontWeight.w500),
+                                            ),
+                                          );
+                                        }).toList(),
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text(
+                                          'Syllabus ',
+                                          style: GoogleFonts.poppins(color: accentColor, fontSize: 11, fontWeight: FontWeight.w600),
+                                        ),
+                                        Icon(Icons.arrow_forward_ios, size: 10, color: accentColor),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
-                            FractionallySizedBox(
-                              widthFactor: (percentage / 100.0).clamp(0.0, 1.0),
-                              child: Container(
-                                height: 6,
-                                decoration: BoxDecoration(
-                                  color: percentage >= 75
-                                      ? Colors.greenAccent
-                                      : percentage >= 60
-                                          ? Colors.orangeAccent
-                                          : Colors.redAccent,
-                                  borderRadius: BorderRadius.circular(3),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 6),
-                        Row(
-                          children: years.map((y) {
-                            final String yrLabel = y['year'] ?? '';
-                            final int yrPct = (y['percentage'] ?? 0).toInt();
-                            final shortYr = yrLabel.replaceAll(' Year', ' Yr');
-                            return Expanded(
-                              child: Container(
-                                margin: const EdgeInsets.only(right: 4),
-                                padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 4),
-                                decoration: BoxDecoration(
-                                  color: context.bgColor,
-                                  borderRadius: BorderRadius.circular(4),
-                                  border: Border.all(color: context.borderColor),
-                                ),
-                                child: Text(
-                                  '$shortYr: $yrPct%',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.poppins(color: context.textMuted, fontSize: 9, fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                            );
-                          }).toList(),
+                          ),
                         ),
                       ],
                     ),
