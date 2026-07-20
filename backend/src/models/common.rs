@@ -43,11 +43,11 @@ pub fn normalize_branch(input: &str) -> String {
     let upper = binding.as_str();
     match upper {
         // Computer
-        "CME" | "CM" | "COMPUTER" | "COMPUTER ENGINEERING" => "Computer Engineering".to_string(),
+        "CME" | "CM" | "CSE" | "COMPUTER" | "COMPUTER ENGINEERING" => "Computer Engineering".to_string(),
         // ECE
-        "ECE" | "EC" | "ELECTRONICS & COMMUNICATION ENGINEERING" => "Electronics & Communication Engineering".to_string(),
+        "ECE" | "EC" | "ELECTRONICS & COMMUNICATION" | "ELECTRONICS & COMMUNICATION ENGINEERING" | "ELECTRONICS AND COMMUNICATION ENGINEERING" => "Electronics & Communication Engineering".to_string(),
         // EEE
-        "EEE" | "EE" | "ELECTRICAL & ELECTRONICS ENGINEERING" | "ELECTRICAL AND ELECTRONICS ENGINEERING" => "Electrical & Electronics Engineering".to_string(),
+        "EEE" | "EE" | "ELECTRICAL & ELECTRONICS" | "ELECTRICAL AND ELECTRONICS" | "ELECTRICAL & ELECTRONICS ENGINEERING" | "ELECTRICAL AND ELECTRONICS ENGINEERING" => "Electrical & Electronics Engineering".to_string(),
         // Mechanical
         "ME" | "MEC" | "MECH" | "MECHANICAL" | "MECHANICAL ENGINEERING" => "Mechanical Engineering".to_string(),
         // Civil
@@ -64,9 +64,9 @@ pub fn get_branch_variations(input: &str) -> Vec<String> {
     let mut variations = vec![normalized.clone()];
     
     match normalized.as_str() {
-        "Computer Engineering" => variations.extend(vec!["CME".to_string(), "CM".to_string(), "Computer".to_string()]),
-        "Electronics & Communication Engineering" => variations.extend(vec!["ECE".to_string(), "EC".to_string()]),
-        "Electrical & Electronics Engineering" => variations.extend(vec!["EEE".to_string(), "EE".to_string()]),
+        "Computer Engineering" => variations.extend(vec!["CME".to_string(), "CM".to_string(), "CSE".to_string(), "Computer".to_string()]),
+        "Electronics & Communication Engineering" => variations.extend(vec!["ECE".to_string(), "EC".to_string(), "Electronics & Communication".to_string()]),
+        "Electrical & Electronics Engineering" => variations.extend(vec!["EEE".to_string(), "EE".to_string(), "Electrical & Electronics".to_string(), "Electrical and Electronics".to_string()]),
         "Mechanical Engineering" => variations.extend(vec!["ME".to_string(), "MEC".to_string(), "MECH".to_string(), "Mechanical".to_string()]),
         "Civil Engineering" => variations.extend(vec!["CE".to_string(), "CIV".to_string(), "CIVIL".to_string(), "Civil".to_string()]),
         "General" => variations.extend(vec!["BS & H".to_string(), "BS&H".to_string(), "BSH".to_string(), "Basic Science".to_string()]),

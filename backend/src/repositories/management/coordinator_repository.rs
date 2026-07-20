@@ -32,11 +32,20 @@ pub async fn find_announcements_public(pool: &PgPool) -> Result<Vec<Announcement
 }
 
 pub async fn find_all_department_timings(pool: &PgPool) -> Result<Vec<DepartmentTiming>, sqlx::Error> {
-    sqlx::query_as::<_, DepartmentTiming>("SELECT * FROM department_timings").fetch_all(pool).await
+    let raw_timings = sqlx::query_as::<_, DepartmentTiming>("SELECT * FROM department_timings").fetch_all(pool).await?;
+    let mut map: std::collections::HashMap<String, DepartmentTiming> = std::collections::HashMap::new();
+    for mut dt in raw_timings {
+        dt.branch = crate::models::normalize_branch(&dt.branch);
+        map.entry(dt.branch.clone()).or_insert(dt);
+    }
+    let mut timings: Vec<DepartmentTiming> = map.into_values().collect();
+    timings.sort_by(|a, b| a.branch.cmp(&b.branch));
+    Ok(timings)
 }
 
 pub async fn delete_department_timing(pool: &PgPool, branch: &str) -> Result<u64, sqlx::Error> {
-    sqlx::query("DELETE FROM department_timings WHERE branch = $1").bind(branch).execute(pool).await.map(|r| r.rows_affected())
+    let variations = crate::models::get_branch_variations(branch);
+    sqlx::query("DELETE FROM department_timings WHERE branch = ANY($1)").bind(&variations).execute(pool).await.map(|r| r.rows_affected())
 }
 
 pub async fn delete_announcement(pool: &PgPool, id: Uuid) -> Result<u64, sqlx::Error> {
@@ -48,7 +57,30 @@ pub async fn update_announcement_pin(pool: &PgPool, id: Uuid, is_pinned: bool) -
 }
 
 pub async fn find_all_branches(pool: &PgPool) -> Result<Vec<String>, sqlx::Error> {
-    sqlx::query_scalar::<_, String>("SELECT DISTINCT branch FROM (SELECT branch FROM department_timings UNION SELECT branch FROM sections UNION SELECT branch FROM users WHERE branch IS NOT NULL AND branch != '') as combined_branches ORDER BY branch ASC").fetch_all(pool).await
+    let raw_branches = sqlx::query_scalar::<_, String>(
+        "SELECT DISTINCT branch FROM (SELECT branch FROM department_timings UNION SELECT branch FROM sections UNION SELECT branch FROM users WHERE branch IS NOT NULL AND branch != '') as combined_branches ORDER BY branch ASC"
+    ).fetch_all(pool).await?;
+
+    let mut normalized_branches: Vec<String> = raw_branches
+        .into_iter()
+        .map(|b| crate::models::normalize_branch(&b))
+        .filter(|b| !b.is_empty() && b != "General")
+        .collect();
+
+    normalized_branches.sort();
+    normalized_branches.dedup();
+
+    if normalized_branches.is_empty() {
+        normalized_branches = vec![
+            "Civil Engineering".to_string(),
+            "Computer Engineering".to_string(),
+            "Electrical & Electronics Engineering".to_string(),
+            "Electronics & Communication Engineering".to_string(),
+            "Mechanical Engineering".to_string(),
+        ];
+    }
+
+    Ok(normalized_branches)
 }
 
 pub async fn get_dashboard_stats(pool: &PgPool) -> Result<serde_json::Value, sqlx::Error> {

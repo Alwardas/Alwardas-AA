@@ -4,7 +4,7 @@ use serde_json;
 use crate::models::{TimetableEntry};
 
 pub async fn find_hod_departments(pool: &PgPool) -> Result<Vec<String>, sqlx::Error> {
-    sqlx::query_scalar(
+    let raw_branches: Vec<String> = sqlx::query_scalar(
         "SELECT DISTINCT branch FROM (
             SELECT branch FROM department_timings
             UNION
@@ -14,7 +14,18 @@ pub async fn find_hod_departments(pool: &PgPool) -> Result<Vec<String>, sqlx::Er
         ) as combined_branches ORDER BY branch ASC"
     )
     .fetch_all(pool)
-    .await
+    .await?;
+
+    let mut normalized_branches: Vec<String> = raw_branches
+        .into_iter()
+        .map(|b| crate::models::normalize_branch(&b))
+        .filter(|b| !b.is_empty() && b != "General")
+        .collect();
+
+    normalized_branches.sort();
+    normalized_branches.dedup();
+
+    Ok(normalized_branches)
 }
 
 pub async fn find_sections_by_branch_and_year(pool: &PgPool, branch: &str, year: &str) -> Result<Vec<String>, sqlx::Error> {

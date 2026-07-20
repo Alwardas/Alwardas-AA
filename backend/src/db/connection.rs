@@ -471,9 +471,13 @@ async fn fix_branch_names(pool: &Pool<Postgres>) {
         ("ECE", "Electronics & Communication Engineering"),
         ("EC", "Electronics & Communication Engineering"),
         ("Ece", "Electronics & Communication Engineering"),
+        ("Electronics & Communication", "Electronics & Communication Engineering"),
         ("EEE", "Electrical & Electronics Engineering"),
         ("EE", "Electrical & Electronics Engineering"),
         ("Eee", "Electrical & Electronics Engineering"),
+        ("Electrical & Electronics", "Electrical & Electronics Engineering"),
+        ("Electrical and Electronics", "Electrical & Electronics Engineering"),
+        ("Electrical & Electronics ", "Electrical & Electronics Engineering"),
         ("ME", "Mechanical Engineering"),
         ("MEC", "Mechanical Engineering"),
         ("MECH", "Mechanical Engineering"),
@@ -490,9 +494,47 @@ async fn fix_branch_names(pool: &Pool<Postgres>) {
         ("General", "General"),
     ];
 
-    let tables = vec!["users", "attendance", "notifications", "subjects", "faculty_subjects", "timetable_entries", "class_period_status"];
+    // Safely update department_timings and sections by cleaning duplicate PKs first
+    for (short_code, full_name) in &updates {
+        if short_code == full_name { continue; }
+        
+        let _ = sqlx::query(
+            "DELETE FROM department_timings WHERE branch = $1 AND EXISTS (SELECT 1 FROM department_timings dt WHERE dt.branch = $2)"
+        )
+        .bind(short_code)
+        .bind(full_name)
+        .execute(pool).await;
+
+        let _ = sqlx::query(
+            "UPDATE department_timings SET branch = $1 WHERE branch = $2"
+        )
+        .bind(full_name)
+        .bind(short_code)
+        .execute(pool).await;
+
+        let _ = sqlx::query(
+            "DELETE FROM sections s1 WHERE branch = $1 AND EXISTS (SELECT 1 FROM sections s2 WHERE s2.branch = $2 AND s2.year = s1.year AND s2.section_name = s1.section_name)"
+        )
+        .bind(short_code)
+        .bind(full_name)
+        .execute(pool).await;
+
+        let _ = sqlx::query(
+            "UPDATE sections SET branch = $1 WHERE branch = $2"
+        )
+        .bind(full_name)
+        .bind(short_code)
+        .execute(pool).await;
+    }
+
+    let tables = vec![
+        "users", "attendance", "notifications", "subjects", "faculty_subjects", 
+        "timetable_entries", "class_period_status", "curriculum_progress", 
+        "lesson_schedule", "promotion_requests", "course_subjects"
+    ];
 
     for (short_code, full_name) in updates {
+        if short_code == full_name { continue; }
         for table in &tables {
             let query = format!("UPDATE {} SET branch = $1 WHERE branch = $2", table);
             
