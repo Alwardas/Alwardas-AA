@@ -344,13 +344,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
   }
 
   String _getScheduleStatusText(int percentage) {
-    if (percentage >= 85) {
-      return 'Fast';
-    } else if (percentage >= 65) {
-      return 'On Track';
-    } else {
-      return 'Lagging';
-    }
+    return '-';
   }
 
   @override
@@ -589,19 +583,12 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                      decoration: BoxDecoration(
-                                        color: overallColor.withOpacity(0.15),
-                                        borderRadius: BorderRadius.circular(4),
-                                      ),
-                                      child: Text(
-                                        statusText,
-                                        style: GoogleFonts.poppins(
-                                          color: overallColor,
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                    Text(
+                                      '-',
+                                      style: GoogleFonts.poppins(
+                                        color: context.textMuted,
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                   ],
