@@ -34,11 +34,11 @@ class DesktopLayoutShell extends ConsumerWidget {
 
   static final List<Map<String, dynamic>> sidebarItems = [
     {'name': 'Dashboard', 'icon': Icons.dashboard_outlined, 'activeIcon': Icons.dashboard},
+    {'name': 'Academics', 'icon': Icons.school_outlined, 'activeIcon': Icons.school},
     {'name': 'Admissions', 'icon': Icons.app_registration_outlined, 'activeIcon': Icons.app_registration},
     {'name': 'Students', 'icon': Icons.people_outline, 'activeIcon': Icons.people},
     {'name': 'Faculty', 'icon': Icons.badge_outlined, 'activeIcon': Icons.badge},
     {'name': 'Attendance', 'icon': Icons.fact_check_outlined, 'activeIcon': Icons.fact_check},
-    {'name': 'Academics', 'icon': Icons.school_outlined, 'activeIcon': Icons.school},
     {'name': 'Examinations', 'icon': Icons.assignment_outlined, 'activeIcon': Icons.assignment},
     {'name': 'Fee Management', 'icon': Icons.account_balance_wallet_outlined, 'activeIcon': Icons.account_balance_wallet},
     {'name': 'Transport', 'icon': Icons.directions_bus_outlined, 'activeIcon': Icons.directions_bus},
