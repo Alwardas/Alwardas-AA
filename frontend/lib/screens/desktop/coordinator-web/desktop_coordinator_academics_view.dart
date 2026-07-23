@@ -69,14 +69,19 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
         sems.addAll(['Semester 3', 'Semester 4']);
       } else if (_selectedYear == '3rd Year') {
         sems.addAll(['Semester 5', 'Semester 6']);
-      } else {
-        sems.addAll(['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4', 'Semester 5', 'Semester 6']);
       }
 
       for (var c in branchCourses) {
         final sem = c['semester']?.toString() ?? '';
         if (sem.isNotEmpty) {
-          sems.add(sem);
+          final semNum = int.tryParse(sem.replaceAll(RegExp(r'[^0-9]'), '')) ?? 0;
+          if (_selectedYear == '1st Year' && (semNum == 1 || semNum == 2)) {
+            sems.add(sem);
+          } else if (_selectedYear == '2nd Year' && (semNum == 3 || semNum == 4)) {
+            sems.add(sem);
+          } else if (_selectedYear == '3rd Year' && (semNum == 5 || semNum == 6)) {
+            sems.add(sem);
+          }
         }
       }
 
@@ -89,9 +94,11 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
 
       if (mounted) {
         setState(() {
-          _availableSemesters = ['All Semesters', ...sortedSems];
-          if (_selectedSemester == null || (!_availableSemesters.contains(_selectedSemester) && _selectedSemester != 'All Semesters')) {
-            _selectedSemester = sortedSems.isNotEmpty ? sortedSems.first : 'Semester 1';
+          _availableSemesters = sortedSems;
+          if (_selectedSemester == null || !_availableSemesters.contains(_selectedSemester)) {
+            _selectedSemester = sortedSems.isNotEmpty 
+                ? sortedSems.first 
+                : (_selectedYear == '1st Year' ? 'Semester 1' : (_selectedYear == '2nd Year' ? 'Semester 3' : 'Semester 5'));
           }
         });
       }
@@ -100,13 +107,13 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       if (mounted) {
         setState(() {
           final defaultSemList = _selectedYear == '1st Year'
-              ? ['All Semesters', 'Semester 1', 'Semester 2']
+              ? ['Semester 1', 'Semester 2']
               : (_selectedYear == '2nd Year'
-                  ? ['All Semesters', 'Semester 3', 'Semester 4']
-                  : ['All Semesters', 'Semester 5', 'Semester 6']);
+                  ? ['Semester 3', 'Semester 4']
+                  : ['Semester 5', 'Semester 6']);
           _availableSemesters = defaultSemList;
           if (_selectedSemester == null || !_availableSemesters.contains(_selectedSemester)) {
-            _selectedSemester = defaultSemList[1];
+            _selectedSemester = defaultSemList.first;
           }
         });
       }
@@ -1056,18 +1063,16 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     List<String> semesters = _availableSemesters;
     if (semesters.isEmpty) {
       if (_selectedYear == '1st Year') {
-        semesters = ['All Semesters', 'Semester 1', 'Semester 2'];
+        semesters = ['Semester 1', 'Semester 2'];
       } else if (_selectedYear == '2nd Year') {
-        semesters = ['All Semesters', 'Semester 3', 'Semester 4'];
+        semesters = ['Semester 3', 'Semester 4'];
       } else {
-        semesters = ['All Semesters', 'Semester 5', 'Semester 6'];
+        semesters = ['Semester 5', 'Semester 6'];
       }
     }
 
     if (_selectedSemester == null || !semesters.contains(_selectedSemester)) {
-      _selectedSemester = semesters.contains('Semester 1') 
-          ? 'Semester 1' 
-          : (semesters.length > 1 ? semesters[1] : semesters.first);
+      _selectedSemester = semesters.first;
     }
 
     return SingleChildScrollView(
