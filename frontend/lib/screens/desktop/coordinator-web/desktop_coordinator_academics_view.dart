@@ -64,22 +64,22 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       final Set<String> sems = {};
       
       if (_selectedYear == '1st Year') {
-        sems.addAll(['Semester 1', 'Semester 2']);
+        sems.add('Semester 1');
       } else if (_selectedYear == '2nd Year') {
         sems.addAll(['Semester 3', 'Semester 4']);
       } else if (_selectedYear == '3rd Year') {
-        sems.addAll(['Semester 5', 'Semester 6']);
+        sems.add('Semester 5');
       }
 
       for (var c in branchCourses) {
         final sem = c['semester']?.toString() ?? '';
-        if (sem.isNotEmpty) {
+        if (sem.isNotEmpty && sem != 'Semester 2' && sem != 'Semester 6') {
           final semNum = int.tryParse(sem.replaceAll(RegExp(r'[^0-9]'), '')) ?? 0;
-          if (_selectedYear == '1st Year' && (semNum == 1 || semNum == 2)) {
+          if (_selectedYear == '1st Year' && semNum == 1) {
             sems.add(sem);
           } else if (_selectedYear == '2nd Year' && (semNum == 3 || semNum == 4)) {
             sems.add(sem);
-          } else if (_selectedYear == '3rd Year' && (semNum == 5 || semNum == 6)) {
+          } else if (_selectedYear == '3rd Year' && semNum == 5) {
             sems.add(sem);
           }
         }
@@ -107,10 +107,10 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       if (mounted) {
         setState(() {
           final defaultSemList = _selectedYear == '1st Year'
-              ? ['Semester 1', 'Semester 2']
+              ? ['Semester 1']
               : (_selectedYear == '2nd Year'
                   ? ['Semester 3', 'Semester 4']
-                  : ['Semester 5', 'Semester 6']);
+                  : ['Semester 5']);
           _availableSemesters = defaultSemList;
           if (_selectedSemester == null || !_availableSemesters.contains(_selectedSemester)) {
             _selectedSemester = defaultSemList.first;
@@ -1063,11 +1063,11 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     List<String> semesters = _availableSemesters;
     if (semesters.isEmpty) {
       if (_selectedYear == '1st Year') {
-        semesters = ['Semester 1', 'Semester 2'];
+        semesters = ['Semester 1'];
       } else if (_selectedYear == '2nd Year') {
         semesters = ['Semester 3', 'Semester 4'];
       } else {
-        semesters = ['Semester 5', 'Semester 6'];
+        semesters = ['Semester 5'];
       }
     }
 

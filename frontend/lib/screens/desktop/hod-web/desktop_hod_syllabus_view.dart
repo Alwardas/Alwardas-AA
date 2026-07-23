@@ -427,11 +427,11 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
   Widget _buildSemesterSelectionRow() {
     List<String> semesters;
     if (_selectedYear == '1st Year') {
-      semesters = ['Semester 1', 'Semester 2'];
+      semesters = ['Semester 1'];
     } else if (_selectedYear == '2nd Year') {
       semesters = ['Semester 3', 'Semester 4'];
     } else {
-      semesters = ['Semester 5', 'Semester 6'];
+      semesters = ['Semester 5'];
     }
 
     if (_selectedSemester == null || !semesters.contains(_selectedSemester)) {
