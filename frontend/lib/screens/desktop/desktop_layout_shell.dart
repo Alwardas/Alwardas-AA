@@ -246,7 +246,7 @@ class DesktopLayoutShell extends ConsumerWidget {
                       Row(
                         children: [
                           Text(
-                            'Alwardas Academics & Administration',
+                            'A3 - Campus',
                             style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
                           ),
                           SizedBox(width: 8),
@@ -284,7 +284,7 @@ class DesktopLayoutShell extends ConsumerWidget {
                                   child: TextField(
                                     style: TextStyle(color: context.textPrimary, fontSize: 12),
                                     decoration: InputDecoration(
-                                      hintText: 'Search ERP...',
+                                      hintText: 'Search A3 Campus...',
                                       hintStyle: GoogleFonts.poppins(color: context.textMuted2),
                                       border: InputBorder.none,
                                       isDense: true,
