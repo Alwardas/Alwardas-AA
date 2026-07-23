@@ -57,9 +57,11 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       final allCourses = await CoursesData.getAllCourses();
       final normalizedBranch = CoursesData.normalizeBranch(_selectedBranch!);
       
+      final targetReg = _selectedCourseId.replaceAll('-', '').toUpperCase();
       final branchCourses = allCourses.where((c) {
         final b = c['branch']?.toString() ?? '';
-        return CoursesData.normalizeBranch(b) == normalizedBranch;
+        final reg = c['regulation']?.toString().toUpperCase() ?? '';
+        return CoursesData.normalizeBranch(b) == normalizedBranch && reg == targetReg;
       }).toList();
 
       final Set<String> sems = {};
@@ -270,6 +272,24 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     _fetchSectionSubjectsProgress();
   }
 
+  Future<Map<String, dynamic>> _fetchApiTopicsMapForSubject(String code, String cleanSection) async {
+    Map<String, dynamic> apiTopicsMap = {};
+    try {
+      final url = '${ApiConstants.baseUrl}/api/faculty/hod-lesson-topics?subject_id=${Uri.encodeComponent(code)}&section=${Uri.encodeComponent(cleanSection)}&branch=${Uri.encodeComponent(_selectedBranch!)}';
+      final res = await ApiConfig.get(url);
+      if (res.success && res.data != null && res.data is List) {
+        for (var t in res.data) {
+          if (t['id'] != null) {
+            apiTopicsMap[t['id'].toString().toLowerCase()] = t;
+          }
+        }
+      }
+    } catch (e) {
+      debugPrint("Error fetching API topics map: $e");
+    }
+    return apiTopicsMap;
+  }
+
   Future<void> _fetchSectionSubjectsProgress() async {
     if (_selectedBranch == null || _selectedSection == null || _selectedSemester == null) return;
     setState(() => _isLoadingDetails = true);
@@ -284,11 +304,13 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       final allCourses = await CoursesData.getAllCourses();
       final normBranch = CoursesData.normalizeBranch(_selectedBranch!);
       final normSem = CoursesData.normalizeSemester(_selectedSemester!);
+      final targetReg = _selectedCourseId.replaceAll('-', '').toUpperCase();
 
       final matchedCourses = allCourses.where((c) {
+        final reg = (c['regulation'] ?? '').toString().toUpperCase();
         final b = CoursesData.normalizeBranch(c['branch'] ?? '');
         final s = CoursesData.normalizeSemester(c['semester'] ?? '');
-        return b == normBranch && s == normSem;
+        return reg == targetReg && b == normBranch && s == normSem;
       }).toList();
 
       List<Map<String, dynamic>> enrichedSubjects = [];
@@ -297,7 +319,13 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
         final String code = c['code']?.toString() ?? '';
         final String name = c['name']?.toString() ?? 'Subject';
 
-        final List<Map<String, dynamic>> origTopics = await CoursesData.getCurriculumTopicsForSubject(code);
+        // Fetch real API topic progress map from backend DB (dates, completed, remarks)
+        final Map<String, dynamic> apiTopicsMap = await _fetchApiTopicsMapForSubject(code, cleanSection);
+
+        final List<Map<String, dynamic>> origTopics = await CoursesData.getCurriculumTopicsForSubject(
+          code,
+          apiTopicsMap: apiTopicsMap,
+        );
 
         final apiMatch = apiSubjects.firstWhere(
           (a) => (a['subjectName'] ?? '').toString().toLowerCase().contains(name.toLowerCase()) ||
@@ -305,9 +333,10 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           orElse: () => null,
         );
 
+        final int doneCount = origTopics.where((t) => t['completed'] == true).length;
         final int prog = apiMatch != null
-            ? (apiMatch['completionPercentage'] ?? apiMatch['progress'] ?? 70).toInt()
-            : (origTopics.isNotEmpty ? ((origTopics.where((t) => t['completed'] == true).length / origTopics.length) * 100).round() : 70);
+            ? (apiMatch['completionPercentage'] ?? apiMatch['progress'] ?? 0).toInt()
+            : (origTopics.isNotEmpty ? ((doneCount / origTopics.length) * 100).round() : 0);
 
         final String faculty = apiMatch != null
             ? (apiMatch['facultyName'] ?? 'Assigned Faculty')
@@ -319,7 +348,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           'facultyName': faculty,
           'completionPercentage': prog,
           'progress': prog,
-          'status': prog >= 75 ? 'Completed' : 'In Progress',
+          'status': prog >= 75 ? 'Completed' : (prog > 0 ? 'In Progress' : 'Pending'),
           'topics': origTopics.isNotEmpty ? origTopics : _getFallbackTopicsForSubject(name),
         });
       }
@@ -356,35 +385,27 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     return [
       {
         'topicName': 'Unit 1: Fundamental Concepts & Theory',
-        'assignedDate': '2026-01-10',
-        'completed': true,
-        'completedDate': '2026-02-05',
-        'scheduleDate': '2026-02-05',
-        'comments': 'Unit 1 completed ahead of schedule. All core concepts covered.'
+        'assignedDate': 'Not Assigned',
+        'completed': false,
+        'completedDate': 'Not Completed',
+        'scheduleDate': 'Not Scheduled',
+        'comments': 'No faculty remarks logged.'
       },
       {
         'topicName': 'Unit 2: Practical Applications & Core Analysis',
-        'assignedDate': '2026-02-06',
-        'completed': true,
-        'completedDate': '2026-02-28',
-        'scheduleDate': '2026-02-28',
-        'comments': 'Practical problem solving and laboratory demonstrations completed.'
+        'assignedDate': 'Not Assigned',
+        'completed': false,
+        'completedDate': 'Not Completed',
+        'scheduleDate': 'Not Scheduled',
+        'comments': 'No faculty remarks logged.'
       },
       {
-        'topicName': 'Unit 3: Advanced Architectures & Systems Design',
-        'assignedDate': '2026-03-01',
+        'topicName': 'Unit 3: Advanced Systems Design',
+        'assignedDate': 'Not Assigned',
         'completed': false,
-        'completedDate': null,
-        'scheduleDate': '2026-03-25',
-        'comments': 'Ongoing unit with 65% syllabus covered.'
-      },
-      {
-        'topicName': 'Unit 4: Industry Practicum & Review',
-        'assignedDate': '2026-03-26',
-        'completed': false,
-        'completedDate': null,
-        'scheduleDate': '2026-04-10',
-        'comments': 'Scheduled for next module block.'
+        'completedDate': 'Not Completed',
+        'scheduleDate': 'Not Scheduled',
+        'comments': 'No faculty remarks logged.'
       },
     ];
   }
@@ -1678,10 +1699,8 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                             final t = entry.value;
                             final isDone = t['completed'] == true;
                             
-                            final String assignedDate = (t['assignedDate'] ?? t['scheduleDate'] ?? '2026-01-${10 + (idx * 5)}').toString();
-                            final String completedDate = isDone 
-                                ? (t['completedDate'] ?? '2026-02-${10 + (idx * 5)}').toString()
-                                : (t['scheduleDate'] != null ? 'Sched: ${t['scheduleDate']}' : 'Pending');
+                            final String assignedDate = (t['assignedDate'] ?? t['scheduleDate'] ?? 'Not Assigned').toString();
+                            final String completedDate = (t['completedDate'] ?? (isDone ? 'Completed' : (t['scheduleDate'] != null && t['scheduleDate'] != 'Not Scheduled' ? 'Sched: ${t['scheduleDate']}' : 'Not Completed'))).toString();
                             final String comments = (t['comments'] ?? 'No faculty remarks logged.').toString();
 
                             return TableRow(

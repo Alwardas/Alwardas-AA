@@ -107,8 +107,11 @@ class CoursesData {
     return null;
   }
 
-  /// Retrieves formatted original curriculum topics for a given subject code
-  static Future<List<Map<String, dynamic>>> getCurriculumTopicsForSubject(String subjectCode) async {
+  /// Retrieves formatted original curriculum topics for a given subject code, merging real API schedule/completion data
+  static Future<List<Map<String, dynamic>>> getCurriculumTopicsForSubject(
+    String subjectCode, {
+    Map<String, dynamic>? apiTopicsMap,
+  }) async {
     final details = await getSubjectDetails(subjectCode);
     if (details == null || details['units'] == null || details['units'] is! List) {
       return [];
@@ -126,31 +129,40 @@ class CoursesData {
       if (tList.isNotEmpty) {
         for (var t in tList) {
           globalTopicIdx++;
-          final bool isDone = globalTopicIdx <= (tList.length * 0.7).round();
+          final String topicId = (t['id'] ?? '').toString().toLowerCase();
+          final apiData = (apiTopicsMap != null && topicId.isNotEmpty) ? apiTopicsMap[topicId] : null;
+
           final String sno = t['sno']?.toString() ?? '$unitNo.$globalTopicIdx';
           final String topicText = t['topic']?.toString() ?? unitTitle;
           final int period = (t['period'] ?? 1).toInt();
           final String type = t['type']?.toString() ?? 'theory';
 
+          final bool isDone = apiData?['completed'] == true;
+          final String? schedDate = apiData?['scheduleDate']?.toString();
+          final String? compDate = apiData?['completedDate']?.toString();
+          final String? remarks = apiData?['comments']?.toString() ?? apiData?['remarks']?.toString();
+
           topics.add({
+            'id': t['id'],
             'unitNo': unitNo,
             'unitTitle': unitTitle,
             'sno': sno,
             'topicName': 'Unit $unitNo ($sno): $topicText',
             'period': period,
             'type': type,
-            'assignedDate': '2026-01-${(10 + (globalTopicIdx % 18)).toString().padLeft(2, '0')}',
+            'assignedDate': (schedDate != null && schedDate.isNotEmpty) ? schedDate : 'Not Assigned',
             'completed': isDone,
-            'completedDate': isDone ? '2026-02-${(5 + (globalTopicIdx % 20)).toString().padLeft(2, '0')}' : null,
-            'scheduleDate': '2026-03-${(10 + (globalTopicIdx % 15)).toString().padLeft(2, '0')}',
-            'comments': isDone
-                ? 'Unit $unitNo topic completed per curriculum schedule. Student practical work verified.'
-                : 'Scheduled for upcoming classroom lecture and lab session.',
+            'completedDate': isDone 
+                ? ((compDate != null && compDate.isNotEmpty) ? compDate : (schedDate != null ? 'Completed ($schedDate)' : 'Completed')) 
+                : ((schedDate != null && schedDate.isNotEmpty) ? 'Sched: $schedDate' : 'Not Completed'),
+            'scheduleDate': schedDate ?? 'Not Scheduled',
+            'comments': (remarks != null && remarks.isNotEmpty) 
+                ? remarks 
+                : (isDone ? 'Topic completed per curriculum schedule.' : 'No faculty remarks logged.'),
           });
         }
       } else {
         globalTopicIdx++;
-        final bool isDone = unitNo <= 2;
         topics.add({
           'unitNo': unitNo,
           'unitTitle': unitTitle,
@@ -158,13 +170,11 @@ class CoursesData {
           'topicName': 'Unit $unitNo: $unitTitle',
           'period': 10,
           'type': 'theory',
-          'assignedDate': '2026-01-${(10 + (unitNo * 4)).toString().padLeft(2, '0')}',
-          'completed': isDone,
-          'completedDate': isDone ? '2026-02-${(5 + (unitNo * 4)).toString().padLeft(2, '0')}' : null,
-          'scheduleDate': '2026-03-${(10 + (unitNo * 4)).toString().padLeft(2, '0')}',
-          'comments': isDone
-              ? 'Unit $unitNo syllabus completed. Practical experiments verified.'
-              : 'Scheduled for upcoming module sessions.',
+          'assignedDate': 'Not Assigned',
+          'completed': false,
+          'completedDate': 'Not Completed',
+          'scheduleDate': 'Not Scheduled',
+          'comments': 'No faculty remarks logged.',
         });
       }
     }
