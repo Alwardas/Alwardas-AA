@@ -95,25 +95,29 @@ class DesktopLayoutShell extends ConsumerWidget {
                         child: Icon(Icons.school, color: Colors.blueAccent, size: 24),
                       ),
                       SizedBox(width: 12),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Alwardas ERP',
-                            style: GoogleFonts.poppins(
-                              color: context.textPrimary,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Alwardas Academics & Administration',
+                              style: GoogleFonts.poppins(
+                                color: context.textPrimary,
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
                             ),
-                          ),
-                          Text(
-                            'Desktop Workspace',
-                            style: GoogleFonts.poppins(
-                              color: context.textMuted,
-                              fontSize: 11,
+                            Text(
+                              'Desktop Workspace',
+                              style: GoogleFonts.poppins(
+                                color: context.textMuted,
+                                fontSize: 11,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -242,7 +246,7 @@ class DesktopLayoutShell extends ConsumerWidget {
                       Row(
                         children: [
                           Text(
-                            'ERP System',
+                            'Alwardas Academics & Administration',
                             style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
                           ),
                           SizedBox(width: 8),
