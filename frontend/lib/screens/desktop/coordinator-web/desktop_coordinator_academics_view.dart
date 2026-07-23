@@ -1510,6 +1510,16 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       },
     ];
 
+    // Group topics by Unit
+    final Map<String, List<Map<String, dynamic>>> groupedUnits = {};
+    for (var t in topics) {
+      final mapItem = t is Map<String, dynamic> ? t : Map<String, dynamic>.from(t);
+      final int uNo = mapItem['unitNo'] ?? 1;
+      final String uTitle = mapItem['unitTitle'] ?? 'Unit $uNo';
+      final String uKey = 'UNIT $uNo: $uTitle';
+      groupedUnits.putIfAbsent(uKey, () => []).add(mapItem);
+    }
+
     return Container(
       color: context.bgColor,
       padding: const EdgeInsets.all(24),
@@ -1630,7 +1640,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           ),
           const SizedBox(height: 16),
 
-          // Full Lesson Plan Units Table
+          // Full Lesson Plan Units Table grouped by Unit Side Headings
           Expanded(
             child: Container(
               decoration: BoxDecoration(
@@ -1650,7 +1660,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                         style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        '${topics.length} Units / Topics Tracked',
+                        '${groupedUnits.length} Units / ${topics.length} Topics Tracked',
                         style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
                       ),
                     ],
@@ -1658,126 +1668,180 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   const SizedBox(height: 14),
                   Expanded(
                     child: SingleChildScrollView(
-                      child: Table(
-                        columnWidths: const {
-                          0: FlexColumnWidth(3.5),
-                          1: FlexColumnWidth(1.8),
-                          2: FlexColumnWidth(1.8),
-                          3: FlexColumnWidth(1.5),
-                          4: FlexColumnWidth(1.2),
-                        },
-                        children: [
-                          TableRow(
-                            decoration: BoxDecoration(
-                              border: Border(bottom: BorderSide(color: context.borderColor, width: 1.5)),
-                            ),
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10),
-                                child: Text('Topic / Unit Title', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12, fontWeight: FontWeight.bold)),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10),
-                                child: Text('Assigned Date', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12, fontWeight: FontWeight.bold)),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10),
-                                child: Text('Completed Date', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12, fontWeight: FontWeight.bold)),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10),
-                                child: Text('Status', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12, fontWeight: FontWeight.bold)),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10),
-                                child: Text('Comments', textAlign: TextAlign.center, style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12, fontWeight: FontWeight.bold)),
-                              ),
-                            ],
-                          ),
-                          ...topics.asMap().entries.map((entry) {
-                            final int idx = entry.key;
-                            final t = entry.value;
-                            final isDone = t['completed'] == true;
-                            
-                            final String assignedDate = (t['assignedDate'] ?? t['scheduleDate'] ?? 'Not Assigned').toString();
-                            final String completedDate = (t['completedDate'] ?? (isDone ? 'Completed' : (t['scheduleDate'] != null && t['scheduleDate'] != 'Not Scheduled' ? 'Sched: ${t['scheduleDate']}' : 'Not Completed'))).toString();
-                            final String comments = (t['comments'] ?? 'No faculty remarks logged.').toString();
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: groupedUnits.entries.map((unitEntry) {
+                          final String unitHeader = unitEntry.key;
+                          final List<Map<String, dynamic>> unitTopics = unitEntry.value;
 
-                            return TableRow(
-                              decoration: BoxDecoration(
-                                border: Border(bottom: BorderSide(color: context.borderColor.withOpacity(0.5))),
-                              ),
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 12),
-                                  child: Text(
-                                    t['topicName'] ?? 'Unit ${idx + 1}',
-                                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.w500),
-                                  ),
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Unit Side Heading Banner
+                              Container(
+                                width: double.infinity,
+                                margin: const EdgeInsets.only(top: 14, bottom: 10),
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                                decoration: BoxDecoration(
+                                  color: Colors.blueAccent.withOpacity(0.08),
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: const Border(left: BorderSide(color: Colors.blueAccent, width: 4)),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 12),
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.calendar_today_outlined, size: 13, color: context.textMuted),
-                                      const SizedBox(width: 6),
-                                      Text(assignedDate, style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12)),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 12),
-                                  child: Row(
-                                    children: [
-                                      Icon(isDone ? Icons.check_circle_outline : Icons.schedule, size: 13, color: isDone ? Colors.greenAccent : Colors.orangeAccent),
-                                      const SizedBox(width: 6),
-                                      Text(completedDate, style: GoogleFonts.poppins(color: isDone ? Colors.greenAccent : context.textSecondary, fontSize: 12)),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 12),
-                                  child: UnconstrainedBox(
-                                    alignment: Alignment.centerLeft,
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                                      decoration: BoxDecoration(
-                                        color: isDone ? Colors.greenAccent.withOpacity(0.15) : Colors.orangeAccent.withOpacity(0.15),
-                                        borderRadius: BorderRadius.circular(6),
-                                      ),
+                                child: Row(
+                                  children: [
+                                    const Icon(Icons.bookmark_outline, size: 18, color: Colors.blueAccent),
+                                    const SizedBox(width: 10),
+                                    Expanded(
                                       child: Text(
-                                        isDone ? 'Completed' : 'In Progress',
+                                        unitHeader.toUpperCase(),
                                         style: GoogleFonts.poppins(
-                                          color: isDone ? Colors.greenAccent : Colors.orangeAccent,
-                                          fontSize: 11,
+                                          color: Colors.blueAccent,
+                                          fontSize: 13,
                                           fontWeight: FontWeight.bold,
+                                          letterSpacing: 0.4,
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 6),
-                                  child: Center(
-                                    child: IconButton(
-                                      icon: const Icon(Icons.comment_outlined, size: 20, color: Colors.blueAccent),
-                                      tooltip: 'View Faculty Remarks',
-                                      onPressed: () => _showTopicCommentModal(
-                                        context,
-                                        t['topicName'] ?? 'Unit ${idx + 1}',
-                                        comments,
-                                        faculty,
-                                        isDone,
-                                        assignedDate,
-                                        completedDate,
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                                      decoration: BoxDecoration(
+                                        color: Colors.blueAccent.withOpacity(0.15),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Text(
+                                        '${unitTopics.length} Topics',
+                                        style: GoogleFonts.poppins(color: Colors.blueAccent, fontSize: 11, fontWeight: FontWeight.w600),
                                       ),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                              ],
-                            );
-                          }).toList(),
-                        ],
+                              ),
+
+                              // Unit Topics Table
+                              Table(
+                                columnWidths: const {
+                                  0: FlexColumnWidth(3.5),
+                                  1: FlexColumnWidth(1.8),
+                                  2: FlexColumnWidth(1.8),
+                                  3: FlexColumnWidth(1.5),
+                                  4: FlexColumnWidth(1.2),
+                                },
+                                children: [
+                                  TableRow(
+                                    decoration: BoxDecoration(
+                                      border: Border(bottom: BorderSide(color: context.borderColor, width: 1.5)),
+                                    ),
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 8),
+                                        child: Text('Topic / Lesson Title', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold)),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 8),
+                                        child: Text('Assigned Date', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold)),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 8),
+                                        child: Text('Completed Date', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold)),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 8),
+                                        child: Text('Status', style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold)),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 8),
+                                        child: Text('Comments', textAlign: TextAlign.center, style: GoogleFonts.poppins(color: context.textMuted, fontSize: 11, fontWeight: FontWeight.bold)),
+                                      ),
+                                    ],
+                                  ),
+                                  ...unitTopics.asMap().entries.map((entry) {
+                                    final int idx = entry.key;
+                                    final t = entry.value;
+                                    final isDone = t['completed'] == true;
+
+                                    final String assignedDate = (t['assignedDate'] ?? t['scheduleDate'] ?? 'Not Assigned').toString();
+                                    final String completedDate = (t['completedDate'] ?? (isDone ? 'Completed' : (t['scheduleDate'] != null && t['scheduleDate'] != 'Not Scheduled' ? 'Sched: ${t['scheduleDate']}' : 'Not Completed'))).toString();
+                                    final String comments = (t['comments'] ?? 'No faculty remarks logged.').toString();
+
+                                    return TableRow(
+                                      decoration: BoxDecoration(
+                                        border: Border(bottom: BorderSide(color: context.borderColor.withOpacity(0.5))),
+                                      ),
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 10),
+                                          child: Text(
+                                            t['topicName'] ?? 'Topic ${idx + 1}',
+                                            style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12, fontWeight: FontWeight.w500),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 10),
+                                          child: Row(
+                                            children: [
+                                              Icon(Icons.calendar_today_outlined, size: 13, color: context.textMuted),
+                                              const SizedBox(width: 6),
+                                              Text(assignedDate, style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 11)),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 10),
+                                          child: Row(
+                                            children: [
+                                              Icon(isDone ? Icons.check_circle_outline : Icons.schedule, size: 13, color: isDone ? Colors.greenAccent : Colors.orangeAccent),
+                                              const SizedBox(width: 6),
+                                              Text(completedDate, style: GoogleFonts.poppins(color: isDone ? Colors.greenAccent : context.textSecondary, fontSize: 11)),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 10),
+                                          child: UnconstrainedBox(
+                                            alignment: Alignment.centerLeft,
+                                            child: Container(
+                                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                              decoration: BoxDecoration(
+                                                color: isDone ? Colors.greenAccent.withOpacity(0.15) : Colors.orangeAccent.withOpacity(0.15),
+                                                borderRadius: BorderRadius.circular(6),
+                                              ),
+                                              child: Text(
+                                                isDone ? 'Completed' : 'In Progress',
+                                                style: GoogleFonts.poppins(
+                                                  color: isDone ? Colors.greenAccent : Colors.orangeAccent,
+                                                  fontSize: 10,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 4),
+                                          child: Center(
+                                            child: IconButton(
+                                              icon: const Icon(Icons.comment_outlined, size: 18, color: Colors.blueAccent),
+                                              tooltip: 'View Faculty Remarks',
+                                              onPressed: () => _showTopicCommentModal(
+                                                context,
+                                                t['topicName'] ?? 'Topic ${idx + 1}',
+                                                comments,
+                                                faculty,
+                                                isDone,
+                                                assignedDate,
+                                                completedDate,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    );
+                                  }).toList(),
+                                ],
+                              ),
+                            ],
+                          );
+                        }).toList(),
                       ),
                     ),
                   ),
