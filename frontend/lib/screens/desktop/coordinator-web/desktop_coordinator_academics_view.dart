@@ -5,6 +5,7 @@ import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
 import '../../../widgets/desktop_skeleton_loading.dart';
 import '../../../data/courses_data.dart';
+import '../../../services/pdf_service.dart';
 
 class DesktopCoordinatorAcademicsView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -1433,7 +1434,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   ),
                   const SizedBox(width: 16),
                   OutlinedButton.icon(
-                    onPressed: () => _downloadLessonPlan(subjectName),
+                    onPressed: () => _downloadLessonPlan(subjectName, sub),
                     icon: const Icon(Icons.file_download_outlined, size: 15, color: Colors.blueAccent),
                     label: Text('Download PDF', style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.w600, color: Colors.blueAccent)),
                     style: OutlinedButton.styleFrom(
@@ -1935,19 +1936,27 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     );
   }
 
-  void _downloadLessonPlan(String subjectName) {
+  Future<void> _downloadLessonPlan(String subjectName, [Map<String, dynamic>? subMap]) async {
+    final sub = subMap ?? _selectedSubjectDetail;
+    final String subjectCode = sub != null ? (sub['subjectCode'] ?? sub['code'] ?? '') : '';
+    final String facultyName = sub != null ? (sub['facultyName'] ?? 'Assigned Faculty') : 'Assigned Faculty';
+    final int progress = sub != null ? (sub['completionPercentage'] ?? sub['progress'] ?? 0).toInt() : 0;
+    final String status = sub != null ? (sub['status'] ?? 'In Progress') : 'In Progress';
+    final cleanSection = _selectedSection?.replaceAll('Section ', '').trim() ?? 'A';
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         backgroundColor: context.cardColor,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: Colors.blueAccent)),
+        duration: const Duration(seconds: 2),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: const BorderSide(color: Colors.blueAccent)),
         content: Row(
           children: [
-            const Icon(Icons.file_download_done, color: Colors.greenAccent),
+            const SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.blueAccent)),
             const SizedBox(width: 12),
             Expanded(
               child: Text(
-                'Downloading Official Lesson Plan & Topic Schedule for "$subjectName"...',
+                'Generating & Downloading Lesson Plan PDF for "$subjectName"...',
                 style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12),
               ),
             ),
@@ -1955,5 +1964,21 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
         ),
       ),
     );
+
+    try {
+      await PdfService.generateLessonPlanPdf(
+        context: context,
+        subjectId: subjectCode.isNotEmpty ? subjectCode : subjectName,
+        subjectName: subjectName,
+        status: status,
+        percentage: progress,
+        facultyName: facultyName,
+        academicYear: "2025-26",
+        branch: _selectedBranch ?? 'Computer Engineering',
+        section: cleanSection,
+      );
+    } catch (e) {
+      debugPrint("Error generating PDF: $e");
+    }
   }
 }
