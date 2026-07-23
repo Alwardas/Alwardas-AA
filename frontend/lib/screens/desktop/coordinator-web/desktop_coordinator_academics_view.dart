@@ -37,13 +37,6 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
   String _academicsSearchQuery = '';
   List<String> _availableSemesters = [];
 
-  // Institution metrics
-  int _avgProgress = 0;
-  String _highestBranch = 'N/A';
-  int _highestProgress = 0;
-  String _lowestBranch = 'N/A';
-  int _lowestProgress = 100;
-
   @override
   void initState() {
     super.initState();
@@ -134,7 +127,6 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
             if (_branches.isNotEmpty && _selectedBranch == null) {
               _selectedBranch = _branches[0]['branch'];
             }
-            _calculateMetrics();
             _isLoadingOverall = false;
           });
           
@@ -204,40 +196,11 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       if (_branches.isNotEmpty && _selectedBranch == null) {
         _selectedBranch = _branches[0]['branch'];
       }
-      _calculateMetrics();
       _isLoadingOverall = false;
     });
     if (_activeDetailBranch != null) {
       _fetchDetails();
     }
-  }
-
-  void _calculateMetrics() {
-    if (_branches.isEmpty) return;
-    int total = 0;
-    int maxP = -1;
-    int minP = 101;
-    String maxB = 'N/A';
-    String minB = 'N/A';
-
-    for (var b in _branches) {
-      final int p = (b['overallPercentage'] ?? 0).toInt();
-      final String name = b['branch'] ?? 'Unknown';
-      total += p;
-      if (p > maxP) {
-        maxP = p;
-        maxB = name;
-      }
-      if (p < minP) {
-        minP = p;
-        minB = name;
-      }
-    }
-    _avgProgress = (total / _branches.length).round();
-    _highestBranch = maxB;
-    _highestProgress = maxP;
-    _lowestBranch = minB;
-    _lowestProgress = minP;
   }
 
   Future<void> _fetchDetails() async {
@@ -457,6 +420,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Header
+          // Header: Academics Dashboard + Search Bar & Sync Data
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -473,132 +437,70 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   ),
                 ],
               ),
-              ElevatedButton.icon(
-                onPressed: _fetchOverallProgress,
-                icon: const Icon(Icons.refresh, size: 16),
-                label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: context.cardColor,
-                  foregroundColor: Colors.blueAccent,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    side: BorderSide(color: context.borderColor),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 280,
+                    height: 38,
+                    child: TextField(
+                      controller: _deptSearchController,
+                      onChanged: (val) {
+                        setState(() {
+                          _deptSearchQuery = val;
+                        });
+                      },
+                      style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12),
+                      decoration: InputDecoration(
+                        hintText: 'Search department...',
+                        hintStyle: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
+                        prefixIcon: Icon(Icons.search, size: 16, color: context.textMuted),
+                        suffixIcon: _deptSearchQuery.isNotEmpty
+                            ? IconButton(
+                                icon: Icon(Icons.clear, size: 14, color: context.textMuted),
+                                onPressed: () {
+                                  _deptSearchController.clear();
+                                  setState(() => _deptSearchQuery = '');
+                                },
+                              )
+                            : null,
+                        filled: true,
+                        fillColor: context.cardColor,
+                        contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide(color: context.borderColor),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide(color: context.borderColor),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: const BorderSide(color: Colors.blueAccent),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-
-          // Institution KPI Stats Row
-          Row(
-            children: [
-              Expanded(
-                child: _buildMetricCard(
-                  'Average Progress',
-                  '$_avgProgress%',
-                  'Overall syllabus completion',
-                  Icons.auto_graph,
-                  Colors.blueAccent,
-                ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: _buildMetricCard(
-                  'Highest Progress',
-                  '$_highestProgress%',
-                  _highestBranch,
-                  Icons.trending_up,
-                  Colors.greenAccent,
-                ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: _buildMetricCard(
-                  'Lowest Progress',
-                  '$_lowestProgress%',
-                  _lowestBranch,
-                  Icons.trending_down,
-                  Colors.orangeAccent,
-                ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: _buildMetricCard(
-                  'Departments',
-                  '${_branches.length}',
-                  'Actively tracked departments',
-                  Icons.business,
-                  Colors.purpleAccent,
-                ),
+                  const SizedBox(width: 12),
+                  ElevatedButton.icon(
+                    onPressed: _fetchOverallProgress,
+                    icon: const Icon(Icons.refresh, size: 16),
+                    label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: context.cardColor,
+                      foregroundColor: Colors.blueAccent,
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: BorderSide(color: context.borderColor),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
           const SizedBox(height: 20),
-
-          // Section Title: Our Departments + Dynamic Search
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Our Departments',
-                    style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'Select a department to access lesson plans, topic completion dates, and faculty remarks',
-                    style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 280,
-                height: 38,
-                child: TextField(
-                  controller: _deptSearchController,
-                  onChanged: (val) {
-                    setState(() {
-                      _deptSearchQuery = val;
-                    });
-                  },
-                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12),
-                  decoration: InputDecoration(
-                    hintText: 'Search department...',
-                    hintStyle: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
-                    prefixIcon: Icon(Icons.search, size: 16, color: context.textMuted),
-                    suffixIcon: _deptSearchQuery.isNotEmpty
-                        ? IconButton(
-                            icon: Icon(Icons.clear, size: 14, color: context.textMuted),
-                            onPressed: () {
-                              _deptSearchController.clear();
-                              setState(() => _deptSearchQuery = '');
-                            },
-                          )
-                        : null,
-                    filled: true,
-                    fillColor: context.cardColor,
-                    contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: context.borderColor),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: context.borderColor),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(color: Colors.blueAccent),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 14),
 
           // Circular Gauge Department Cards Grid (Proportioned Frame: 460px max width, 260px fixed height)
           Expanded(
@@ -1573,52 +1475,6 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildMetricCard(String title, String value, String subtext, IconData icon, Color color) {
-    return Container(
-      decoration: BoxDecoration(
-        color: context.cardColor,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: context.borderColor),
-      ),
-      padding: const EdgeInsets.all(16),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Icon(icon, color: color, size: 20),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  value,
-                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  title,
-                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 11, fontWeight: FontWeight.w500),
-                ),
-                Text(
-                  subtext,
-                  style: GoogleFonts.poppins(color: context.textMuted, fontSize: 10),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
