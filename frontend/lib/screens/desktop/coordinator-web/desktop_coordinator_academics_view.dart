@@ -1387,15 +1387,6 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
               padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.blueAccent.withOpacity(0.12),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Icon(Icons.menu_book, color: Colors.blueAccent, size: 22),
-                  ),
-                  const SizedBox(width: 14),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1441,23 +1432,15 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                     ],
                   ),
                   const SizedBox(width: 16),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      setState(() {
-                        _selectedSubjectDetail = sub;
-                      });
-                    },
-                    icon: const Icon(Icons.arrow_forward, size: 14),
-                    label: Text('Open Lesson Plan', style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.w600)),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blueAccent.withOpacity(0.15),
-                      foregroundColor: Colors.blueAccent,
-                      elevation: 0,
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        side: BorderSide(color: Colors.blueAccent.withOpacity(0.3)),
-                      ),
+                  OutlinedButton.icon(
+                    onPressed: () => _downloadLessonPlan(subjectName),
+                    icon: const Icon(Icons.file_download_outlined, size: 15, color: Colors.blueAccent),
+                    label: Text('Download PDF', style: GoogleFonts.poppins(fontSize: 11, fontWeight: FontWeight.w600, color: Colors.blueAccent)),
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.blueAccent.withOpacity(0.08),
+                      side: BorderSide(color: Colors.blueAccent.withOpacity(0.3)),
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                     ),
                   ),
                 ],
@@ -1566,15 +1549,6 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
             ),
             child: Row(
               children: [
-                Container(
-                  padding: const EdgeInsets.all(14),
-                  decoration: BoxDecoration(
-                    color: Colors.blueAccent.withOpacity(0.12),
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(Icons.menu_book, color: Colors.blueAccent, size: 28),
-                ),
-                const SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
