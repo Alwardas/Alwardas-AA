@@ -125,19 +125,20 @@ pub async fn find_lab_names_by_branch(pool: &PgPool, branch: &str) -> Result<Vec
 }
 
 pub async fn find_sections_with_student_fallback(pool: &PgPool, branch: &str, year: &str) -> Result<Vec<String>, sqlx::Error> {
-    let mut sections: Vec<String> = sqlx::query_scalar("SELECT section_name FROM sections WHERE branch = $1 AND year = $2")
-        .bind(branch).bind(year).fetch_all(pool).await?;
+    let variations = crate::models::get_branch_variations(branch);
+    let mut sections: Vec<String> = sqlx::query_scalar("SELECT section_name FROM sections WHERE branch = ANY($1) AND year = $2 ORDER BY section_name ASC")
+        .bind(&variations).bind(year).fetch_all(pool).await?;
 
     if sections.is_empty() {
         let year_pattern = format!("{}%", year.trim());
         sections = sqlx::query_scalar(
-            "SELECT DISTINCT section FROM users WHERE role = 'Student' AND branch = $1 AND year LIKE $2 AND section IS NOT NULL ORDER BY section ASC"
+            "SELECT DISTINCT section FROM users WHERE role = 'Student' AND branch = ANY($1) AND year LIKE $2 AND section IS NOT NULL AND section != '' ORDER BY section ASC"
         )
-        .bind(branch).bind(year_pattern).fetch_all(pool).await?;
+        .bind(&variations).bind(year_pattern).fetch_all(pool).await?;
     }
 
     if sections.is_empty() {
-        sections = vec!["Section A".to_string()];
+        sections = vec!["Section A".to_string(), "Section B".to_string()];
     }
 
     Ok(sections)

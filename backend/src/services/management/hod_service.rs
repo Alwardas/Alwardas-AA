@@ -228,15 +228,19 @@ pub async fn get_year_sections_progress(pool: &PgPool, params: YearSectionsProgr
 pub async fn get_section_subjects_progress(pool: &PgPool, params: SectionSubjectsProgressQuery) -> Result<Vec<SubjectProgressResponse>, StatusCode> {
     let branch_norm = normalize_branch(&params.branch);
     
-    let semester_pattern = params.semester.as_ref().map(|s| {
-        match s.as_str() {
-            "Semester 1" => vec!["Semester 1".to_string(), "1st Year".to_string(), "1st Semester".to_string()],
-            "Semester 2" => vec!["Semester 2".to_string(), "2nd Semester".to_string()],
-            "Semester 3" => vec!["Semester 3".to_string(), "3rd Semester".to_string(), "3rd".to_string()],
-            "Semester 4" => vec!["Semester 4".to_string(), "4th Semester".to_string()],
-            "Semester 5" => vec!["Semester 5".to_string(), "5th Semester".to_string()],
-            "Semester 6" => vec!["Semester 6".to_string(), "6th Semester".to_string()],
-            _ => vec![s.clone()],
+    let semester_pattern = params.semester.as_ref().and_then(|s| {
+        if s == "All Semesters" || s == "All" || s.is_empty() {
+            None
+        } else {
+            match s.as_str() {
+                "Semester 1" => Some(vec!["Semester 1".to_string(), "1st Year".to_string(), "1st Semester".to_string()]),
+                "Semester 2" => Some(vec!["Semester 2".to_string(), "2nd Semester".to_string()]),
+                "Semester 3" => Some(vec!["Semester 3".to_string(), "3rd Semester".to_string(), "3rd".to_string()]),
+                "Semester 4" => Some(vec!["Semester 4".to_string(), "4th Semester".to_string()]),
+                "Semester 5" => Some(vec!["Semester 5".to_string(), "5th Semester".to_string()]),
+                "Semester 6" => Some(vec!["Semester 6".to_string(), "6th Semester".to_string()]),
+                _ => Some(vec![s.clone()]),
+            }
         }
     });
 

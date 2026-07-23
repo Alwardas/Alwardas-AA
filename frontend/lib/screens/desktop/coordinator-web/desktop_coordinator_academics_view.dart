@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 import '../../../theme/theme_extensions.dart';
 import '../../../core/api_config.dart';
 import '../../../core/api_constants.dart';
 import '../../../widgets/desktop_skeleton_loading.dart';
+import '../../../data/courses_data.dart';
 
 class DesktopCoordinatorAcademicsView extends StatefulWidget {
   final Map<String, dynamic> userData;
@@ -30,6 +30,13 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
   List<dynamic> _yearSectionsProgress = [];
   List<dynamic> _sectionSubjectsProgress = [];
 
+  // Dynamic Search Controllers & Available Semesters
+  final TextEditingController _deptSearchController = TextEditingController();
+  final TextEditingController _academicsSearchController = TextEditingController();
+  String _deptSearchQuery = '';
+  String _academicsSearchQuery = '';
+  List<String> _availableSemesters = [];
+
   // Institution metrics
   int _avgProgress = 0;
   String _highestBranch = 'N/A';
@@ -41,6 +48,76 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
   void initState() {
     super.initState();
     _fetchOverallProgress();
+  }
+
+  @override
+  void dispose() {
+    _deptSearchController.dispose();
+    _academicsSearchController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _fetchDynamicSemesters() async {
+    if (_selectedBranch == null) return;
+    try {
+      final allCourses = await CoursesData.getAllCourses();
+      final normalizedBranch = CoursesData.normalizeBranch(_selectedBranch!);
+      
+      final branchCourses = allCourses.where((c) {
+        final b = c['branch']?.toString() ?? '';
+        return CoursesData.normalizeBranch(b) == normalizedBranch;
+      }).toList();
+
+      final Set<String> sems = {};
+      
+      if (_selectedYear == '1st Year') {
+        sems.addAll(['Semester 1', 'Semester 2']);
+      } else if (_selectedYear == '2nd Year') {
+        sems.addAll(['Semester 3', 'Semester 4']);
+      } else if (_selectedYear == '3rd Year') {
+        sems.addAll(['Semester 5', 'Semester 6']);
+      } else {
+        sems.addAll(['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4', 'Semester 5', 'Semester 6']);
+      }
+
+      for (var c in branchCourses) {
+        final sem = c['semester']?.toString() ?? '';
+        if (sem.isNotEmpty) {
+          sems.add(sem);
+        }
+      }
+
+      final List<String> sortedSems = sems.toList()..sort((a, b) {
+        final numA = int.tryParse(a.replaceAll(RegExp(r'[^0-9]'), '')) ?? 0;
+        final numB = int.tryParse(b.replaceAll(RegExp(r'[^0-9]'), '')) ?? 0;
+        if (numA != 0 && numB != 0) return numA.compareTo(numB);
+        return a.compareTo(b);
+      });
+
+      if (mounted) {
+        setState(() {
+          _availableSemesters = ['All Semesters', ...sortedSems];
+          if (_selectedSemester == null || (!_availableSemesters.contains(_selectedSemester) && _selectedSemester != 'All Semesters')) {
+            _selectedSemester = sortedSems.isNotEmpty ? sortedSems.first : 'Semester 1';
+          }
+        });
+      }
+    } catch (e) {
+      debugPrint("Error fetching dynamic semesters: $e");
+      if (mounted) {
+        setState(() {
+          final defaultSemList = _selectedYear == '1st Year'
+              ? ['All Semesters', 'Semester 1', 'Semester 2']
+              : (_selectedYear == '2nd Year'
+                  ? ['All Semesters', 'Semester 3', 'Semester 4']
+                  : ['All Semesters', 'Semester 5', 'Semester 6']);
+          _availableSemesters = defaultSemList;
+          if (_selectedSemester == null || !_availableSemesters.contains(_selectedSemester)) {
+            _selectedSemester = defaultSemList[1];
+          }
+        });
+      }
+    }
   }
 
   Future<void> _fetchOverallProgress() async {
@@ -166,6 +243,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
   Future<void> _fetchDetails() async {
     if (_selectedBranch == null) return;
     setState(() => _isLoadingDetails = true);
+    await _fetchDynamicSemesters();
     
     try {
       final response = await ApiConfig.get(
@@ -175,9 +253,17 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
         setState(() {
           _yearSectionsProgress = response.data is List ? response.data : [];
           if (_yearSectionsProgress.isNotEmpty) {
+            final availableSections = _yearSectionsProgress.map((item) {
+              final raw = (item['sectionName'] ?? item['section'] ?? 'A').toString();
+              return raw.replaceAll('Section ', '').trim();
+            }).where((s) => s.isNotEmpty).toSet().toList();
+            availableSections.sort();
+
+            final cleanCurrent = _selectedSection?.replaceAll('Section ', '').trim();
+            if (cleanCurrent == null || !availableSections.contains(cleanCurrent)) {
+              _selectedSection = availableSections.isNotEmpty ? availableSections.first : 'A';
+            }
             final firstSec = _yearSectionsProgress[0];
-            final rawSec = firstSec['sectionName'] ?? firstSec['section'] ?? 'A';
-            _selectedSection = rawSec.toString().replaceAll('Section ', '').trim();
             _selectedSemester = firstSec['semester'] ?? (_selectedYear == '1st Year' ? 'Semester 1' : (_selectedYear == '2nd Year' ? 'Semester 3' : 'Semester 5'));
           } else {
             _selectedSection = 'A';
@@ -451,7 +537,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
           ),
           const SizedBox(height: 20),
 
-          // Section Title: Our Departments
+          // Section Title: Our Departments + Dynamic Search
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -468,22 +554,82 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   ),
                 ],
               ),
+              SizedBox(
+                width: 280,
+                height: 38,
+                child: TextField(
+                  controller: _deptSearchController,
+                  onChanged: (val) {
+                    setState(() {
+                      _deptSearchQuery = val;
+                    });
+                  },
+                  style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12),
+                  decoration: InputDecoration(
+                    hintText: 'Search department...',
+                    hintStyle: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
+                    prefixIcon: Icon(Icons.search, size: 16, color: context.textMuted),
+                    suffixIcon: _deptSearchQuery.isNotEmpty
+                        ? IconButton(
+                            icon: Icon(Icons.clear, size: 14, color: context.textMuted),
+                            onPressed: () {
+                              _deptSearchController.clear();
+                              setState(() => _deptSearchQuery = '');
+                            },
+                          )
+                        : null,
+                    filled: true,
+                    fillColor: context.cardColor,
+                    contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(color: context.borderColor),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(color: context.borderColor),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(color: Colors.blueAccent),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 14),
 
           // Circular Gauge Department Cards Grid (Proportioned Frame: 460px max width, 260px fixed height)
           Expanded(
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 460,
-                mainAxisExtent: 260, // Fixed 260px height matching uploaded mockup perfectly
-                crossAxisSpacing: 18,
-                mainAxisSpacing: 18,
-              ),
-              itemCount: _branches.length,
-              itemBuilder: (context, index) {
-                final item = _branches[index];
+            child: Builder(
+              builder: (context) {
+                final displayBranches = _branches.where((b) {
+                  if (_deptSearchQuery.trim().isEmpty) return true;
+                  final q = _deptSearchQuery.trim().toLowerCase();
+                  final name = (b['branch'] ?? '').toString().toLowerCase();
+                  return name.contains(q);
+                }).toList();
+
+                if (displayBranches.isEmpty) {
+                  return Center(
+                    child: Text(
+                      'No department found matching "$_deptSearchQuery".',
+                      style: GoogleFonts.poppins(color: context.textMuted, fontSize: 13),
+                    ),
+                  );
+                }
+
+                return GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 460,
+                    mainAxisExtent: 260, // Fixed 260px height matching uploaded mockup perfectly
+                    crossAxisSpacing: 18,
+                    mainAxisSpacing: 18,
+                  ),
+                  itemCount: displayBranches.length,
+                  itemBuilder: (context, index) {
+                    final item = displayBranches[index];
                 final branchName = item['branch'] ?? 'Unknown';
                 final int percentage = (item['overallPercentage'] ?? 0).toInt();
                 final List<dynamic> years = item['years'] ?? [];
@@ -584,10 +730,10 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                                       ),
                                     ),
                                     Text(
-                                      '-',
+                                      statusText,
                                       style: GoogleFonts.poppins(
-                                        color: context.textMuted,
-                                        fontSize: 13,
+                                        color: overallColor,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -684,8 +830,9 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   ),
                 );
               },
-            ),
-          ),
+            );
+          }),
+        ),
         ],
       ),
     );
@@ -746,7 +893,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Compact Header Bar with Back Button
+          // Compact Header Bar with Back Button & Dynamic Search Box
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -790,47 +937,126 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                   ),
                 ],
               ),
-              ElevatedButton.icon(
-                onPressed: _fetchDetails,
-                icon: const Icon(Icons.refresh, size: 14),
-                label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: context.cardColor,
-                  foregroundColor: Colors.blueAccent,
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side: BorderSide(color: context.borderColor),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 320,
+                    height: 38,
+                    child: TextField(
+                      controller: _academicsSearchController,
+                      onChanged: (val) {
+                        setState(() {
+                          _academicsSearchQuery = val;
+                          final q = val.trim().toLowerCase();
+                          for (var sem in _availableSemesters) {
+                            if (sem == 'All Semesters') continue;
+                            final semNum = sem.replaceAll(RegExp(r'[^0-9]'), '');
+                            if (q == sem.toLowerCase() || 
+                                q == 'sem $semNum' || 
+                                q == 'sem-$semNum' || 
+                                q == 's$semNum' || 
+                                (q.length == 1 && q == semNum)) {
+                              _selectedSemester = sem;
+                              break;
+                            }
+                          }
+                        });
+                        _fetchSectionSubjectsProgress();
+                      },
+                      style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 12),
+                      decoration: InputDecoration(
+                        hintText: 'Search semester (e.g. Sem 1), subject, faculty...',
+                        hintStyle: GoogleFonts.poppins(color: context.textMuted, fontSize: 11),
+                        prefixIcon: Icon(Icons.search, size: 16, color: context.textMuted),
+                        suffixIcon: _academicsSearchQuery.isNotEmpty
+                            ? IconButton(
+                                icon: Icon(Icons.clear, size: 14, color: context.textMuted),
+                                onPressed: () {
+                                  _academicsSearchController.clear();
+                                  setState(() => _academicsSearchQuery = '');
+                                  _fetchSectionSubjectsProgress();
+                                },
+                              )
+                            : null,
+                        filled: true,
+                        fillColor: context.cardColor,
+                        contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide(color: context.borderColor),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide(color: context.borderColor),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: const BorderSide(color: Colors.blueAccent),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  const SizedBox(width: 12),
+                  ElevatedButton.icon(
+                    onPressed: _fetchDetails,
+                    icon: const Icon(Icons.refresh, size: 14),
+                    label: Text('Sync Data', style: GoogleFonts.poppins(fontSize: 12)),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: context.cardColor,
+                      foregroundColor: Colors.blueAccent,
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        side: BorderSide(color: context.borderColor),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
           const SizedBox(height: 16),
 
-          // Compact Combined Filter Bar: Years + Sections Pill Selector
+          // Compact Combined Filter Bar: Years, Sections & Semesters Pill Selector
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
               color: context.cardColor,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: context.borderColor),
             ),
-            child: Row(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Year: ',
-                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
+                Row(
+                  children: [
+                    Text(
+                      'Year: ',
+                      style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
+                    ),
+                    _buildCompactYearPills(),
+                    const SizedBox(width: 24),
+                    Container(height: 20, width: 1, color: context.borderColor),
+                    const SizedBox(width: 24),
+                    Text(
+                      'Section: ',
+                      style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
+                    ),
+                    _buildCompactSectionPills(),
+                  ],
                 ),
-                _buildCompactYearPills(),
-                const SizedBox(width: 24),
-                Container(height: 24, width: 1, color: context.borderColor),
-                const SizedBox(width: 24),
-                Text(
-                  'Section: ',
-                  style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
+                const SizedBox(height: 10),
+                Divider(height: 1, color: context.borderColor.withOpacity(0.5)),
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    Text(
+                      'Semester: ',
+                      style: GoogleFonts.poppins(color: context.textSecondary, fontSize: 12, fontWeight: FontWeight.bold),
+                    ),
+                    Expanded(child: _buildCompactSemesterPills()),
+                  ],
                 ),
-                _buildCompactSectionPills(),
               ],
             ),
           ),
@@ -854,7 +1080,7 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Lesson Plans & Topic Progression ($_selectedYear - Section $_selectedSection)',
+                              'Lesson Plans & Topic Progression ($_selectedYear - Section $_selectedSection | ${_selectedSemester ?? ''})',
                               style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold),
                             ),
                             Text(
@@ -895,7 +1121,6 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
               setState(() {
                 _selectedYear = yr;
                 _selectedCourseId = reg;
-                _selectedSemester = yr == '1st Year' ? 'Semester 1' : (yr == '2nd Year' ? 'Semester 3' : 'Semester 5');
               });
               _fetchDetails();
             },
@@ -925,12 +1150,86 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
     );
   }
 
+  Widget _buildCompactSemesterPills() {
+    List<String> semesters = _availableSemesters;
+    if (semesters.isEmpty) {
+      if (_selectedYear == '1st Year') {
+        semesters = ['All Semesters', 'Semester 1', 'Semester 2'];
+      } else if (_selectedYear == '2nd Year') {
+        semesters = ['All Semesters', 'Semester 3', 'Semester 4'];
+      } else {
+        semesters = ['All Semesters', 'Semester 5', 'Semester 6'];
+      }
+    }
+
+    if (_selectedSemester == null || !semesters.contains(_selectedSemester)) {
+      _selectedSemester = semesters.contains('Semester 1') 
+          ? 'Semester 1' 
+          : (semesters.length > 1 ? semesters[1] : semesters.first);
+    }
+
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: semesters.map((sem) {
+          final isSelected = _selectedSemester == sem;
+          return Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  _selectedSemester = sem;
+                });
+                _fetchSectionSubjectsProgress();
+              },
+              borderRadius: BorderRadius.circular(8),
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                decoration: BoxDecoration(
+                  color: isSelected ? Colors.purpleAccent.withOpacity(0.2) : context.bgColor,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: isSelected ? Colors.purpleAccent : context.borderColor,
+                  ),
+                ),
+                child: Text(
+                  sem,
+                  style: GoogleFonts.poppins(
+                    color: isSelected ? Colors.purpleAccent : context.textSecondary,
+                    fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
   Widget _buildCompactSectionPills() {
-    final List<String> sections = ['A', 'B', 'C'];
+    List<String> sections = [];
+    if (_yearSectionsProgress.isNotEmpty) {
+      sections = _yearSectionsProgress.map((item) {
+        final raw = (item['sectionName'] ?? item['section'] ?? 'A').toString();
+        return raw.replaceAll('Section ', '').trim();
+      }).where((s) => s.isNotEmpty).toSet().toList();
+      sections.sort();
+    }
+
+    if (sections.isEmpty) {
+      sections = ['A', 'B'];
+    }
+
+    final cleanCurrent = _selectedSection?.replaceAll('Section ', '').trim();
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: sections.map((sec) {
-        final isSelected = _selectedSection == sec || _selectedSection == 'Section $sec';
+        final isSelected = cleanCurrent == sec;
         return Padding(
           padding: const EdgeInsets.only(right: 6),
           child: InkWell(
@@ -976,10 +1275,66 @@ class _DesktopCoordinatorAcademicsViewState extends State<DesktopCoordinatorAcad
       );
     }
 
+    final query = _academicsSearchQuery.trim().toLowerCase();
+    List<dynamic> displaySubjects = _sectionSubjectsProgress;
+
+    if (query.isNotEmpty) {
+      displaySubjects = _sectionSubjectsProgress.where((sub) {
+        final String sName = (sub['subjectName'] ?? '').toString().toLowerCase();
+        final String fName = (sub['facultyName'] ?? '').toString().toLowerCase();
+        final String sCode = (sub['subjectCode'] ?? sub['subject_id'] ?? '').toString().toLowerCase();
+        final String sem = (sub['semester'] ?? '').toString().toLowerCase();
+
+        bool matchTopics = false;
+        if (sub['topics'] is List) {
+          for (var t in sub['topics']) {
+            final String tName = (t['topicName'] ?? '').toString().toLowerCase();
+            final String tComm = (t['comments'] ?? '').toString().toLowerCase();
+            if (tName.contains(query) || tComm.contains(query)) {
+              matchTopics = true;
+              break;
+            }
+          }
+        }
+
+        return sName.contains(query) ||
+               fName.contains(query) ||
+               sCode.contains(query) ||
+               sem.contains(query) ||
+               matchTopics;
+      }).toList();
+    }
+
+    if (displaySubjects.isEmpty) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.search_off, size: 40, color: context.textMuted),
+            const SizedBox(height: 8),
+            Text(
+              'No subjects or lesson plans found matching "$_academicsSearchQuery".',
+              style: GoogleFonts.poppins(color: context.textMuted, fontSize: 12),
+            ),
+            const SizedBox(height: 8),
+            TextButton.icon(
+              onPressed: () {
+                _academicsSearchController.clear();
+                setState(() => _academicsSearchQuery = '');
+                _fetchSectionSubjectsProgress();
+              },
+              icon: const Icon(Icons.clear, size: 14),
+              label: const Text('Clear Search Filter'),
+            ),
+          ],
+        ),
+      );
+    }
+
     return ListView.builder(
-      itemCount: _sectionSubjectsProgress.length,
+      itemCount: displaySubjects.length,
       itemBuilder: (context, index) {
-        final sub = _sectionSubjectsProgress[index];
+        final sub = displaySubjects[index];
         final String subjectName = sub['subjectName'] ?? 'Subject';
         final String faculty = sub['facultyName'] ?? 'Assigned Faculty';
         final int progress = (sub['completionPercentage'] ?? sub['progress'] ?? 0).toInt();

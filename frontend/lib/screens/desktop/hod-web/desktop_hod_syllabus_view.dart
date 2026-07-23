@@ -225,7 +225,7 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                       if (_branchProgress != null) _buildBranchOverallCard(),
                       SizedBox(height: 20),
 
-                      // Years Selector
+                      // Years & Semester Selector
                       Container(
                         decoration: BoxDecoration(
                           color: context.cardColor,
@@ -240,8 +240,17 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                               'Select Academic Year',
                               style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(height: 16),
+                            SizedBox(height: 12),
                             _buildYearSelectionRow(),
+                            SizedBox(height: 14),
+                            Divider(height: 1, color: context.borderColor.withOpacity(0.5)),
+                            SizedBox(height: 14),
+                            Text(
+                              'Select Semester',
+                              style: GoogleFonts.poppins(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 12),
+                            _buildSemesterSelectionRow(),
                           ],
                         ),
                       ),
@@ -377,6 +386,13 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                 setState(() {
                   _selectedYear = y;
                   _selectedCourseId = y == '1st Year' ? 'C-26' : 'C-23';
+                  if (y == '1st Year') {
+                    _selectedSemester = 'Semester 1';
+                  } else if (y == '2nd Year') {
+                    _selectedSemester = 'Semester 3';
+                  } else {
+                    _selectedSemester = 'Semester 5';
+                  }
                 });
                 _fetchYearSectionProgress();
               },
@@ -393,6 +409,62 @@ class _DesktopHodSyllabusViewState extends State<DesktopHodSyllabusView> {
                 child: Center(
                   child: Text(
                     y,
+                    style: GoogleFonts.poppins(
+                      color: isSelected ? context.textPrimary : context.textSecondary,
+                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildSemesterSelectionRow() {
+    List<String> semesters;
+    if (_selectedYear == '1st Year') {
+      semesters = ['Semester 1', 'Semester 2'];
+    } else if (_selectedYear == '2nd Year') {
+      semesters = ['Semester 3', 'Semester 4'];
+    } else {
+      semesters = ['Semester 5', 'Semester 6'];
+    }
+
+    if (_selectedSemester == null || !semesters.contains(_selectedSemester)) {
+      _selectedSemester = semesters.first;
+    }
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: semesters.map((sem) {
+        final isSelected = _selectedSemester == sem;
+        return Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  _selectedSemester = sem;
+                });
+                _fetchSectionSubjectsProgress();
+              },
+              borderRadius: BorderRadius.circular(8),
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                decoration: BoxDecoration(
+                  color: isSelected ? Colors.purpleAccent.withOpacity(0.15) : context.bgColor,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: isSelected ? Colors.purpleAccent : context.borderColor,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    sem,
                     style: GoogleFonts.poppins(
                       color: isSelected ? context.textPrimary : context.textSecondary,
                       fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
